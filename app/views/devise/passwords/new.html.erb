@@ -1,0 +1,27 @@
+<div id="navbar" >
+  <ul class="navbarList">
+    <li class="current" id="navMyFootprint"><a href="#welcomeScreen">My Footprint</a></li>
+    <li class="current"><a href="#aboutAnchor">About</a></li>
+    <li class="current"><a href="#dashboardAnchor">What/How</a></li>
+    <li class="current"><a href="#interestedAnchor">Contact Us</a></li>
+    <li class="current"><a href="/login">Login/Register</a></li>
+  </ul>
+</div>
+
+<div class="loginContainer">
+  <div class="formContainer">
+    <h2>Reset your password</h2>
+    <p class="forgotPwdMessage">Enter the email address associated with your account</p>
+    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+      <div>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "email@example.com", :class => "inputField", :required => true %>
+
+      </div>
+      <div class="actions">
+        <%= f.submit "Next", :class => "submitButton" %>
+      </div>
+
+      <%= render "devise/shared/links" %>
+    <% end %>
+  </div>
+</div>
