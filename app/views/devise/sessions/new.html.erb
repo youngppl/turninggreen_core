@@ -10,6 +10,11 @@
         <%= f.password_field :password, autocomplete: "current-password", placeholder: "Password", :class => "inputField" %>
       </div>
 
+      <div>
+        <%= f.label :remember_me%>
+        <%= f.check_box :remember_me%>
+      </div>
+
       <div >
         <%= f.submit "LOG IN", :class => "actions submitButton"%>
       </div>

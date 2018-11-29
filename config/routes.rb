@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   devise_scope :user do
     get 'login', to: 'devise/sessions#new'
     get 'register', to: 'devise/registrations#new'
+    post 'register', to: 'devise/registrations#create'
+    delete 'logout', to: 'devise/sessions#destroy'
   end
 
   get '/themes' => 'themes#index'

@@ -4,14 +4,26 @@
   <body>
     <div id="navbar" >
       <ul class="navbarList">
+        <!-- BUG: the anchors do not work on other pages(like the login page) -->
         <li class="current" id="navMyFootprint"><a href="#welcomeScreen">My Footprint</a></li>
         <li class="current"><a href="#aboutAnchor">About</a></li>
         <li class="current"><a href="#dashboardAnchor">What/How</a></li>
         <li class="current"><a href="#interestedAnchor">Contact Us</a></li>
-        <li class="current"><a href="/login">Login/Register</a></li>
+        <% if user_signed_in? %>
+          <li class="current"><%= link_to 'Logout', logout_path, method: :delete %> </li>
+        <% else %>
+          <li class="current"><%= link_to 'Login/Register', new_user_session_path %> </li>
+        <% end %>
       </ul>
     </div>
+  <% if notice %>
+    <p class="alert alert-success"><%= notice %></p>
+  <% end %>
+  <% if alert %>
+    <p class="alert alert-danger"><%= alert %></p>
+  <% end %>
     <%= yield %>
     <%= render "layouts/footer"%>
+    <%= debug(params) if Rails.env.development? %>
   </body>
 </html>

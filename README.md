@@ -5,6 +5,11 @@
 This repo contains the backend for various Turning Green stuff.
 
 ## Initial Setup
+
+Dependencies
+- PostgreSQL
+- Node.js
+
 For first-time users, do the following
 ```
 1. `bundle update`
@@ -18,4 +23,3 @@ Run `bundle update` then `rails s`.
 
 ## Debugging
 Use `binding.pry` to debug your rails app. `rails routes` will list all your endpoints!
-
