@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     get 'register', to: 'devise/registrations#new'
     post 'register', to: 'devise/registrations#create'
     delete 'logout', to: 'devise/sessions#destroy'
+    # get  "users/confirmation/new", to: "devise/confirmations#new", as: "confirmation"
   end
 
   get '/themes' => 'themes#index'

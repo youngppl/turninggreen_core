@@ -17,18 +17,18 @@
 
       <div class="formGroup">
         <span>
-          <%= f.text_field :state, autocomplete: "state", placeholder: "State", :class => "inputField inputFieldSm", :required => true %>
+          <%= f.select :state, options_for_select(us_states), {:prompt => "State"}, {:class => "inputField inputFieldSm", :required => true}  %>
         </span>
         <span class="required">*</span>
 
         <span>
-          <%= f.text_field :country, autocomplete: "country", placeholder: "Country", :class => "inputField inputFieldSm", :required => true %>
+          <%= f.select :country, options_for_select(countries), {:prompt => "Country"}, {:class => "inputField inputFieldSm", :required => true} %>
         </span>
         <span class="required">*</span>
       </div>
 
       <div>
-        <%= f.text_field :birthday, autocomplete: "birthday", placeholder: "Birthday mm/dd/yyyy ", :class => "inputField", :required => true %>
+        <%= f.date_field :birthday, {class: "inputField", required: true} %>
         <span class="required">*</span>
       </div>
 
@@ -43,12 +43,12 @@
       </div>
 
       <div>
-        <%= f.text_field :referral, placeholder: "How did you hear about us?", :class => "inputField", :required => true %>
+        <%= f.select :referral, options_for_select(referral_choices), {:prompt => "How did you hear about us?"}, {:class => "inputField", :required => true} %>
         <span class="required">*</span>
       </div>
 
       <div class="termsAndConditions">
-        <i>By registering, I agreee to Terms and Conditions (and more legal stuff)</i>
+        <i>By registering, I agree to Terms and Conditions (and more legal stuff)</i>
       </div>
 
       <div>
