@@ -1,0 +1,12 @@
+<ul class="navbarList">
+  <!-- BUG: the anchors do not work on other pages(like the login page) -->
+  <li class="current" id="navMyFootprint"><a href="#welcomeScreen">My Footprint</a></li>
+  <li class="current"><a href="#aboutAnchor">About</a></li>
+  <li class="current"><a href="#dashboardAnchor">What/How</a></li>
+  <li class="current"><a href="#interestedAnchor">Contact Us</a></li>
+  <% if user_signed_in? %>
+    <li class="current"><%= link_to 'Logout', destroy_user_session_path, method: :delete %> </li>
+  <% else %>
+    <li class="current"><%= link_to 'Login/Register', new_user_session_path %> </li>
+  <% end %>
+</ul>

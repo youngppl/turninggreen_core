@@ -8,4 +8,8 @@ class ApplicationController < ActionController::Base
       user.permit(:name, :email, :state, :country, :birthday, :password, :password_confirmation, :referral)
     end
   end
+
+  def after_sign_in_path_for(resource)
+    dashboard_path
+  end
 end

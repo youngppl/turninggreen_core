@@ -1,0 +1,46 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+//
+
+.navbar {
+  background-color: #7FA86F;
+  color: white;
+}
+.navbar-nav.navbar-right li:not(:first-child):before{
+  content: " | ";
+  white-space: pre;
+}
+
+.dashboard {
+  margin: auto;
+  width: 75%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.global_impact_content {
+  background-color: #d2caca;
+  height: 220px;
+}
+
+.current_challenges {
+  padding-top: 40px;
+}
+
+.current_challenges_box {
+  border-radius: 25px;
+  background-color: #d2caca;
+  width: 200px;
+  height: 200px;
+  margin-top: 20px;
+  margin-right: 50px;
+  display: inline-block;
+  vertical-align: top;
+  &.add_challenges {
+    text-align: center;
+    vertical-align: middle;
+    line-height: 160px;
+    span {font-size: 150px;}
+  }
+}
