@@ -3,17 +3,27 @@
   <%= render "layouts/header"%>
   <body>
     <div id="navbar" >
-      <% if params[:controller] != 'users' %>
-        <%= render 'layouts/default_navbar' %>
+      <% if content_for?(:navbar) %>
+        <%= yield(:navbar) %>
       <% else %>
-        <%= render 'layouts/dashboard_navbar' %>
+        <%= render 'layouts/default_navbar' %>
       <% end %>
     </div>
   <% if notice %>
-    <p class="alert alert-success"><%= notice %></p>
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+      <%= notice %>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
   <% end %>
   <% if alert %>
-    <p class="alert alert-danger"><%= alert %></p>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert"">
+      <%= alert %>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
   <% end %>
     <%= yield %>
     <%= render "layouts/footer"%>

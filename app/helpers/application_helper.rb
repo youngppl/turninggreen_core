@@ -8,9 +8,10 @@ module ApplicationHelper
       'Other'
     ]
   end
-  
+
   def us_states
     [
+      ['Not in US', 'NO'],
       ['Alabama', 'AL'],
       ['Alaska', 'AK'],
       ['Arizona', 'AZ'],

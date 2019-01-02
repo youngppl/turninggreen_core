@@ -12,7 +12,15 @@
     <ul class="navbar-nav navbar-right">
       <li>Tips</li>
       <li>221 pts</li>
-      <li>profile pic</li>
+      <li class="dropdown">
+        <button id="dropdownMenuButton" data-toggle="dropdown">
+          <%= image_tag("placeholder.png", size: '25x25', class: 'rounded-circle') %>
+        </button>
+        <div class="dropdown-menu dropdown-menu-right">
+          <%= link_to 'Settings', edit_user_registration_path, class: 'dropdown-item' %>
+          <%= link_to 'Log Out', destroy_user_session_path, method: :delete, class: 'dropdown-item'%>
+        </div>
+      </li>
     </ul>
   </div>
 </nav>

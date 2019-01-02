@@ -44,3 +44,31 @@
     span {font-size: 150px;}
   }
 }
+
+#dropdownMenuButton {
+  background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+.settings {
+  @extend .dashboard;
+  padding-top: 50px;
+  > div{
+    display: inline-block;
+    margin-left: 140px;
+    vertical-align: top;
+  }
+}
+
+.update-avatar img {
+    margin-bottom: 10px;
+}
+
+.settings form div {
+  margin-bottom: 15px;
+}
