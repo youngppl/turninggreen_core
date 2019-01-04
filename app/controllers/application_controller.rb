@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
       user.permit(:name, :email, :state, :country, :birthday, :password, :password_confirmation, :referral)
     end
     devise_parameter_sanitizer.permit(:account_update) do |user|
-      user.permit(:email, :state, :country, :password, :password_confirmation, :timezone)
+      user.permit(:email, :state, :country, :password, :password_confirmation, :timezone, :profile_pic)
     end
   end
 

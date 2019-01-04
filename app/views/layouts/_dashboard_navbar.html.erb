@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg">
-  <span class="navbar-brand" href="#">My Footprint App logo</span>
+  <span class="navbar-brand" href="#"><%= link_to 'My Footprint App logo', dashboard_path %></span>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -14,7 +14,7 @@
       <li>221 pts</li>
       <li class="dropdown">
         <button id="dropdownMenuButton" data-toggle="dropdown">
-          <%= image_tag("placeholder.png", size: '25x25', class: 'rounded-circle') %>
+          <%= image_tag(profile_pic_link, size: '25x25', class: 'rounded-circle') %>
         </button>
         <div class="dropdown-menu dropdown-menu-right">
           <%= link_to 'Settings', edit_user_registration_path, class: 'dropdown-item' %>

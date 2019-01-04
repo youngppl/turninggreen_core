@@ -17,6 +17,7 @@
   width: 75%;
   padding-top: 50px;
   padding-bottom: 50px;
+  overflow-x: scroll;
 }
 
 .global_impact_content {
@@ -26,6 +27,7 @@
 
 .current_challenges {
   padding-top: 40px;
+  width: 1200px;
 }
 
 .current_challenges_box {
@@ -36,6 +38,7 @@
   margin-top: 20px;
   margin-right: 50px;
   display: inline-block;
+  white-space: nowrap;
   vertical-align: top;
   &.add_challenges {
     text-align: center;
@@ -57,7 +60,7 @@
 
 .settings {
   @extend .dashboard;
-  padding-top: 50px;
+  padding-top: 15px;
   > div{
     display: inline-block;
     margin-left: 140px;
@@ -70,5 +73,15 @@
 }
 
 .settings form div {
-  margin-bottom: 15px;
+  margin-bottom: -9px;
+}
+
+.upload-wrap {
+    position: relative;
+}
+
+.upload-btn {
+    position: absolute;
+    left: 0;
+    opacity: 0;
 }

@@ -6,4 +6,12 @@ module RegistrationsHelper
       ActiveSupport::TimeZone::MAPPING.key(tz)
     end
   end
+
+  def profile_pic_link
+    if current_user.profile_pic.attached?
+      url_for(current_user.profile_pic)
+    else
+      asset_path("avatar.png")
+    end
+  end
 end

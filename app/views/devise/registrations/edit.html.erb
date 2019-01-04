@@ -12,9 +12,13 @@
       <%= devise_error_messages! %>
 
       <div class="update-avatar">
-        <%= image_tag("placeholder.png", size: "100x100", class: "rounded-circle") %> <br>
-        <%= f.label 'Update avatar' %> <br>
-        <button type="button" class="btn btn-sm">Upload Photo</button>
+        <%= image_tag(profile_pic_link, size: "100x100", class: "rounded-circle") %> <br>
+
+        <div class="upload-wrap">
+          <button type="button", class="btn btn-secondary">Upload Photo</button>
+          <%= f.file_field :profile_pic, class: "upload-btn", onchange: "show_filename();"%>
+        </div>
+        <label id="uploadFile"></label>
       </div>
 
       <div class="field">
