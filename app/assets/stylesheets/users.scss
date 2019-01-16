@@ -26,25 +26,47 @@
 }
 
 .current_challenges {
-  padding-top: 40px;
+  padding: 40px;
+  margin-top: 30px;
   width: 1200px;
+  border: 3px solid gray;
+  border-radius: 30px;
 }
 
 .current_challenges_box {
   border-radius: 25px;
-  background-color: #d2caca;
   width: 200px;
   height: 200px;
   margin-top: 20px;
   margin-right: 50px;
+  box-shadow: 10px 10px 5px grey;
   display: inline-block;
   white-space: nowrap;
   vertical-align: top;
-  &.add_challenges {
+  border: 2px solid green;
+  // &.add_challenges {
+  //   text-align: center;
+  //   vertical-align: middle;
+  //   line-height: 160px;
+  //   span {font-size: 150px;}
+  // }
+  &.new_challenge {
+    color: white;
+    background-color: #bfc0c1;
+    font-size: 31px;
+    padding: 25px;
+    overflow-wrap: break-word;
+    white-space: normal;
     text-align: center;
-    vertical-align: middle;
-    line-height: 160px;
-    span {font-size: 150px;}
+  }
+}
+
+.current_challenges_overlay {
+  border-radius: 23px;
+  height: 196px;
+  width: 196px;
+  > .overlayText {
+    color: black;
   }
 }
 
@@ -65,15 +87,24 @@
     display: inline-block;
     margin-left: 140px;
     vertical-align: top;
+    margin-top: 30px;
   }
 }
 
-.update-avatar img {
-    margin-bottom: 10px;
+div.update-avatar.thumbnail {
+    margin-top: 30px;
 }
 
 .settings form div {
   margin-bottom: -9px;
+}
+
+h2.user-name {
+  margin-top: 10px;
+}
+
+h2.settings-title {
+    font-size: 50px;
 }
 
 .upload-wrap {
@@ -82,6 +113,11 @@
 
 .upload-btn {
     position: absolute;
-    left: 0;
+    left: 0px;
+    top: 0px;
     opacity: 0;
+}
+
+.upload-photo.modal-body {
+  background-color: white;
 }

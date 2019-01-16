@@ -4,21 +4,51 @@
 
 <div class="settings">
   <div>
-    <h1>my settings</h1>
+    <h2 class="settings-title">MY SETTINGS</h2>
+
+      <div class="update-avatar thumbnail" onclick="document.getElementById('upload-photo-input').click();">
+        <%= image_tag(profile_pic_link, size: "200x200", class: "rounded-circle") %>
+        <div id="upload-photo-div" class="overlay rounded-circle">
+          <div class="overlayText">
+            Upload Photo
+          </div>
+        </div>
+
+    </div>
+    <div class="upload-photo modal" id="pic-input-dialog" tabindex="-1" role="dialog">
+      <div class="upload-photo modal-dialog modal-dialog-centered" role="document">
+        <div class="upload-photo modal-content">
+          <div class="upload-photo modal-header">
+            <h5 class="upload-photo modal-title">Upload Photo</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="upload-photo modal-body">
+            <div id="upload-croppie">
+
+            </div>
+          </div>
+          <div class="upload-photo modal-footer">
+            <button type="button" class="btn btn-primary" onclick="updatePicture();">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="user-name"><%= @user.name %></h2>
+
   </div>
 
   <div>
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
       <%= devise_error_messages! %>
 
+      <%# delete this later  %>
       <div class="update-avatar">
-        <%= image_tag(profile_pic_link, size: "100x100", class: "rounded-circle") %> <br>
-
         <div class="upload-wrap">
-          <button type="button", class="btn btn-secondary">Upload Photo</button>
-          <%= f.file_field :profile_pic, class: "upload-btn", onchange: "show_filename();"%>
+          <%= f.file_field :profile_pic, id: "upload-photo-input", class: "upload-btn", onchange: "$('#pic-input-dialog').modal('show');", accept: "image/*", direct_upload: true%>
         </div>
-        <label id="uploadFile"></label>
       </div>
 
       <div class="field">
