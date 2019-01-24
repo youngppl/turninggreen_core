@@ -1,0 +1,70 @@
+<% @challenge_data = challenges[@challenge_name.to_sym] %>
+<% content_for :navbar do %>
+  <%= render 'layouts/dashboard_navbar' %>
+<% end %>
+
+<script>
+  <% if @challenge_data.key?(:videoID) %>
+    var challengeVideoID = "<%= @challenge_data[:videoID] %>";
+    var showVideo = true;
+  <% else %>
+    var showVideo = false;
+  <% end %>
+  var challengeName = "<%= @challenge_name %>";
+  var already_unlocked = <%= @already_unlocked %>;
+  <% if !@already_unlocked %>
+    $('#challenge-modal').modal('show');
+  <% end %>
+</script>
+
+<div class="challenge-page">
+  <h2>
+    challenge page for <%= @challenge_name %>
+  </h2>
+  <div class="modal" id="challenge-modal" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-close">
+          <button type="button" class="close" onclick="location.href='/themes';" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="first slide">
+            <h1 class="modalHeader">UNLOCK <%= @challenge_name %></h1>
+            <% if !@challenge_data.key?(:videoID) %>
+              <p class="helpText"><%= @challenge_data[:videoCaption] %></p>
+            <% else %>
+              <p class="helpText">In order to unlock this theme, click the arrow to learn more about <%= @challenge_name.downcase %>.</p>
+              <div class="arrow">
+                <button type="button" name="next-arrow" onclick="nextArrow();">
+                  <%= image_tag 'arrow.svg', size: '80x50' %>
+                </button>
+              </div>
+            <% end %>
+          </div>
+          <div class="second slide">
+            <p class="helpText"><%= @challenge_data[:videoCaption] %></p>
+            <div id="video"></div>
+          </div>
+          <div class="third slide">
+            <div class="challenge-unlock helpText">
+                <div class="cool fadeIn">
+                  Cool! You just unlocked<br>the <%= @challenge_name %> challenge!
+                </div>
+                <div class="checkbox">
+                  <svg width="90" height="90">
+                    <path id="check" d="M 15 50 L 40 70 L 74 24 "></path>
+                  </svg>
+                </div>
+                <div class="cool fadeIn">
+                  Now, let’s make a difference!
+                </div>
+             </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

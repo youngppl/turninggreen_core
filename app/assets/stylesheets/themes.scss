@@ -10,8 +10,6 @@
 
 .themesRow {
   margin-bottom: 40px;
-  display: flex;
-  justify-content: center;
 }
 
 .theme {
@@ -73,11 +71,7 @@
 }
 
 .themesContainer {
-  margin-top: 80px;
-}
-
-.modal-content {
-  border-radius: 12px;
+  margin-top: 30px;
 }
 
 .modal-dialog {
@@ -85,7 +79,131 @@
   margin: 1.75em 15%;
 }
 
-.modal-body {
-  background-color: #26A9E0;
-  border-radius: 10px;
+#challenge-modal {
+  .modal-body, .modal-content {
+    border-radius: 40px;
+  }
+  .modal-content {
+    height: 340px;
+    background-color: #90b582;
+    padding: 70px 0;
+    text-align: center;
+  }
+  h1.modalHeader {
+    font-weight: bold;
+  }
+  .modal-close {
+    margin-right: 23px;
+    margin-top: -50px;
+    margin-bottom: 11px;
+  }
+  button.close {
+    font-size: 41px;
+    span {
+      color: white;
+    }
+  }
+  .slide {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    &.second, &.third {
+      display:none;
+    }
+    .arrow button {
+      background: none;
+    	color: inherit;
+    	border: none;
+    	padding: 0;
+    	font: inherit;
+    	cursor: pointer;
+    	outline: inherit;
+    }
+  }
+}
+.challenge-unlock {
+  .cool {
+    font-size: 35px;
+    opacity: 0;
+  }
+  .checkbox {
+    height: 110px;
+    width: 110px;
+    background-color: white;
+    margin: 27px auto;
+    border: 10px solid #808285;
+    border-radius: 26px;
+  }
+  #check {
+    fill: none;
+    stroke: #be1d2c;
+    stroke-width: 10;
+    stroke-linecap: round;
+    stroke-dasharray: 180;
+    stroke-dashoffset: 180;
+    -webkit-animation: draw 2s ease;
+    animation: draw 2s ease;
+    animation-fill-mode: forwards;
+  }
+  @keyframes draw {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  @-webkit-keyframes draw {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  @-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  .fadeIn {
+    -webkit-animation-name: fadeIn 1s 1s ease;
+    animation: fadeIn 1s 1s ease;
+    animation-fill-mode: forwards;
+  }
+}
+.theme-locked-background {
+  text-align: left;
+  background: lightgray;
+  overflow: hidden;
+  width: 196px;
+  height: 196px;
+  border-radius: 25px;
+  opacity: 0.8;
+  position: absolute;
+  top: 0;
+}
+
+img.theme-locked-icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.overlay.current_challenges_overlay {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+.challenge-name-text {
+    font-size: 25px;
 }

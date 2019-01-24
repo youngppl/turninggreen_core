@@ -30,25 +30,29 @@ function readFile(input) {
   }
 }
 
-$(window).on('shown.bs.modal', function() {
-  readFile(document.getElementById('upload-photo-input'));
-  $uploadCrop = $('#upload-croppie').croppie({
-    enableExif: true,
-    url: rawImg,
-    viewport: {
-      width: 200,
-      height: 200,
-      type: 'circle'
-    },
-    boundary: {
-      width: 300,
-      height: 300
-    }
-  });
+$(window).on('shown.bs.modal', function(e) {
+  if(e.target==$('#pic-input-dialog')[0]){
+    readFile(document.getElementById('upload-photo-input'));
+    $uploadCrop = $('#upload-croppie').croppie({
+      enableExif: true,
+      url: rawImg,
+      viewport: {
+        width: 200,
+        height: 200,
+        type: 'circle'
+      },
+      boundary: {
+        width: 300,
+        height: 300
+      }
+    });
+  }
 });
 
-$(window).on('hidden.bs.modal', function() {
-  $('#upload-croppie').croppie('destroy');
+$(window).on('hidden.bs.modal', function(e) {
+  if(e.target==$('#pic-input-dialog')[0]){
+    $('#upload-croppie').croppie('destroy');
+  }
 });
 
 function updatePicture() {
