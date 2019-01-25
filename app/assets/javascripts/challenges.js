@@ -1,6 +1,6 @@
 $(window).on('load', function() {
   if(window.location.pathname.startsWith('/challenges') && !already_unlocked) {
-    $('#challenge-modal').modal('show')
+    $('#challenge-modal').modal('show');
   }
 });
 
@@ -15,6 +15,11 @@ function onPlayerReady(event) {
   event.target.playVideo();
 }
 function nextArrow() {
+  if(player){
+    player.destroy();
+    player = null;
+    onYouTubeIframeAPIReady();
+  }
   $('.first')[0].style.display = 'none';
   $('.second')[0].style.display = 'block';
   $('.modal-close')[0].style.display = 'none';
@@ -25,13 +30,15 @@ function nextArrow() {
   firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 }
 
-$.ajaxSetup({
+ $.ajaxSetup({
   headers: {
     'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
   }
 });
 function toThirdSlide(event) {
   if(event.data == YT.PlayerState.ENDED) {
+    player.destroy();
+    player = null;
     $('.second')[0].style.display = 'none';
     $('.third')[0].style.display = 'block';
     $('.modal-close')[0].style.display = 'block';
@@ -52,5 +59,5 @@ function onYouTubeIframeAPIReady() {
       }
     });
 
-  }
+   }
 }
