@@ -39,11 +39,11 @@
   height: 200px;
   margin-top: 20px;
   margin-right: 50px;
-  box-shadow: 10px 10px 5px grey;
+  box-shadow: 8px 12px #7f8083;
   display: inline-block;
   white-space: nowrap;
   vertical-align: top;
-  border: 2px solid green;
+  border: 2px solid #80a870;
   // &.add_challenges {
   //   text-align: center;
   //   vertical-align: middle;
@@ -53,7 +53,7 @@
   &.new_challenge {
     color: white;
     background-color: #bfc0c1;
-    font-size: 31px;
+    font-size: 30px;
     padding: 25px;
     overflow-wrap: break-word;
     white-space: normal;
@@ -92,6 +92,18 @@
     vertical-align: top;
     margin-top: 30px;
   }
+  .left-panel {
+    text-align: center;
+    #upload-photo-div {
+      left: 64px;
+    }
+  }
+  .save-button {
+    border-radius: 20px;
+    background-color: #80a870;
+    border-color: #80a870;
+    color: white;
+  }
 }
 
 div.update-avatar.thumbnail {
@@ -121,6 +133,24 @@ h2.settings-title {
     opacity: 0;
 }
 
-.upload-photo.modal-body {
-  background-color: white;
+.upload-photo{
+  .modal-body {
+    background-color: white;
+  }
+  .modal-content {
+    width: 450px;
+    margin: auto;
+  }
+  #minus {
+    position: absolute;
+    top: 307px;
+    font-size: 40px;
+    left: 48px;
+  }
+  #plus {
+    position: absolute;
+    top: 311px;
+    font-size: 40px;
+    right: 49px;
+  }
 }
