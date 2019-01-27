@@ -14,4 +14,12 @@ module RegistrationsHelper
       asset_path("avatar.png")
     end
   end
+
+  def notifications
+    ['Daily',
+    'Every other day',
+    'Weekly',
+    'Never'
+    ]
+  end
 end

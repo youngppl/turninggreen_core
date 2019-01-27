@@ -17,7 +17,6 @@
   width: 75%;
   padding-top: 50px;
   padding-bottom: 50px;
-  overflow-x: scroll;
 }
 
 .global_impact_content {
@@ -90,28 +89,33 @@
     display: inline-block;
     margin-left: 140px;
     vertical-align: top;
-    margin-top: 30px;
+    margin-top: 20px;
   }
   .left-panel {
     text-align: center;
-    #upload-photo-div {
-      left: 64px;
-    }
   }
+  .right-panel {
+    margin-bottom: 25px;
+}
   .save-button {
     border-radius: 20px;
     background-color: #80a870;
     border-color: #80a870;
     color: white;
   }
-}
-
-div.update-avatar.thumbnail {
-    margin-top: 30px;
-}
-
-.settings form div {
-  margin-bottom: -9px;
+  .separator {
+    border: 1px solid #d6d7d9;
+    width: 1082px;
+  }
+  .heading {
+    margin-bottom: 30px;
+  }
+  .notifications {
+    margin-left: 485px;
+  }
+  form div {
+    margin-bottom: -9px;
+  }
 }
 
 h2.user-name {
