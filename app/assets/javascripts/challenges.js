@@ -22,7 +22,7 @@ function nextArrow() {
   }
   $('.first')[0].style.display = 'none';
   $('.second')[0].style.display = 'block';
-  $('.modal-close')[0].style.display = 'none';
+  // $('.modal-close')[0].style.display = 'none';
   $('.modal-content')[0].style.height = '595px';
   var tag = document.createElement('script');
   tag.src = "https://www.youtube.com/iframe_api";

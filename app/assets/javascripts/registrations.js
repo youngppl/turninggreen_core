@@ -55,6 +55,7 @@ $(window).on('hidden.bs.modal', function(e) {
   }
 });
 
+
 function updatePicture() {
   $uploadCrop.croppie("result", {
       type: 'blob',
@@ -80,4 +81,9 @@ function updatePicture() {
         });
 
     });
+}
+
+function convertDate() {
+  date = new Date($('#datepicker').val());
+  $('#datepicker').val(date.toISOString().substring(0,10));
 }

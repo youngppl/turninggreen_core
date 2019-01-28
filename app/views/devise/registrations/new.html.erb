@@ -1,7 +1,7 @@
 <div class="loginContainer">
   <div class="formContainer">
 
-    <%= form_for(resource, as: resource_name, url: user_registration_path(resource_name)) do |f| %>
+    <%= form_for(resource, as: resource_name, url: user_registration_path(resource_name), html: {onsubmit: "convertDate();"}) do |f| %>
       <%= devise_error_messages! %>
 
       <div>
@@ -26,12 +26,18 @@
         </span>
         <span class="required">*</span>
       </div>
-
       <div>
-        <%= f.date_field :birthday, {class: "inputField", required: true} %>
+        <%= f.text_field :birthday, {class: "inputField", required: true, id: "datepicker", readonly: "", autocomplete: "off", placeholder: "mm/dd/yyyy"} %>
         <span class="required">*</span>
       </div>
-
+      <script type="text/javascript">
+        const picker = datepicker('#datepicker', {
+          formatter: (input, date, instance) => {
+            const value = date.toLocaleDateString()
+            input.value = value
+          }
+        })
+      </script>
       <div>
         <%= f.password_field :password, autocomplete: "current-password", placeholder: "Password", :class => "inputField", :required => true %>
         <span class="required">*</span>
