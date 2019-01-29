@@ -1,4 +1,5 @@
 class ChallengesController < ApplicationController
+  before_action :authenticate_user!
   include ChallengesHelper
   def show
     @challenge_name = params['challenge_name']

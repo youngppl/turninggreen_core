@@ -38,14 +38,14 @@
               <p class="helpText">In order to unlock this theme, click the arrow to learn more about <%= @challenge_name.downcase %>.</p>
               <div class="arrow">
                 <button type="button" name="next-arrow" onclick="nextArrow();">
-                  <%= image_tag 'arrow.svg', size: '80x50' %>
+                  <%= image_tag 'arrow.svg', size: '128x80' %>
                 </button>
               </div>
             <% end %>
           </div>
           <div class="second slide">
-            <p class="helpText"><%= @challenge_data[:videoCaption] %></p>
             <div id="video"></div>
+            <p class="helpText"><%= @challenge_data[:videoCaption] %></p>
           </div>
           <div class="third slide">
             <div class="challenge-unlock helpText">

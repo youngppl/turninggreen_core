@@ -84,15 +84,25 @@
 #challenge-modal {
   .modal-body, .modal-content {
     border-radius: 40px;
+    iframe#video {
+      margin-top: -7px;
+    }
+    .helpText {
+      margin: 12px;
+      margin-top: 30px;
+    }
   }
   .modal-content {
-    height: 340px;
+    height: 400px;
     background-color: #90b582;
     padding: 70px 0;
     text-align: center;
+    width: 900px;
+    margin: auto;
   }
   h1.modalHeader {
     font-weight: bold;
+    font-size: 40px;
   }
   .modal-close {
     margin-right: 23px;
@@ -111,8 +121,14 @@
     margin-right: auto;
     left: 0;
     right: 0;
+    &.first {
+      margin-top: 17px;
+    }
     &.second, &.third {
       display:none;
+    }
+    &.third {
+      margin-top: -49px;
     }
     .arrow button {
       background: none;
@@ -122,6 +138,7 @@
     	font: inherit;
     	cursor: pointer;
     	outline: inherit;
+      margin-top: 20px;
     }
   }
 }
@@ -201,6 +218,8 @@ img.theme-locked-icon {
     position: absolute;
     top: 0;
     left: 0;
+    margin: 7px;
+    margin-top: 13px;
 }
 
 .overlay.current_challenges_overlay {

@@ -23,7 +23,7 @@ function nextArrow() {
   $('.first')[0].style.display = 'none';
   $('.second')[0].style.display = 'block';
   // $('.modal-close')[0].style.display = 'none';
-  $('.modal-content')[0].style.height = '595px';
+  $('.modal-content')[0].style.height = '569px';
   var tag = document.createElement('script');
   tag.src = "https://www.youtube.com/iframe_api";
   var firstScriptTag = document.getElementsByTagName('script')[0];
@@ -41,9 +41,9 @@ function toThirdSlide(event) {
     player = null;
     $('.second')[0].style.display = 'none';
     $('.third')[0].style.display = 'block';
-    $('.modal-close')[0].style.display = 'block';
-    $('.close')[0].onclick = function(){$('#challenge-modal').modal('hide');};
-    $('.modal-content')[0].style.height = '488px';
+    // $('.modal-close')[0].style.display = 'block';
+    document.getElementsByClassName('close')[0].onclick = function(){$('#challenge-modal').modal('hide');};
+    $('.modal-content')[0].style.height = '456px';
     $.post("/challenges/unlock", {challenge:challengeName});
   }
 }

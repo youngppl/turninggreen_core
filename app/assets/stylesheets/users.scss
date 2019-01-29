@@ -27,9 +27,17 @@
 .current_challenges {
   padding: 40px;
   margin-top: 30px;
-  width: 1050px;
+  width: 950px;
   border: 3px solid gray;
   border-radius: 30px;
+  .current_challenges_box {
+    width: 175px;
+    height: 175px;
+  }
+  .current_challenges_overlay {
+    height: 171px;
+    width: 171px;
+  }
 }
 
 .current_challenges_box {
@@ -37,22 +45,16 @@
   width: 200px;
   height: 200px;
   margin-top: 20px;
-  margin-right: 50px;
+  margin-right: 35px;
   box-shadow: 8px 12px #7f8083;
   display: inline-block;
   white-space: nowrap;
   vertical-align: top;
   border: 2px solid #80a870;
-  // &.add_challenges {
-  //   text-align: center;
-  //   vertical-align: middle;
-  //   line-height: 160px;
-  //   span {font-size: 150px;}
-  // }
   &.new_challenge {
     color: white;
     background-color: #bfc0c1;
-    font-size: 30px;
+    font-size: 24px;
     padding: 25px;
     overflow-wrap: break-word;
     white-space: normal;
@@ -64,7 +66,7 @@
 }
 
 .current_challenges_overlay {
-  border-radius: 23px;
+  border-radius: 25px;
   height: 196px;
   width: 196px;
   > .overlayText {
@@ -98,23 +100,24 @@
     margin-bottom: 25px;
 }
   .save-button {
-    border-radius: 20px;
+    border-radius: 10px;
     background-color: #80a870;
     border-color: #80a870;
     color: white;
+    width: 100px;
   }
   .separator {
     border: 1px solid #d6d7d9;
     width: 1082px;
   }
   .heading {
-    margin-bottom: 30px;
+    margin-bottom: 19px;
   }
   .notifications {
-    margin-left: 485px;
+    margin-left: 38.5%;
   }
   form div {
-    margin-bottom: -9px;
+    margin-bottom: 5px;
   }
 }
 
@@ -123,7 +126,7 @@ h2.user-name {
 }
 
 h2.settings-title {
-    font-size: 50px;
+    font-size: 40px;
 }
 
 .upload-wrap {
