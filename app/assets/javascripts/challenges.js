@@ -58,6 +58,10 @@ function onYouTubeIframeAPIReady() {
         'onStateChange': toThirdSlide
       }
     });
-
    }
 }
+
+$(document).on("click", ".challenge-box .show-hidden" , function(){
+  $(this).parents('.challenge-info').children('.hidden').toggle();
+  $(this).find('i').toggle();
+});

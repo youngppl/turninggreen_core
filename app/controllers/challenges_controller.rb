@@ -2,6 +2,7 @@ class ChallengesController < ApplicationController
   before_action :authenticate_user!
   include ChallengesHelper
   def show
+    # matches /challenges/[challenge] to correct challenge page
     @challenge_name = params['challenge_name']
     @already_unlocked = current_user.unlockedChallenges.include?(@challenge_name)
     if !challenges.key?(@challenge_name.to_sym)
@@ -10,6 +11,7 @@ class ChallengesController < ApplicationController
   end
 
   def unlock
+    # unlocking themes
     challenge = params[:challenge]
     newUnlocked = [challenge]
     case challenge

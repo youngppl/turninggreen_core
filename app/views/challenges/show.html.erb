@@ -18,9 +18,44 @@
 </script>
 
 <div class="challenge-page">
-  <h2>
-    challenge page for <%= @challenge_name %>
-  </h2>
+  <div class="heading">
+    <h1 class="title">
+      <%= @challenge_name %>
+    </h1>
+    <h5>Instructions/descriptor text about how to do challenges etc. </h5>
+  </div>
+  <div class="challenges-content">
+    <% (1..7).each do %>
+      <div class="challenge-box">
+        <div class="challenge-icon">
+          <%= image_tag 'placeholder.png', size:"150x150"%>
+        </div>
+        <div class="challenge-info">
+          <h5 class="challenge-name">Challenge Name</h5>
+          <button type="button" class="show-hidden">
+            <i class="fas fa-chevron-down"></i>
+            <i class="fas fa-chevron-up" style="display:none;"></i>
+          </button>
+          <p class="challenge-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas convallis nisl ac eleifend lacinia. Donec nec hendrerit orci. In consequat augue et eleifend tempor. Quisque facilisis faucibus urna, sed vestibulum ex molestie sit amet. Nullam in luctus magna. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam tortor nisi, aliquet et elementum in, porta nec erat.</p>
+          <div class="hidden" style="display:none;">
+            <div class="learn-more">
+              <h7><strong>Learn More</strong></h7>
+              <div class="links">
+                <a>learn more link</a>
+              </div>
+            </div>
+            <div class="start-challenge">
+              <h6><strong>How long do you want to take this challenge for?</strong></h6>
+              <%= select_tag "weeks", options_for_select((1..8).to_a)%> <span class="label"> week(s) starting today</span><br>
+              <button type="button" class="btn add-challenge-button" name="button">ADD CHALLENGE</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+
   <div class="modal" id="challenge-modal" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
@@ -66,5 +101,4 @@
         </div>
       </div>
     </div>
-  </div>
 </div>
