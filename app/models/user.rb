@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :confirmable
   has_one_attached :profile_pic
+  has_many :challenges
   def update_with_password(params={})
     current_password = params.delete(:current_password)
 
@@ -16,5 +17,5 @@ class User < ApplicationRecord
     clean_up_passwords
     result
   end
-  
+
 end

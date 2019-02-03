@@ -65,3 +65,8 @@ $(document).on("click", ".challenge-box .show-hidden" , function(){
   $(this).parents('.challenge-info').children('.hidden').toggle();
   $(this).find('i').toggle();
 });
+
+$(document).on('click', '.add-challenge-button', function(){
+  $.post('/challenges/add', {challenge_name:'test challenge name',theme:challengeName,length_of_challenge:$(this).parents('.start-challenge').children('select').val()})
+  // TODO: change this to set challenge_name to html tag of the challenge box
+});

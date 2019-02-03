@@ -15,5 +15,6 @@ Rails.application.routes.draw do
   get '/themes' => 'themes#index'
   get '/challenges/:challenge_name' => 'challenges#show', :as => 'challenges'
   post '/challenges/unlock' => 'challenges#unlock'
+  post '/challenges/add' => 'challenges#create'
   resources :tips_daily, only: [:index, :show]
 end

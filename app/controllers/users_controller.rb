@@ -3,5 +3,6 @@ class UsersController < ApplicationController
 
   def show
     # user dashboard, redirects here after successful login
+    @current_challenges = current_user.challenges.all
   end
 end

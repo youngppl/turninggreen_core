@@ -24,4 +24,14 @@ class ChallengesController < ApplicationController
     end
     current_user.update(:unlockedChallenges => (current_user.unlockedChallenges + newUnlocked).uniq)
   end
+
+  def create
+    current_user.challenges.create(challenge_params)
+  end
+
+  private
+
+  def challenge_params
+    params.permit(:challenge_name, :theme, :length_of_challenge)
+  end
 end
