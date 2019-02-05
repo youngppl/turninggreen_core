@@ -42,7 +42,9 @@ function toThirdSlide(event) {
     $('.second')[0].style.display = 'none';
     $('.third')[0].style.display = 'block';
     // $('.modal-close')[0].style.display = 'block';
-    document.getElementsByClassName('close')[0].onclick = function(){$('#challenge-modal').modal('hide');};
+    document.getElementById('modal-close-button').onclick = function(){$('#challenge-modal').modal('hide');};
+    $('#modal-close-button').css('line-height', '2');
+    $('#modal-close-button').css('margin-top', '-28px');
     $('.modal-content')[0].style.height = '456px';
     $.post("/challenges/unlock", {challenge:challengeName});
   }

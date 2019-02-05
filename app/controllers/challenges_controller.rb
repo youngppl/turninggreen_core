@@ -1,9 +1,13 @@
 class ChallengesController < ApplicationController
   before_action :authenticate_user!
   include ChallengesHelper
+  include ThemesHelper
   def show
     # matches /challenges/[challenge] to correct challenge page
     @challenge_name = params['challenge_name']
+    @challenge_data = challenges[@challenge_name.to_sym]
+    @theme_data = themesContent[@challenge_name.to_sym]
+    puts @theme_data
     @already_unlocked = current_user.unlockedChallenges.include?(@challenge_name)
     if !challenges.key?(@challenge_name.to_sym)
       raise ActionController::RoutingError.new('Not Found')
@@ -26,7 +30,13 @@ class ChallengesController < ApplicationController
   end
 
   def create
-    current_user.challenges.create(challenge_params)
+    if current_user.challenges.length < 8
+      current_user.challenges.create(challenge_params)
+      message = {:notice => "Challenge has been successfully added!"}
+    else
+      message = {:alert => "You can only have a maximum of 8 challenges!"}
+    end
+    redirect_to request.referer, :flash => message
   end
 
   private

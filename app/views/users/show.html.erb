@@ -11,71 +11,35 @@
   <div class="current_challenges">
     <div>
       <h2>Current Challenges</h2>
-      <%# NOTE: only if 8 current challenges, make it gray background. implement button to themes that is green if not 8 challenge %>
-      <a href="<%= themes_path %>">
-        <div id="add_challenge">+</div>
-      </a>
+      <% if current_user.challenges.length.between?(1,7) %>
+        <a href="<%= themes_path %>">
+          <div id="add_challenge">+</div>
+        </a>
+      <% elsif current_user.challenges.length == 0 %>
+        <a href="<%= themes_path %>" tabindex="0" id="no_challenge_popover" data-toggle="popover" data-placement="left"
+        data-content="Click here to add a challenge and make a difference!">
+          <div id="add_challenge">+</div>
+        </a>
+      <% else %>
+        <a tabindex="0" id="too_many_challenge_popover" data-toggle="popover" data-placement="left"
+        data-content="You can only have a maximum of 8 challenges ongoing at a time!">
+          <div id="add_challenge">+</div>
+        </a>
+      <% end %>
     </div>
     <div>
-      <% @current_challenges.each do |challenge| %>
-        <div class="current_challenges_box dashboard thumbnail">
-          <div class="current_challenges_overlay overlay dashboard">
-            <div class="overlayText"><%= challenge.challenge_name %></div>
+      <% if current_user.challenges.length == 0 %>
+        <div class="new_challenge current_challenges_box dashboard">No current challenges</div>
+      <% else %>
+        <% @current_challenges.each do |challenge| %>
+          <div class="current_challenges_box dashboard thumbnail">
+            <div class="current_challenges_overlay overlay dashboard">
+              <div class="overlayText"><%= challenge.challenge_name %></div>
+            </div>
           </div>
-        </div>
+        <% end %>
       <% end %>
       <br>
     </div>
-
   </div>
-  <div class="current_challenges">
-    <div>
-      <h2>Current Challenges</h2>
-      <%# NOTE: only if 8 current challenges, make it gray background. implement button to themes that is green if not 8 challenge %>
-      <a tabindex="0" id="too_many_challenge_popover" data-toggle="popover" data-placement="left"
-      data-content="You can only have a maximum of 8 challenges ongoing at a time!">
-        <div id="add_challenge">+</div>
-      </a>
-
-    </div>
-    <div>
-      <div class="current_challenges_box dashboard thumbnail">
-        <div class="current_challenges_overlay overlay dashboard">
-          <div class="overlayText">challenge name</div>
-        </div>
-      </div>
-      <div class="current_challenges_box dashboard thumbnail">
-        <div class="current_challenges_overlay overlay dashboard">
-          <div class="overlayText">challenge name</div>
-        </div>
-      </div>
-      <div class="current_challenges_box dashboard thumbnail">
-        <div class="current_challenges_overlay overlay dashboard">
-          <div class="overlayText">challenge name</div>
-        </div>
-      </div>
-      <div class="current_challenges_box dashboard thumbnail last">
-        <div class="current_challenges_overlay overlay dashboard">
-          <div class="overlayText">challenge name</div>
-        </div>
-      </div>
-      <br>
-    </div>
-
-  </div>
-  <div class="current_challenges">
-    <div>
-      <h2>Current Challenges</h2>
-      <a tabindex="0" id="no_challenge_popover" data-toggle="popover" data-placement="left"
-      data-content="Click here to add a challenge and make a difference!">
-        <div id="add_challenge">+</div>
-      </a>
-
-    </div>
-    <div>
-      <div class="new_challenge current_challenges_box dashboard">No current challenges</div>
-    </div>
-
-  </div>
-
 </div>

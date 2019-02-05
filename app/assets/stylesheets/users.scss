@@ -46,6 +46,9 @@
   .current_challenges_box {
     width: 175px;
     height: 175px;
+    &:hover {
+      box-shadow: none;
+    }
   }
   .current_challenges_overlay {
     height: 171px;
@@ -80,8 +83,8 @@
     }
   }
   .close {
-    margin-right: 6px;
-    margin-top: -2px;
+    margin-right: 7px;
+    margin-top: 2px;
     font-size: 22px;
     color: #808285;
   }
