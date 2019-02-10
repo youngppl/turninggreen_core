@@ -1,6 +1,6 @@
 language: ruby
 rvm:
-  - 2.5.1
+  - 2.5.3
 cache: bundler
 services:
   - postgresql
@@ -9,5 +9,4 @@ before_script:
   - psql -c 'create database turninggreen_test;' -U postgres
   - bundle exec rake db:create
   - bundle exec rake db:migrate RAILS_ENV=test
-script: bundle exec rspec  
-
+script: bundle exec rspec
