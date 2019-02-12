@@ -5,28 +5,26 @@
 <div class="themesPage">
   <h1 class="themesTitle">THEMES</h1>
   <p class="themesHelpText">In order to access the challenges, choose a theme below to unlock.</p>
-  <div class="themesContainer container">
-    <% themesRows.each do |row| %>
-    <div class="themesRow">
-      <% row.each do |challenge_name| %>
-      <div class="theme current_challenges_box">
-        <div class="thumbnail text-center">
-          <% if !current_user.unlockedChallenges.include?(challenge_name) %>
-            <div class="theme-locked">
-              <div class="theme-locked-background"></div>
-              <%= image_tag("lock.svg", size:"60x60", class:"theme-locked-icon") %>
-            </div>
-          <% end %>
-          <%# <%= image_tag("avatar.png", class:"current_challenges_overlay") %>
-          <%= link_to challenges_path(challenge_name) do %>
-            <div class="overlay current_challenges_overlay">
-              <div class="overlayText challenge-name-text"><%= challenge_name %></div>
-            </div>
-          <% end %>
-        </div>
+  <% themesRows.each do |row| %>
+  <div class="themesRow">
+    <% row.each do |challenge_name| %>
+    <div class="theme current_challenges_box">
+      <div class="thumbnail text-center">
+        <% if !current_user.unlockedChallenges.include?(challenge_name) %>
+          <div class="theme-locked">
+            <div class="theme-locked-background"></div>
+            <%= image_tag("lock.svg", size:"60x60", class:"theme-locked-icon") %>
+          </div>
+        <% end %>
+        <%# <%= image_tag("avatar.png", class:"current_challenges_overlay") %>
+        <%= link_to challenges_path(challenge_name) do %>
+          <div class="overlay current_challenges_overlay">
+            <div class="overlayText challenge-name-text"><%= challenge_name %></div>
+          </div>
+        <% end %>
       </div>
-      <% end %>
     </div>
     <% end %>
-</div>
+  </div>
+  <% end %>
 </div>

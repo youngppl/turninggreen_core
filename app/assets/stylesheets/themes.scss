@@ -9,9 +9,8 @@
 }
 
 .themesRow {
-  margin-bottom: 40px;
-  text-align: left;
-  padding-left: 60px;
+  width: 1200px;
+  margin: 25px auto;
 }
 
 .theme {
@@ -70,10 +69,6 @@
 
 .helpText, .themesHelpText {
   font-size: 15px;
-}
-
-.themesContainer {
-  margin-top: 30px;
 }
 
 .modal-dialog {
