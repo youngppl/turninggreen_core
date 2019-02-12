@@ -70,5 +70,14 @@ $(document).on("click", ".challenge-box .show-hidden" , function(){
 
 $(document).on('click', '.add-challenge-button', function(){
   $.post('/challenges/add', {challenge_name:'test challenge name',theme:challengeName,length_of_challenge:$(this).parents('.start-challenge').children('select').val()})
+  .then( function(data) {
+    if (data.showPopover) {
+      $('#challenge_added_popover').popover({
+        html: true,
+        template: '<div class="popover challenge_added_popover" role="tooltip"><div class="arrow"></div><h3 class="popover-header"></h3><button type="button" class="close">&times;</button><div class="popover-body"></div></div>',
+        content: "The test challenge challenge has been added to your challenges!"
+      }).popover('show');
+    }
+  })
   // TODO: change this to set challenge_name to html tag of the challenge box
 });
