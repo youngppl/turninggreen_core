@@ -1,5 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe "challenges/show.html.erb", type: :view do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+  context 'when user clicks on a locked challenge' do
+    it 'shows the unlock new challenge modal' do
+    end
+  end
+
+  context 'when user clicks on an unlocked challenge' do
+    it 'does not the unlock new challenge modal' do
+    end
+  end
 end
