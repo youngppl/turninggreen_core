@@ -29,11 +29,14 @@
     </div>
     <div>
       <% if current_user.challenges.length == 0 %>
-        <div class="new_challenge current_challenges_box dashboard">No current challenges</div>
+        <div class="new_challenge current_challenges_box">
+          <h5>No current challenges</h5>
+        </div>
       <% else %>
         <% @current_challenges.each do |challenge| %>
-          <div class="current_challenges_box dashboard thumbnail">
-            <div class="current_challenges_overlay overlay dashboard">
+          <div class="current_challenges_box thumbnail">
+            <h5>challenge countdown here</h5>
+            <div class="current_challenges_overlay overlay">
               <div class="overlayText"><%= challenge.challenge_name %></div>
             </div>
           </div>
