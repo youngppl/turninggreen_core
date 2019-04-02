@@ -3,6 +3,7 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
+debug.log
 
 # Ignore uploaded files in development
 /storage/*
