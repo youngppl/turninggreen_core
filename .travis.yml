@@ -8,6 +8,7 @@ addons:
   apt:
     packages:
       - google-chrome-stable
+      - chromium-chromedriver
 before_script:
   - cp config/database.yml.travis config/database.yml
   - psql -c 'create database turninggreen_test;' -U postgres
