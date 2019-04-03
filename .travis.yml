@@ -5,7 +5,9 @@ cache: bundler
 services:
   - postgresql
 addons:
-  - chrome: beta
+  apt:
+    packages:
+      - google-chrome-beta
 before_script:
   - cp config/database.yml.travis config/database.yml
   - psql -c 'create database turninggreen_test;' -U postgres
