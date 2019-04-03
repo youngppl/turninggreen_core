@@ -4,6 +4,8 @@ rvm:
 cache: bundler
 services:
   - postgresql
+addons:
+  - chrome: stable
 before_script:
   - cp config/database.yml.travis config/database.yml
   - psql -c 'create database turninggreen_test;' -U postgres
