@@ -7,10 +7,11 @@ services:
 addons:
   apt:
     packages:
-      - google-chrome-beta
+      - google-chrome-stable
 before_script:
   - cp config/database.yml.travis config/database.yml
   - psql -c 'create database turninggreen_test;' -U postgres
   - bundle exec rake db:create
   - bundle exec rake db:migrate RAILS_ENV=test
+  - bundle exec chromedriver-update 73.0.3683.68
 script: bundle exec rspec
