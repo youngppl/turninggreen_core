@@ -1,5 +1,5 @@
 module Helpers
-  def fillRegistrationsForm(name='bobbyboy', email='bobbyboy@gmail.com', state='California', country='United States', bday='2000-04-09', password='123qwe', confirm='123qwe', refer='Friend')
+  def fillRegistrationsForm(name='bobbyboy', email='bobbyboy@gmail.com', state='California', country='United States', bday='2000-04-09', password='123qwerty', confirm='123qwerty', refer='Friend')
     visit new_user_registration_path
     fill_in 'user_name', with: name
     fill_in 'user_email', with: email

@@ -14,7 +14,7 @@ RSpec.describe "devise/registrations/new.html.erb", type: :view do
     it 'displays password too short error', js: true do
       fillRegistrationsForm('asdf', 'bob@gmal.com', "California", "United States", '2000-04-09', "123", "123")
       clickRegister
-      expect(page).to have_content('Password is too short (minimum is 6 characters)')
+      expect(page).to have_content('Password is too short (minimum is 8 characters)')
     end
   end
   context 'when entered passwords do not match' do
@@ -32,10 +32,8 @@ RSpec.describe "devise/registrations/new.html.erb", type: :view do
   end
   context 'when user successfully signs up' do
     it 'queues a confirmation email' do
-      pending('stuck on this')
       fillRegistrationsForm
-      clickRegister
-      expect(page).to !ActionMailer::Base.deliveries.empty?
+      expect{clickRegister}.to change(ActionMailer::Base.deliveries, :count).by(1)
     end
   end
 end
