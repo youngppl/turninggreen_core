@@ -17,12 +17,12 @@
 
       <div class="formGroup">
         <span>
-          <%= f.select :state, options_for_select(us_states), {:prompt => "State"}, {:class => "inputField inputFieldSm", :required => true}  %>
+          <%= f.select :state, options_for_select(us_states, params.include?(:user)? params[:user][:state] : ""), {:prompt => "State"}, {:class => "inputField inputFieldSm", :required => true}  %>
         </span>
         <span class="required">*</span>
 
         <span>
-          <%= f.select :country, options_for_select(countries), {:prompt => "Country"}, {:class => "inputField inputFieldSm", :required => true, :onchange => "updateStateField();"} %>
+          <%= f.select :country, options_for_select(countries, params.include?(:user)? params[:user][:country] : ""), {:prompt => "Country"}, {:class => "inputField inputFieldSm", :required => true, :onchange => "updateStateField();"} %>
         </span>
         <span class="required">*</span>
       </div>
