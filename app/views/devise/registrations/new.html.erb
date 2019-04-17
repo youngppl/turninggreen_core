@@ -22,7 +22,7 @@
         <span class="required">*</span>
 
         <span>
-          <%= f.select :country, options_for_select(countries), {:prompt => "Country"}, {:class => "inputField inputFieldSm", :required => true} %>
+          <%= f.select :country, options_for_select(countries), {:prompt => "Country"}, {:class => "inputField inputFieldSm", :required => true, :onchange => "updateStateField();"} %>
         </span>
         <span class="required">*</span>
       </div>

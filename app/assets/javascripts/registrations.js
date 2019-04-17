@@ -88,10 +88,11 @@ function convertDate() {
   $('#datepicker').val(date.toISOString().substring(0,10));
 }
 
-$(document).ready(function() {
-  $('#user_country').on('change', function() {
-    if(this.value != 'United States') {
-      $('#user_state').val('NO')
-    }
-  })
-})
+
+function updateStateField() {
+  if(event.target.value != 'United States') {
+    $('#user_state').val('NO')
+  } else {
+    $('#user_state').val('AL')
+  }
+}
