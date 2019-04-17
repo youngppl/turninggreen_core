@@ -87,3 +87,11 @@ function convertDate() {
   date = new Date($('#datepicker').val());
   $('#datepicker').val(date.toISOString().substring(0,10));
 }
+
+$(document).ready(function() {
+  $('#user_country').on('change', function() {
+    if(this.value != 'United States') {
+      $('#user_state').val('NO')
+    }
+  })
+})
