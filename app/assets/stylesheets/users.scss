@@ -1,11 +1,21 @@
 .navbar {
-  background-color: #7FA86F;
-  color: white;
+  background-color: #ffffff;
+  color: #000000;
+  height: 128px;
+  border: solid 1px #979797;
+  .ml-auto li {
+    font-size: 30px;
+    font-weight: 500;
+    padding: 25px;
+    a {
+      color: inherit;
+    }
+  }
 }
-.navbar-nav.navbar-right li:not(:first-child):before{
-  content: " | ";
-  white-space: pre;
-}
+// .navbar-nav.navbar-right li:not(:first-child):before{
+//   content: " | ";
+//   white-space: pre;
+// }
 
 .dashboard {
   margin: auto;
@@ -166,14 +176,20 @@
   }
 }
 
-#dropdownMenuButton {
-  background: none;
-	color: inherit;
-	border: none;
-	padding: 0;
-	font: inherit;
-	cursor: pointer;
-	outline: inherit;
+.dropdown {
+  #dropdownMenuButton {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+  }
+  .dropdown-menu {
+    top: 80px;
+    font-size: 20px;
+  }
 }
 
 .settings {

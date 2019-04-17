@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg">
   <span class="navbar-brand" href="#">
-    <a href="<%= dashboard_path %>" tabindex="0" id="challenge_added_popover" data-toggle="popover" data-placement="bottom">
-    My Footprint App logo
+    <a href="<%= root_path %>" tabindex="0" id="challenge_added_popover" data-toggle="popover" data-placement="bottom">
+      <%= image_tag('logo.svg') %>
     </a>
   </span>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -9,16 +9,22 @@
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
+    <!-- <ul class="navbar-nav ml-auto">
       <li>My Footprint(search bar)</li>
-    </ul>
+    </ul> -->
 
-    <ul class="navbar-nav navbar-right">
-      <li>Tips</li>
-      <li>221 pts</li>
+    <ul class="navbar-nav ml-auto">
+      <li><%= link_to 'home', dashboard_path %></li>
+      <li><%= link_to 'themes', themes_path %></li>
+      <li class="dropdown">
+        <button id="dropdownMenuButton" data-toggle="dropdown">notifications</button>
+        <div class="dropdown-menu dropdown-menu-right">
+          thers i sno dnotifia
+        </div>
+      </li>
       <li class="dropdown">
         <button id="dropdownMenuButton" data-toggle="dropdown">
-          <%= image_tag(profile_pic_link, size: '25x25', class: 'rounded-circle') %>
+          <%= image_tag(profile_pic_link, size: '62x62', class: 'rounded-circle') %>
         </button>
         <div class="dropdown-menu dropdown-menu-right">
           <%= link_to 'Settings', edit_user_registration_path, class: 'dropdown-item' %>

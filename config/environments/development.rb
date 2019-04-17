@@ -1,6 +1,9 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-
+  config.serve_static_assets = false
+  config.assets.cache_store = :null_store  # Disables the Asset cache
+  config.sass.cache = false  # Disable the SASS compiler cache
+  
   config.assets.precompile += %w( '.svg' )
   config.assets.css_compressor = :sass
   # In the development environment your application's code is reloaded on
