@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "devise/sessions/new.html.erb", type: :view do
   before(:each) do
-    @user = User.create(email: "bob@gmal.com", password: "agoodpassword")
+    @user = User.create(email: "bob@gmal.com", password: "agoodpassword", state: 'California', country: 'United States', birthday:'2000-04-09', password: '123qwerty', password_confirmation: '123qwerty', referral: 'Friend')
   end
 
   after(:each) do

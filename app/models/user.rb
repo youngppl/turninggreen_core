@@ -29,7 +29,7 @@ class User < ApplicationRecord
   end
 
   def validate_age
-    if birthday > 13.years.ago
+    if (!birthday.nil?) and (birthday > 13.years.ago)
       errors.add(:base, 'You must be at least 13 years of age')
     end
   end
