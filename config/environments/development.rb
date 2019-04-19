@@ -3,6 +3,7 @@ Rails.application.configure do
   config.assets.configure do |env|
     env.cache = ActiveSupport::Cache.lookup_store(:null_store)
   end
+
   config.assets.precompile += %w( '.svg' )
   config.assets.css_compressor = :sass
   # In the development environment your application's code is reloaded on
