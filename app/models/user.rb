@@ -24,13 +24,13 @@ class User < ApplicationRecord
 
   def validate_state
     if (country != 'United States' and state != 'NO') or (country == 'United States' and state == 'NO')
-      errors.add(:state, 'and country do not match')
+      errors.add(:state, '(for USA only) and country do not match')
     end
   end
 
   def validate_age
     if (!birthday.nil?) and (birthday > 13.years.ago)
-      errors.add(:base, 'You must be at least 13 years of age')
+      errors.add(:base, 'You must be at least 13 years old to register')
     end
   end
 
