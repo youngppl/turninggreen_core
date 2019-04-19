@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          :confirmable
+  validate :validate_state
+  validate :validate_age
   has_one_attached :profile_pic
   has_many :challenges
   def update_with_password(params={})
@@ -16,6 +18,20 @@ class User < ApplicationRecord
     result = update_attributes(params)
     clean_up_passwords
     result
+  end
+
+  private
+
+  def validate_state
+    if (country != 'United States' and state != 'NO') or (country == 'United States' and state == 'NO')
+      errors.add(:state, '(for USA only) and country do not match')
+    end
+  end
+
+  def validate_age
+    if (!birthday.nil?) and (birthday > 13.years.ago)
+      errors.add(:base, 'You must be at least 13 years old to register')
+    end
   end
 
 end
