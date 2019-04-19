@@ -64,7 +64,7 @@
 }
 
 .helpText, .modalHeader, .themeVideo {
-  color: #fff;
+  color: #4f5151;
 }
 
 .helpText, .themesHelpText {
@@ -78,37 +78,51 @@
 
 #challenge-modal {
   .modal-body, .modal-content {
-    border-radius: 40px;
     iframe#video {
       margin-top: -7px;
     }
     .helpText {
-      margin: 12px;
-      margin-top: 30px;
+      font-size: 28px;
+      line-height: 1.64;
+      letter-spacing: -0.2px;
+      .description {
+        font-weight: 500;
+      }
+      .watchVideoText {
+        font-weight: bold;
+      }
+    }
+  }
+  .modal-body {
+    margin: 88px 163px;
+    span {
+      color: inherit;
     }
   }
   .modal-content {
-    height: 400px;
-    background-color: #90b582;
-    padding: 70px 0;
-    text-align: center;
-    width: 900px;
-    margin: auto;
+    width: 1078px;
+    height: 727px;
+    border-radius: 4px;
+    box-shadow: 2px 2px 14px 0 rgba(0, 0, 0, 0.5);
+    background-color: #f9f9f9;
+    display: inline-block;
   }
-  h1.modalHeader {
-    font-weight: bold;
-    font-size: 40px;
+  h2.modalHeader {
+    font-size: 60px;
+    font-weight: 900;
+    letter-spacing: -0.2px;
   }
   .modal-close {
-    margin-right: 23px;
-    margin-top: -50px;
-    margin-bottom: 11px;
+    margin-right: 40px;
+    margin-top: 38px;
+    float: right;
+    line-height: 1;
   }
   button.close {
-    font-size: 41px;
-    span {
-      color: white;
-    }
+    opacity: 1;
+  }
+  .watchVideo {
+    text-align: center;
   }
   .slide {
     position: absolute;
@@ -125,7 +139,7 @@
     &.third {
       margin-top: -49px;
     }
-    .arrow button {
+    .watchVideo button {
       background: none;
     	color: inherit;
     	border: none;
