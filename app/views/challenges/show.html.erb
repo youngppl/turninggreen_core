@@ -70,19 +70,24 @@
       <div class="modal-content">
         <div class="modal-close">
           <button type="button" class="close" id="modal-close-button" onclick="location.href='/themes';" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
+            <%= image_tag 'exit-button.svg' %>
+            <!-- <span aria-hidden="true">&times;</span> -->
           </button>
         </div>
         <div class="modal-body">
           <div class="first slide">
-            <h1 class="modalHeader">UNLOCK <%= @challenge_name %></h1>
+            <h2 class="modalHeader">Unlock <%= @challenge_name %> Challenges</h2>
             <% if !@challenge_data.key?(:videoID) %>
               <p class="helpText"><%= @challenge_data[:videoCaption] %></p>
             <% else %>
-              <p class="helpText">In order to unlock this theme, click the arrow to learn more about <%= @challenge_name.downcase %>.</p>
-              <div class="arrow">
-                <button type="button" name="next-arrow" onclick="nextArrow();">
-                  <%= image_tag 'arrow.svg', size: '128x80' %>
+              <p class="helpText">
+                <span class="description"><%= @challenge_data[:briefDescription] %></span>
+                <br><br>
+                <span class="watchVideoText">Watch the following video to unlock <%= @challenge_name.downcase %> challenges.</span>
+              </p>
+              <div class="watchVideo">
+                <button type="button" name="watch-video" onclick="nextArrow();">
+                  Watch Video
                 </button>
               </div>
             <% end %>
