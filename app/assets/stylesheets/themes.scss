@@ -139,6 +139,7 @@
     }
     &.third {
       margin-top: -49px;
+      text-align: center;
     }
     .watchVideo button {
       background-color: #87b67b;
@@ -156,16 +157,18 @@
 }
 .challenge-unlock {
   .cool {
-    font-size: 35px;
-    opacity: 0;
+    font-family: Raleway;
+    font-size: 32px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.31;
+    letter-spacing: -0.2px;
+    text-align: center;
+    color: #4f5151;
   }
-  .checkbox {
-    height: 110px;
-    width: 110px;
-    background-color: white;
-    margin: 27px auto;
-    border: 10px solid #808285;
-    border-radius: 26px;
+  .greatjob {
+    font-weight:900;
   }
   #check {
     fill: none;
@@ -212,6 +215,17 @@
     -webkit-animation-name: fadeIn 1s 1s ease;
     animation: fadeIn 1s 1s ease;
     animation-fill-mode: forwards;
+    width: 478px;
+    height: 87px;
+    font-family: Raleway;
+    font-size: 32px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.31;
+    letter-spacing: -0.2px;
+    text-align: center;
+    color: #4f5151;
   }
 }
 .theme-locked-background {
