@@ -133,8 +133,8 @@
     margin-right: auto;
     left: 0;
     right: 0;
-    &.first {
-
+    &.second {
+      text-align: center;
     }
     &.second, &.third {
       display:none;
