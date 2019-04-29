@@ -17,31 +17,44 @@
 </script>
 
 <div class="challenge-page">
-  <div class="heading">
-    <h1 class="title">
-      <%= @challenge_name %>
-    </h1>
-    <h5 class="instructions">
-      <% if !@theme_data.nil? %>
-        <%= @theme_data[:instructions] %>
-      <% else %>
-        Instructions/descriptor text about how to do challenges etc.
-      <% end %>
-    </h5>
+<div class="back-button">
+  <button type="button" class="back" name="button" onclick="history.back()">
+  <%= image_tag 'arrow-back.svg'%>
+  </button>
+  <h1 class="WASTE-CHALLENGES">WASTE CHALLENGES</h1>
   </div>
+  <div class="Completed-Challenges">
+    <div class="Completed">
+      <h1>Completed</h1>
+      </div>
+    <div class="Rectangle">
+    <div class="SmallRectangle">
+        </div>
+    <div class="Start-your-journey-t">
+      <h4>Start your journey to sustainability to the right!</h4>
+      </div>
+          </div>
+            </div>
   <div class="challenges-content">
+    <div class="To-Do">
+      <h1>To Do</h1>
+      </div>
     <% (1..6).each do %>
       <div class="challenge-box">
         <div class="challenge-icon">
-          <%= image_tag 'placeholder.png', size:"150x150"%>
+          <%= image_tag 'to-do-unchecked.png', size:"48x48"%>
         </div>
         <div class="challenge-info">
-          <h5 class="challenge-name">Challenge Name</h5>
+          <h5 class="challenge-name">Carry a bag for waste</h5>
           <button type="button" class="show-hidden">
             <i class="fas fa-chevron-down"></i>
             <i class="fas fa-chevron-up" style="display:none;"></i>
           </button>
-          <p class="challenge-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas convallis nisl ac eleifend lacinia. Donec nec hendrerit orci. In consequat augue et eleifend tempor. Quisque facilisis faucibus urna, sed vestibulum ex molestie sit amet. Nullam in luctus magna. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam tortor nisi, aliquet et elementum in, porta nec erat.</p>
+          <div class="participants">
+            <div class="Oval">
+            </div>
+          <p class="challenge-description">100 current participants</p>
+          </div>
           <div class="hidden" style="display:none;">
             <div class="learn-more">
               <h7><strong>Learn More</strong></h7>
@@ -51,7 +64,7 @@
             </div>
             <div class="the-challenge">
               <h7><strong>The Challenge</strong></h7>
-              <p class="challenge-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas convallis nisl ac eleifend lacinia. Donec nec hendrerit orci. In consequat augue et eleifend tempor. Quisque facilisis faucibus urna, sed vestibulum ex molestie sit amet. Nullam in luctus magna. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
+              <p class="challenge-description">latrin </p>
             </div>
             <div class="start-challenge">
               <h6><strong>How long do you want to take this challenge for?</strong></h6>
