@@ -46,8 +46,8 @@ function toThirdSlide(event) {
 function onYouTubeIframeAPIReady() {
   if(showVideo) {
     player = new YT.Player('video', {
-      height: '390',
-      width: '640',
+      height: '452',
+      width: '802',
       videoId: challengeVideoID,
       events: {
         'onReady': onPlayerReady,
