@@ -124,7 +124,7 @@ h3.challenges-completed {
 #challenge-modal {
   .modal-body, .modal-content {
     iframe#video {
-      margin-top: -7px;
+      margin-top: 0px;
     }
     .helpText {
       font-size: 28px;
@@ -139,14 +139,14 @@ h3.challenges-completed {
     }
   }
   .modal-body {
-    margin: 100px 163px;
+    margin: 100px 117px;
     span {
       color: inherit;
     }
   }
   .modal-content {
     width: 1078px;
-    height: 727px;
+    height: 778px;
     border-radius: 4px;
     box-shadow: 2px 2px 14px 0 rgba(0, 0, 0, 0.5);
     background-color: #f9f9f9;
@@ -156,7 +156,9 @@ h3.challenges-completed {
   h2.modalHeader {
     font-size: 60px;
     font-weight: 900;
-    letter-spacing: -0.2px;
+    letter-spacing: -0.24px;
+    text-align: center;
+    margin-bottom: 28px;
   }
   .modal-close {
     margin-right: 40px;
@@ -176,8 +178,8 @@ h3.challenges-completed {
     margin-right: auto;
     left: 0;
     right: 0;
-    &.first {
-
+    &.second {
+      text-align: center;
     }
     &.second, &.third {
       display:none;
