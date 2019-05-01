@@ -3,7 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .themesPage {
-  margin: 50px 0;
+  width: 1440px;
+  height: 1154px;
   color: black;
   text-align: center;
 }
@@ -63,12 +64,47 @@
   margin-bottom: 20px;
 }
 
+.themesTitle {
+  font-family: Raleway;
+  font-size: 55px;
+  font-weight: 700;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 5.6px;
+  color: #4a4a4a;
+}
+
 .helpText, .modalHeader, .themeVideo {
   color: #4f5151;
 }
 
+h2.outof {
+  font-size: 80px;
+}
+
+h3.challenges-completed {
+  font-family: Raleway;
+  font-size: 40px;
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #4a4a4a;
+  margin-bottom: 20px;
+}
+
 .helpText, .themesHelpText {
-  font-size: 15px;
+  font-family: Raleway;
+  font-size: 27px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+  color: #4a4a4a;
 }
 
 .modal-dialog {
@@ -215,8 +251,6 @@
     -webkit-animation-name: fadeIn 1s 1s ease;
     animation: fadeIn 1s 1s ease;
     animation-fill-mode: forwards;
-    width: 478px;
-    height: 87px;
     font-family: Raleway;
     font-size: 32px;
     font-weight: 500;
@@ -253,4 +287,29 @@ img.theme-locked-icon {
 }
 .challenge-name-text {
     font-size: 25px;
+}
+
+.check-img {
+    margin-top: 17px;
+}
+
+
+.createchange {
+    font-family: Raleway;
+    font-size: 26px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: -0.2px;
+    color: #1e1e1e;
+    margin-top: 6px; 
+}
+
+.button1 {
+    background-color: #87b67b;
+    border-radius: 12px;
+    width: 232px;
+    height: 53px;
+    margin-top: 45px;
 }
