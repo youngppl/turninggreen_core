@@ -159,6 +159,7 @@ h3.challenges-completed {
     letter-spacing: -0.24px;
     text-align: center;
     margin-bottom: 28px;
+    white-space: nowrap;
   }
   .modal-close {
     margin-right: 40px;
@@ -180,6 +181,7 @@ h3.challenges-completed {
     right: 0;
     &.second {
       text-align: center;
+      margin-top: -20px;
     }
     &.second, &.third {
       display:none;
