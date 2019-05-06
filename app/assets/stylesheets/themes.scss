@@ -176,6 +176,14 @@ h3.challenges-completed {
     margin-right: auto;
     left: 0;
     right: 0;
+    &.first {
+      margin-top: 10px;
+      // auto spacing for first slide of challenge unlock pop-up
+      display: flex;
+      flex-direction: column;
+      height: 560px;
+      justify-content: space-around;
+    }
     &.second {
       text-align: center;
       margin-top: -20px;
