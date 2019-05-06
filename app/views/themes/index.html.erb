@@ -1,19 +1,22 @@
-<% content_for :navbar do %>
-  <%= render 'layouts/dashboard_navbar' %>
+<% if !content_for?(:navbar) %>
+  <% content_for :navbar do %>
+    <%= render 'layouts/dashboard_navbar' %>
+  <% end %>
 <% end %>
 
 <div class="themesPage">
   <h1 class="themesTitle">THEMES</h1>
-  <h2 class="twelve">12</h2>
-  <h2 class="outof">out of 60</h2>
-  <h3 class="challenges-completed">challenges completed</h3>
-  <p class="themesHelpText">Click on the each theme below to see the impact you’ve made through each challenge!</p>
+  <p class="themesHelpText">In order to access the challenges, choose a theme below to unlock.</p>
   <% themesRows.each do |row| %>
   <div class="themesRow">
     <% row.each do |challenge_name| %>
-    <%= image_tag 'outer-ring.svg' %>
-      <div class="thumbnail text-center" id="<%=challenge_name%>">
+    <div class="theme current_challenges_box">
+      <div class="thumbnail text-center">
         <% if !current_user.unlockedChallenges.include?(challenge_name) %>
+          <div class="theme-locked">
+            <div class="theme-locked-background"></div>
+            <%= image_tag("lock.svg", size:"60x60", class:"theme-locked-icon") %>
+          </div>
         <% end %>
         <%# <%= image_tag("avatar.png", class:"current_challenges_overlay") %>
         <%= link_to challenges_path(challenge_name) do %>
@@ -26,5 +29,4 @@
     <% end %>
   </div>
   <% end %>
-  
 </div>
