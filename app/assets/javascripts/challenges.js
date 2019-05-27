@@ -59,8 +59,8 @@ function onYouTubeIframeAPIReady() {
    }
 }
 
-$(document).on("click", ".challenge-box .show-hidden" , function(){
-  $(this).parents('.challenge-info').children('.hidden').toggle();
+$(document).on("click", ".challenge-box", function(){
+  $(this).children('.challenge-info').children('.hidden').toggle();
   $(this).find('i').toggle();
 });
 
