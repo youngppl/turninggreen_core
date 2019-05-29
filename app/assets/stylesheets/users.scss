@@ -24,9 +24,29 @@
     padding: 25px;
     display: table-cell;
     vertical-align: middle;
+    text-align: center;
     a {
       color: inherit;
+      text-decoration: none;
     }
+  }
+
+  .home-underline {
+    width: 103px;
+    height: 2px;
+    border: solid 2px #92b584;
+  }
+
+  .themes-underline {
+    width: 132px;
+    height: 2px;
+    border: solid 2px #92b584;
+  }
+
+  .separator-line {
+    width: 1px;
+    height: 57px;
+    border: solid 1px #979797;
   }
 }
 // .navbar-nav.navbar-right li:not(:first-child):before{
