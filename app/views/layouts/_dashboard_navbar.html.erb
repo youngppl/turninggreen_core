@@ -12,8 +12,9 @@
     <ul class="navbar-nav ml-auto navbar-buttons">
       <li><%= link_to 'home', dashboard_path %></li>
       <li><%= link_to 'themes', themes_path %></li>
+      <li><div class="separator-line"></div></li>
       <li class="dropdown">
-        <button id="dropdownMenuButton" data-toggle="dropdown">notifications</button>
+        <button id="dropdownMenuButton" data-toggle="dropdown"><%= image_tag('notification-bell.svg') %></button>
         <div class="dropdown-menu dropdown-menu-right notifications-dropdown">
           You have no notifications right now!
         </div>
