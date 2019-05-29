@@ -59,8 +59,15 @@ function onYouTubeIframeAPIReady() {
    }
 }
 
-$(document).on("click", ".challenge-box", function(){
-  $(this).children('.challenge-info').children('.hidden').toggle();
+$(document).on("click", ".challenge-box", function (e){
+  if(e.target == this) {
+    $(this).children('.challenge-info').children('.hidden').toggle();
+    $(this).find('i').toggle();
+  }
+});
+
+$(document).on("click", ".show-hidden", function (){
+  $(this).parent().children('.hidden').toggle();
   $(this).find('i').toggle();
 });
 
