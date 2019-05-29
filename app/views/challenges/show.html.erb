@@ -2,39 +2,26 @@
   <%= render 'layouts/dashboard_navbar' %>
 <% end %>
 
-<script>
-  <% if @challenge_data.key?(:videoID) %>
-    var challengeVideoID = "<%= @challenge_data[:videoID] %>";
-    var showVideo = true;
-  <% else %>
-    var showVideo = false;
-  <% end %>
-  var challengeName = "<%= @challenge_name %>";
-  var already_unlocked = <%= @already_unlocked %>;
-  <% if !@already_unlocked %>
-    $('#challenge-modal').modal('show');
-  <% end %>
-</script>
+<div class="themes-page-overlay">
+  <%= render template: '/themes/index.html.erb' %>
+</div>
 
 <div class="challenge-page">
 <div class="back-button">
-  <button type="button" class="back" name="button" onclick="history.back()">
+  <button type="button" class="back" name="button" onclick="location.href='/themes';">
   <%= image_tag 'arrow-back.svg'%>
   </button>
-  <h1 class="WASTE-CHALLENGES">WASTE CHALLENGES</h1>
+  <h1 class="challenge-title"><%= @challenge_name %> CHALLENGES</h1>
   </div>
   <div class="Completed-Challenges">
-    <div class="Completed">
-      <h1>Completed</h1>
-      </div>
+    <div class="Completed"><h1>Completed</h1></div>
     <div class="Rectangle">
-    <div class="SmallRectangle">
-        </div>
-    <div class="Start-your-journey-t">
-      <h4>Start your journey to sustainability to the right!</h4>
+      <div class="SmallRectangle"></div>
+      <div class="Start-your-journey-t">
+        <h4>Start your journey to sustainability to the right!</h4>
       </div>
-          </div>
-            </div>
+    </div>
+  </div>
   <div class="challenges-content">
     <div class="To-Do">
       <h1>To Do</h1>
@@ -77,7 +64,7 @@
     <% end %>
   </div>
 
-
+</div>
   <div class="modal" id="challenge-modal" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
@@ -110,20 +97,20 @@
             <div id="video">
               If the video does not appear in 10 seconds, exit this pop-up and click this theme again.
             </div>
-            <!--<p class="helpText"><%= @challenge_data[:videoCaption] %></p>-->
+            <p class="helpText"><%= @challenge_data[:videoCaption] %></p>
           </div>
           <div class="third slide">
             <div class="challenge-unlock helpText">
               <h3 class="greatjob">Great Job!</h3>
-                <div class="cool fadeIn">
+                <div class="cool">
                   You just unlocked the <%= @challenge_name %> challenges!
                   <br>Now, let’s create change!
                 </div>
                 <div class="check-img">
                   <%= image_tag 'to-do-checked.svg' %>
                 </div>
-                  <button type="button" class="button1" name="button" onclick="history.back()">
-                    <h2 class="createchange">Create Change</h2>
+                  <button type="button" class="create-change-button" name="button" onclick="$('#challenge-modal').modal('hide');">
+                    <h2 class="create-change-text">Create Change</h2>
                   </button>
             </div>
           </div>
@@ -131,3 +118,20 @@
       </div>
     </div>
 </div>
+
+<script>
+  <% if @challenge_data.key?(:videoID) %>
+    var challengeVideoID = "<%= @challenge_data[:videoID] %>";
+    var showVideo = true;
+  <% else %>
+    var showVideo = false;
+  <% end %>
+  var challengeName = "<%= @challenge_name %>";
+  var already_unlocked = <%= @already_unlocked %>;
+  <% if !@already_unlocked %>
+    $('#challenge-modal').modal('show');
+  <% else %>
+    $('.themes-page-overlay').hide();
+    $('.challenge-page').show();
+  <% end %>
+</script>

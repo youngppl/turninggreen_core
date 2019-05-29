@@ -3,9 +3,6 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .themesPage {
-  width: 1440px;
-  height: 1154px;
-  color: black;
   text-align: center;
 }
 
@@ -159,6 +156,7 @@ h3.challenges-completed {
     letter-spacing: -0.24px;
     text-align: center;
     margin-bottom: 28px;
+    white-space: nowrap;
   }
   .modal-close {
     margin-right: 40px;
@@ -178,15 +176,37 @@ h3.challenges-completed {
     margin-right: auto;
     left: 0;
     right: 0;
+    &.first {
+      margin-top: 10px;
+      // auto spacing for first slide of challenge unlock pop-up
+      display: flex;
+      flex-direction: column;
+      height: 560px;
+      justify-content: space-around;
+    }
     &.second {
       text-align: center;
+      margin-top: -20px;
     }
     &.second, &.third {
       display:none;
     }
     &.third {
-      margin-top: -49px;
-      text-align: center;
+      .create-change-text {
+        font-size: 26px;
+        font-weight: bold;
+        letter-spacing: -0.2px;
+        margin-top: 6px;
+      }
+
+      .create-change-button {
+          background-color: #87b67b;
+          border-radius: 12px;
+          width: 232px;
+          height: 53px;
+          margin-top: 45px;
+          border: none;
+      }
     }
     .watchVideo button {
       background-color: #87b67b;
@@ -302,25 +322,4 @@ img.theme-locked-icon {
 
 .check-img {
     margin-top: 17px;
-}
-
-
-.createchange {
-    font-family: Raleway;
-    font-size: 26px;
-    font-weight: bold;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: normal;
-    letter-spacing: -0.2px;
-    color: #1e1e1e;
-    margin-top: 6px;
-}
-
-.button1 {
-    background-color: #87b67b;
-    border-radius: 12px;
-    width: 232px;
-    height: 53px;
-    margin-top: 45px;
 }
