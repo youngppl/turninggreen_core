@@ -39,7 +39,9 @@ function toThirdSlide(event) {
     player = null;
     $('.second')[0].style.display = 'none';
     $('.third')[0].style.display = 'block';
-    document.getElementById('modal-close-button').onclick = function(){$('#challenge-modal').modal('hide');};
+    document.getElementById('modal-close-button').style.display = 'none';
+    $('.themes-page-overlay').hide();
+    $('.challenge-page').show();
     $.post("/challenges/unlock", {challenge:challengeName});
   }
 }
