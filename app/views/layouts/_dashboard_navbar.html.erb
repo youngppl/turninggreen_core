@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg">
   <span class="navbar-brand" href="#">
-    <a href="<%= root_path %>" tabindex="0" id="challenge_added_popover" data-toggle="popover" data-placement="bottom">
+    <a href="<%= root_path %>" tabindex="0" id="challenge_added_popover" class="tg-logo" data-toggle="popover" data-placement="bottom">
       <%= image_tag('logo.svg') %>
     </a>
   </span>
@@ -23,8 +23,8 @@
           <%= image_tag(profile_pic_link, size: '62x62', class: 'rounded-circle') %>
         </button>
         <div class="dropdown-menu dropdown-menu-right">
-          <%= link_to 'Settings', edit_user_registration_path, class: 'dropdown-item' %>
-          <%= link_to 'Log Out', destroy_user_session_path, method: :delete, class: 'dropdown-item'%>
+          <%= link_to 'Settings', edit_user_registration_path, class: 'dropdown-item', id: 'settings-button' %>
+          <%= link_to 'Log Out', destroy_user_session_path, method: :delete, class: 'dropdown-item', id: 'logout-button'%>
         </div>
       </li>
     </ul>
