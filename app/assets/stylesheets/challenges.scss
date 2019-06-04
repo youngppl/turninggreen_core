@@ -37,6 +37,13 @@
       background-color: #f9f9f9;
       margin-bottom: 16px;
       cursor: pointer;
+      position: relative;
+      .expand-clickable-area {
+        width: 501px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+      }
     }
     .hidden {
     margin-bottom: 10px;
@@ -96,6 +103,8 @@
         }
         .learn-more {
           margin-bottom: 20px;
+          position: relative;
+          z-index: 3;
         }
         .links {
           color: #90b582;
@@ -125,6 +134,8 @@
           margin-bottom: 10px;
           padding: 2px;
           outline: 0;
+          position: relative;
+          z-index: 3;
         }
         .label {
           margin-left: 20px;
@@ -153,6 +164,8 @@
           border-radius: 18px;
           width: 200px;
           margin-top: 10px;
+          position: relative;
+          z-index: 3;
         }
         .show-hidden {
           background:none;

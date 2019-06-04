@@ -59,16 +59,9 @@ function onYouTubeIframeAPIReady() {
    }
 }
 
-$(document).on("click", ".challenge-box", function (e){
-  if(e.target == this) {
-    $(this).children('.challenge-info').children('.hidden').toggle();
-    $(this).find('i').toggle();
-  }
-});
-
-$(document).on("click", ".show-hidden", function (){
-  $(this).parent().children('.hidden').toggle();
-  $(this).find('i').toggle();
+$(document).on("click", ".expand-clickable-area", function (){
+  $(this).parent().children('.challenge-info').children('.hidden').toggle();
+  $(this).parent().find('i').toggle();
 });
 
 $(document).on('click', '.add-challenge-button', function(event){
