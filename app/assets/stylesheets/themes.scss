@@ -3,9 +3,6 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .themesPage {
-  width: 1440px;
-  height: 1154px;
-  color: black;
   text-align: center;
 }
 
@@ -81,29 +78,6 @@
   color: #4f5151;
 }
 
-h2.twelve {
-  font-size: 80px;
-  margin-left: 530px;
-  float: left;
-}
-
-h2.outof {
-  font-size: 80px;
-  margin-right: 465px;
-}
-
-h3.challenges-completed {
-  font-family: Raleway;
-  font-size: 40px;
-  font-weight: 600;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  color: #4a4a4a;
-  margin-bottom: 20px;
-}
-
 .helpText, .themesHelpText {
   font-family: Raleway;
   font-size: 27px;
@@ -114,6 +88,7 @@ h3.challenges-completed {
   letter-spacing: normal;
   text-align: center;
   color: #4a4a4a;
+  margin-top: 58px;
 }
 
 .modal-dialog {
@@ -179,6 +154,14 @@ h3.challenges-completed {
     margin-right: auto;
     left: 0;
     right: 0;
+    &.first {
+      margin-top: 10px;
+      // auto spacing for first slide of challenge unlock pop-up
+      display: flex;
+      flex-direction: column;
+      height: 560px;
+      justify-content: space-around;
+    }
     &.second {
       text-align: center;
       margin-top: -20px;
