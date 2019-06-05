@@ -20,6 +20,7 @@
   display: inline-block;
   white-space: nowrap;
   vertical-align: top;
+  position: relative;
   .theme-name {
     font-size: 30px;
     font-weight: 600;
@@ -43,8 +44,35 @@
       margin: auto;
     }
   }
+  // .hidden {
+  //   display: none;
+  // }
+  .completed-ring {
+    position: absolute;
+    top: 0;
+    .ring {
+      position: absolute;
+      top: 0;
+      &.one, &.two {
+        margin-left: 102px;
+      }
+      &.three {
+        margin-left: 85px;
+        margin-top: 1px;
+      }
+      &.four {
+        margin-left: 14px;
+      }
+      &.five {
+        margin-left: -29px;
+      }
+      &.six {
+        margin-top: -25px;
+        margin-left: -29px;
+      }
+    }
+  }
 }
-
 .thumbnail {
   position: relative;
   cursor: pointer;
