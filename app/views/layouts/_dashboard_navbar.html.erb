@@ -16,13 +16,16 @@
       <li><%= link_to 'themes', themes_path %><div class="themes-underline" style="display:none;"></div></li>
       <li><div class="separator-line"></div></li>
       <li class="dropdown">
-        <button id="dropdownMenuButton" data-toggle="dropdown"><%= image_tag('notification-bell.svg') %></button>
+        <button id="dropdownMenuButton" data-toggle="dropdown" class="notification-button">
+          <%= image_tag 'notification-bell.svg', class: 'notification-bell-icon' %>
+          <%= image_tag 'notification-alert.svg', class: 'notification-green-dot'  %>
+        </button>
         <div class="dropdown-menu dropdown-menu-right notifications-dropdown">
           You have no notifications.
         </div>
       </li>
       <li class="dropdown">
-        <button id="dropdownMenuButton" data-toggle="dropdown">
+        <button id="dropdownMenuButton" data-toggle="dropdown" class="profile-picture">
           <%= image_tag(profile_pic_link, size: '57x57', class: 'rounded-circle') %>
         </button>
         <div class="dropdown-menu dropdown-menu-right">
