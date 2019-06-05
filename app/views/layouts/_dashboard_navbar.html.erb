@@ -1,7 +1,9 @@
 <nav class="navbar navbar-expand-lg">
   <span class="navbar-brand" href="#">
     <a href="<%= root_path %>" tabindex="0" id="challenge_added_popover" data-toggle="popover" data-placement="bottom">
+      <div class="logo-tag"
       <%= image_tag('logo.svg') %>
+        </div>
     </a>
   </span>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -10,17 +12,18 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ml-auto navbar-buttons">
-      <li><%= link_to 'home', dashboard_path %></li>
-      <li><%= link_to 'themes', themes_path %></li>
+      <li><%= link_to 'home', dashboard_path %><div class="home-underline" style="display:none;"></div></li>
+      <li><%= link_to 'themes', themes_path %><div class="themes-underline" style="display:none;"></div></li>
+      <li><div class="separator-line"></div></li>
       <li class="dropdown">
-        <button id="dropdownMenuButton" data-toggle="dropdown">notifications</button>
+        <button id="dropdownMenuButton" data-toggle="dropdown"><%= image_tag('notification-bell.svg') %></button>
         <div class="dropdown-menu dropdown-menu-right notifications-dropdown">
-          You have no notifications right now!
+          You have no notifications.
         </div>
       </li>
       <li class="dropdown">
         <button id="dropdownMenuButton" data-toggle="dropdown">
-          <%= image_tag(profile_pic_link, size: '62x62', class: 'rounded-circle') %>
+          <%= image_tag(profile_pic_link, size: '57x57', class: 'rounded-circle') %>
         </button>
         <div class="dropdown-menu dropdown-menu-right">
           <%= link_to 'Settings', edit_user_registration_path, class: 'dropdown-item' %>
