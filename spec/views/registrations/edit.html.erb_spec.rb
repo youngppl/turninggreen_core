@@ -7,6 +7,7 @@ RSpec.describe "devise/registrations/edit.html.erb", type: :view do
       @user.confirm
       signInUser(@user.email, @user.password)
       visit edit_user_registration_path
+      save_and_open_screenshot
       expect(find_field('user_email').value).to eq @user.email
       expect(page).to have_select('user_state', selected: 'California')
       expect(page).to have_select('user_country', selected: 'United States')
