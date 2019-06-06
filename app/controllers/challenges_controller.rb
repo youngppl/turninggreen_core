@@ -43,6 +43,6 @@ class ChallengesController < ApplicationController
   private
 
   def challenge_params
-    params.permit(:challenge_name, :theme, :length_of_challenge)
+    params.permit(:challenge_name, :theme, :length_of_challenge, :completed)
   end
 end

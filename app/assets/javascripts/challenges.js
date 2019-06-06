@@ -63,7 +63,7 @@ $(document).on("click", ".challenge-box .show-hidden" , function(){
 });
 
 $(document).on('click', '.add-challenge-button', function(){
-  $.post('/challenges/add', {challenge_name:'test challenge name',theme:challengeName,length_of_challenge:$(this).parents('.start-challenge').children('select').val()})
+  $.post('/challenges/add', {challenge_name:'test challenge name',theme:challengeName,length_of_challenge:$(this).parents('.start-challenge').children('select').val(),completed:true})
   .then( function(data) {
     if (data.showPopover) {
       $('#challenge_added_popover').popover({
