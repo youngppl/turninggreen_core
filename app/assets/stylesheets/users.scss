@@ -237,12 +237,6 @@
     line-height: 80px;
   }
 
-img {
-  width: 36px;
-  height: 32px;
-  object-fit: contain;
-}
-
 .settings {
   @extend .dashboard;
   padding-top: 15px;
