@@ -59,13 +59,13 @@ function onYouTubeIframeAPIReady() {
    }
 }
 
-$(document).on("click", ".challenge-box .show-hidden" , function(){
-  $(this).parents('.challenge-info').children('.hidden').toggle();
-  $(this).find('i').toggle();
+$(document).on("click", ".expand-clickable-area", function (){
+  $(this).parent().children('.challenge-info').children('.hidden').toggle();
+  $(this).parent().find('i').toggle();
 });
 
-$(document).on('click', '.add-challenge-button', function(){
-  $.post('/challenges/add', {challenge_name:'test challenge name',theme:challengeName,length_of_challenge:$(this).parents('.start-challenge').children('select').val()})
+$(document).on('click', '.add-challenge-button', function(event){
+  $.post('/challenges/add', {challenge_name:'test challenge name',theme:challengeName,length_of_challenge:$(this).parent().children('select').val()})
   .then( function(data) {
     if (data.showPopover) {
       $('#challenge_added_popover').popover({
@@ -74,6 +74,9 @@ $(document).on('click', '.add-challenge-button', function(){
         content: "The test challenge challenge has been added to your challenges!"
       }).popover('show');
     }
+    var d = new Date();
+    $(event.target.parentElement).html("<h5 class=\"challenge-started\">You started this challenge on " + (d.getMonth()+1) + "/" + d.getDate() + " and have " + $(event.target).parent().children('select').val()*7 + " days left!</h5><h5 class=\"you-got-this\">You got this!</h5>")
   })
+  // TODO: make date dynamic, read it from challenge object in backend
   // TODO: change this to set challenge_name to html tag of the challenge box
 });
