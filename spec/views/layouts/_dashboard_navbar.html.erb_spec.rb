@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "layouts/_dashboard_navbar.html.erb", type: :view do
+RSpec.describe "layouts/_dashboard_navbar.html.erb", type: :view, js: true do
   before(:each) do
 
     @user = User.create(email: "bob@gmal.com", state: 'California', country: 'United States', birthday:'2000-04-09', password: '123qwerty', password_confirmation: '123qwerty', referral: 'Friend')
@@ -31,7 +31,7 @@ RSpec.describe "layouts/_dashboard_navbar.html.erb", type: :view do
     end
     it 'underlines home link in green' do
       click_on "home"
-      expect(page).to have_selector('.home-underline', visible: true)
+      expect(page.find('.home-underline', visible: false)[:style]).to_not match('/display: none;/')
     end
   end
 
@@ -42,16 +42,23 @@ RSpec.describe "layouts/_dashboard_navbar.html.erb", type: :view do
     end
     it 'underlines themes link in green' do
       click_link "themes"
-      expect(page).to have_selector('.themes-underline', visible: true)
+      expect(page.find('.themes-underline', visible: false)[:style]).to_not match('/display: none;/')
     end
   end
 
   context 'when a user logs out' do
     it 'takes user to the front page' do
-      pending('sucks')
-      click_link 'logout-button', visible: :hidden
-      # find('.dropdown-item', text: 'Log Out', visible: :hidden).click
+      click_on 'profile-pic-button'
+      click_on 'logout-button'
       expect(current_path).to eq '/'
+    end
+  end
+
+  context 'when a user click on settings' do
+    it 'takes user to the settings page' do
+      click_on 'profile-pic-button'
+      click_on 'settings-button'
+      expect(current_path).to eq '/settings'
     end
   end
 

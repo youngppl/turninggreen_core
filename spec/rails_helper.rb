@@ -60,6 +60,7 @@ RSpec.configure do |config|
 
   Capybara.register_driver :selenium do |app|
   	options = Selenium::WebDriver::Chrome::Options.new(args: %w[no-sandbox headless disable-gpu])
+    options.add_argument("--window-size=1920,1080")
 
   	Capybara::Selenium::Driver.new(app, browser: :chrome, options: options)
   end
