@@ -2,6 +2,7 @@
   margin-left: auto;
   width: 1050px;
   margin-right: auto;
+  display: none;
   .heading {
     text-align: center;
     width: 787px;
@@ -35,6 +36,14 @@
       box-shadow: 2px 2px 6px 0 rgba(0, 0, 0, 0.5);
       background-color: #f9f9f9;
       margin-bottom: 16px;
+      cursor: pointer;
+      position: relative;
+      .expand-clickable-area {
+        width: 501px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+      }
     }
     .hidden {
     margin-bottom: 10px;
@@ -54,6 +63,7 @@
         height: 100%;
         display: inline-block;
         margin-top: 23px;
+        max-width: 376px;
       }
       .Oval {
         width: 15px;
@@ -93,12 +103,29 @@
         }
         .learn-more {
           margin-bottom: 20px;
+          position: relative;
+          z-index: 3;
         }
         .links {
           color: #90b582;
         }
         .start-challenge {
             margin-top: 20px;
+            .challenge-started {
+              font-size: 26px;
+              font-weight: bold;
+              letter-spacing: -0.2px;
+              color: #4f5151;
+            }
+            .you-got-this {
+              width: 259px;
+              font-family: Raleway;
+              font-size: 26px;
+              font-weight: 500;
+              letter-spacing: -0.2px;
+              color: #4f5151;
+              margin-top: 18px;
+            }
         }
         #weeks {
           width: 47px;
@@ -106,6 +133,9 @@
           border-radius: 7px;
           margin-bottom: 10px;
           padding: 2px;
+          outline: 0;
+          position: relative;
+          z-index: 3;
         }
         .label {
           margin-left: 20px;
@@ -134,13 +164,16 @@
           border-radius: 18px;
           width: 200px;
           margin-top: 10px;
+          position: relative;
+          z-index: 3;
         }
         .show-hidden {
-        background:none;
-        border:none;
-        object-fit: contain;
-        float: right;
-        margin-top: -37px;
+          background:none;
+          border:none;
+          object-fit: contain;
+          float: right;
+          margin-top: -37px;
+          outline: 0;
         }
 
       .Great-Job {
@@ -231,14 +264,11 @@
             display:inline-block;
             width: 100%;
 
-          .WASTE-CHALLENGES {
+          .challenge-title {
             display: inline-block;
             vertical-align: middle;
-            font-family: Raleway;
             font-size: 48px;
             font-weight: 500;
-            font-style: normal;
-            font-stretch: normal;
             line-height: normal;
             letter-spacing: -0.2px;
             color: #4f5151;

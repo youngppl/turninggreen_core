@@ -73,7 +73,7 @@
       <div class="field">
         <%= f.label "Update state/country" %><br>
         <%= f.select :state, options_for_select(us_states, resource.state), {:include_blank => "State"}, {:class => "inputField"} %> <br>
-        <%= f.select :country, options_for_select(countries, resource.country), {:include_blank => "Country"}, {:class => "inputField"}%>
+        <%= f.select :country, options_for_select(countries, resource.country), {:include_blank => "Country"}, {:class => "inputField", :onchange => "updateStateField();"}%>
       </div>
 
       <div class="field">
