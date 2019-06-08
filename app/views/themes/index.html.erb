@@ -18,7 +18,7 @@
       <% else %>
         <%= image_tag("themes/rings/unlocked-theme-ring.svg") %>
         <div class="completed-ring">
-          <% num_completed = Challenge.where(theme: challenge_name.capitalize, completed: true).length %>
+          <% num_completed = Challenge.where(user_id: current_user, theme: challenge_name.capitalize, completed: true).length %>
           <% if num_completed > 6 %>
             <% num_completed = 6 %>
           <%  end %>
