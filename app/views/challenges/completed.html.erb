@@ -1,0 +1,37 @@
+<% content_for :navbar do %>
+  <%= render 'layouts/dashboard_navbar' %>
+<% end %>
+
+<div class="completed-challenges">
+  <h1 class="title">COMPLETED CHALLENGES</h1>
+  <div class="subheader">
+    <h2 class="num-completed"><%= Challenge.where(user: current_user, completed:true).length %> of 60 challenges completed</h2>
+    <select class="challenges-filter">
+      <option>Most Recent</option>
+      <option>Theme</option>
+      <option>Global Popularity</option>
+      <option>Surprise Me</option>
+    </select>
+  </div>
+  <br>
+  <div class="challenge-rows">
+    <% (1..2).each do %>
+      <div class="row">
+        <% (1..4).each do %>
+        <div class="challenge-box empty">
+          <div class="picture">
+
+          </div>
+          <div class="info">
+            <div class="name">Challenge Name</div>
+            <div class="icon"><%= image_tag "themes/icons/water.svg", size:'14x20' %></div>
+            <div class="metric">
+              metric here
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

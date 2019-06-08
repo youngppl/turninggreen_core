@@ -40,6 +40,10 @@ class ChallengesController < ApplicationController
     end
   end
 
+  def completed
+
+  end
+
   private
 
   def challenge_params

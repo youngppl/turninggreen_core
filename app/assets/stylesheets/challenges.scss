@@ -281,3 +281,68 @@
           }
 
           }
+
+.completed-challenges {
+  text-align: left;
+  margin-top: 96px;
+  margin-left: 175px;
+  margin-right: 180px;
+ .title {
+    font-size: 55px;
+    font-weight: 600;
+    color: #4a4a4a;
+ }
+ .subheader {
+   margin-top: 37px;
+   .num-completed {
+     font-size: 30px;
+     font-weight: 600;
+     float: left;
+   }
+   .challenges-filter {
+     width: 162px;
+     height: 35px;
+     border: solid 1px #979797;
+     margin-left: 435px;
+   }
+ }
+ .challenge-rows {
+   margin-top: 37px;
+   .row {
+     .challenge-box {
+      width: 226px;
+      height: 313px;
+      border: solid 1px #979797;
+      margin-right: 46px;
+      margin-bottom: 56px;
+      &.empty {
+        background-color: rgba(216, 216, 216, 0.5);
+      }
+      .picture {
+        height: 225px;
+        border-bottom: solid 1px #979797;
+      }
+      .info {
+        position: relative;
+        padding: 10px;
+        .name {
+          font-size: 20px;
+          font-weight: 500;
+        }
+        .icon {
+          float: right;
+          position: absolute;
+          top: 0;
+          right: 0;
+          margin: 10px;
+        }
+        .metric {
+          font-size: 17px;
+          font-weight: 500;
+          color: #4a4a4a;
+        }
+      }
+     }
+   }
+ }
+}
