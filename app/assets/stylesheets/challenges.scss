@@ -2,7 +2,6 @@
   margin-left: auto;
   width: 1050px;
   margin-right: auto;
-  display: none;
   .heading {
     text-align: center;
     width: 787px;
@@ -147,22 +146,7 @@
           line-height: normal;
           letter-spacing: -0.2px;
           color: #4f5151;
-        }
-        .start-question {
-          width: 401px;
-          height: 100%;
-          font-family: Raleway;
-          font-size: 26px;
-          font-weight: bold;
-          font-style: normal;
-          font-stretch: normal;
-          line-height: 1.5;
-          letter-spacing: -0.2px;
-          color: #4f5151;
-          margin-bottom:17px;
-        .start-challenge {
-            margin-top: 20px;
-            .challenge-started {
+          .challenge-started {
               font-size: 26px;
               font-weight: bold;
               letter-spacing: -0.2px;
@@ -177,6 +161,20 @@
               color: #4f5151;
               margin-top: 18px;
             }
+        }
+
+        .start-question {
+          width: 401px;
+          height: 100%;
+          font-family: Raleway;
+          font-size: 26px;
+          font-weight: bold;
+          font-style: normal;
+          font-stretch: normal;
+          line-height: 1.5;
+          letter-spacing: -0.2px;
+          color: #4f5151;
+          margin-bottom:17px;
         }
         #weeks {
           width: 47px;
@@ -217,6 +215,7 @@
           padding: 0px;
           position: relative;
           z-index: 3;
+          outline: 0;
         }
         .show-hidden {
           background:none;
@@ -357,11 +356,14 @@
             display:inline-block;
             width: 100%;
 
-          .challenge-title {
+          .WASTE-CHALLENGES {
             display: inline-block;
             vertical-align: middle;
+            font-family: Raleway;
             font-size: 48px;
             font-weight: 500;
+            font-style: normal;
+            font-stretch: normal;
             line-height: normal;
             letter-spacing: -0.2px;
             color: #4f5151;
