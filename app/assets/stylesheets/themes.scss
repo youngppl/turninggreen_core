@@ -3,21 +3,76 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .themesPage {
-  width: 1440px;
-  height: 1154px;
-  color: black;
   text-align: center;
 }
 
 .themesRow {
   width: 1200px;
   margin: 25px auto;
+  margin-bottom: 95px;
 }
 
 .theme {
-  margin: auto;
+  width: 200px;
+  height: 200px;
+  margin-top: 20px;
+  margin-right: 35px;
+  display: inline-block;
+  white-space: nowrap;
+  vertical-align: top;
+  position: relative;
+  .theme-name {
+    font-size: 30px;
+    font-weight: 600;
+    text-align: center;
+    color: #4a4a4a;
+    margin-top: 20px;
+  }
+  .icon-box {
+    height: 135px;
+    width: 135px;
+    border-radius: 50%;
+    position: relative;
+    margin-top: -232px;
+    margin-left: 33px;
+    .icon {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
+  }
+  // .hidden {
+  //   display: none;
+  // }
+  .completed-ring {
+    position: absolute;
+    top: 0;
+    .ring {
+      position: absolute;
+      top: 0;
+      &.one, &.two {
+        margin-left: 102px;
+      }
+      &.three {
+        margin-left: 85px;
+        margin-top: 1px;
+      }
+      &.four {
+        margin-left: 14px;
+      }
+      &.five {
+        margin-left: -29px;
+      }
+      &.six {
+        margin-top: -25px;
+        margin-left: -29px;
+      }
+    }
+  }
 }
-
 .thumbnail {
   position: relative;
   cursor: pointer;
@@ -81,29 +136,6 @@
   color: #4f5151;
 }
 
-h2.twelve {
-  font-size: 80px;
-  margin-left: 530px;
-  float: left;
-}
-
-h2.outof {
-  font-size: 80px;
-  margin-right: 465px;
-}
-
-h3.challenges-completed {
-  font-family: Raleway;
-  font-size: 40px;
-  font-weight: 600;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  color: #4a4a4a;
-  margin-bottom: 20px;
-}
-
 .helpText, .themesHelpText {
   font-family: Raleway;
   font-size: 27px;
@@ -114,6 +146,7 @@ h3.challenges-completed {
   letter-spacing: normal;
   text-align: center;
   color: #4a4a4a;
+  margin-top: 58px;
 }
 
 .modal-dialog {
@@ -159,6 +192,7 @@ h3.challenges-completed {
     letter-spacing: -0.24px;
     text-align: center;
     margin-bottom: 28px;
+    white-space: nowrap;
   }
   .modal-close {
     margin-right: 40px;
@@ -178,15 +212,37 @@ h3.challenges-completed {
     margin-right: auto;
     left: 0;
     right: 0;
+    &.first {
+      margin-top: 10px;
+      // auto spacing for first slide of challenge unlock pop-up
+      display: flex;
+      flex-direction: column;
+      height: 560px;
+      justify-content: space-around;
+    }
     &.second {
       text-align: center;
+      margin-top: -20px;
     }
     &.second, &.third {
       display:none;
     }
     &.third {
-      margin-top: -49px;
-      text-align: center;
+      .create-change-text {
+        font-size: 26px;
+        font-weight: bold;
+        letter-spacing: -0.2px;
+        margin-top: 6px;
+      }
+
+      .create-change-button {
+          background-color: #87b67b;
+          border-radius: 12px;
+          width: 232px;
+          height: 53px;
+          margin-top: 45px;
+          border: none;
+      }
     }
     .watchVideo button {
       background-color: #87b67b;
@@ -302,25 +358,4 @@ img.theme-locked-icon {
 
 .check-img {
     margin-top: 17px;
-}
-
-
-.createchange {
-    font-family: Raleway;
-    font-size: 26px;
-    font-weight: bold;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: normal;
-    letter-spacing: -0.2px;
-    color: #1e1e1e;
-    margin-top: 6px;
-}
-
-.button1 {
-    background-color: #87b67b;
-    border-radius: 12px;
-    width: 232px;
-    height: 53px;
-    margin-top: 45px;
 }

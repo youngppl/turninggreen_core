@@ -5,20 +5,48 @@
 .navbar {
   background-color: #ffffff;
   color: #000000;
-  height: 128px;
+  height: 90px;
   border: solid 1px #979797;
   .navbar-buttons {
     display: table;
   }
+
+.logo-tag {
+  width:248px;
+  height: 44px;
+  border: solid 1px #979797;
+  background-color: #d8d8d8;
+}
+
   .ml-auto li {
     font-size: 30px;
     font-weight: 500;
     padding: 25px;
     display: table-cell;
     vertical-align: middle;
+    text-align: center;
     a {
       color: inherit;
+      text-decoration: none;
     }
+  }
+
+  .home-underline {
+    width: 103px;
+    height: 2px;
+    border: solid 2px #92b584;
+  }
+
+  .themes-underline {
+    width: 132px;
+    height: 2px;
+    border: solid 2px #92b584;
+  }
+
+  .separator-line {
+    width: 1px;
+    height: 57px;
+    border: solid 1px #979797;
   }
 }
 // .navbar-nav.navbar-right li:not(:first-child):before{
@@ -194,6 +222,8 @@
     font: inherit;
     cursor: pointer;
     outline: inherit;
+ }
+
   }
   .dropdown-menu {
     top: 80px;
@@ -206,7 +236,6 @@
     text-align: center;
     line-height: 80px;
   }
-}
 
 .settings {
   @extend .dashboard;

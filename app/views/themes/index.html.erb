@@ -1,29 +1,42 @@
-<% content_for :navbar do %>
-  <%= render 'layouts/dashboard_navbar' %>
+<% if !content_for?(:navbar) %>
+  <% content_for :navbar do %>
+    <%= render 'layouts/dashboard_navbar' %>
+  <% end %>
 <% end %>
 
 <div class="themesPage">
   <h1 class="themesTitle">THEMES</h1>
-  <h2 class="twelve">12</h2>
-  <h2 class="outof">out of 60</h2>
-  <h3 class="challenges-completed">challenges completed</h3>
   <p class="themesHelpText">Click on the each theme below to see the impact you’ve made through each challenge!</p>
   <% themesRows.each do |row| %>
   <div class="themesRow">
     <% row.each do |challenge_name| %>
-    <%= image_tag 'outer-ring.svg' %>
-      <div class="thumbnail text-center">
-        <% if !current_user.unlockedChallenges.include?(challenge_name) %>
-        <% end %>
-        <%# <%= image_tag("avatar.png", class:"current_challenges_overlay") %>
-        <%= link_to challenges_path(challenge_name) do %>
-          <div class="overlay current_challenges_overlay">
-            <div class="overlayText challenge-name-text"><%= challenge_name %></div>
-          </div>
-        <% end %>
-      </div>
+    <div class="theme">
+      <% if !current_user.unlockedChallenges.include?(challenge_name) %>
+        <div class="theme-locked">
+          <%= image_tag("themes/rings/locked-theme-ring.svg") %>
+        </div>
+      <% else %>
+        <%= image_tag("themes/rings/unlocked-theme-ring.svg") %>
+        <div class="completed-ring" style="display:none;">
+          <%= image_tag("themes/rings/theme-ring-01.svg", class: 'ring one') %>
+          <%= image_tag("themes/rings/theme-ring-02.svg", class: 'ring two') %>
+          <%= image_tag("themes/rings/theme-ring-03.svg", class: 'ring three') %>
+          <%= image_tag("themes/rings/theme-ring-04.svg", class: 'ring four') %>
+          <%= image_tag("themes/rings/theme-ring-05.svg", class: 'ring five') %>
+          <%= image_tag("themes/rings/theme-ring-06.svg", class: 'ring six') %>
+        </div>
+      <% end %>
+      <div class="theme-name"><%= challenge_name.downcase %></div>
+      <%= link_to challenges_path(challenge_name) do %>
+        <div class="icon-box"><%= image_tag("themes/icons/"+challenge_name.downcase+".svg", class: "icon") %></div>
+      <% end %>
     </div>
     <% end %>
   </div>
   <% end %>
 </div>
+
+<script type="text/javascript">
+  $(".themes-underline").show();
+  $(".home-underline").hide();
+</script>
