@@ -30,6 +30,21 @@ RSpec.describe "devise/registrations/new.html.erb", type: :view do
       expect(page).to have_select('user_state', selected: 'Not in USA')
     end
   end
+  context 'when user is not at least 13 years of age' do
+    it 'displays an error message' do
+      fillRegistrationsForm('asdf', 'bob@gmal.com', "California", "United States", 13.years.ago+1.day, "123qweqwe", "123qweqwe", "Friend")
+      clickRegister
+      expect(page).to have_content('You must be at least 13 years old to register')
+    end
+  end
+  context 'when a US state but non-US country is selected' do
+    it 'displays an error message' do
+      fillRegistrationsForm('asdf', 'bob@gmal.com', 'California', 'Angola', '2000-05-05', "123qwe", "123qwe", "Friend")
+      select 'California', from: 'user_state'
+      clickRegister
+      expect(page).to have_content('State (for USA only) and country do not match')
+    end
+  end
   context 'when user successfully signs up' do
     it 'queues a confirmation email' do
       fillRegistrationsForm
