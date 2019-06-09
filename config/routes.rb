@@ -16,5 +16,6 @@ Rails.application.routes.draw do
   get '/challenges/:challenge_name' => 'challenges#show', :as => 'challenges'
   post '/challenges/unlock' => 'challenges#unlock'
   post '/challenges/add' => 'challenges#create'
+  post '/challenges/update-notification' => 'challenges#update_notification_viewed'
   resources :tips_daily, only: [:index, :show]
 end
