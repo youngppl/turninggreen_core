@@ -1,9 +1,9 @@
 <nav class="navbar navbar-expand-lg">
   <span class="navbar-brand" href="#">
-    <a href="<%= root_path %>" tabindex="0" id="challenge_added_popover" data-toggle="popover" data-placement="bottom">
-      <div class="logo-tag"
-      <%= image_tag('logo.svg') %>
-        </div>
+    <a href="<%= root_path %>" tabindex="0" id="challenge_added_popover" class="tg-logo" data-toggle="popover" data-placement="bottom">
+      <div class="logo-tag">
+        <%= image_tag('logo.svg') %>
+      </div>
     </a>
   </span>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -48,12 +48,12 @@
         </div>
       </li>
       <li class="dropdown">
-        <button id="dropdownMenuButton" data-toggle="dropdown" class="profile-picture">
+        <button class="dropdownMenuButton" data-toggle="dropdown" id="profile-pic-button">
           <%= image_tag(profile_pic_link, size: '57x57', class: 'rounded-circle') %>
         </button>
         <div class="dropdown-menu dropdown-menu-right">
-          <%= link_to 'Settings', edit_user_registration_path, class: 'dropdown-item' %>
-          <%= link_to 'Log Out', destroy_user_session_path, method: :delete, class: 'dropdown-item'%>
+          <%= link_to 'Settings', edit_user_registration_path, class: 'dropdown-item', id: 'settings-button' %>
+          <%= link_to 'Log Out', destroy_user_session_path, method: :delete, class: 'dropdown-item', id: 'logout-button'%>
         </div>
       </li>
     </ul>
