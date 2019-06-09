@@ -30,12 +30,11 @@
           <% else %>
             <div class="no-notifications" style="display:none;">You have no notifications.</div>
             <% challenges_with_reflections.each do |challenge| %>
-              <a onclick="$('#check-in-reflection-modal').modal('show');">
+              <a onclick="">
                 <div class="notification">
                   You have completed <%= challenge.challenge_name %>! Now it's time to check-in and reflect!
                 </div>
               </a>
-              <%= render partial: "layouts/check_in_reflection" %>
             <% end %>
             <% challenge_date_reminders.each do |challenge| %>
               <a href="/challenges/<%= challenge.theme %>">
