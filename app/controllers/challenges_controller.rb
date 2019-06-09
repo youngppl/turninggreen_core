@@ -7,7 +7,6 @@ class ChallengesController < ApplicationController
     @challenge_name = params['challenge_name']
     @challenge_data = challenges[@challenge_name.to_sym]
     @theme_data = themesContent[@challenge_name.to_sym]
-    puts @theme_data
     @already_unlocked = current_user.unlockedChallenges.include?(@challenge_name)
     if !challenges.key?(@challenge_name.to_sym)
       raise ActionController::RoutingError.new('Not Found')
@@ -41,7 +40,7 @@ class ChallengesController < ApplicationController
   end
 
   def completed
-
+    @completed = current_user.challenges.first(8)
   end
 
   private

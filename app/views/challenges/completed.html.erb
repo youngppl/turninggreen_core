@@ -15,21 +15,26 @@
   </div>
   <br>
   <div class="challenge-rows">
-    <% (1..2).each do %>
+    <% counter = 0 %>
+    <% (1..2).each do |row| %>
       <div class="row">
-        <% (1..4).each do %>
-        <div class="challenge-box empty">
-          <div class="picture">
-
-          </div>
-          <div class="info">
-            <div class="name">Challenge Name</div>
-            <div class="icon"><%= image_tag "themes/icons/water.svg", size:'14x20' %></div>
-            <div class="metric">
-              metric here
+        <% (1..4).each do |col| %>
+          <% challenge = @completed[counter] %>
+          <% if !challenge.nil? and challenge.completed == true %>
+            <div class="challenge-box">
+              <div class="picture"></div>
+              <div class="info">
+                <div class="name"><%= challenge.challenge_name %></div>
+                <div class="icon"><%= image_tag "themes/icons/"+challenge.theme.downcase+".svg", size:'20' %></div>
+                <div class="metric">
+                  metric here
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
+          <% else %>
+          <div class="challenge-box empty"></div>
+          <% end %>
+          <%counter+=1%>
         <% end %>
       </div>
     <% end %>
