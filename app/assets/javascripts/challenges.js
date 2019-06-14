@@ -7,7 +7,12 @@ $(window).on('load', function() {
 $(window).on('turbolinks:load', function() {
   if(window.location.pathname == '/challenges/completed') {
     params = new URLSearchParams(window.location.search);
-    $('.challenges-filter').val(params.get('sort_by'));
+    if (params.get('sort_by') == null) {
+      option = 'recent'
+    } else {
+      option = params.get('sort_by')
+    }
+    $('.challenges-filter').val(option);
   }
 });
 
@@ -90,4 +95,9 @@ $(document).on('click', '.add-challenge-button', function(event){
 
 function sortChallengesByFilter() {
   window.location.search = "?sort_by="+$(".challenges-filter").val();
+}
+
+function showReflectionModal(event) {
+  $(event.target).parent().children(".reflection-modal").modal()
+
 }

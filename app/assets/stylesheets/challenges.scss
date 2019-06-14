@@ -315,8 +315,17 @@
       border: solid 1px #979797;
       margin-right: 46px;
       margin-bottom: 56px;
+      position: relative;
       &.empty {
         background-color: rgba(216, 216, 216, 0.5);
+      }
+      .modal-trigger-area {
+        width: 226px;
+        height: 315px;
+        z-index: 1;
+        position: absolute;
+        top: 0;
+        cursor: pointer;
       }
       .picture {
         height: 225px;

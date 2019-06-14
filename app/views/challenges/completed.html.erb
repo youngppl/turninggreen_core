@@ -22,6 +22,7 @@
           <% challenge = @completed[counter] %>
           <% if !challenge.nil? and challenge.completed == true %>
             <div class="challenge-box">
+              <div class="modal-trigger-area" onclick="showReflectionModal(event);"></div>
               <div class="picture"></div>
               <div class="info">
                 <div class="name"><%= challenge.challenge_name %></div>
