@@ -6,7 +6,6 @@ $(window).on('load', function() {
 
 $(window).on('turbolinks:load', function() {
   if(window.location.pathname == '/challenges/completed') {
-    console.log('ran');
     params = new URLSearchParams(window.location.search);
     $('.challenges-filter').val(params.get('sort_by'));
   }
