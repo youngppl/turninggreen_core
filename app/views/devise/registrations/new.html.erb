@@ -28,13 +28,17 @@
       </div>
 
       <input type="checkbox"
-      name="share-location" value="Share country location with Turning Green"> Share county location with Turning Green
+      name="share-location" value="Share country location with Turning Green"> Share country location with Turning Green
       </input>
 
-      <span class="dot">
+
+      <span class="dot" data-toggle="tooltip" data-placement="right" title="to be edited">
         <span class="i">i</span>
       </span>
 
+      <script type="text/javascript">
+        $('[data-toggle="tooltip"]').tooltip()
+      </script>
       <div>
         <%= f.text_field :birthday, {class: "inputField", required: true, id: "datepicker", readonly: "", autocomplete: "off", placeholder: "mm/dd/yyyy"} %>
         <!-- <span class="required">*</span> -->

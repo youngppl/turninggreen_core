@@ -1,3 +1,7 @@
+$(window).on('load', function(){
+  $('[data-toggle="tooltip"]').tooltip()
+});
+
 function save_timezone() {
   var tz = jstz.determine().name();
   document.cookie = 'timezone' + '=' + tz;
