@@ -99,5 +99,4 @@ function sortChallengesByFilter() {
 
 function showReflectionModal(event) {
   $(event.target).parent().children(".reflection-modal").modal()
-
 }

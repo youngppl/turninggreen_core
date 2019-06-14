@@ -7,20 +7,22 @@
 </div>
 
 <div class="challenge-page">
-<div class="back-button">
-  <button type="button" class="back" name="button" onclick="location.href='/themes';">
-  <%= image_tag 'arrow-back.svg'%>
-  </button>
-  <h1 class="challenge-title"><%= @challenge_name %> CHALLENGES</h1>
+  <div class="back-button">
+    <button type="button" class="back" name="button" onclick="location.href='/themes';">
+      <%= image_tag 'arrow-back.svg'%>
+    </button>
+    <h1 class="challenge-title"><%= @challenge_name %> CHALLENGES</h1>
   </div>
   <div class="Completed-Challenges">
     <div class="Completed"><h1>Completed</h1></div>
-    <div class="Rectangle">
-      <div class="SmallRectangle"></div>
-      <div class="Start-your-journey-t">
-        <h4>Start your journey to sustainability to the right!</h4>
+    <% if current_user.challenges.where(theme: @challenge_name, completed: true).length == 0 %>
+      <div class="Rectangle">
+        <div class="SmallRectangle"></div>
+        <div class="Start-your-journey-t">
+          <h4>Start your journey to sustainability to the right!</h4>
+        </div>
       </div>
-    </div>
+    <% end %>
   </div>
   <div class="challenges-content">
     <div class="To-Do">
