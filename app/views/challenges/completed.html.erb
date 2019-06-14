@@ -6,11 +6,11 @@
   <h1 class="title">COMPLETED CHALLENGES</h1>
   <div class="subheader">
     <h2 class="num-completed"><%= Challenge.where(user: current_user, completed:true).length %> of 60 challenges completed</h2>
-    <select class="challenges-filter">
-      <option>Most Recent</option>
-      <option>Theme</option>
-      <option>Global Popularity</option>
-      <option>Surprise Me</option>
+    <select class="challenges-filter" onchange="sortChallengesByFilter();">
+      <option value="recent">Most Recent</option>
+      <option value="theme">Theme</option>
+      <option value="global">Global Popularity</option>
+      <option value="surprise">Surprise Me</option>
     </select>
   </div>
   <br>

@@ -4,6 +4,14 @@ $(window).on('load', function() {
   }
 });
 
+$(window).on('turbolinks:load', function() {
+  if(window.location.pathname == '/challenges/completed') {
+    console.log('ran');
+    params = new URLSearchParams(window.location.search);
+    $('.challenges-filter').val(params.get('sort_by'));
+  }
+});
+
 var player;
 function onPlayerReady(event) {
   if(challengeName == "Water") {
@@ -80,3 +88,7 @@ $(document).on('click', '.add-challenge-button', function(event){
   // TODO: make date dynamic, read it from challenge object in backend
   // TODO: change this to set challenge_name to html tag of the challenge box
 });
+
+function sortChallengesByFilter() {
+  window.location.search = "?sort_by="+$(".challenges-filter").val();
+}
