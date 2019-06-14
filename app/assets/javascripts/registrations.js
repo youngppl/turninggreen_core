@@ -92,6 +92,12 @@ function convertDate() {
   $('#datepicker').val(date.toISOString().substring(0,10));
 }
 
+function updateCountryField() {
+  if(event.target.value != 'NO') {
+    $('#user_country').val('United States')
+  }
+}
+
 function updateStateField() {
   if(event.target.value != 'United States') {
     $('#user_state').val('NO')
