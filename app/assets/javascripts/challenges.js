@@ -71,7 +71,7 @@ $(document).on('click', '.add-challenge-button', function(event){
       $('#challenge_added_popover').popover({
         html: true,
         template: '<div class="popover challenge_added_popover" role="tooltip"><div class="arrow"></div><h3 class="popover-header"></h3><button type="button" class="close">&times;</button><div class="popover-body"></div></div>',
-        content: "The test challenge challenge has been added to your challenges!"
+        content: '<div type="button" class="close">&times;</div>The test challenge challenge has been added to your challenges!'
       }).popover('show');
     }
     var d = new Date();
