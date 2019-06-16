@@ -2,7 +2,6 @@
   margin-left: auto;
   width: 1050px;
   margin-right: auto;
-  display: none;
   .heading {
     text-align: center;
     width: 787px;
@@ -87,31 +86,67 @@
           margin-bottom: 7px;
           margin-right: 49px;
         }
-      .challenge-description {
-        width: 241px;
-        height: 29px;
+      .image {
+        width: 362px;
+        height: 135px;
+        background-color: #515151;
+        margin-top: 16px;
+        margin-bottom: 18px;
+      }
+      .the-challenge{
+        width: 362px;
+        height: 100%;
         font-family: Raleway;
         font-size: 24px;
         font-weight: normal;
         font-style: normal;
         font-stretch: normal;
-        line-height: normal;
-        letter-spacing: -0.9px;
-        color: #333333;
-        display: inline-block;
+        line-height: 1.54;
+        letter-spacing: -0.2px;
+        color: #4f5151;
+      }
 
+      .challenge-description {
+        width: 362px;
+        height: 100%;
+        font-family: Raleway;
+        font-size: 24px;
+        font-weight: normal;
+        font-style: normal;
+        font-stretch: normal;
+        display: inline-block;
         }
-        .learn-more {
+        .learn-more{
+          width: 362px;
+          height: 29px;
+          font-family: Raleway;
+          font-size: 24px;
+          font-weight: normal;
+          font-style: normal;
+          font-stretch: normal;
+          line-height: 1.54;
+          letter-spacing: -0.2px;
+          color: #4f5151;
+          display: inline-block;
           margin-bottom: 20px;
+          margin-top: -9px;
+          text-decoration: underline;
           position: relative;
           z-index: 3;
         }
-        .links {
-          color: #90b582;
-        }
-        .start-challenge {
-            margin-top: 20px;
-            .challenge-started {
+
+        .start-challenge{
+          width: 401px;
+          height: 100%;
+          font-family: Raleway;
+          font-size: 26px;
+          font-weight: 500;
+          font-style: normal;
+          font-stretch: normal;
+          line-height: normal;
+          letter-spacing: -0.2px;
+          color: #4f5151;
+          .challenge-started {
               font-size: 26px;
               font-weight: bold;
               letter-spacing: -0.2px;
@@ -126,6 +161,20 @@
               color: #4f5151;
               margin-top: 18px;
             }
+        }
+
+        .start-question {
+          width: 401px;
+          height: 100%;
+          font-family: Raleway;
+          font-size: 26px;
+          font-weight: bold;
+          font-style: normal;
+          font-stretch: normal;
+          line-height: 1.5;
+          letter-spacing: -0.2px;
+          color: #4f5151;
+          margin-bottom:17px;
         }
         #weeks {
           width: 47px;
@@ -159,13 +208,14 @@
         }
 
         .add-challenge-button {
-          color: white;
-          background-color: #f05648;
-          border-radius: 18px;
-          width: 200px;
-          margin-top: 10px;
+          width: 232px;
+          height: 53px;
+          margin-top: 22px;
+          margin-bottom: 40px;
+          padding: 0px;
           position: relative;
           z-index: 3;
+          outline: 0;
         }
         .show-hidden {
           background:none;
@@ -204,11 +254,21 @@
       }
 
 
-
-    }
-
-        .Completed-Challenges {
+      .completed-content {
           float:left;
+          display: inline-block;
+          .Completed {
+            font-family: Raleway;
+            font-size: 60px;
+            font-weight: 900;
+            font-style: normal;
+            font-stretch: normal;
+            line-height: normal;
+            letter-spacing: -0.2px;
+            color: #4f5151;
+            margin-bottom: 16px;
+            margin-top: 42px;
+          }
           .Rectangle {
             width: 502px;
             height: 347px;
@@ -217,6 +277,7 @@
             border: solid 3px #979797;
             background-color: #f3f3f3;
             border-style: dashed;
+          }
           .SmallRectangle {
             width: 267px;
             height: 183px;
@@ -240,35 +301,69 @@
             color: #4f5151;
             margin-left: 75px;
           }
-
-
+          .complete-icon {
+            width: 48px;
+            height: 48px;
+            object-fit: contain;
+            margin-bottom: 56px;
+            margin-left: 18px;
+            margin-right: 17px;
+            margin-top: 22px;
+            display: inline-block;
+            vertical-align: top;
           }
-          .Completed {
+          .challenge-info {
+            height: 100%;
+            display: inline-block;
+            margin-top: 23px;
+          }
+          .completed-box {
+            width: 502px;
+            height: 92px;
+            border-radius: 2px;
+            box-shadow: 2px 2px 6px 0 rgba(0, 0, 0, 0.5);
+            background-color: #f3f3f3;
+            margin-bottom: 16px;
+          }
+
+          .completed-name {
+            width: 328px;
+            height: 33px;
             font-family: Raleway;
-            font-size: 60px;
-            font-weight: 900;
+            font-size: 28px;
+            font-weight: bold;
             font-style: normal;
             font-stretch: normal;
             line-height: normal;
             letter-spacing: -0.2px;
             color: #4f5151;
-            margin-bottom: 16px;
-            margin-top: 42px;
+            margin-top: 7px;
+            margin-bottom: 7px;
+            margin-right: 49px;
+          }
+          .show-hidden {
+          background:none;
+          border:none;
+          object-fit: contain;
+          float: right;
+          margin-top: -37px;
           }
 
-
-          }
+        }
 
           .back-button {
             margin-top: 50px;
             display:inline-block;
             width: 100%;
 
-          .challenge-title {
+          .WASTE-CHALLENGES {
             display: inline-block;
             vertical-align: middle;
+            font-family: Raleway;
             font-size: 48px;
             font-weight: 500;
+            font-style: normal;
+            font-stretch: normal;
             line-height: normal;
             letter-spacing: -0.2px;
             color: #4f5151;
@@ -354,4 +449,5 @@
      }
    }
  }
+}
 }

@@ -7,23 +7,47 @@
 </div>
 
 <div class="challenge-page">
-  <div class="back-button">
-    <button type="button" class="back" name="button" onclick="location.href='/themes';">
-      <%= image_tag 'arrow-back.svg'%>
-    </button>
-    <h1 class="challenge-title"><%= @challenge_name %> CHALLENGES</h1>
+<div class="back-button">
+  <button type="button" class="back" name="button" onclick="location.href='/themes';">
+  <%= image_tag 'arrow-back.svg'%>
+  </button>
+  <h1 class="challenge-title"><%= @challenge_name %> CHALLENGES</h1>
   </div>
-  <div class="Completed-Challenges">
-    <div class="Completed"><h1>Completed</h1></div>
-    <% if current_user.challenges.where(theme: @challenge_name, completed: true).length == 0 %>
-      <div class="Rectangle">
-        <div class="SmallRectangle"></div>
-        <div class="Start-your-journey-t">
-          <h4>Start your journey to sustainability to the right!</h4>
+  <div class="completed-content">
+    <div class="Completed">
+      <h1>Completed</h1>
+    </div>
+      <% @noneCompleted = true %>
+      <% (current_user.challenges.where(theme: @challenge_name, completed: true)).each do |challenge| %>
+          <% @noneCompleted = false %>
+          <div class="completed-box">
+            <div class="complete-icon">
+              <%= image_tag 'to-do-checked.svg', size:"48x48"%>
+            </div>
+            <div class="challenge-info">
+              <h5 class="completed-name"><%=challenge.challenge_name%></h5>
+              <button type="button" class="show-hidden">
+                <i class="fas fa-chevron-down"></i>
+                <i class="fas fa-chevron-left" style="display:none;"></i>
+              </button>
+              <div class="hidden" style="display:none;">
+                  <div class="the-challenge">
+                    <p class="challenge-description">Challenge Description </p>
+                  </div>
+              </div>
+            </div>
+          </div>
+      <% end %>
+
+      <% if @noneCompleted == true %>
+        <div class="Rectangle">
+          <div class="SmallRectangle"></div>
+          <div class="Start-your-journey-t">
+            <h4>Start your journey to sustainability to the right!</h4>
+          </div>
         </div>
-      </div>
-    <% end %>
-  </div>
+      <% end %>
+    </div>
   <div class="challenges-content">
     <div class="To-Do">
       <h1>To Do</h1>
@@ -38,7 +62,7 @@
           <h5 class="challenge-name">Carry a bag for waste</h5>
           <button type="button" class="show-hidden">
             <i class="fas fa-chevron-down"></i>
-            <i class="fas fa-chevron-up" style="display:none;"></i>
+            <i class="fas fa-chevron-left" style="display:none;"></i>
           </button>
           <div class="participants">
             <div class="Oval">
@@ -46,20 +70,17 @@
           <p class="challenge-description">100 current participants</p>
           </div>
           <div class="hidden" style="display:none;">
-            <div class="learn-more">
-              <h7><strong>Learn More</strong></h7>
-              <div class="links">
-                <a>learn more link</a>
-              </div>
-            </div>
+            <svg class = "image"> </svg>
             <div class="the-challenge">
-              <h7><strong>The Challenge</strong></h7>
-              <p class="challenge-description">latrin </p>
+              <p class="challenge-description">Carry a bag to collect your waste! Don’t hide it! Carry your bag of waste proudly and invite conversations with classmates and community members.</p>
+            </div>
+            <div class="learn-more">
+              <h7><a class="learn-more" href="www.google.com">Learn More</a></h7>
             </div>
             <div class="start-challenge">
-              <h6><strong>How long do you want to take this challenge for?</strong></h6>
+              <h6 class ="start-question">How long would you like to take this challenge?</h6>
               <%= select_tag "weeks", options_for_select((1..8).to_a)%> <span class="label"> week(s) starting today</span><br>
-              <button type="button" class="btn add-challenge-button" name="button">ADD CHALLENGE</button>
+              <button type="button" class="btn add-challenge-button" name="button"><%= image_tag 'start-challenge-button.png'%></button>
             </div>
           </div>
         </div>
@@ -72,9 +93,8 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-close">
-          <button type="button" class="close" id="modal-close-button" onclick="location.href='/themes';" aria-label="Close">
+          <button type="button" class="close" id="modal-close-button" onclick="history.back()" aria-label="Close" data-turbolinks="true">
             <%= image_tag 'exit-button.svg' %>
-            <!-- <span aria-hidden="true">&times;</span> -->
           </button>
         </div>
         <div class="modal-body">
