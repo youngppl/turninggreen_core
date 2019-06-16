@@ -13,7 +13,7 @@
   }
   .challenges-content {
     display: inline-block;
-    margin-left: 42px;
+
 
       .To-Do {
       height: 70px;
@@ -255,8 +255,9 @@
 
 
       .completed-content {
-          float:left;
+          margin-left: 42px;
           display: inline-block;
+          float: right;
           .Completed {
             font-family: Raleway;
             font-size: 60px;
