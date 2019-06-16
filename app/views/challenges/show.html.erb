@@ -52,7 +52,7 @@
     <div class="To-Do">
       <h1>To Do</h1>
       </div>
-    <% (1..6).each do %>
+    <% (1..6-current_user.challenges.where(theme: @challenge_name, completed: true).length).each do %>
       <div class="challenge-box">
         <div class="expand-clickable-area"></div>
         <div class="challenge-icon">
