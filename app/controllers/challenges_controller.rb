@@ -39,6 +39,9 @@ class ChallengesController < ApplicationController
     end
   end
 
+  def update_notification_viewed
+    Challenge.where(id:params[:id]).update(notification_viewed:true)
+
   def completed
     case params[:sort_by]
     when "recent"
@@ -57,6 +60,6 @@ class ChallengesController < ApplicationController
   private
 
   def challenge_params
-    params.permit(:challenge_name, :theme, :length_of_challenge, :completed)
+    params.permit(:challenge_name, :theme, :length_of_challenge, :completed, :date_complete)
   end
 end
