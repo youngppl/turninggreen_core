@@ -11,22 +11,21 @@
   <button type="button" class="back" name="button" onclick="location.href='/themes';">
   <%= image_tag 'arrow-back.svg'%>
   </button>
-  <h1 class="WASTE-CHALLENGES"><%= @challenge_name %> CHALLENGES</h1>
+  <h1 class="challenge-title"><%= @challenge_name %> CHALLENGES</h1>
   </div>
   <div class="completed-content">
     <div class="Completed">
       <h1>Completed</h1>
     </div>
       <% @noneCompleted = true %>
-      <% (current_user.challenges).each do |challenge| %>
-        <% if challenge.theme == @challenge_name && challenge.completed? %>
+      <% (current_user.challenges.where(theme: @challenge_name, completed: true)).each do |challenge| %>
           <% @noneCompleted = false %>
           <div class="completed-box">
             <div class="complete-icon">
               <%= image_tag 'to-do-checked.svg', size:"48x48"%>
             </div>
             <div class="challenge-info">
-              <h5 class="completed-name">Carry a bag for waste</h5>
+              <h5 class="completed-name"><%=challenge.challenge_name%></h5>
               <button type="button" class="show-hidden">
                 <i class="fas fa-chevron-down"></i>
                 <i class="fas fa-chevron-left" style="display:none;"></i>
@@ -38,24 +37,22 @@
               </div>
             </div>
           </div>
-        <% end %>
       <% end %>
 
       <% if @noneCompleted == true %>
         <div class="Rectangle">
-        <div class="SmallRectangle">
-            </div>
-        <div class="Start-your-journey-t">
-          <h4>Start your journey to sustainability to the right!</h4>
+          <div class="SmallRectangle"></div>
+          <div class="Start-your-journey-t">
+            <h4>Start your journey to sustainability to the right!</h4>
           </div>
-              </div>
+        </div>
       <% end %>
     </div>
   <div class="challenges-content">
     <div class="To-Do">
       <h1>To Do</h1>
       </div>
-    <% (1..6).each do %>
+    <% (1..6-current_user.challenges.where(theme: @challenge_name, completed: true).length).each do %>
       <div class="challenge-box">
         <div class="expand-clickable-area"></div>
         <div class="challenge-icon">
