@@ -41,6 +41,7 @@ class ChallengesController < ApplicationController
 
   def update_notification_viewed
     Challenge.where(id:params[:id]).update(notification_viewed:true)
+  end
 
   def completed
     case params[:sort_by]
