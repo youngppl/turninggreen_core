@@ -17,13 +17,14 @@
         </div>
       <% else %>
         <%= image_tag("themes/rings/unlocked-theme-ring.svg") %>
-        <div class="completed-ring" style="display:none;">
-          <%= image_tag("themes/rings/theme-ring-01.svg", class: 'ring one') %>
-          <%= image_tag("themes/rings/theme-ring-02.svg", class: 'ring two') %>
-          <%= image_tag("themes/rings/theme-ring-03.svg", class: 'ring three') %>
-          <%= image_tag("themes/rings/theme-ring-04.svg", class: 'ring four') %>
-          <%= image_tag("themes/rings/theme-ring-05.svg", class: 'ring five') %>
-          <%= image_tag("themes/rings/theme-ring-06.svg", class: 'ring six') %>
+        <div class="completed-ring">
+          <% num_completed = Challenge.where(user_id: current_user, theme: challenge_name.capitalize, completed: true).length %>
+          <% if num_completed > 6 %>
+            <% num_completed = 6 %>
+          <%  end %>
+          <% if num_completed > 0 %>
+            <%= image_tag("themes/rings/theme-ring-0"+num_completed.to_s+".svg", class: 'ring _'+num_completed.to_s) %>
+          <% end %>
         </div>
       <% end %>
       <div class="theme-name"><%= challenge_name.downcase %></div>

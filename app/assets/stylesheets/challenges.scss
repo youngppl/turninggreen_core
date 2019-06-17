@@ -2,6 +2,7 @@
   margin-left: auto;
   width: 1050px;
   margin-right: auto;
+  height: 1000px;
   .heading {
     text-align: center;
     width: 787px;
@@ -107,13 +108,7 @@
       }
 
       .challenge-description {
-        width: 350px;
-        height: 100%;
-        font-family: Raleway;
         font-size: 24px;
-        font-weight: normal;
-        font-style: normal;
-        font-stretch: normal;
         display: inline-block;
         }
         .learn-more{
@@ -357,7 +352,7 @@
             display:inline-block;
             width: 100%;
 
-          .WASTE-CHALLENGES {
+          .challenge-title {
             display: inline-block;
             vertical-align: middle;
             font-family: Raleway;
@@ -374,7 +369,82 @@
           .back {
             border: none;
             background: none;
+            outline: 0;
           }
 
           }
+
+.completed-challenges {
+  text-align: left;
+  margin-top: 96px;
+  margin-left: 175px;
+  margin-right: 180px;
+ .title {
+    font-size: 55px;
+    font-weight: 600;
+    color: #4a4a4a;
+ }
+ .subheader {
+   margin-top: 37px;
+   .num-completed {
+     font-size: 30px;
+     font-weight: 600;
+     float: left;
+   }
+   .challenges-filter {
+     width: 162px;
+     height: 35px;
+     border: solid 1px #979797;
+     margin-left: 435px;
+   }
+ }
+ .challenge-rows {
+   margin-top: 37px;
+   .row {
+     .challenge-box {
+      width: 226px;
+      height: 313px;
+      border: solid 1px #979797;
+      margin-right: 46px;
+      margin-bottom: 56px;
+      position: relative;
+      &.empty {
+        background-color: rgba(216, 216, 216, 0.5);
+      }
+      .modal-trigger-area {
+        width: 226px;
+        height: 315px;
+        z-index: 1;
+        position: absolute;
+        top: 0;
+        cursor: pointer;
+      }
+      .picture {
+        height: 225px;
+        border-bottom: solid 1px #979797;
+      }
+      .info {
+        position: relative;
+        padding: 10px;
+        .name {
+          font-size: 20px;
+          font-weight: 500;
+        }
+        .icon {
+          float: right;
+          position: absolute;
+          top: 0;
+          right: 0;
+          margin: 10px;
+        }
+        .metric {
+          font-size: 17px;
+          font-weight: 500;
+          color: #4a4a4a;
+        }
+      }
+     }
+   }
+ }
+}
 }
