@@ -15,10 +15,11 @@
   </div>
 
   <div class="challenges-content">
-    <div class="To-Do">
-      <h1>To Do</h1>
-    </div>
-    <% (1..6-current_user.challenges.where(theme: @challenge_name, completed: true).length).each do %>
+    <div class="to-do-content">
+      <div class="To-Do">
+        <h1>To Do</h1>
+      </div>
+      <% (1..6-current_user.challenges.where(theme: @challenge_name, completed: true).length).each do %>
       <div class="challenge-box">
         <div class="expand-clickable-area"></div>
         <div class="challenge-icon">
@@ -33,7 +34,7 @@
           <div class="participants">
             <div class="Oval">
             </div>
-          <p class="challenge-description">100 current participants</p>
+            <p class="challenge-description">100 current participants</p>
           </div>
           <div class="hidden" style="display:none;">
             <svg class = "image"> </svg>
@@ -51,7 +52,8 @@
           </div>
         </div>
       </div>
-    <% end %>
+      <% end %>
+    </div>
     <div class="completed-content">
       <div class="Completed">
         <h1>Completed</h1>
