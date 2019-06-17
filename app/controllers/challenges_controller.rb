@@ -7,7 +7,6 @@ class ChallengesController < ApplicationController
     @challenge_name = params['challenge_name']
     @challenge_data = challenges[@challenge_name.to_sym]
     @theme_data = themesContent[@challenge_name.to_sym]
-    puts @theme_data
     @already_unlocked = current_user.unlockedChallenges.include?(@challenge_name)
     if !challenges.key?(@challenge_name.to_sym)
       raise ActionController::RoutingError.new('Not Found')
@@ -37,6 +36,21 @@ class ChallengesController < ApplicationController
     else
       message = {:alert => "You can only have a maximum of 8 challenges!"}
       redirect_to request.referer, :flash => message
+    end
+  end
+
+  def completed
+    case params[:sort_by]
+    when "recent"
+      @completed = current_user.challenges.limit(8).order("date_complete DESC")
+    when "theme"
+      @completed = current_user.challenges.limit(8).order("theme")
+    # when "global"
+
+    when "surprise"
+      @completed = current_user.challenges.limit(8).shuffle
+    else
+      @completed = current_user.challenges.limit(8).order("date_complete DESC")
     end
   end
 
