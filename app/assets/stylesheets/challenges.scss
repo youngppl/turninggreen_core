@@ -2,19 +2,24 @@
   margin-left: auto;
   width: 1050px;
   margin-right: auto;
+
   .heading {
     text-align: center;
     width: 787px;
     margin: auto;
+
     .instructions {
       // text-align: left;
       margin-top: 30px;
     }
   }
+
   .challenges-content {
     display: inline-block;
+
     .to-do-content {
       display: inline-block;
+
       .To-Do {
         height: 70px;
         font-family: Raleway;
@@ -29,6 +34,7 @@
         margin-bottom: 16px;
       }
     }
+
     .challenge-box {
       width: 502px;
       border-radius: 2px;
@@ -37,6 +43,7 @@
       margin-bottom: 16px;
       cursor: pointer;
       position: relative;
+
       .expand-clickable-area {
         width: 501px;
         position: absolute;
@@ -44,185 +51,226 @@
         bottom: 0;
       }
     }
+
     .hidden {
-    margin-bottom: 10px;
+      margin-bottom: 10px;
     }
-      .challenge-icon {
-        width: 48px;
-        height: 48px;
-        object-fit: contain;
-        margin-bottom: 56px;
-        margin-left: 18px;
-        margin-right: 17px;
-        margin-top: 22px;
-        display: inline-block;
-        vertical-align: top;
-      }
-      .challenge-info {
-        height: 100%;
-        display: inline-block;
-        margin-top: 23px;
-        max-width: 376px;
-      }
-      .Oval {
-        width: 15px;
-        height: 15px;
-        background-color: #87b67b;
-        border-radius: 40px;
-        display: inline-block;
-      }
-      .challenge-name {
-          width: 328px;
-          height: 35px;
-          font-family: Raleway;
-          font-size: 30px;
-          font-weight: 900;
-          font-style: normal;
-          font-stretch: normal;
-          line-height: normal;
-          letter-spacing: -0.2px;
-          color: #4f5151;
-          margin-top: 7px;
-          margin-bottom: 7px;
-          margin-right: 49px;
-        }
-      .image {
-        width: 362px;
-        height: 135px;
-        background-color: #515151;
-        margin-top: 16px;
-        margin-bottom: 18px;
-      }
-      .the-challenge{
-        width: 362px;
-        height: 100%;
-        font-family: Raleway;
-        font-size: 24px;
-        font-weight: normal;
-        font-style: normal;
-        font-stretch: normal;
-        line-height: 1.54;
+
+    .challenge-icon {
+      width: 48px;
+      height: 48px;
+      object-fit: contain;
+      margin: 22px 17px 56px 18px;
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    .challenge-info {
+      height: 100%;
+      display: inline-block;
+      margin-top: 23px;
+      max-width: 376px;
+    }
+
+    .Oval {
+      width: 15px;
+      height: 15px;
+      background-color: #87b67b;
+      border-radius: 40px;
+      display: inline-block;
+    }
+
+    .challenge-name {
+      width: 328px;
+      height: 35px;
+      font-family: Raleway;
+      font-size: 30px;
+      font-weight: 900;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: normal;
+      letter-spacing: -0.2px;
+      color: #4f5151;
+      margin-top: 7px;
+      margin-bottom: 7px;
+      margin-right: 49px;
+    }
+
+    .image {
+      width: 362px;
+      height: 135px;
+      background-color: #515151;
+      margin-top: 16px;
+      margin-bottom: 18px;
+    }
+
+    .the-challenge {
+      width: 362px;
+      height: 100%;
+      font-family: Raleway;
+      font-size: 24px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.54;
+      letter-spacing: -0.2px;
+      color: #4f5151;
+    }
+
+    .challenge-description {
+      font-size: 24px;
+      display: inline-block;
+    }
+
+    .learn-more {
+      width: 362px;
+      height: 29px;
+      font-family: Raleway;
+      font-size: 24px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.54;
+      letter-spacing: -0.2px;
+      color: #4f5151;
+      display: inline-block;
+      margin-bottom: 20px;
+      margin-top: -9px;
+      text-decoration: underline;
+      position: relative;
+      z-index: 3;
+    }
+
+    .start-challenge {
+      width: 401px;
+      height: 100%;
+      font-family: Raleway;
+      font-size: 26px;
+      font-weight: 500;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: normal;
+      letter-spacing: -0.2px;
+      color: #4f5151;
+
+      .challenge-started {
+        font-size: 26px;
+        font-weight: bold;
         letter-spacing: -0.2px;
         color: #4f5151;
       }
 
-      .challenge-description {
-        font-size: 24px;
-        display: inline-block;
-        }
-        .learn-more{
-          width: 362px;
-          height: 29px;
-          font-family: Raleway;
-          font-size: 24px;
-          font-weight: normal;
-          font-style: normal;
-          font-stretch: normal;
-          line-height: 1.54;
-          letter-spacing: -0.2px;
-          color: #4f5151;
-          display: inline-block;
-          margin-bottom: 20px;
-          margin-top: -9px;
-          text-decoration: underline;
-          position: relative;
-          z-index: 3;
-        }
+      .you-got-this {
+        width: 259px;
+        font-family: Raleway;
+        font-size: 26px;
+        font-weight: 500;
+        letter-spacing: -0.2px;
+        color: #4f5151;
+        margin-top: 18px;
+      }
+    }
 
-        .start-challenge{
-          width: 401px;
-          height: 100%;
-          font-family: Raleway;
-          font-size: 26px;
-          font-weight: 500;
-          font-style: normal;
-          font-stretch: normal;
-          line-height: normal;
-          letter-spacing: -0.2px;
-          color: #4f5151;
-          .challenge-started {
-              font-size: 26px;
-              font-weight: bold;
-              letter-spacing: -0.2px;
-              color: #4f5151;
-            }
-            .you-got-this {
-              width: 259px;
-              font-family: Raleway;
-              font-size: 26px;
-              font-weight: 500;
-              letter-spacing: -0.2px;
-              color: #4f5151;
-              margin-top: 18px;
-            }
-        }
+    .start-question {
+      width: 401px;
+      height: 100%;
+      font-family: Raleway;
+      font-size: 26px;
+      font-weight: bold;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.5;
+      letter-spacing: -0.2px;
+      color: #4f5151;
+      margin-bottom: 17px;
+    }
 
-        .start-question {
-          width: 401px;
-          height: 100%;
-          font-family: Raleway;
-          font-size: 26px;
-          font-weight: bold;
-          font-style: normal;
-          font-stretch: normal;
-          line-height: 1.5;
-          letter-spacing: -0.2px;
-          color: #4f5151;
-          margin-bottom:17px;
-        }
-        #weeks {
-          width: 47px;
-          border: 2px solid #5a5b5a;
-          border-radius: 7px;
-          margin-bottom: 10px;
-          padding: 2px;
-          outline: 0;
-          position: relative;
-          z-index: 3;
-        }
-        .label {
-          margin-left: 20px;
-        }
-        .challenge-title-to-do {
-            width: 162px;
-            height: 70px;
-            font-family: Raleway;
-            font-size: 60px;
-            font-weight: 900;
-            font-style: normal;
-            font-stretch: normal;
-            line-height: normal;
-            letter-spacing: -0.2px;
-            color: #4f5151;
-            right: 537px;
-            left: 741px;
-            bottom: 1099px;
-            top: 276px;
-            position: fixed;
-        }
+    #weeks {
+      width: 47px;
+      border: 2px solid #5a5b5a;
+      border-radius: 7px;
+      margin-bottom: 10px;
+      padding: 2px;
+      outline: 0;
+      position: relative;
+      z-index: 3;
+    }
 
-        .add-challenge-button {
-          width: 232px;
-          height: 53px;
-          margin-top: 22px;
-          margin-bottom: 40px;
-          padding: 0px;
-          position: relative;
-          z-index: 3;
-          outline: 0;
-        }
-        .show-hidden {
-          background:none;
-          border:none;
-          object-fit: contain;
-          float: right;
-          margin-top: -37px;
-          outline: 0;
-        }
+    .label {
+      margin-left: 20px;
+    }
 
-      .Great-Job {
-        width: 303px;
-        height: 70px;
+    .challenge-title-to-do {
+      width: 162px;
+      height: 70px;
+      font-family: Raleway;
+      font-size: 60px;
+      font-weight: 900;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: normal;
+      letter-spacing: -0.2px;
+      color: #4f5151;
+      right: 537px;
+      left: 741px;
+      bottom: 1099px;
+      top: 276px;
+      position: fixed;
+    }
+
+    .add-challenge-button {
+      width: 232px;
+      height: 53px;
+      margin-top: 22px;
+      margin-bottom: 40px;
+      padding: 0;
+      position: relative;
+      z-index: 3;
+      outline: 0;
+    }
+
+    .show-hidden {
+      background: none;
+      border: none;
+      object-fit: contain;
+      float: right;
+      margin-top: -37px;
+      outline: 0;
+    }
+
+    .Great-Job {
+      width: 303px;
+      height: 70px;
+      font-family: Raleway;
+      font-size: 60px;
+      font-weight: 900;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: normal;
+      letter-spacing: -0.2px;
+      color: #4f5151;
+    }
+
+    .You-unlocked-waste-c {
+      width: 478px;
+      height: 87px;
+      font-family: Raleway;
+      font-size: 32px;
+      font-weight: 500;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.31;
+      letter-spacing: -0.2px;
+      text-align: center;
+      color: #4f5151;
+    }
+
+    .completed-content {
+      float: right;
+      display: inline-block;
+      margin-left: 42px;
+
+      .Completed {
         font-family: Raleway;
         font-size: 60px;
         font-weight: 900;
@@ -231,198 +279,174 @@
         line-height: normal;
         letter-spacing: -0.2px;
         color: #4f5151;
-        }
-      .You-unlocked-waste-c {
-        width: 478px;
-        height: 87px;
+        margin-bottom: 16px;
+        margin-top: 42px;
+      }
+
+      .Rectangle {
+        width: 502px;
+        height: 347px;
+        border-radius: 2px;
+        box-shadow: 2px 2px 6px 0 rgba(0, 0, 0, 0.5);
+        border: solid 3px #979797;
+        background-color: #f3f3f3;
+        border-style: dashed;
+      }
+
+      .SmallRectangle {
+        width: 267px;
+        height: 183px;
+        background-color: #d8d8d8;
+        object-fit: contain;
+        margin: 44px 117px 20px 118px;
+      }
+
+      .Start-your-journey-t {
+        width: 352px;
+        height: 66px;
         font-family: Raleway;
-        font-size: 32px;
-        font-weight: 500;
+        font-size: 28px;
+        font-weight: bold;
         font-style: normal;
         font-stretch: normal;
-        line-height: 1.31;
+        line-height: normal;
         letter-spacing: -0.2px;
-        text-align: center;
         color: #4f5151;
-        }
-        .completed-content {
-            float:right;
-            display: inline-block;
-            margin-left: 42px;
-            .Completed {
-              font-family: Raleway;
-              font-size: 60px;
-              font-weight: 900;
-              font-style: normal;
-              font-stretch: normal;
-              line-height: normal;
-              letter-spacing: -0.2px;
-              color: #4f5151;
-              margin-bottom: 16px;
-              margin-top: 42px;
-            }
-            .Rectangle {
-              width: 502px;
-              height: 347px;
-              border-radius: 2px;
-              box-shadow: 2px 2px 6px 0 rgba(0, 0, 0, 0.5);
-              border: solid 3px #979797;
-              background-color: #f3f3f3;
-              border-style: dashed;
-            }
-            .SmallRectangle {
-              width: 267px;
-              height: 183px;
-              background-color: #d8d8d8;
-              object-fit:contain;
-              margin-left: 118px;
-              margin-right: 117px;
-              margin-top: 44px;
-              margin-bottom: 20px;
-            }
-            .Start-your-journey-t{
-              width: 352px;
-              height: 66px;
-              font-family: Raleway;
-              font-size: 28px;
-              font-weight: bold;
-              font-style: normal;
-              font-stretch: normal;
-              line-height: normal;
-              letter-spacing: -0.2px;
-              color: #4f5151;
-              margin-left: 75px;
-            }
-            .complete-icon {
-              width: 48px;
-              height: 48px;
-              object-fit: contain;
-              margin-bottom: 56px;
-              margin-left: 18px;
-              margin-right: 17px;
-              margin-top: 22px;
-              display: inline-block;
-              vertical-align: top;
-            }
-            .challenge-info {
-              height: 100%;
-              display: inline-block;
-              margin-top: 23px;
-            }
-            .completed-box {
-              width: 502px;
-              height: 92px;
-              border-radius: 2px;
-              box-shadow: 2px 2px 6px 0 rgba(0, 0, 0, 0.5);
-              background-color: #f3f3f3;
-              margin-bottom: 16px;
-            }
+        margin-left: 75px;
+      }
 
-            .completed-name {
-              width: 328px;
-              height: 33px;
-              font-family: Raleway;
-              font-size: 28px;
-              font-weight: bold;
-              font-style: normal;
-              font-stretch: normal;
-              line-height: normal;
-              letter-spacing: -0.2px;
-              color: #4f5151;
-              margin-top: 7px;
-              margin-bottom: 7px;
-              margin-right: 49px;
-            }
-            .show-hidden {
-              background:none;
-              border:none;
-            }
+      .complete-icon {
+        width: 48px;
+        height: 48px;
+        object-fit: contain;
+        margin: 22px 17px 56px 18px;
+        display: inline-block;
+        vertical-align: top;
+      }
+
+      .challenge-info {
+        height: 100%;
+        display: inline-block;
+        margin-top: 23px;
+      }
+
+      .completed-box {
+        width: 502px;
+        height: 92px;
+        border-radius: 2px;
+        box-shadow: 2px 2px 6px 0 rgba(0, 0, 0, 0.5);
+        background-color: #f3f3f3;
+        margin-bottom: 16px;
+      }
+
+      .completed-name {
+        width: 328px;
+        height: 33px;
+        font-family: Raleway;
+        font-size: 28px;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: -0.2px;
+        color: #4f5151;
+        margin-top: 7px;
+        margin-bottom: 7px;
+        margin-right: 49px;
+      }
+
+      .show-hidden {
+        background: none;
+        border: none;
+      }
+
       .completed-content {
-          margin-left: 42px;
-          display: inline-block;
-          float: right;
-          .Completed {
-            font-family: Raleway;
-            font-size: 60px;
-            font-weight: 900;
-            font-style: normal;
-            font-stretch: normal;
-            line-height: normal;
-            letter-spacing: -0.2px;
-            color: #4f5151;
-            margin-bottom: 16px;
-            margin-top: 42px;
-          }
-          .Rectangle {
-            width: 502px;
-            height: 347px;
-            border-radius: 2px;
-            box-shadow: 2px 2px 6px 0 rgba(0, 0, 0, 0.5);
-            border: solid 3px #979797;
-            background-color: #f3f3f3;
-            border-style: dashed;
-          }
-          .SmallRectangle {
-            width: 267px;
-            height: 183px;
-            background-color: #d8d8d8;
-            object-fit:contain;
-            margin-left: 118px;
-            margin-right: 117px;
-            margin-top: 44px;
-            margin-bottom: 20px;
-          }
-          .Start-your-journey-t{
-            width: 352px;
-            height: 66px;
-            font-family: Raleway;
-            font-size: 28px;
-            font-weight: bold;
-            font-style: normal;
-            font-stretch: normal;
-            line-height: normal;
-            letter-spacing: -0.2px;
-            color: #4f5151;
-            margin-left: 75px;
-          }
-          .complete-icon {
-            width: 48px;
-            height: 48px;
-            object-fit: contain;
-            float: right;
-            margin-top: -37px;
-            }
+        margin-left: 42px;
+        display: inline-block;
+        float: right;
 
-          }
+        .Completed {
+          font-family: Raleway;
+          font-size: 60px;
+          font-weight: 900;
+          font-style: normal;
+          font-stretch: normal;
+          line-height: normal;
+          letter-spacing: -0.2px;
+          color: #4f5151;
+          margin-bottom: 16px;
+          margin-top: 42px;
+        }
+
+        .Rectangle {
+          width: 502px;
+          height: 347px;
+          border-radius: 2px;
+          box-shadow: 2px 2px 6px 0 rgba(0, 0, 0, 0.5);
+          border: solid 3px #979797;
+          background-color: #f3f3f3;
+          border-style: dashed;
+        }
+
+        .SmallRectangle {
+          width: 267px;
+          height: 183px;
+          background-color: #d8d8d8;
+          object-fit: contain;
+          margin: 44px 117px 20px 118px;
+        }
+
+        .Start-your-journey-t {
+          width: 352px;
+          height: 66px;
+          font-family: Raleway;
+          font-size: 28px;
+          font-weight: bold;
+          font-style: normal;
+          font-stretch: normal;
+          line-height: normal;
+          letter-spacing: -0.2px;
+          color: #4f5151;
+          margin-left: 75px;
+        }
+
+        .complete-icon {
+          width: 48px;
+          height: 48px;
+          object-fit: contain;
+          float: right;
+          margin-top: -37px;
+        }
       }
     }
+  }
 
-          .back-button {
-            margin-top: 50px;
-            display:inline-block;
-            width: 100%;
+  .back-button {
+    margin-top: 50px;
+    display: inline-block;
+    width: 100%;
 
-          .challenge-title {
-            display: inline-block;
-            vertical-align: middle;
-            font-family: Raleway;
-            font-size: 48px;
-            font-weight: 500;
-            font-style: normal;
-            font-stretch: normal;
-            line-height: normal;
-            letter-spacing: -0.2px;
-            color: #4f5151;
-            margin-left: 22px;
-            margin-bottom: 0px;
-            }
-          .back {
-            border: none;
-            background: none;
-            outline: 0;
-          }
+    .challenge-title {
+      display: inline-block;
+      vertical-align: middle;
+      font-family: Raleway;
+      font-size: 48px;
+      font-weight: 500;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: normal;
+      letter-spacing: -0.2px;
+      color: #4f5151;
+      margin-left: 22px;
+      margin-bottom: 0;
+    }
 
-          }
+    .back {
+      border: none;
+      background: none;
+      outline: 0;
+    }
+  }
 }
 
 .completed-challenges {
@@ -430,74 +454,87 @@
   margin-top: 96px;
   margin-left: 175px;
   margin-right: 180px;
- .title {
+
+  .title {
     font-size: 55px;
     font-weight: 600;
     color: #4a4a4a;
- }
- .subheader {
-   margin-top: 37px;
-   .num-completed {
-     font-size: 30px;
-     font-weight: 600;
-     float: left;
-   }
-   .challenges-filter {
-     width: 162px;
-     height: 35px;
-     border: solid 1px #979797;
-     margin-left: 435px;
-   }
- }
- .challenge-rows {
-   margin-top: 37px;
-   .row {
-     .challenge-box {
-      width: 226px;
-      height: 313px;
+  }
+
+  .subheader {
+    margin-top: 37px;
+
+    .num-completed {
+      font-size: 30px;
+      font-weight: 600;
+      float: left;
+    }
+
+    .challenges-filter {
+      width: 162px;
+      height: 35px;
       border: solid 1px #979797;
-      margin-right: 46px;
-      margin-bottom: 56px;
-      position: relative;
-      &.empty {
-        background-color: rgba(216, 216, 216, 0.5);
-      }
-      .modal-trigger-area {
+      margin-left: 435px;
+    }
+  }
+
+  .challenge-rows {
+    margin-top: 37px;
+
+    .row {
+      .challenge-box {
         width: 226px;
-        height: 315px;
-        z-index: 1;
-        position: absolute;
-        top: 0;
-        cursor: pointer;
-      }
-      .picture {
-        height: 225px;
-        border-bottom: solid 1px #979797;
-      }
-      .info {
+        height: 313px;
+        border: solid 1px #979797;
+        margin-right: 46px;
+        margin-bottom: 56px;
         position: relative;
-        padding: 10px;
-        .name {
-          font-size: 20px;
-          font-weight: 500;
-          width: 189px;
-          line-height: 1;
+
+        &.empty {
+          background-color: rgba(216, 216, 216, 0.5);
         }
-        .icon {
-          float: right;
+
+        .modal-trigger-area {
+          width: 226px;
+          height: 315px;
+          z-index: 1;
           position: absolute;
           top: 0;
-          right: 0;
-          margin: 10px;
+          cursor: pointer;
         }
-        .metric {
-          font-size: 17px;
-          font-weight: 500;
-          color: #4a4a4a;
-          margin-top: 3px;
+
+        .picture {
+          height: 225px;
+          border-bottom: solid 1px #979797;
+        }
+
+        .info {
+          position: relative;
+          padding: 10px;
+
+          .name {
+            font-size: 20px;
+            font-weight: 500;
+            width: 189px;
+            line-height: 1;
+          }
+
+          .icon {
+            float: right;
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin: 10px;
+          }
+
+          .metric {
+            font-size: 17px;
+            font-weight: 500;
+            color: #4a4a4a;
+            margin-top: 3px;
+          }
         }
       }
-     }
-   }
- }
+    }
+  }
 }
