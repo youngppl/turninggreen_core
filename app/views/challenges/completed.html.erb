@@ -16,6 +16,7 @@
   <br>
   <div class="challenge-rows">
     <% counter = 0 %>
+    <% uncompleted_counter = 0%>
     <% (1..2).each do |row| %>
       <div class="row">
         <% (1..4).each do |col| %>
@@ -52,7 +53,35 @@
             </div>
             </div>
           <% else %>
-            <div class="challenge-box empty"></div>
+            <% waste_challenges = challenges[:Waste][:challenges].select{ |challenge| !getUserCompletedChallengeNames.include? challenge[:name] } %>
+            <% challenge = waste_challenges[uncompleted_counter] %>
+            <% if !challenge.nil? %>
+            <!-- REPLACE THIS WHEN ALL CHALLENGE CONTENT ARE COMPLETED; CREATE ARRAY WITH EVERY CHALLENGE AND ITERATE -->
+              <div class="challenge-box empty">
+                <div class="modal-trigger-area" onclick></div>
+                <div class="picture"></div>
+                <div class="info">
+                  <div class="name"><%= challenge[:name] %></div>
+                  <div class="icon"><%= image_tag "themes/icons/waste.svg", size:'20' %></div>
+                  <div class="metric">
+                    metric here
+                  </div>
+                </div>
+              </div>
+            <% else %>
+              <div class="challenge-box empty">
+                <div class="modal-trigger-area" onclick></div>
+                <div class="picture"></div>
+                <div class="info">
+                  <div class="name">some challenge</div>
+                  <div class="icon"><%= image_tag "themes/icons/food.svg", size:'20' %></div>
+                  <div class="metric">
+                    metric here
+                  </div>
+                </div>
+              </div>
+            <% end %>
+            <% uncompleted_counter+=1 %>
           <% end %>
           <%counter+=1%>
         <% end %>
