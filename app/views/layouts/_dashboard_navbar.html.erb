@@ -30,19 +30,19 @@
           <% else %>
             <div class="no-notifications" style="display:none;">You have no notifications.</div>
             <% challenges_with_reflections.each do |challenge| %>
-              <a onclick="">
                 <div class="notification">
-                  You have completed <%= challenge.challenge_name %>! Now it's time to check-in and reflect!
+                  <a onclick="">
+                    You have completed <%= challenge.challenge_name %>! Now it's time to check-in and reflect!
+                  </a>
                 </div>
-              </a>
             <% end %>
             <% challenge_date_reminders.each do |challenge| %>
-              <a href="/challenges/<%= challenge.theme %>">
                 <div class="notification">
-                  <button type="button" name="close" class="dismiss" onclick="$(this).parent().hide();updateNotification(<%= challenge.id %>);">&times;</button>
-                  <%= challenge.challenge_name %> is ending in <%= pluralize (challenge.date_complete-Date.today).to_i, 'day' %>.
+                  <button type="button" name="close" class="dismiss" onclick="$(this).parent().hide();updateNotification(<%= challenge.id %>);event.stopPropagation();">&times;</button>
+                  <a href="/challenges/<%= challenge.theme %>">
+                    <%= challenge.challenge_name %> is ending in <%= pluralize (challenge.date_complete-Date.today).to_i, 'day' %>.
+                  </a>
                 </div>
-              </a>
             <% end %>
           <% end %>
         </div>
