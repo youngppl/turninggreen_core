@@ -136,14 +136,14 @@
   color: #4f5151;
 }
 
-.helpText {
+.helpText, .themesHelpText {
+  font-family: Raleway;
   font-size: 27px;
-  text-align: center;
-  color: #4a4a4a;
-}
-
-.themesHelpText {
-  font-size: 27px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
   text-align: center;
   color: #4a4a4a;
   margin-top: 58px;
