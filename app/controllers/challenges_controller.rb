@@ -2,6 +2,7 @@ class ChallengesController < ApplicationController
   before_action :authenticate_user!
   include ChallengesHelper
   include ThemesHelper
+  include UsersHelper
   def show
     # matches /challenges/[challenge] to correct challenge page
     @challenge_name = params['challenge_name']
