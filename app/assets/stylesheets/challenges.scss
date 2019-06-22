@@ -277,6 +277,11 @@
         color: #4f5151;
         margin-top: 42px;
       }
+      @-moz-document url-prefix() {
+          .Completed {
+              margin-bottom: -14px;
+          }
+      }
 
       .Rectangle {
         width: 502px;
