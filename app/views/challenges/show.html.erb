@@ -81,7 +81,7 @@
                   <h7 class="learn-more">Learn More</h7>
                   <ul>
                     <% challenge[:links].each do |text, link| %>
-                      <li><%= link_to text, link, class: "link"%></li>
+                      <li><%= link_to text, link, class: "link", target: "_blank"%></li>
                     <% end %>
                   </ul>
                 </div>
