@@ -1,19 +1,18 @@
-// Place all the styles related to the Welcome controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
-html,body {
+body,
+html {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
   background-color: #111;
-  // color: #fff;
   font-family: Raleway, sans-serif;
 }
-h1, h3 {
+
+h1,
+h3 {
   font-size: 4vw;
   text-transform: uppercase;
 }
+
 h3 {
   text-align: center;
 }
@@ -21,256 +20,115 @@ h3 {
 p {
   font-size: 21px;
 }
-.fullScreen {
-  width: 100%;
-  min-height: 100vh;
-  /* background-color: #ccc; */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.screenWrapper {
-  width: 80%;
-  background-color: none;
-}
 
-.navbarList {
-  font-size: 21px;
-  line-height: 2em;
-  margin: 0px auto 0px auto;
-  text-transform: uppercase;
+.landing-page {
   text-align: center;
-  right: 0;
-  left: 0;
-  width: 100%;
-  padding: 0;
-  background-color: #7FA86F;
-  z-index: 100;
-}
-.navbarList li {
-  display: inline-block;
-  list-style: outside none none;
-  position: relative;
-  margin: 0.5em 0.6em;
-  padding: 12px 15px;
-}
-.navbarList li a {
-  color: #fff;
-  text-decoration: none;
-}
-.navbarList li a:hover{
-    text-decoration:underline overline;
-}
+  .border {
+    border: solid 1px #979797;
+  }
+  .header {
+    padding-top: 70px;
+    padding-bottom: 67px;
+    .hook {
+      font-size: 50px;
+      font-weight: 500;
+    }
 
-.actionButton {
-  text-transform: uppercase;
-  font-size: 25px;
-  text-decoration: none;
-  color: white;
-  padding: 10px 15px;
-  background-color: #fa8072;
-  width: auto;
-}
-.actionButton:hover {
-  background-color: #cc685d;
-  text-decoration: underline;
-}
+    .answer {
+      font-size: 35px;
+      font-weight: 500;
+      margin-top: 24px;
+      margin-bottom: 42px;
+    }
 
-/* carousel stuff */
-.carouselDiv {
-  width: 100%;
-  position: relative;
-  margin: auto;
-}
-.panel {
-  display: none;
-  height: 100%;
-}
-.panelImg {
-  width: 40%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.panelImg img {
-  width: 80%;
-  vertical-align: middle;
-}
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  margin-top: -22px;
-  padding: 16px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-}
-.next {
-  right: -8%;
-  border-radius: 3px 0 0 3px;
-}
-.prev {
-  left: -8%;
-}
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
-}
+    .button {
+      width: 201px;
+      height: 62px;
+      font-size: 35px;
+      font-weight: 500;
+      border: solid 1px #979797;
+      background-color: #d8d8d8;
+      color: #000000;
+      margin: auto;
+      text-decoration: none;
+      display: block;
+      margin-bottom: 32px;
+      line-height: 56px;
+    }
+  }
 
-.panelText {
-  color: white;
-  width: 60%;
-  height: 100%;
-  padding-left: 15px;
-  margin-left: auto;
-  margin-right: auto;
-  flex: 1;
-}
-.panelText h3 {
-  text-align: left;
-}
-.carouselDots {
-  text-align: center;
-}
-.dot {
-  cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-.active, .dot:hover {
-  background-color: #717171;
-}
-.fade {
-  -webkit-animation-name: fade;
-  -webkit-animation-duration: 1.5s;
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-@-webkit-keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
-}
-@keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
-}
-/* that's all folks */
-.pageAnchor {
-  display: block;
-  height: 25vh;
-  margin-top: -25vh;
-  visibility: hidden;
-}
+  .impacts {
+    padding-top: 71px;
+    padding-bottom: 70px;
+    .heading {
+      font-size: 40px;
+      font-weight: 500;
+      margin-bottom: 110px;
+    }
 
-.footer{
-  width: 100%;
-  text-align: center;
-  background-color: #262827;
-  color: #818282;
-}
+    .pictures {
+      .picture {
+        width: 200px;
+        height: 200px;
+        border: solid 1px #979797;
+        background-color: #d8d8d8;
+        display: inline-block;
+      }
+      .picture + .picture {
+        margin-left: 122px;
+      }
+    }
+  }
 
-.socialMedList{
-  width: 50%;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 0;
-  text-align: center;
-}
+  .about-us {
+    padding-top: 70px;
+    padding-bottom: 70px;
+    .heading {
+      font-size: 40px;
+      font-weight: 500;
+      margin-bottom: 70px;
+    }
 
-.fa {
-  color: #77b454;
-}
+    .about-text {
+      font-size: 30px;
+      font-weight: 500;
+      width: 910px;
+      margin: auto;
+      text-align: left;
+    }
+  }
 
-.socialMedList div{
-  display: inline-block;
-  width: 30px;
-  padding: 15px;
-  position: relative;
-  margin: 0 20px;
-}
+  .about-app {
+    padding-top: 70px;
+    padding-bottom: 70px;
+    .heading {
+      font-size: 40px;
+      font-weight: 500;
+      margin-bottom: 66px;
+    }
 
-.footerBottom {
-  width: 100%;
-  padding: 0;
-  display: flex;
-  justify-content: space-between;
-  padding: 20px 0;
-}
-
-.footerBottom li{
-  width: 33%;
-  display: inline-block;
-  text-align: center;
-  color: #494C4A;
-  font-size: 15px;
-  padding: 0px;
-}
-
-#signUpButton {
-  text-align: center;
-}
-#welcomeScreen {
-    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ); //,url("./../images/plant.jpeg");
-  /* background-image: url("group.jpeg"); */
-  background-repeat: no-repeat;
-  background-position: center;
-
-}
-#aboutScreen {
-  background-color: white;
-  color: black;
-}
-#aboutContent {
-  display: flex;
-}
-#aboutImageCont {
-  width: 40%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-#aboutImage {
-  width: 80%;
-}
-#aboutTextCont {
-  width: 60%;
-  height: 100%;
-  padding-left: 15px;
-  flex: 1;
-}
-#dashboardScreen {
-  background-color: #39455B;
-  color: white;
-  overflow: visible;
-}
-#interestedScreen {
-  color: black;
-  background: linear-gradient( rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7) ); //,url("./../images/plant.jpeg");
-  background-position: center;
-  background-repeat: no-repeat;
-}
-#aboutTitle {
-  text-align: left;
-}
-#signUpButton {
-  display: block;
-  width: max-content;
-  width: -moz-max-content;
-  margin: auto;
-}
-#returningUser {
-  text-align: center;
-  color: black;
-  display: block;
-  width: max-content;
-  margin:auto;
+    .pictures {
+      .picture {
+        display: inline-block;
+        width: 356px;
+        height: 218px;
+        border: solid 1px #979797;
+        background-color: #d8d8d8;
+      }
+      .picture + .picture {
+        margin-left: 100px;
+      }
+    }
+    .right-arrow {
+      font-size: 100px;
+      display: inline-block;
+      vertical-align: 68px;
+      position: relative;
+      margin-left: 100px;
+      position: relative;
+      right: -517px;
+      top: -160px;
+      display: block;
+    }
+  }
 }
