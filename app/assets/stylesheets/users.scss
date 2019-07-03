@@ -272,7 +272,7 @@
       font-size: 20px;
       font-weight: 600;
       color: #384632;
-      .deactive {
+      &:disabled {
         border: solid 3px #cacaca;
       }
     }
