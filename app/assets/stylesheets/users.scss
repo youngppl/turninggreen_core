@@ -183,78 +183,158 @@
 
 .settings {
   @extend .dashboard;
-  padding-top: 15px;
-  > div{
-    display: inline-block;
-    margin-left: 140px;
-    vertical-align: top;
-    margin-top: 20px;
+  padding-left: 94px;
+  padding-top: 42px;
+  h2.settings-title {
+    font-size: 45px;
+    font-weight: bold;
+    color: #464646;
+    margin-bottom: 37px;
+    margin-left: 90px;
   }
-  .left-panel {
-    text-align: center;
-  }
-  .right-panel {
-    margin-bottom: 25px;
-  }
-  .spacer {
-    width: 200px;
-  }
-  .save-button {
-    border-radius: 10px;
-    background-color: #80a870;
-    border-color: #80a870;
-    color: white;
-    width: 100px;
+  .settings-tabs {
+    li {
+      font-size: 30px;
+      font-weight: 500;
+      a {
+        display: block;
+        height: 60px;
+        width: 268px;
+        text-align: center;
+        color: #384632 !important;
+        border-radius: 6px;
+        &:hover {
+          text-decoration: none;
+        }
+        &.active {
+          border-bottom: solid 6px #87b67b;
+        }
+      }
+    }
   }
   .separator {
-    border: 1px solid #d6d7d9;
-    width: 1082px;
+    width: 1070px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+    border: solid 1px #979797;
+    margin-top: inherit;
   }
-  .heading {
-    margin-bottom: 19px;
-  }
-  form div {
-    margin-bottom: 5px;
+  .tab-content {
+    .tab-pane {
+      width: 600px;
+      margin: auto;
+      margin-top: 42px;
+    }
+    #profile {
+      .user-name {
+        font-size: 28px;
+        font-weight: 600;
+        color: #384632;
+        margin-bottom: 20px;
+      }
+      #user_email {
+        margin-bottom: 43px;
+      }
+      label.state, label.country {
+        width: 78px;
+        text-align: right;
+        font-size: 18px;
+        font-weight: 600;
+        color: #777777;
+        margin-right: 18px;
+      }
+      #user_state {
+        margin-bottom: 31px;
+      }
+      #user_state, #user_country {
+          width: 293px;
+      }
+    }
+    #account {
+      // account settings css goes here (❁´◡`❁)
+    }
+    #privacy {
+      // privacy settings css goes here (❁´◡`❁)
+    }
+    #notifications {
+      // notifications settings css goes here (❁´◡`❁)
+    }
+    label {
+      font-size: 20px;
+      font-weight: 600;
+      color: #384632;
+    }
+    .save-changes-button {
+      width: 181px;
+      height: 65px;
+      border-radius: 7px;
+      border: solid 3px #87b67b;
+      background-color: #ffffff;
+      font-size: 20px;
+      font-weight: 600;
+      color: #384632;
+      .deactive {
+        border: solid 3px #cacaca;
+      }
+    }
+    .inputField {
+      border-radius: 5px;
+      border: solid 1px #787878;
+      height: 48px;
+    }
   }
 }
 
-h2.user-name {
-  margin-top: 10px;
-}
 
-h2.settings-title {
-    font-size: 40px;
-}
 
-.upload-wrap {
-    position: relative;
-}
+// .heading {
+//   margin-bottom: 19px;
+// }
+// form div {
+//   margin-bottom: 5px;
+// }
+// .left-panel {
+//   text-align: center;
+// }
+// .right-panel {
+//   margin-bottom: 25px;
+// }
+// .spacer {
+//   width: 200px;
+// }
 
-.upload-btn {
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    opacity: 0;
-}
-
-.upload-photo{
-  .modal-body {
-    background-color: white;
-  }
-  .modal-content {
-    width: 450px;
-    margin: auto;
-  }
-  #minus {
-    position: absolute;
-    top: 307px;
-    font-size: 40px;
-    left: 48px;
-  }
-  #plus {
-    position: absolute;
-    top: 311px;
-    font-size: 40px;
-    right: 49px;
-  }
-}
+// h2.user-name {
+//   margin-top: 10px;
+// }
+//
+// .upload-wrap {
+//     position: relative;
+// }
+//
+// .upload-btn {
+//     position: absolute;
+//     left: 0px;
+//     top: 0px;
+//     opacity: 0;
+// }
+//
+// .upload-photo{
+//   .modal-body {
+//     background-color: white;
+//   }
+//   .modal-content {
+//     width: 450px;
+//     margin: auto;
+//   }
+//   #minus {
+//     position: absolute;
+//     top: 307px;
+//     font-size: 40px;
+//     left: 48px;
+//   }
+//   #plus {
+//     position: absolute;
+//     top: 311px;
+//     font-size: 40px;
+//     right: 49px;
+//   }
+// }

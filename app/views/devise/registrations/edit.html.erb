@@ -3,11 +3,72 @@
 <% end %>
 
 <div class="settings">
-  <div class="top-panel">
-    <h2 class="settings-title">MY SETTINGS</h2>
+  <div class="">
+    <h2 class="settings-title">Settings</h2>
   </div>
-  <hr class="separator">
-  <div class="left-panel">
+  <ul class="nav settings-tabs">
+    <li class="active"><a data-toggle="tab" href="#profile" class="active">Profile</a></li>
+    <li><a data-toggle="tab" href="#account">Account</a></li>
+    <li><a data-toggle="tab" href="#privacy">Privacy</a></li>
+    <li><a data-toggle="tab" href="#notifications">Notifications</a></li>
+  </ul>
+  <div class="separator">
+  </div>
+
+  <div class="tab-content">
+    <div id="profile" class="tab-pane active">
+      <h2 class="user-name"><%= @user.name %></h2>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+        <%= devise_error_messages! %>
+
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+        <% end %>
+
+        <div class="field">
+          <%= f.label 'Email' %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "inputField", placeholder: "email@example.com" %>
+        </div>
+
+        <label>Location</label>
+        <div class="field">
+          <%= f.label "State", class: "state" %>
+          <%= f.select :state, options_for_select(us_states, resource.state), {:include_blank => "State"}, {:class => "inputField"} %> <br>
+          <%= f.label "Country", class: "country"  %>
+          <%= f.select :country, options_for_select(countries, resource.country), {:include_blank => "Country"}, {:class => "inputField", :onchange => "updateStateField();"}%>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "Save Changes", class: "btn save-changes-button" %>
+        </div>
+      <% end %>
+    </div>
+    <div id="account" class="tab-pane fade">
+      <p>account settings go here :)</p>
+    </div>
+    <div id="privacy" class="tab-pane fade">
+      <p>privacy settings go here :)</p>
+    </div>
+    <div id="notifications" class="tab-pane fade">
+      <p>notifications settings go here :)</p>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- <div class="left-panel">
 
       <div class="update-avatar thumbnail" onclick="document.getElementById('upload-photo-input').click();">
         <%= image_tag(profile_pic_link, size: "200x200", class: "rounded-circle") %>
@@ -39,52 +100,12 @@
       </div>
     </div>
 
-    <h2 class="user-name"><%= @user.name %></h2>
 
   </div>
 
   <div class="right-panel">
     <h2 class="heading">Personal</h2>
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-      <%= devise_error_messages! %>
 
-      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-      <% end %>
-
-      <div class="update-avatar">
-        <div class="upload-wrap">
-          <%= f.file_field :profile_pic, id: "upload-photo-input", class: "upload-btn", onchange: "$('#pic-input-dialog').modal('show');", accept: "image/*", direct_upload: true%>
-        </div>
-      </div>
-
-      <div class="field">
-        <%= f.label 'Update email' %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "inputField", placeholder: "email@example.com" %>
-      </div>
-
-
-      <div class="field">
-        <%= f.label 'Update password' %><br>
-        <%= f.password_field :password, autocomplete: "new-password", placeholder: "New password", class: "inputField"%><br>
-        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "inputField", placeholder: "Confirm new password"%>
-      </div>
-
-      <div class="field">
-        <%= f.label "Update state/country" %><br>
-        <%= f.select :state, options_for_select(us_states, resource.state), {:include_blank => "State"}, {:class => "inputField"} %> <br>
-        <%= f.select :country, options_for_select(countries, resource.country), {:include_blank => "Country"}, {:class => "inputField", :onchange => "updateStateField();"}%>
-      </div>
-
-      <div class="field">
-        <%= f.label "Update local time zone" %> <br>
-        <%= f.select :timezone, time_zone_options_for_select(get_timezone_name_from(resource.timezone)), {:include_blank=> "Time zone"}, {:class=> "inputField"}%>
-      </div>
-
-      <div class="actions">
-        <%= f.submit "SAVE", class: "btn save-button" %>
-      </div>
-    <% end %>
   </div>
   <hr class="separator">
   <div class="spacer"></div>
@@ -102,5 +123,4 @@
         <%= f.submit "SAVE", class: "btn save-button" %>
       </div>
     <% end %>
-  </div>
-</div>
+  </div> -->
