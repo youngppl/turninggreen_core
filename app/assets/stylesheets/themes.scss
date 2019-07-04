@@ -13,14 +13,16 @@
 }
 
 .theme {
-  width: 200px;
-  height: 200px;
+  width: 199px;
+  height: 198px;
   margin-top: 20px;
   margin-right: 35px;
   display: inline-block;
   white-space: nowrap;
   vertical-align: top;
   position: relative;
+  box-shadow: 5px 5px 6px 0 #9f9f9f;
+  border-radius: 50%;
   .theme-name {
     font-size: 30px;
     font-weight: 600;
