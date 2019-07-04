@@ -27,19 +27,23 @@
 
         <div class="field">
           <%= f.label 'Email' %><br />
-          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "inputField", placeholder: "email@example.com" %>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "inputField", placeholder: "email@example.com", oninput: "checkEmail();allowSaveButton();" %>
+          <div class="email error" style="display:none;">
+            <div class="error-icon"></div>
+            <span class="message">You must enter a valid email</span>
+          </div>
         </div>
 
         <label>Location</label>
         <div class="field">
           <%= f.label "State", class: "state" %>
-          <%= f.select :state, options_for_select(us_states, resource.state), {:include_blank => "State"}, {:class => "inputField"} %> <br>
+          <%= f.select :state, options_for_select(us_states, resource.state), {:include_blank => "State"}, {:class => "inputField", :onchange => "updateCountryField();allowSaveButton();"} %> <br>
           <%= f.label "Country", class: "country"  %>
-          <%= f.select :country, options_for_select(countries, resource.country), {:include_blank => "Country"}, {:class => "inputField", :onchange => "updateStateField();"}%>
+          <%= f.select :country, options_for_select(countries, resource.country), {:include_blank => "Country"}, {:class => "inputField", :onchange => "updateStateField();allowSaveButton();"}%>
         </div>
 
         <div class="actions">
-          <%= f.submit "Save Changes", class: "btn save-changes-button", disabled: "true" %>
+          <%= f.submit "Save Changes", class: "btn save-changes-button", id: "profile-save-button", disabled: "true" %>
         </div>
       <% end %>
     </div>
