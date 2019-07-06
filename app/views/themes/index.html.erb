@@ -11,25 +11,26 @@
   <div class="themesRow">
     <% row.each do |challenge_name| %>
     <div class="theme">
+      <%= image_tag("themes/rings/theme-ring.svg") %>
       <% if !current_user.unlockedChallenges.include?(challenge_name) %>
-        <div class="theme-locked">
-          <%= image_tag("themes/rings/locked-theme-ring.svg") %>
-        </div>
+        <div class="theme-locked"></div>
       <% else %>
-        <%= image_tag("themes/rings/unlocked-theme-ring.svg") %>
         <div class="completed-ring">
           <% num_completed = Challenge.where(user_id: current_user, theme: challenge_name.capitalize, completed: true).length %>
           <% if num_completed > 6 %>
             <% num_completed = 6 %>
           <%  end %>
           <% if num_completed > 0 %>
-            <%= image_tag("themes/rings/theme-ring-0"+num_completed.to_s+".svg", class: 'ring _'+num_completed.to_s) %>
+            <% for i in 1..num_completed %>
+              <%= image_tag("themes/rings/theme-ring-0"+i.to_s+".svg", class: 'ring _'+i.to_s) %>
+            <% end %>
           <% end %>
         </div>
       <% end %>
       <div class="theme-name"><%= challenge_name.downcase %></div>
       <%= link_to challenges_path(challenge_name) do %>
-        <div class="icon-box"><%= image_tag("themes/icons/"+challenge_name.downcase+".svg", class: "icon") %></div>
+        <% locked = !current_user.unlockedChallenges.include?(challenge_name)? " locked" : ""  %>
+        <div class="icon-box"><%= image_tag("themes/icons/"+challenge_name.downcase+".svg", class: "icon" + locked) %></div>
       <% end %>
     </div>
     <% end %>
