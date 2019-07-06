@@ -22,7 +22,7 @@
         <%= devise_error_messages! %>
 
         <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+          <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
         <% end %>
 
         <div class="field">
@@ -43,7 +43,7 @@
         </div>
 
         <div class="actions">
-          <%= f.submit "Save Changes", class: "btn save-changes-button", id: "profile-save-button", disabled: "true" %>
+          <%= f.submit "Save Changes", class: "btn save-changes-button", id: "profile-save-button", disabled: "true", onclick: "$('#changes-saved').modal();" %>
         </div>
       <% end %>
     </div>
@@ -59,6 +59,7 @@
   </div>
   <%= render "layouts/settings/changes_saved_popup" %>
   <%= render "layouts/settings/account_deactivate_popup" %>
+  <%= render "layouts/settings/email_updated_popup" %>
 </div>
 
 

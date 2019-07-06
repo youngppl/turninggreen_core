@@ -6,19 +6,30 @@
           <span aria-hidden="true">&#x2715;</span>
         </button>
         <h2 class="heading">Account Deactivation</h2>
-        <p class="warning">You are an important user. Please tell us what went wrong. You will lose everything if you deactivate </p>
-        <div class="deactivate-reasons-form">
-          <form id="deactivate-form" action="#" method="#" onchange="checkDeactivateForm();">
-            <input type="checkbox" id="not-safe" value=""> <span class="option">I don’t feel safe</span><br>
-            <input type="checkbox" id="not-useful" value=""> <span class="option">I think this app is not useful for me</span><br>
-            <input type="checkbox" id="too-much-work" value=""> <span class="option">There is too much work involved in this app</span><br>
-            <input type="checkbox" id="other" value=""> <span class="option">Other (please elaborate):</span><br>
-            <textarea id="other-textarea" onchange="checkDeactivateForm();" disabled></textarea><br>
-            <div class="deactivate error" style="display:none;">
-              <div class="error-icon"></div>
-              <span class="message">Please type in a reason before continuing</span>
-            </div>
-            <input type="submit" class="btn save-changes-button next" id="deactivate-next-button" value="Next" disabled>
+        <div class="first slide">
+          <p class="warning">You are an important user. Please tell us what went wrong. You will lose everything if you deactivate </p>
+          <div class="deactivate-reasons-form">
+            <form id="deactivate-form" action="/deactivate" method="post" onchange="checkDeactivateForm();">
+              <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+              <input type="checkbox" id="not-safe" name="not-safe" value="1"> <span class="option">I don’t feel safe</span><br>
+              <input type="checkbox" id="not-useful" name="not-useful" value="1"> <span class="option">I think this app is not useful for me</span><br>
+              <input type="checkbox" id="too-much-work" name="too-much-work" value="1"> <span class="option">There is too much work involved in this app</span><br>
+              <input type="checkbox" id="other" value="1"> <span class="option">Other (please elaborate):</span><br>
+              <textarea id="other-textarea" name="other" onchange="checkDeactivateForm();" disabled></textarea><br>
+              <div class="deactivate error" style="display:none;">
+                <div class="error-icon"></div>
+                <span class="message">Please type in a reason before continuing</span>
+              </div>
+              <input type="submit" class="btn save-changes-button next" id="deactivate-next-button" value="Next" disabled onclick="$('.first.slide').hide();$('.second.slide').show();">
+            </form>
+          </div>
+        </div>
+        <div class="second slide" style="display:none;">
+          <p class="warning">You will not be able to recover any of your data once your deactivate. It is a permanent decision. </p>
+          <form action="/deactivate" method="post">
+            <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+            <textarea id="additional-textarea" name="other" placeholder="We are always open to improving our platform. Please let us know of any additional comments you have."></textarea><br>
+            <input type="submit" class="btn save-changes-button :disabled" id="deactivate-button" value="Deactivate" onclick="$.ajax({url: '<%= user_registration_path %>', type: 'DELETE'});">
           </form>
         </div>
       </div>
