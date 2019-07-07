@@ -16,9 +16,35 @@
       <li><%= link_to 'themes', themes_path %><div class="themes-underline" style="display:none;"></div></li>
       <li><div class="separator-line"></div></li>
       <li class="dropdown">
-        <button class="dropdownMenuButton" data-toggle="dropdown"><%= image_tag('notification-bell.svg') %></button>
+        <button id="dropdownMenuButton" data-toggle="dropdown" class="notification-button">
+          <%= image_tag 'notification-bell.svg', class: 'notification-bell-icon' %>
+          <% challenges_with_reflections = current_user.challenges.where(completed:true, reflection_completed:false)%>
+          <% challenge_date_reminders = current_user.challenges.where(date_complete:Date.today..3.days.from_now,notification_viewed:false)%>
+          <% if (challenge_date_reminders.length > 0) || (challenges_with_reflections.length > 0) %>
+            <%= image_tag 'notification-alert.svg', class: 'notification-green-dot'  %>
+          <% end %>
+        </button>
         <div class="dropdown-menu dropdown-menu-right notifications-dropdown">
-          You have no notifications.
+          <% if (challenge_date_reminders.length == 0) && (challenges_with_reflections.length == 0) %>
+            <div class="no-notifications">You have no notifications.</div>
+          <% else %>
+            <div class="no-notifications" style="display:none;">You have no notifications.</div>
+            <% challenges_with_reflections.each do |challenge| %>
+                <div class="notification">
+                  <a onclick="">
+                    You have completed <%= challenge.challenge_name %>! Now it's time to check-in and reflect!
+                  </a>
+                </div>
+            <% end %>
+            <% challenge_date_reminders.each do |challenge| %>
+                <div class="notification">
+                  <button type="button" name="close" class="dismiss" onclick="$(this).parent().hide();updateNotification(<%= challenge.id %>);event.stopPropagation();">&times;</button>
+                  <a href="/challenges/<%= challenge.theme %>">
+                    <%= challenge.challenge_name %> is ending in <%= pluralize (challenge.date_complete-Date.today).to_i, 'day' %>.
+                  </a>
+                </div>
+            <% end %>
+          <% end %>
         </div>
       </li>
       <li class="dropdown">

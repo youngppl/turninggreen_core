@@ -7,171 +7,234 @@
 </div>
 
 <div class="challenge-page">
-<div class="back-button">
-  <button type="button" class="back" name="button" onclick="location.href='/themes';">
-  <%= image_tag 'arrow-back.svg'%>
-  </button>
-  <h1 class="WASTE-CHALLENGES"><%= @challenge_name %> CHALLENGES</h1>
+  <div class="back-button">
+    <button type="button" class="back" name="button" onclick="location.href='/themes';">
+      <%= image_tag 'arrow-back.svg'%>
+    </button>
+    <h1 class="challenge-title"><%= @challenge_name %>
+      CHALLENGES</h1>
   </div>
-  <div class="completed-content">
-    <div class="Completed">
-      <h1>Completed</h1>
-    </div>
-      <% @noneCompleted = true %>
-      <% (current_user.challenges).each do |challenge| %>
-        <% if challenge.theme == @challenge_name && challenge.completed? %>
-          <% @noneCompleted = false %>
-          <div class="completed-box">
+
+  <div class="challenges-content">
+    <div class="to-do-content">
+      <div class="To-Do">
+        <h1>To Do</h1>
+      </div>
+      <% if @challenge_data[:challenges].empty? %>
+        <% (1..6-current_user.challenges.where(theme: @challenge_name, completed: true).length).each do %>
+          <div class="challenge-box">
             <div class="expand-clickable-area"></div>
-            <div class="complete-icon">
-              <%= image_tag 'to-do-checked.svg', size:"48x48"%>
+            <div class="challenge-icon">
+              <%= image_tag 'to-do-unchecked.png', size:"48x48"%>
             </div>
             <div class="challenge-info">
-              <h5 class="completed-name">Carry a bag for waste</h5>
+              <h5 class="challenge-name">Carry a bag for waste</h5>
               <button type="button" class="show-hidden">
                 <i class="fas fa-chevron-down"></i>
                 <i class="fas fa-chevron-left" style="display:none;"></i>
               </button>
+              <div class="participants">
+                <div class="Oval"></div>
+                <p class="challenge-description">100 current participants</p>
+              </div>
               <div class="hidden" style="display:none;">
-                <svg class = "image"> </svg>
-                <h6 class="completed-header">Completed:</h6>
-                  <div class="completed-instance">
-                    <div class="complete-icon">
-                      <%= image_tag 'to-do-checked.svg', size:"48x48"%>
-                    </div>
-                    <div class="completed-info">
-                      <p class="completed-time"><%= challenge.created_at.month =%>/<%= challenge.created_at.day =%> - <%= endDate(challenge).month =%>/<%= endDate(challenge).day =%></p>
-                      <p class="instance-description">You diverted 10lbs of garbage! Amazing!</p>
-                    </div>
-                  </div>
+                <svg class="image"></svg>
+                <div class="the-challenge">
+                  <p class="challenge-description">Carry a bag to collect your waste! Don’t hide it! Carry your bag of waste proudly and invite conversations with classmates and community members.</p>
+                </div>
+                <div class="learn-more">
+                  <h7>
+                    <a class="learn-more" href="www.google.com">Learn More</a>
+                  </h7>
+                </div>
                 <div class="start-challenge">
-                  <h6 class ="start-question">How long would you like to retake this challenge?</h6>
-                  <%= select_tag "weeks", options_for_select((1..8).to_a)%> <span class="label"> week(s) starting today</span><br>
-                  <button type="button" class="btn add-challenge-button" name="button"><%= image_tag 'retry-challenge-button-copy.png'%></button>
+                  <h6 class="start-question">How long would you like to take this challenge?</h6>
+                  <%= select_tag "weeks", options_for_select((1..8).to_a)%>
+                  <span class="label">
+                    week(s) starting today</span><br>
+                  <button type="button" class="btn add-challenge-button" name="button"><%= image_tag 'start-challenge-button.png'%></button>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% else %>
+        <% @challenge_data[:challenges].each do |challenge| %>
+          <!-- THIS IS THE RIGHT CHALLENGE BOX! KEEP THIS IN THE FUTURE WHEN ALL CONTENT IS ADDED!!! -->
+          <div class="challenge-box">
+            <div class="expand-clickable-area"></div>
+            <div class="challenge-icon">
+              <%= image_tag 'to-do-unchecked.png', size:"48x48"%>
+            </div>
+            <div class="challenge-info">
+              <h5 class="challenge-name"><%= challenge[:name] %></h5>
+              <button type="button" class="show-hidden">
+                <i class="fas fa-chevron-down"></i>
+                <i class="fas fa-chevron-left" style="display:none;"></i>
+              </button>
+              <div class="participants">
+                <div class="Oval"></div>
+                <p class="challenge-description">100 current participants</p>
+              </div>
+              <div class="hidden" style="display:none;">
+                <svg class="image"></svg>
+                <div class="the-challenge">
+                  <p class="challenge-description"><%= challenge[:description] %></p>
+                </div>
+                <div class="learn-more">
+                  <h7 class="learn-more">Learn More</h7>
+                  <ul>
+                    <% challenge[:links].each do |text, link| %>
+                      <li><%= link_to text, link, class: "link", target: "_blank"%></li>
+                    <% end %>
+                  </ul>
+                </div>
+                <div class="instructions">
+                  <h4 class="title">Instructions</h4>
+                  <p class="steps"><%= challenge[:instructions].html_safe %></p>
+                </div>
+                <div class="start-challenge">
+                  <h6 class="start-question">How long would you like to take this challenge?</h6>
+                  <%= select_tag "weeks", options_for_select((1..8).to_a)%>
+                  <span class="label">
+                    week(s) starting today</span><br>
+                  <button type="button" class="btn add-challenge-button" name="button"><%= image_tag 'start-challenge-button.png'%></button>
                 </div>
               </div>
             </div>
           </div>
         <% end %>
       <% end %>
-
-      <% if @noneCompleted == true %>
-        <div class="Rectangle">
-        <div class="SmallRectangle">
-            </div>
-        <div class="Start-your-journey-t">
-          <h4>Start your journey to sustainability to the right!</h4>
-          </div>
-              </div>
-      <% end %>
     </div>
-  <div class="challenges-content">
-    <div class="To-Do">
-      <h1>To Do</h1>
+    <div class="completed-content">
+      <div class="Completed">
+        <h1>Completed</h1>
       </div>
-    <% (1..6).each do %>
-      <div class="challenge-box">
-        <div class="expand-clickable-area"></div>
-        <div class="challenge-icon">
-          <%= image_tag 'to-do-unchecked.png', size:"48x48"%>
-        </div>
-        <div class="challenge-info">
-          <h5 class="challenge-name">Carry a bag for waste</h5>
-          <button type="button" class="show-hidden">
-            <i class="fas fa-chevron-down"></i>
-            <i class="fas fa-chevron-left" style="display:none;"></i>
-          </button>
-          <div class="participants">
-            <div class="Oval">
-            </div>
-          <p class="challenge-description">100 current participants</p>
-          </div>
-          <div class="hidden" style="display:none;">
-            <svg class = "image"> </svg>
-            <div class="the-challenge">
-              <p class="challenge-description">Carry a bag to collect your waste! Don’t hide it! Carry your bag of waste proudly and invite conversations with classmates and community members.</p>
-            </div>
-            <div class="learn-more">
-              <h7><a class="learn-more" href="www.google.com">Learn More</a></h7>
-            </div>
-            <div class="start-challenge">
-              <h6 class ="start-question">How long would you like to take this challenge?</h6>
-              <%= select_tag "weeks", options_for_select((1..8).to_a)%> <span class="label"> week(s) starting today</span><br>
-              <button type="button" class="btn add-challenge-button" name="button"><%= image_tag 'start-challenge-button.png'%></button>
-            </div>
-          </div>
-        </div>
-      </div>
-    <% end %>
-  </div>
-
-</div>
-  <div class="modal" id="challenge-modal" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-close">
-          <button type="button" class="close" id="modal-close-button" onclick="history.back()" aria-label="Close" data-turbolinks="true">
-            <%= image_tag 'exit-button.svg' %>
-          </button>
-        </div>
-        <div class="modal-body">
-          <div class="first slide">
-            <h2 class="modalHeader">Unlock <%= @challenge_name %> Challenges</h2>
-            <% if !@challenge_data.key?(:videoID) %>
-              <p class="helpText"><%= @challenge_data[:videoCaption] %></p>
-            <% else %>
-              <p class="helpText">
-                <span class="description"><%= @challenge_data[:briefDescription] %></span>
-                <br><br>
-                <span class="watchVideoText">Watch the following video to unlock <%= @challenge_name.downcase %> challenges.</span>
-              </p>
-              <div class="watchVideo">
-                <button type="button" name="watch-video" onclick="nextArrow();">
-                  Watch Video
-                </button>
+      <% @noneCompleted = true %>
+        <% (current_user.challenges.where(theme: @challenge_name, completed: true)).each do |challenge| %>
+          <% @noneCompleted = false %>
+            <div class="completed-box">
+              <div class="expand-clickable-area"></div>
+              <div class="complete-icon">
+                <%= image_tag 'to-do-checked.svg', size:"48x48"%>
               </div>
-            <% end %>
-          </div>
-          <div class="second slide">
-            <h2 class="modalHeader">Unlock <%= @challenge_name %> Challenges</h2>
-            <div id="video">
-              If the video does not appear in 10 seconds, exit this pop-up and click this theme again.
+              <div class="challenge-info">
+                <h5 class="completed-name"><%=challenge.challenge_name%></h5>
+                <button type="button" class="show-hidden">
+                  <i class="fas fa-chevron-down"></i>
+                  <i class="fas fa-chevron-left" style="display:none;"></i>
+                </button>
+                <div class="hidden" style="display:none;">
+                  <svg class="image"></svg>
+                  <div class="the-challenge">
+                    <p class="challenge-description">Challenge Description
+                    </p>
+                  </div>
+                  <h6 class="completed-header">Completed:</h6>
+                  <div class="completed-instance">
+                    <div class="complete-icon">
+                      <%= image_tag 'to-do-checked.svg', size:"48x48"%>
+                    </div>
+                    <div class="completed-info">
+                      <p class="completed-time"><%= challenge.created_at.month =%>/<%= challenge.created_at.day =%>
+                        -
+                        <%= endDate(challenge).month =%>/<%= endDate(challenge).day =%></p>
+                      <p class="instance-description">You diverted 10lbs of garbage! Amazing!</p>
+                    </div>
+                  </div>
+                  <div class="start-challenge">
+                    <h6 class="start-question">How long would you like to retake this challenge?</h6>
+                    <%= select_tag "weeks", options_for_select((1..8).to_a)%>
+                    <span class="label">
+                      week(s) starting today</span><br>
+                    <button type="button" class="btn add-challenge-button" name="button"><%= image_tag 'retry-challenge-button-copy.png'%></button>
+                  </div>
+                </div>
+              </div>
             </div>
-            <p class="helpText"><%= @challenge_data[:videoCaption] %></p>
+          <% end %>
+          <% if @noneCompleted == true %>
+            <div class="Rectangle">
+              <div class="SmallRectangle"></div>
+              <div class="Start-your-journey-t">
+                <h4>Start your journey to sustainability to the left!</h4>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="modal" id="challenge-modal" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-close">
+            <button type="button" class="close" id="modal-close-button" onclick="history.back()" aria-label="Close" data-turbolinks="true">
+              <%= image_tag 'exit-button.svg' %>
+            </button>
           </div>
-          <div class="third slide">
-            <div class="challenge-unlock helpText">
-              <h3 class="greatjob">Great Job!</h3>
+          <div class="modal-body">
+            <div class="first slide">
+              <h2 class="modalHeader">Unlock
+                <%= @challenge_name %>
+                Challenges</h2>
+              <% if !@challenge_data.key?(:videoID) %>
+                <p class="helpText"><%= @challenge_data[:videoCaption] %></p>
+              <% else %>
+                <p class="helpText">
+                  <span class="description"><%= @challenge_data[:briefDescription] %></span>
+                  <br><br>
+                  <span class="watchVideoText">Watch the following video to unlock
+                    <%= @challenge_name.downcase %>
+                    challenges.</span>
+                </p>
+                <div class="watchVideo">
+                  <button type="button" name="watch-video" onclick="nextArrow();">
+                    Watch Video
+                  </button>
+                </div>
+              <% end %>
+            </div>
+            <div class="second slide">
+              <h2 class="modalHeader">Unlock
+                <%= @challenge_name %>
+                Challenges</h2>
+              <div id="video">
+                If the video does not appear in 10 seconds, exit this pop-up and click this theme again.
+              </div>
+              <p class="helpText"><%= @challenge_data[:videoCaption] %></p>
+            </div>
+            <div class="third slide">
+              <div class="challenge-unlock helpText">
+                <h3 class="greatjob">Great Job!</h3>
                 <div class="cool">
-                  You just unlocked the <%= @challenge_name %> challenges!
+                  You just unlocked the
+                  <%= @challenge_name %>
+                  challenges!
                   <br>Now, let’s create change!
                 </div>
                 <div class="check-img">
                   <%= image_tag 'to-do-checked.svg' %>
                 </div>
-                  <button type="button" class="create-change-button" name="button" onclick="$('#challenge-modal').modal('hide');">
-                    <h2 class="create-change-text">Create Change</h2>
-                  </button>
+                <button type="button" class="create-change-button" name="button" onclick="$('#challenge-modal').modal('hide');">
+                  <h2 class="create-change-text">Create Change</h2>
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-</div>
-
-<script>
-  <% if @challenge_data.key?(:videoID) %>
-    var challengeVideoID = "<%= @challenge_data[:videoID] %>";
-    var showVideo = true;
-  <% else %>
-    var showVideo = false;
-  <% end %>
-  var challengeName = "<%= @challenge_name %>";
-  var already_unlocked = <%= @already_unlocked %>;
-  <% if !@already_unlocked %>
-    $('#challenge-modal').modal('show');
-  <% else %>
-    $('.themes-page-overlay').hide();
-    $('.challenge-page').show();
-  <% end %>
-</script>
+    <script>
+      <% if @challenge_data.key?(:videoID) %>
+        var challengeVideoID = "<%= @challenge_data[:videoID] %>"; var showVideo = true;
+      <% else %>
+        var showVideo = false;
+      <% end %>
+      var challengeName = "<%= @challenge_name %>"; var already_unlocked =
+      <%= @already_unlocked %>;
+      <% if !@already_unlocked %>
+        $('#challenge-modal').modal('show');
+      <% else %>
+        $('.themes-page-overlay').hide(); $('.challenge-page').show();
+      <% end %>
+    </script>

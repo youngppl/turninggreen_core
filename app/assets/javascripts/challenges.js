@@ -4,6 +4,18 @@ $(window).on('load', function() {
   }
 });
 
+$(window).on('turbolinks:load', function() {
+  if(window.location.pathname == '/challenges/completed') {
+    params = new URLSearchParams(window.location.search);
+    if (params.get('sort_by') == null) {
+      option = 'recent'
+    } else {
+      option = params.get('sort_by')
+    }
+    $('.challenges-filter').val(option);
+  }
+});
+
 var player;
 function onPlayerReady(event) {
   if(challengeName == "Water") {
@@ -65,18 +77,27 @@ $(document).on("click", ".expand-clickable-area", function (){
 });
 
 $(document).on('click', '.add-challenge-button', function(event){
-  $.post('/challenges/add', {challenge_name:'test challenge name',theme:challengeName,length_of_challenge:$(this).parent().children('select').val(),completed:true})
+  var d = new Date();
+  length = $(this).parent().children('select').val()
+  $.post('/challenges/add', {challenge_name:'test challenge name',theme:challengeName,length_of_challenge:length,date_complete:new Date(Date.now() + (6.04e+8 * length))})
   .then( function(data) {
     if (data.showPopover) {
       $('#challenge_added_popover').popover({
         html: true,
         template: '<div class="popover challenge_added_popover" role="tooltip"><div class="arrow"></div><h3 class="popover-header"></h3><button type="button" class="close">&times;</button><div class="popover-body"></div></div>',
-        content: "The test challenge challenge has been added to your challenges!"
+        content: '<div type="button" class="close">&times;</div>The test challenge challenge has been added to your challenges!'
       }).popover('show');
     }
-    var d = new Date();
     $(event.target).parent().parent().html("<h5 class=\"challenge-started\">You started this challenge on " + (d.getMonth()+1) + "/" + d.getDate() + " and have " + $(event.target).parent().parent().children('select').val()*7 + " days left!</h5><h5 class=\"you-got-this\">You got this!</h5>")
   })
   // TODO: make date dynamic, read it from challenge object in backend
   // TODO: change this to set challenge_name to html tag of the challenge box
 });
+
+function sortChallengesByFilter() {
+  window.location.search = "?sort_by="+$(".challenges-filter").val();
+}
+
+function showReflectionModal(event) {
+  $(event.target).parent().children(".reflection-modal").modal()
+}

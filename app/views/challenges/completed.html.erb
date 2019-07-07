@@ -1,0 +1,91 @@
+<% content_for :navbar do %>
+  <%= render 'layouts/dashboard_navbar' %>
+<% end %>
+
+<div class="completed-challenges">
+  <h1 class="title">COMPLETED CHALLENGES</h1>
+  <div class="subheader">
+    <h2 class="num-completed"><%= Challenge.where(user: current_user, completed:true).length %> of 60 challenges completed</h2>
+    <select class="challenges-filter" onchange="sortChallengesByFilter();">
+      <option value="recent">Most Recent</option>
+      <option value="theme">Theme</option>
+      <option value="global">Global Popularity</option>
+      <option value="surprise">Surprise Me</option>
+    </select>
+  </div>
+  <br>
+  <div class="challenge-rows">
+    <% counter = 0 %>
+    <% uncompleted_counter = 0%>
+    <% (1..2).each do |row| %>
+      <div class="row">
+        <% (1..4).each do |col| %>
+          <% challenge = @completed[counter] %>
+          <% if !challenge.nil? and challenge.completed == true %>
+            <div class="challenge-box">
+              <div class="modal-trigger-area" onclick="showReflectionModal(event);"></div>
+              <div class="picture"></div>
+              <div class="info">
+                <div class="name"><%= challenge.challenge_name %></div>
+                <div class="icon"><%= image_tag "themes/icons/"+challenge.theme.downcase+".svg", size:'20' %></div>
+                <div class="metric">
+                  metric here
+                </div>
+              </div>
+              <div class="reflection-modal modal" tabindex="-1" role="dialog">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <p>Modal body text goes here.</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+          <% else %>
+            <% waste_challenges = challenges[:Waste][:challenges].select{ |challenge| !getUserCompletedChallengeNames.include? challenge[:name] } %>
+            <% challenge = waste_challenges[uncompleted_counter] %>
+            <% if !challenge.nil? %>
+            <!-- REPLACE THIS WHEN ALL CHALLENGE CONTENT ARE COMPLETED; CREATE ARRAY WITH EVERY CHALLENGE AND ITERATE -->
+              <div class="challenge-box empty">
+                <div class="modal-trigger-area" onclick></div>
+                <div class="picture"></div>
+                <div class="info">
+                  <div class="name"><%= challenge[:name] %></div>
+                  <div class="icon"><%= image_tag "themes/icons/waste.svg", size:'20' %></div>
+                  <div class="metric">
+                    metric here
+                  </div>
+                </div>
+              </div>
+            <% else %>
+              <div class="challenge-box empty">
+                <div class="modal-trigger-area" onclick></div>
+                <div class="picture"></div>
+                <div class="info">
+                  <div class="name">some challenge</div>
+                  <div class="icon"><%= image_tag "themes/icons/food.svg", size:'20' %></div>
+                  <div class="metric">
+                    metric here
+                  </div>
+                </div>
+              </div>
+            <% end %>
+            <% uncompleted_counter+=1 %>
+          <% end %>
+          <%counter+=1%>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

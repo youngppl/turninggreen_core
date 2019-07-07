@@ -2,12 +2,12 @@ class ChallengesController < ApplicationController
   before_action :authenticate_user!
   include ChallengesHelper
   include ThemesHelper
+  include UsersHelper
   def show
     # matches /challenges/[challenge] to correct challenge page
     @challenge_name = params['challenge_name']
     @challenge_data = challenges[@challenge_name.to_sym]
     @theme_data = themesContent[@challenge_name.to_sym]
-    puts @theme_data
     @already_unlocked = current_user.unlockedChallenges.include?(@challenge_name)
     if !challenges.key?(@challenge_name.to_sym)
       raise ActionController::RoutingError.new('Not Found')
@@ -49,9 +49,28 @@ class ChallengesController < ApplicationController
   end
   helper_method :endDate
 
+  def update_notification_viewed
+    Challenge.where(id:params[:id]).update(notification_viewed:true)
+  end
+
+  def completed
+    case params[:sort_by]
+    when "recent"
+      @completed = current_user.challenges.limit(8).order("date_complete DESC")
+    when "theme"
+      @completed = current_user.challenges.limit(8).order("theme")
+    # when "global"
+
+    when "surprise"
+      @completed = current_user.challenges.limit(8).shuffle
+    else
+      @completed = current_user.challenges.limit(8).order("date_complete DESC")
+    end
+  end
+
   private
 
   def challenge_params
-    params.permit(:challenge_name, :theme, :length_of_challenge, :completed)
+    params.permit(:challenge_name, :theme, :length_of_challenge, :completed, :date_complete)
   end
 end

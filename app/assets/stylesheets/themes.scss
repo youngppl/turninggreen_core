@@ -53,20 +53,20 @@
     .ring {
       position: absolute;
       top: 0;
-      &.one, &.two {
+      &._1, &._2 {
         margin-left: 102px;
       }
-      &.three {
+      &._3 {
         margin-left: 85px;
         margin-top: 1px;
       }
-      &.four {
+      &._4 {
         margin-left: 14px;
       }
-      &.five {
+      &._5 {
         margin-left: -29px;
       }
-      &.six {
+      &._6 {
         margin-top: -25px;
         margin-left: -29px;
       }
@@ -136,14 +136,14 @@
   color: #4f5151;
 }
 
-.helpText, .themesHelpText {
-  font-family: Raleway;
+.helpText {
   font-size: 27px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: normal;
+  text-align: center;
+  color: #4a4a4a;
+}
+
+.themesHelpText {
+  font-size: 27px;
   text-align: center;
   color: #4a4a4a;
   margin-top: 58px;
