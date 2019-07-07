@@ -40,7 +40,7 @@
                       <%= image_tag 'to-do-checked.svg', size:"48x48"%>
                     </div>
                     <div class="completed-info">
-                      <p class="completed-time">10/30 - 11/03</p>
+                      <p class="completed-time"><%= challenge.created_at.month =%>/<%= challenge.created_at.day =%> - <%= endDate(challenge).month =%>/<%= endDate(challenge).day =%></p>
                       <p class="instance-description">You diverted 10lbs of garbage! Amazing!</p>
                     </div>
                   </div>
