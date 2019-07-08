@@ -15,12 +15,11 @@ test:
   database: turninggreen_test
 
 production:
-   <<: *default
-   adapter: postgresql
-   encoding: unicode
-   database: <%= ENV['RDS_DB_NAME'] %>
-   username: <%= ENV['RDS_USERNAME'] %>
-   password: <%= ENV['RDS_PASSWORD'] %>
-   host: <%= ENV['RDS_HOSTNAME'] %>
-   port: <%= ENV['RDS_PORT'] %> 
-
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  timeout: 5000
+  username: "postgres"
+  password: "<%= ENV['POSTGRES_PASS'] %>"
+  database: "rootup_production"
+  host:   "<%= ENV['HOST'] %>"
