@@ -54,8 +54,43 @@
       <p>privacy settings go here :)</p>
     </div>
     <div id="notifications" class="tab-pane fade">
-      <p>notifications settings go here :)</p>
-    </div>
+      <label>Frequency</label>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, id: "edit-notifications" }) do |f| %>
+        <%= devise_error_messages! %>
+        <div class="field">
+          <%= 'I would like to receive emails:' %><br />
+          <%= f.select :notifications, options_for_select(notifications, resource.notifications), {:include_blank => ""}, {:class=> "inputField-notif"} %>
+        </div>
+        <label>Content</label>
+        <div class="Content1">
+
+          <fieldset>
+
+          <%= 'Send the following to my email' %><br />
+
+          <div class="ContentList">
+
+            <input type = "checkbox"
+                id = "Reminders"
+                value = "Reminders"
+            <p>       Reminders to log your progress</p>
+
+            <input type = "checkbox"
+                id = "Check-in"
+                value = "Check-in"
+            <p>      Check-in notifications</p>
+
+            <input type = "checkbox"
+                id = "Check-in"
+                value = "Newsletter"
+            <p>        Our newsletter</p>
+
+</div>
+      </fieldset>
+        <div class="actions">
+          <%= f.submit "Save Changes", class: "btn save-changes-button", id: "profile-save-button", disabled: "true" %>
+        </div>
+      <% end %>
   </div>
 </div>
 

@@ -283,6 +283,15 @@
       border-radius: 5px;
       border: solid 1px #787878;
       height: 48px;
+      width: 277px;
+    }
+    .inputField-notif {
+      border-radius: 5px;
+      border: solid 1px #787878;
+      height: 48px;
+      width: 277px;
+      margin-top:16px;
+      margin-bottom:37px;
     }
   }
   .error {
@@ -303,6 +312,7 @@
         content: "!";
       }
     }
+  }
     .message {
       display: inline-block;
       position: relative;
@@ -311,8 +321,19 @@
       color: #d13838;
       margin-left: 6px;
     }
-  }
+
+    .Content1 {
+      width: 230px;
+    }
+    .ContentList {
+      margin-top: 16px;
+      width: 334px;
+      height: 110px;
+      margin-bottom:42px;
+    }
 }
+
+
 
 
 
