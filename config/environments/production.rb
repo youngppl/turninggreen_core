@@ -30,6 +30,9 @@ Rails.application.configure do
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = false
 
+  # google cloud storage cdn configure
+  config.action_controller.asset_host = 'storage.googleapis.com/rootup/assets'
+
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
@@ -65,6 +68,7 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "turninggreen_#{Rails.env}"
 
   #config mailer
+  config.action_mailer.default_url_options = { :host => 'rootup.appspot.com' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = false
