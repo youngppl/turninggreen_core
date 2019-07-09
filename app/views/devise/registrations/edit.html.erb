@@ -7,45 +7,54 @@
     <h2 class="settings-title">Settings</h2>
   </div>
   <ul class="nav settings-tabs">
-    <li class="active"><a data-toggle="tab" href="#profile" class="active">Profile</a></li>
-    <li><a data-toggle="tab" href="#account">Account</a></li>
-    <li><a data-toggle="tab" href="#privacy">Privacy</a></li>
-    <li><a data-toggle="tab" href="#notifications">Notifications</a></li>
+    <li class="active">
+      <a data-toggle="tab" href="#profile" class="active">Profile</a>
+    </li>
+    <li>
+      <a data-toggle="tab" href="#account">Account</a>
+    </li>
+    <li>
+      <a data-toggle="tab" href="#privacy">Privacy</a>
+    </li>
+    <li>
+      <a data-toggle="tab" href="#notifications">Notifications</a>
+    </li>
   </ul>
-  <div class="separator">
-  </div>
+  <div class="separator"></div>
 
   <div class="tab-content">
     <div id="profile" class="tab-pane active">
       <h2 class="user-name"><%= @user.name %></h2>
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-        <%= devise_error_messages! %>
+      <%= devise_error_messages! %>
 
-        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-        <% end %>
-
-        <div class="field">
-          <%= f.label 'Email' %><br />
-          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "inputField", placeholder: "email@example.com", oninput: "checkEmail();allowSaveButton();" %>
-          <div class="email error" style="display:none;">
-            <div class="error-icon"></div>
-            <span class="message">You must enter a valid email</span>
-          </div>
-        </div>
-
-        <label>Location</label>
-        <div class="field">
-          <%= f.label "State", class: "state" %>
-          <%= f.select :state, options_for_select(us_states, resource.state), {:include_blank => "State"}, {:class => "inputField", :onchange => "updateCountryField();allowSaveButton();"} %> <br>
-          <%= f.label "Country", class: "country"  %>
-          <%= f.select :country, options_for_select(countries, resource.country), {:include_blank => "Country"}, {:class => "inputField", :onchange => "updateStateField();allowSaveButton();"}%>
-        </div>
-
-        <div class="actions">
-          <%= f.submit "Save Changes", class: "btn save-changes-button", id: "profile-save-button", disabled: "true" %>
-        </div>
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <div>Currently waiting confirmation for:
+          <%= resource.unconfirmed_email %></div>
       <% end %>
+
+      <div class="field">
+        <%= f.label 'Email' %><br/>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "inputField", placeholder: "email@example.com", oninput: "checkEmail();allowSaveButton();" %>
+        <div class="email error" style="display:none;">
+          <div class="error-icon"></div>
+          <span class="message">You must enter a valid email</span>
+        </div>
+      </div>
+
+      <label>Location</label>
+      <div class="field">
+        <%= f.label "State", class: "state" %>
+        <%= f.select :state, options_for_select(us_states, resource.state), {:include_blank => "State"}, {:class => "inputField", :onchange => "updateCountryField();allowSaveButton();"} %>
+        <br>
+        <%= f.label "Country", class: "country" %>
+        <%= f.select :country, options_for_select(countries, resource.country), {:include_blank => "Country"}, {:class => "inputField", :onchange => "updateStateField();allowSaveButton();"}%>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "Save Changes", class: "btn save-changes-button", id: "profile-save-button", disabled: "true" %>
+      </div>
+    <% end %>
     </div>
     <div id="account" class="tab-pane fade">
       <p>account settings go here :)</p>
@@ -54,112 +63,27 @@
       <p>privacy settings go here :)</p>
     </div>
     <div id="notifications" class="tab-pane fade">
-      <label>Frequency</label>
+      <h2 class="title">Frequency</h2>
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, id: "edit-notifications" }) do |f| %>
-        <%= devise_error_messages! %>
-        <div class="field">
-          <%= 'I would like to receive emails:' %><br />
-          <%= f.select :notifications, options_for_select(notifications, resource.notifications), {:include_blank => ""}, {:class=> "inputField-notif"} %>
-        </div>
-        <label>Content</label>
-        <div class="Content1">
-
-          <fieldset>
-
-          <%= 'Send the following to my email' %><br />
-
+          <%= devise_error_messages! %>
+          <div class="field">
+            <%= f.label 'I would like to receive emails:', class: "notifications-label" %><br/>
+            <%= f.select :notifications, options_for_select(notifications, resource.notifications), {}, {class: "inputField notifications-select"} %>
+          </div>
+          <h2 class="content-heading">Content</h2>
+          <%= f.label 'Send the following to my email:', class: "send-label" %><br/>
           <div class="ContentList">
+            <input type="checkbox" id="Reminders" value="Reminders"/>
+            <span class="options">Reminders to log your progress</span><br>
 
-            <input type = "checkbox"
-                id = "Reminders"
-                value = "Reminders"
-            <p>       Reminders to log your progress</p>
+            <input type="checkbox" id="Check-in" value="Check-in"/>
+            <span class="options">Check-in notifications<span><br>
 
-            <input type = "checkbox"
-                id = "Check-in"
-                value = "Check-in"
-            <p>      Check-in notifications</p>
-
-            <input type = "checkbox"
-                id = "Check-in"
-                value = "Newsletter"
-            <p>        Our newsletter</p>
-
-</div>
-      </fieldset>
-        <div class="actions">
-          <%= f.submit "Save Changes", class: "btn save-changes-button", id: "profile-save-button", disabled: "true" %>
-        </div>
-      <% end %>
+            <input type="checkbox" id="Check-in" value="Newsletter"/>
+            <span class="options">Our newsletter</span>
+          </div>
+          <%= f.submit "Save Changes", class: "btn save-changes-button", id: "notifications-save-button", disabled: "true" %>
+        <% end %>
+    </div>
   </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  <!-- <div class="left-panel">
-
-      <div class="update-avatar thumbnail" onclick="document.getElementById('upload-photo-input').click();">
-        <%= image_tag(profile_pic_link, size: "200x200", class: "rounded-circle") %>
-        <div id="upload-photo-div" class="overlay rounded-circle">
-          <div class="overlayText">
-            Upload Photo
-          </div>
-        </div>
-
-    </div>
-    <div class="upload-photo modal" id="pic-input-dialog" tabindex="-1" role="dialog">
-      <div class="upload-photo modal-dialog modal-dialog-centered" role="document">
-        <div class="upload-photo modal-content">
-          <div class="upload-photo modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="upload-photo modal-body">
-            <div id="upload-croppie">
-              <span id="minus">-</span>
-              <span id="plus">+</span>
-            </div>
-          </div>
-          <div class="upload-photo modal-footer">
-            <button type="button" class="btn btn-primary" onclick="updatePicture();">Upload</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-  </div>
-
-  <div class="right-panel">
-    <h2 class="heading">Personal</h2>
-
-  </div>
-  <hr class="separator">
-  <div class="spacer"></div>
-  <div class="notifications">
-    <h2 class="heading">Notifications</h2>
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, id: "edit-notifications" }) do |f| %>
-      <%= devise_error_messages! %>
-
-      <div class="field">
-        <%= f.label 'How often would you like to be reminded of your challenges via email?' %><br />
-        <%= f.select :notifications, options_for_select(notifications, resource.notifications), {:include_blank => ""}, {:class=> "inputField"} %>
-      </div>
-
-      <div class="actions">
-        <%= f.submit "SAVE", class: "btn save-button" %>
-      </div>
-    <% end %>
-  </div> -->
