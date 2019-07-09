@@ -42,3 +42,6 @@ gem 'devise'
 #bootstrap
 gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
+
+gem "appengine", "~> 0.4.1"
+gem "google-cloud-storage", "~> 1.11", require: false
