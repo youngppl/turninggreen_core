@@ -298,7 +298,47 @@
     }
 
     #notifications {
-      // notifications settings css goes here (❁´◡`❁)
+      color: #384632;
+
+      .title {
+        font-size: 28px;
+        font-weight: 600;
+      }
+
+      .notifications-label {
+        font-family: Raleway;
+        font-size: 20px;
+        font-weight: 500;
+      }
+
+      .notifications-select {
+        width: 277px;
+        margin-top: 16px;
+        margin-bottom: 37px;
+      }
+
+      .content-heading {
+        font-size: 28px;
+        font-weight: 600;
+      }
+
+      .send-label {
+        font-size: 20px;
+        font-weight: 500;
+      }
+
+      .ContentList {
+        margin-top: 16px;
+        width: 334px;
+        height: 110px;
+        margin-bottom: 42px;
+
+        .options {
+          font-size: 20px;
+          font-weight: 500;
+          margin-left: 18px;
+        }
+      }
     }
 
     label {
@@ -306,28 +346,29 @@
       font-weight: 600;
       color: #384632;
     }
-  }
 
-  .save-changes-button {
-    width: 181px;
-    height: 65px;
-    border-radius: 7px;
-    border: solid 3px #87b67b;
-    background-color: #ffffff;
-    font-size: 20px;
-    font-weight: 600;
-    color: #384632;
+    .save-changes-button {
+      width: 181px;
+      height: 65px;
+      border-radius: 7px;
+      border: solid 3px #87b67b;
+      background-color: #ffffff;
+      font-size: 20px;
+      font-weight: 600;
+      color: #384632;
 
-    &:disabled {
-      border: solid 3px #cacaca;
+      &:disabled {
+        border: solid 3px #cacaca;
+      }
+    }
+
+    .inputField {
+      border-radius: 5px;
+      border: solid 1px #787878;
+      height: 48px;
     }
   }
-
-  .inputField {
-    border-radius: 5px;
-    border: solid 1px #787878;
-    height: 48px;
-  }
+}
 
   .error {
     .error-icon {
@@ -509,7 +550,6 @@
       }
     }
   }
-}
 // .heading {
 //   margin-bottom: 19px;
 // }

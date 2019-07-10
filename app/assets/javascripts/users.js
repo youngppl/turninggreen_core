@@ -10,6 +10,7 @@ $(window).on('turbolinks:load', function(){
   $("#user_email").data("original", $("#user_email").val());
   $("#user_state").data("original", $("#user_state").val());
   $("#user_country").data("original", $("#user_country").val());
+  $("#user_notifications").data("original", $("#user_notifications").val());
 });
 $(document).on("click", ".popover .close" , function(){
         $(this).parents(".popover").popover('hide');
@@ -39,7 +40,7 @@ function checkDeactivateForm() {
     $("#other-textarea").prop("disabled", true);
     $("#other-textarea").val("");
   }
-  
+
   if ((document.getElementById("other").checked && $("#other-textarea").val().length > 6) || document.getElementById("too-much-work").checked || document.getElementById("not-safe").checked || document.getElementById("not-useful").checked) {
     $("#deactivate-next-button").prop("disabled", false);
   } else {
@@ -52,5 +53,12 @@ function checkDeactivateForm() {
   } else {
     $(".deactivate.error").hide();
   }
+}
 
+function allowNotifSave() {
+  if ($("#user_notifications").data("original") != $("#user_notifications").val()) {
+    $("#notifications-save-button").prop("disabled", false);
+  } else {
+    $("#notifications-save-button").prop("disabled", true);
+  }
 }
