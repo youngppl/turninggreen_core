@@ -55,7 +55,7 @@
       }
       circle {
         fill: transparent;
-        stroke: #2f3d4c;
+        stroke: #af066e;
         stroke-width: 15px;
         stroke-linecap: round;
         transform-origin: 50% 50%;
@@ -103,6 +103,10 @@
         &:focus {
           outline: none;
         }
+        &:hover {
+          background-color: #4e8a08;
+          color: #ffffff;
+        }
       }
     }
     .info {
@@ -120,6 +124,33 @@
         font-weight: 600;
         color: #384632;
       }
+    }
+  }
+  .add {
+    border: dashed 2px #868686;
+    font-size: 276px;
+    text-align: center;
+    align-items: center;
+    color: grey !important;
+    cursor: pointer;
+    display: inline-block;
+    width: 335px;
+    height: 519px;
+    border-radius: 19px;
+    &:hover {
+      background-color: #eaeaea;
+      .another {
+        display: block;
+      }
+    }
+    .another {
+      font-size: 20px;
+      font-weight: 600;
+      text-align: center;
+      color: #868686;
+      width: 200px;
+      margin: -100px auto;
+      display: none;
     }
   }
 }

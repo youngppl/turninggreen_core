@@ -10,9 +10,10 @@
   <%= link_to 'completed challenges', challenges_completed_path %>
   <div class="current-challenges">
     <h2 class="heading">Current Challenges</h2>
-    <% (1..6).each do %>
+
+    <% @current_challenges.each do |challenge| %>
       <div class="current-challenge-box">
-        <h2 class="name">challenge title</h2>
+        <h2 class="name"><%= challenge.challenge_name %></h2>
         <div class="progress-circle">
           <div class="ring">
             <div class="inner">
@@ -28,7 +29,7 @@
         <div class="info">
           <div class="time-left line">
             <span class="label">time left</span>
-            <span class="metric">12 days</span>
+            <span class="metric"><%= (challenge.date_complete - Date.today).to_i %> days</span>
           </div>
           <div class="last-log line">
             <span class="label">last log</span>
@@ -36,10 +37,13 @@
           </div>
           <div class="done-so-far line">
             <span class="label">done so far</span>
-            <span class="metric">20 metric</span>
+            <span class="metric">0 metric</span>
           </div>
         </div>
       </div>
+    <% end %>
+    <% if @current_challenges.length < 6 %>
+      <a class="add">+<span class="another">take on another challenge!</span></a>
     <% end %>
   </div>
 </div>
@@ -70,19 +74,6 @@
 <% end %>
 </div>
 <div>
-  <% if @current_challenges.length == 0 %>
-  <div class="new_challenge current_challenges_box">
-    <h5>No current challenges</h5>
-  </div>
-  <% else %>
-  <% @current_challenges.each do |challenge| %>
-  <div class="current_challenges_box thumbnail">
-    <h5>challenge countdown here</h5>
-    <div class="current_challenges_overlay overlay">
-      <div class="overlayText"><%= challenge.challenge_name %></div>
-    </div>
-  </div>
-  <% end %>
-  <% end %>
+
   <br>
 </div> -->
