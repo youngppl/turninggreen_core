@@ -10,6 +10,7 @@ $(window).on('turbolinks:load', function(){
   $("#user_email").data("original", $("#user_email").val());
   $("#user_state").data("original", $("#user_state").val());
   $("#user_country").data("original", $("#user_country").val());
+  $("#user_notifications").data("original", $("#user_notifications").val());
 });
 $(document).on("click", ".popover .close" , function(){
         $(this).parents(".popover").popover('hide');
@@ -28,5 +29,13 @@ function allowSaveButton() {
     $("#profile-save-button").prop("disabled", false);
   } else {
     $("#profile-save-button").prop("disabled", true);
+  }
+}
+
+function allowNotifSave() {
+  if ($("#user_notifications").data("original") != $("#user_notifications").val()) {
+    $("#notifications-save-button").prop("disabled", false);
+  } else {
+    $("#notifications-save-button").prop("disabled", true);
   }
 }

@@ -68,7 +68,7 @@
           <%= devise_error_messages! %>
           <div class="field">
             <%= f.label 'I would like to receive emails:', class: "notifications-label" %><br/>
-            <%= f.select :notifications, options_for_select(notifications, resource.notifications), {}, {class: "inputField notifications-select"} %>
+            <%= f.select :notifications, options_for_select(notifications, resource.notifications), {}, {class: "inputField notifications-select", onchange:"allowNotifSave();"} %>
           </div>
           <h2 class="content-heading">Content</h2>
           <%= f.label 'Send the following to my email:', class: "send-label" %><br/>
