@@ -263,10 +263,20 @@
 
       #user_email {
         margin-bottom: 43px;
+        width: 395px;
 
         &:invalid {
           border: solid 2px #d13838;
         }
+      }
+
+      .verify-email {
+        font-size: 20px;
+        font-weight: 600;
+        color: #517e3d;
+        text-decoration: underline;
+        margin-left: 184px;
+        cursor: pointer;
       }
 
       label.country,
@@ -347,26 +357,26 @@
       color: #384632;
     }
 
-    .save-changes-button {
-      width: 181px;
-      height: 65px;
-      border-radius: 7px;
-      border: solid 3px #87b67b;
-      background-color: #ffffff;
-      font-size: 20px;
-      font-weight: 600;
-      color: #384632;
+  }
+  .save-changes-button {
+    width: 181px;
+    height: 65px;
+    border-radius: 7px;
+    border: solid 3px #87b67b;
+    background-color: #ffffff;
+    font-size: 20px;
+    font-weight: 600;
+    color: #384632;
 
-      &:disabled {
-        border: solid 3px #cacaca;
-      }
+    &:disabled {
+      border: solid 3px #cacaca;
     }
+  }
 
-    .inputField {
-      border-radius: 5px;
-      border: solid 1px #787878;
-      height: 48px;
-    }
+  .inputField {
+    border-radius: 5px;
+    border: solid 1px #787878;
+    height: 48px;
   }
 }
 
@@ -548,6 +558,15 @@
           margin-top: 10%;
         }
       }
+    }
+  }
+
+  #verify-email {
+    .heading {
+      font-size: 25px;
+    }
+    .save-changes-button {
+      margin-top: 26px;
     }
   }
 // .heading {

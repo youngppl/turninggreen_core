@@ -28,12 +28,12 @@
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
       <%= devise_error_messages! %>
 
-        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-          <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-        <% end %>
-
       <div class="field">
-        <%= f.label 'Email' %><br/>
+        <%= f.label 'Email' %>
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+          <a onclick="$('#verify-email').modal();"><span class="verify-email">Verify your email</span></a>
+        <% end %>
+        <br/>
         <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "inputField", placeholder: "email@example.com", oninput: "checkEmail();allowSaveButton();" %>
         <div class="email error" style="display:none;">
           <div class="error-icon"></div>
@@ -81,7 +81,7 @@
             <input type="checkbox" id="Check-in" value="Newsletter"/>
             <span class="options">Our newsletter</span>
           </div>
-          <%= f.submit "Save Changes", class: "btn save-changes-button", id: "notifications-save-button", disabled: "true" %>
+          <%= f.submit "Save Changes", class: "btn save-changes-button", id: "notifications-save-button", disabled: "true", onclick: "$('#changes-saved').modal();" %>
         <% end %>
     </div>
   </div>
@@ -89,4 +89,5 @@
   <%= render "layouts/settings/account_deactivate_popup" %>
   <%= render "layouts/settings/email_updated_popup" %>
   <%= render "layouts/settings/password_updated_popup" %>
+  <%= render "layouts/settings/verify_email_popup" %>
 </div>
