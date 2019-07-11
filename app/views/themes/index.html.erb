@@ -12,6 +12,9 @@
     <% row.each do |challenge_name| %>
     <div class="theme">
       <%= image_tag("themes/rings/theme-ring.svg") %>
+      <% (1..6).each do |num| %>
+        <svg height="10" width="40" class="line _<%= num %>"><line x1="0" y1="0" x2="16" y2="0" /></svg>
+      <% end %>
       <% if !current_user.unlockedChallenges.include?(challenge_name) %>
         <div class="theme-locked"></div>
       <% else %>

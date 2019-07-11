@@ -1,7 +1,3 @@
-// Place all the styles related to the Themes controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
 .themesPage {
   text-align: center;
 }
@@ -22,6 +18,43 @@
   position: relative;
   box-shadow: 5px 5px 6px 0 #9f9f9f;
   border-radius: 50%;
+
+  .line {
+    stroke: #979797;
+    stroke-width: 2;
+    position: relative;
+    &._1 {
+      transform: rotate(90deg);
+      top: -69px;
+      left: -125px;
+    }
+
+    &._2 {
+      transform: rotate(-30deg);
+      left: -83px;
+      top: -44px;
+    }
+    &._3 {
+      transform: rotate(30deg);
+      left: -131px;
+      top: 48px;
+    }
+    &._4 {
+      transform: rotate(90deg);
+      left: -257px;
+      top: 89px;
+    }
+    &._5 {
+      transform: rotate(-30deg);
+      left: -351px;
+      top: 35px;
+    }
+    &._6 {
+      transform: rotate(30deg);
+      left: -399px;
+      top: -33px;
+    }
+  }
 
   .theme-name {
     font-size: 30px;
