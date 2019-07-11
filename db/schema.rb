@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_09_004633) do
+ActiveRecord::Schema.define(version: 2019_07_11_212545) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,7 +45,7 @@ ActiveRecord::Schema.define(version: 2019_06_09_004633) do
     t.datetime "updated_at", null: false
     t.boolean "completed", default: true
     t.boolean "reflection_completed", default: false
-    t.date "date_complete"
+    t.datetime "date_complete"
     t.boolean "notification_viewed", default: false
     t.index ["user_id"], name: "index_challenges_on_user_id"
   end
@@ -78,6 +78,10 @@ ActiveRecord::Schema.define(version: 2019_06_09_004633) do
     t.string "timezone"
     t.text "unlockedChallenges", default: [], array: true
     t.string "notifications", default: "Daily"
+    t.string "unconfirmed_email"
+    t.datetime "deleted_at"
+    t.text "deactivation_reasons", default: [], array: true
+    t.text "notifications_content", default: ["check-in"], array: true
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

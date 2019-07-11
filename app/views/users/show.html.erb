@@ -29,7 +29,7 @@
         <div class="info">
           <div class="time-left line">
             <span class="label">time left</span>
-            <span class="metric"><%= (challenge.date_complete - Date.today).to_i %> days</span>
+            <span class="metric"><%= challenge.get_time_left %> </span>
           </div>
           <div class="last-log line">
             <span class="label">last log</span>
