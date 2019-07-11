@@ -11,6 +11,10 @@ $(window).on('turbolinks:load', function(){
   $("#user_state").data("original", $("#user_state").val());
   $("#user_country").data("original", $("#user_country").val());
   $("#user_notifications").data("original", $("#user_notifications").val());
+  $("#user_notifications_content_reminders").data("original", $("#user_notifications_content_reminders").val());
+  $("#user_notifications_content_check-in").data("original", $("#user_notifications_content_check-in").val());
+  $("#user_notifications_content_newsletter").data("original", $("#user_notifications_content_newsletter").val());
+
 });
 $(document).on("click", ".popover .close" , function(){
         $(this).parents(".popover").popover('hide');
@@ -56,7 +60,7 @@ function checkDeactivateForm() {
 }
 
 function allowNotifSave() {
-  if ($("#user_notifications").data("original") != $("#user_notifications").val()) {
+  if (($("#user_notifications").data("original") != $("#user_notifications").val())) {
     $("#notifications-save-button").prop("disabled", false);
   } else {
     $("#notifications-save-button").prop("disabled", true);

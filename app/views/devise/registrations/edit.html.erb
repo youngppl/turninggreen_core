@@ -72,13 +72,13 @@
           <h2 class="content-heading">Content</h2>
           <%= f.label 'Send the following to my email:', class: "send-label" %><br/>
           <div class="ContentList">
-            <input type="checkbox" id="Reminders" value="Reminders"/>
+            <%= f.check_box :notifications_content, {multiple: true, onclick:"$('#notifications-save-button').prop('disabled', false);"}, 'reminders', nil %>
             <span class="options">Reminders to log your progress</span><br>
 
-            <input type="checkbox" id="Check-in" value="Check-in"/>
+            <%= f.check_box :notifications_content, {multiple: true, onclick:"$('#notifications-save-button').prop('disabled', false);"}, 'check-in', nil %>
             <span class="options">Check-in notifications<span><br>
 
-            <input type="checkbox" id="Check-in" value="Newsletter"/>
+            <%= f.check_box :notifications_content, {multiple: true, onclick:"$('#notifications-save-button').prop('disabled', false);"}, 'newsletter', nil %>
             <span class="options">Our newsletter</span>
           </div>
           <%= f.submit "Save Changes", class: "btn save-changes-button", id: "notifications-save-button", disabled: "true", onclick: "$('#changes-saved').modal();" %>
