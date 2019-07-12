@@ -44,7 +44,6 @@
           changeMonth: true,
           changeYear: true,
           yearRange: "1900:" + new Date().getFullYear(),
-          showButtonPanel: true,
           formatter: (input, date, instance) => {
             const value = date.toLocaleDateString()
             input.value = value
