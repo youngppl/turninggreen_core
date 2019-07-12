@@ -260,9 +260,18 @@
       left: 655px;
     }
   }
+  .metric-box-container {
+    width: 1064px;
+    overflow: visible;
+    margin: auto;
+    margin-left: -72px;
+  }
   .metric-box {
     width: 300px;
     text-align: center;
+    img {
+      cursor: e-resize;
+    }
   }
   .arrow_box {
     width: 289px;

@@ -27,13 +27,15 @@
           <span>end</span>
           <h2><%=end_date.month%>/<%=end_date.day%></h2>
         </div>
-        <div class="metric-box _<%= challenge.id %>">
-          <%= image_tag "progress-arrow.svg" %>
-          <svg height="20" width="10" class="arrow-line"><line x1="0" y1="0" x2="0" y2="12" /></svg>
-          <div class="arrow_box">
-            <h2 class="question">metric question</h2>
-            <input type="text" name="" value="" class="answer">
-            <button type="button" name="button" class="record">Record</button>
+        <div class="metric-box-container _<%= challenge.id %>">
+          <div class="metric-box _<%= challenge.id %>">
+            <%= image_tag "progress-arrow.svg" %>
+            <svg height="20" width="10" class="arrow-line"><line x1="0" y1="0" x2="0" y2="12" /></svg>
+            <div class="arrow_box">
+              <h2 class="question">metric question</h2>
+              <input type="text" name="" value="" class="answer">
+              <button type="button" name="button" class="record">Record</button>
+            </div>
           </div>
         </div>
         <script type="text/javascript">
@@ -43,6 +45,10 @@
             today_marker_offset['left'] -= 142;
             $('.metric-box._<%= challenge.id %>').offset(today_marker_offset)
           }
+          $(".metric-box._<%= challenge.id %>").draggable({
+            axis: "x",
+            containment: ".metric-box-container._<%= challenge.id %>"
+          });
         </script>
       </div>
     </div>
