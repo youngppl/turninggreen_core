@@ -21,7 +21,7 @@ module ChallengesHelper
               "Zero Waste Resolutions" => "https://trashisfortossers.com/13-easy-zero-waste-resolutions-you-can-make-for-2018/"
             },
             :instructions => "1) Before you take any \"freebie\", pause and ask yourself: do I really need this?
-            Will I acutally use this multiple times later? If you answer 'no', don't take it, say 'No thank you.
+            Will I actually use this multiple times later? If you answer 'no', don't take it, say 'No thank you.
             I won't use this.' with a smile, and walk away. Alternatively, ask: do I already own something that
             can serve the same purpose? If you answer 'yes', then say 'No thank you, I don't need this.' with a
             smile and walk away.<br><br>2) If you do need it, feel free to take it. This challenge isn't about saying
@@ -124,7 +124,7 @@ module ChallengesHelper
             :instructions => "The goal of this challenge is to engage your community to reduce their waste.<br><br>1) Choose your target
             audience. (e.g. local business, local government)<br><br>2) Draft up a proposal of what you want them to change and why it
             matters to them. Be specific. (e.g. Ask a local restaurant to provide plastic straw only upon request.)<br><br>2) Reach out and
-            give them your pitch.<br><br>3) Offer to work with them to create this change for the community. ***We recognize that people's 
+            give them your pitch.<br><br>3) Offer to work with them to create this change for the community. ***We recognize that people's
             comfort with speaking up to a larger entity varies widely, and for many, this can be very daunting. Start small by emailing
             or calling a manager at a business or sit in at a city council meeting. And work your way up. We're here to support you in
             this endeavor, so please reach out if you have any questions or need support; we're here for you and we believe you can do this!!"
