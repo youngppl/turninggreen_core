@@ -192,6 +192,19 @@
     border: solid 1px #979797;
     background-color: white;
     margin: auto;
+    overflow: visible;
+    position: relative;
+    .today-marker {
+      position: relative;
+      .label {
+        font-size: 20px;
+        font-weight: 500;
+        color: #4a4a4a;
+        position: absolute;
+        top: 67px;
+        left: -34px;
+      }
+    }
     span {
       font-size: 20px;
       font-style: italic;
@@ -199,6 +212,7 @@
       color: #747474;
       padding: 6px;
       padding-left: 10px;
+      position: absolute;
     }
     .progress-bar {
       border-radius: 15px;
@@ -208,12 +222,16 @@
   .line {
     stroke: #979797;
     stroke-width: 2px;
-    margin-top: -8px;
+    top: -23px;
+    position: relative;
     &.start {
-      margin-left: 70px;
+      left: 70px;
     }
     &.end {
-      margin-left: 754px;
+      left: 822px;
+    }
+    &.today {
+      top: 34px;
     }
   }
   .box {
@@ -221,7 +239,7 @@
     text-align: center;
     width: 100px;
     position: relative;
-    top: -18px;
+    top: 7px;
 
     span {
       font-size: 12px;
@@ -236,11 +254,15 @@
       margin-top: -6px;
     }
     &.start {
-      left: 20px;
+      left: -9px;
     }
     &.end {
-      left: 685px;
+      left: 655px;
     }
+  }
+  .today-box {
+    width: 300px;
+    text-align: center;
   }
   .arrow_box {
     width: 289px;

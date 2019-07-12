@@ -19,4 +19,9 @@ class Challenge < ApplicationRecord
   def get_last_logged
     (last_logged == nil)? "--": last_logged.to_date
   end
+
+  def today_marker_position
+     @percent_elapsed = (DateTime.now.getutc - created_at)/(date_complete - created_at)
+     (1.6 + (96.6 * @percent_elapsed))
+  end
 end

@@ -17,7 +17,7 @@
         <div class="progress-circle">
           <div class="ring">
             <div class="inner">
-              <button type="button" name="button" onclick="$('#progress-log-<%= challenge.id %>').modal();">Log your progress!</button>
+              <button type="button" name="button" onclick="$('#progress-log-<%= challenge.id %>').modal();setInitPos_<%= challenge.id %>();">Log your progress!</button>
             </div>
           </div>
           <div class="worm">
@@ -59,7 +59,7 @@
 
 <!-- <div>
   <% if @current_challenges.length.between?(1,7) %>
-  <a href="<%= themes_path %>">
+  <a >
     <div id="add_challenge">+</div>
   </a>
   <% elsif @current_challenges.length == 0 %>
