@@ -17,7 +17,7 @@
         <div class="progress-circle">
           <div class="ring">
             <div class="inner">
-              <button type="button" name="button">Log your progress!</button>
+              <button type="button" name="button" onclick="$('#progress-log-<%= challenge.id %>').modal();">Log your progress!</button>
             </div>
           </div>
           <div class="worm">
@@ -40,7 +40,7 @@
             <span class="metric">0 metric</span>
           </div>
         </div>
-        <%= render "layouts/dashboard/progress_log_popup" %>
+        <%= render "layouts/dashboard/progress_log_popup", {challenge:challenge, start_date:challenge.created_at, end_date: challenge.date_complete} %>
       </div>
     <% end %>
     <% if @current_challenges.length < 6 %>

@@ -205,6 +205,43 @@
       background-color: #87b67b;
     }
   }
+  .line {
+    stroke: #979797;
+    stroke-width: 2px;
+    margin-top: -8px;
+    &.start {
+      margin-left: 70px;
+    }
+    &.end {
+      margin-left: 754px;
+    }
+  }
+  .box {
+    display: inline-block;
+    text-align: center;
+    width: 100px;
+    position: relative;
+    top: -18px;
+
+    span {
+      font-size: 12px;
+      font-weight: 500;
+      color: #777777;
+    }
+
+    h2 {
+      font-size: 20px;
+      font-weight: 500;
+      color: #384632;
+      margin-top: -6px;
+    }
+    &.start {
+      left: 20px;
+    }
+    &.end {
+      left: 685px;
+    }
+  }
   .arrow_box {
     width: 289px;
     height: 222px;
