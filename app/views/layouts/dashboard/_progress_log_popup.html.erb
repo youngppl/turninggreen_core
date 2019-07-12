@@ -27,7 +27,7 @@
           <span>end</span>
           <h2><%=end_date.month%>/<%=end_date.day%></h2>
         </div>
-        <div class="today-box _<%= challenge.id %>">
+        <div class="metric-box _<%= challenge.id %>">
           <%= image_tag "progress-arrow.svg" %>
           <svg height="20" width="10" class="arrow-line"><line x1="0" y1="0" x2="0" y2="12" /></svg>
           <div class="arrow_box">
@@ -41,7 +41,7 @@
             today_marker_offset = $('.today-marker._<%= challenge.id %>').offset()
             today_marker_offset['top'] += 33;
             today_marker_offset['left'] -= 142;
-            $('.today-box._<%= challenge.id %>').offset(today_marker_offset)
+            $('.metric-box._<%= challenge.id %>').offset(today_marker_offset)
           }
         </script>
       </div>
