@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_11_212545) do
+ActiveRecord::Schema.define(version: 2019_07_11_222459) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 2019_07_11_212545) do
     t.boolean "reflection_completed", default: false
     t.datetime "date_complete"
     t.boolean "notification_viewed", default: false
+    t.datetime "last_logged"
     t.index ["user_id"], name: "index_challenges_on_user_id"
   end
 

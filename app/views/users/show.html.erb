@@ -33,13 +33,14 @@
           </div>
           <div class="last-log line">
             <span class="label">last log</span>
-            <span class="metric">4/33</span>
+            <span class="metric"><%= challenge.get_last_logged %></span>
           </div>
           <div class="done-so-far line">
             <span class="label">done so far</span>
             <span class="metric">0 metric</span>
           </div>
         </div>
+        <%= render "layouts/dashboard/progress_log_popup" %>
       </div>
     <% end %>
     <% if @current_challenges.length < 6 %>
