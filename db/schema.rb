@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_11_222459) do
+ActiveRecord::Schema.define(version: 2019_07_13_010212) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,6 +49,15 @@ ActiveRecord::Schema.define(version: 2019_07_11_222459) do
     t.boolean "notification_viewed", default: false
     t.datetime "last_logged"
     t.index ["user_id"], name: "index_challenges_on_user_id"
+  end
+
+  create_table "progress_logs", force: :cascade do |t|
+    t.integer "metric"
+    t.string "metric_unit"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "challenge_id"
+    t.index ["challenge_id"], name: "index_progress_logs_on_challenge_id"
   end
 
   create_table "tips_dailies", force: :cascade do |t|

@@ -194,8 +194,14 @@
     margin: auto;
     overflow: visible;
     position: relative;
-    .today-marker {
+    .marker-container {
+      width: 765px;
+      position: absolute;
+      left: 0px;
+    }
+    .marker {
       position: relative;
+      display: inline-block;
       .label {
         font-size: 20px;
         font-weight: 500;
@@ -203,6 +209,9 @@
         position: absolute;
         top: 67px;
         left: -34px;
+      }
+      .line {
+        top: 34px;
       }
     }
     span {
@@ -217,6 +226,7 @@
     .progress-bar {
       border-radius: 15px;
       background-color: #87b67b;
+      margin-left: -11px;
     }
   }
   .line {
@@ -229,9 +239,6 @@
     }
     &.end {
       left: 822px;
-    }
-    &.today {
-      top: 34px;
     }
   }
   .box {

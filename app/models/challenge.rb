@@ -1,6 +1,7 @@
 include ActionView::Helpers::TextHelper
 class Challenge < ApplicationRecord
   belongs_to :user
+  has_many :progress_logs
 
   def get_time_left
     @weeks = (date_complete - DateTime.now.getutc)/60/60/24/7
@@ -17,11 +18,19 @@ class Challenge < ApplicationRecord
   end
 
   def get_last_logged
-    (last_logged == nil)? "--": last_logged.to_date
+    (last_logged == nil)? "--": "#{last_logged.to_date.month}/#{last_logged.to_date.day}"
+  end
+
+  def progress_bar_length
+    ((last_logged - created_at)/(date_complete - created_at)) * 100
+  end
+
+  def get_marker_position(date)
+    @percent_elapsed = (date - created_at)/(date_complete - created_at)
+    (1.6 + (96.6 * @percent_elapsed))
   end
 
   def today_marker_position
-     @percent_elapsed = (DateTime.now.getutc - created_at)/(date_complete - created_at)
-     (1.6 + (96.6 * @percent_elapsed))
+    get_marker_position(DateTime.now.getutc)
   end
 end

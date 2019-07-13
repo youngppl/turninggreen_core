@@ -8,14 +8,25 @@
         <h2 class="title">Log Your Progress!</h2>
         <h5 class="instructions">You have logged 56 metric since starting this challenge! To see more details on your previous logging records move the colored arrow. Great job on making a difference!</h5>
         <div class="progress">
-          <div class="today-marker _<%= challenge.id %>" style="left:<%= challenge.today_marker_position %>%">
-            <svg height="45" width="10" class="today line" ><line x1="0" y1="0" x2="0" y2="41" /></svg>
+          <div class="today marker _<%= challenge.id %>" style="left:<%= challenge.today_marker_position %>%">
+            <svg height="45" width="10" class="line" ><line x1="0" y1="0" x2="0" y2="41" /></svg>
             <span class="label">today</span>
           </div>
           <% if challenge.last_logged.nil? %>
             <span>Nothing logged yet. Let’s start recording our actions</span>
+          <% else %>
+            <div class="progress-bar" role="progressbar" style="width: <%= challenge.progress_bar_length %>% !important" aria-valuemin="0" aria-valuemax="100"></div>
+            <div class="marker-container">
+              <% challenge.progress_logs.each do |log| %>
+                <% if log.created_at.day != DateTime.now.getutc.day %>
+                <div class="marker" style="left:<%= challenge.get_marker_position(log.created_at) - 1 %>%">
+                  <svg height="45" width="10" class="line"><line x1="0" y1="0" x2="0" y2="41" /></svg>
+                  <span class="label"></span>
+                </div>
+                <% end %>
+              <% end %>
+            </div>
           <% end %>
-          <div class="progress-bar w-0" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
         </div>
         <svg height="20" width="10" class="start line"><line x1="0" y1="0" x2="0" y2="12" /></svg>
         <svg height="20" width="10" class="end line"><line x1="0" y1="0" x2="0" y2="12" /></svg>
@@ -40,7 +51,7 @@
         </div>
         <script type="text/javascript">
           function setInitPos_<%= challenge.id %>() {
-            today_marker_offset = $('.today-marker._<%= challenge.id %>').offset()
+            today_marker_offset = $('.today.marker._<%= challenge.id %>').offset()
             today_marker_offset['top'] += 33;
             today_marker_offset['left'] -= 142;
             $('.metric-box._<%= challenge.id %>').offset(today_marker_offset)
