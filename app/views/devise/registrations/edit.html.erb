@@ -52,9 +52,34 @@
             <h4 class="panel-title">
               <a data-toggle="collapse" href="#password">Password</a>
             </h4>
+            <i class="fas fa-chevron-down"></i>
           </div>
+
           <div id="password" class="panel-collapse collapse">
-            <p>password settings go here :)</p>
+            <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+              <%= devise_error_messages! %>
+
+              <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+              <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+              <% end %>
+
+              <div class="field">
+                <%= f.label 'Current Password' %>
+                <%= f.password_field :current_pass, autofocus: true, class: "inputField" %>
+              </div>
+              <div class="field">
+                <%= f.label 'New Password' %>
+                <%= f.password_field :new_pass, autofocus: true, class: "inputField" %>
+              </div>
+              <div class="field">
+                <%= f.label 'Confirm Password' %>
+                <%= f.password_field :confirm_pass, autofocus: true, class: "inputField" %>
+              </div>
+
+              <div class="actions">
+                <%= f.submit "Update Password", class: "btn save-changes-button", disabled: "true" %>
+              </div>
+            <% end %>
           </div>
         </div>
         <div class="panel panel-default">
@@ -62,9 +87,37 @@
             <h4 class="panel-title">
               <a data-toggle="collapse" href="#devices">Devices</a>
             </h4>
+            <i class="fas fa-chevron-down"></i>
           </div>
           <div id="devices" class="panel-collapse collapse">
-            <p>devices settings go here :)</p>
+            <p>These are the devices that are currently logged in under your account. Please select any you wish to log out from. You will be asked to put in your password before finalizing any log outs.</p>
+            <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+              <%= devise_error_messages! %>
+
+              <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+              <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+              <% end %>
+              <div class="options">
+                <div class="field">
+                  <%= f.check_box :notifications%>
+                  <%= f.label "Suzanne’s Macbook Pro (current device)" %>
+                </div>
+                <br/>
+                <div class="field">
+                  <%= f.check_box :notifications%>
+                  <%= f.label "Alison’s Chromebook" %>
+                </div>
+                <br>
+                <div class="field">
+                  <%= f.check_box :notifications%>
+                  <%= f.label "All devices (except this one)" %>
+                </div>
+                <br>
+              </div>
+              <div class="actions">
+                <%= f.submit "Logout", class: "btn save-changes-button", disabled: "true" %>
+              </div>
+            <% end %>
           </div>
         </div>
         <div class="panel panel-default">
@@ -72,9 +125,11 @@
             <h4 class="panel-title">
               <a data-toggle="collapse" href="#deactivate">Deactivate</a>
             </h4>
+            <i class="fas fa-chevron-down"></i>
           </div>
           <div id="deactivate" class="panel-collapse collapse">
-            <p>deactivate settings go here :)</p>
+            <p>If you deactivate some logistics will happen. Choose wisely fools. </p>
+            <div class="deactivate"><a href ="">Deactivate Account</a></div>
           </div>
         </div>
       </div>
@@ -87,7 +142,7 @@
     <div id="notifications" class="tab-pane fade">
       <p>notifications settings go here :)</p>
     </div>
-    
+
   </div>
 </div>
 

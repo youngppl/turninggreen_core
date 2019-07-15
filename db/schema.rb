@@ -43,7 +43,7 @@ ActiveRecord::Schema.define(version: 2019_06_09_004633) do
     t.integer "length_of_challenge"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "completed", default: true
+    t.boolean "completed"
     t.boolean "reflection_completed", default: false
     t.date "date_complete"
     t.boolean "notification_viewed", default: false
