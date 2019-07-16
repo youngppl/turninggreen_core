@@ -11,3 +11,7 @@ $(window).on('turbolinks:load', function(){
 $(document).on("click", ".popover .close" , function(){
         $(this).parents(".popover").popover('hide');
 });
+$(document).on("click", ".expand-clickable-area", function (){
+  $(this).parent().children('.panel-collapse').toggle();
+  $(this).parent().children('panel-heading').find('i').toggle();
+});

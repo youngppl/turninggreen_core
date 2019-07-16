@@ -257,6 +257,15 @@
           padding-bottom: 40.5px;
           padding-top: 41.5px;
           display: inline-block;
+          position:relative;
+          cursor: pointer;
+
+          .expand-clickable-area{
+            width: 523px;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+          }
 
           .panel-heading{
             .panel-title{
@@ -264,9 +273,14 @@
               font-weight: 600;
               color: #384632;
               display: inline-block;
+              
             }
-            .fas {
+            .show-hidden {
+              background: none;
+              border: none;
+              object-fit: contain;
               float: right;
+              outline: 0;
               margin-top: 13px;
             }
           }

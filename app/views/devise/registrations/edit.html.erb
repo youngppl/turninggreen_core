@@ -45,17 +45,18 @@
     </div>
 
     <div id="account" class="tab-pane fade">
-      <!-- account settings go here :) -->
       <div class="panel-group">
         <div class="panel panel-default">
+          <div class="expand-clickable-area"></div>
           <div class="panel-heading">
-            <h4 class="panel-title">
-              <a data-toggle="collapse" href="#password">Password</a>
-            </h4>
-            <i class="fas fa-chevron-down"></i>
+            <h4 class="panel-title">Password</h4>
+            <button type="button" class="show-hidden">
+              <i class="fas fa-chevron-down"></i>
+              <i class="fas fa-chevron-left" style="display:none;"></i>
+            </button>
           </div>
 
-          <div id="password" class="panel-collapse collapse">
+          <div id="password" class="panel-collapse collapse" style="display:none;">
             <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
               <%= devise_error_messages! %>
 
@@ -83,13 +84,15 @@
           </div>
         </div>
         <div class="panel panel-default">
+          <div class="expand-clickable-area"></div>
           <div class="panel-heading">
-            <h4 class="panel-title">
-              <a data-toggle="collapse" href="#devices">Devices</a>
-            </h4>
-            <i class="fas fa-chevron-down"></i>
+            <h4 class="panel-title">Devices</h4>
+            <button type="button" class="show-hidden">
+              <i class="fas fa-chevron-down"></i>
+              <i class="fas fa-chevron-left" style="display:none;"></i>
+            </button>
           </div>
-          <div id="devices" class="panel-collapse collapse">
+          <div id="devices" class="panel-collapse collapse" style="display:none;">
             <p>These are the devices that are currently logged in under your account. Please select any you wish to log out from. You will be asked to put in your password before finalizing any log outs.</p>
             <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
               <%= devise_error_messages! %>
@@ -121,13 +124,15 @@
           </div>
         </div>
         <div class="panel panel-default">
+          <div class="expand-clickable-area"></div>
           <div class="panel-heading">
-            <h4 class="panel-title">
-              <a data-toggle="collapse" href="#deactivate">Deactivate</a>
-            </h4>
-            <i class="fas fa-chevron-down"></i>
+            <h4 class="panel-title">Deactivate</h4>
+            <button type="button" class="show-hidden">
+              <i class="fas fa-chevron-down"></i>
+              <i class="fas fa-chevron-left" style="display:none;"></i>
+            </button>
           </div>
-          <div id="deactivate" class="panel-collapse collapse">
+          <div id="deactivate" class="panel-collapse collapse" style="display:none;">
             <p>If you deactivate some logistics will happen. Choose wisely fools. </p>
             <div class="deactivate"><a href ="">Deactivate Account</a></div>
           </div>
