@@ -40,6 +40,15 @@ class ChallengesController < ApplicationController
     end
   end
 
+  def endDate(challenge)
+    @addtimesec = challenge.length_of_challenge * 7 * 24 * 60 * 60
+    endtime = challenge.created_at + @addtimesec
+
+    return endtime
+
+  end
+  helper_method :endDate
+
   def update_notification_viewed
     Challenge.where(id:params[:id]).update(notification_viewed:true)
   end

@@ -253,6 +253,107 @@
       }
     }
     #account {
+      .panel-default{
+          width: 523px;
+          height: 100%;
+          border-bottom: solid 1px #979797;
+          padding-bottom: 40.5px;
+          padding-top: 41.5px;
+          display: inline-block;
+          position:relative;
+          cursor: pointer;
+
+          .expand-clickable-area{
+            width: 523px;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            height: 100px;
+          }
+
+          .panel-heading{
+            .panel-title{
+              font-size: 28px;
+              font-weight: 600;
+              color: #384632;
+              display: inline-block;
+
+            }
+            .show-hidden {
+              background: none;
+              border: none;
+              object-fit: contain;
+              float: right;
+              outline: 0;
+              margin-top: 13px;
+            }
+          }
+
+          #password{
+            margin-top:19px;
+            label{
+              text-align: right;
+              width: 154px;
+              height: 21px;
+              font-size: 18px;
+              font-weight: 500;
+              color: #777777;
+            }
+            .inputField{
+              width: 277px;
+              margin-left: 30px;
+            }
+            .field{
+              margin-left: 30px;
+            }
+            .actions{
+              max-width: 219px;
+              margin: 34px 30px 0px auto;
+            }
+            .save-changes-button{
+              width:219px;
+            }
+          }
+
+          #devices {
+            .field{
+              margin-left: 60px;
+              display:inline-block;
+            }
+
+            .actions{
+              max-width: 181px;
+              margin: 34px auto 0px auto;
+            }
+            .save-changes-button{
+              width: 119px;
+            }
+          }
+
+          .panel-collapse {
+
+
+          }
+
+          #deactivate a{
+            width: 187px;
+            height: 24px;
+            font-size: 20px;
+            font-weight: 600;
+            color: #808080;
+          }
+
+          .deactivate{
+            text-align: center;
+          }
+
+          p{
+            width: 466px;
+            margin: 25px auto 25px auto;
+          }
+
+      }
+
       // account settings css goes here (❁´◡`❁)
     }
     #privacy {

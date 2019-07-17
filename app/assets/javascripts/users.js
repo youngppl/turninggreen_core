@@ -15,6 +15,11 @@ $(document).on("click", ".popover .close" , function(){
         $(this).parents(".popover").popover('hide');
 });
 
+$(document).on("click", ".expand-clickable-area", function (){
+  $(this).parent().children('.panel-collapse').toggle();
+  $(this).parent().children('panel-heading').find('i').toggle();
+});
+
 function checkEmail() {
   if (!document.getElementById("user_email").validity.valid || $("#user_email").val() == "") {
     $(".email.error").show();
