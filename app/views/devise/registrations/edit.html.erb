@@ -72,25 +72,21 @@
             <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
               <%= devise_error_messages! %>
 
-              <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-              <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-              <% end %>
-
               <div class="field">
                 <%= f.label 'Current Password' %>
-                <%= f.password_field :current_pass, autofocus: true, class: "inputField" %>
+                <%= f.password_field :current_password, autofocus: true, class: "inputField", oninput: "enablePasswordFields();" %>
               </div>
               <div class="field">
                 <%= f.label 'New Password' %>
-                <%= f.password_field :new_pass, autofocus: true, class: "inputField" %>
+                <%= f.password_field :password, autofocus: true, disabled: true, class: "inputField" %>
               </div>
               <div class="field">
                 <%= f.label 'Confirm Password' %>
-                <%= f.password_field :confirm_pass, autofocus: true, class: "inputField" %>
+                <%= f.password_field :password_confirmation, autofocus: true, disabled: true, class: "inputField" %>
               </div>
 
               <div class="actions">
-                <%= f.submit "Update Password", class: "btn save-changes-button", disabled: "true" %>
+                <%= f.submit "Update Password", id: "update-password-button", class: "btn save-changes-button", disabled: "true", onclick: "$('#password-updated').modal();" %>
               </div>
             <% end %>
           </div>
@@ -107,11 +103,6 @@
           <div id="devices" class="panel-collapse collapse" style="display:none;">
             <p>These are the devices that are currently logged in under your account. Please select any you wish to log out from. You will be asked to put in your password before finalizing any log outs.</p>
             <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-              <%= devise_error_messages! %>
-
-              <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-              <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-              <% end %>
               <div class="options">
                 <div class="field">
                   <%= f.check_box :notifications%>
@@ -146,7 +137,7 @@
           </div>
           <div id="deactivate" class="panel-collapse collapse" style="display:none;">
             <p>If you deactivate some logistics will happen. Choose wisely fools. </p>
-            <div class="deactivate"><a href ="">Deactivate Account</a></div>
+            <div class="deactivate"><a onclick="$('#account-deactivate').modal();">Deactivate Account</a></div>
           </div>
         </div>
       </div>

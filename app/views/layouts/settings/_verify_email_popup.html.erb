@@ -8,8 +8,12 @@
         <h2 class="heading">A verification email has been sent, please check your email to verify your new email address.</h2>
         <h2 class="heading">Didn't get a verification email?</h2>
         <%= form_for(resource, as: resource_name, url: user_confirmation_path(user: {:email => current_user.unconfirmed_email}), html: { method: :post}) do |f| %>
-          <%= f.submit "Resend email", class: "btn save-changes-button" %>
+          <%= f.submit "Resend email", class: "btn save-changes-button", onclick: "$('.confirm-sent').show();" %>
         <% end %>
+        <div class="confirm-sent" style="display: none;">
+          Verification email sent to: <br>
+          <span class="email"><%= current_user.unconfirmed_email %></span>
+        </div>
       </div>
     </div>
   </div>

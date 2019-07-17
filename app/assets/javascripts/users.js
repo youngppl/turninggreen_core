@@ -71,3 +71,15 @@ function allowNotifSave() {
     $("#notifications-save-button").prop("disabled", true);
   }
 }
+
+function enablePasswordFields() {
+  if (!!$('#user_current_password').val()) {
+    $('#update-password-button').prop('disabled', false);
+    $('#user_password').prop('disabled', false);
+    $('#user_password_confirmation').prop('disabled', false);
+  } else {
+    $('#update-password-button').prop('disabled', true);
+    $('#user_password').prop('disabled', true);
+    $('#user_password_confirmation').prop('disabled', true);
+  }
+}
