@@ -20,10 +20,12 @@
   width: 950px;
   border: 3px solid gray;
   border-radius: 30px;
+
   h2 {
     display: inline-block;
     margin-right: 520px;
   }
+
   #add_challenge {
     height: 40px;
     width: 40px;
@@ -38,29 +40,36 @@
     border-radius: 10px;
     box-shadow: 3px 3px #7f8083;
   }
+
   .current_challenges_box {
     width: 175px;
     height: 175px;
+
     &:hover {
       box-shadow: none;
       transform: translate(12px,12px);
     }
+
     h5 {
       white-space: initial;
       text-align: center;
       padding: 30px;
     }
   }
+
   .current_challenges_overlay {
     height: 171px;
     width: 171px;
   }
+
   #no_challenge_popover {
     cursor: pointer;
     outline: none !important;
   }
+
   #too_many_challenge_popover {
     @extend #no_challenge_popover;
+
     #add_challenge {
       background-color: #808285;
       box-shadow: none;
@@ -76,9 +85,11 @@
   position: fixed !important;
   left: 10px !important;
   transform: none !important;
+
   > .arrow {
     left: 28px !important;
   }
+
   .close {
     margin-right: -1px;
     margin-top: -6px;
@@ -86,10 +97,10 @@
     color: #808285;
     cursor: pointer;
   }
+
   .popover-body {
     color: #808285 !important;
   }
-
 }
 
 .bs-popover-left {
@@ -98,34 +109,42 @@
   border-radius: 16px;
   font-size: 16px;
   top: -25px !important;
+
   > .arrow {
     top: 69px !important;
   }
+
   &.no_challenge_popover {
     top: 18px !important;
+
     > .arrow {
       top: 16px !important;
     }
   }
+
   .close {
     margin-right: 7px;
     margin-top: 2px;
     font-size: 22px;
     color: #808285;
   }
+
   .popover-body {
     color: #808285 !important;
   }
+
   .arrow::before {
     border-left-color: white;
   }
+
   .border-arrow.arrow::after {
-    top: 0px !important;
+    top: 0 !important;
     border-left-color: #80a870;
     right: -3px;
     z-index: -1;
     height: 10px;
   }
+
   .border-arrow.arrow {
     right: -8px;
   }
@@ -142,6 +161,7 @@
   white-space: nowrap;
   vertical-align: top;
   border: 2px solid #80a870;
+
   &.new_challenge {
     color: white;
     background-color: #bfc0c1;
@@ -150,8 +170,9 @@
     white-space: normal;
     text-align: center;
   }
+
   &.last {
-    margin-right: 0px;
+    margin-right: 0;
   }
 }
 
@@ -159,6 +180,7 @@
   border-radius: 25px;
   height: 196px;
   width: 196px;
+
   > .overlayText {
     color: black;
   }
@@ -173,18 +195,19 @@
     font: inherit;
     cursor: pointer;
     outline: inherit;
- }
+  }
+}
 
-  }
-  .dropdown-menu {
-    top: 80px;
-    font-size: 20px;
-  }
+.dropdown-menu {
+  top: 80px;
+  font-size: 20px;
+}
 
 .settings {
   @extend .dashboard;
   padding-left: 94px;
   padding-top: 42px;
+
   h2.settings-title {
     font-size: 45px;
     font-weight: bold;
@@ -192,10 +215,12 @@
     margin-bottom: 37px;
     margin-left: 90px;
   }
+
   .settings-tabs {
     li {
       font-size: 30px;
       font-weight: 500;
+
       a {
         display: block;
         height: 60px;
@@ -203,27 +228,31 @@
         text-align: center;
         color: #384632 !important;
         border-radius: 6px;
+
         &:hover {
           text-decoration: none;
         }
+
         &.active {
           border-bottom: solid 6px #87b67b;
         }
       }
     }
   }
+
   .separator {
     width: 1070px;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
     border: solid 1px #979797;
     margin-top: inherit;
   }
+
   .tab-content {
     .tab-pane {
       width: 600px;
-      margin: auto;
-      margin-top: 42px;
+      margin: 42px auto auto;
     }
+
     #profile {
       .user-name {
         font-size: 28px;
@@ -231,13 +260,27 @@
         color: #384632;
         margin-bottom: 20px;
       }
+
       #user_email {
         margin-bottom: 43px;
+        width: 395px;
+
         &:invalid {
           border: solid 2px #d13838;
         }
       }
-      label.state, label.country {
+
+      .verify-email {
+        font-size: 20px;
+        font-weight: 600;
+        color: #517e3d;
+        text-decoration: underline;
+        margin-left: 184px;
+        cursor: pointer;
+      }
+
+      label.country,
+      label.state {
         width: 78px;
         text-align: right;
         font-size: 18px;
@@ -245,13 +288,17 @@
         color: #777777;
         margin-right: 18px;
       }
+
       #user_state {
         margin-bottom: 31px;
       }
-      #user_state, #user_country {
-          width: 293px;
+
+      #user_country,
+      #user_state {
+        width: 293px;
       }
     }
+
     #account {
       .panel-default{
           width: 523px;
@@ -356,36 +403,84 @@
 
       // account settings css goes here (❁´◡`❁)
     }
+
     #privacy {
       // privacy settings css goes here (❁´◡`❁)
     }
+
     #notifications {
-      // notifications settings css goes here (❁´◡`❁)
+      color: #384632;
+
+      .title {
+        font-size: 28px;
+        font-weight: 600;
+      }
+
+      .notifications-label {
+        font-family: Raleway;
+        font-size: 20px;
+        font-weight: 500;
+      }
+
+      .notifications-select {
+        width: 277px;
+        margin-top: 16px;
+        margin-bottom: 37px;
+      }
+
+      .content-heading {
+        font-size: 28px;
+        font-weight: 600;
+      }
+
+      .send-label {
+        font-size: 20px;
+        font-weight: 500;
+      }
+
+      .ContentList {
+        margin-top: 16px;
+        width: 334px;
+        height: 110px;
+        margin-bottom: 42px;
+
+        .options {
+          font-size: 20px;
+          font-weight: 500;
+          margin-left: 18px;
+        }
+      }
     }
+
     label {
       font-size: 20px;
       font-weight: 600;
       color: #384632;
     }
-    .save-changes-button {
-      width: 181px;
-      height: 65px;
-      border-radius: 7px;
-      border: solid 3px #87b67b;
-      background-color: #ffffff;
-      font-size: 20px;
-      font-weight: 600;
-      color: #384632;
-      &:disabled {
-        border: solid 3px #cacaca;
-      }
-    }
-    .inputField {
-      border-radius: 5px;
-      border: solid 1px #787878;
-      height: 48px;
+
+  }
+  .save-changes-button {
+    width: 181px;
+    height: 65px;
+    border-radius: 7px;
+    border: solid 3px #87b67b;
+    background-color: #ffffff;
+    font-size: 20px;
+    font-weight: 600;
+    color: #384632;
+
+    &:disabled {
+      border: solid 3px #cacaca;
     }
   }
+
+  .inputField {
+    border-radius: 5px;
+    border: solid 1px #787878;
+    height: 48px;
+  }
+}
+
   .error {
     .error-icon {
       width: 15px;
@@ -400,10 +495,12 @@
       position: relative;
       top: -41px;
       display: inline-block;
+
       &::before {
         content: "!";
       }
     }
+
     .message {
       display: inline-block;
       position: relative;
@@ -413,10 +510,166 @@
       margin-left: 6px;
     }
   }
-}
 
+  .changes-saved-popup {
+    .modal-dialog {
+      padding-top: 7%;
+    }
 
+    .modal-content {
+      width: 459px;
+      border-radius: 10px;
+      border: solid 1px #979797;
+      background-color: #ffffff;
+      margin: auto;
 
+      .modal-body {
+        text-align: center;
+        .close {
+          font-size: 38px;
+          position: absolute;
+          top: 25px;
+          right: 25px;
+        }
+
+        .heading {
+          font-size: 35px;
+          font-weight: 600;
+          color: #384632;
+          margin-top: 37px;
+        }
+
+        .message {
+          font-size: 30px;
+          font-weight: 500;
+          color: #777777;
+          width: 300px;
+          margin: 35px auto;
+        }
+
+        .branding {
+          width: 200px;
+          height: 200px;
+          border: solid 1px #979797;
+          border-radius: 50%;
+          margin: 41px auto 28px;
+
+          &.filler {
+            background-color: #d8d8d8;
+          }
+        }
+      }
+    }
+  }
+
+  .account-deactivate-popup {
+    .modal-dialog {
+      padding-top: 7%;
+    }
+
+    .modal-content {
+      width: 788px;
+      height: 587px;
+      border-radius: 25px;
+      margin: auto;
+      padding-left: 45px;
+      padding-top: 26px;
+    }
+
+    .modal-body {
+      .close {
+        font-size: 29px;
+        position: absolute;
+        top: 18px;
+        right: 40px;
+      }
+      .heading {
+        font-size: 35px;
+        font-weight: 600;
+        color: #384632;
+        margin-bottom: 26px;
+      }
+      .warning {
+        font-size: 20px;
+        font-weight: 600;
+        color: #808080;
+        margin-bottom: 39px;
+      }
+      .deactivate-reasons-form {
+        text-align: center;
+        form {
+          font-size: 20px;
+          font-weight: 500;
+          color: #384632;
+          margin: auto;
+          display: inline-block;
+          text-align: left;
+
+          .option {
+            margin-left: 10px;
+          }
+
+          textarea {
+            width: 406px;
+            height: 110px;
+            border-radius: 7px;
+            border: solid 1px #979797;
+            margin-left: 30px;
+          }
+
+          .deactivate.error {
+            margin-left: 30px;
+
+            .error-icon {
+              top: -11px;
+            }
+            .message {
+              top: -11px;
+            }
+          }
+
+          .next {
+            width: 119px;
+            margin-top: 22px;
+            margin-left: 73%;
+          }
+        }
+      }
+
+      .second.slide {
+        position: absolute;
+        top: 80px;
+
+        #additional-textarea {
+          width: 685px;
+          height: 152px;
+          border-radius: 7px;
+          border: solid 1px #979797;
+          background-color: #ffffff;
+          font-size: 20px;
+          font-style: italic;
+          line-height: normal;
+          color: #989898;
+          padding: 10px;
+          margin-top: 10px;
+        }
+
+        #deactivate-button {
+          margin-left: 33%;
+          margin-top: 10%;
+        }
+      }
+    }
+  }
+
+  #verify-email {
+    .heading {
+      font-size: 25px;
+    }
+    .save-changes-button {
+      margin-top: 26px;
+    }
+  }
 // .heading {
 //   margin-bottom: 19px;
 // }
@@ -432,7 +685,6 @@
 // .spacer {
 //   width: 200px;
 // }
-
 // h2.user-name {
 //   margin-top: 10px;
 // }
