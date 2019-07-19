@@ -21,6 +21,12 @@
     color: #464646;
     margin-bottom: 28px;
   }
+
+  .current-challenge-row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
   .current-challenge-box {
     width: 335px;
     height: 519px;
@@ -32,18 +38,22 @@
     margin-bottom: 28px;
     padding: 30px;
     position: relative;
+
     .name {
       font-size: 28px;
       font-weight: 600;
       color: #384632;
       margin-bottom: 26px;
     }
+
     .progress-circle {
       height: 270px;
     }
+
     .worm {
       position: relative;
       top: -270px;
+
       &.last-log {
         top: -543px;
       }
@@ -56,6 +66,7 @@
           stroke-dashoffset: -565;
         }
       }
+
       circle {
         fill: transparent;
         stroke-width: 15px;
@@ -66,6 +77,7 @@
         transform-origin: 49% 51%;
       }
     }
+
     .ring {
       width: 265px;
       height: 265px;
@@ -84,10 +96,11 @@
         background-color: white;
         position: relative;
         z-index: 1;
-        margin:auto;
+        margin: auto;
         display: flex;
         box-shadow: 1px 1px 5px grey;
       }
+
       button {
         width: 126px;
         height: 126px;
@@ -100,18 +113,22 @@
         text-align: center;
         color: #384632;
         background-color: white;
+
         &:focus {
           outline: none;
         }
+
         &:hover {
           background-color: #4e8a08;
           color: #ffffff;
         }
       }
     }
+
     .info {
       margin-top: 39px;
       text-align: center;
+
       .label {
         text-transform: uppercase;
         font-size: 13px;
@@ -119,6 +136,7 @@
         color: #888888;
         margin-right: 23px;
       }
+
       .metric {
         font-size: 20px;
         font-weight: 600;
@@ -126,6 +144,7 @@
       }
     }
   }
+
   .add {
     border: dashed 2px #868686;
     font-size: 276px;
@@ -137,12 +156,16 @@
     width: 335px;
     height: 519px;
     border-radius: 19px;
+
     &:hover {
       background-color: #eaeaea;
+      text-decoration: none;
+
       .another {
         display: block;
       }
     }
+
     .another {
       font-size: 20px;
       font-weight: 600;
@@ -161,30 +184,34 @@
     height: 678px;
     border-radius: 17px;
     padding: 40px;
-    margin: auto;
-    margin-top: 10%;
+    margin: 10% auto auto;
   }
+
   .close {
     font-size: 38px;
     position: absolute;
     top: 25px;
     right: 25px;
+
     &:focus {
       outline: none;
     }
   }
+
   .title {
     font-size: 45px;
     font-weight: bold;
     color: #464646;
     margin-bottom: 18px;
   }
+
   .instructions {
     font-size: 30px;
     font-weight: 500;
     color: #777777;
     margin-bottom: 56px;
   }
+
   .progress {
     width: 795px;
     height: 35px;
@@ -194,14 +221,17 @@
     margin: auto;
     overflow: visible;
     position: relative;
+
     .marker-container {
       width: 765px;
       position: absolute;
-      left: 0px;
+      left: 0;
     }
+
     .marker {
       position: relative;
       display: inline-block;
+
       .label {
         font-size: 20px;
         font-weight: 500;
@@ -210,37 +240,43 @@
         top: 67px;
         left: -34px;
       }
+
       .line {
         top: 34px;
       }
     }
+
     span {
       font-size: 20px;
       font-style: italic;
       line-height: normal;
       color: #747474;
-      padding: 6px;
-      padding-left: 10px;
+      padding: 6px 6px 6px 10px;
       position: absolute;
     }
+
     .progress-bar {
       border-radius: 15px;
       background-color: #87b67b;
       margin-left: -11px;
     }
   }
+
   .line {
     stroke: #979797;
     stroke-width: 2px;
     top: -23px;
     position: relative;
+
     &.start {
       left: 70px;
     }
+
     &.end {
       left: 822px;
     }
   }
+
   .box {
     display: inline-block;
     text-align: center;
@@ -260,35 +296,42 @@
       color: #384632;
       margin-top: -6px;
     }
+
     &.start {
       left: -9px;
     }
+
     &.end {
       left: 655px;
     }
   }
+
   .metric-box-container {
     width: 1064px;
     overflow: visible;
-    margin: auto;
-    margin-left: -72px;
+    margin: auto auto auto -72px;
   }
+
   .metric-box {
     width: 300px;
     text-align: center;
+
     img {
       cursor: e-resize;
     }
   }
+
   .date-box {
     height: 47px;
     width: 100px;
     margin: auto;
+
     label {
       font-size: 12px;
       font-weight: 500;
       color: #777777;
     }
+
     span {
       font-size: 20px;
       font-weight: bold;
@@ -297,14 +340,15 @@
       display: block;
     }
   }
+
   .arrow_box {
-    margin: auto;
-    margin-top: 24px;
+    margin: 24px auto auto;
     position: relative;
     background: #ffffff;
     border: 1px solid #979797;
     padding: 22px;
     text-align: center;
+
     .question {
       font-size: 20px;
       font-weight: 500;
@@ -320,6 +364,7 @@
       border: solid 1px #979797;
       margin-bottom: 35px;
     }
+
     .record {
       width: 115px;
       height: 50px;
@@ -327,12 +372,14 @@
       border: solid 3px #87b67b;
       background-color: #ffffff;
     }
+
     .rendered {
       label {
         font-size: 13px;
         font-weight: 500;
         color: #949494;
       }
+
       span {
         font-size: 20px;
         font-weight: 600;
@@ -342,13 +389,16 @@
         margin-top: -9px;
       }
     }
+
     .current-metric {
       font-size: 20px;
       font-weight: 600;
       color: #4a4a4a;
     }
   }
-  .arrow_box:after, .arrow_box:before {
+
+  .arrow_box:after,
+  .arrow_box:before {
     bottom: 100%;
     left: 50%;
     border: solid transparent;
@@ -365,6 +415,7 @@
     border-width: 20px;
     margin-left: -20px;
   }
+
   .arrow_box:before {
     border-color: rgba(151, 151, 151, 0);
     border-bottom-color: #979797;
@@ -372,58 +423,6 @@
     margin-left: -21px;
   }
 }
-  // padding: 40px;
-  // margin-top: 30px;
-  // width: 950px;
-  // border: 3px solid gray;
-  // border-radius: 30px;
-  // h2 {
-  //   display: inline-block;
-  //   margin-right: 520px;
-  // }
-  // #add_challenge {
-  //   height: 40px;
-  //   width: 40px;
-  //   background-color: #80a870;
-  //   color: white;
-  //   text-align: center;
-  //   vertical-align: middle;
-  //   font-size: 40px;
-  //   display: inline-block;
-  //   // float: right;
-  //   line-height: 100%;
-  //   border-radius: 10px;
-  //   box-shadow: 3px 3px #7f8083;
-  // }
-  // .current_challenges_box {
-  //   width: 175px;
-  //   height: 175px;
-  //   &:hover {
-  //     box-shadow: none;
-  //     transform: translate(12px,12px);
-  //   }
-  //   h5 {
-  //     white-space: initial;
-  //     text-align: center;
-  //     padding: 30px;
-  //   }
-  // }
-  // .current_challenges_overlay {
-  //   height: 171px;
-  //   width: 171px;
-  // }
-  // #no_challenge_popover {
-  //   cursor: pointer;
-  //   outline: none !important;
-  // }
-  // #too_many_challenge_popover {
-  //   @extend #no_challenge_popover;
-  //   #add_challenge {
-  //     background-color: #808285;
-  //     box-shadow: none;
-  //   }
-  // }
-
 
 .challenge_added_popover {
   border: 4px solid #80a870;
@@ -433,9 +432,11 @@
   position: fixed !important;
   left: 10px !important;
   transform: none !important;
+
   > .arrow {
     left: 28px !important;
   }
+
   .close {
     margin-right: -1px;
     margin-top: -6px;
@@ -443,10 +444,10 @@
     color: #808285;
     cursor: pointer;
   }
+
   .popover-body {
     color: #808285 !important;
   }
-
 }
 
 .bs-popover-left {
@@ -455,34 +456,42 @@
   border-radius: 16px;
   font-size: 16px;
   top: -25px !important;
+
   > .arrow {
     top: 69px !important;
   }
+
   &.no_challenge_popover {
     top: 18px !important;
+
     > .arrow {
       top: 16px !important;
     }
   }
+
   .close {
     margin-right: 7px;
     margin-top: 2px;
     font-size: 22px;
     color: #808285;
   }
+
   .popover-body {
     color: #808285 !important;
   }
+
   .arrow::before {
     border-left-color: white;
   }
+
   .border-arrow.arrow::after {
-    top: 0px !important;
+    top: 0 !important;
     border-left-color: #80a870;
     right: -3px;
     z-index: -1;
     height: 10px;
   }
+
   .border-arrow.arrow {
     right: -8px;
   }
@@ -499,6 +508,7 @@
   white-space: nowrap;
   vertical-align: top;
   border: 2px solid #80a870;
+
   &.new_challenge {
     color: white;
     background-color: #bfc0c1;
@@ -507,8 +517,9 @@
     white-space: normal;
     text-align: center;
   }
+
   &.last {
-    margin-right: 0px;
+    margin-right: 0;
   }
 }
 
@@ -516,6 +527,7 @@
   border-radius: 25px;
   height: 196px;
   width: 196px;
+
   > .overlayText {
     color: black;
   }
@@ -530,32 +542,37 @@
     font: inherit;
     cursor: pointer;
     outline: inherit;
- }
+  }
+}
 
-  }
-  .dropdown-menu {
-    top: 80px;
-    font-size: 20px;
-  }
+.dropdown-menu {
+  top: 80px;
+  font-size: 20px;
+}
 
 .settings {
   @extend .dashboard;
   padding-top: 15px;
-  > div{
+
+  > div {
     display: inline-block;
     margin-left: 140px;
     vertical-align: top;
     margin-top: 20px;
   }
+
   .left-panel {
     text-align: center;
   }
+
   .right-panel {
     margin-bottom: 25px;
   }
+
   .spacer {
     width: 200px;
   }
+
   .save-button {
     border-radius: 10px;
     background-color: #80a870;
@@ -563,13 +580,16 @@
     color: white;
     width: 100px;
   }
+
   .separator {
     border: 1px solid #d6d7d9;
     width: 1082px;
   }
+
   .heading {
     margin-bottom: 19px;
   }
+
   form div {
     margin-bottom: 5px;
   }
@@ -580,34 +600,37 @@ h2.user-name {
 }
 
 h2.settings-title {
-    font-size: 40px;
+  font-size: 40px;
 }
 
 .upload-wrap {
-    position: relative;
+  position: relative;
 }
 
 .upload-btn {
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    opacity: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
 }
 
-.upload-photo{
+.upload-photo {
   .modal-body {
     background-color: white;
   }
+
   .modal-content {
     width: 450px;
     margin: auto;
   }
+
   #minus {
     position: absolute;
     top: 307px;
     font-size: 40px;
     left: 48px;
   }
+
   #plus {
     position: absolute;
     top: 311px;
