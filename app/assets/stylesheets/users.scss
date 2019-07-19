@@ -280,10 +280,28 @@
       cursor: e-resize;
     }
   }
+  .date-box {
+    height: 47px;
+    width: 100px;
+    margin: auto;
+    label {
+      font-size: 12px;
+      font-weight: 500;
+      color: #777777;
+    }
+    span {
+      font-size: 20px;
+      font-weight: bold;
+      color: #4a4a4a;
+      margin-top: -12px;
+      display: block;
+    }
+  }
   .arrow_box {
     width: 289px;
     height: 222px;
-    margin-top: 50px;
+    margin: auto;
+    margin-top: 24px;
     position: relative;
     background: #ffffff;
     border: 1px solid #979797;
@@ -310,6 +328,21 @@
       border-radius: 7px;
       border: solid 3px #87b67b;
       background-color: #ffffff;
+    }
+    .rendered {
+      label {
+        font-size: 13px;
+        font-weight: 500;
+        color: #949494;
+      }
+      span {
+        font-size: 20px;
+        font-weight: 600;
+        font-style: normal;
+        color: #384632;
+        display: block;
+        margin-top: -9px;
+      }
     }
   }
   .arrow_box:after, .arrow_box:before {
