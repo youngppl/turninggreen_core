@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_11_205041) do
+ActiveRecord::Schema.define(version: 2019_07_19_230420) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,11 +43,21 @@ ActiveRecord::Schema.define(version: 2019_07_11_205041) do
     t.integer "length_of_challenge"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "completed"
+    t.boolean "completed", default: true
     t.boolean "reflection_completed", default: false
-    t.date "date_complete"
+    t.datetime "date_complete"
     t.boolean "notification_viewed", default: false
+    t.datetime "last_logged"
     t.index ["user_id"], name: "index_challenges_on_user_id"
+  end
+
+  create_table "progress_logs", force: :cascade do |t|
+    t.integer "metric"
+    t.string "metric_unit"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "challenge_id"
+    t.index ["challenge_id"], name: "index_progress_logs_on_challenge_id"
   end
 
   create_table "tips_dailies", force: :cascade do |t|
@@ -82,6 +92,7 @@ ActiveRecord::Schema.define(version: 2019_07_11_205041) do
     t.datetime "deleted_at"
     t.text "deactivation_reasons", default: [], array: true
     t.text "notifications_content", default: ["check-in"], array: true
+    t.text "permissions", array: true
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true

@@ -144,7 +144,29 @@
     </div>
 
     <div id="privacy" class="tab-pane fade">
-      <p>privacy settings go here :)</p>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, id: "edit-privacy" }) do |f| %>
+
+        <div class="profile">
+          <h2>Profile</h2>
+          <%= f.check_box :permissions, {multiple: true, onclick:"$('#privacy-save-button').prop('disabled', false);"}, 'picture', nil %>
+          <label>I give permission for TG to use my profile picture</label>
+          <p>Learn more Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+        </div>
+        <div class="location">
+          <h2>Location</h2>
+          <%= f.check_box :permissions, {multiple: true, onclick:"$('#privacy-save-button').prop('disabled', false);"}, 'location', nil %>
+          <label>I give permission for TG to share my location</label>
+          <p>Learn more Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
+        </div>
+        <div class="challenges">
+          <h2>Challenges</h2>
+          <h5 class="more-info">To manage sharing settings for challenges individually please check the <strong>completed challenges</strong> page. </h5>
+          <%= f.check_box :permissions, {multiple: true, onclick:"$('#privacy-save-button').prop('disabled', false);"}, 'challenges', nil %>
+          <label>I give permission for TG to share my location</label>
+        </div>
+        <%= f.submit "Save Changes", class: "btn save-changes-button", id: "privacy-save-button", disabled: "true", onclick: "$('#changes-saved').modal();" %>
+
+      <% end %>
     </div>
 
     <div id="notifications" class="tab-pane fade">
