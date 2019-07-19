@@ -44,6 +44,9 @@
     .worm {
       position: relative;
       top: -270px;
+      &.last-log {
+        top: -543px;
+      }
       @keyframes worm-animate {
         0% {
           stroke-dashoffset: -385;
@@ -55,13 +58,10 @@
       }
       circle {
         fill: transparent;
-        stroke: #af066e;
         stroke-width: 15px;
         stroke-linecap: round;
         transform-origin: 50% 50%;
-        stroke-dasharray: 283;
         stroke-dashoffset: 358;
-        animation: 2s ease-in-out 1 both worm-animate;
         transform: rotate(-86deg);
         transform-origin: 49% 51%;
       }
@@ -298,8 +298,6 @@
     }
   }
   .arrow_box {
-    width: 289px;
-    height: 222px;
     margin: auto;
     margin-top: 24px;
     position: relative;
@@ -343,6 +341,11 @@
         display: block;
         margin-top: -9px;
       }
+    }
+    .current-metric {
+      font-size: 20px;
+      font-weight: 600;
+      color: #4a4a4a;
     }
   }
   .arrow_box:after, .arrow_box:before {

@@ -30,7 +30,20 @@ class Challenge < ApplicationRecord
     (1.6 + (96.6 * @percent_elapsed))
   end
 
+  def get_worm_length(date)
+    @percent_elapsed = (date - created_at)/(date_complete - created_at)
+    (359 + (274 * @percent_elapsed))
+  end
+
   def today_marker_position
     get_marker_position(DateTime.now.getutc)
+  end
+
+  def cummulative_metrics
+    @cummulative = 0
+    progress_logs.each do |log|
+      @cummulative += log.metric
+    end
+    return @cummulative
   end
 end

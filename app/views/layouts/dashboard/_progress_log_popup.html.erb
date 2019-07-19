@@ -6,7 +6,7 @@
           <span aria-hidden="true">&#x2715;</span>
         </button>
         <h2 class="title">Log Your Progress!</h2>
-        <h5 class="instructions">You have logged 56 metric since starting this challenge! To see more details on your previous logging records move the colored arrow. Great job on making a difference!</h5>
+        <h5 class="instructions">You have logged <%= pluralize challenge.cummulative_metrics, "metric" %> since starting this challenge! To see more details on your previous logging records move the colored arrow. Great job on making a difference!</h5>
         <div class="progress">
           <div class="today marker _<%= challenge.id %>" style="left:<%= challenge.today_marker_position %>%">
             <svg height="45" width="10" class="line" ><line x1="0" y1="0" x2="0" y2="41" /></svg>
@@ -21,7 +21,7 @@
               <% challenge.progress_logs.each do |log| %>
                 <% if log[:created_at].day != DateTime.now.getutc.day %>
                   <% cummulative += log[:metric] %>
-                  <div class="marker _<%= challenge.id %>" data-metric=<%= log[:metric] %> data-cummulative=<%= cummulative %> data-days-ago=<%= (Date.today - log[:created_at].to_date).to_i %> data-date="<%=log[:created_at].month%>/<%=log[:created_at].day%>" style="left:<%= challenge.get_marker_position(log[:created_at]) + 1%>%">
+                  <div class="marker _<%= challenge.id %>" data-metric=<%= log[:metric] %> data-cummulative=<%= cummulative %> data-days-ago=<%= (Date.today - log[:created_at].to_date).to_i %> data-date="<%=log[:created_at].month%>/<%=log[:created_at].day%>" style="left:<%= challenge.get_marker_position(log[:created_at])%>%">
                     <svg height="45" width="10" class="line"><line x1="0" y1="0" x2="0" y2="41" /></svg>
                     <span class="label"></span>
                   </div>
@@ -48,15 +48,24 @@
             </div>
             <div class="arrow_box">
               <div class="metric-question">
-                <h2 class="question">metric question</h2>
-                <input type="text" name="" value="" class="answer">
-                <button type="button" name="button" class="record">Record</button>
+                <% if !challenge.last_logged.nil? && challenge.last_logged.to_date == DateTime.now.getutc.to_date %>
+                  <div class="current-metric">
+                    <%= challenge.cummulative_metrics %> metrics logged
+                  </div>
+                <% else %>
+                  <h2 class="question">metric question</h2>
+                  <input type="number" name="" value="" class="answer">
+                  <button type="button" name="button" class="record" onclick="recordMetric(<%= challenge.id %>, $(this).siblings('.answer').val())">Record</button>
+                <% end %>
               </div>
               <div class="rendered" style="display:none;"></div>
             </div>
           </div>
         </div>
         <script type="text/javascript">
+          function recordMetric(challenge_id, metric) {
+            $.post('/logs/new', {challenge_id: challenge_id, metric: metric});
+          }
           function setInitPos_<%= challenge.id %>() {
             today_marker_offset = $('.today.marker._<%= challenge.id %>').offset()
             today_marker_offset['top'] += 33;
@@ -64,25 +73,25 @@
             $('.metric-box._<%= challenge.id %>').offset(today_marker_offset)
           }
           if (document.getElementsByClassName("marker-container _<%= challenge.id %>").length != 0) {
-            markers = document.getElementsByClassName("marker-container _<%= challenge.id %>")[0].getElementsByClassName('marker _<%= challenge.id %>')
+            markers_<%= challenge.id %> = document.getElementsByClassName("marker-container _<%= challenge.id %>")[0].getElementsByClassName('marker _<%= challenge.id %>')
           }
           $(".metric-box._<%= challenge.id %>").draggable({
             axis: "x",
             containment: ".metric-box-container._<%= challenge.id %>",
             drag: function() {
               metric_box_left = document.getElementsByClassName("metric-box _<%= challenge.id %>")[0].getBoundingClientRect()["left"] + 150;
-              for (let el of markers) {
+              for (let el of markers_<%= challenge.id %>) {
                 if (metric_box_left < el.getBoundingClientRect()['right'] && metric_box_left > el.getBoundingClientRect()['left']-10) {
                   $(".metric-box._<%= challenge.id %> .metric-question").hide()
                   $(".metric-box._<%= challenge.id %> .rendered").show();
-                  $(".metric-box._<%= challenge.id %> .rendered").html("<div><label>THIS DATE</label><br><span>"+el.getAttribute("data-metric")+" metric</span></div><div><label>CUMMATIVELY</label><br><span>"+el.getAttribute("data-cummulative")+" metric</span></div>")
+                  $(".metric-box._<%= challenge.id %> .rendered").html("<div><label>THIS DATE</label><br><span>"+el.getAttribute("data-metric")+" metrics</span></div><div><label>CUMMATIVELY</label><br><span>"+el.getAttribute("data-cummulative")+" metrics</span></div>")
                   $(".metric-box._<%= challenge.id %> .arrow_box").css({'width': '192px','height': '150px'});
                   $(".metric-box._<%= challenge.id %> .date-box").html("<label>"+el.getAttribute("data-days-ago")+" days ago</label><span>"+el.getAttribute("data-date")+"</span>")
                   break;
                 } else {
                   $(".metric-box._<%= challenge.id %> .metric-question").show()
                   $(".metric-box._<%= challenge.id %> .rendered").hide();
-                  $(".metric-box._<%= challenge.id %> .arrow_box").css({'width': '289px','height': '222px'});
+                  $(".metric-box._<%= challenge.id %> .arrow_box").css({'width': '','height': ''});
                   $(".metric-box._<%= challenge.id %> .date-box").html("");
                 }
               }
