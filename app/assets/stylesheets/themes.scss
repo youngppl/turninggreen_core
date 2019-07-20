@@ -1,26 +1,61 @@
-// Place all the styles related to the Themes controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
 .themesPage {
   text-align: center;
 }
 
 .themesRow {
   width: 1200px;
-  margin: 25px auto;
-  margin-bottom: 95px;
+  margin: 25px 230px 95px;
 }
 
 .theme {
-  width: 200px;
-  height: 200px;
+  width: 174px;
+  height: 174px;
   margin-top: 20px;
   margin-right: 35px;
   display: inline-block;
   white-space: nowrap;
   vertical-align: top;
   position: relative;
+  box-shadow: 5px 5px 6px 0 #9f9f9f;
+  border-radius: 50%;
+
+  .line {
+    stroke: #979797;
+    stroke-width: 2;
+    position: relative;
+    &._1 {
+      transform: rotate(90deg);
+      top: -69px;
+      left: -125px;
+    }
+
+    &._2 {
+      transform: rotate(-30deg);
+      left: -83px;
+      top: -44px;
+    }
+    &._3 {
+      transform: rotate(30deg);
+      left: -131px;
+      top: 48px;
+    }
+    &._4 {
+      transform: rotate(90deg);
+      left: -257px;
+      top: 89px;
+    }
+    &._5 {
+      transform: rotate(-30deg);
+      left: -351px;
+      top: 35px;
+    }
+    &._6 {
+      transform: rotate(30deg);
+      left: -399px;
+      top: -33px;
+    }
+  }
+
   .theme-name {
     font-size: 30px;
     font-weight: 600;
@@ -28,13 +63,26 @@
     color: #4a4a4a;
     margin-top: 20px;
   }
+
+  .theme-locked {
+    width: 175px;
+    height: 175px;
+    position: absolute;
+    border-radius: 50%;
+    top: 3px;
+    left: 3px;
+    background-color: rgba(0, 0, 0, 0.3);
+    filter: blur(1px);
+  }
+
   .icon-box {
     height: 135px;
     width: 135px;
     border-radius: 50%;
     position: relative;
-    margin-top: -232px;
-    margin-left: 33px;
+    margin-top: -228px;
+    margin-left: 25px;
+
     .icon {
       position: absolute;
       top: 0;
@@ -42,37 +90,54 @@
       left: 0;
       right: 0;
       margin: auto;
+
+      &.locked {
+        filter: blur(7px);
+      }
     }
   }
-  // .hidden {
-  //   display: none;
-  // }
+
   .completed-ring {
     position: absolute;
     top: 0;
+
     .ring {
       position: absolute;
       top: 0;
-      &._1, &._2 {
-        margin-left: 102px;
+
+      &._1 {
+        margin-left: 89px;
+        margin-top: 2px;
       }
+
+      &._2 {
+        margin-left: 151px;
+        margin-top: 46px;
+      }
+
       &._3 {
-        margin-left: 85px;
-        margin-top: 1px;
+        margin-left: 90px;
+        margin-top: 125px;
       }
+
       &._4 {
-        margin-left: 14px;
+        margin-left: 15px;
+        margin-top: 125px;
       }
+
       &._5 {
-        margin-left: -29px;
+        margin-left: 3px;
+        margin-top: 46px;
       }
+
       &._6 {
-        margin-top: -25px;
-        margin-left: -29px;
+        margin-top: 2px;
+        margin-left: 15px;
       }
     }
   }
 }
+
 .thumbnail {
   position: relative;
   cursor: pointer;
@@ -95,11 +160,11 @@
   height: 200px;
   width: 200px;
   opacity: 0;
-  transition: .5s ease;
+  transition: 0.5s ease;
   background-color: #717272;
 }
 
-.thumbnail:hover .overlay{
+.thumbnail:hover .overlay {
   opacity: 1;
 }
 
@@ -115,24 +180,25 @@
   text-align: center;
 }
 
-.themesTitle, .themesHelpText, .helpText, .modalHeader {
+.helpText,
+.modalHeader,
+.themesHelpText {
   margin-bottom: 20px;
 }
 
-.themesTitle {
-  font-family: Raleway;
-  font-size: 55px;
-  font-weight: 700;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: 5.6px;
-  color: #4a4a4a;
-  margin-top: 58px;
-  margin-left: 16px;
+.themes-title {
+  font-size: 45px;
+  font-weight: bold;
+  color: #464646;
+  margin-top: 42px;
+  text-align: left;
+  margin-left: 280px;
+  margin-bottom: 22px;
 }
 
-.helpText, .modalHeader, .themeVideo {
+.helpText,
+.modalHeader,
+.themeVideo {
   color: #4f5151;
 }
 
@@ -142,11 +208,12 @@
   color: #4a4a4a;
 }
 
-.themesHelpText {
-  font-size: 27px;
-  text-align: center;
-  color: #4a4a4a;
-  margin-top: 58px;
+.themes-help-text {
+  margin-left: 280px;
+  text-align: left;
+  font-size: 30px;
+  font-weight: 500;
+  color: #777777;
 }
 
 .modal-dialog {
@@ -155,28 +222,35 @@
 }
 
 #challenge-modal {
-  .modal-body, .modal-content {
+  .modal-body,
+  .modal-content {
     iframe#video {
-      margin-top: 0px;
+      margin-top: 0;
     }
+
     .helpText {
       font-size: 28px;
       line-height: 1.64;
       letter-spacing: -0.2px;
+
       .description {
         font-weight: 500;
       }
+
       .watchVideoText {
         font-weight: bold;
       }
     }
   }
+
   .modal-body {
     margin: 100px 117px;
+
     span {
       color: inherit;
     }
   }
+
   .modal-content {
     width: 1078px;
     height: 778px;
@@ -186,6 +260,7 @@
     display: inline-block;
     margin: auto;
   }
+
   h2.modalHeader {
     font-size: 60px;
     font-weight: 900;
@@ -194,24 +269,29 @@
     margin-bottom: 28px;
     white-space: nowrap;
   }
+
   .modal-close {
     margin-right: 40px;
     margin-top: 38px;
     float: right;
     line-height: 1;
   }
+
   button.close {
     opacity: 1;
   }
+
   .watchVideo {
     text-align: center;
   }
+
   .slide {
     position: absolute;
     margin-left: auto;
     margin-right: auto;
     left: 0;
     right: 0;
+
     &.first {
       margin-top: 10px;
       // auto spacing for first slide of challenge unlock pop-up
@@ -220,13 +300,17 @@
       height: 560px;
       justify-content: space-around;
     }
+
     &.second {
       text-align: center;
       margin-top: -20px;
     }
-    &.second, &.third {
-      display:none;
+
+    &.second,
+    &.third {
+      display: none;
     }
+
     &.third {
       .create-change-text {
         font-size: 26px;
@@ -236,20 +320,21 @@
       }
 
       .create-change-button {
-          background-color: #87b67b;
-          border-radius: 12px;
-          width: 232px;
-          height: 53px;
-          margin-top: 45px;
-          border: none;
+        background-color: #87b67b;
+        border-radius: 12px;
+        width: 232px;
+        height: 53px;
+        margin-top: 45px;
+        border: none;
       }
     }
+
     .watchVideo button {
       background-color: #87b67b;
-    	color: inherit;
+      color: inherit;
       height: 53px;
       width: 232px;
-    	border: none;
+      border: none;
       margin-top: 20px;
       font-size: 28px;
       text-align: center;
@@ -258,6 +343,7 @@
     }
   }
 }
+
 .challenge-unlock {
   .cool {
     font-family: Raleway;
@@ -270,9 +356,11 @@
     text-align: center;
     color: #4f5151;
   }
+
   .greatjob {
-    font-weight:900;
+    font-weight: 900;
   }
+
   #check {
     fill: none;
     stroke: #be1d2c;
@@ -295,15 +383,14 @@
     }
   }
   @-webkit-keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
+    from {
+      opacity: 0;
+    }
 
-  to {
-    opacity: 1;
+    to {
+      opacity: 1;
+    }
   }
-  }
-
   @keyframes fadeIn {
     from {
       opacity: 0;
@@ -329,33 +416,15 @@
     color: #4f5151;
   }
 }
-.theme-locked-background {
-  text-align: left;
-  background: lightgray;
-  overflow: hidden;
-  width: 196px;
-  height: 196px;
-  border-radius: 25px;
-  opacity: 0.8;
-  position: absolute;
-  top: 0;
-}
-
-img.theme-locked-icon {
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin: 7px;
-    margin-top: 13px;
-}
 
 .overlay.current_challenges_overlay {
-    background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.1);
 }
+
 .challenge-name-text {
-    font-size: 25px;
+  font-size: 25px;
 }
 
 .check-img {
-    margin-top: 17px;
+  margin-top: 17px;
 }
