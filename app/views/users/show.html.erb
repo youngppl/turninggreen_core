@@ -8,41 +8,57 @@
     <div class="global_impact_content"></div>
   </div>
   <%= link_to 'completed challenges', challenges_completed_path %>
-  <div class="current_challenges">
-    <div>
-      <h2>Current Challenges</h2>
-      <% if @current_challenges.length.between?(1,7) %>
-        <a href="<%= themes_path %>">
-          <div id="add_challenge">+</div>
-        </a>
-      <% elsif @current_challenges.length == 0 %>
-        <a href="<%= themes_path %>" tabindex="0" id="no_challenge_popover" data-toggle="popover" data-placement="left"
-        data-content="Click here to add a challenge and make a difference!">
-          <div id="add_challenge">+</div>
-        </a>
-      <% else %>
-        <a tabindex="0" id="too_many_challenge_popover" data-toggle="popover" data-placement="left"
-        data-content="You can only have a maximum of 8 challenges ongoing at a time!">
-          <div id="add_challenge">+</div>
-        </a>
-      <% end %>
-    </div>
-    <div>
-      <% if @current_challenges.length == 0 %>
-        <div class="new_challenge current_challenges_box">
-          <h5>No current challenges</h5>
-        </div>
-      <% else %>
-        <% @current_challenges.each do |challenge| %>
-          <div class="current_challenges_box thumbnail">
-            <h5>challenge countdown here</h5>
-            <div class="current_challenges_overlay overlay">
-              <div class="overlayText"><%= challenge.challenge_name %></div>
+  <div class="current-challenges">
+    <h2 class="heading">Current Challenges</h2>
+    <div class="current-challenge-row">
+      <% @current_challenges.each do |challenge| %>
+      <div class="current-challenge-box">
+        <h2 class="name"><%= challenge.challenge_name %></h2>
+        <div class="progress-circle">
+          <div class="ring">
+            <div class="inner">
+              <button type="button" name="button" onclick="$('#progress-log-<%= challenge.id %>').modal();setInitPos_<%= challenge.id %>();">
+                <% if !challenge.last_logged.nil? && challenge.last_logged.to_date == DateTime.now.getutc.to_date %>
+                See your records!
+                <% else %>
+                Log your progress!
+                <% end %>
+              </button>
             </div>
           </div>
-        <% end %>
-      <% end %>
-      <br>
+          <div class="today worm">
+            <svg viewBox="0 0 106 106" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="53" cy="54" r="44" stroke="#dadada" stroke-dasharray="<%= challenge.get_worm_length(DateTime.now.getutc) %>"/>
+              </svg>
+            </div>
+            <div class="last-log worm">
+              <svg viewBox="0 0 106 106" xmlns="http://www.w3.org/2000/svg">
+                <% if !challenge.last_logged.nil? %>
+                <circle cx="53" cy="54" r="44" stroke="#af066e" stroke-dasharray="<%= challenge.get_worm_length(challenge.last_logged) %>"/>
+                  <% end %>
+                </svg>
+              </div>
+            </div>
+            <div class="info">
+              <div class="time-left line">
+                <span class="label">time left</span>
+                <span class="metric"><%= challenge.get_time_left %> </span>
+              </div>
+              <div class="last-log line">
+                <span class="label">last log</span>
+                <span class="metric"><%= challenge.get_last_logged %></span>
+              </div>
+              <div class="done-so-far line">
+                <span class="label">done so far</span>
+                <span class="metric"><%= pluralize challenge.cummulative_metrics, "metric"%> </span>
+              </div>
+            </div>
+            <%= render "layouts/dashboard/progress_log_popup", {challenge:challenge, start_date:challenge.created_at, end_date: challenge.date_complete} %>
+          </div>
+          <% end %>
+          <% if @current_challenges.length < 6 %>
+          <a class="add" href="<%= themes_path %>">+<span class="another">take on another challenge!</span></a>
+          <% end %>
     </div>
   </div>
 </div>

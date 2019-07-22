@@ -30,12 +30,12 @@ class ChallengesController < ApplicationController
   end
 
   def create
-    if current_user.challenges.length < 8
+    if current_user.challenges.length < 6
       current_user.challenges.create(challenge_params)
       render :json => {:showPopover => true}
       # message = {:notice => "Challenge has been successfully added!"}
     else
-      message = {:alert => "You can only have a maximum of 8 challenges!"}
+      message = {:alert => "You can only have a maximum of 6 challenges!"}
       redirect_to request.referer, :flash => message
     end
   end

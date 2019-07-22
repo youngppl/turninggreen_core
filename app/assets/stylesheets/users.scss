@@ -14,66 +14,424 @@
   height: 220px;
 }
 
-.current_challenges {
-  padding: 40px;
-  margin-top: 30px;
-  width: 950px;
-  border: 3px solid gray;
-  border-radius: 30px;
-
-  h2 {
-    display: inline-block;
-    margin-right: 520px;
+// .current_challenges {
+//   padding: 40px;
+//   margin-top: 30px;
+//   width: 950px;
+//   border: 3px solid gray;
+//   border-radius: 30px;
+//
+//   h2 {
+//     display: inline-block;
+//     margin-right: 520px;
+//   }
+.current-challenges {
+  .heading {
+    font-size: 45px;
+    font-weight: bold;
+    color: #464646;
+    margin-bottom: 28px;
   }
 
-  #add_challenge {
-    height: 40px;
-    width: 40px;
-    background-color: #80a870;
-    color: white;
+  .current-challenge-row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .current-challenge-box {
+    width: 335px;
+    height: 519px;
+    border-radius: 19px;
+    box-shadow: 2px 2px 6px 0 rgba(121, 121, 121, 0.5);
+    border: solid 1px #dedede;
+    display: inline-block;
+    margin-right: 34px;
+    margin-bottom: 28px;
+    padding: 30px;
+    position: relative;
+
+    .name {
+      font-size: 28px;
+      font-weight: 600;
+      color: #384632;
+      margin-bottom: 26px;
+    }
+
+    .progress-circle {
+      height: 270px;
+    }
+
+    .worm {
+      position: relative;
+      top: -270px;
+
+      &.last-log {
+        top: -543px;
+      }
+      @keyframes worm-animate {
+        0% {
+          stroke-dashoffset: -385;
+        }
+
+        100% {
+          stroke-dashoffset: -565;
+        }
+      }
+
+      circle {
+        fill: transparent;
+        stroke-width: 15px;
+        stroke-linecap: round;
+        transform-origin: 50% 50%;
+        stroke-dashoffset: 358;
+        transform: rotate(-86deg);
+        transform-origin: 49% 51%;
+      }
+    }
+
+    .ring {
+      width: 265px;
+      height: 265px;
+      object-fit: contain;
+      box-shadow: inset 1px 1px 5px 0 rgba(124, 124, 124, 0.5);
+      background-color: #fafafa;
+      display: flex;
+      align-items: center;
+      border-radius: 50%;
+      text-align: center;
+
+      .inner {
+        width: 190px;
+        height: 190px;
+        border-radius: 50%;
+        background-color: white;
+        position: relative;
+        z-index: 1;
+        margin: auto;
+        display: flex;
+        box-shadow: 1px 1px 5px grey;
+      }
+
+      button {
+        width: 126px;
+        height: 126px;
+        border-radius: 50%;
+        border: 2px solid #4e8a08;
+        outline: none;
+        margin: auto;
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+        color: #384632;
+        background-color: white;
+
+        &:focus {
+          outline: none;
+        }
+
+        &:hover {
+          background-color: #4e8a08;
+          color: #ffffff;
+        }
+      }
+    }
+
+    .info {
+      margin-top: 39px;
+      text-align: center;
+
+      .label {
+        text-transform: uppercase;
+        font-size: 13px;
+        font-weight: 500;
+        color: #888888;
+        margin-right: 23px;
+      }
+
+      .metric {
+        font-size: 20px;
+        font-weight: 600;
+        color: #384632;
+      }
+    }
+  }
+
+  .add {
+    border: dashed 2px #868686;
+    font-size: 276px;
     text-align: center;
-    vertical-align: middle;
-    font-size: 40px;
+    align-items: center;
+    color: grey !important;
+    cursor: pointer;
     display: inline-block;
-    // float: right;
-    line-height: 100%;
-    border-radius: 10px;
-    box-shadow: 3px 3px #7f8083;
-  }
-
-  .current_challenges_box {
-    width: 175px;
-    height: 175px;
+    width: 335px;
+    height: 519px;
+    border-radius: 19px;
 
     &:hover {
-      box-shadow: none;
-      transform: translate(12px,12px);
+      background-color: #eaeaea;
+      text-decoration: none;
+
+      .another {
+        display: block;
+      }
     }
 
-    h5 {
-      white-space: initial;
+    .another {
+      font-size: 20px;
+      font-weight: 600;
       text-align: center;
-      padding: 30px;
+      color: #868686;
+      width: 200px;
+      margin: -100px auto;
+      display: none;
+    }
+  }
+}
+
+.progress-log-popup {
+  .modal-content {
+    width: 1023px;
+    height: 678px;
+    border-radius: 17px;
+    padding: 40px;
+    margin: 10% auto auto;
+  }
+
+  .close {
+    font-size: 38px;
+    position: absolute;
+    top: 25px;
+    right: 25px;
+
+    &:focus {
+      outline: none;
     }
   }
 
-  .current_challenges_overlay {
-    height: 171px;
-    width: 171px;
+  .title {
+    font-size: 45px;
+    font-weight: bold;
+    color: #464646;
+    margin-bottom: 18px;
   }
 
-  #no_challenge_popover {
-    cursor: pointer;
-    outline: none !important;
+  .instructions {
+    font-size: 30px;
+    font-weight: 500;
+    color: #777777;
+    margin-bottom: 56px;
   }
 
-  #too_many_challenge_popover {
-    @extend #no_challenge_popover;
+  .progress {
+    width: 795px;
+    height: 35px;
+    border-radius: 15px;
+    border: solid 1px #979797;
+    background-color: white;
+    margin: auto;
+    overflow: visible;
+    position: relative;
 
-    #add_challenge {
-      background-color: #808285;
-      box-shadow: none;
+    .marker-container {
+      width: 765px;
+      position: absolute;
+      left: 0;
     }
+
+    .marker {
+      position: relative;
+      display: inline-block;
+
+      .label {
+        font-size: 20px;
+        font-weight: 500;
+        color: #4a4a4a;
+        position: absolute;
+        top: 67px;
+        left: -34px;
+      }
+
+      .line {
+        top: 34px;
+      }
+    }
+
+    span {
+      font-size: 20px;
+      font-style: italic;
+      line-height: normal;
+      color: #747474;
+      padding: 6px 6px 6px 10px;
+      position: absolute;
+    }
+
+    .progress-bar {
+      border-radius: 15px;
+      background-color: #87b67b;
+      margin-left: -11px;
+    }
+  }
+
+  .line {
+    stroke: #979797;
+    stroke-width: 2px;
+    top: -23px;
+    position: relative;
+
+    &.start {
+      left: 70px;
+    }
+
+    &.end {
+      left: 822px;
+    }
+  }
+
+  .box {
+    display: inline-block;
+    text-align: center;
+    width: 100px;
+    position: relative;
+    top: 7px;
+
+    span {
+      font-size: 12px;
+      font-weight: 500;
+      color: #777777;
+    }
+
+    h2 {
+      font-size: 20px;
+      font-weight: 500;
+      color: #384632;
+      margin-top: -6px;
+    }
+
+    &.start {
+      left: -9px;
+    }
+
+    &.end {
+      left: 655px;
+    }
+  }
+
+  .metric-box-container {
+    width: 1064px;
+    overflow: visible;
+    margin: auto auto auto -72px;
+  }
+
+  .metric-box {
+    width: 300px;
+    text-align: center;
+
+    img {
+      cursor: e-resize;
+    }
+  }
+
+  .date-box {
+    height: 47px;
+    width: 100px;
+    margin: auto;
+
+    label {
+      font-size: 12px;
+      font-weight: 500;
+      color: #777777;
+    }
+
+    span {
+      font-size: 20px;
+      font-weight: bold;
+      color: #4a4a4a;
+      margin-top: -12px;
+      display: block;
+    }
+  }
+
+  .arrow_box {
+    margin: 24px auto auto;
+    position: relative;
+    background: #ffffff;
+    border: 1px solid #979797;
+    padding: 22px;
+    text-align: center;
+
+    .question {
+      font-size: 20px;
+      font-weight: 500;
+      text-align: center;
+      color: #4a4a4a;
+      margin-bottom: 18px;
+    }
+
+    .answer {
+      width: 242px;
+      height: 28px;
+      border-radius: 4px;
+      border: solid 1px #979797;
+      margin-bottom: 35px;
+    }
+
+    .record {
+      width: 115px;
+      height: 50px;
+      border-radius: 7px;
+      border: solid 3px #87b67b;
+      background-color: #ffffff;
+    }
+
+    .rendered {
+      label {
+        font-size: 13px;
+        font-weight: 500;
+        color: #949494;
+      }
+
+      span {
+        font-size: 20px;
+        font-weight: 600;
+        font-style: normal;
+        color: #384632;
+        display: block;
+        margin-top: -9px;
+      }
+    }
+
+    .current-metric {
+      font-size: 20px;
+      font-weight: 600;
+      color: #4a4a4a;
+    }
+  }
+
+  .arrow_box:after,
+  .arrow_box:before {
+    bottom: 100%;
+    left: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+  }
+
+  .arrow_box:after {
+    border-color: rgba(255, 255, 255, 0);
+    border-bottom-color: #ffffff;
+    border-width: 20px;
+    margin-left: -20px;
+  }
+
+  .arrow_box:before {
+    border-color: rgba(151, 151, 151, 0);
+    border-bottom-color: #979797;
+    border-width: 21px;
+    margin-left: -21px;
   }
 }
 
