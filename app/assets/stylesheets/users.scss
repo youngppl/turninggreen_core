@@ -1,5 +1,5 @@
 .field_with_errors {
-  display: inherit;
+  display: inline;
 }
 
 .dashboard {
@@ -14,6 +14,17 @@
   height: 220px;
 }
 
+// .current_challenges {
+//   padding: 40px;
+//   margin-top: 30px;
+//   width: 950px;
+//   border: 3px solid gray;
+//   border-radius: 30px;
+//
+//   h2 {
+//     display: inline-block;
+//     margin-right: 520px;
+//   }
 .current-challenges {
   .heading {
     font-size: 45px;
@@ -552,89 +563,537 @@
 
 .settings {
   @extend .dashboard;
-  padding-top: 15px;
+  padding-left: 94px;
+  padding-top: 42px;
 
-  > div {
-    display: inline-block;
-    margin-left: 140px;
-    vertical-align: top;
-    margin-top: 20px;
+  h2.settings-title {
+    font-size: 45px;
+    font-weight: bold;
+    color: #464646;
+    margin-bottom: 37px;
+    margin-left: 90px;
   }
 
-  .left-panel {
-    text-align: center;
-  }
+  .settings-tabs {
+    li {
+      font-size: 30px;
+      font-weight: 500;
 
-  .right-panel {
-    margin-bottom: 25px;
-  }
+      a {
+        display: block;
+        height: 60px;
+        width: 268px;
+        text-align: center;
+        color: #384632 !important;
+        border-radius: 6px;
 
-  .spacer {
-    width: 200px;
-  }
+        &:hover {
+          text-decoration: none;
+        }
 
-  .save-button {
-    border-radius: 10px;
-    background-color: #80a870;
-    border-color: #80a870;
-    color: white;
-    width: 100px;
+        &.active {
+          border-bottom: solid 6px #87b67b;
+        }
+      }
+    }
   }
 
   .separator {
-    border: 1px solid #d6d7d9;
-    width: 1082px;
+    width: 1070px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+    border: solid 1px #979797;
+    margin-top: inherit;
   }
 
-  .heading {
-    margin-bottom: 19px;
+  .tab-content {
+    .tab-pane {
+      width: 600px;
+      margin: 42px auto auto;
+    }
+
+    #profile {
+      .user-name {
+        font-size: 28px;
+        font-weight: 600;
+        color: #384632;
+        margin-bottom: 20px;
+      }
+
+      #user_email {
+        margin-bottom: 43px;
+        width: 395px;
+
+        &:invalid {
+          border: solid 2px #d13838;
+        }
+      }
+
+      .verify-email {
+        font-size: 20px;
+        font-weight: 600;
+        color: #517e3d;
+        text-decoration: underline;
+        margin-left: 184px;
+        cursor: pointer;
+      }
+
+      label.country,
+      label.state {
+        width: 78px;
+        text-align: right;
+        font-size: 18px;
+        font-weight: 600;
+        color: #777777;
+        margin-right: 18px;
+      }
+
+      #user_state {
+        margin-bottom: 31px;
+      }
+
+      #user_country,
+      #user_state {
+        width: 293px;
+      }
+    }
+
+    #account {
+      .panel-default {
+        width: 523px;
+        height: 100%;
+        border-bottom: solid 1px #979797;
+        padding-bottom: 40.5px;
+        padding-top: 41.5px;
+        display: inline-block;
+        position: relative;
+        cursor: pointer;
+
+        .expand-clickable-area {
+          width: 523px;
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          height: 100px;
+        }
+
+        .panel-heading {
+          .panel-title {
+            font-size: 28px;
+            font-weight: 600;
+            color: #384632;
+            display: inline-block;
+          }
+
+          .show-hidden {
+            background: none;
+            border: none;
+            object-fit: contain;
+            float: right;
+            outline: 0;
+            margin-top: 13px;
+          }
+        }
+
+        #password {
+          margin-top: 19px;
+
+          label {
+            text-align: right;
+            width: 154px;
+            height: 21px;
+            font-size: 18px;
+            font-weight: 500;
+            color: #777777;
+          }
+
+          .inputField {
+            width: 277px;
+            margin-left: 30px;
+          }
+
+          .field {
+            margin-left: 30px;
+          }
+
+          .actions {
+            max-width: 219px;
+            margin: 34px 30px 0 auto;
+          }
+
+          .save-changes-button {
+            width: 219px;
+          }
+
+          .field_with_errors {
+            > #user_password_confirmation,
+            > #user_password {
+              border-radius: 5px;
+              border: solid 2px #dc6666;
+            }
+
+            + .confirm.error,
+            + .password.error {
+              display: block !important;
+            }
+          }
+
+          .error {
+            .message, .error-icon {
+              top: -20px;
+              left: 189px;
+            }
+          }
+        }
+
+        #devices {
+          .field {
+            margin-left: 60px;
+            display: inline-block;
+          }
+
+          .actions {
+            max-width: 181px;
+            margin: 34px auto 0;
+          }
+
+          .save-changes-button {
+            width: 119px;
+          }
+        }
+
+        #deactivate a {
+          width: 187px;
+          height: 24px;
+          font-size: 20px;
+          font-weight: 600;
+          color: #808080;
+        }
+
+        .deactivate {
+          text-align: center;
+        }
+
+        p {
+          width: 466px;
+          margin: 25px auto;
+        }
+      }
+    }
+
+    #privacy {
+      div {
+        margin-bottom: 37px;
+      }
+
+      h2 {
+        font-size: 28px;
+        font-weight: 600;
+        color: #384632;
+        margin-bottom: 20px;
+      }
+
+      label {
+        margin-left: 20px;
+        vertical-align: top;
+        margin-top: -4px;
+      }
+
+      p {
+        font-size: 12px;
+        font-weight: 500;
+        line-height: normal;
+        color: #384632;
+        width: 457px;
+        margin-left: 39px;
+      }
+
+      .more-info {
+        font-weight: 500;
+        color: #384632;
+        margin-bottom: 23px;
+      }
+    }
+
+    #notifications {
+      color: #384632;
+
+      .title {
+        font-size: 28px;
+        font-weight: 600;
+      }
+
+      .notifications-label {
+        font-family: Raleway;
+        font-size: 20px;
+        font-weight: 500;
+      }
+
+      .notifications-select {
+        width: 277px;
+        margin-top: 16px;
+        margin-bottom: 37px;
+      }
+
+      .content-heading {
+        font-size: 28px;
+        font-weight: 600;
+      }
+
+      .send-label {
+        font-size: 20px;
+        font-weight: 500;
+      }
+
+      .ContentList {
+        margin-top: 16px;
+        width: 334px;
+        height: 110px;
+        margin-bottom: 42px;
+
+        .options {
+          font-size: 20px;
+          font-weight: 500;
+          margin-left: 18px;
+        }
+      }
+    }
+
+    label {
+      font-size: 20px;
+      font-weight: 600;
+      color: #384632;
+    }
   }
 
-  form div {
-    margin-bottom: 5px;
+  .save-changes-button {
+    width: 181px;
+    height: 65px;
+    border-radius: 7px;
+    border: solid 3px #87b67b;
+    background-color: #ffffff;
+    font-size: 20px;
+    font-weight: 600;
+    color: #384632;
+
+    &:disabled {
+      border: solid 3px #cacaca;
+    }
+  }
+
+  .inputField {
+    border-radius: 5px;
+    border: solid 1px #787878;
+    height: 48px;
   }
 }
 
-h2.user-name {
-  margin-top: 10px;
+.error {
+  .error-icon {
+    width: 15px;
+    height: 15px;
+    background-color: #d13838;
+    border-radius: 50%;
+    font-size: 13px;
+    text-align: center;
+    line-height: 15px;
+    color: #ffffff;
+    padding-left: 1px;
+    position: relative;
+    top: -41px;
+    display: inline-block;
+
+    &::before {
+      content: "!";
+    }
+  }
+
+  .message {
+    display: inline-block;
+    position: relative;
+    top: -41px;
+    font-size: 12px;
+    color: #d13838;
+    margin-left: 6px;
+  }
 }
 
-h2.settings-title {
-  font-size: 40px;
-}
-
-.upload-wrap {
-  position: relative;
-}
-
-.upload-btn {
-  position: absolute;
-  left: 0;
-  top: 0;
-  opacity: 0;
-}
-
-.upload-photo {
-  .modal-body {
-    background-color: white;
+.changes-saved-popup {
+  .modal-dialog {
+    padding-top: 7%;
   }
 
   .modal-content {
-    width: 450px;
+    width: 459px;
+    border-radius: 10px;
+    border: solid 1px #979797;
+    background-color: #ffffff;
     margin: auto;
+
+    .modal-body {
+      text-align: center;
+
+      .close {
+        font-size: 38px;
+        position: absolute;
+        top: 25px;
+        right: 25px;
+      }
+
+      .heading {
+        font-size: 35px;
+        font-weight: 600;
+        color: #384632;
+        margin-top: 37px;
+      }
+
+      .message {
+        font-size: 30px;
+        font-weight: 500;
+        color: #777777;
+        width: 300px;
+        margin: 35px auto;
+      }
+
+      .branding {
+        width: 200px;
+        height: 200px;
+        border: solid 1px #979797;
+        border-radius: 50%;
+        margin: 41px auto 28px;
+
+        &.filler {
+          background-color: #d8d8d8;
+        }
+      }
+    }
+  }
+}
+
+.account-deactivate-popup {
+  .modal-dialog {
+    padding-top: 7%;
   }
 
-  #minus {
-    position: absolute;
-    top: 307px;
-    font-size: 40px;
-    left: 48px;
+  .modal-content {
+    width: 788px;
+    height: 587px;
+    border-radius: 25px;
+    margin: auto;
+    padding-left: 45px;
+    padding-top: 26px;
   }
 
-  #plus {
-    position: absolute;
-    top: 311px;
-    font-size: 40px;
-    right: 49px;
+  .modal-body {
+    .close {
+      font-size: 29px;
+      position: absolute;
+      top: 18px;
+      right: 40px;
+    }
+
+    .heading {
+      font-size: 35px;
+      font-weight: 600;
+      color: #384632;
+      margin-bottom: 26px;
+    }
+
+    .warning {
+      font-size: 20px;
+      font-weight: 600;
+      color: #808080;
+      margin-bottom: 39px;
+    }
+
+    .deactivate-reasons-form {
+      text-align: center;
+
+      form {
+        font-size: 20px;
+        font-weight: 500;
+        color: #384632;
+        margin: auto;
+        display: inline-block;
+        text-align: left;
+
+        .option {
+          margin-left: 10px;
+        }
+
+        textarea {
+          width: 406px;
+          height: 110px;
+          border-radius: 7px;
+          border: solid 1px #979797;
+          margin-left: 30px;
+        }
+
+        .deactivate.error {
+          margin-left: 30px;
+
+          .error-icon {
+            top: -11px;
+          }
+
+          .message {
+            top: -11px;
+          }
+        }
+
+        .next {
+          width: 119px;
+          margin-top: 22px;
+          margin-left: 73%;
+        }
+      }
+    }
+
+    .second.slide {
+      position: absolute;
+      top: 80px;
+
+      #additional-textarea {
+        width: 685px;
+        height: 152px;
+        border-radius: 7px;
+        border: solid 1px #979797;
+        background-color: #ffffff;
+        font-size: 20px;
+        font-style: italic;
+        line-height: normal;
+        color: #989898;
+        padding: 10px;
+        margin-top: 10px;
+      }
+
+      #deactivate-button {
+        margin-left: 33%;
+        margin-top: 10%;
+      }
+    }
+  }
+}
+
+#verify-email {
+  .heading {
+    font-size: 25px;
+  }
+
+  .save-changes-button {
+    margin-top: 26px;
+  }
+
+  .confirm-sent {
+    font-family: Raleway;
+    font-size: 20px;
+    font-weight: 500;
+    text-align: center;
+    color: #777777;
+    margin-top: 23px;
+
+    .email {
+      font-weight: 600;
+      color: inherit;
+    }
   }
 }

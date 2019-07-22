@@ -23,14 +23,13 @@
         </span>
       </div>
 
-      <input type="checkbox"
-      name="share-location" value="Share country location with Turning Green"> Share country location with Turning Green
-      </input>
-
-
-      <span class="dot" data-toggle="tooltip" data-placement="right" title="to be edited">
-        <span class="i">i</span>
-      </span>
+      <div>
+        <%= f.check_box :permissions, {multiple: true}, 'location', nil %>
+        <label>Share country location with Turning Green</label>
+        <span class="dot" data-toggle="tooltip" data-placement="right" title="to be edited">
+          <span class="i">i</span>
+        </span>
+      </div>
 
       <script type="text/javascript">
         $('[data-toggle="tooltip"]').tooltip()

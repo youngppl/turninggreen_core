@@ -8,7 +8,12 @@ class User < ApplicationRecord
   validate :validate_age
   has_one_attached :profile_pic
   has_many :challenges
+
   def update_with_password(params={})
+    if !params[:current_password].nil? && !self.valid_password?(params[:current_password])
+      self.errors[:base] << "The current password is invalid"
+      return
+    end
     current_password = params.delete(:current_password)
 
     if params[:password].blank?
@@ -18,6 +23,21 @@ class User < ApplicationRecord
     result = update_attributes(params)
     clean_up_passwords
     result
+  end
+
+  # instead of deleting, indicate the user requested a delete & timestamp it
+  def soft_delete
+    update_attribute(:deleted_at, Time.current)
+  end
+
+  # ensure user account is active
+  def active_for_authentication?
+    super && !deleted_at
+  end
+
+  # provide a custom message for a deleted account
+  def inactive_message
+    !deleted_at ? super : :deleted_account
   end
 
   private
