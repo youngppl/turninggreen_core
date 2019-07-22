@@ -365,6 +365,26 @@
           .save-changes-button {
             width: 219px;
           }
+
+          .field_with_errors {
+            > #user_password_confirmation,
+            > #user_password {
+              border-radius: 5px;
+              border: solid 2px #dc6666;
+            }
+
+            + .confirm.error,
+            + .password.error {
+              display: block !important;
+            }
+          }
+
+          .error {
+            .message, .error-icon {
+              top: -20px;
+              left: 189px;
+            }
+          }
         }
 
         #devices {
@@ -416,6 +436,8 @@
 
       label {
         margin-left: 20px;
+        vertical-align: top;
+        margin-top: -4px;
       }
 
       p {
