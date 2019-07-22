@@ -40,7 +40,7 @@
                 <div class="notification">
                   <button type="button" name="close" class="dismiss" onclick="$(this).parent().hide();updateNotification(<%= challenge.id %>);event.stopPropagation();">&times;</button>
                   <a href="/challenges/<%= challenge.theme %>">
-                    <%= challenge.challenge_name %> is ending in <%= pluralize (challenge.date_complete-Date.today).to_i, 'day' %>.
+                    <%= challenge.challenge_name %> is ending in <%= challenge.get_time_left %>.
                   </a>
                 </div>
             <% end %>
