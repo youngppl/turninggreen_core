@@ -30,7 +30,7 @@ class ChallengesController < ApplicationController
   end
 
   def create
-    if current_user.challenges.length < 6
+    if current_user.challenges.where(completed: false).length < 6
       current_user.challenges.create(challenge_params)
       render :json => {:showPopover => true}
       # message = {:notice => "Challenge has been successfully added!"}
