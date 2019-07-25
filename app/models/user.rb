@@ -29,7 +29,7 @@ class User < ApplicationRecord
   def soft_delete
     update_attribute(:deleted_at, Time.current)
     skip_reconfirmation!
-    update(email: 'deleted@account.sosad')
+    update(email: "deleted#{id}@account.sosad")
   end
 
   # ensure user account is active
