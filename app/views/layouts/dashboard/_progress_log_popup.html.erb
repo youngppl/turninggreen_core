@@ -54,7 +54,7 @@
                   </div>
                 <% else %>
                   <h2 class="question">metric question</h2>
-                  <input type="number" name="" value="" class="answer">
+                  <input type="number" min="0" class="answer">
                   <button type="button" name="button" class="record" onclick="recordMetric(<%= challenge.id %>, $(this).siblings('.answer').val())">Record</button>
                 <% end %>
               </div>
