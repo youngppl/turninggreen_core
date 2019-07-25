@@ -40,16 +40,14 @@
               </div>
             </div>
             <div class="info">
-              <div class="time-left line">
+              <div class="labels">
                 <span class="label">time left</span>
-                <span class="metric"><%= challenge.get_time_left %> </span>
-              </div>
-              <div class="last-log line">
                 <span class="label">last log</span>
-                <span class="metric"><%= challenge.get_last_logged %></span>
-              </div>
-              <div class="done-so-far line">
                 <span class="label">done so far</span>
+              </div>
+              <div class="metrics">
+                <span class="metric"><%= challenge.get_time_left %> </span>
+                <span class="metric"><%= challenge.get_last_logged %></span>
                 <span class="metric"><%= pluralize challenge.cummulative_metrics, "metric"%> </span>
               </div>
             </div>
