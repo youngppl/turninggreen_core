@@ -28,16 +28,18 @@
           </div>
           <div class="today worm">
             <svg viewBox="0 0 106 106" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="53" cy="54" r="44" stroke="#dadada" stroke-dasharray="<%= challenge.get_worm_length(DateTime.now.getutc) %>"/>
+              <circle id="today-worm-<%= challenge.id %>" cx="53" cy="54" r="44" stroke="#dadada" stroke-dasharray="<%= challenge.get_worm_length(DateTime.now.getutc) %>"/>
               </svg>
             </div>
             <div class="last-log worm">
               <svg viewBox="0 0 106 106" xmlns="http://www.w3.org/2000/svg">
                 <% if !challenge.last_logged.nil? %>
-                <circle cx="53" cy="54" r="44" stroke="#af066e" stroke-dasharray="<%= challenge.get_worm_length(challenge.last_logged) %>"/>
-                  <% end %>
-                </svg>
-              </div>
+                  <circle id="last-log-worm-<%= challenge.id %>" cx="53" cy="54" r="44" stroke="#af066e" stroke-dasharray="<%= challenge.get_worm_length(challenge.last_logged) %>"/>
+                <% else %>
+                  <circle id="last-log-worm-<%= challenge.id %>" cx="53" cy="54" r="44" stroke="#af066e" stroke-dasharray="359" style="display:none;"/>
+                <% end %>
+              </svg>
+            </div>
             </div>
             <div class="info">
               <div class="labels">
