@@ -1,0 +1,196 @@
+.reflections {
+  .heading {
+    font-size: 45px;
+    font-weight: bold;
+    color: #464646;
+    margin-top: 43px;
+    margin-left: 143px;
+  }
+
+  .info {
+    font-size: 30px;
+    font-weight: 500;
+    color: #777777;
+    margin-top: 22px;
+    margin-left: 143px;
+  }
+
+  .reflections-placeholder {
+    width: 644px;
+    height: 617px;
+    border: solid 1px #979797;
+    background-color: #d8d8d8;
+    margin-left: 214px;
+    margin-top: 43px;
+  }
+
+  .rectangle-reflections {
+    width: 956px;
+    height: 1315px;
+    border-radius: 33px;
+    box-shadow: 2px 2px 6px 4px rgba(166, 166, 166, 0.5);
+    background-color: #ffffff;
+    margin-top: 43px;
+    margin-left: 242px;
+    margin-bottom: 127px;
+  }
+
+  .inner-rectangle {
+    width: 956px;
+    height: 1043px;
+    box-shadow: inset 0 0 4px 0 rgba(132, 132, 132, 0.5);
+    background-color: #f7f7f7;
+    margin-top: 78px;
+  }
+
+  .challenge-name {
+    font-size: 30px;
+    font-weight: 600;
+    color: #384632;
+    margin-left: 27px;
+    margin-top: 23px;
+  }
+
+  .question {
+    display: inline-block;
+    h2 {
+      font-size: 25px;
+      font-weight: 500;
+      color: #384632;
+      margin-left: 63px;
+      margin-top: 30px;
+    }
+
+    textarea {
+      width: 436px;
+      height: 488px;
+      border-radius: 20px;
+      box-shadow: inset 0 1px 3px 0 rgba(170, 170, 170, 0.5);
+      background-color: #ffffff;
+      margin-top: 8px;
+      font-size: 20px;
+      font-weight: 500;
+      color: #a9a9a9;
+      margin-top: 16px;
+      resize: none;
+      outline: none;
+      padding: 16px;
+      margin-left: 43px;
+    }
+  }
+
+  .Input-photo {
+    width: 385px;
+    height: 385px;
+    border: solid 1px #cfcfcf;
+    background-color: #cfcfcf;
+  }
+
+  .mini-rectangle {
+    width: 106px;
+    height: 87px;
+    border: solid 1px #979797;
+    background-color: #d8d8d8;
+    margin-left: 140px;
+    margin-top: 150px;
+  }
+
+  .caption {
+    display: inline-block;
+    margin-left: 41px;
+    textarea {
+      width: 331px;
+      font-size: 20px;
+      font-weight: 500;
+      color: #a9a9a9;
+      width: 385px;
+      height: 115px;
+      border-radius: 17px;
+      box-shadow: inset 0 1px 3px 0 rgba(170, 170, 170, 0.5);
+      background-color: #ffffff;
+      margin-top: 33px;
+      outline: none;
+      resize: none;
+      padding: 16px;
+    }
+  }
+
+  .submitreflections {
+    margin-left: 395px;
+    width: 220px;
+    height: 65px;
+    border-radius: 7px;
+    border: solid 3px #87b67b;
+    background-color: #ffffff;
+    font-family: Raleway;
+    font-size: 20px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #384632;
+  }
+
+  .reflections-content {
+    width: 850px;
+    height: 490px;
+    border-radius: 36px;
+    background-color: #ffffff;
+  }
+
+  .reflections-title {
+    font-family: Raleway;
+    font-size: 60px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #464646;
+    text-align: center;
+    margin-top: 48px;
+  }
+
+  .reflections-header {
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 1rem;
+    border-top-left-radius: 0.3rem;
+    border-top-right-radius: 0.3rem;
+  }
+
+  .reflections-body {
+    font-family: Raleway;
+    font-size: 30px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #777777;
+    margin-top: 22px;
+    width: 608px;
+    margin-left: 121px;
+  }
+
+  .reflections-dialog {
+    max-width: none;
+    margin: 1.75em 15%;
+  }
+
+  .Challenge-reflection-completed {
+    width: 223px;
+    height: 66px;
+    font-family: Raleway;
+    font-size: 25px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #384632;
+    margin-left: 388px;
+    margin-top: 79px;
+  }
+}
