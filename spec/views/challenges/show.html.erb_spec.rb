@@ -19,10 +19,10 @@ RSpec.describe "challenges/show.html.erb", type: :view do
       signInUser(@user.email, @user.password)
       @user.update(unlockedChallenges:['Water'])
       (1..6).each do
-        @user.challenges.create
+        @user.challenges.create(completed: false)
       end
       visit '/challenges/Water'
-      page.execute_script("$.post('/challenges/add', {challenge_name:'test challenge name',theme:'challengeName',length_of_challenge:1})")
+      page.execute_script("$.post('/challenges/add', {challenge_name:'test challenge name',theme:'challengeName',length_of_challenge:1, completed:false})")
       expect(page).to have_content('You can only have a maximum of 6 challenges!')
     end
   end

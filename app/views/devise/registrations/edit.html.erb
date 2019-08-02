@@ -3,104 +3,162 @@
 <% end %>
 
 <div class="settings">
-  <div class="top-panel">
-    <h2 class="settings-title">MY SETTINGS</h2>
+  <div class="">
+    <h2 class="settings-title">Settings</h2>
   </div>
-  <hr class="separator">
-  <div class="left-panel">
+  <ul class="nav settings-tabs">
+    <li class="active">
+      <a data-toggle="tab" href="#profile" class="active">Profile</a>
+    </li>
+    <li>
+      <a data-toggle="tab" href="#account">Account</a>
+    </li>
+    <li>
+      <a data-toggle="tab" href="#privacy">Privacy</a>
+    </li>
+    <li>
+      <a data-toggle="tab" href="#notifications">Notifications</a>
+    </li>
+  </ul>
+  <div class="separator"></div>
 
-      <div class="update-avatar thumbnail" onclick="document.getElementById('upload-photo-input').click();">
-        <%= image_tag(profile_pic_link, size: "200x200", class: "rounded-circle") %>
-        <div id="upload-photo-div" class="overlay rounded-circle">
-          <div class="overlayText">
-            Upload Photo
-          </div>
+  <div class="tab-content">
+    <div id="profile" class="tab-pane active">
+      <h2 class="user-name"><%= @user.name %></h2>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= devise_error_messages! %>
+
+      <div class="field">
+        <%= f.label 'Email' %>
+        <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+          <a onclick="$('#verify-email').modal();"><span class="verify-email">Verify your email</span></a>
+        <% end %>
+        <br/>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "inputField", placeholder: "email@example.com", oninput: "checkEmail();allowSaveButton();" %>
+        <div class="email error" style="display:none;">
+          <div class="error-icon"></div>
+          <span class="message">You must enter a valid email</span>
         </div>
+      </div>
 
+      <label>Location</label>
+      <div class="field">
+        <%= f.label "State", class: "state" %>
+        <%= f.select :state, options_for_select(us_states, resource.state), {:include_blank => "State"}, {:class => "inputField", :onchange => "updateCountryField();allowSaveButton();"} %>
+        <br>
+        <%= f.label "Country", class: "country" %>
+        <%= f.select :country, options_for_select(countries, resource.country), {:include_blank => "Country"}, {:class => "inputField", :onchange => "updateStateField();allowSaveButton();"}%>
+      </div>
+
+        <div class="actions">
+          <%= f.submit "Save Changes", class: "btn save-changes-button", id: "profile-save-button", disabled: "true", onclick: "$('#changes-saved').modal();" %>
+        </div>
+      <% end %>
     </div>
-    <div class="upload-photo modal" id="pic-input-dialog" tabindex="-1" role="dialog">
-      <div class="upload-photo modal-dialog modal-dialog-centered" role="document">
-        <div class="upload-photo modal-content">
-          <div class="upload-photo modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
+
+    <div id="account" class="tab-pane fade">
+      <div class="panel-group">
+        <div class="panel panel-default">
+          <div class="expand-clickable-area"></div>
+          <div class="panel-heading">
+            <h4 class="panel-title">Password</h4>
+            <button type="button" class="show-hidden">
+              <i class="fas fa-chevron-down"></i>
+              <i class="fas fa-chevron-left" style="display:none;"></i>
             </button>
           </div>
-          <div class="upload-photo modal-body">
-            <div id="upload-croppie">
-              <span id="minus">-</span>
-              <span id="plus">+</span>
-            </div>
+
+          <div id="password" class="panel-collapse collapse" style="display:none;">
+            <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+              <%= devise_error_messages! %>
+
+              <div class="field">
+                <%= f.label 'Current Password' %>
+                <%= f.password_field :current_password, autofocus: true, class: "inputField", oninput: "enablePasswordFields();" %>
+              </div>
+              <div class="field">
+                <%= f.label 'New Password' %>
+                <%= f.password_field :password, autofocus: true, disabled: true, class: "inputField" %>
+                <div class="password error" style="display:none;">
+                  <div class="error-icon"></div>
+                  <span class="message">Password must be at least 6 characters</span>
+                </div>
+              </div>
+              <div class="field">
+                <%= f.label 'Confirm Password' %>
+                <%= f.password_field :password_confirmation, autofocus: true, disabled: true, class: "inputField" %>
+                <div class="confirm error" style="display:none;">
+                  <div class="error-icon"></div>
+                  <span class="message">Passwords do not match</span>
+                </div>
+              </div>
+
+              <div class="actions">
+                <%= f.submit "Update Password", id: "update-password-button", class: "btn save-changes-button", disabled: "true", onclick: "$('#password-updated').modal();" %>
+              </div>
+            <% end %>
           </div>
-          <div class="upload-photo modal-footer">
-            <button type="button" class="btn btn-primary" onclick="updatePicture();">Upload</button>
+        </div>
+        <div class="panel panel-default">
+          <div class="expand-clickable-area"></div>
+          <div class="panel-heading">
+            <h4 class="panel-title">Deactivate</h4>
+            <button type="button" class="show-hidden">
+              <i class="fas fa-chevron-down"></i>
+              <i class="fas fa-chevron-left" style="display:none;"></i>
+            </button>
+          </div>
+          <div id="deactivate" class="panel-collapse collapse" style="display:none;">
+            <p>If you deactivate some logistics will happen. Choose wisely fools. </p>
+            <div class="deactivate"><a onclick="$('#account-deactivate').modal();">Deactivate Account</a></div>
           </div>
         </div>
       </div>
     </div>
-
-    <h2 class="user-name"><%= @user.name %></h2>
-
-  </div>
-
-  <div class="right-panel">
-    <h2 class="heading">Personal</h2>
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-      <%= devise_error_messages! %>
-
-      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-      <% end %>
-
-      <div class="update-avatar">
-        <div class="upload-wrap">
-          <%= f.file_field :profile_pic, id: "upload-photo-input", class: "upload-btn", onchange: "$('#pic-input-dialog').modal('show');", accept: "image/*", direct_upload: true%>
+    <div id="privacy" class="tab-pane fade">
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, id: "edit-privacy" }) do |f| %>
+        <div class="location">
+          <h2>Location</h2>
+          <%= f.check_box :permissions, {multiple: true, onclick:"$('#privacy-save-button').prop('disabled', false);"}, 'location', nil %>
+          <label>I give permission for TG to share my location</label>
+          <p>Learn more Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
         </div>
-      </div>
+        <div class="challenges">
+          <h2>Challenges</h2>
+          <h5 class="more-info">To manage sharing settings for challenges individually please check the <strong>completed challenges</strong> page. </h5>
+          <%= f.check_box :permissions, {multiple: true, onclick:"$('#privacy-save-button').prop('disabled', false);"}, 'challenges', nil %>
+          <label>I give TG permission to share <strong>ALL</strong> of my completed <br>challenges</label>
+        </div>
+        <%= f.submit "Save Changes", class: "btn save-changes-button", id: "privacy-save-button", disabled: "true", onclick: "$('#changes-saved').modal();" %>
+      <% end %>
+    </div>
+    <div id="notifications" class="tab-pane fade">
+      <h2 class="title">Frequency</h2>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, id: "edit-notifications" }) do |f| %>
+          <%= devise_error_messages! %>
+          <div class="field">
+            <%= f.label 'I would like to receive emails:', class: "notifications-label" %><br/>
+            <%= f.select :notifications, options_for_select(notifications, resource.notifications), {}, {class: "inputField notifications-select", onchange:"allowNotifSave();"} %>
+          </div>
+          <h2 class="content-heading">Content</h2>
+          <%= f.label 'Send the following to my email:', class: "send-label" %><br/>
+          <div class="ContentList">
+            <%= f.check_box :notifications_content, {multiple: true, onclick:"$('#notifications-save-button').prop('disabled', false);"}, 'reminders', nil %>
+            <span class="options">Reminders to log your progress</span><br>
 
-      <div class="field">
-        <%= f.label 'Update email' %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "inputField", placeholder: "email@example.com" %>
-      </div>
+            <%= f.check_box :notifications_content, {multiple: true, onclick:"$('#notifications-save-button').prop('disabled', false);"}, 'check-in', nil %>
+            <span class="options">Check-in notifications<span><br>
 
-
-      <div class="field">
-        <%= f.label 'Update password' %><br>
-        <%= f.password_field :password, autocomplete: "new-password", placeholder: "New password", class: "inputField"%><br>
-        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "inputField", placeholder: "Confirm new password"%>
-      </div>
-
-      <div class="field">
-        <%= f.label "Update state/country" %><br>
-        <%= f.select :state, options_for_select(us_states, resource.state), {:include_blank => "State"}, {:class => "inputField"} %> <br>
-        <%= f.select :country, options_for_select(countries, resource.country), {:include_blank => "Country"}, {:class => "inputField", :onchange => "updateStateField();"}%>
-      </div>
-
-      <div class="field">
-        <%= f.label "Update local time zone" %> <br>
-        <%= f.select :timezone, time_zone_options_for_select(get_timezone_name_from(resource.timezone)), {:include_blank=> "Time zone"}, {:class=> "inputField"}%>
-      </div>
-
-      <div class="actions">
-        <%= f.submit "SAVE", class: "btn save-button" %>
-      </div>
-    <% end %>
+            <%= f.check_box :notifications_content, {multiple: true, onclick:"$('#notifications-save-button').prop('disabled', false);"}, 'newsletter', nil %>
+            <span class="options">Our newsletter</span>
+          </div>
+          <%= f.submit "Save Changes", class: "btn save-changes-button", id: "notifications-save-button", disabled: "true", onclick: "$('#changes-saved').modal();" %>
+        <% end %>
+    </div>
   </div>
-  <hr class="separator">
-  <div class="spacer"></div>
-  <div class="notifications">
-    <h2 class="heading">Notifications</h2>
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, id: "edit-notifications" }) do |f| %>
-      <%= devise_error_messages! %>
-
-      <div class="field">
-        <%= f.label 'How often would you like to be reminded of your challenges via email?' %><br />
-        <%= f.select :notifications, options_for_select(notifications, resource.notifications), {:include_blank => ""}, {:class=> "inputField"} %>
-      </div>
-
-      <div class="actions">
-        <%= f.submit "SAVE", class: "btn save-button" %>
-      </div>
-    <% end %>
-  </div>
+  <%= render "layouts/settings/changes_saved_popup" %>
+  <%= render "layouts/settings/account_deactivate_popup" %>
+  <%= render "layouts/settings/email_updated_popup" %>
+  <%= render "layouts/settings/password_updated_popup" %>
+  <%= render "layouts/settings/verify_email_popup" %>
 </div>

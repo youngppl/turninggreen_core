@@ -19,5 +19,8 @@ Rails.application.routes.draw do
   post '/challenges/add' => 'challenges#create'
   post '/challenges/update-notification' => 'challenges#update_notification_viewed'
   post '/logs/new' => 'logs#new'
+  devise_scope :user do
+    post '/deactivate' => 'registrations#deactivate'
+  end
   resources :tips_daily, only: [:index, :show]
 end
