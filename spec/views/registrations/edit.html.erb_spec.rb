@@ -1,6 +1,13 @@
 require 'rails_helper'
 
 RSpec.describe "devise/registrations/edit.html.erb", type: :view do
+
+  #ophelia: put your tests here
+
+
+  #dylan put you tests here
+
+
   # context 'when user is created' do
   #   it 'has correct info in settings page' do
   #     @user = User.create(email: "bob@gmal.com", password: "wataasdadf", name: "bob", state:"CA", country:"United States", timezone:"Pacific Time (US & Canada)")
