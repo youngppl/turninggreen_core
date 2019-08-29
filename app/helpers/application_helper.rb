@@ -1,4 +1,10 @@
 module ApplicationHelper
+  
+  def active?(path)
+    # check current page and return active class
+    "active" if current_page? path
+  end
+
   def referral_choices
     [
       'Project Green Challenge',

@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg">
+<!-- <nav class="navbar navbar-expand-lg">
   <span class="navbar-brand" href="#">
     <a href="<%= root_path %>" tabindex="0" id="challenge_added_popover" class="tg-logo" data-toggle="popover" data-placement="bottom">
       <div class="logo-tag">
@@ -52,10 +52,38 @@
           <%= image_tag(profile_pic_link, size: '57x57', class: 'rounded-circle') %>
         </button>
         <div class="dropdown-menu dropdown-menu-right">
-          <%= link_to 'Settings', edit_user_registration_path, class: 'dropdown-item', id: 'settings-button' %>
           <%= link_to 'Log Out', destroy_user_session_path, method: :delete, class: 'dropdown-item', id: 'logout-button'%>
         </div>
       </li>
     </ul>
   </div>
+</nav> -->
+
+<nav class="dash-nav">
+  <a href="<%= root_path %>" tabindex="0" id="challenge_added_popover" class="tg-logo" data-toggle="popover" data-placement="bottom">
+    <div class="logo-tag"></div>
+  </a>
+  <h5 class="level">lvl 2</h5>
+  <h5 class="username"><%= current_user.name %></h5>
+<ul class="nav flex-column">
+  <li class="nav-item <%= active?(dashboard_path) %>">
+    <%= link_to "Dashboard", dashboard_path, class: "nav-link"%>
+  </li>
+  <li class="nav-item <%= active?(themes_path) %>">
+    <%= link_to "Themes", themes_path, class: "nav-link"%>
+  </li>
+  <li class="nav-item <%= active?("CHANGE THIS") %>">
+    <!-- TODO: add in this link after merging reflections branch -->
+    <a class="nav-link" href="#">Reflections</a>
+  </li>
+  <li class="nav-item <%= active?(challenges_completed_path) %>">
+    <%= link_to "Completed Challenges", challenges_completed_path, class: "nav-link"%>
+  </li>
+  <li class="nav-item <%= active?(edit_user_registration_path) %>">
+    <%= link_to 'Settings', edit_user_registration_path, class: "nav-link" %>
+  </li>
+  <li class="nav-item log-out">
+    <%= link_to 'log out', destroy_user_session_path, method: :delete %>
+  </li>
+</ul>
 </nav>

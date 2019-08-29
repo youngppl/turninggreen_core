@@ -2,30 +2,27 @@
 <html>
   <%= render "layouts/header"%>
   <body>
-    <div id="navbar" >
-      <% if content_for?(:navbar) %>
-        <%= yield(:navbar) %>
-      <% else %>
-        <%= render 'layouts/default_navbar' %>
-      <% end %>
+    <div class="row">
+      <div id="navbar col">
+        <% if content_for?(:navbar) %>
+          <%= yield(:navbar) %>
+        <% else %>
+          <%= render 'layouts/default_navbar' %>
+        <% end %>
+      </div>
+      <div class="col">
+        <% if content_for?(:navbar) %>
+          <div class="top-nav row">
+            <%= render 'layouts/notifications_dropdown' %>
+            <%= render 'layouts/feedback_dropdown' %>
+          </div>
+        <% end %>
+        <%= render "layouts/alerts"%>
+        <div class="row">
+          <%= yield %>
+        </div>
+      </div>
     </div>
-  <% if notice %>
-    <div class="alert alert-success alert-dismissible fade show" role="alert">
-      <%= notice %>
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-  <% end %>
-  <% if alert %>
-    <div class="alert alert-danger alert-dismissible fade show" role="alert"">
-      <%= alert %>
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true">&times;</span>
-      </button>
-    </div>
-  <% end %>
-    <%= yield %>
     <%= render "layouts/footer"%>
     <%= debug(params) if Rails.env.development? %>
   </body>
