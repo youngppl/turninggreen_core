@@ -583,10 +583,9 @@
 }
 
 .settings {
-  @extend .dashboard;
-  padding-left: 94px;
-  padding-top: 42px;
-
+  margin: auto;
+  padding-bottom: 50px;
+  
   h2.settings-title {
     font-size: 45px;
     font-weight: bold;

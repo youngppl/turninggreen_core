@@ -2,27 +2,29 @@
 <html>
   <%= render "layouts/header"%>
   <body>
-    <div class="row">
-      <div id="navbar col">
-        <% if content_for?(:navbar) %>
+    <% if content_for?(:navbar) %>
+      <!-- rest of app view -->
+      <div class="row">
+        <div id="navbar col">
           <%= yield(:navbar) %>
-        <% else %>
-          <%= render 'layouts/default_navbar' %>
-        <% end %>
-      </div>
-      <div class="col">
-        <% if content_for?(:navbar) %>
+        </div>
+        <div class="col">
           <div class="top-nav row">
             <%= render 'layouts/notifications_dropdown' %>
             <%= render 'layouts/feedback_dropdown' %>
           </div>
-        <% end %>
-        <%= render "layouts/alerts"%>
-        <div class="row">
-          <%= yield %>
+          <%= render "layouts/alerts"%>
+          <div class="main-content row">
+            <%= yield %>
+          </div>
         </div>
       </div>
-    </div>
+    <% else %>
+      <!-- landing page view -->
+      <%= render 'layouts/default_navbar' %>
+      <%= render "layouts/alerts"%>
+      <%= yield %>
+    <% end %>
     <%= render "layouts/footer"%>
     <%= debug(params) if Rails.env.development? %>
   </body>
