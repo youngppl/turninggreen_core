@@ -3,66 +3,137 @@
 <% end %>
 
 <div class="dashboard">
-  <div class="global_impact">
-    <h2>Global Impact</h2>
-    <div class="global_impact_content"></div>
+  <div class="level">
+    <h5 class="title">My Level</h5>
+    <div class="level-content">
+      <div class="branding"></div>
+      <div class="info">
+        <h5 class="heading">lvl2</h5>
+        <h5 class="name">level name</h5>
+        <p class="learn-more">Learn more Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+      <div class="progress">
+        <div class="progress-bar" role="progressbar" style="width: 100px !important" aria-valuemin="0" aria-valuemax="100"></div>
+        <div class="marker-container">
+          <div class="marker">
+            <!-- <span class="label">100</span> -->
+          </div>
+        </div>
+      </div>
+      <div class="start box">100</div>
+      <div class="end box">140</div>
+    </div>
   </div>
-  <%= link_to 'completed challenges', challenges_completed_path %>
   <div class="current-challenges">
-    <h2 class="heading">Current Challenges</h2>
-    <div class="current-challenge-row">
-      <% @current_challenges.each do |challenge| %>
-      <div class="current-challenge-box">
-        <h2 class="name"><%= challenge.challenge_name %></h2>
-        <div class="progress-circle">
-          <div class="ring">
-            <div class="inner">
-              <button type="button" name="button" onclick="$('#progress-log-<%= challenge.id %>').modal();setInitPos_<%= challenge.id %>();">
-                <% if !challenge.last_logged.nil? && challenge.last_logged.to_date == DateTime.now.getutc.to_date %>
-                See your records!
-                <% else %>
-                Log your progress!
-                <% end %>
-              </button>
-            </div>
-          </div>
-          <div class="today worm">
-            <svg viewBox="0 0 106 106" xmlns="http://www.w3.org/2000/svg">
-              <circle id="today-worm-<%= challenge.id %>" cx="53" cy="54" r="44" stroke="#dadada" stroke-dasharray="<%= challenge.get_worm_length(DateTime.now.getutc) %>"/>
-              </svg>
-            </div>
-            <div class="last-log worm">
-              <svg viewBox="0 0 106 106" xmlns="http://www.w3.org/2000/svg">
-                <% if !challenge.last_logged.nil? %>
-                  <circle id="last-log-worm-<%= challenge.id %>" cx="53" cy="54" r="44" stroke="#af066e" stroke-dasharray="<%= challenge.get_worm_length(challenge.last_logged) %>"/>
-                <% else %>
-                  <circle id="last-log-worm-<%= challenge.id %>" cx="53" cy="54" r="44" stroke="#af066e" stroke-dasharray="359" style="display:none;"/>
-                <% end %>
-              </svg>
-            </div>
-            </div>
-            <div class="info">
-              <div class="labels">
-                <span class="label">time left</span>
-                <span class="label">last log</span>
-                <span class="label">done so far</span>
+    <h2 class="heading">My Current Challenges</h2>
+    <div class="content">
+      <div class="tabs nav flex-column" role="tablist" aria-orientation="vertical">
+        <% @current_challenges.each do |challenge| %>
+          <a class="nav-link" id="v-pills-home-tab" data-toggle="pill" href="#_<%= challenge.id %>" role="tab"><span><%= challenge.challenge_name%></span></a>
+        <% end %>
+      </div>
+      <div class="challenge-content tab-content col-9">
+        <% @current_challenges.each do |challenge| %>
+          <div class="tab-pane fade" id="_<%= challenge.id %>" role="tabpanel">
+            <div class="row">
+              <div class="col-3">
+                <div class="date">
+                  <h5 class="month">april</h5>
+                  <h5 class="day">20</h5>
+                </div>
+                <div class="log-question">
+                  <h5 class="heading">Since your last log:</h5>
+                  <h5 class="question">question here</h5>
+                  <input type="number" min="0" class="log-input">
+                  <button type="button" name="button" onclick="recordMetric_<%= challenge.id %>(<%= challenge.id %>, $(this).siblings('.log-input').val())">button</button>
+                </div>
               </div>
-              <div class="metrics">
-                <span class="metric"><%= challenge.get_time_left %> </span>
-                <span class="metric"><%= challenge.get_last_logged %></span>
-                <span class="metric"><%= pluralize challenge.cummulative_metrics, "metric"%> </span>
+              <div class="graph col">
+                <%= line_chart({"2013-03-07" => 5, "2013-04-07" => 17,"2013-05-07" => 7}, label: "Value", xtitle: "Time", ytitle: "Population") %>
               </div>
             </div>
-            <%= render "layouts/dashboard/progress_log_popup", {challenge:challenge, start_date:challenge.created_at, end_date: challenge.date_complete} %>
           </div>
-          <% end %>
-          <% if @current_challenges.length < 6 %>
-          <a class="add" href="<%= themes_path %>">+<span class="another">take on another challenge!</span></a>
-          <% end %>
+          <script type="text/javascript">
+            function recordMetric_<%= challenge.id %>(challenge_id, metric) {
+              $.post('/logs/new', {challenge_id: challenge_id, metric: metric});
+              $("#last-log-worm-<%= challenge.id %>").show();
+              $("#progress-log-<%= challenge.id %>").modal('hide');
+              $("#last-log-worm-<%= challenge.id %>").attr("stroke-dasharray", $("#today-worm-<%= challenge.id %>").attr("stroke-dasharray"));
+            }
+          </script>
+        <% end %>
+      </div>
+
+    </div>
+  </div>
+  <div class="global-impact">
+    <h2>Global Impact</h2>
+    <div class="global-impact-content">
+      <div class="branding"></div>
+      <div class="coming-soon">
+        <h5>Coming soon!</h5>
+        <p>This page will be a collection of the impacts you, your friends, and all our users around the world have made. Let’s work to see the impact we will all come together to make!
+        </p>
+      </div>
     </div>
   </div>
 </div>
-<script type="text/javascript">
+<!-- <script type="text/javascript">
   $(".home-underline").show();
   $(".themes-underline").hide();
-</script>
+</script> -->
+
+
+
+<!-- <div class="current-challenge-row">
+  <% @current_challenges.each do |challenge| %>
+  <div class="current-challenge-box">
+    <h2 class="name"><%= challenge.challenge_name %></h2>
+    <div class="progress-circle">
+      <div class="ring">
+        <div class="inner">
+          <button type="button" name="button" onclick="$('#progress-log-<%= challenge.id %>').modal();setInitPos_<%= challenge.id %>();">
+            <% if !challenge.last_logged.nil? && challenge.last_logged.to_date == DateTime.now.getutc.to_date %>
+            See your records!
+            <% else %>
+            Log your progress!
+            <% end %>
+          </button>
+        </div>
+      </div>
+      <div class="today worm">
+        <svg viewbox="0 0 106 106" xmlns="http://www.w3.org/2000/svg">
+          <circle id="today-worm-<%= challenge.id %>" cx="53" cy="54" r="44" stroke="#dadada" stroke-dasharray="<%= challenge.get_worm_length(DateTime.now.getutc) %>"/>
+          </svg>
+        </div>
+        <div class="last-log worm">
+          <svg viewbox="0 0 106 106" xmlns="http://www.w3.org/2000/svg">
+            <% if !challenge.last_logged.nil? %>
+            <circle id="last-log-worm-<%= challenge.id %>" cx="53" cy="54" r="44" stroke="#af066e" stroke-dasharray="<%= challenge.get_worm_length(challenge.last_logged) %>"/>
+              <% else %>
+              <circle id="last-log-worm-<%= challenge.id %>" cx="53" cy="54" r="44" stroke="#af066e" stroke-dasharray="359" style="display:none;"/>
+                <% end %>
+              </svg>
+            </div>
+          </div>
+          <div class="info">
+            <div class="labels">
+              <span class="label">time left</span>
+              <span class="label">last log</span>
+              <span class="label">done so far</span>
+            </div>
+            <div class="metrics">
+              <span class="metric"><%= challenge.get_time_left %>
+              </span>
+              <span class="metric"><%= challenge.get_last_logged %></span>
+              <span class="metric"><%= pluralize challenge.cummulative_metrics, "metric"%>
+              </span>
+            </div>
+          </div>
+          <%= render "layouts/dashboard/progress_log_popup", {challenge:challenge, start_date:challenge.created_at, end_date: challenge.date_complete} %>
+        </div>
+        <% end %>
+        <% if @current_challenges.length < 6 %>
+        <a class="add" href="<%= themes_path %>">+<span class="another">take on another challenge!</span></a>
+        <% end %>
+      </div> -->

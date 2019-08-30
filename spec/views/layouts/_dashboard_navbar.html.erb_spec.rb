@@ -26,22 +26,22 @@ RSpec.describe "layouts/_dashboard_navbar.html.erb", type: :view, js: true do
   context 'when a user clicks on the home link' do
     let!(:current_user) {@user}
     it 'takes user to home page' do
-      click_on "home"
+      click_on "Dashboard"
       expect(current_path).to eq '/dashboard'
     end
-    it 'underlines home link in green' do
-      click_on "home"
+    it 'highlights home link' do
+      click_on "Dashboard"
       expect(page.find('.home-underline', visible: false)[:style]).to_not match('/display: none;/')
     end
   end
 
   context 'when user clicks on the themes link' do
     it 'takes user to themes page' do
-      click_link "themes"
+      click_link "Themes"
       expect(current_path).to eq '/themes'
     end
-    it 'underlines themes link in green' do
-      click_link "themes"
+    it 'highlights themes link' do
+      click_link "Themes"
       expect(page.find('.themes-underline', visible: false)[:style]).to_not match('/display: none;/')
     end
   end
