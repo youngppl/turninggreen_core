@@ -11,8 +11,7 @@
 // about supported directives.
 //
 // = require jstzdetect
-// = require chartkick
-// = require Chart.bundle
+// = require Chart.bundle.min
 // = require rails-ujs
 // = require activestorage
 // = require turbolinks

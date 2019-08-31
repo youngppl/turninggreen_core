@@ -154,6 +154,10 @@
       .challenge-content {
         padding: 30px;
         vertical-align: top;
+        max-height: 100%;
+        .col-9 {
+          height: 300px !important;
+        }
         .date {
           text-align: center;
           margin-bottom: 38px;
@@ -203,7 +207,55 @@
             color: #5f5f5f;
             background-color: white;
           }
+          // .chart {
+          //   height: 300px !important;
+          // }
         }
+        .marker {
+              position: relative;
+              display: inline-block;
+              top: -55px;
+
+              .label {
+                font-size: 14px;
+                font-weight: 500;
+                color: $brand-color;
+                position: absolute;
+                left: -19px;
+              }
+
+              .line {
+                top: 34px;
+                stroke: $brand-color;
+                stroke-width: 3px;
+              }
+            }
+        .box {
+            display: inline-block;
+            text-align: center;
+            width: 50px;
+            position: relative;
+            top: -27px;
+
+            span {
+              font-size: 12px;
+              font-weight: 500;
+              color: #757575;
+            }
+
+            h2 {
+              font-size: 12px;
+              color: #757575;
+            }
+
+            &.start {
+              left: -10px;
+            }
+
+            &.end {
+              left: 370px;
+            }
+          }
       }
     }
   }

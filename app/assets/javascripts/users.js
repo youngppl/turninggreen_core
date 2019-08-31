@@ -83,3 +83,14 @@ function enablePasswordFields() {
     $('#user_password_confirmation').prop('disabled', true);
   }
 }
+
+function cumulativeMetrics(log_to_count_to, data) {
+  stop_date = log_to_count_to.xLabel;
+  points = data['datasets'][0].data;
+  total = 0;
+  for(let val of points) {
+    total += val['y'];
+    if (val['t'] == stop_date) break;
+  }
+  return total;
+}
