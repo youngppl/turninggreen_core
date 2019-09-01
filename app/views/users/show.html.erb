@@ -69,14 +69,13 @@
             </div>
           </div>
           <script type="text/javascript">
-            function recordMetric_ <%= challenge.id %>(challenge_id, metric) {
+            function recordMetric_<%= challenge.id %>(challenge_id, metric) {
               $.post('/logs/new', {
                 challenge_id: challenge_id,
                 metric: metric
               });
-              $('.today.metric').children('span').html($('.log-input._<%= challenge.id %>').val() + ' metrics')$('.cumulative.metric').children('span').html(
-                (Number($('.log-input._<%= challenge.id %>').val()) + <%= challenge.cumulative_metrics.to_i %>) + ' metrics'
-              )
+              $('.today.metric').children('span').html($('.log-input._<%= challenge.id %>').val() + ' metrics');
+              $('.cumulative.metric').children('span').html((Number($('.log-input._<%= challenge.id %>').val()) + <%= challenge.cumulative_metrics.to_i %>) + ' metrics');
             }
           </script>
         <% end %>
