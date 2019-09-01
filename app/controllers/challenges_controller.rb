@@ -18,14 +18,6 @@ class ChallengesController < ApplicationController
     # unlocking themes
     challenge = params[:challenge]
     newUnlocked = [challenge]
-    case challenge
-    when "Body"
-      newUnlocked.push("Clean")
-    when "Fashion"
-      newUnlocked.push("Home")
-    when "Wellness"
-      newUnlocked.push("Travel")
-    end
     current_user.update(:unlockedChallenges => (current_user.unlockedChallenges + newUnlocked).uniq)
   end
 
@@ -33,7 +25,6 @@ class ChallengesController < ApplicationController
     if current_user.challenges.where(completed: false).length < 6
       current_user.challenges.create(challenge_params)
       render :json => {:showPopover => true}
-      # message = {:notice => "Challenge has been successfully added!"}
     else
       message = {:alert => "You can only have a maximum of 6 challenges!"}
       redirect_to request.referer, :flash => message
