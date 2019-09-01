@@ -7,7 +7,8 @@ Rails.application.routes.draw do
                   unlock: 'unblock',
                   sign_up: 'register',
                   edit: 'settings' },
-    controllers: {registrations: "registrations"}
+    controllers: {registrations: "registrations",
+                  confirmations: "confirmations"}
 
   root 'welcome#index'
 
