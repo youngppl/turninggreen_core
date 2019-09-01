@@ -1,13 +1,13 @@
-<div class="loginContainer">
+<div class="loginContainer container">
   <div class="formContainer">
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div>
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "email@example.com", :class => "inputField" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "email@example.com", :class => "inputField col-10 col-lg" %>
       </div>
 
       <div class="field">
-        <%= f.password_field :password, autocomplete: "current-password", placeholder: "Password", :class => "inputField" %>
+        <%= f.password_field :password, autocomplete: "current-password", placeholder: "Password", :class => "inputField col-10 col-lg" %>
       </div>
 
       <div>
@@ -16,7 +16,7 @@
       </div>
 
       <div >
-        <%= f.submit "LOG IN", :class => "actions submitButton"%>
+        <%= f.submit "LOG IN", :class => "actions submitButton col-10 col-lg"%>
       </div>
     <% end %>
 
