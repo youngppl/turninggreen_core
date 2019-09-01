@@ -44,7 +44,7 @@ class Challenge < ApplicationRecord
   def cumulative_metrics
     @cumulative = 0
     progress_logs.each do |log|
-      @cummulative += log.metric
+      @cumulative += log.metric
     end
     @cumulative
   end

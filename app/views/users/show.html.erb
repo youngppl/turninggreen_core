@@ -44,19 +44,18 @@
                 <div class="log-question">
                   <h5 class="heading">Since your last log:</h5>
                   <h5 class="question">question here</h5>
-                  <input type="number" min="0" class="log-input">
-                  <button type="button" name="button" onclick="recordMetric_<%= challenge.id %>(<%= challenge.id %>, $(this).siblings('.log-input').val())">button</button>
+                  <input type="number" min="0" class="log-input _<%= challenge.id %>">
+                  <button type="button" name="button" onclick="recordMetric_<%= challenge.id %>(<%= challenge.id %>, $(this).siblings('.log-input').val());$('#metric-logged').modal();">button</button>
                 </div>
               </div>
               <div class="graph col-9">
                 <%= line_chart challenge.data, challenge.options %>
-                <div class="markers-wrapper">
-                  <% if challenge.created_at.day != DateTime.now.getutc.day %>
                     <div class="today marker _<%= challenge.id %>" style="left:<%= challenge.today_marker_position %>%">
-                      <svg height="30" width="10" class="line" ><line x1="0" y1="0" x2="0" y2="26" /></svg>
-                      <span class="label">today</span>
+                      <% if challenge.created_at.day != DateTime.now.day %>
+                        <svg height="30" width="10" class="line" ><line x1="0" y1="0" x2="0" y2="26" /></svg>
+                        <span class="label">today</span>
+                      <% end %>
                     </div>
-                  <% end %>
                   <div class="start box">
                     <span>start</span>
                     <h2><%=challenge.created_at.month%>/<%=challenge.created_at.day%></h2>
@@ -65,21 +64,22 @@
                     <span>end</span>
                     <h2><%=challenge.date_complete.month%>/<%=challenge.date_complete.day%></h2>
                   </div>
-                </div>
               </div>
             </div>
           </div>
           <script type="text/javascript">
             function recordMetric_<%= challenge.id %>(challenge_id, metric) {
               $.post('/logs/new', {challenge_id: challenge_id, metric: metric});
-              $("#last-log-worm-<%= challenge.id %>").show();
-              $("#progress-log-<%= challenge.id %>").modal('hide');
-              $("#last-log-worm-<%= challenge.id %>").attr("stroke-dasharray", $("#today-worm-<%= challenge.id %>").attr("stroke-dasharray"));
+              // $("#last-log-worm-<%= challenge.id %>").show();
+              // $("#progress-log-<%= challenge.id %>").modal('hide');
+              // $("#last-log-worm-<%= challenge.id %>").attr("stroke-dasharray", $("#today-worm-<%= challenge.id %>").attr("stroke-dasharray"));
+              $('.today.metric').children('span').html($('.log-input._<%= challenge.id %>').val() + ' metrics')
+              $('.cumulative.metric').children('span').html((Number($('.log-input._<%= challenge.id %>').val()) + <%= challenge.cumulative_metrics.to_i %>) + ' metrics')
             }
           </script>
         <% end %>
       </div>
-
+      <%= render 'layouts/dashboard/metric_logged_popup', {points_earned: false,} %>
     </div>
   </div>
   <div class="global-impact">
