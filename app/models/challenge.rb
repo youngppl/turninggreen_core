@@ -51,9 +51,7 @@ class Challenge < ApplicationRecord
 
   def generate_data
     data = []
-    # cumulative = 0
     progress_logs.order(:created_at).each do |log|
-      # cumulative += log.metric
       data.push('t': log.created_at.to_date, 'y': log.metric)
     end
     data

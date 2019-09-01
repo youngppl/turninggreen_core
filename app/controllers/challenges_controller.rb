@@ -34,7 +34,6 @@ class ChallengesController < ApplicationController
       new_challenge = current_user.challenges.create(challenge_params)
       new_challenge.progress_logs.create(metric: 0) # create empty log at 0
       render :json => {:showPopover => true}
-      # message = {:notice => "Challenge has been successfully added!"}
     else
       message = {:alert => "You can only have a maximum of 6 challenges!"}
       redirect_to request.referer, :flash => message
