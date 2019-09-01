@@ -30,28 +30,28 @@
           </div>
           <div class="today worm">
             <svg viewBox="0 0 106 106" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="53" cy="54" r="44" stroke="#dadada" stroke-dasharray="<%= challenge.get_worm_length(DateTime.now.getutc) %>"/>
+              <circle id="today-worm-<%= challenge.id %>" cx="53" cy="54" r="44" stroke="#dadada" stroke-dasharray="<%= challenge.get_worm_length(DateTime.now.getutc) %>"/>
               </svg>
             </div>
             <div class="last-log worm">
               <svg viewBox="0 0 106 106" xmlns="http://www.w3.org/2000/svg">
                 <% if !challenge.last_logged.nil? %>
-                <circle cx="53" cy="54" r="44" stroke="#af066e" stroke-dasharray="<%= challenge.get_worm_length(challenge.last_logged) %>"/>
-                  <% end %>
-                </svg>
-              </div>
+                  <circle id="last-log-worm-<%= challenge.id %>" cx="53" cy="54" r="44" stroke="#af066e" stroke-dasharray="<%= challenge.get_worm_length(challenge.last_logged) %>"/>
+                <% else %>
+                  <circle id="last-log-worm-<%= challenge.id %>" cx="53" cy="54" r="44" stroke="#af066e" stroke-dasharray="359" style="display:none;"/>
+                <% end %>
+              </svg>
+            </div>
             </div>
             <div class="info">
-              <div class="time-left line">
+              <div class="labels">
                 <span class="label">time left</span>
-                <span class="metric"><%= challenge.get_time_left %> </span>
-              </div>
-              <div class="last-log line">
                 <span class="label">last log</span>
-                <span class="metric"><%= challenge.get_last_logged %></span>
-              </div>
-              <div class="done-so-far line">
                 <span class="label">done so far</span>
+              </div>
+              <div class="metrics">
+                <span class="metric"><%= challenge.get_time_left %> </span>
+                <span class="metric"><%= challenge.get_last_logged %></span>
                 <span class="metric"><%= pluralize challenge.cummulative_metrics, "metric"%> </span>
               </div>
             </div>
