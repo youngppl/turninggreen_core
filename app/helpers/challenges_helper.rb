@@ -2,12 +2,12 @@ module ChallengesHelper
   def challenges
     {
       Waste: {
-        :videoCaption => "Watch \"Going Green Shouldn't Be This
-        Hard\" by Vox. You'll find that reducing your waste isn't hard to do.",
+        :videoCaption => "Reducing your waste isn't hard to do.",
         :videoID => "BxKfpt70rLI",
-        :briefDescription => "We throw a lot of stuff into the trash, and oftentimes,
-        we don't think about it after closing the trash lid. How much trash do you throw away
-        each day? Have you ever thought about where it all goes?",
+        :briefDescription => "We throw a lot into the trash, and oftentimes,
+        we don't think about it after closing the trash lid. How much trash do
+        you toss everyday? Have you ever thought about where it all goes? Do you
+        consider how you could avoid the waste to begin with?",
         :challenges => [
           {
             :name => "Say \"No thanks\".",
@@ -141,79 +141,75 @@ module ChallengesHelper
         ]
       },
       Food: {
-        :videoCaption => "Watch Chipotle's video 'Back to the Start',
-        which focuses on the topic of sustainable farming.",
-        :videoID => "S1zXGWK_knQ",
-        :briefDescription => "Before biting into a sandwich or grabbing a snack,
-        do you ever think about how your food got into your hands? Food provides
-        the nutrients that fuel our bodies and nourishes our minds, but they're not
-        all created equal. How they're grown influences how much nutrients you get.",
+        :videoCaption => "Here is one farmer's take on sustainable regenerative farming.",
+        :videoID => "hWkYtZxpQUo",
+        :briefDescription => "Before taking a bite of food, do you ever think about how
+        it got to you? Food should nourish us, but not all food is created equal. How food
+        is grown influences nutritional quality, and you have the power to choose the
+        quality of nutrients your body gets.",
         :challenges => []
       },
       Body: {
-        :videoCaption => "Watch Annie Leonard's 'Story of Cosmetics' to
-        learn about what the bodycare industry puts in the products you may use.",
-        :videoID => "pfq000AF1i8",
-        :briefDescription => "Did you know that our skin absorbs 60% of everything
-        we put on it? When buying bodycare products, we're probably looking for products
-        that make us look and feel our best. But, how often have you flipped the package
-        to read what's in the ingredient list? And even then, do you know what the ingredients are? ",
+        :videoCaption => "The main takeaway: know what's in your products.",
+        :videoID => "6wAToqkcAow",
+        :briefDescription => "Did you know our skin absorbs 60% of everything we put on it?
+        When buying products, we look for ones that make us feel our best. But, how often have
+        you flipped the package to read the ingredient list? Even then, do you know what the
+        ingredients are?",
         :challenges => []
       },
       Water: {
-        :videoCaption => "Watch WWAP's \"Where is Water?\" video for an introduction
-        to water footprint.",
+        :videoCaption => "Think about water in the big picture.",
         :videoID => "b1f-G6v3voA",
-        :briefDescription => "Water covers about 70% of our planet, but a very very small amount of it
-        (0.5% of that 70%, to be exact) is available for us to use and consume. To make sure everyone
-        has equitable access, we have to be mindful of our water use. It's going to take more than just
-        turning off the faucet and showering for shorter periods of time.",
+        :briefDescription => "An incredibly small amount (0.35%) of the water in
+        our planet is available to us. To ensure equitable access, we need to change
+        our lifestyle habits, like the food we eat and how we commute. Do you know how
+        much water it takes to fuel your lifestyle?",
         :challenges => []
       },
       Biodiversity: {
-        :videoCaption => "Watch Louie Schwartzberg's \"The Hidden Beauty
-        of Pollination\" about pollinators.",
-        :videoID => "eqsXc_aefKI",
-        :briefDescription => "Bees and other pollinators (like butterflies, birds, and bats) are
-        responsible for 1/3 of our food supply. The soil in the ground are responsible for the
-        nutrients in our food supply. What does that mean? Think about that for a moment. We'll
-        explore more of these topics together.",
+        :videoCaption => "Biodiversity is like insurance to our survival.",
+        :videoID => "GK_vRtHJZu4",
+        :briefDescription => "Did you know there are more organisms in a tablespoon
+        of healthy soil than there are people on Earth? This diversity in our soil is
+        responsible for 95%(!) of our food. We don't think much about these little
+        fellas much, but they're critical to our food security.",
         :challenges => []
       },
       Fashion: {
-        :videoCaption => "Watch the 'True Cost' trailer to learn about
-        the impact of fast fashion. ",
-        :videoID => "QPMU1VHgmEo",
-        :briefDescription => "Our skin is the largest organ of our body, and it absorbs what we put on it.
-        The clothes you're wearing aren't an exception. Do you know what went into making what you're wearing right now? ",
+        :videoCaption => "What is fast fashion (in under 5 minutes)?",
+        :videoID => "fR7bXsoNwwE",
+        :briefDescription => "We live in a world of fast fashion where low prices often mean worker exploitation
+        and cheap quality. Have you ever thought about how the price of your clothes translate to how your
+        clothes were made?",
         :challenges => []
       },
       Clean: {
-        :videoCaption => "To unlock the Clean theme, you must unlock the Body theme.",
+        :videoCaption => "To unlock the Clean theme, you must complete 2 Body challenges.",
         :briefDescription => "There are many products on the market that leave behind harmful chemicals in place of
         the dirt and grime we want to remove. Cleaning shouldn't be harmful or complicated. We'll show you how to
         keep it simple and fun!",
         :challenges => []
       },
       Home: {
-        :videoCaption => "To unlock the Home theme, you must unlock the Fashion theme.",
-        :briefDescription => "The air you breathe into your body and the furniture you spend a lot of time in
-        and touch (like your bed, your chair, your desk) matter. This physical contact with things in our home
-        makes it important for us to know what they're made of. Do you know what your bedding is made of? Or your sofa? ",
+        :videoCaption => "To unlock the Home theme, you must complete 1 clean and 1 fashion challenge.",
+        :briefDescription => "Did you know that indoor air is more polluted than the air outside? Carpets,
+        paint, and furniture, for example, can release pollutants that build up in our homes. This raises the
+        question: do you know the material composition of the things in your home?",
         :challenges => []
       },
       Wellness: {
-        :videoCaption => "Watch \"Gratitude\" by Louie Schwartzberg to see one
-        perspective on gratitude.",
-        :videoID => "nj2ofrX7jAk",
+        :videoCaption => "To unlock Wellness theme, you complete 1 food challenge.",
         :briefDescription => "Your health is most important because good health enables you to do the things you want
-        and dream of. It sucks to be sick, so take care of yourself. Here, we'll just remind you of how to do that.",
+        and dream of. It sucks to be sick, so take care of your mental, physical, and spiritual health. Here, we'll just
+        remind you of how to do that.",
         :challenges => []
       },
       Travel: {
-        :videoCaption => "To unlock the Travel theme, you must unlock the Wellness theme.",
-        :briefDescription => "Being conscious of how our daily actions impact our world doesn't stop when we leave
-        our homes. We challenge you to take what you've learned with you on your next trip. Show us what you can do!",
+        :videoCaption => "To unlock the Travel theme, you must complete 1 waste and 1 food challenge.",
+        :briefDescription => "Being mindful of the impact of our daily actions doesn't stop when we leave home. It
+        is still important if we're in the front yard, down the street, another city, and another country. Take what
+        you've learned on your next trip, and show us what you can do!",
         :challenges => []
       }
     }
