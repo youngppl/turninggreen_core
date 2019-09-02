@@ -18,14 +18,6 @@ class ChallengesController < ApplicationController
     # unlocking themes
     challenge = params[:challenge]
     newUnlocked = [challenge]
-    case challenge
-    when "Body"
-      newUnlocked.push("Clean")
-    when "Fashion"
-      newUnlocked.push("Home")
-    when "Wellness"
-      newUnlocked.push("Travel")
-    end
     current_user.update(:unlockedChallenges => (current_user.unlockedChallenges + newUnlocked).uniq)
   end
 
