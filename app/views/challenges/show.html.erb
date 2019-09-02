@@ -6,7 +6,7 @@
   <%= render template: '/themes/index.html.erb' %>
 </div>
 
-<div class="challenge-page">
+<div class="challenge-page" style="display:none;">
   <div class="back-button">
     <button type="button" class="back" name="button" onclick="location.href='/themes';">
       <%= image_tag 'arrow-back.svg'%>
@@ -226,15 +226,17 @@
     </div>
     <script>
       <% if @challenge_data.key?(:videoID) %>
-        var challengeVideoID = "<%= @challenge_data[:videoID] %>"; var showVideo = true;
+        var challengeVideoID = "<%= @challenge_data[:videoID] %>";
+        var showVideo = true;
       <% else %>
         var showVideo = false;
       <% end %>
-      var challengeName = "<%= @challenge_name %>"; var already_unlocked =
-      <%= @already_unlocked %>;
+      var challengeName = "<%= @challenge_name %>";
+      var already_unlocked = <%= @already_unlocked %>;
       <% if !@already_unlocked %>
         $('#challenge-modal').modal('show');
       <% else %>
-        $('.themes-page-overlay').hide(); $('.challenge-page').show();
+        $('.themes-page-overlay').hide();
+        $('.challenge-page').show();
       <% end %>
     </script>

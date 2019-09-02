@@ -13,6 +13,8 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'rails-assets-jstzdetect', source: 'https://rails-assets.org'
+gem "nokogiri", ">= 1.10.4"
+gem 'chartjs-ror'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

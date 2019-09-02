@@ -31,7 +31,7 @@
       <div class="field">
         <%= f.label 'Email' %>
         <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-          <a onclick="$('#verify-email').modal();"><span class="verify-email">Verify your email</span></a>
+          <a id="verify-email-link" onclick="$('#verify-email').modal();"><span class="verify-email">Verify your email</span></a>
         <% end %>
         <br/>
         <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "inputField", placeholder: "email@example.com", oninput: "checkEmail();allowSaveButton();" %>
@@ -110,7 +110,7 @@
           </div>
           <div id="deactivate" class="panel-collapse collapse" style="display:none;">
             <p>If you deactivate some logistics will happen. Choose wisely fools. </p>
-            <div class="deactivate"><a onclick="$('#account-deactivate').modal();">Deactivate Account</a></div>
+            <div class="deactivate"><a id="deactivate-account-button" onclick="$('#account-deactivate').modal();">Deactivate Account</a></div>
           </div>
         </div>
       </div>

@@ -16,50 +16,32 @@ RSpec.describe "layouts/_dashboard_navbar.html.erb", type: :view, js: true do
     User.delete(@user)
   end
 
-  context 'when user clicks on TG logo' do
-    it 'takes user to front page' do
-      click_link "challenge_added_popover"
-      expect(current_path).to eq '/'
-    end
-  end
-
   context 'when a user clicks on the home link' do
     let!(:current_user) {@user}
     it 'takes user to home page' do
-      click_on "home"
+      click_on "Dashboard"
       expect(current_path).to eq '/dashboard'
-    end
-    it 'underlines home link in green' do
-      click_on "home"
-      expect(page.find('.home-underline', visible: false)[:style]).to_not match('/display: none;/')
     end
   end
 
   context 'when user clicks on the themes link' do
     it 'takes user to themes page' do
-      click_link "themes"
+      click_link "Themes"
       expect(current_path).to eq '/themes'
-    end
-    it 'underlines themes link in green' do
-      click_link "themes"
-      expect(page.find('.themes-underline', visible: false)[:style]).to_not match('/display: none;/')
     end
   end
 
   context 'when a user logs out' do
     it 'takes user to the front page' do
-      click_on 'profile-pic-button'
-      click_on 'logout-button'
+      click_link 'log out'
       expect(current_path).to eq '/'
     end
   end
 
   context 'when a user click on settings' do
     it 'takes user to the settings page' do
-      click_on 'profile-pic-button'
-      click_on 'settings-button'
+      click_link 'Settings'
       expect(current_path).to eq '/settings'
     end
   end
-
 end

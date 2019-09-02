@@ -1,10 +1,11 @@
 .themesPage {
   text-align: center;
+  margin: auto;
 }
 
 .themesRow {
   width: 1200px;
-  margin: 25px 230px 95px;
+  margin: 25px 0px 95px;
 }
 
 .theme {
@@ -192,7 +193,6 @@
   color: #464646;
   margin-top: 42px;
   text-align: left;
-  margin-left: 280px;
   margin-bottom: 22px;
 }
 
@@ -209,7 +209,6 @@
 }
 
 .themes-help-text {
-  margin-left: 280px;
   text-align: left;
   font-size: 30px;
   font-weight: 500;

@@ -1,6 +1,15 @@
 require 'rails_helper'
 
 RSpec.describe "devise/registrations/new.html.erb", type: :view do
+  # basic structure for tests
+  # context '[what the user is gonna do]' do
+  #   it '[what the app should do/how it should respond]' do
+  #     ......
+  #     [testing statements go here]
+  #     ......
+  #     expect(page).....  <--- the check goes here
+  #   end
+  # end
   context 'when duplicate email is entered' do
     it 'displays duplicate email error', js: true do
       @user = User.create(email: "bob@gmal.com", password: "wataadf")
