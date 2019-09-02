@@ -9,6 +9,10 @@ function updateNotification(id) {
   console.log($('.notifications-dropdown').children());
   if($('.notifications-dropdown').children('div.notification:visible').length == 0) {
     $('.no-notifications').show();
-    $('.notification-green-dot').hide();
+    $('.notification-alert').hide();
   }
+}
+
+function sendFeedback(){
+  $.post('/feedback', {feedback: $(".feedback-input").val()})
 }

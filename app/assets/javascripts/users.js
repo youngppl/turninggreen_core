@@ -1,4 +1,4 @@
-$(window).on('turbolinks:load', function(){
+$(window).on('turbolinks:load', function() {
   $('#too_many_challenge_popover').popover({
     html: true,
     template: '<div class="popover" role="tooltip"><div class="arrow"></div><div class="border-arrow arrow" style="top: 43px;"></div><h3 class="popover-header"></h3><button type="button" class="close">&times;</button><div class="popover-body"></div></div>'
@@ -16,11 +16,11 @@ $(window).on('turbolinks:load', function(){
   $("#user_notifications_content_newsletter").data("original", $("#user_notifications_content_newsletter").val());
 
 });
-$(document).on("click", ".popover .close" , function(){
-        $(this).parents(".popover").popover('hide');
+$(document).on("click", ".popover .close", function() {
+  $(this).parents(".popover").popover('hide');
 });
 
-$(document).on("click", ".expand-clickable-area", function (){
+$(document).on("click", ".expand-clickable-area", function() {
   $(this).parent().children('.panel-collapse').toggle();
   $(this).parent().children('panel-heading').find('i').toggle();
 });
@@ -82,4 +82,15 @@ function enablePasswordFields() {
     $('#user_password').prop('disabled', true);
     $('#user_password_confirmation').prop('disabled', true);
   }
+}
+
+function cumulativeMetrics(log_to_count_to, data) {
+  stop_date = log_to_count_to.xLabel;
+  points = data['datasets'][0].data;
+  total = 0;
+  for (let val of points) {
+    total += val['y'];
+    if (val['t'] == stop_date) break;
+  }
+  return total;
 }

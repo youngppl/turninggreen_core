@@ -23,7 +23,8 @@ class ChallengesController < ApplicationController
 
   def create
     if current_user.challenges.where(completed: false).length < 6
-      current_user.challenges.create(challenge_params)
+      new_challenge = current_user.challenges.create(challenge_params)
+      new_challenge.progress_logs.create(metric: 0) # create empty log at 0
       render :json => {:showPopover => true}
     else
       message = {:alert => "You can only have a maximum of 6 challenges!"}
