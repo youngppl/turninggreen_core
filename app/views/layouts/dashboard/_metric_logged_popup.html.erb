@@ -1,0 +1,33 @@
+<div class="modal metric-logged-popup <%= 'points' if points_earned %>" id="metric-logged" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&#x2715;</span>
+        </button>
+        <h2 class="heading">👏claps for you!👏</h2>
+        <h2 class="message">Great job on logging in progress!<br>You’ve logged:</h2>
+        <div class="metrics">
+          <h5 class="today metric">this date:
+            <span></span></h5>
+          <h5 class="cumulative metric">cumulatively:
+            <span></span></h5>
+        </div>
+        <% if points_earned %>
+          <h5 class="keep-it-up">Keep it up! You’ve got 3 extra points!</h5>
+          <div class="branding"></div>
+          <div class="progress">
+            <div class="progress-bar" role="progressbar" style="width: 100px !important" aria-valuemin="0" aria-valuemax="100"></div>
+            <div class="marker-container">
+              <div class="marker">
+                <!-- <span class="label">100</span> -->
+              </div>
+            </div>
+          </div>
+          <div class="start box">100</div>
+          <div class="end box">140</div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
