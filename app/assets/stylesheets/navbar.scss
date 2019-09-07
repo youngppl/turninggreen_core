@@ -70,7 +70,10 @@
 .top-nav {
   justify-content: flex-end;
   padding: 20px 30px;
-  background-color: #f0f1f2;
+  display: flex;
+  width: 100px;
+  position: absolute;
+  right: 0;
 
   .nav-button {
     width: 30px;

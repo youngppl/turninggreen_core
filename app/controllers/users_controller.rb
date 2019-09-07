@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   def show
     # user dashboard, redirects here after successful login
     current_user.challenges.all.each do |challenge|
-      if challenge.date_complete <= Time.now.utc && challenge.reflection_completed
+      if challenge.date_complete <= Time.now.utc
         challenge.update(completed:true, notification_viewed:true)
       end
     end

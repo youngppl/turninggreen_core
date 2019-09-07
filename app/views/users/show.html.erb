@@ -39,7 +39,7 @@
             <div class="row">
               <div class="col-3">
                 <div class="date">
-                  <h5 class="month"><%= Date::MONTHNAMES[Date.today.month].downcase %></h5>
+                  <h5 class="month"><%= month_names[Date.today.month - 1] %></h5>
                   <h5 class="day"><%= Date.today.day %></h5>
                 </div>
                 <div class="log-question">

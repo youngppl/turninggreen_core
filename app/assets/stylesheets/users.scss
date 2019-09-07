@@ -3,9 +3,12 @@
 }
 
 .dashboard {
-  margin: auto;
-  width: 75%;
-  padding-bottom: 50px;
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+    // remove arrow on number inputs
+    -webkit-appearance: none;
+    margin: 0;
+  }
 
   .level {
     margin-bottom: 28px;
@@ -570,8 +573,6 @@
 }
 
 .settings {
-  margin: auto;
-  padding-bottom: 50px;
 
   h2.settings-title {
     font-size: 45px;

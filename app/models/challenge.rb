@@ -29,7 +29,7 @@ class Challenge < ApplicationRecord
 
   def get_marker_position(date)
     @percent_elapsed = (date - created_at) / (date_complete - created_at)
-    (6 + (68 * @percent_elapsed))
+    (5 + (91 * @percent_elapsed))
   end
 
   def get_worm_length(date)
@@ -87,7 +87,8 @@ class Challenge < ApplicationRecord
         yAxes: [{
           ticks: {
             min: 0,
-            fontFamily: "'Raleway', 'sans-serif'"
+            fontFamily: "'Raleway', 'sans-serif'",
+            padding: 7
           },
           gridLines: {
             drawBorder: false
@@ -109,7 +110,7 @@ class Challenge < ApplicationRecord
       tooltips: {
         backgroundColor: 'white',
         borderWidth: 1,
-        borderColor: 'gray',
+        borderColor: '#cbcbcb',
         titleFontFamily: "'Raleway', 'sans-serif'",
         titleFontColor: 'black',
         bodyFontFamily: "'Raleway', 'sans-serif'",
