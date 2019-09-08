@@ -138,12 +138,12 @@
             span {
               font-size: 12px;
               font-weight: 500;
-              color: #757575;
+              color: inherit;
             }
 
             h2 {
               font-size: 12px;
-              color: #757575;
+              color: inherit;
             }
 
             &.start {
@@ -152,6 +152,7 @@
 
             &.end {
               left: 508px;
+              color: #d0021b;
             }
           }
         }
