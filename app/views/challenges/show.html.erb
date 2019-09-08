@@ -8,6 +8,15 @@
 
 <%# <%= render "layouts/reflection_popup" %>
 
+<script>
+  <% if @challenge_data.key?(:videoID) %>
+    var challengeVideoID = "<%= @challenge_data[:videoID] %>";
+    var showVideo = true;
+  <% else %>
+    var showVideo = false;
+  <% end %>
+</script>
+
 <div class="challenge-page" style="display:none;">
   <div class="back-button">
     <button type="button" class="back" name="button" onclick="location.href='/themes';">
@@ -230,15 +239,10 @@
       </div>
     </div>
     <script>
-      <% if @challenge_data.key?(:videoID) %>
-        var challengeVideoID = "<%= @challenge_data[:videoID] %>";
-        var showVideo = true;
-      <% else %>
-        var showVideo = false;
-      <% end %>
       var challengeName = "<%= @challenge_name %>";
       var already_unlocked = <%= @already_unlocked %>;
       <% if !@already_unlocked %>
+        $('#challenge-modal').on('shown.bs.modal', startVideo)
         $('#challenge-modal').modal('show');
       <% else %>
         $('.themes-page-overlay').hide();

@@ -1,6 +1,7 @@
 $(window).on('load', function() {
   if (window.location.pathname.startsWith('/challenges') && !already_unlocked) {
-    $('#challenge-modal').modal('show');
+    // $('#challenge-modal').on('shown', startVideo())
+    // $('#challenge-modal').modal('show');
   }
 });
 
@@ -42,8 +43,6 @@ function onPlayerReady(event) {
   event.target.playVideo();
 }
 
-$('#challenge-modal').on('shown.bs.modal', startVideo())
-
 function startVideo() {
   if (player) {
     player.destroy();
@@ -72,7 +71,9 @@ function toLastSlide(event) {
     $('.modal-content')[0].style.height = '295px';
     $('.modal-content')[0].style.width = '600px';
     $('.second')[0].style.display = 'block';
-    // document.getElementById('modal-close-button').style.display = 'none';
+    document.getElementById('modal-close-button').onclick = function() {
+      $('#challenge-modal').modal('hide');
+    };
     $('.themes-page-overlay').hide();
     $('.challenge-page').show();
     $.post("/challenges/unlock", {
