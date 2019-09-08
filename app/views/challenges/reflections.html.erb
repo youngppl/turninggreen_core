@@ -3,41 +3,83 @@
 <% end %>
 
 <div class="reflections">
-  <h2 class="heading">Reflections </h2>
+  <h2 class="heading">Reflections
+  </h2>
   <h2 class="info">Click on the each theme below to complete challenges and make a difference!</h2>
-  <!-- <div class="rectangle-reflections">
-    <h2 class="challenge-name">
-      Grocery Shop with Reusables
-    </h2>
-    <div class="inner-rectangle">
-      <div class="question">
-        <h2>Reflection question goes here?</h2>
-        <textarea class="reflection-question" placeholder="Write your answer..."></textarea>
-      </div>
-      <div class="caption">
-        <div class="Input-photo">
-            <div class="mini-rectangle"></div>
+  <div class="panel-group">
+    <% current_user.challenges.where(reflection_completed:false, completed: true).each do |challenge| %>
+      <div class="panel panel-default">
+        <div class="expand-clickable-area"></div>
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <%= image_tag "themes/icons/"+challenge.theme.downcase+".svg", size: "30"  %>
+            <%= challenge.challenge_name %>
+          </h4>
+          <button type="button" class="show-hidden">
+            <i class="fas fa-chevron-down"></i>
+            <i class="fas fa-chevron-up" style="display:none;"></i>
+          </button>
         </div>
-        <textarea class="Caption-photo" placeholder="Caption your photo!"></textarea>
-      </div>
-    </div>
-    <button type="button" class="submitreflections" data-toggle="modal" data-target="#submitreflections">submit reflections</button>
-  </div> -->
-</div>
-
-    <div id="submitreflections" class="modal fade" role="dialog">
-      <div class="reflections-dialog">
-        <div class="reflections-content">
-            <div class="reflections-header">
-              <button type="button" class="close" data-dismiss="modal">&times;</button>
-              <div class="reflections-title">Amazing!</div>
+        <div class="panel-collapse collapse" style="display:none;">
+          <%= form_for :reflection, url: new_reflection_path do |f| %>
+          <%= f.hidden_field :challenge_id, value: challenge.id %>
+          <div class="question row">
+            <h2 class="heading">Reflection question goes here?</h2>
+            <%= f.text_area :reflection, class: "reflection-question", placeholder: "Type away! We can’t wait to hear your experience!" %>
+          </div>
+          <div class="log row">
+            <div class="col-8">
+                <h5 class="instructions">Since your last log:</h5>
+                <h5 class="log-question">How many times did you refuse something you didn't need?</h5>
+                <%= f.number_field :log, {min: 0, class: "log-input"} %>
+              <div class="graph">
+                <%= line_chart challenge.data, challenge.options %>
+                <div class="start box">
+                  <span>start</span>
+                  <h2><%=challenge.created_at.month%>/<%=challenge.created_at.day%></h2>
+                </div>
+                <div class="end box">
+                  <span>end</span>
+                  <h2><%=challenge.date_complete.month%>/<%=challenge.date_complete.day%></h2>
+                </div>
+              </div>
             </div>
-            <div class="reflections-body">
-                You just submitted a reflection! Congrats on finishing this challenge!
-            </div>
-            <div class="Challenge-reflection-completed">
-              Grocery Shop with Reusables
+            <div class="picture col">
+              <h5 class="heading">Share a photo of your shopping experience!</h5>
+              <div class="photo-upload">
+                <label class="upload">
+                  upload
+                  <%= f.file_field :photo, id: "upload-photo", class: "", onchange: "loadUpload(event)", accept: "image/*", hidden: true %>
+                </label>
+              </div>
+              <%= f.text_area :caption, class: "caption", placeholder: "Caption it!" %>
             </div>
           </div>
+          <div class="actions">
+            <%= f.check_box :permission %>
+            <label>I give TG permission to share this check-in </label><br>
+            <%= f.submit "button", class: "submit" %>
+          </div>
+          <% end %>
         </div>
       </div>
+    <% end %>
+  </div>
+</div>
+
+<div id="submitreflections" class="modal fade" role="dialog">
+  <div class="reflections-dialog">
+    <div class="reflections-content">
+      <div class="reflections-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <div class="reflections-title">Amazing!</div>
+      </div>
+      <div class="reflections-body">
+        You just submitted a reflection! Congrats on finishing this challenge!
+      </div>
+      <div class="Challenge-reflection-completed">
+        Grocery Shop with Reusables
+      </div>
+    </div>
+  </div>
+</div>

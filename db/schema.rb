@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_19_230420) do
+ActiveRecord::Schema.define(version: 2019_09_08_010207) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,6 +58,16 @@ ActiveRecord::Schema.define(version: 2019_07_19_230420) do
     t.datetime "updated_at", null: false
     t.bigint "challenge_id"
     t.index ["challenge_id"], name: "index_progress_logs_on_challenge_id"
+  end
+
+  create_table "reflections", force: :cascade do |t|
+    t.bigint "challenge_id"
+    t.text "reflection"
+    t.text "caption"
+    t.boolean "permission"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["challenge_id"], name: "index_reflections_on_challenge_id"
   end
 
   create_table "tips_dailies", force: :cascade do |t|
