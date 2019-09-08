@@ -42,14 +42,16 @@ function onPlayerReady(event) {
   event.target.playVideo();
 }
 
-function nextArrow() {
+$('#challenge-modal').on('shown.bs.modal', startVideo())
+
+function startVideo() {
   if (player) {
     player.destroy();
     player = null;
     onYouTubeIframeAPIReady();
   }
-  $('.first')[0].style.display = 'none';
-  $('.second')[0].style.display = 'block';
+  // $('.first')[0].style.display = 'none';
+  // $('.second')[0].style.display = 'block';
   var tag = document.createElement('script');
   tag.src = "https://www.youtube.com/iframe_api";
   var firstScriptTag = document.getElementsByTagName('script')[0];
@@ -62,13 +64,15 @@ $.ajaxSetup({
   }
 });
 
-function toThirdSlide(event) {
+function toLastSlide(event) {
   if (event.data == YT.PlayerState.ENDED) {
     player.destroy();
     player = null;
-    $('.second')[0].style.display = 'none';
-    $('.third')[0].style.display = 'block';
-    document.getElementById('modal-close-button').style.display = 'none';
+    $('.first')[0].style.display = 'none';
+    $('.modal-content')[0].style.height = '295px';
+    $('.modal-content')[0].style.width = '600px';
+    $('.second')[0].style.display = 'block';
+    // document.getElementById('modal-close-button').style.display = 'none';
     $('.themes-page-overlay').hide();
     $('.challenge-page').show();
     $.post("/challenges/unlock", {
@@ -80,12 +84,12 @@ function toThirdSlide(event) {
 function onYouTubeIframeAPIReady() {
   if (showVideo) {
     player = new YT.Player('video', {
-      height: '452',
-      width: '802',
+      height: '406',
+      width: '720',
       videoId: challengeVideoID,
       events: {
         'onReady': onPlayerReady,
-        'onStateChange': toThirdSlide
+        'onStateChange': toLastSlide
       }
     });
   }

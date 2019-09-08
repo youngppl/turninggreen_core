@@ -6,7 +6,7 @@
   <%= render template: '/themes/index.html.erb' %>
 </div>
 
-<%= render "layouts/reflection_popup" %>
+<%# <%= render "layouts/reflection_popup" %>
 
 <div class="challenge-page" style="display:none;">
   <div class="back-button">
@@ -171,11 +171,11 @@
         <div class="modal-content">
           <div class="modal-close">
             <button type="button" class="close" id="modal-close-button" onclick="history.back()" aria-label="Close" data-turbolinks="true">
-              <%= image_tag 'exit-button.svg' %>
+              &times;
             </button>
           </div>
           <div class="modal-body">
-            <div class="first slide">
+            <!-- <div class="first slide">
               <h2 class="modalHeader">Unlock
                 <%= @challenge_name %>
                 Challenges</h2>
@@ -195,31 +195,34 @@
                   </button>
                 </div>
               <% end %>
-            </div>
-            <div class="second slide">
-              <h2 class="modalHeader">Unlock
-                <%= @challenge_name %>
-                Challenges</h2>
+            </div> -->
+            <div class="first slide">
+              <h2 class="modalHeader"><%= @challenge_name %> Challenges</h2>
+              <p class="instructions">Before you can get started on the challenges, watch this video to get a deeper understanding of this theme!</p>
               <div id="video">
                 If the video does not appear in 10 seconds, exit this pop-up and click this theme again.
               </div>
-              <p class="helpText"><%= @challenge_data[:videoCaption] %></p>
             </div>
-            <div class="third slide">
-              <div class="challenge-unlock helpText">
-                <h3 class="greatjob">Great Job!</h3>
+            <div class="second slide">
+              <div class="challenge-unlock">
+                <h5 class="heading">👏claps for you!👏</h5>
                 <div class="cool">
-                  You just unlocked the
-                  <%= @challenge_name %>
-                  challenges!
-                  <br>Now, let’s create change!
+                  Hooray! Now you can get started on the <strong><%= @challenge_name.downcase %></strong> challenges!
                 </div>
-                <div class="check-img">
-                  <%= image_tag 'to-do-checked.svg' %>
+                <div class="points-tracker">
+                  <h5 class="keep-it-up">Keep it up! You’ve got 3 extra points!</h5>
+                  <div class="branding"></div>
+                  <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: 100px !important" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="marker-container">
+                      <div class="marker">
+                        <!-- <span class="label">100</span> -->
+                      </div>
+                    </div>
+                  </div>
+                  <div class="start box">100</div>
+                  <div class="end box">140</div>
                 </div>
-                <button type="button" class="create-change-button" name="button" onclick="$('#challenge-modal').modal('hide');">
-                  <h2 class="create-change-text">Create Change</h2>
-                </button>
               </div>
             </div>
           </div>
