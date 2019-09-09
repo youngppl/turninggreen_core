@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  include UsersHelper
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -13,6 +15,16 @@ class User < ApplicationRecord
 
   def add_points(pts)
     update(points: points + pts)
+    if points >= level_ranges[level + 1][0]
+      update(level: level + 1)
+    end
+  end
+
+  def level_progress
+    @start = level_ranges[level][0]
+    @end = level_ranges[level][1]
+    @current = points
+    ((@current - @start)/(@end - @start).to_f)*100
   end
 
   # saving/editing

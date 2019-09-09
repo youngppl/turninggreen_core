@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
+  include UsersHelper
 
   def show
     # user dashboard, redirects here after successful login
@@ -9,6 +10,7 @@ class UsersController < ApplicationController
       end
     end
     @current_challenges = current_user.challenges.where(completed:false)
+    @level = current_user.level
   end
 
   def feedback
