@@ -33,6 +33,19 @@
       &.locked {
         background-color: rgba(0, 0, 0, 0.29);
       }
+
+      .icon-box {
+        text-align: center;
+        .ring {
+          position: relative;
+          top: 20px;
+        }
+        .icon {
+          position: relative;
+          top: -56px;
+        }
+      }
+
       .name {
         font-size: 20px;
         font-weight: 600;

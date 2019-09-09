@@ -15,8 +15,9 @@
       <% if current_user.unlockedChallenges.include?(theme) || !themes_unlock.include?(theme.to_sym) %>
         <%= link_to challenges_path(theme) do %>
           <div class="theme row align-items-center">
-            <div class="col-4">
-              <div class="icon-box"><%= image_tag("themes/icons/"+theme.downcase+".svg", class: "icon") %></div>
+            <div class="icon-box col-4">
+              <%= image_tag("themes/rings/theme-ring.svg", class: 'ring') %>
+              <%= image_tag("themes/icons/"+theme.downcase+".svg", class: "icon") %>
             </div>
             <div class="col">
               <div class="name"><%= theme.downcase %></div>
@@ -26,8 +27,9 @@
         <% end %>
       <% else %>
         <div class="theme row align-items-center locked">
-          <div class="col-4">
-            <div class="icon-box"><%= image_tag("themes/icons/"+theme.downcase+".svg", class: "icon") %></div>
+          <div class="icon-box col-4">
+            <%= image_tag("themes/rings/theme-ring.svg", class: 'ring') %>
+            <%= image_tag("themes/icons/"+theme.downcase+".svg", class: "icon") %>
           </div>
           <div class="col">
             <div class="name"><%= theme.downcase %></div>
@@ -43,7 +45,6 @@
 </div>
     <!-- <div class="themesRow">
         <div class="theme">
-          <%# <%= image_tag("themes/rings/theme-ring.svg") %> %>
           <%# <% (1..6).each do |num| %> %>
             <%# <svg height="10" width="40" class="line _<%= num %>"><line x1="0" y1="0" x2="16" y2="0"/></svg> %>
           <%# <% end %> %>
