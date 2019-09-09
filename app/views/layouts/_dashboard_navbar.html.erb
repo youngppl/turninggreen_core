@@ -61,7 +61,8 @@
 
 <nav class="dash-nav">
   <a href="<%= root_path %>" tabindex="0" id="challenge_added_popover" class="tg-logo" data-toggle="popover" data-placement="bottom">
-    <div class="logo-tag"></div>
+    <!-- <div class="logo-tag"></div> -->
+    <%= image_tag "rootup-logo.png", class: "logo" %>
   </a>
   <h5 class="level">lvl 2</h5>
   <h5 class="username"><%= current_user.name %></h5>
