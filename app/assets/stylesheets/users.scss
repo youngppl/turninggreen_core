@@ -90,6 +90,7 @@
         .marker {
           position: relative;
           display: inline-block;
+          top: 3px;
 
           .label {
             font-size: 12px;
@@ -241,6 +242,7 @@
             color: $brand-color;
             position: absolute;
             left: -19px;
+            top: 26px;
           }
 
           .line {
