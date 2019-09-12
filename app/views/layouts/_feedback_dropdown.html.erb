@@ -7,7 +7,8 @@
     <div class="gray-background">
       <h5 class="subtitle">Have any questions or comments for us about our website?</h5>
       <textarea class="feedback-input" rows="8" cols="80" placeholder="Start typing here…"></textarea>
-      <button type="button" name="button" onclick="sendFeedback();">button</button>
+      <h5 class="confirmation">feedback received</h5>
+      <button type="button" name="button" onclick="sendFeedback();event.stopPropagation();">button</button>
     </div>
   </div>
 </div>

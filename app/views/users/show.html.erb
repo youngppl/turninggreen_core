@@ -32,6 +32,14 @@
           <a class="nav-link <%= 'active' if index == 0 %>" id="v-pills-home-tab" data-toggle="pill" href="#_<%= challenge.id %>" role="tab">
             <span><%= challenge.challenge_name%></span></a>
         <% end %>
+        <% empty_tabs = @current_challenges.length %>
+        <% if @current_challenges.length < 6 %>
+          <a class="nav-link add-challenge" href="<%= themes_path %>">&#43;</a>
+          <% empty_tabs += 1%>
+        <% end %>
+        <% (1..6-empty_tabs).each do %>
+          <a class="nav-link" ></a>
+        <% end %>
       </div>
       <div class="challenge-content tab-content">
         <% @current_challenges.each_with_index do |challenge, index| %>
@@ -39,20 +47,29 @@
             <div class="row">
               <div class="col-3">
                 <div class="date">
-                  <h5 class="month"><%= Date::MONTHNAMES[Date.today.month].downcase %></h5>
+                  <h5 class="month"><%= month_names[Date.today.month - 1] %></h5>
                   <h5 class="day"><%= Date.today.day %></h5>
                 </div>
                 <div class="log-question">
                   <h5 class="heading">Since your last log:</h5>
                   <h5 class="question">question here</h5>
-                  <input type="number" min="0" class="log-input _<%= challenge.id %>">
-                  <button type="button" name="button" onclick="recordMetric_<%= challenge.id %>(<%= challenge.id %>, $(this).siblings('.log-input').val());$('#metric-logged').modal();">button</button>
+                  <% if challenge.progress_logs.last.created_at.to_date == Date.today && challenge.progress_logs.last.metric != 0 %>
+                    <input type="number" value="<%= challenge.progress_logs.last.metric %>" disabled min="0" class="log-input _<%= challenge.id %>">
+                    <h5 class="log-complete">today’s log complete!</h5>
+                  <% else %>
+                    <input type="number" min="0" class="log-input _<%= challenge.id %>" oninput="(this.value > 0)? $(this).siblings('button').attr('disabled', false) : $(this).siblings('button').attr('disabled', true) ">
+                    <button type="button" name="button" class="btn" disabled onclick="recordMetric_<%= challenge.id %>(<%= challenge.id %>, $(this).siblings('.log-input').val());$('#metric-logged').modal();updateLogPrompt(this);">button</button>
+                  <% end %>
                 </div>
               </div>
               <div class="graph col-9">
-                <%= line_chart challenge.data, challenge.options %>
+                <canvas id="chart_<%= challenge.id %>" width="510" height="300"></canvas>
+                <script>
+                  var chart_<%= challenge.id %> = new Chart($('#chart_<%= challenge.id %>'), {type: 'line', data: <%= raw to_javascript_string challenge.data%> ,  options: <%=  raw to_javascript_string challenge.options %> })
+                </script>
+                <%# <%= line_chart challenge.data, challenge.options %>
                 <div class="today marker _<%= challenge.id %>" style="left:<%= challenge.today_marker_position %>%">
-                  <% if challenge.created_at.day != DateTime.now.day %>
+                  <% if challenge.created_at.day != DateTime.now.day && challenge.date_complete.day != DateTime.now.day %>
                     <svg height="30" width="10" class="line"><line x1="0" y1="0" x2="0" y2="26"/></svg>
                     <span class="label">today</span>
                   <% end %>
@@ -76,8 +93,17 @@
               });
               $('.today.metric').children('span').html($('.log-input._<%= challenge.id %>').val() + ' metrics');
               $('.cumulative.metric').children('span').html((Number($('.log-input._<%= challenge.id %>').val()) + <%= challenge.cumulative_metrics.to_i %>) + ' metrics');
+              chart_<%= challenge.id %>.data.datasets[0].data.push({t:"<%=DateTime.now.getutc.strftime("%Y-%m-%d")%>", y: Number($('.log-input._<%= challenge.id %>').val())})
+              chart_<%= challenge.id %>.update()
             }
           </script>
+        <% end %>
+        <% if @current_challenges.length == 0 %>
+        <div class="no-challenges">
+          <h5 class="heading">nothing to show...yet!</h5>
+          <p class="instructions">Click the plus sign on the left to add a challenge and get started on your sustainable journey!</p>
+          <div class="branding filler"></div>
+        </div>
         <% end %>
       </div>
       <%= render 'layouts/dashboard/metric_logged_popup', {points_earned: false,} %>

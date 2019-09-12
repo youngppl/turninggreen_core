@@ -44,6 +44,8 @@
 
     &.active {
       background-color: #f0f1f2;
+      width: 260px;
+      margin-right: -135px;
     }
 
     &.log-out {
@@ -70,7 +72,10 @@
 .top-nav {
   justify-content: flex-end;
   padding: 20px 30px;
-  background-color: #f0f1f2;
+  display: flex;
+  width: 100px;
+  position: absolute;
+  right: 0;
 
   .nav-button {
     width: 30px;
@@ -209,7 +214,15 @@
     color: #5f5f5f;
     outline: none;
     padding: 12px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+  }
+
+  .confirmation {
+    font-size: 11px;
+    font-weight: 500;
+    color: #417505;
+    text-align: center;
+    display: none;
   }
 
   button {
@@ -223,7 +236,7 @@
     color: #5f5f5f;
     background-color: white;
     outline: none;
-    margin-left: 34%;
+    margin-left: 33%;
   }
 }
 
