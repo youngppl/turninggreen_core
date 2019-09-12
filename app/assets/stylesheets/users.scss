@@ -3,9 +3,16 @@
 }
 
 .dashboard {
-  margin: auto;
-  width: 75%;
-  padding-bottom: 50px;
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+    // remove arrow on number inputs
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type=number] {
+      -moz-appearance:textfield;
+  }
 
   .level {
     margin-bottom: 28px;
@@ -153,6 +160,18 @@
           border-radius: 18px 0 0 18px;
           display: table;
           width: 100%;
+          border-bottom: solid 1px #e3e3e3;
+
+          &.add-challenge {
+            font-size: 55px;
+            padding: 0;
+            text-align: center;
+            line-height: 1;
+            color: gray;
+            &:hover {
+              color: #5f5f5f;
+            }
+          }
 
           span {
             display: table-cell;
@@ -169,6 +188,7 @@
         padding: 30px;
         vertical-align: top;
         max-height: 100%;
+        width: 80%;
 
         .col-9 {
           height: 300px !important;
@@ -189,7 +209,7 @@
             font-weight: normal;
             color: $brand-color;
             margin-top: -18px;
-            line-height: 71px;
+            line-height: 1;
           }
         }
 
@@ -227,6 +247,13 @@
             text-align: center;
             color: #5f5f5f;
             background-color: white;
+          }
+
+          .log-complete {
+            font-size: 11px;
+            font-weight: 500;
+            color: #5f5f5f;
+            text-align: center;
           }
         }
 
@@ -276,6 +303,27 @@
 
           &.end {
             left: 381px;
+          }
+        }
+        .no-challenges {
+          margin: auto;
+          width: 203px;
+          .heading {
+            font-size: 20px;
+            font-weight: 600;
+            color: #5f5f5f;
+          }
+          .instructions {
+            font-size: 12px;
+            font-weight: 600;
+            width: 203px;
+            color: #5f5f5f;
+          }
+          .branding {
+            width: 203px;
+            height: 171px;
+            border: solid 1px #979797;
+            background-color: #d8d8d8;
           }
         }
       }
@@ -572,8 +620,6 @@
 }
 
 .settings {
-  margin: auto;
-  padding-bottom: 50px;
 
   h2.settings-title {
     font-size: 45px;

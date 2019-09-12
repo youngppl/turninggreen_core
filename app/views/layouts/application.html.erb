@@ -9,12 +9,12 @@
           <%= yield(:navbar) %>
         </div>
         <div class="col">
-          <div class="top-nav row">
+          <div class="top-nav">
             <%= render 'layouts/notifications_dropdown' %>
             <%= render 'layouts/feedback_dropdown' %>
           </div>
           <%= render "layouts/alerts"%>
-          <div class="main-content row">
+          <div class="main-content row justify-content-center">
             <%= yield %>
           </div>
         </div>
