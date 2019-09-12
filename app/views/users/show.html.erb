@@ -57,8 +57,8 @@
                     <input type="number" value="<%= challenge.progress_logs.last.metric %>" disabled min="0" class="log-input _<%= challenge.id %>">
                     <h5 class="log-complete">today’s log complete!</h5>
                   <% else %>
-                    <input type="number" min="0" class="log-input _<%= challenge.id %>">
-                    <button type="button" name="button" onclick="recordMetric_<%= challenge.id %>(<%= challenge.id %>, $(this).siblings('.log-input').val());$('#metric-logged').modal();updateLogPrompt(this);">button</button>
+                    <input type="number" min="0" class="log-input _<%= challenge.id %>" oninput="(this.value > 0)? $(this).siblings('button').attr('disabled', false) : $(this).siblings('button').attr('disabled', true) ">
+                    <button type="button" name="button" class="btn" disabled onclick="recordMetric_<%= challenge.id %>(<%= challenge.id %>, $(this).siblings('.log-input').val());$('#metric-logged').modal();updateLogPrompt(this);">button</button>
                   <% end %>
                 </div>
               </div>
@@ -93,7 +93,7 @@
               });
               $('.today.metric').children('span').html($('.log-input._<%= challenge.id %>').val() + ' metrics');
               $('.cumulative.metric').children('span').html((Number($('.log-input._<%= challenge.id %>').val()) + <%= challenge.cumulative_metrics.to_i %>) + ' metrics');
-              chart_<%= challenge.id %>.data.datasets[0].data.push({t:"<%=Time.now.strftime("%Y-%m-%d")%>", y: Number($('.log-input._<%= challenge.id %>').val())})
+              chart_<%= challenge.id %>.data.datasets[0].data.push({t:"<%=DateTime.now.getutc.strftime("%Y-%m-%d")%>", y: Number($('.log-input._<%= challenge.id %>').val())})
               chart_<%= challenge.id %>.update()
             }
           </script>
