@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
-  # include Chartjs.ChartHelpers
+  
+  include UsersHelper
   require 'chartjs/chart_helpers'
 
   def show
@@ -11,6 +12,7 @@ class UsersController < ApplicationController
       end
     end
     @current_challenges = current_user.challenges.where(completed:false)
+    @level = current_user.level
   end
 
   def feedback

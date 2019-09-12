@@ -8,20 +8,22 @@
     <div class="level-content">
       <div class="branding"></div>
       <div class="info">
-        <h5 class="heading">lvl2</h5>
-        <h5 class="name">level name</h5>
-        <p class="learn-more">Learn more Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        <h5 class="heading">lvl <%= @level %></h5>
+        <h5 class="name"><%= levels[@level][0] %></h5>
+        <p class="learn-more"><%= levels[@level][1] %></p>
       </div>
       <div class="progress">
-        <div class="progress-bar" role="progressbar" style="width: 100px !important" aria-valuemin="0" aria-valuemax="100"></div>
+        <div class="progress-bar" role="progressbar" style="width: <%= current_user.level_progress %>% !important" aria-valuemin="0" aria-valuemax="100"></div>
         <div class="marker-container">
-          <div class="marker">
-            <!-- <span class="label">100</span> -->
-          </div>
+          <% if current_user.level_progress != 0 && current_user.level_progress != 100 %>
+            <div class="marker" style="left: <%= current_user.level_progress - 3%>%">
+              <%= current_user.points %>
+            </div>
+          <% end %>
         </div>
       </div>
-      <div class="start box">100</div>
-      <div class="end box">140</div>
+      <div class="start box"> <%= level_ranges[@level] %></div>
+      <div class="end box"> <%= level_ranges[@level + 1] %></div>
     </div>
   </div>
   <div class="current-challenges">

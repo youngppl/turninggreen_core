@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_19_230420) do
+ActiveRecord::Schema.define(version: 2019_09_09_044036) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,6 +60,16 @@ ActiveRecord::Schema.define(version: 2019_07_19_230420) do
     t.index ["challenge_id"], name: "index_progress_logs_on_challenge_id"
   end
 
+  create_table "reflections", force: :cascade do |t|
+    t.bigint "challenge_id"
+    t.text "reflection"
+    t.text "caption"
+    t.boolean "permission"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["challenge_id"], name: "index_reflections_on_challenge_id"
+  end
+
   create_table "tips_dailies", force: :cascade do |t|
     t.string "tip"
     t.string "info"
@@ -93,6 +103,8 @@ ActiveRecord::Schema.define(version: 2019_07_19_230420) do
     t.text "deactivation_reasons", default: [], array: true
     t.text "notifications_content", default: ["check-in"], array: true
     t.text "permissions", array: true
+    t.integer "points", default: 0
+    t.integer "level", default: 0
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
