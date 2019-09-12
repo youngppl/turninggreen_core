@@ -214,7 +214,15 @@
     color: #5f5f5f;
     outline: none;
     padding: 12px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+  }
+
+  .confirmation {
+    font-size: 11px;
+    font-weight: 500;
+    color: #417505;
+    text-align: center;
+    display: none;
   }
 
   button {
@@ -228,7 +236,7 @@
     color: #5f5f5f;
     background-color: white;
     outline: none;
-    margin-left: 34%;
+    margin-left: 33%;
   }
 }
 
