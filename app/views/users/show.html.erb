@@ -63,9 +63,13 @@
                 </div>
               </div>
               <div class="graph col-9">
-                <%= line_chart challenge.data, challenge.options %>
+                <canvas id="chart_<%= challenge.id %>" width="510" height="300"></canvas>
+                <script>
+                  var chart_<%= challenge.id %> = new Chart($('#chart_<%= challenge.id %>'), {type: 'line', data: <%= raw to_javascript_string challenge.data%> ,  options: <%=  raw to_javascript_string challenge.options %> })
+                </script>
+                <%# <%= line_chart challenge.data, challenge.options %>
                 <div class="today marker _<%= challenge.id %>" style="left:<%= challenge.today_marker_position %>%">
-                  <% if challenge.created_at.day != DateTime.now.day %>
+                  <% if challenge.created_at.day != DateTime.now.day && challenge.date_complete.day != DateTime.now.day %>
                     <svg height="30" width="10" class="line"><line x1="0" y1="0" x2="0" y2="26"/></svg>
                     <span class="label">today</span>
                   <% end %>
@@ -89,6 +93,8 @@
               });
               $('.today.metric').children('span').html($('.log-input._<%= challenge.id %>').val() + ' metrics');
               $('.cumulative.metric').children('span').html((Number($('.log-input._<%= challenge.id %>').val()) + <%= challenge.cumulative_metrics.to_i %>) + ' metrics');
+              chart_<%= challenge.id %>.data.datasets[0].data.push({t:"<%=Time.now.strftime("%Y-%m-%d")%>", y: Number($('.log-input._<%= challenge.id %>').val())})
+              chart_<%= challenge.id %>.update()
             }
           </script>
         <% end %>

@@ -88,7 +88,8 @@ class Challenge < ApplicationRecord
           ticks: {
             min: 0,
             fontFamily: "'Raleway', 'sans-serif'",
-            padding: 7
+            padding: 7,
+            callback: "function(value) {if (value % 1 === 0) {return value;}}"
           },
           gridLines: {
             drawBorder: false

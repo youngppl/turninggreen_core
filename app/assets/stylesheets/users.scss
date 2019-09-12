@@ -10,6 +10,10 @@
     margin: 0;
   }
 
+  input[type=number] {
+      -moz-appearance:textfield;
+  }
+
   .level {
     margin-bottom: 28px;
 

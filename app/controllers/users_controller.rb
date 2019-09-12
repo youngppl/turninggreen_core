@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
+  # include Chartjs.ChartHelpers
+  require 'chartjs/chart_helpers'
 
   def show
     # user dashboard, redirects here after successful login
