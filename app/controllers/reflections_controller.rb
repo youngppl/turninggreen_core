@@ -3,6 +3,7 @@ class ReflectionsController < ApplicationController
     Challenge.find(params[:reflection][:challenge_id]).progress_logs.create(metric: params[:reflection][:log])
     Reflection.create(reflection_params)
     Challenge.find(params[:reflection][:challenge_id]).update(reflection_completed: true)
+    current_user.add_points(3)
   end
 
   private

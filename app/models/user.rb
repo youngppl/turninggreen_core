@@ -20,10 +20,15 @@ class User < ApplicationRecord
     end
   end
 
-  def level_progress
+  def level_progress(points_to_add = nil)
+    # points_to_add is for projected points if you want progress before points is actually updated in the modal
     @start = level_ranges[level]
     @end = level_ranges[level + 1]
-    @current = points
+    if points_to_add
+      @current = points + points_to_add
+    else
+      @current = points
+    end
     ((@current - @start)/(@end - @start).to_f)*100
   end
 
