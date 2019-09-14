@@ -36,6 +36,7 @@
 
       .icon-box {
         text-align: center;
+        position: relative;
         .ring {
           position: relative;
           top: 20px;
@@ -43,6 +44,34 @@
         .icon {
           position: relative;
           top: -56px;
+          &.body {
+            top: -50px;
+          }
+        }
+        .completed-ring {
+            position: absolute;
+            top: 20px;
+            left: 70px;
+            // &._1 {
+            //   top: 20px;
+            //   left: 70px;
+            // }
+
+            &._2 {
+              left: 71px;
+            }
+
+            // &._3 {
+            //
+            // }
+
+            &._4 {
+              left: 31px;
+            }
+
+            &._5, &._6 {
+              left: 24px;
+            }
         }
       }
 

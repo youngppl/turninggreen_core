@@ -13,11 +13,19 @@
     <% (1..2).each do %>
       <% theme = themes[counter] %>
       <% if current_user.unlockedChallenges.include?(theme) || !themes_unlock.include?(theme.to_sym) %>
+        <!-- unlocked theme card-->
         <%= link_to challenges_path(theme) do %>
           <div class="theme row align-items-center">
             <div class="icon-box col-4">
               <%= image_tag("themes/rings/theme-ring.svg", class: 'ring') %>
-              <%= image_tag("themes/icons/"+theme.downcase+".svg", class: "icon") %>
+              <%= image_tag("themes/icons/"+theme.downcase+".svg", class: "icon " + theme.downcase) %>
+              <% num_completed = Challenge.where(user_id: current_user, theme: theme.capitalize, completed: true).length %>
+                <% if num_completed > 6 %>
+                  <% num_completed = 6 %>
+                <% end %>
+                <% if num_completed > 0 %>
+                    <%= image_tag("themes/rings/"+theme.downcase+"-"+num_completed.to_s+".svg", class: 'completed-ring _'+num_completed.to_s) %>
+                <% end %>
             </div>
             <div class="description-box col">
               <div class="name"><%= theme.downcase %></div>
@@ -26,6 +34,7 @@
           </div>
         <% end %>
       <% else %>
+        <!-- locked theme card -->
         <div class="theme row align-items-center locked">
           <div class="icon-box col-4">
             <%= image_tag("themes/rings/theme-ring.svg", class: 'ring') %>
@@ -52,14 +61,7 @@
             <div class="theme-locked"></div>
           <%# <% else %> %>
             <div class="completed-ring">
-              <%# <% num_completed = Challenge.where(user_id: current_user, theme: challenge_name.capitalize, completed: true).length %> %>
-                <%# <% if num_completed > 6 %> %>
-                  <%# <% num_completed = 6 % %>
-                  <%# <% if num_completed > 0 %> %>
-                    <%# <% for i in 1..num_completed %> %>
-                      <%# <%= image_tag("themes/rings/theme-ring-0"+i.to_s+".svg", class: 'ring _'+i.to_s) %> %>
-                    <%# <% end %> %>
-                  <%# <% end %> %>
+
                 </div>
               <%# <% end %> %>
               <%# <%= link_to challenges_path(challenge_name) do %> %>
