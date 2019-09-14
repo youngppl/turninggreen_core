@@ -1,5 +1,6 @@
 .themes-page {
   margin: auto;
+
   .title {
     font-size: 24px;
     font-weight: 500;
@@ -15,9 +16,11 @@
 
   .themes-row {
     margin-bottom: 32px;
+
     a {
       text-decoration: none;
     }
+
     .theme {
       width: 445px;
       height: 140px;
@@ -27,9 +30,11 @@
       background-color: #ffffff;
       margin-right: 44px;
       margin-left: 0;
+
       &:hover:not(.locked) {
         box-shadow: 0 7px 31px 0 rgba(0, 0, 0, 0.1), 0 2px 10px 0 rgba(0, 0, 0, 0.17), 0 7px 12px 0 rgba(0, 0, 0, 0.17);
       }
+
       &.locked {
         background-color: rgba(0, 0, 0, 0.29);
       }
@@ -37,41 +42,38 @@
       .icon-box {
         text-align: center;
         position: relative;
+
         .ring {
           position: relative;
           top: 20px;
         }
+
         .icon {
           position: relative;
           top: -56px;
+
           &.body {
             top: -50px;
           }
         }
+
         .completed-ring {
-            position: absolute;
-            top: 20px;
-            left: 70px;
-            // &._1 {
-            //   top: 20px;
-            //   left: 70px;
-            // }
+          position: absolute;
+          top: 20px;
+          left: 70px;
 
-            &._2 {
-              left: 71px;
-            }
+          &._2 {
+            left: 71px;
+          }
 
-            // &._3 {
-            //
-            // }
+          &._4 {
+            left: 31px;
+          }
 
-            &._4 {
-              left: 31px;
-            }
-
-            &._5, &._6 {
-              left: 24px;
-            }
+          &._5,
+          &._6 {
+            left: 24px;
+          }
         }
       }
 
@@ -86,12 +88,14 @@
         color: #5f5f5f;
         margin-bottom: 8px;
       }
+
       .description {
         font-size: 14px;
         font-weight: 500;
         color: #5f5f5f;
         margin: 0;
       }
+
       .special-instructions {
         font-size: 14px;
         font-weight: 500;
@@ -101,149 +105,10 @@
   }
 }
 
-// .theme {
-//   width: 174px;
-//   height: 174px;
-//   margin-top: 20px;
-//   margin-right: 35px;
-//   display: inline-block;
-//   white-space: nowrap;
-//   vertical-align: top;
-//   position: relative;
-//   box-shadow: 5px 5px 6px 0 #9f9f9f;
-//   border-radius: 50%;
-//
-//   .line {
-//     stroke: #979797;
-//     stroke-width: 2;
-//     position: relative;
-//     &._1 {
-//       transform: rotate(90deg);
-//       top: -69px;
-//       left: -125px;
-//     }
-//
-//     &._2 {
-//       transform: rotate(-30deg);
-//       left: -83px;
-//       top: -44px;
-//     }
-//     &._3 {
-//       transform: rotate(30deg);
-//       left: -131px;
-//       top: 48px;
-//     }
-//     &._4 {
-//       transform: rotate(90deg);
-//       left: -257px;
-//       top: 89px;
-//     }
-//     &._5 {
-//       transform: rotate(-30deg);
-//       left: -351px;
-//       top: 35px;
-//     }
-//     &._6 {
-//       transform: rotate(30deg);
-//       left: -399px;
-//       top: -33px;
-//     }
-//   }
-//
-//   .theme-name {
-//     font-size: 30px;
-//     font-weight: 600;
-//     text-align: center;
-//     color: #4a4a4a;
-//     margin-top: 20px;
-//   }
-//
-//   .theme-locked {
-//     width: 175px;
-//     height: 175px;
-//     position: absolute;
-//     border-radius: 50%;
-//     top: 3px;
-//     left: 3px;
-//     background-color: rgba(0, 0, 0, 0.3);
-//     filter: blur(1px);
-//   }
-//
-//   .icon-box {
-//     height: 135px;
-//     width: 135px;
-//     border-radius: 50%;
-//     position: relative;
-//     margin-top: -228px;
-//     margin-left: 25px;
-//
-//     .icon {
-//       position: absolute;
-//       top: 0;
-//       bottom: 0;
-//       left: 0;
-//       right: 0;
-//       margin: auto;
-//
-//       &.locked {
-//         filter: blur(7px);
-//       }
-//     }
-//   }
-//
-//   .completed-ring {
-//     position: absolute;
-//     top: 0;
-//
-//     .ring {
-//       position: absolute;
-//       top: 0;
-//
-//       &._1 {
-//         margin-left: 89px;
-//         margin-top: 2px;
-//       }
-//
-//       &._2 {
-//         margin-left: 151px;
-//         margin-top: 46px;
-//       }
-//
-//       &._3 {
-//         margin-left: 90px;
-//         margin-top: 125px;
-//       }
-//
-//       &._4 {
-//         margin-left: 15px;
-//         margin-top: 125px;
-//       }
-//
-//       &._5 {
-//         margin-left: 3px;
-//         margin-top: 46px;
-//       }
-//
-//       &._6 {
-//         margin-top: 2px;
-//         margin-left: 15px;
-//       }
-//     }
-//   }
-// }
-
 .thumbnail {
   position: relative;
   cursor: pointer;
 }
-
-// .caption {
-//   position: absolute;
-//   top: 45%;
-//   left: 0;
-//   width: 100%;
-//   color: #fff;
-// }
 
 .overlay {
   position: absolute;
@@ -279,13 +144,6 @@
   margin-bottom: 20px;
 }
 
-// .themes-title {
-//   font-size: 24px;
-//   font-weight: 500;
-//   color: #5f5f5f;
-//   text-align: left;
-// }
-
 .helpText,
 .modalHeader,
 .themeVideo {
@@ -298,36 +156,12 @@
   color: #4a4a4a;
 }
 
-// .themes-help-text {
-//   font-size: 14px;
-//   font-weight: 500;
-//   color: #5f5f5f;
-//   text-align: left;
-// }
-
 .modal-dialog {
   max-width: none;
   margin: 1.75em 15%;
 }
 
 #challenge-modal {
-  // .modal-body,
-
-    // .helpText {
-    //   font-size: 28px;
-    //   line-height: 1.64;
-    //   letter-spacing: -0.2px;
-    //
-    //   .description {
-    //     font-weight: 500;
-    //   }
-    //
-    //   .watchVideoText {
-    //     font-weight: bold;
-    //   }
-    // }
-
-
   .modal-body {
     margin: -11px 27px;
 
@@ -342,11 +176,10 @@
     border-radius: 17px;
     background-color: #ffffff;
     display: inline-block;
-    margin: auto;
-    margin-top: 0;
+    margin: 0 auto auto;
+
     iframe#video {
-      margin: auto;
-      margin-top: -1px;
+      margin: -1px auto auto;
     }
   }
 
@@ -368,7 +201,7 @@
     line-height: 1;
     color: #979797;
     text-shadow: 0 1px 0 #fff;
-    opacity: .5;
+    opacity: 0.5;
     right: 15px;
     position: relative;
     font-size: 50px;
@@ -398,37 +231,6 @@
       text-align: center;
       display: none;
     }
-
-    // &.third {
-    //   .create-change-text {
-    //     font-size: 26px;
-    //     font-weight: bold;
-    //     letter-spacing: -0.2px;
-    //     margin-top: 6px;
-    //   }
-    //
-    //   .create-change-button {
-    //     background-color: #87b67b;
-    //     border-radius: 12px;
-    //     width: 232px;
-    //     height: 53px;
-    //     margin-top: 45px;
-    //     border: none;
-    //   }
-    // }
-
-    // .watchVideo button {
-    //   background-color: #87b67b;
-    //   color: inherit;
-    //   height: 53px;
-    //   width: 232px;
-    //   border: none;
-    //   margin-top: 20px;
-    //   font-size: 28px;
-    //   text-align: center;
-    //   font-weight: 900;
-    //   border-radius: 10px;
-    // }
   }
 }
 
@@ -450,74 +252,6 @@
     text-align: center;
     color: #5f5f5f;
     width: 290px;
-    margin: auto;
-    margin-bottom: 20px;
+    margin: auto auto 20px;
   }
 }
-//   #check {
-//     fill: none;
-//     stroke: #be1d2c;
-//     stroke-width: 10;
-//     stroke-linecap: round;
-//     stroke-dasharray: 180;
-//     stroke-dashoffset: 180;
-//     -webkit-animation: draw 2s ease;
-//     animation: draw 2s ease;
-//     animation-fill-mode: forwards;
-//   }
-//   @keyframes draw {
-//     to {
-//       stroke-dashoffset: 0;
-//     }
-//   }
-//   @-webkit-keyframes draw {
-//     to {
-//       stroke-dashoffset: 0;
-//     }
-//   }
-//   @-webkit-keyframes fadeIn {
-//     from {
-//       opacity: 0;
-//     }
-//
-//     to {
-//       opacity: 1;
-//     }
-//   }
-//   @keyframes fadeIn {
-//     from {
-//       opacity: 0;
-//     }
-//
-//     to {
-//       opacity: 1;
-//     }
-//   }
-//
-//   .fadeIn {
-//     -webkit-animation-name: fadeIn 1s 1s ease;
-//     animation: fadeIn 1s 1s ease;
-//     animation-fill-mode: forwards;
-//     font-family: Raleway;
-//     font-size: 32px;
-//     font-weight: 500;
-//     font-style: normal;
-//     font-stretch: normal;
-//     line-height: 1.31;
-//     letter-spacing: -0.2px;
-//     text-align: center;
-//     color: #4f5151;
-//   }
-// }
-//
-// .overlay.current_challenges_overlay {
-//   background-color: rgba(0, 0, 0, 0.1);
-// }
-//
-// .challenge-name-text {
-//   font-size: 25px;
-// }
-//
-// .check-img {
-//   margin-top: 17px;
-// }
