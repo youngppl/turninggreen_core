@@ -1,88 +1,27 @@
-<!-- <nav class="navbar navbar-expand-lg">
-  <span class="navbar-brand" href="#">
-    <a href="<%= root_path %>" tabindex="0" id="challenge_added_popover" class="tg-logo" data-toggle="popover" data-placement="bottom">
-      <div class="logo-tag">
-        <%= image_tag('logo.svg') %>
-      </div>
-    </a>
-  </span>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav ml-auto navbar-buttons">
-      <li><%= link_to 'home', dashboard_path %><div class="home-underline" style="display:none;"></div></li>
-      <li><%= link_to 'themes', themes_path %><div class="themes-underline" style="display:none;"></div></li>
-      <li><div class="separator-line"></div></li>
-      <li class="dropdown">
-        <button id="dropdownMenuButton" data-toggle="dropdown" class="notification-button">
-          <%= image_tag 'notification-bell.svg', class: 'notification-bell-icon' %>
-          <% challenges_with_reflections = current_user.challenges.where(completed:true, reflection_completed:false)%>
-          <% challenge_date_reminders = current_user.challenges.where(date_complete:Date.today..3.days.from_now,notification_viewed:false)%>
-          <% if (challenge_date_reminders.length > 0) || (challenges_with_reflections.length > 0) %>
-            <%= image_tag 'notification-alert.svg', class: 'notification-green-dot'  %>
-          <% end %>
-        </button>
-        <div class="dropdown-menu dropdown-menu-right notifications-dropdown">
-          <% if (challenge_date_reminders.length == 0) && (challenges_with_reflections.length == 0) %>
-            <div class="no-notifications">You have no notifications.</div>
-          <% else %>
-            <div class="no-notifications" style="display:none;">You have no notifications.</div>
-            <% challenges_with_reflections.each do |challenge| %>
-                <div class="notification">
-                  <a onclick="">
-                    You have completed <%= challenge.challenge_name %>! Now it's time to check-in and reflect!
-                  </a>
-                </div>
-            <% end %>
-            <% challenge_date_reminders.each do |challenge| %>
-                <div class="notification">
-                  <button type="button" name="close" class="dismiss" onclick="$(this).parent().hide();updateNotification(<%= challenge.id %>);event.stopPropagation();">&times;</button>
-                  <a href="/challenges/<%= challenge.theme %>">
-                    <%= challenge.challenge_name %> is ending in <%= challenge.get_time_left %>.
-                  </a>
-                </div>
-            <% end %>
-          <% end %>
-        </div>
-      </li>
-      <li class="dropdown">
-        <button class="dropdownMenuButton" data-toggle="dropdown" id="profile-pic-button">
-          <%= image_tag(profile_pic_link, size: '57x57', class: 'rounded-circle') %>
-        </button>
-        <div class="dropdown-menu dropdown-menu-right">
-          <%= link_to 'Log Out', destroy_user_session_path, method: :delete, class: 'dropdown-item', id: 'logout-button'%>
-        </div>
-      </li>
-    </ul>
-  </div>
-</nav> -->
-
 <nav class="dash-nav">
   <a href="<%= root_path %>" tabindex="0" id="challenge_added_popover" class="tg-logo" data-toggle="popover" data-placement="bottom">
     <%= image_tag "rootup-logo.png", class: "logo" %>
   </a>
-  <h5 class="level">lvl <%= current_user.level %></h5>
+  <h5 class="level">lvl<%= current_user.level %></h5>
   <h5 class="username"><%= current_user.name %></h5>
-<ul class="nav flex-column">
-  <li class="nav-item <%= active?(dashboard_path) %>">
-    <%= link_to "Dashboard", dashboard_path, class: "nav-link"%>
-  </li>
-  <li class="nav-item <%= active?(themes_path) %>">
-    <%= link_to "Challenges", themes_path, class: "nav-link"%>
-  </li>
-  <li class="nav-item <%= active?(challenges_reflections_path) %>">
-    <%= link_to "Reflections", challenges_reflections_path, class: "nav-link"%>
-  </li>
-  <li class="nav-item <%= active?(challenges_completed_path) %>">
-    <%= link_to "Completed Challenges", challenges_completed_path, class: "nav-link"%>
-  </li>
-  <li class="nav-item <%= active?(edit_user_registration_path) %>">
-    <%= link_to 'Settings', edit_user_registration_path, class: "nav-link" %>
-  </li>
-  <li class="nav-item log-out">
-    <%= link_to 'log out', destroy_user_session_path, method: :delete %>
-  </li>
-</ul>
+  <ul class="nav flex-column">
+    <li class="nav-item <%= active?(dashboard_path) %>">
+      <%= link_to "Dashboard", dashboard_path, class: "nav-link"%>
+    </li>
+    <li class="nav-item <%= active?(themes_path) %>">
+      <%= link_to "Challenges", themes_path, class: "nav-link"%>
+    </li>
+    <li class="nav-item <%= active?(challenges_reflections_path) %>">
+      <%= link_to "Reflections", challenges_reflections_path, class: "nav-link"%>
+    </li>
+    <li class="nav-item <%= active?(challenges_completed_path) %>">
+      <%= link_to "Completed Challenges", challenges_completed_path, class: "nav-link"%>
+    </li>
+    <li class="nav-item <%= active?(edit_user_registration_path) %>">
+      <%= link_to 'Settings', edit_user_registration_path, class: "nav-link" %>
+    </li>
+    <li class="nav-item log-out">
+      <%= link_to 'log out', destroy_user_session_path, method: :delete %>
+    </li>
+  </ul>
 </nav>

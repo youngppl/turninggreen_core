@@ -8,65 +8,46 @@
   <h2 class="title row">Themes</h2>
   <p class="instructions row">Click on the each theme below to complete challenges and make a difference!</p>
   <% counter = 0 %>
-  <% (1..5).each do %>
-  <div class="themes-row row">
-    <% (1..2).each do %>
-      <% theme = themes[counter] %>
-      <% if current_user.unlockedChallenges.include?(theme) || !themes_unlock.include?(theme.to_sym) %>
-        <!-- unlocked theme card-->
-        <%= link_to challenges_path(theme) do %>
-          <div class="theme row align-items-center">
-            <div class="icon-box col-4">
-              <%= image_tag("themes/rings/theme-ring.svg", class: 'ring') %>
-              <%= image_tag("themes/icons/"+theme.downcase+".svg", class: "icon " + theme.downcase) %>
-              <% num_completed = Challenge.where(user_id: current_user, theme: theme.capitalize, completed: true).length %>
-                <% if num_completed > 6 %>
-                  <% num_completed = 6 %>
+    <% (1..5).each do %>
+      <div class="themes-row row">
+        <% (1..2).each do %>
+          <% theme = themes[counter] %>
+            <% if current_user.unlockedChallenges.include?(theme) || !themes_unlock.include?(theme.to_sym) %>
+              <!-- unlocked theme card-->
+              <%= link_to challenges_path(theme) do %>
+                <div class="theme row align-items-center">
+                  <div class="icon-box col-4">
+                    <%= image_tag("themes/rings/theme-ring.svg", class: 'ring') %>
+                    <%= image_tag("themes/icons/"+theme.downcase+".svg", class: "icon " + theme.downcase) %>
+                    <% num_completed = Challenge.where(user_id: current_user, theme: theme.capitalize, completed: true).length %>
+                      <% if num_completed > 6 %>
+                        <% num_completed = 6 %><% end %>
+                        <% if num_completed > 0 %>
+                          <%= image_tag("themes/rings/"+theme.downcase+"-"+num_completed.to_s+".svg", class: 'completed-ring _'+num_completed.to_s) %>
+                        <% end %>
+                      </div>
+                      <div class="description-box col">
+                        <div class="name"><%= theme.downcase %></div>
+                        <p class="description"><%= themes_description[theme.to_sym] %></p>
+                      </div>
+                  </div>
                 <% end %>
-                <% if num_completed > 0 %>
-                    <%= image_tag("themes/rings/"+theme.downcase+"-"+num_completed.to_s+".svg", class: 'completed-ring _'+num_completed.to_s) %>
-                <% end %>
-            </div>
-            <div class="description-box col">
-              <div class="name"><%= theme.downcase %></div>
-              <p class="description"><%= themes_description[theme.to_sym] %></p>
-            </div>
-          </div>
-        <% end %>
-      <% else %>
-        <!-- locked theme card -->
-        <div class="theme row align-items-center locked">
-          <div class="icon-box col-4">
-            <%= image_tag("themes/rings/theme-ring.svg", class: 'ring') %>
-            <%= image_tag("themes/icons/"+theme.downcase+".svg", class: "icon") %>
-          </div>
-          <div class="description-box col">
-            <div class="name"><%= theme.downcase %></div>
-            <p class="description"><%= themes_description[theme.to_sym] %></p>
-            <p class="special-instructions"><%= themes_unlock[theme.to_sym] %></p>
-          </div>
-        </div>
-      <% end %>
-      <% counter += 1%>
-    <% end %>
-  </div>
-  <% end %>
-</div>
-    <!-- <div class="themesRow">
-        <div class="theme">
-          <%# <% (1..6).each do |num| %> %>
-            <%# <svg height="10" width="40" class="line _<%= num %>"><line x1="0" y1="0" x2="16" y2="0"/></svg> %>
-          <%# <% end %> %>
-          <%# <% if !current_user.unlockedChallenges.include?(challenge_name) %> %>
-            <div class="theme-locked"></div>
-          <%# <% else %> %>
-            <div class="completed-ring">
-
+              <% else %>
+                <!-- locked theme card -->
+                <div class="theme row align-items-center locked">
+                  <div class="icon-box col-4">
+                    <%= image_tag("themes/rings/theme-ring.svg", class: 'ring') %>
+                    <%= image_tag("themes/icons/"+theme.downcase+".svg", class: "icon") %>
+                  </div>
+                  <div class="description-box col">
+                    <div class="name"><%= theme.downcase %></div>
+                    <p class="description"><%= themes_description[theme.to_sym] %></p>
+                    <p class="special-instructions"><%= themes_unlock[theme.to_sym] %></p>
+                  </div>
                 </div>
-              <%# <% end %> %>
-              <%# <%= link_to challenges_path(challenge_name) do %> %>
-              <%# <% locked = !current_user.unlockedChallenges.include?(challenge_name)? " locked" : ""  %> %>
-              <%# <% end %> %>
+              <% end %>
+              <% counter += 1%>
+            <% end %>
             </div>
+          <% end %>
         </div>
-    </div> -->
