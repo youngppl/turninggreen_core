@@ -14,5 +14,6 @@ function updateNotification(id) {
 }
 
 function sendFeedback(){
-  $.post('/feedback', {feedback: $(".feedback-input").val()})
+  $.post('/feedback', {feedback: $(".feedback-input").val()});
+  $(".confirmation").show();
 }

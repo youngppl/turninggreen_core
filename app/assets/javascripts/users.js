@@ -94,3 +94,8 @@ function cumulativeMetrics(log_to_count_to, data) {
   }
   return total;
 }
+
+function updateLogPrompt(e) {
+  $(e).siblings('.log-input').prop('disabled', true);
+  $(e).replaceWith('<h5 class="log-complete">today’s log complete!</h5>')
+}

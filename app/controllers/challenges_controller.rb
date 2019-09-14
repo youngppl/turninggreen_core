@@ -19,6 +19,7 @@ class ChallengesController < ApplicationController
     challenge = params[:challenge]
     newUnlocked = [challenge]
     current_user.update(:unlockedChallenges => (current_user.unlockedChallenges + newUnlocked).uniq)
+    current_user.add_points(3)
   end
 
   def create
