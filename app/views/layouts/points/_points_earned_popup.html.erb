@@ -1,0 +1,25 @@
+<%#
+HOW TO USE
+
+arguments: id, default: points-earned
+           message,
+           points,
+
+%>
+
+<div class="modal points-earned-popup" id="<%= (@id) ? id : 'points-earned' %>" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&#x2715;</span>
+        </button>
+        <h2 class="heading">👏claps for you!👏</h2>
+        <h2 class="message"> <%= message.html_safe %></h2>
+        <h5 class="keep-it-up">Keep it up! You’ve got <%= points.to_s %> extra points!</h5>
+        <div class="branding"></div>
+        <%= render "layouts/points/points_progress", {points_to_add: points} %>
+      </div>
+    </div>
+  </div>
+</div>

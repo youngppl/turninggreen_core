@@ -14,18 +14,20 @@
             <span></span></h5>
         </div>
         <% if points_earned %>
-          <h5 class="keep-it-up">Keep it up! You’ve got 3 extra points!</h5>
-          <div class="branding"></div>
-          <div class="progress">
-            <div class="progress-bar" role="progressbar" style="width: 100px !important" aria-valuemin="0" aria-valuemax="100"></div>
-            <div class="marker-container">
-              <div class="marker">
-                <!-- <span class="label">100</span> -->
+          <div class="points-tracker">
+            <h5 class="keep-it-up">Keep it up! You’ve got 3 extra points!</h5>
+            <div class="branding"></div>
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" style="width: 100px !important" aria-valuemin="0" aria-valuemax="100"></div>
+              <div class="marker-container">
+                <div class="marker">
+                  <!-- <span class="label">100</span> -->
+                </div>
               </div>
             </div>
+            <div class="start box">100</div>
+            <div class="end box">140</div>
           </div>
-          <div class="start box">100</div>
-          <div class="end box">140</div>
         <% end %>
       </div>
     </div>

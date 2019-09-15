@@ -61,6 +61,10 @@ class ChallengesController < ApplicationController
     end
   end
 
+  def reflections
+    
+  end
+
   private
 
   def challenge_params

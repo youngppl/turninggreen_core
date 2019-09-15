@@ -4,6 +4,7 @@ include ActionView::Helpers::TextHelper
 class Challenge < ApplicationRecord
   belongs_to :user
   has_many :progress_logs
+  has_one :reflection
 
   def get_time_left
     @weeks = (date_complete - DateTime.now.getutc) / 60 / 60 / 24 / 7
@@ -112,7 +113,7 @@ class Challenge < ApplicationRecord
         }],
         xAxes: [{
           ticks: {
-            fontColor: 'white'
+            display: false
           },
           type: 'time',
           time: {
