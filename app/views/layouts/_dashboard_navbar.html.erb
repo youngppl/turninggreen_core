@@ -72,9 +72,8 @@
   <li class="nav-item <%= active?(themes_path) %>">
     <%= link_to "Themes", themes_path, class: "nav-link"%>
   </li>
-  <li class="nav-item <%= active?("CHANGE THIS") %>">
-    <!-- TODO: add in this link after merging reflections branch -->
-    <a class="nav-link" href="#">Reflections</a>
+  <li class="nav-item <%= active?(challenges_reflections_path) %>">
+    <%= link_to "Reflections", challenges_reflections_path, class: "nav-link"%>
   </li>
   <li class="nav-item <%= active?(challenges_completed_path) %>">
     <%= link_to "Completed Challenges", challenges_completed_path, class: "nav-link"%>
