@@ -55,7 +55,7 @@
                 <div class="log-question">
                   <h5 class="heading">Since your last log:</h5>
                   <h5 class="question">question here</h5>
-                  <% if challenge.progress_logs.last.created_at.to_date == Date.today && challenge.progress_logs.last.metric != 0 %>
+                  <% if challenge.progress_logs.last && challenge.progress_logs.last.created_at.to_date == Date.today && challenge.progress_logs.last.metric != 0 %>
                     <input type="number" value="<%= challenge.progress_logs.last.metric %>" disabled min="0" class="log-input _<%= challenge.id %>">
                     <h5 class="log-complete">today’s log complete!</h5>
                   <% else %>
@@ -95,7 +95,7 @@
               });
               $('.today.metric').children('span').html($('.log-input._<%= challenge.id %>').val() + ' metrics');
               $('.cumulative.metric').children('span').html((Number($('.log-input._<%= challenge.id %>').val()) + <%= challenge.cumulative_metrics.to_i %>) + ' metrics');
-              chart_<%= challenge.id %>.data.datasets[0].data.push({t:"<%=DateTime.now.getutc.strftime("%Y-%m-%d")%>", y: Number($('.log-input._<%= challenge.id %>').val())})
+              chart_<%= challenge.id %>.data.datasets[1].data.push({t:"<%=DateTime.now.getutc.strftime("%Y-%m-%d")%>", y: (<%= challenge.cumulative_metrics.to_i %> + Number($('.log-input._<%= challenge.id %>').val()))})
               chart_<%= challenge.id %>.update()
             }
           </script>

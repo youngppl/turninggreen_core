@@ -57,15 +57,30 @@ class Challenge < ApplicationRecord
     data
   end
 
+  def generate_cumulative_data
+    data = []
+    @cumulative = 0
+    progress_logs.order(:created_at).each do |log|
+      @cumulative += log.metric
+      data.push('t': log.created_at.to_date, 'y': @cumulative)
+    end
+    data
+  end
+
   def data
     data = {
-      datasets: [{
-        fill: false,
+      datasets: [
+      {
         data: generate_data,
+        hidden: true
+      },
+      {
+        data: generate_cumulative_data,
         borderWidth: 4,
         pointBackgroundColor: 'green',
         radius: 4,
-        borderColor: 'green'
+        borderColor: 'green',
+        fill: false,
       },
      {
        data: [{
@@ -125,7 +140,7 @@ class Challenge < ApplicationRecord
             return (months[mydate.getMonth()] + ' ' + mydate.getDate());
           }",
           label: "function(tooltipItem, data) {
-            return ['this date: ' + tooltipItem.yLabel,'cumulatively: ' + cumulativeMetrics(tooltipItem, data)];
+            return ['this date: ' + data['datasets'][0].data[tooltipItem.index]['y'], 'cumulatively: ' + tooltipItem.yLabel];
           }"
         }
       }
