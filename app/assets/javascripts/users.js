@@ -84,17 +84,6 @@ function enablePasswordFields() {
   }
 }
 
-function cumulativeMetrics(log_to_count_to, data) {
-  stop_date = log_to_count_to.xLabel;
-  points = data['datasets'][0].data;
-  total = 0;
-  for (let val of points) {
-    total += val['y'];
-    if (val['t'] == stop_date) break;
-  }
-  return total;
-}
-
 function updateLogPrompt(e) {
   $(e).siblings('.log-input').prop('disabled', true);
   $(e).replaceWith('<h5 class="log-complete">today’s log complete!</h5>')
