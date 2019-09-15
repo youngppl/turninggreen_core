@@ -24,9 +24,9 @@ RSpec.describe "layouts/_dashboard_navbar.html.erb", type: :view, js: true do
     end
   end
 
-  context 'when user clicks on the themes link' do
+  context 'when user clicks on the challenges link' do
     it 'takes user to themes page' do
-      click_link "Themes"
+      click_link "Challenges"
       expect(current_path).to eq '/themes'
     end
   end

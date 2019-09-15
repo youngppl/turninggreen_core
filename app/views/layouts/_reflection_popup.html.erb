@@ -1,0 +1,46 @@
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Great Job!</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="description">
+          <p>You’ve completed the following challenges! Take some time to reflect on these challenges!</p>
+        </div>
+        <div class= "modal-challenges">
+          <% (current_user.challenges.where(theme: @challenge_name, completed: true)).each do |challenge| %>
+          <div class="challenge">
+            <div class="progress-circle">
+              <div class="ring">
+                <div class="inner">
+                  <%= image_tag 'themes/icons/'+@challenge_name.downcase+'.svg', size:"48x48" %>
+                </div>
+              </div>
+              <div class="today worm">
+                <svg viewBox="0 0 106 106" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="53" cy="54" r=44 stroke="#dadada" stroke-dasharray="<%= challenge.get_worm_length(DateTime.now.getutc) %>"/>
+                </svg>
+                </div>
+              <div class="last-log worm">
+                  <svg viewBox="0 0 106 106" xmlns="http://www.w3.org/2000/svg">
+                    <% if !challenge.last_logged.nil? %>
+                    <circle cx="53" cy="54" r="44" stroke="#af066e" stroke-dasharray="<%= challenge.get_worm_length(challenge.last_logged) %>"/>
+                      <% end %>
+                    </svg>
+              </div>
+            </div>
+            <h5 class="completed-name"><%=challenge.challenge_name%></h5>
+          </div>
+          <%end%>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">start reflection</button>
+        <p>this will take you to a new page</p>
+      </div>
+    </div>
+
+  </div>
+</div>
