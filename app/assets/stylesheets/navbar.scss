@@ -238,33 +238,36 @@
 
 // landing page navbar
 
-.navbarList {
-  font-size: 21px;
-  line-height: 2em;
-  margin: 0 auto;
-  text-transform: uppercase;
-  text-align: center;
-  right: 0;
-  left: 0;
-  width: 100%;
-  padding: 0;
-  background-color: #7FA86F;
-  z-index: 100;
+.default.navbar {
+    background-color: #7FA86F;
 }
 
-.navbarList li {
-  display: inline-block;
-  list-style: outside none none;
-  position: relative;
-  margin: 0.5em 0.6em;
-  padding: 12px 15px;
-}
-
-.navbarList li a {
-  color: #fff;
-  text-decoration: none;
-}
-
-.navbarList li a:hover {
-  text-decoration: underline overline;
-}
+// .navbarList {
+//   font-size: 21px;
+//   line-height: 2em;
+//   margin: 0 auto;
+//   text-transform: uppercase;
+//   text-align: left;
+//   right: 0;
+//   left: 0;
+//   width: 100%;
+//   padding: 0;
+//   z-index: 100;
+// }
+//
+// .navbarList li {
+//   display: inline-block;
+//   list-style: outside none none;
+//   position: relative;
+//   margin: 0.5em 0.6em;
+//   padding: 12px 15px;
+// }
+//
+// .navbarList li a {
+//   color: #fff;
+//   text-decoration: none;
+// }
+//
+// .navbarList li a:hover {
+//   text-decoration: underline overline;
+// }
