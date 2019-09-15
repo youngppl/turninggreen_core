@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  include UsersHelper
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -8,6 +10,29 @@ class User < ApplicationRecord
   validate :validate_age
   has_one_attached :profile_pic
   has_many :challenges
+
+  # points
+
+  def add_points(pts)
+    update(points: points + pts)
+    if points >= level_ranges[level + 1]
+      update(level: level + 1)
+    end
+  end
+
+  def level_progress(points_to_add = nil)
+    # points_to_add is for projected points if you want progress before points is actually updated in the modal
+    @start = level_ranges[level]
+    @end = level_ranges[level + 1]
+    if points_to_add
+      @current = points + points_to_add
+    else
+      @current = points
+    end
+    ((@current - @start)/(@end - @start).to_f)*100
+  end
+
+  # saving/editing
 
   def update_with_password(params={})
     if !params[:current_password].nil? && !self.valid_password?(params[:current_password])

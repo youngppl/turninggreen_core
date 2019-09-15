@@ -4,6 +4,7 @@ include ActionView::Helpers::TextHelper
 class Challenge < ApplicationRecord
   belongs_to :user
   has_many :progress_logs
+  has_one :reflection
 
   def get_time_left
     @weeks = (date_complete - DateTime.now.getutc) / 60 / 60 / 24 / 7
@@ -29,7 +30,7 @@ class Challenge < ApplicationRecord
 
   def get_marker_position(date)
     @percent_elapsed = (date - created_at) / (date_complete - created_at)
-    (6 + (68 * @percent_elapsed))
+    (5 + (91 * @percent_elapsed))
   end
 
   def get_worm_length(date)
@@ -57,15 +58,30 @@ class Challenge < ApplicationRecord
     data
   end
 
+  def generate_cumulative_data
+    data = []
+    @cumulative = 0
+    progress_logs.order(:created_at).each do |log|
+      @cumulative += log.metric
+      data.push('t': log.created_at.to_date, 'y': @cumulative)
+    end
+    data
+  end
+
   def data
     data = {
-      datasets: [{
-        fill: false,
+      datasets: [
+      {
         data: generate_data,
+        hidden: true
+      },
+      {
+        data: generate_cumulative_data,
         borderWidth: 4,
         pointBackgroundColor: 'green',
         radius: 4,
-        borderColor: 'green'
+        borderColor: 'green',
+        fill: false,
       },
      {
        data: [{
@@ -87,7 +103,9 @@ class Challenge < ApplicationRecord
         yAxes: [{
           ticks: {
             min: 0,
-            fontFamily: "'Raleway', 'sans-serif'"
+            fontFamily: "'Raleway', 'sans-serif'",
+            padding: 7,
+            callback: "function(value) {if (value % 1 === 0) {return value;}}"
           },
           gridLines: {
             drawBorder: false
@@ -95,7 +113,7 @@ class Challenge < ApplicationRecord
         }],
         xAxes: [{
           ticks: {
-            fontColor: 'white'
+            display: false
           },
           type: 'time',
           time: {
@@ -109,7 +127,7 @@ class Challenge < ApplicationRecord
       tooltips: {
         backgroundColor: 'white',
         borderWidth: 1,
-        borderColor: 'gray',
+        borderColor: '#cbcbcb',
         titleFontFamily: "'Raleway', 'sans-serif'",
         titleFontColor: 'black',
         bodyFontFamily: "'Raleway', 'sans-serif'",
@@ -123,7 +141,7 @@ class Challenge < ApplicationRecord
             return (months[mydate.getMonth()] + ' ' + mydate.getDate());
           }",
           label: "function(tooltipItem, data) {
-            return ['this date: ' + tooltipItem.yLabel,'cumulatively: ' + cumulativeMetrics(tooltipItem, data)];
+            return ['this date: ' + data['datasets'][0].data[tooltipItem.index]['y'], 'cumulatively: ' + tooltipItem.yLabel];
           }"
         }
       }

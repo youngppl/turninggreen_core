@@ -29,6 +29,7 @@ input, button {
 
 .main-content {
   padding-bottom: 50px;
+  padding-top: 20px;
   background-color: #f0f1f2;
 }
 
@@ -149,5 +150,11 @@ input, button {
       top: -160px;
       display: block;
     }
+  }
+}
+
+.privacy-page {
+  h4 {
+    font-weight: bold;
   }
 }

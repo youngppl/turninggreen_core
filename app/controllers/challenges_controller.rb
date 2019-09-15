@@ -19,12 +19,13 @@ class ChallengesController < ApplicationController
     challenge = params[:challenge]
     newUnlocked = [challenge]
     current_user.update(:unlockedChallenges => (current_user.unlockedChallenges + newUnlocked).uniq)
+    current_user.add_points(3)
   end
 
   def create
     if current_user.challenges.where(completed: false).length < 6
       new_challenge = current_user.challenges.create(challenge_params)
-      new_challenge.progress_logs.create(metric: 0) # create empty log at 0
+      # new_challenge.progress_logs.create(metric: 0) # create empty log at 0
       render :json => {:showPopover => true}
     else
       message = {:alert => "You can only have a maximum of 6 challenges!"}
@@ -58,6 +59,10 @@ class ChallengesController < ApplicationController
     else
       @completed = current_user.challenges.limit(8).order("date_complete DESC")
     end
+  end
+
+  def reflections
+    
   end
 
   private

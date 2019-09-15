@@ -3,11 +3,7 @@
   position: relative;
   height: 100%;
 
-  .logo-tag {
-    width: 170px;
-    height: 53px;
-    border: solid 1px #979797;
-    background-color: #d8d8d8;
+  .logo {
     margin-bottom: 20px;
   }
 
@@ -44,6 +40,8 @@
 
     &.active {
       background-color: #f0f1f2;
+      width: 260px;
+      margin-right: -135px;
     }
 
     &.log-out {
@@ -70,7 +68,10 @@
 .top-nav {
   justify-content: flex-end;
   padding: 20px 30px;
-  background-color: #f0f1f2;
+  display: flex;
+  width: 100px;
+  position: absolute;
+  right: 0;
 
   .nav-button {
     width: 30px;
@@ -209,7 +210,15 @@
     color: #5f5f5f;
     outline: none;
     padding: 12px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+  }
+
+  .confirmation {
+    font-size: 11px;
+    font-weight: 500;
+    color: #417505;
+    text-align: center;
+    display: none;
   }
 
   button {
@@ -223,39 +232,42 @@
     color: #5f5f5f;
     background-color: white;
     outline: none;
-    margin-left: 34%;
+    margin-left: 33%;
   }
 }
 
 // landing page navbar
 
-.navbarList {
-  font-size: 21px;
-  line-height: 2em;
-  margin: 0 auto;
-  text-transform: uppercase;
-  text-align: center;
-  right: 0;
-  left: 0;
-  width: 100%;
-  padding: 0;
-  background-color: #7FA86F;
-  z-index: 100;
+.default.navbar {
+    background-color: #7FA86F;
 }
 
-.navbarList li {
-  display: inline-block;
-  list-style: outside none none;
-  position: relative;
-  margin: 0.5em 0.6em;
-  padding: 12px 15px;
-}
-
-.navbarList li a {
-  color: #fff;
-  text-decoration: none;
-}
-
-.navbarList li a:hover {
-  text-decoration: underline overline;
-}
+// .navbarList {
+//   font-size: 21px;
+//   line-height: 2em;
+//   margin: 0 auto;
+//   text-transform: uppercase;
+//   text-align: left;
+//   right: 0;
+//   left: 0;
+//   width: 100%;
+//   padding: 0;
+//   z-index: 100;
+// }
+//
+// .navbarList li {
+//   display: inline-block;
+//   list-style: outside none none;
+//   position: relative;
+//   margin: 0.5em 0.6em;
+//   padding: 12px 15px;
+// }
+//
+// .navbarList li a {
+//   color: #fff;
+//   text-decoration: none;
+// }
+//
+// .navbarList li a:hover {
+//   text-decoration: underline overline;
+// }
