@@ -71,7 +71,7 @@
                 </script>
                 <%# <%= line_chart challenge.data, challenge.options %>
                 <div class="today marker _<%= challenge.id %>" style="left:<%= challenge.today_marker_position %>%">
-                  <% if challenge.created_at.day != DateTime.now.day && challenge.date_complete.day != DateTime.now.day %>
+                  <% if challenge.created_at.to_date != DateTime.now.utc.to_date && challenge.date_complete.to_date != DateTime.now.utc.to_date %>
                     <svg height="30" width="10" class="line"><line x1="0" y1="0" x2="0" y2="26"/></svg>
                     <span class="label">today</span>
                   <% end %>
