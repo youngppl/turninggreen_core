@@ -1,0 +1,28 @@
+<% content_for :navbar do %>
+  <%= render 'layouts/dashboard_navbar' %>
+<% end %>
+
+<div class="admin-dash container">
+  <h2>Admin Dashboard</h2>
+  <div class="row">
+    <div class="col">
+      <h4>User Statistics</h4>
+      <h5>Total Users: <%= User.all.length %> </h5>
+      <h5>Total Countries Represented: <%= @countries.uniq.length %> | <%= @countries.uniq %> </h5>
+      <h5>Total States Represented: <%= @states.uniq.length %> | <%= @states.uniq %></h5>
+      <h5>User Signups by Month:</h5>
+      <% @new_signups.each do |label, number| %>
+        <p> <%= label %>:  <%= number %> </p>
+      <% end %>
+      <%# <%= bar_chart @new_signups %>
+    </div>
+    <div class="col">
+      <h4>Challenge Statistics</h4>
+      <h5>Challenges currently in progress: <%= Challenge.all.where(completed: false).length %> </h5>
+      <h5>Challenges Completed per Month:</h5>
+      <% @challenges_completed_per_month.each do |label, number| %>
+        <p> <%= label %>:  <%= number %> </p>
+      <% end %>
+    </div>
+  </div>
+</div>

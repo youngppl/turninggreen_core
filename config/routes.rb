@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get '/challenges/reflections' => 'challenges#reflections'
   get '/challenges/:challenge_name' => 'challenges#show', :as => 'challenges'
   get '/privacy' => 'welcome#privacy'
+  get '/admin' => 'admin#index'
   post '/challenges/unlock' => 'challenges#unlock'
   post '/challenges/add' => 'challenges#create'
   post '/challenges/update-notification' => 'challenges#update_notification_viewed'
