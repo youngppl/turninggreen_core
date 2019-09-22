@@ -89,6 +89,13 @@ class Challenge < ApplicationRecord
          y: 0
        }],
        radius: 0
+     },
+     {
+       data: [{
+           t: created_at.to_date,
+           y: 0
+         }],
+       radius: 0
      }]
     }
   end

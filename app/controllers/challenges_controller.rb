@@ -62,7 +62,7 @@ class ChallengesController < ApplicationController
   end
 
   def reflections
-    
+
   end
 
   private
