@@ -6,7 +6,7 @@
   <h2 class="heading">Reflections
   </h2>
   <h2 class="info">Click on the each theme below to complete challenges and make a difference!</h2>
-  <div class="panel-group">
+  <div class="reflection-cards">
     <% current_user.challenges.where(reflection_completed:false, completed: true).each do |challenge| %>
       <div class="panel panel-default">
         <div class="expand-clickable-area"></div>
