@@ -10,6 +10,7 @@ local:
 google:
   service: GCS
   project: ""
+  project_id: "rootup"
   credentials: <%= Rails.root.join("config/secrets/RootUp-d1ca665c9466.json") %>
   bucket: ""
 

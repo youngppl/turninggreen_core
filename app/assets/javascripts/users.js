@@ -15,6 +15,10 @@ $(window).on('turbolinks:load', function() {
   $("#user_notifications_content_check-in").data("original", $("#user_notifications_content_check-in").val());
   $("#user_notifications_content_newsletter").data("original", $("#user_notifications_content_newsletter").val());
 
+  $('#feedback-dropdown').on('shown.bs.dropdown', function() {
+    $('.feedback-dropdown .feedback-input').val('');
+    $('.feedback-dropdown .confirmation').hide();
+  });
 });
 $(document).on("click", ".popover .close", function() {
   $(this).parents(".popover").popover('hide');

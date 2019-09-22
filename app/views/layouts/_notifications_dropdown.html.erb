@@ -1,36 +1,38 @@
 <div class="dropdown">
   <button class="notifications nav-button" data-toggle="dropdown">
     <% challenges_with_reflections = current_user.challenges.where(completed:true, reflection_completed:false, notification_viewed:false)%>
-    <% challenge_date_reminders = current_user.challenges.where(date_complete:Date.today..3.days.from_now, notification_viewed:false)%>
-    <% if (challenge_date_reminders.length > 0) || (challenges_with_reflections.length > 0) %>
-    <div class="notification-alert"></div>
-    <% end %>
-  </button>
-  <div class="dropdown-menu dropdown-menu-right notifications-dropdown">
-    <h5 class="heading">Notifications</h5>
-    <% if (challenge_date_reminders.length == 0) && (challenges_with_reflections.length == 0) %>
-    <div class="no-notifications">You have no notifications.</div>
-    <% else %>
-    <div class="no-notifications" style="display:none;">You have no notifications.</div>
-    <% challenges_with_reflections.each do |challenge| %>
-    <div class="notification">
-      <button type="button" name="close" class="dismiss" onclick="$(this).parent().hide();updateNotification(<%= challenge.id %>);event.stopPropagation();">&#x2715;</button>
-      <a onclick="">
-        You have completed
-        <%= challenge.challenge_name %>! Now it's time to check-in and reflect!
-      </a>
+      <% challenge_date_reminders = current_user.challenges.where(date_complete:Date.today..3.days.from_now, notification_viewed:false)%>
+        <% if (challenge_date_reminders.length > 0) || (challenges_with_reflections.length > 0) %>
+          <div class="notification-alert"></div>
+        <% end %>
+      </button>
+      <div class="dropdown-menu dropdown-menu-right notifications-dropdown">
+        <h5 class="heading">Notifications</h5>
+        <div class="notifications-wrapper">
+          <% if (challenge_date_reminders.length == 0) && (challenges_with_reflections.length == 0) %>
+            <div class="no-notifications">You have no notifications.</div>
+          <% else %>
+            <div class="no-notifications" style="display:none;">You have no notifications.</div>
+            <% challenges_with_reflections.each do |challenge| %>
+              <div class="notification">
+                <button type="button" name="close" class="dismiss" onclick="$(this).parent().hide();updateNotification(<%= challenge.id %>);event.stopPropagation();">&#x2715;</button>
+                <a onclick="">
+                  You have completed
+                  <%= challenge.challenge_name %>! Now it's time to check-in and reflect!
+                </a>
+              </div>
+            <% end %>
+            <% challenge_date_reminders.each do |challenge| %>
+              <div class="notification">
+                <button type="button" name="close" class="dismiss" onclick="$(this).parent().hide();updateNotification(<%= challenge.id %>);event.stopPropagation();">&#x2715;</button>
+                <a href="/challenges/<%= challenge.theme %>">
+                  <%= challenge.challenge_name %>
+                  is ending in
+                  <%= challenge.get_time_left %>.
+                </a>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
     </div>
-    <% end %>
-    <% challenge_date_reminders.each do |challenge| %>
-    <div class="notification">
-      <button type="button" name="close" class="dismiss" onclick="$(this).parent().hide();updateNotification(<%= challenge.id %>);event.stopPropagation();">&#x2715;</button>
-      <a href="/challenges/<%= challenge.theme %>">
-        <%= challenge.challenge_name %>
-        is ending in
-        <%= challenge.get_time_left %>.
-      </a>
-    </div>
-    <% end %>
-    <% end %>
-  </div>
-</div>
