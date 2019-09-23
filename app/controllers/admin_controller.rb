@@ -1,6 +1,8 @@
 class AdminController < ApplicationController
   include ThemesHelper
 
+  before_action :require_admin
+
   def index
     @countries = []
     User.all.each do |user|
@@ -51,6 +53,14 @@ class AdminController < ApplicationController
       end
       @challenge["TOTAL USERS COMPLETED"] = @total
       @challenges_completed_per_challenge[challenge] = @challenge
+    end
+  end
+
+  private
+
+  def require_admin
+    if !current_user.admin
+      redirect_to dashboard_path
     end
   end
 end
