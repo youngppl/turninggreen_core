@@ -1,0 +1,113 @@
+<% content_for :navbar do %>
+  <%= render 'layouts/dashboard_navbar' %>
+<% end %>
+
+<div class="admin-dash container">
+  <h2>Admin Dashboard</h2>
+  <div class="row">
+    <div class="card w-25">
+      <div class="card-body">
+        <h4>User Statistics</h4>
+        <h5>Total Users: <%= User.all.length %> </h5>
+        <h5>Total Countries Represented: <%= @countries.uniq.length %> | <%= @countries.uniq %> </h5>
+        <h5>Total States Represented: <%= @states.uniq.length %> | <%= @states.uniq %></h5>
+        <h5>User Signups by Month:</h5>
+        <% @new_signups.each do |label, number| %>
+        <p> <%= label %>:  <%= number %> </p>
+        <% end %>
+        <%# <%= bar_chart @new_signups %>
+      </div>
+    </div>
+    <div class="card w-75">
+      <div class="card-body row">
+        <div class="col">
+          <h4 class="card-title">Challenge Statistics</h4>
+          <h5>Challenges currently in progress: <%= Challenge.all.where(completed: false).length %> </h5>
+          <h5>Challenges Completed per Month:</h5>
+          <% @challenges_completed_per_month.each do |label, number| %>
+          <p> <%= label %>:  <%= number %> </p>
+          <% end %>
+        </div>
+        <div class="col">
+          <h5>Challenges Completed per Theme</h5>
+          <div id="accordion">
+            <% @challenges_completed_per_theme.each do |theme, completed_challenges| %>
+            <div class="card">
+              <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                  <button class="btn btn-link" data-toggle="collapse" data-target="#<%= theme %>" aria-expanded="true" aria-controls="collapseOne">
+                    <%= theme %>
+                  </button>
+                </h5>
+              </div>
+
+              <div id="<%= theme %>" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="card-body">
+                  <% completed_challenges.each do |label, number| %>
+                  <p> <%= label %>:  <%= number %> </p>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+            <% end %>
+          </div>
+        </div>
+        <div class="col">
+          <h5>Challenge Completed by Challenge</h5>
+          <div id="accordion">
+            <% @challenges_completed_per_challenge.each do |challenge, completed_challenges| %>
+            <div class="card">
+              <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                  <button class="btn btn-link" data-toggle="collapse" data-target="#<%= challenge.parameterize.underscore %>" aria-expanded="true" aria-controls="collapseOne">
+                    <%= challenge %>
+                  </button>
+                </h5>
+              </div>
+
+              <div id="<%= challenge.parameterize.underscore %>" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="card-body">
+                  <% completed_challenges.each do |label, number| %>
+                  <p> <%= label %>:  <%= number %> </p>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="card w-100">
+      <div class="user-reflection-deck card-body">
+        <h5>User Reflections</h5>
+        <% Reflection.last(20).each_with_index do |reflection, index| %>
+          <div class="row collapse" id="_<%= index %>">
+            <div class="col">
+              <h4>Reflection for: <%= reflection.challenge.challenge_name %> </h4>
+              <h4>Reflection:</h4>
+              <p> <%= reflection.reflection %> </p>
+            </div>
+            <div class="col">
+              <% if reflection.photo.attached? %>
+                <h4>Photo</h4>
+                <%= image_tag url_for(reflection.photo), size: "200" %>
+                <h4>Caption</h4>
+                <p> <%= reflection.caption %> </p>
+              <% else %>
+                <h5>No photo</h5>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+        <ul class="pagination">
+          <% (1..Reflection.last(20).length).each do |index| %>
+            <li class="page-item"><a class="page-link" data-toggle="collapse" href="#_<%= index %>"><%= index %></a></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
