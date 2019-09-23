@@ -9,10 +9,10 @@ local:
 # Remember not to checkin your GCS keyfile to a repository
 google:
   service: GCS
-  project: ""
+  project: "RootUp"
   project_id: "rootup"
   credentials: <%= Rails.root.join("config/secrets/RootUp-d1ca665c9466.json") %>
-  bucket: ""
+  bucket: "rootup.appspot.com"
 
 # Use rails credentials:edit to set the AWS secrets (as aws:access_key_id|secret_access_key)
 # amazon:
