@@ -184,27 +184,6 @@
             </button>
           </div>
           <div class="modal-body">
-            <!-- <div class="first slide">
-              <h2 class="modalHeader">Unlock
-                <%= @challenge_name %>
-                Challenges</h2>
-              <% if !@challenge_data.key?(:videoID) %>
-                <p class="helpText"><%= @challenge_data[:videoCaption] %></p>
-              <% else %>
-                <p class="helpText">
-                  <span class="description"><%= @challenge_data[:briefDescription] %></span>
-                  <br><br>
-                  <span class="watchVideoText">Watch the following video to unlock
-                    <%= @challenge_name.downcase %>
-                    challenges.</span>
-                </p>
-                <div class="watchVideo">
-                  <button type="button" name="watch-video" onclick="nextArrow();">
-                    Watch Video
-                  </button>
-                </div>
-              <% end %>
-            </div> -->
             <div class="first slide">
               <h2 class="modalHeader"><%= @challenge_name %> Challenges</h2>
               <p class="instructions">Before you can get started on the challenges, watch this video to get a deeper understanding of this theme!</p>

@@ -15,7 +15,7 @@
             <% if current_user.unlockedChallenges.include?(theme) || !themes_unlock.include?(theme.to_sym) %>
               <!-- unlocked theme card-->
               <%= link_to challenges_path(theme) do %>
-                <div class="theme row align-items-center">
+                <div class="theme">
                   <div class="icon-box col-4">
                     <%= image_tag("themes/rings/theme-ring.svg", class: 'ring') %>
                     <%= image_tag("themes/icons/"+theme.downcase+".svg", class: "icon " + theme.downcase) %>
@@ -34,9 +34,9 @@
                 <% end %>
               <% else %>
                 <!-- locked theme card -->
-                <div class="theme row align-items-center locked">
+                <div class="theme locked">
                   <div class="icon-box col-4">
-                    <%= image_tag("themes/rings/theme-ring.svg", class: 'ring') %>
+                    <%= image_tag("themes/rings/theme-ring.svg", class: 'ring locked') %>
                     <%= image_tag("themes/icons/"+theme.downcase+".svg", class: "icon") %>
                   </div>
                   <div class="description-box col">

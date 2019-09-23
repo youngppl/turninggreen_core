@@ -30,7 +30,7 @@ class Challenge < ApplicationRecord
 
   def get_marker_position(date)
     @percent_elapsed = (date - created_at) / (date_complete - created_at)
-    (5 + (91 * @percent_elapsed))
+    (5 + (95 * @percent_elapsed))
   end
 
   def get_worm_length(date)
@@ -88,6 +88,13 @@ class Challenge < ApplicationRecord
          t: date_complete.to_date,
          y: 0
        }],
+       radius: 0
+     },
+     {
+       data: [{
+           t: created_at.to_date,
+           y: 0
+         }],
        radius: 0
      }]
     }

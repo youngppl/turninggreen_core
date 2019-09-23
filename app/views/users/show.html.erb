@@ -55,7 +55,7 @@
                 <div class="log-question">
                   <h5 class="heading">Since your last log:</h5>
                   <h5 class="question">question here</h5>
-                  <% if challenge.progress_logs.last && challenge.progress_logs.last.created_at.to_date == Date.today && challenge.progress_logs.last.metric != 0 %>
+                  <% if challenge.progress_logs.last && challenge.progress_logs.last.created_at.to_date == DateTime.now.utc.to_date %>
                     <input type="number" value="<%= challenge.progress_logs.last.metric %>" disabled min="0" class="log-input _<%= challenge.id %>">
                     <h5 class="log-complete">today’s log complete!</h5>
                   <% else %>
@@ -71,7 +71,7 @@
                 </script>
                 <%# <%= line_chart challenge.data, challenge.options %>
                 <div class="today marker _<%= challenge.id %>" style="left:<%= challenge.today_marker_position %>%">
-                  <% if challenge.created_at.day != DateTime.now.day && challenge.date_complete.day != DateTime.now.day %>
+                  <% if challenge.created_at.to_date != DateTime.now.utc.to_date && challenge.date_complete.to_date != DateTime.now.utc.to_date %>
                     <svg height="30" width="10" class="line"><line x1="0" y1="0" x2="0" y2="26"/></svg>
                     <span class="label">today</span>
                   <% end %>

@@ -260,7 +260,7 @@
         .marker {
           position: relative;
           display: inline-block;
-          top: -37px;
+          top: -21px;
           width: 10px;
 
           .label {
@@ -283,8 +283,8 @@
           display: inline-block;
           text-align: center;
           width: 50px;
-          position: relative;
-          top: -9px;
+          position: absolute;
+          top: 290px;
 
           span {
             font-size: 12px;
@@ -298,11 +298,11 @@
           }
 
           &.start {
-            left: -13px;
+            left: 17px;
           }
 
           &.end {
-            left: 397px;
+            right: -8px;
           }
         }
         .no-challenges {
