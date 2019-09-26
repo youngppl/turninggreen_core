@@ -48,17 +48,19 @@ class ChallengesController < ApplicationController
 
   def completed
     case params[:sort_by]
-    when "recent"
-      @completed = current_user.challenges.limit(8).order("date_complete DESC")
+    # when "recent"
+    #   @completed = current_user.challenges.limit(8).order("date_complete DESC")
     when "theme"
       @completed = current_user.challenges.limit(8).order("theme")
     # when "global"
 
-    when "surprise"
-      @completed = current_user.challenges.limit(8).shuffle
+    # when "surprise"
+    #   @completed = current_user.challenges.limit(8).shuffle
     else
       @completed = current_user.challenges.limit(8).order("date_complete DESC")
     end
+
+    @completed_challenges = current_user.challenges.where(completed: true)
   end
 
   def reflections
