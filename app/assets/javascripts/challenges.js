@@ -105,7 +105,7 @@ $(document).on('click', '.add-challenge-button', function(event) {
   var d = new Date();
   length = $(this).parent().children('select').val()
   $.post('/challenges/add', {
-      challenge_name: $(this).parentsUntil('.challenge-box', '.challenge-info').children('.challenge-name').html(),
+      challenge_name: $(this).parentsUntil('.challenge-box', '.challenge-info').children('.challenge-name').text(),
       theme: challengeName,
       length_of_challenge: length,
       date_complete: new Date(Date.now() + (6.04e+8 * length)),

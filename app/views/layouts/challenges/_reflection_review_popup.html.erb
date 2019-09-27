@@ -2,7 +2,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-body">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="$('#reflection-review-<%= challenge.id %>').modal('hide')">
           <span aria-hidden="true">&#x2715;</span>
         </button>
 
@@ -41,7 +41,7 @@
           </div>
         </div>
         <div class="actions">
-          <input type="checkbox" value="<%= challenge.reflection.permission %> ">
+          <input type="checkbox" <%= 'checked' if challenge.reflection.permission %> onchange="$.post('/reflections/edit', {challenge_id: <%= challenge.id %>, permission: $(this).is(':checked')})">
           <label>I give TG permission to share this check-in <a href=" <%= privacy_path %> " target="_blank">Learn more</a></label><br>
         </div>
       </div>
