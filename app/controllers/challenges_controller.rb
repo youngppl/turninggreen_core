@@ -60,6 +60,7 @@ class ChallengesController < ApplicationController
       @completed = current_user.challenges.limit(8).order("date_complete DESC")
     end
 
+    @share_with_rootup = current_user.permissions.include?('challenges')
     @completed_challenges = current_user.challenges.where(completed: true)
   end
 

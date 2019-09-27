@@ -25,24 +25,49 @@
             <h5 class="num-completed"><%= current_user.challenges.where(theme: theme, completed: true).length %> of 6 completed</h5>
           </div>
           <div id="<%= theme %>-collapse" class="panel-collapse collapse">
-            <% challenges[theme.to_sym][:challenges].each do |challenge| %>
-              <div class="challenge-box">
+            <div class="challenges-wrapper">
+              <% challenges[theme.to_sym][:challenges].each do |challenge| %>
+              <div class="challenge-box <%= 'not-completed' if !@completed_challenges.exists?(challenge_name: challenge[:name], theme: theme) %>">
                 <div class="picture">
-                  <% if @completed_challenges.exists?(challenge_name: challenge[:name], theme: theme) && current_user.challenges+.where(challenge_name: challenge[:name], theme: theme).reflection.attached? %>
-                    <%= image_tag url_for(@completed_challenges.where(challenge_name: challenge[:name], theme: theme).reflection.photo) %>
+                  <% if @completed_challenges.exists?(challenge_name: challenge[:name], theme: theme) %>
+                    <% @completed_challenge = @completed_challenges.find(@completed_challenges.where(challenge_name: challenge[:name], theme: theme).pluck(:id)[0]) %>
+                    <% if @completed_challenge.reflection && @completed_challenge.reflection.photo.attached? %>
+                      <%= image_tag url_for(@completed_challenge.reflection.photo), size: '190' %>
+                    <% end %>
                   <% end %>
-                  <div class="shared">shared</div>
+                  <% if !@completed_challenges.exists?(challenge_name: challenge[:name], theme: theme) %>
+                    <%# if challenge not completed yet %>
+                    no photo to display
+                  <% elsif !@completed_challenge.reflection %>
+                    <%# if challenge completed but no reflection submitted %>
+                    <span class="reflection-reminder">submit reflection to show photo</span>
+                  <% end %>
+                  <% if @completed_challenge && (@completed_challenge.reflection && (@share_with_rootup || @completed_challenge.reflection.permission)) %>
+                    <div class="shared">shared</div>
+                  <% end %>
                 </div>
                 <div class="info">
                   <div class="name"><%= challenge[:name] %></div>
-                  <div class="metric">
-                    metric here
-                  </div>
+                  <% if @completed_challenges.exists?(challenge_name: challenge[:name], theme: theme) %>
+                    <div class="metric">
+                      <% if !@completed_challenge.reflection %>
+                        no info to share yet
+                      <% else %>
+                        <%= @completed_challenge.cumulative_metrics %> metric
+                      <% end %>
+                    </div>
+                  <% end %>
                 </div>
+                <% if @completed_challenge && @completed_challenge.reflection %>
+                  <%= render 'layouts/challenges/reflection_review_popup', {challenge: @completed_challenge} %>
+                <% end %>
+                <% @completed_challenge = nil %>
               </div>
-            <% end %>
+              <% end %>
+            </div>
           </div>
         </div>
     <% end %>
   </div>
+  <%= render 'layouts/challenges/reflection_redirect_popup' %>
 </div>

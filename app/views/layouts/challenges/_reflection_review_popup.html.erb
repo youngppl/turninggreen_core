@@ -1,0 +1,50 @@
+<div class="modal reflection-review-popup" id="reflection-review-<%= challenge.id %>" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&#x2715;</span>
+        </button>
+
+        <div class="header">
+          <h4 class="title"><%= challenge.challenge_name %></h4>
+          <h4 class="timeframe"><%=challenge.created_at.month%>/<%=challenge.created_at.day%> - <%=challenge.date_complete.month%>/<%=challenge.date_complete.day%></h4>
+        </div>
+        <div class="reflection-summary">
+          <div class="question row">
+            <h2 class="heading">Reflection question goes here?</h2>
+            <textarea class="reflection-text" disabled><%= challenge.reflection.reflection %></textarea>
+          </div>
+          <div class="log row">
+            <div class="col-8">
+              <h5 class="heading">Your actions</h5>
+              <h5 class="summary">You did <strong><%= challenge.cumulative_metrics %></strong> metric</h5>
+              <div class="graph">
+                <%= line_chart challenge.data, challenge.options %>
+                <div class="start box">
+                  <span>start</span>
+                  <h2><%=challenge.created_at.month%>/<%=challenge.created_at.day%></h2>
+                </div>
+                <div class="end box">
+                  <span>end</span>
+                  <h2><%=challenge.date_complete.month%>/<%=challenge.date_complete.day%></h2>
+                </div>
+              </div>
+            </div>
+            <div class="picture-col col">
+              <h5 class="heading">Share a photo of your shopping experience!</h5>
+              <div class="photo">
+                <%= image_tag url_for(challenge.reflection.photo), size: '240' %>
+              </div>
+              <textarea class="caption" disabled><%= challenge.reflection.caption %></textarea>
+            </div>
+          </div>
+        </div>
+        <div class="actions">
+          <input type="checkbox" value="<%= challenge.reflection.permission %> ">
+          <label>I give TG permission to share this check-in <a href=" <%= privacy_path %> " target="_blank">Learn more</a></label><br>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
