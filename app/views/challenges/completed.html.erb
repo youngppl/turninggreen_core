@@ -30,7 +30,7 @@
               <% if @completed_challenges.exists?(challenge_name: challenge[:name], theme: theme) %>
                 <% @completed_challenge = @completed_challenges.find(@completed_challenges.where(challenge_name: challenge[:name], theme: theme).pluck(:id)[0]) %>
               <% end %>
-              <div class="challenge-box <%= 'not-completed' if !@completed_challenge %>" <%= (@completed_challenge && @completed_challenge.reflection)? "onclick=$('#reflection-review-#{@completed_challenge.id}').modal('show');" : "onclick=$('#reflection-redirect').modal();"%>>
+              <div class="challenge-box <%= 'not-completed' if !@completed_challenge %>" <%= "onclick=$('#reflection-review-#{@completed_challenge.id}').modal('show');" if @completed_challenge && @completed_challenge.reflection %> <%= "onclick=$('#reflection-redirect').modal();" if @completed_challenge && !@completed_challenge.reflection %>>
                 <div class="picture">
                   <% if @completed_challenge %>
                     <% if @completed_challenge.reflection && @completed_challenge.reflection.photo.attached? %>
