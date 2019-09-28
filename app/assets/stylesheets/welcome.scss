@@ -6,7 +6,13 @@ html {
   padding: 0;
   overflow-x: hidden;
   background-color: #111;
-  font-family: Raleway, sans-serif;
+  font-family: Varela, Raleway, sans-serif;
+}
+
+@font-face {
+  font-family: Varela;
+  src:font-url('Varela-Regular.ttf');
+  unicode-range: U+30-39;
 }
 
 h1,
