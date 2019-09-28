@@ -2,6 +2,7 @@
   padding: 45px;
   position: relative;
   height: 100%;
+  padding-top: 20px;
 
   .logo {
     margin-bottom: 20px;
@@ -87,6 +88,7 @@
     font: inherit;
     cursor: pointer;
     outline: inherit;
+    position: relative;
 
     &:hover {
       box-shadow: 0 5px 12px 0 rgba(0, 0, 0, 0.13), 0 4px 7px 0 rgba(0, 0, 0, 0.31);
@@ -98,8 +100,9 @@
     height: 15px;
     background-color: #d0021b;
     border-radius: 50%;
-    margin-top: -18px;
-    margin-left: 14px;
+    position: absolute;
+    top: -1px;
+    right: -1px;
   }
 }
 
@@ -184,7 +187,7 @@
 
 .feedback-dropdown {
   width: 434px;
-  min-height: 369px;
+  min-height: 360px;
   box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.24), 0 2px 10px 0 rgba(0, 0, 0, 0.07);
   padding: 12px;
 
@@ -220,7 +223,6 @@
     color: #5f5f5f;
     outline: none;
     padding: 12px;
-    margin-bottom: 10px;
   }
 
   .confirmation {
@@ -244,7 +246,7 @@
     outline: none;
     margin-left: 31%;
     position: absolute;
-    bottom: 14px;
+    bottom: 25px;
   }
 }
 

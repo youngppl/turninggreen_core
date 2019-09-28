@@ -18,7 +18,7 @@
   <div class="panels">
     <% themes.each do |theme| %>
         <div class="panel panel-default">
-          <div class="panel-heading" data-toggle="collapse" href="#<%= theme %>-collapse">
+          <div class="panel-heading" data-toggle="collapse" href="#<%= theme %>-collapse" onclick="$(this).children('.chevron').children('i').toggleClass('fa-chevron-up fa-chevron-down')">
             <div class="icon-box"><%= image_tag("themes/icons/"+theme.downcase+".svg", size: "25") %></div>
             <h4 class="title"><%= theme %></h4>
             <h3 class="chevron"><i class="fas fa-chevron-down"></i></h3>

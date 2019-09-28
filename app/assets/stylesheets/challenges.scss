@@ -670,6 +670,7 @@
       &.not-completed {
         background-color: #efefef;
         cursor: auto;
+        box-shadow: none;
       }
 
       &:not(.not-completed):hover {
