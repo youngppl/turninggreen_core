@@ -1,45 +1,21 @@
 <div class="footer">
-  <div class="socialMedList">
-    <br />
-    <div>
-      <%=link_to href:"mailto:info@turninggreen.org" do %>
-        <%= image_tag('mail.svg', size: '25x25') %>
-      <% end %>
-    </div>
-    <div>
-      <%=link_to href:"https://twitter.com/turninggreenorg" do %>
-        <%= image_tag('twitter.svg', size: '25x25') %>
-      <% end %>
-    </div>
-    <div>
-      <%=link_to href:"https://www.instagram.com/turninggreenorg" do %>
-        <%= image_tag('instagram.svg', size: '25x25') %>
-      <% end %>
-    </div>
-    <div>
-      <%=link_to href:"https://www.facebook.com/TGreenOrg/" do %>
-        <%= image_tag('facebook.svg', size: '25x25') %>
-      <% end %>
-    </div>
-    <div>
-      <%=link_to href:"https://www.pinterest.com/teensturngree" do %>
-        <%= image_tag('pinterest.svg', size: '25x25') %>
-      <% end %>
-    </div>
-    <div>
-      <%=link_to href:"https://www.youtube.com/user/TeensTurningGreen" do %>
-        <%= image_tag('youtube.svg', size: '25x25') %>
-      <% end %>
-    </div>
-    <div>
-      <%=link_to "#" do %>
-        <%= image_tag('faq.svg', size: '25x25') %>
-      <% end %>
-    </div>
+  <div class="app col-3">
+    <%= image_tag 'rootup-logo.png' %>
+    <h2 class="slogan">making change accessible</h2>
   </div>
-  <div class="footerBottom">
-    <li>Ⓒ Turning Green 2015-2019</li>
-    <li> Your Contribution to Turning Green is tax deductible <br /> Our Tax ID number is 75-3106659 </li>
-    <li> A Program of Turning Green </li>
+  <div class="links">
+    <%= link_to 'about' %>
+    <%= link_to 'team' %>
+    <%= link_to 'contact' %>
+  </div>
+  <div class="links">
+    <%= link_to 'resources' %>
+    <%= link_to 'privacy', privacy_path %>
+    <%= link_to 'terms' %>
+  </div>
+  <div class="links">
+    <%= link_to 'twitter', 'https://twitter.com/turninggreenorg' %>
+    <%= link_to 'instagram', 'https://www.instagram.com/turninggreenorg/' %>
+    <%= link_to 'facebook', 'https://www.facebook.com/TGreenOrg/' %>
   </div>
 </div>
