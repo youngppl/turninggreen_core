@@ -69,15 +69,13 @@ class ChallengesController < ApplicationController
       end
     when "shared"
       @shared_challenges = []
-      @incompleted_challenges = []
-      all_challenges.each do |challenge|
-        if @user_completed_challenges.exists?(challenge_name: challenge[:name])
-          @chall_obj = @user_completed_challenges.find(@user_completed_challenges.where(challenge_name: challenge[:name]).pluck(:id)[0])
-        end
-        if !!@chall_obj && (@chall_obj.reflection.permission)
-          @shared_challenges << @chall_obj
+      @not_shared_challenges = []
+      @user_completed_challenges.each do |challenge|
+        # @chall_obj = @user_completed_challenges.find(@user_completed_challenges.where(challenge_name: challenge[:name]).pluck(:id)[0])
+        if @share_with_rootup || (!!challenge.reflection && challenge.reflection.permission)
+          @shared_challenges << challenge
         else
-          @incompleted_challenges << challenge
+          @not_shared_challenges << challenge
         end
       end
     else
