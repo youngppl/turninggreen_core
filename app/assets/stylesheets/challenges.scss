@@ -573,231 +573,357 @@
 
 .completed-challenges {
   text-align: left;
+  width: 68%;
+  min-height: 800px;
 
   .title {
-    font-size: 55px;
-    font-weight: 600;
-    color: #4a4a4a;
+    font-size: 24px;
+    font-weight: 500;
+    color: #5f5f5f;
   }
 
   .subheader {
-    margin-top: 37px;
+    margin-left: 0;
+    margin-right: 0;
+    justify-content: space-between;
 
     .num-completed {
-      font-size: 30px;
+      font-size: 20px;
       font-weight: 600;
-      float: left;
+      color: #5f5f5f;
     }
 
     .challenges-filter {
-      width: 162px;
-      height: 35px;
-      border: solid 1px #979797;
-      margin-left: 435px;
+      a {
+        font-size: 14px;
+        font-weight: 500;
+        color: #5f5f5f;
+        cursor: pointer;
+        &.active {
+          font-weight: 600;
+        }
+      }
+      span {
+        margin: 0px 14px;
+      }
     }
   }
 
-  .challenge-rows {
-    margin-top: 37px;
+  .panels {
+    .panel {
+      border-bottom: 2px solid #cecece;
+    }
+    .panel-heading {
+      height: 63px;
+      width: 1032px;
+      padding-right: 20px;
+      padding-left: 20px;
+      padding-top: 9px;
+      vertical-align: middle;
+      cursor: pointer;
+      display: table-cell;
+      .title, .icon-box, .num-completed {
+        display: inline-block;
+      }
+      .icon-box {
+        margin-right: 13px;
+      }
+      .title{
+        font-size: 20px;
+        font-weight: 600;
+        color: #5f5f5f;
+      }
+      &:hover {
+        .chevron {
+          color: #5f5f5f;
+        }
+      }
+      .chevron {
+        font-size: 20px;
+        float: right;
+        margin-left: 31px;
+        color: #959595;
+      }
+      .num-completed {
+        font-size: 16px;
+        font-weight: 500;
+        color: #757575;
+        float: right;
+      }
+    }
 
-    .row {
-      .challenge-box {
-        width: 226px;
-        height: 313px;
-        border: solid 1px #979797;
-        margin-right: 46px;
-        margin-bottom: 56px;
+    .challenges-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .challenge-box {
+      width: 214px;
+      height: 254px;
+      border-radius: 16px;
+      box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.13);
+      border: solid 1px #e9e9e9;
+      background-color: #ffffff;
+      margin-right: 28px;
+      margin-bottom: 20px;
+      cursor: pointer;
+
+      &.not-completed {
+        background-color: #efefef;
+        cursor: auto;
+        box-shadow: none;
+      }
+
+      &:not(.not-completed):hover {
+        box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.13), 0 2px 13px 0 rgba(0, 0, 0, 0.3);
+        margin-top: -4px;
+      }
+
+      .picture {
+        width: 190px;
+        height: 190px;
+        border-radius: 9px;
+        background-color: white;
+        margin: auto;
         position: relative;
+        margin-top: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        color: #757575;
+        overflow: hidden;
 
-        &.empty {
-          background-color: rgba(216, 216, 216, 0.5);
+        .reflection-reminder {
+          display: block;
+          text-align: center;
+          width: 145px;
+          color: inherit;
         }
 
-        .modal-trigger-area {
-          width: 226px;
-          height: 315px;
-          z-index: 1;
+        .shared {
+          width: 60px;
+          height: 29px;
+          background-color: white;
+          border-radius: 9px 0px;
+          right: 0;
           position: absolute;
-          top: 0;
-          cursor: pointer;
+          bottom: 0;
+          font-size: 11px;
+          font-weight: 500;
+          color: #5f5f5f;
+          text-align: center;
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
         }
+      }
 
-        .picture {
-          height: 225px;
-          border-bottom: solid 1px #979797;
-        }
-
-        .info {
-          position: relative;
-          padding: 10px;
-
-          .name {
-            font-size: 20px;
-            font-weight: 500;
-            width: 189px;
-            line-height: 1;
-          }
-
-          .icon {
-            float: right;
-            position: absolute;
-            top: 0;
-            right: 0;
-            margin: 10px;
-          }
-
-          .metric {
-            font-size: 17px;
-            font-weight: 500;
-            color: #4a4a4a;
-            margin-top: 3px;
-          }
+      .info {
+        margin: 8px 0px 12px 12px;
+        font-size: 14px;
+        font-weight: 600;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: #5f5f5f;
+        .metric {
+          font-weight: 500;
         }
       }
     }
   }
 }
 
-
-#myModal {
-  .modal-dialog{
-    width: 784px;
-    margin: 7.75rem auto
+.reflection-review-popup {
+  cursor: auto;
+  .row {
+    margin: 0;
+  }
+  .col-8 {
+    padding: 0;
+  }
+  .modal-content {
+    width: 940px;
+    height: 717px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    margin: auto;
   }
 
-  .modal-content{
-    width: 784px;
-    border-radius: 33px;
+  .header {
+    border-bottom: solid 1px #979797;
+    margin: 0px -15px;
+    padding: 0px 12px 8px 33px;
+
+    .title {
+      display: inline-block;
+      font-size: 20px;
+      font-weight: 600;
+      color: #5f5f5f;
+    }
+
+    .timeframe {
+      display: inline-block;
+      font-size: 16px;
+      color: #757575;
+      margin-left: 12px;
+    }
   }
 
-  .modal-header {
-      border-bottom: 0 none;
-      .modal-title{
-        width: 223px;
-        height: 53px;
-        font-size: 45px;
-        font-weight: bold;
-        color: #464646;
-        text-align: center;
-        margin-left: auto;
-        margin-top:45px;
-      }
+  .reflection-summary {
+    margin: 0px -16px -20px -16px;
+    background-color: #f0f1f2;
+    padding: 12px 32px;
   }
 
-  .modal-body{
-    .description{
-      margin: auto;
-      width: 473px;
-      height: 60px;
-      font-size: 25px;
+  .question {
+    .heading {
+      font-size: 16px;
       font-weight: 500;
-      color: #777777;
+      color: #757575;
     }
-    .modal-challenges{
-      margin: 43px auto;
-      display:block;
-      width:372px;
-
-      .challenge{
-        display:flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom:25px;
-
-        .completed-name{
-          margin:auto;
-          width: 223px;
-          font-size: 25px;
-          font-weight: 600;
-          color: #384632;
-        }
-      }
+    .reflection-text {
+      width: 876px;
+      height: 136px;
+      border-radius: 7px;
+      border: solid 1px #e9e9e9;
+      background-color: #ffffff;
+      font-size: 14px;
+      font-weight: 500;
+      color: #5f5f5f;
+      margin-bottom: 20px;
+      padding: 12px;
     }
   }
 
-  .modal-footer {
-      border-top: 0 none;
-      display:block;
-      margin:auto;
-      margin-bottom:40px;
-      .btn-default{
-        width: 219px;
-        height: 60px;
-        border-radius: 9px;
-        border: solid 3px #87b67b;
-        background-color: #ffffff;
-        font-size: 25px;
+  .log {
+    .heading {
+      font-size: 16px;
+      font-weight: 500;
+      color: #757575;
+    }
+    .summary {
+      font-size: 14px;
+      font-weight: 500;
+      color: #5f5f5f;
+      margin-bottom: 24px;
+    }
+  }
+
+  .graph {
+    height: 260px;
+    .box {
+      display: inline-block;
+      text-align: center;
+      width: 50px;
+      position: absolute;
+      top: 317px;
+
+      span {
+        font-size: 12px;
         font-weight: 500;
-        color: #384632;
-        margin: auto;
-      }
-      p{
-        width: 203px;
-         height: 16px;
-         font-size: 14px;
-         font-weight: 300;
-         color: #a8a8a8;
-         margin: auto;
+        color: inherit;
       }
 
-  }
-
-  .progress-circle {
-    height: 128px;
-    width:128px;
-  }
-
-  .worm {
-    position: relative;
-    top: -128px;
-
-    &.last-log {
-      top: -256px;
-    }
-    @keyframes worm-animate {
-      0% {
-        stroke-dashoffset: -385;
+      h2 {
+        font-size: 12px;
+        color: inherit;
       }
 
-      100% {
-        stroke-dashoffset: -565;
+      &.start {
+        left: 1px;
       }
-    }
 
-    circle {
-      fill: transparent;
-      stroke-width: 10px;
-      stroke-linecap: round;
-      transform-origin: 50% 50%;
-      stroke-dashoffset: 358;
-      transform: rotate(-86deg);
-      stroke: #4e8a08;
+      &.end {
+        right: -20px;
+        color: #d0021b;
+      }
     }
   }
 
-  .ring {
-    width: 128px;
-    height: 128px;
-    object-fit: contain;
-    box-shadow: inset 1px 1px 5px 0 rgba(124, 124, 124, 0.5);
-    background-color: #fafafa;
-    display: flex;
-    align-items: center;
-    border-radius: 50%;
+  .picture-col {
+    margin-left: 20px;
+    .heading {
+      font-size: 16px;
+      font-weight: 500;
+      color: #757575;
+    }
+    .photo {
+      margin-bottom: 14px;
+    }
+    .caption {
+      width: 240px;
+      height: 81px;
+      border-radius: 9px;
+      border: solid 1px #e9e9e9;
+      background-color: #ffffff;
+      font-size: 14px;
+      font-weight: 500;
+      color: #5f5f5f;
+      padding: 12px;
+    }
+  }
+
+  .actions {
     text-align: center;
-    .inner {
-      width: 95px;
-      height: 95px;
-      border-radius: 50%;
-      background-color: white;
-      position: relative;
-      z-index: 1;
-      margin: auto;
-      display: flex;
-      box-shadow: 1px 1px 5px grey;
-      img{
-        margin:auto;
-      }
+    border-top: solid 1px #dcdcdc;
+    margin-top: 20px;
+    padding-top: 16px;
+    label {
+      font-size: 14px;
+      font-weight: 600;
+      color: #5f5f5f;
+    }
+  }
+}
+
+.reflection-redirect-popup {
+  .modal-content {
+    width: 400px;
+    height: 194px;
+    border-radius: 17px;
+    background-color: #ffffff;
+    margin: auto;
+  }
+  .title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #5f5f5f;
+    margin: auto;
+    width: 90px;
+    margin-bottom: 12px;
+    margin-top: 10px;
+  }
+  .text {
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    color: #757575;
+    width: 273px;
+    margin: auto;
+    margin-bottom: 15px;
+  }
+
+  .row {
+    width: 240px;
+    margin: auto;
+  }
+
+  .button {
+    display: block;
+    width: 100px;
+    height: 36px;
+    border-radius: 5px;
+    border: solid 2px #575757;
+    background-color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    color: #5f5f5f;
+
+    &.continue {
+      margin-left: 20px;
     }
   }
 }

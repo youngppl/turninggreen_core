@@ -47,17 +47,40 @@ class ChallengesController < ApplicationController
   end
 
   def completed
+    @user_completed_challenges = current_user.challenges.where(completed: true)
+    @share_with_rootup = !!current_user.permissions && current_user.permissions.include?('challenges')
+    all_challenges = []
+    # TODO: move this to a helper
+    themes.each do |theme|
+      challenges[theme.to_sym][:challenges].each do |challenge|
+        all_challenges << challenge
+      end
+    end
     case params[:sort_by]
-    when "recent"
-      @completed = current_user.challenges.limit(8).order("date_complete DESC")
-    when "theme"
-      @completed = current_user.challenges.limit(8).order("theme")
-    # when "global"
-
-    when "surprise"
-      @completed = current_user.challenges.limit(8).shuffle
+    when "completion"
+      @completed_challenges = []
+      @incompleted_challenges = []
+      all_challenges.each do |challenge|
+        if @user_completed_challenges.exists?(challenge_name: challenge[:name])
+          @completed_challenges << @user_completed_challenges.where(challenge_name: challenge[:name])
+        else
+          @incompleted_challenges << challenge
+        end
+      end
+    when "shared"
+      @shared_challenges = []
+      @not_shared_challenges = []
+      @user_completed_challenges.each do |challenge|
+        # @chall_obj = @user_completed_challenges.find(@user_completed_challenges.where(challenge_name: challenge[:name]).pluck(:id)[0])
+        if @share_with_rootup || (!!challenge.reflection && challenge.reflection.permission)
+          @shared_challenges << challenge
+        else
+          @not_shared_challenges << challenge
+        end
+      end
     else
-      @completed = current_user.challenges.limit(8).order("date_complete DESC")
+      # themes is selected. the default
+      @completed_challenges = @user_completed_challenges
     end
   end
 

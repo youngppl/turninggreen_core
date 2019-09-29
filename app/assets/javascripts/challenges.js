@@ -9,11 +9,11 @@ $(window).on('turbolinks:load', function() {
   if (window.location.pathname == '/challenges/completed') {
     params = new URLSearchParams(window.location.search);
     if (params.get('sort_by') == null) {
-      option = 'recent'
+      option = 'theme'
     } else {
       option = params.get('sort_by')
     }
-    $('.challenges-filter').val(option);
+    $('.challenges-filter .'+option).addClass('active');
   }
 });
 
@@ -105,7 +105,7 @@ $(document).on('click', '.add-challenge-button', function(event) {
   var d = new Date();
   length = $(this).parent().children('select').val()
   $.post('/challenges/add', {
-      challenge_name: 'test challenge name',
+      challenge_name: $(this).parentsUntil('.challenge-box', '.challenge-info').children('.challenge-name').text(),
       theme: challengeName,
       length_of_challenge: length,
       date_complete: new Date(Date.now() + (6.04e+8 * length)),
@@ -125,8 +125,8 @@ $(document).on('click', '.add-challenge-button', function(event) {
   // TODO: change this to set challenge_name to html tag of the challenge box
 });
 
-function sortChallengesByFilter() {
-  window.location.search = "?sort_by=" + $(".challenges-filter").val();
+function sortChallengesByFilter(criteria) {
+  window.location.search = "?sort_by=" + criteria;
 }
 
 function showReflectionModal(event) {

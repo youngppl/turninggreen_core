@@ -10,7 +10,15 @@ module ChallengesHelper
         consider how you could avoid the waste to begin with?",
         :challenges => [
           {
-            :name => "Say \"No thanks\".",
+            :name => "Audit your waste",
+            :description => "",
+            :links => {
+
+            },
+            :instructions => ""
+          },
+          {
+            :name => "Practice refusing",
             :description => "There are \"freebies\" passed out all the time. The swag at events.
             The straw in your drink. The extra napkin for your takeout. The problem is that this \"free\"
             stuff often ends up in the landfill, which is a waste of resources. When we take \"free\" stuff,
@@ -28,7 +36,7 @@ module ChallengesHelper
             'no thank you'. It's about knowing when to say 'no' and when to say 'yes'."
           },
           {
-            :name => "Grocery shop with reusables.",
+            :name => "Shop with reusables",
             :description => "In the U.S., containers and packaging account for over 23% of material sent to the landfills.
             The EU has seen increased recycling rates of packaging waste from 2007-2016; however, it's not close to 100%.
             Food packaging, in particular, extends food's shelf life and makes it convenient for us to shop at grocery stores,
@@ -49,7 +57,7 @@ module ChallengesHelper
             purchases are charged by the unit of weight (e.g. pounds or kilos), don't forget to tare your container!"
           },
           {
-            :name => "Eat without the diposables.",
+            :name => "Eat without diposables",
             :description => "Paper plates, plastic cutlery, and foam cups are all disposable. You use it once and throw it away; that's a waste.
             When thrown into the trash, those goods end up sitting in the landfill for a very long time (especially plastic, which takes hundreds
               of years to degrade in the environment). This process is also problematic because disposable plastic food ware, particularly those
@@ -70,7 +78,7 @@ module ChallengesHelper
             foodware.\" Feel free to engage in conversation or elaborate more."
           },
           {
-            :name => "Swap out the plastic.",
+            :name => "Compost & recycle",
             :description => "A problem with plastic is that they're made of petroleum-based chemicals that can leach into our bodies through
             the food they touch (think: to-go food containers and utensils). When the plastics from to-go foodware and packaging are trashed,
             many of them end up in our oceans where marine life mistake the colorful plastics for food. In fact, it is estimated that by 2050,
@@ -92,7 +100,7 @@ module ChallengesHelper
             to compostable and biodegradable dishwashing sponges."
           },
           {
-            :name => "Compost and recycle.",
+            :name => "Party zero waste style",
             :description => "When we compost food scraps and plant-based goods, decomposers will breakdown these materials into nutrients
             for natural processes in the environment. Therefore, the things we compost are reused in our environment. Recycling is also
             good (it's way better than putting things into the landfill). However, recyclable goods cannot be recycled indefinitely;
@@ -112,7 +120,7 @@ module ChallengesHelper
             trash into the landfill if it isn't reusable, compostable, or recyclable."
           },
           {
-            :name => "Voice your opinion to businesses and government.",
+            :name => "Collaborate locally",
             :description => "We, as individuals, can lead a completely zero waste lifestyle. However, we alone will not reverse the
             environmental damage already done to our world. This does not mean that what you do doesn't matter. It matters so much,
             because you're showing and influencing the people around you to consider different ways to live through your actions.
@@ -147,7 +155,64 @@ module ChallengesHelper
         it got to you? Food should nourish us, but not all food is created equal. How food
         is grown influences nutritional quality, and you have the power to choose the
         quality of nutrients your body gets.",
-        :challenges => []
+        :challenges => [
+          {
+            :name => "Know your food",
+            :description => "",
+            :links => {
+
+            },
+            :instructions => ""
+          },
+          {
+            :name => "Go to farmers' markets",
+            :description => "",
+            :links => {
+
+            },
+            :instructions => ""
+          },
+          {
+            :name => "Make your own snacks",
+            :description => "",
+            :links => {
+
+            },
+            :instructions => ""
+          },
+          {
+            :name => "Zero your food waste",
+            :description => "",
+            :links => {
+
+            },
+            :instructions => ""
+          },
+          {
+            :name => "Cook a FLOSN meal",
+            :description => "",
+            :links => {
+
+            },
+            :instructions => ""
+          },
+          {
+            :name => "Support the ocean",
+            :description => "",
+            :links => {
+
+            },
+            :instructions => ""
+          },
+          {
+            :name => "Eat meat responsibly",
+            :description => "",
+            :links => {
+
+            },
+            :instructions => ""
+          }
+        ]
       },
       Body: {
         :videoCaption => "The main takeaway: know what's in your products.",
@@ -156,7 +221,64 @@ module ChallengesHelper
         When buying products, we look for ones that make us feel our best. But, how often have
         you flipped the package to read the ingredient list? Even then, do you know what the
         ingredients are?",
-        :challenges => []
+        :challenges => [
+          {
+            :name => "Know your products",
+            :description => "",
+            :links => {
+
+            },
+            :instructions => ""
+          },
+          {
+            :name => "Make your own",
+            :description => "",
+            :links => {
+
+            },
+            :instructions => ""
+          },
+          {
+            :name => "Find alternatives",
+            :description => "",
+            :links => {
+
+            },
+            :instructions => ""
+          },
+          {
+            :name => "Inform companies",
+            :description => "",
+            :links => {
+
+            },
+            :instructions => ""
+          },
+          {
+            :name => "Care for your body",
+            :description => "",
+            :links => {
+
+            },
+            :instructions => ""
+          },
+          {
+            :name => "Replenish zero waste",
+            :description => "",
+            :links => {
+
+            },
+            :instructions => ""
+          },
+          {
+            :name => "Be the influencer",
+            :description => "",
+            :links => {
+
+            },
+            :instructions => ""
+          }
+        ]
       },
       Water: {
         :videoCaption => "Think about water in the big picture.",
@@ -165,7 +287,64 @@ module ChallengesHelper
         our planet is available to us. To ensure equitable access, we need to change
         our lifestyle habits, like the food we eat and how we commute. Do you know how
         much water it takes to fuel your lifestyle?",
-        :challenges => []
+        :challenges => [
+          {
+            :name => "Track your usage",
+            :description => "",
+            :links => {
+
+            },
+            :instructions => ""
+          },
+          {
+            :name => "Skip the slip",
+            :description => "",
+            :links => {
+
+            },
+            :instructions => ""
+          },
+          {
+            :name => "Get a bucket buddy",
+            :description => "",
+            :links => {
+
+            },
+            :instructions => ""
+          },
+          {
+            :name => "No more single-use bottles",
+            :description => "",
+            :links => {
+
+            },
+            :instructions => ""
+          },
+          {
+            :name => "Eat plant-based",
+            :description => "",
+            :links => {
+
+            },
+            :instructions => ""
+          },
+          {
+            :name => "Cruise lightly",
+            :description => "",
+            :links => {
+
+            },
+            :instructions => ""
+          },
+          {
+            :name => "Raise awareness",
+            :description => "",
+            :links => {
+
+            },
+            :instructions => ""
+          }
+        ]
       },
       Biodiversity: {
         :videoCaption => "Biodiversity is like insurance to our survival.",
@@ -174,7 +353,64 @@ module ChallengesHelper
         of healthy soil than there are people on Earth? This diversity in our soil is
         responsible for 95%(!) of our food. We don't think much about these little
         fellas much, but they're critical to our food security.",
-        :challenges => []
+        :challenges => [
+          {
+            :name => "Biodiversity 101",
+            :description => "",
+            :links => {
+
+            },
+            :instructions => ""
+          },
+          {
+            :name => "Volunteer in garden",
+            :description => "",
+            :links => {
+
+            },
+            :instructions => ""
+          },
+          {
+            :name => "Start a compost pile",
+            :description => "",
+            :links => {
+
+            },
+            :instructions => ""
+          },
+          {
+            :name => "Attract pollinators",
+            :description => "",
+            :links => {
+
+            },
+            :instructions => ""
+          },
+          {
+            :name => "Plant perennials",
+            :description => "",
+            :links => {
+
+            },
+            :instructions => ""
+          },
+          {
+            :name => "Shop local & organic",
+            :description => "",
+            :links => {
+
+            },
+            :instructions => ""
+          },
+          {
+            :name => "Know your community",
+            :description => "",
+            :links => {
+
+            },
+            :instructions => ""
+          }
+        ]
       },
       Fashion: {
         :videoCaption => "What is fast fashion (in under 5 minutes)?",
@@ -182,35 +418,320 @@ module ChallengesHelper
         :briefDescription => "We live in a world of fast fashion where low prices often mean worker exploitation
         and cheap quality. Have you ever thought about how the price of your clothes translate to how your
         clothes were made?",
-        :challenges => []
+        :challenges => [
+          {
+            :name => "Know your clothes",
+            :description => "",
+            :links => {
+
+            },
+            :instructions => ""
+          },
+          {
+            :name => "Keep them useful",
+            :description => "",
+            :links => {
+
+            },
+            :instructions => ""
+          },
+          {
+            :name => "Find alternatives",
+            :description => "",
+            :links => {
+
+            },
+            :instructions => ""
+          },
+          {
+            :name => "Challenge brands",
+            :description => "",
+            :links => {
+
+            },
+            :instructions => ""
+          },
+          {
+            :name => "Clean naturally",
+            :description => "",
+            :links => {
+
+            },
+            :instructions => ""
+          },
+          {
+            :name => "Take a shopping break",
+            :description => "",
+            :links => {
+
+            },
+            :instructions => ""
+          },
+          {
+            :name => "No more synthetics",
+            :description => "",
+            :links => {
+
+            },
+            :instructions => ""
+          }
+        ]
       },
       Clean: {
         :videoCaption => "To unlock the Clean theme, you must complete 2 Body challenges.",
         :briefDescription => "There are many products on the market that leave behind harmful chemicals in place of
         the dirt and grime we want to remove. Cleaning shouldn't be harmful or complicated. We'll show you how to
         keep it simple and fun!",
-        :challenges => []
+        :challenges => [
+          {
+            :name => "Audit your products",
+            :description => "",
+            :links => {
+
+            },
+            :instructions => ""
+          },
+          {
+            :name => "Make your own",
+            :description => "",
+            :links => {
+
+            },
+            :instructions => ""
+          },
+          {
+            :name => "Find alternatives",
+            :description => "",
+            :links => {
+
+            },
+            :instructions => ""
+          },
+          {
+            :name => "Give feedback",
+            :description => "",
+            :links => {
+
+            },
+            :instructions => ""
+          },
+          {
+            :name => "Go plastic-free reusable",
+            :description => "",
+            :links => {
+
+            },
+            :instructions => ""
+          },
+          {
+            :name => "Host a cleaning party",
+            :description => "",
+            :links => {
+
+            },
+            :instructions => ""
+          },
+          {
+            :name => "Push for change",
+            :description => "",
+            :links => {
+
+            },
+            :instructions => ""
+          }
+        ]
       },
       Home: {
         :videoCaption => "To unlock the Home theme, you must complete 1 clean and 1 fashion challenge.",
         :briefDescription => "Did you know that indoor air is more polluted than the air outside? Carpets,
         paint, and furniture, for example, can release pollutants that build up in our homes. This raises the
         question: do you know the material composition of the things in your home?",
-        :challenges => []
+        :challenges => [
+          {
+            :name => "Declutter your space",
+            :description => "",
+            :links => {
+
+            },
+            :instructions => ""
+          },
+          {
+            :name => "Freshen the air",
+            :description => "",
+            :links => {
+
+            },
+            :instructions => ""
+          },
+          {
+            :name => "Conserve energy",
+            :description => "",
+            :links => {
+
+            },
+            :instructions => ""
+          },
+          {
+            :name => "Swap out plastic",
+            :description => "",
+            :links => {
+
+            },
+            :instructions => ""
+          },
+          {
+            :name => "Detox your bed",
+            :description => "",
+            :links => {
+
+            },
+            :instructions => ""
+          },
+          {
+            :name => "Show off your home",
+            :description => "",
+            :links => {
+
+            },
+            :instructions => ""
+          },
+          {
+            :name => "Curate a healthy home",
+            :description => "",
+            :links => {
+
+            },
+            :instructions => ""
+          }
+        ]
       },
       Wellness: {
         :videoCaption => "To unlock Wellness theme, you complete 1 food challenge.",
         :briefDescription => "Your health is most important because good health enables you to do the things you want
         and dream of. It sucks to be sick, so take care of your mental, physical, and spiritual health. Here, we'll just
         remind you of how to do that.",
-        :challenges => []
+        :challenges => [
+          {
+            :name => "You're #1",
+            :description => "",
+            :links => {
+
+            },
+            :instructions => ""
+          },
+          {
+            :name => "Get enough sleep",
+            :description => "",
+            :links => {
+
+            },
+            :instructions => ""
+          },
+          {
+            :name => "Build your relationships",
+            :description => "",
+            :links => {
+
+            },
+            :instructions => ""
+          },
+          {
+            :name => "Exercise",
+            :description => "",
+            :links => {
+
+            },
+            :instructions => ""
+          },
+          {
+            :name => "Take a sugar detox",
+            :description => "",
+            :links => {
+
+            },
+            :instructions => ""
+          },
+          {
+            :name => "Free yourself",
+            :description => "",
+            :links => {
+
+            },
+            :instructions => ""
+          },
+          {
+            :name => "Find peace",
+            :description => "",
+            :links => {
+
+            },
+            :instructions => ""
+          }
+        ]
       },
       Travel: {
         :videoCaption => "To unlock the Travel theme, you must complete 1 waste and 1 food challenge.",
         :briefDescription => "Being mindful of the impact of our daily actions doesn't stop when we leave home. It
         is still important if we're in the front yard, down the street, another city, and another country. Take what
         you've learned on your next trip, and show us what you can do!",
-        :challenges => []
+        :challenges => [
+          {
+            :name => "Know your values",
+            :description => "",
+            :links => {
+
+            },
+            :instructions => ""
+          },
+          {
+            :name => "Go outdoors",
+            :description => "",
+            :links => {
+
+            },
+            :instructions => ""
+          },
+          {
+            :name => "Eat out mindfully",
+            :description => "",
+            :links => {
+
+            },
+            :instructions => ""
+          },
+          {
+            :name => "Refuse single-use",
+            :description => "",
+            :links => {
+
+            },
+            :instructions => ""
+          },
+          {
+            :name => "Affirm your interests",
+            :description => "",
+            :links => {
+
+            },
+            :instructions => ""
+          },
+          {
+            :name => "Shop fair trade",
+            :description => "",
+            :links => {
+
+            },
+            :instructions => ""
+          },
+          {
+            :name => "Gift responsibly",
+            :description => "",
+            :links => {
+
+            },
+            :instructions => ""
+          }
+        ]
       }
     }
   end
