@@ -1,0 +1,44 @@
+.team-page{
+  background-color: #fafafa;
+  color: #5f5f5f;
+  font-weight: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  .h2 {
+    width: 220px;
+    height: 35px;
+    font-size: 30px;
+    font-weight: 500;
+  }
+  .bio-pic {
+    width:244px;
+    height:244px;
+    padding:50px;
+  }
+  .row {
+    justify-content:space-between;
+  }
+  .name{
+    font-size: 16px;
+    font-weight: 500;
+  }
+  .title{
+    font-size: 14px;
+    font-style: italic;
+  }
+  .description {
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+  }
+  .contact {
+    font-size: 14px;
+  }
+  .person {
+    display: inline-block;
+    text-align: center;
+  }
+}
+
+
