@@ -47,6 +47,7 @@
       border-radius: 9px;
       background-color: #d8d8d8;
       margin-right: 12px;
+      overflow: hidden;
     }
 
     .name {
@@ -62,6 +63,19 @@
 
     .instructions {
       margin-right: 42px;
+    }
+
+    .alt {
+      list-style: none;
+      li::before {
+        content: "\2022";
+        color: #d9bb93;
+        font-weight: bold;
+        display: inline-block;
+        width: 15px;
+        margin-left: -18px;
+        font-size: 20px;
+      }
     }
 
     .completed-challenge, .challenge-in-progress {
