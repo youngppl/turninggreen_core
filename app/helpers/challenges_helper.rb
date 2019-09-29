@@ -419,23 +419,28 @@ module ChallengesHelper
           {
             :name => "Biodiversity 101",
             :question => "What is biodiversity?",
-            :description => "Nature is a complex system, where every species plays an important role. Biodiversity is the checks and balances system in nature. A significant loss in biodiversity (in water, soil, and land) can imbalance our world such that food security + human health become at risk. Knowing this helps us understand why it's so important to care for soil health and promote biodiversity.",
+            :description => "Nature is a complex system, where every species plays an important role. Biodiversity is the checks and balances system in nature. A significant loss in biodiversity (in water, soil, and land) can imbalance our world such that food security + human health become at risk. Knowing this helps us understand why <a href=\"https://www.mnn.com/earth-matters/wilderness-resources/blogs/why-biodiversity-big-deal\">it's so important</a> to care for soil health and promote biodiversity.",
             :links => {
-
+              'What is biodiversity? (info)' => 'https://rodaleinstitute.org/why-organic/issues-and-priorities/biodiversity/',
+              'What is healthy soil? (info)' => 'https://rodaleinstitute.org/why-organic/organic-farming-practices/soil-health/',
+              'What is the difference between organic and conventional? (info)' => 'https://rodaleinstitute.org/why-organic/organic-basics/organic-vs-conventional/',
+              'Why biodiversity loss hurts (info)' => 'https://www.ecowatch.com/biodiversity-loss-human-health-2636410357.html?rebelltitem=1#rebelltitem1'
             },
-            :instructions => "",
+            :instructions => ["Watch <a href=\"https://www.youtube.com/watch?v=iR2AyybowPc\">this video</a> to learn what biodiversity is and why it's important.", "Teach what you learned to 3 different people!"],
             :metric_question => "",
-            :reflection_question => "",
+            :reflection_question => "Where in your community has biodiversity? If you can't think of a place, where in your community could there be more biodiversity?",
             :photo_prompt => ""
           },
           {
             :name => "Volunteer in garden",
-            :question => "",
-            :description => "",
+            :question => "Why are gardens important?",
+            :description => "Gardening (with <a href=\"https://rodaleinstitute.org/why-organic/organic-basics/regenerative-organic-agriculture/\">regenerative practices</a>) boosts biodiversity. Growing a variety of plants cultivates <a href=\"https://drive.google.com/file/d/0B0ezvt7UmjxZVTYzTkRfNjdPNFU/view\">healthy soil</a> that fosters organismal communities, which protect + strengthen ecosystems. If disease or pests take out a population of organisms, biodiversity ensures there are other organisms ready to keep the ecosystem thriving.",
             :links => {
-
+              'Search for climate victory gardens (finder)' => 'https://www.greenamerica.org/climate-victory-gardens-map',
+              'Get to know a garden (guide)' => 'https://greenamerica.org/blog/climate-victory-gardens-get-know-your-garden',
+              'Relationship between regenerative organic farming and biodiversity (info)' => ' https://rodaleinstitute.org/why-organic/issues-and-priorities/biodiversity/'
             },
-            :instructions => "",
+            :instructions => ["Volunteer at a local garden (e.g. farm's, community's, neighbor's, friend's) to help out with.", "Bring a friend along with you!"],
             :metric_question => "",
             :reflection_question => "",
             :photo_prompt => ""
