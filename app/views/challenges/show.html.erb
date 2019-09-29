@@ -18,20 +18,116 @@
 </script>
 
 <div class="challenge-page" style="display:none;">
-  <div class="back-button">
-    <button type="button" class="back" name="button" onclick="location.href='/themes';">
-      <%= image_tag 'arrow-back.svg'%>
-    </button>
-    <h1 class="challenge-title"><%= @challenge_name %>
-      CHALLENGES</h1>
+  <div class="header">
+    <h2 class="title"><%= @challenge_name %> Challenges</h2>
+    <h2 class="instructions">Click on a challenge to learn more and get started! They’re put by recommended order so get started! </h2>
   </div>
 
   <div class="challenges-content">
-    <div class="to-do-content">
-      <div class="To-Do">
-        <h1>To Do</h1>
+    <% if !@completed_challenges.exists?(challenge_name: @challenge_data[:challenges][0][:name]) %>
+      <%# PRE-CHALLENGE %>
+      <% challenge = @challenge_data[:challenges][0] %>
+      <h2 class="heading">Pre-challenge</h2>
+      <!-- <div class="challenge-box row">
+        <div class="icon">
+        </div>
+        <div class="challenge-container col">
+          <div class="info row">
+            <h5 class="name"><%= challenge[:name] %></h5>
+            <h5 class="heading">Why does this matter?</h5>
+            <p class="description"> <%= challenge[:description] %></p>
+          </div>
+          <div class="hidden row" style="display:none;">
+            <div class="instructions col">
+              <h4 class="heading">🤔How do I do this?🤔</h4>
+              <p class="steps"><%= challenge[:instructions].html_safe %></p>
+            </div>
+            <div class="col">
+              <div class="start-challenge row">
+                <h6 class="heading">🏁Start this challenge…</h6>
+                <%= select_tag "weeks", options_for_select((1..8).to_a)%>
+                <span class="label">week starting today</span><br>
+                <button type="button" class="btn add-challenge-button" name="button">start challenge</button>
+              </div>
+              <div class="learn-more row">
+                <h7 class="heading">🤓Wanna learn more?</h7>
+                <ol>
+                  <% challenge[:links].each do |text, link| %>
+                    <li><%= link_to text, link, class: "link", target: "_blank"%></li>
+                  <% end %>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div> -->
+    <% end %>
+
+    <h2 class="heading">Challenges</h2>
+    <% (1..6).each do |index| %>
+      <% challenge = @challenge_data[:challenges][index]%>
+      <% if !@completed_challenges.exists?(challenge_name: challenge[:name])%>
+        <div class="challenge-box row">
+          <div class="icon">
+          </div>
+          <div class="challenge-container col">
+            <div class="info">
+              <h5 class="name"><%= challenge[:name] %></h5>
+              <h5 class="heading">Why does this matter?</h5>
+              <p class="description"><%= challenge[:description] %></p>
+            </div>
+            <div class="hidden row" style="display:none;">
+              <div class="instructions col">
+                <h4 class="heading">🤔How do I do this?🤔</h4>
+                <p class="steps"><%= challenge[:instructions].html_safe %></p>
+              </div>
+              <div class="col-5">
+                <div class="start-challenge">
+                  <h6 class="heading">🏁Start this challenge</h6>
+                  <%= select_tag "weeks", options_for_select((1..8).to_a)%>
+                  <span class="label">week starting today</span><br>
+                  <button type="button" class="btn add-challenge-button" name="button">start challenge</button>
+                </div>
+                <div class="learn-more">
+                  <h7 class="heading">🤓Wanna learn more?</h7>
+                  <ol>
+                    <% challenge[:links].each do |text, link| %>
+                      <li><%= link_to text, link, class: "link", target: "_blank"%></li>
+                    <% end %>
+                  </ol>
+                </div>
+              </div>
+            </div>
+            <div class="dropdown-click row">
+              <div class="row">
+                <div class="text">
+                  <h2 class="up heading">TAKE ON THIS CHALLENGE</h2>
+                  <h2 class="down heading" style="display:none;">SHOW LESS</h2>
+                </div>
+                <div>
+                  <i class="fas fa-chevron-down"></i>
+                  <i class="fas fa-chevron-up" style="display:none;"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+
+  <div class="completed-content">
+    <h2 class="heading">Completed Challenges</h2>
+    <% if @completed_challenges.length == 0 %>
+      <div class="no-completed-challenges">
+        <h3>nothing completed yet let’s get started above!</h3>
       </div>
-      <% if @challenge_data[:challenges].empty? %>
+    <% end %>
+  </div>
+  <!-- <div class="challenges-content">
+    <div class="to-do-content">
+      <h2 class="heading">To Do</h2>
+      <% if @challenge_data.empty? %>
         <% (1..6-current_user.challenges.where(theme: @challenge_name, completed: true).length).each do %>
           <div class="challenge-box">
             <div class="expand-clickable-area"></div>
@@ -72,7 +168,7 @@
       <% else %>
         <% @challenge_data[:challenges].each do |challenge| %>
           <!-- THIS IS THE RIGHT CHALLENGE BOX! KEEP THIS IN THE FUTURE WHEN ALL CONTENT IS ADDED!!! -->
-          <div class="challenge-box">
+          <!-- <div class="challenge-box">
             <div class="expand-clickable-area"></div>
             <div class="challenge-icon">
               <%= image_tag 'to-do-unchecked.png', size:"48x48"%>
@@ -113,11 +209,11 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
         <% end %>
       <% end %>
     </div>
-    <div class="completed-content">
+    <!-- <div class="completed-content">
       <div class="Completed">
         <h1>Completed</h1>
       </div>
@@ -172,8 +268,8 @@
               </div>
             </div>
           <% end %>
-        </div>
-      </div>
+        </div> -->
+      </div> -->
     </div>
     <div class="modal" id="challenge-modal" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false">
       <div class="modal-dialog modal-dialog-centered" role="document">

@@ -96,9 +96,15 @@ function onYouTubeIframeAPIReady() {
   }
 }
 
-$(document).on("click", ".expand-clickable-area", function() {
-  $(this).parent().children('.challenge-info').children('.hidden').toggle();
-  $(this).parent().find('i').toggle();
+$(document).on("click", ".dropdown-click ", function() {
+  console.log($(this).children());
+  $(this).find('.up').toggle();
+  $(this).find('.down').toggle();
+  $(this).find('.fa-chevron-down').toggle();
+  $(this).find('.fa-chevron-up').toggle();
+  $(this).parent().children('.hidden').toggle()
+  // $(this).parent().children('.challenge-info').children('.hidden').toggle();
+  // $(this).parent().find('i').toggle();
 });
 
 $(document).on('click', '.add-challenge-button', function(event) {

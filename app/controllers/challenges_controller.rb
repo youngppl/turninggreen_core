@@ -9,6 +9,7 @@ class ChallengesController < ApplicationController
     @challenge_data = challenges[@challenge_name.to_sym]
     @theme_data = themesContent[@challenge_name.to_sym]
     @already_unlocked = current_user.unlockedChallenges.include?(@challenge_name)
+    @completed_challenges = current_user.challenges.where(theme: @challenge_name, completed: true)
     if !challenges.key?(@challenge_name.to_sym)
       raise ActionController::RoutingError.new('Not Found')
     end
