@@ -6,6 +6,10 @@ class ReflectionsController < ApplicationController
     current_user.add_points(3)
   end
 
+  def edit
+    Challenge.find(params[:challenge_id]).reflection.update(permission: params[:permission])
+  end
+
   private
 
   def reflection_params

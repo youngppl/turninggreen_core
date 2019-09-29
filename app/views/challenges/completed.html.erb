@@ -3,89 +3,246 @@
 <% end %>
 
 <div class="completed-challenges">
-  <h1 class="title">COMPLETED CHALLENGES</h1>
-  <div class="subheader">
-    <h2 class="num-completed"><%= Challenge.where(user: current_user, completed:true).length %> of 60 challenges completed</h2>
-    <select class="challenges-filter" onchange="sortChallengesByFilter();">
-      <option value="recent">Most Recent</option>
-      <option value="theme">Theme</option>
-      <option value="global">Global Popularity</option>
-      <option value="surprise">Surprise Me</option>
-    </select>
+  <h2 class="title">Completed Challenges</h2>
+  <div class="subheader row">
+    <h2 class="num-completed"><%= Challenge.where(user: current_user, completed:true).length %> of 70 challenges completed</h2>
+    <div class="challenges-filter">
+      <a class="theme" onclick="sortChallengesByFilter('theme');">Theme</a>
+      <span>|</span>
+      <a class="completion" onclick="sortChallengesByFilter('completion');">Completion</a>
+      <span>|</span>
+      <a class="shared" onclick="sortChallengesByFilter('shared');">Shared</a>
+    </div>
   </div>
   <br>
-  <div class="challenge-rows">
-    <% counter = 0 %>
-    <% uncompleted_counter = 0%>
-    <% (1..2).each do |row| %>
-      <div class="row">
-        <% (1..4).each do |col| %>
-          <% challenge = @completed[counter] %>
-          <% if !challenge.nil? and challenge.completed == true %>
-            <div class="challenge-box">
-              <div class="modal-trigger-area" onclick="showReflectionModal(event);"></div>
-              <div class="picture"></div>
-              <div class="info">
-                <div class="name"><%= challenge.challenge_name %></div>
-                <div class="icon"><%= image_tag "themes/icons/"+challenge.theme.downcase+".svg", size:'20' %></div>
-                <div class="metric">
-                  metric here
+
+  <% case params[:sort_by] %>
+  <% when 'completion'%>
+    <%# COMPLETED VIEW %>
+    <div class="panels">
+      <div class="panel panel-default">
+        <div class="panel-heading" data-toggle="collapse" href="#completed" onclick="$(this).children('.chevron').children('i').toggleClass('fa-chevron-up fa-chevron-down')">
+          <h4 class="title">Completed</h4>
+          <h3 class="chevron"><i class="fas fa-chevron-down"></i></h3>
+          <h5 class="num-completed"><%= @completed_challenges.length %> of 70 completed</h5>
+        </div>
+        <div id="completed" class="panel-collapse collapse">
+          <div class="challenges-wrapper">
+            <% @completed_challenges.each do |challenge| %>
+              <% @completed_challenge = @user_completed_challenges.find(challenge.pluck(:id)[0]) %>
+              <%# TODO: clean up code   %>
+              <div class="challenge-box <%= 'not-completed' if !@completed_challenge %>" <%= "onclick=$('#reflection-review-#{@completed_challenge.id}').modal('show');" if @completed_challenge && @completed_challenge.reflection %> <%= "onclick=$('#reflection-redirect').modal();" if @completed_challenge && !@completed_challenge.reflection %>>
+                <div class="picture">
+                  <% if @completed_challenge %>
+                    <% if @completed_challenge.reflection && @completed_challenge.reflection.photo.attached? %>
+                      <%= image_tag url_for(@completed_challenge.reflection.photo), size: '190' %>
+                    <% end %>
+                  <% end %>
+                  <% if !@completed_challenge.reflection %>
+                    <%# if challenge completed but no reflection submitted %>
+                    <span class="reflection-reminder">submit reflection to show photo</span>
+                  <% end %>
+                  <% if @completed_challenge && (@completed_challenge.reflection && (@share_with_rootup || @completed_challenge.reflection.permission)) %>
+                    <div class="shared">shared</div>
+                  <% end %>
                 </div>
-              </div>
-              <div class="reflection-modal modal" tabindex="-1" role="dialog">
-              <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title">Modal title</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                  </div>
-                  <div class="modal-body">
-                    <p>Modal body text goes here.</p>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            </div>
-          <% else %>
-            <% waste_challenges = challenges[:Waste][:challenges].select{ |challenge| !getUserCompletedChallengeNames.include? challenge[:name] } %>
-            <% challenge = waste_challenges[uncompleted_counter] %>
-            <% if !challenge.nil? %>
-            <!-- REPLACE THIS WHEN ALL CHALLENGE CONTENT ARE COMPLETED; CREATE ARRAY WITH EVERY CHALLENGE AND ITERATE -->
-              <div class="challenge-box empty">
-                <div class="modal-trigger-area" onclick></div>
-                <div class="picture"></div>
                 <div class="info">
-                  <div class="name"><%= challenge[:name] %></div>
-                  <div class="icon"><%= image_tag "themes/icons/waste.svg", size:'20' %></div>
+                  <div class="name"><%= @completed_challenge.challenge_name %></div>
                   <div class="metric">
-                    metric here
+                    <% if !@completed_challenge.reflection %>
+                      no info to share yet
+                    <% else %>
+                      <%= @completed_challenge.cumulative_metrics %> metric
+                    <% end %>
                   </div>
                 </div>
-              </div>
-            <% else %>
-              <div class="challenge-box empty">
-                <div class="modal-trigger-area" onclick></div>
-                <div class="picture"></div>
-                <div class="info">
-                  <div class="name">some challenge</div>
-                  <div class="icon"><%= image_tag "themes/icons/food.svg", size:'20' %></div>
-                  <div class="metric">
-                    metric here
-                  </div>
-                </div>
+                <% if @completed_challenge && @completed_challenge.reflection %>
+                  <%= render 'layouts/challenges/reflection_review_popup', {challenge: @completed_challenge} %>
+                <% end %>
+                <% @completed_challenge = nil %>
               </div>
             <% end %>
-            <% uncompleted_counter+=1 %>
-          <% end %>
-          <%counter+=1%>
-        <% end %>
+          </div>
+        </div>
       </div>
-    <% end %>
-  </div>
+      <div class="panel panel-default">
+        <div class="panel-heading" data-toggle="collapse" href="#incomplete" onclick="$(this).children('.chevron').children('i').toggleClass('fa-chevron-up fa-chevron-down')">
+          <h4 class="title">Incomplete</h4>
+          <h3 class="chevron"><i class="fas fa-chevron-down"></i></h3>
+          <h5 class="num-completed"><%= @incompleted_challenges.length %> of 70 incomplete</h5>
+        </div>
+        <div id="incomplete" class="panel-collapse collapse">
+          <div class="challenges-wrapper">
+            <% @incompleted_challenges.each do |challenge| %>
+              <div class="challenge-box not-completed">
+                <div class="picture">
+                  no photo to display
+                </div>
+                <div class="info">
+                  <div class="name"><%= challenge[:name] %></div>
+                </div>
+                <% if @completed_challenge && @completed_challenge.reflection %>
+                  <%= render 'layouts/challenges/reflection_review_popup', {challenge: @completed_challenge} %>
+                <% end %>
+                <% @completed_challenge = nil %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% when 'shared' %>
+    <%# SHARED VIEW %>
+    <div class="panels">
+      <div class="panel panel-default">
+        <div class="panel-heading" data-toggle="collapse" href="#completed" onclick="$(this).children('.chevron').children('i').toggleClass('fa-chevron-up fa-chevron-down')">
+          <h4 class="title">Shared</h4>
+          <h3 class="chevron"><i class="fas fa-chevron-down"></i></h3>
+          <h5 class="num-completed"><%= @shared_challenges.length %> of <%= @user_completed_challenges.length %> completed</h5>
+        </div>
+        <div id="completed" class="panel-collapse collapse">
+          <div class="challenges-wrapper">
+            <% @shared_challenges.each do |challenge| %>
+              <% @completed_challenge = challenge %>
+              <%# TODO: clean up code   %>
+              <div class="challenge-box <%= 'not-completed' if !@completed_challenge %>" <%= "onclick=$('#reflection-review-#{@completed_challenge.id}').modal('show');" if @completed_challenge && @completed_challenge.reflection %> <%= "onclick=$('#reflection-redirect').modal();" if @completed_challenge && !@completed_challenge.reflection %>>
+                <div class="picture">
+                  <% if @completed_challenge %>
+                    <% if @completed_challenge.reflection && @completed_challenge.reflection.photo.attached? %>
+                      <%= image_tag url_for(@completed_challenge.reflection.photo), size: '190' %>
+                    <% end %>
+                  <% end %>
+                  <% if !@completed_challenge.reflection %>
+                    <%# if challenge completed but no reflection submitted %>
+                    <span class="reflection-reminder">submit reflection to show photo</span>
+                  <% end %>
+                  <% if @completed_challenge && (@completed_challenge.reflection && (@share_with_rootup || @completed_challenge.reflection.permission)) %>
+                    <div class="shared">shared</div>
+                  <% end %>
+                </div>
+                <div class="info">
+                  <div class="name"><%= @completed_challenge.challenge_name %></div>
+                  <div class="metric">
+                    <% if !@completed_challenge.reflection %>
+                      no info to share yet
+                    <% else %>
+                      <%= @completed_challenge.cumulative_metrics %> metric
+                    <% end %>
+                  </div>
+                </div>
+                <% if @completed_challenge && @completed_challenge.reflection %>
+                  <%= render 'layouts/challenges/reflection_review_popup', {challenge: @completed_challenge} %>
+                <% end %>
+                <% @completed_challenge = nil %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading" data-toggle="collapse" href="#incomplete" onclick="$(this).children('.chevron').children('i').toggleClass('fa-chevron-up fa-chevron-down')">
+          <h4 class="title">Incomplete</h4>
+          <h3 class="chevron"><i class="fas fa-chevron-down"></i></h3>
+          <h5 class="num-completed"><%= @not_shared_challenges.length %> of <%= @user_completed_challenges.length %> completed</h5>
+        </div>
+        <div id="incomplete" class="panel-collapse collapse">
+          <div class="challenges-wrapper">
+            <% @not_shared_challenges.each do |challenge| %>
+              <% @completed_challenge = challenge %>
+              <%# TODO: clean up code   %>
+              <div class="challenge-box <%= 'not-completed' if !@completed_challenge %>" <%= "onclick=$('#reflection-review-#{@completed_challenge.id}').modal('show');" if @completed_challenge && @completed_challenge.reflection %> <%= "onclick=$('#reflection-redirect').modal();" if @completed_challenge && !@completed_challenge.reflection %>>
+                <div class="picture">
+                  <% if @completed_challenge %>
+                    <% if @completed_challenge.reflection && @completed_challenge.reflection.photo.attached? %>
+                      <%= image_tag url_for(@completed_challenge.reflection.photo), size: '190' %>
+                    <% end %>
+                  <% end %>
+                  <% if !@completed_challenge.reflection %>
+                    <%# if challenge completed but no reflection submitted %>
+                    <span class="reflection-reminder">submit reflection to show photo</span>
+                  <% end %>
+                  <% if @completed_challenge && (@completed_challenge.reflection && (@share_with_rootup || @completed_challenge.reflection.permission)) %>
+                    <div class="shared">shared</div>
+                  <% end %>
+                </div>
+                <div class="info">
+                  <div class="name"><%= @completed_challenge.challenge_name %></div>
+                  <div class="metric">
+                    <% if !@completed_challenge.reflection %>
+                      no info to share yet
+                    <% else %>
+                      <%= @completed_challenge.cumulative_metrics %> metric
+                    <% end %>
+                  </div>
+                </div>
+                <% if @completed_challenge && @completed_challenge.reflection %>
+                  <%= render 'layouts/challenges/reflection_review_popup', {challenge: @completed_challenge} %>
+                <% end %>
+                <% @completed_challenge = nil %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% else %>
+    <%# THEMES VIEW %>
+    <div class="panels">
+      <% themes.each do |theme| %>
+          <div class="panel panel-default">
+            <div class="panel-heading" data-toggle="collapse" href="#<%= theme %>-collapse" onclick="$(this).children('.chevron').children('i').toggleClass('fa-chevron-up fa-chevron-down')">
+              <div class="icon-box"><%= image_tag("themes/icons/"+theme.downcase+".svg", size: "25") %></div>
+              <h4 class="title"><%= theme %></h4>
+              <h3 class="chevron"><i class="fas fa-chevron-down"></i></h3>
+              <h5 class="num-completed"><%= current_user.challenges.where(theme: theme, completed: true).length %> of 7 completed</h5>
+            </div>
+            <div id="<%= theme %>-collapse" class="panel-collapse collapse">
+              <div class="challenges-wrapper">
+                <% challenges[theme.to_sym][:challenges].each do |challenge| %>
+                <% if @completed_challenges.exists?(challenge_name: challenge[:name], theme: theme) %>
+                  <% @completed_challenge = @completed_challenges.find(@completed_challenges.where(challenge_name: challenge[:name], theme: theme).pluck(:id)[0]) %>
+                <% end %>
+                <div class="challenge-box <%= 'not-completed' if !@completed_challenge %>" <%= "onclick=$('#reflection-review-#{@completed_challenge.id}').modal('show');" if @completed_challenge && @completed_challenge.reflection %> <%= "onclick=$('#reflection-redirect').modal();" if @completed_challenge && !@completed_challenge.reflection %>>
+                  <div class="picture">
+                    <% if @completed_challenge %>
+                      <% if @completed_challenge.reflection && @completed_challenge.reflection.photo.attached? %>
+                        <%= image_tag url_for(@completed_challenge.reflection.photo), size: '190' %>
+                      <% end %>
+                    <% end %>
+                    <% if !@completed_challenges.exists?(challenge_name: challenge[:name], theme: theme) %>
+                      <%# if challenge not completed yet %>
+                      no photo to display
+                    <% elsif !@completed_challenge.reflection %>
+                      <%# if challenge completed but no reflection submitted %>
+                      <span class="reflection-reminder">submit reflection to show photo</span>
+                    <% end %>
+                    <% if @completed_challenge && (@completed_challenge.reflection && (@share_with_rootup || @completed_challenge.reflection.permission)) %>
+                      <div class="shared">shared</div>
+                    <% end %>
+                  </div>
+                  <div class="info">
+                    <div class="name"><%= challenge[:name] %></div>
+                    <% if @completed_challenges.exists?(challenge_name: challenge[:name], theme: theme) %>
+                      <div class="metric">
+                        <% if !@completed_challenge.reflection %>
+                          no info to share yet
+                        <% else %>
+                          <%= @completed_challenge.cumulative_metrics %> metric
+                        <% end %>
+                      </div>
+                    <% end %>
+                  </div>
+                  <% if @completed_challenge && @completed_challenge.reflection %>
+                    <%= render 'layouts/challenges/reflection_review_popup', {challenge: @completed_challenge} %>
+                  <% end %>
+                  <% @completed_challenge = nil %>
+                </div>
+                <% end %>
+              </div>
+            </div>
+          </div>
+      <% end %>
+    </div>
+  <% end %>
+  <%= render 'layouts/challenges/reflection_redirect_popup' %>
 </div>
