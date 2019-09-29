@@ -110,11 +110,12 @@ $(document).on("click", ".dropdown-click ", function() {
 $(document).on('click', '.add-challenge-button', function(event) {
   var d = new Date();
   length = $(this).parent().children('select').val()
+  end_date = new Date(Date.now() + (6.04e+8 * length))
   $.post('/challenges/add', {
-      challenge_name: $(this).parentsUntil('.challenge-box', '.challenge-info').children('.challenge-name').text(),
+      challenge_name: $(this).parentsUntil('.challenge-box').find('.name').text(),
       theme: challengeName,
       length_of_challenge: length,
-      date_complete: new Date(Date.now() + (6.04e+8 * length)),
+      date_complete: end_date,
       completed: false
     })
     .then(function(data) {
@@ -125,10 +126,8 @@ $(document).on('click', '.add-challenge-button', function(event) {
           content: '<div type="button" class="close">&times;</div>The test challenge challenge has been added to your challenges!'
         }).popover('show');
       }
-      $(event.target).parent().parent().html("<h5 class=\"challenge-started\">You started this challenge on " + (d.getMonth() + 1) + "/" + d.getDate() + " and have " + $(event.target).parent().parent().children('select').val() * 7 + " days left!</h5><h5 class=\"you-got-this\">You got this!</h5>")
+      $(event.target).parent().replaceWith("<div class=\"challenge-in-progress\"><h2 class=\"heading\">🏃‍♀️Challenge in progress…</h2><h2 class=\"stat\">ends on " + (end_date.getMonth() + 1) + "/" + end_date.getDate() + "</h2></div>")
     })
-  // TODO: make date dynamic, read it from challenge object in backend
-  // TODO: change this to set challenge_name to html tag of the challenge box
 });
 
 function sortChallengesByFilter(criteria) {

@@ -735,4 +735,14 @@ module ChallengesHelper
       }
     }
   end
+
+  def all_challenges
+    all_challenges = []
+    themes.each do |theme|
+      challenges[theme.to_sym][:challenges].each do |challenge|
+        all_challenges << challenge
+      end
+    end
+    all_challenges
+  end
 end
