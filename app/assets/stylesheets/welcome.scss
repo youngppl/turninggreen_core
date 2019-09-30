@@ -42,133 +42,133 @@ input, button {
 
 
 .main-content {
-  padding-bottom: 50px;
-  padding-top: 20px;
+  padding-bottom: 3.125em;
+  padding-top: 1.25em;
   background-color: #f0f1f2;
 }
 
 .landing-page {
+  background-color: #fffaee;
   text-align: center;
   .border {
     border: solid 1px #979797;
   }
   .header {
-    padding-top: 75px;
-    padding-bottom: 67px;
+    padding-top: 4.688em;
+    padding-bottom: 4.188em;
     background-image: image-url('landing-page.png');
+    background-color: #fffaee;
     background-repeat: no-repeat;
-    height: 1298px;
+    height: 75em;
     background-size: 100%;
     font-family: amaranth, sans-serif;
     font-weight: 400;
     font-style: normal;
     color: #0e5b2c;
     .hook {
-      font-size: 40px;
+      font-size: 2.5em;
       font-weight: bold;
     }
 
     .answer {
-      font-size: 19px;
-      margin-top: 12px;
-      margin-bottom: 45px;
+      font-size: 1.188em;
+      margin-top: 0.75em;
+      margin-bottom: 2.813em;
     }
 
     .button {
-      width: 120px;
-      height: 45px;
-      font-size: 19px;
+      width: 7.5em;
+      height: 2.813em;
+      font-size: 1.188em;
       font-weight: 500;
-      border-radius: 10px;
+      border-radius: 0.625em;
       background-color: #0e5b2c;
       color: #ffffff;
       margin: auto;
       text-decoration: none;
       display: block;
-      margin-bottom: 30px;
-      line-height: 43px;
+      margin-bottom: 1.875em;
+      line-height: 2.688em;
     }
   }
 
   .impacts {
     // padding-top: 71px;
-    padding-bottom: 70px;
+    padding-bottom: 4.375em;
     .heading {
-      font-size: 40px;
+      font-size: 2.5em;
       font-weight: 500;
-      margin-bottom: 110px;
+      margin-bottom: 6.875em;
     }
 
     .pictures {
       .picture {
-        width: 200px;
-        height: 200px;
+        width: 12.5em;
+        height: 12.5em;
         border: solid 1px #979797;
         background-color: #d8d8d8;
         display: inline-block;
         padding-top: 4%;
       }
       .picture + .picture {
-        margin-left: 122px;
+        margin-left: 7.625em;
       }
     }
   }
 
   .about-us {
-    padding-top: 70px;
-    padding-bottom: 70px;
+    color: #5f5f5f;
+    background-color: #fffdfa;
+    padding-top: 4.375em;
+    padding-bottom: 4.375em;
+    display: flex;
     .heading {
-      font-size: 40px;
+      font-size: 2.5em;
       font-weight: 500;
-      margin-bottom: 70px;
+      margin-bottom: 4.375em;
     }
 
     .about-text {
-      font-size: 30px;
+      font-size: 1.875em;
       font-weight: 500;
-      width: 910px;
+      width: 50%;
       margin: auto;
       text-align: left;
     }
   }
-
-  .about-app {
-    padding-top: 70px;
-    padding-bottom: 70px;
-    .heading {
-      font-size: 40px;
-      font-weight: 500;
-      margin-bottom: 66px;
-    }
-
-    .pictures {
-      .picture {
-        display: inline-block;
-        width: 356px;
-        height: 218px;
-        border: solid 1px #979797;
-        background-color: #d8d8d8;
-      }
-      .picture + .picture {
-        margin-left: 100px;
-      }
-    }
-    .right-arrow {
-      font-size: 100px;
-      display: inline-block;
-      vertical-align: 68px;
-      position: relative;
-      margin-left: 100px;
-      position: relative;
-      right: -517px;
-      top: -160px;
-      display: block;
-    }
+  .about-pic {
+    margin: auto;
+  }
+  .about-img {
+    width: 20.25em;
+    height: 17.44em;
   }
 }
 
 .privacy-page {
   h4 {
     font-weight: bold;
+  }
+}
+
+.impacts {
+  color: #5f5f5f;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  font-weight: 500;
+  font-family: Raleway;
+  display: inline-block;
+  width: 60%;
+
+  .impacts-heading {
+    font-size: 1.875em;
+    display:inline-block;
+    margin-bottom: 1em;
+  }
+  .impacts-text {
+    font-size: 1em;
+    text-align: left;
   }
 }
