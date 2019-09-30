@@ -253,7 +253,24 @@
 // landing page navbar
 
 .default.navbar {
-    background-color: #7FA86F;
+  background: transparent;
+  padding-left: 15%;
+  padding-right: 15%;
+}
+
+.about-team {
+  font-family: Raleway;
+  font-size: 1.3em;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  .about-team-item {
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    color: #0f5b2c;
+  }
 }
 
 // .navbarList {
