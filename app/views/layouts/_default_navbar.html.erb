@@ -2,4 +2,8 @@
   <a class="navbar-brand" href=" <%= root_path %>">
     <%= image_tag "rootup-logo.png", class: "logo" %>
   </a>
+  <div class="about-team">
+    <%= link_to "about", about_path, class: "about-team-item navbar-brand"%>
+    <%= link_to "team", team_path, class: "about-team-item navbar-brand"%>
+  </div>
 </nav>
