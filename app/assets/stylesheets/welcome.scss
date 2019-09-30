@@ -1,20 +1,17 @@
-$brand-color: #f0871e; /* varela-regular - latin */
+$brand-color: #f0871e;
+
+/* varela-regular - latin */
 @font-face {
   font-family: 'Varela';
   font-style: normal;
   font-weight: 400;
-  src: font-url('varela-v10-latin-regular.eot');
-  /* IE9 Compat Modes */
-  src:local('Varela'), font-url('varela-v10-latin-regular.eot?#iefix') format('embedded-opentype'),
-  /* IE6-IE8 */
-  font-url('varela-v10-latin-regular.woff2') format('woff2'),
-  /* Super Modern Browsers */
-  font-url('varela-v10-latin-regular.woff') format('woff'),
-  /* Modern Browsers */
-  font-url('varela-v10-latin-regular.ttf') format('truetype'),
-  /* Safari, Android, iOS */
-  font-url( 'varela-v10-latin-regular.svg#Varela') format('svg'))
-  /* Legacy iOS */
+  src: font-url('varela-v10-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local('Varela'),
+  font-url('varela-v10-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  font-url('varela-v10-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+  font-url('varela-v10-latin-regular.woff') format('woff'), /* Modern Browsers */
+  font-url('varela-v10-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+  font-url('varela-v10-latin-regular.svg#Varela') format('svg'); /* Legacy iOS */
   unicode-range: U+30-39;
 }
 
