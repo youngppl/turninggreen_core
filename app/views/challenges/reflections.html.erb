@@ -8,6 +8,7 @@
   <h2 class="info">Click on the each theme below to complete challenges and make a difference!</h2>
   <div class="reflection-cards">
     <% current_user.challenges.where(reflection_completed:false, completed: true).each do |challenge| %>
+      <% challenge_data = challenges[challenge.theme.to_sym][:challenges].find {|x| x[:name] == challenge.challenge_name} %>
       <div class="panel panel-default">
         <div class="expand-clickable-area"></div>
         <div class="panel-heading">
@@ -24,13 +25,13 @@
           <%= form_for :reflection, url: new_reflection_path do |f| %>
           <%= f.hidden_field :challenge_id, value: challenge.id %>
           <div class="question row">
-            <h2 class="heading">Reflection question goes here?</h2>
+            <h2 class="heading"><%= challenge_data[:reflection_question] %></h2>
             <%= f.text_area :reflection, class: "reflection-question", placeholder: "Type away! We can’t wait to hear your experience!" %>
           </div>
           <div class="log row">
             <div class="col-8">
                 <h5 class="instructions">Since your last log:</h5>
-                <h5 class="log-question">How many times did you refuse something you didn't need?</h5>
+                <h5 class="log-question"> <%= challenge_data[:metric_question] %> </h5>
                 <%= f.number_field :log, {min: 0, class: "log-input"} %>
               <div class="graph">
                 <%= line_chart challenge.data, challenge.options %>
@@ -45,7 +46,7 @@
               </div>
             </div>
             <div class="picture col">
-              <h5 class="heading">Share a photo of your shopping experience!</h5>
+              <h5 class="heading"> <%= challenge_data[:photo_prompt] %> </h5>
               <div class="photo-upload">
                 <label class="upload">
                   upload

@@ -53,7 +53,7 @@ module ChallengesHelper
             :photo_prompt => "Share a photo of your shopping experience. Tell us what you learned from this experience."
           },
           {
-            :name => "Eat without diposables",
+            :name => "Eat without disposables",
             :question => "Why is disposable foodware a problem?",
             :description => "Paper plates, plastic cutlery, and foam cups are disposable. You use it once and throw it away. The problem is they end up sitting in landfills for a <a target=\"_blank\" href=\"https://greendiningalliance.org/2016/12/the-real-cost-of-styrofoam/\">very long time</a>. Additionally, disposable plastic foodware, particularly those with number 3 and 6 recycling number, are made with carcinogens that put wildlife and human health at risk.",
             :links => {
