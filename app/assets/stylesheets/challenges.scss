@@ -2,802 +2,581 @@
   margin-left: auto;
   width: 1050px;
   margin-right: auto;
+  color: #5f5f5f;
 
-  .heading {
-    text-align: center;
-    width: 787px;
-    margin: auto;
+  .row {
+    margin: 0;
+  }
+
+  .col {
+    padding: 0;
+  }
+
+  .header {
+    .title {
+      font-size: 24px;
+    }
 
     .instructions {
-      // text-align: left;
-      margin-top: 30px;
+      font-size: 14px;
+      margin-bottom: 20px;
     }
   }
 
+  .heading {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+
   .challenges-content {
-    display: inline-block;
+    margin: 20px 0;
+  }
 
-    .to-do-content {
-      display: inline-block;
+  .challenge-box {
+    width: 940px;
+    min-height: 194px;
+    border-radius: 16px;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.21), 0 2px 10px 0 rgba(0, 0, 0, 0.13);
+    background-color: #ffffff;
+    padding: 12px;
+    margin-bottom: 12px;
 
-      .To-Do {
-        height: 70px;
-        font-family: Raleway;
-        font-size: 60px;
-        font-weight: 900;
-        font-style: normal;
-        font-stretch: normal;
-        line-height: normal;
-        letter-spacing: -0.2px;
-        color: #4f5151;
-        margin-top: 42px;
-        margin-bottom: 16px;
-      }
+    .heading {
+      font-size: 14px;
+      font-weight: 600;
     }
 
-    .challenge-box {
-      width: 502px;
-      border-radius: 2px;
-      box-shadow: 2px 2px 6px 0 rgba(0, 0, 0, 0.5);
-      background-color: #f9f9f9;
-      margin-bottom: 16px;
-      cursor: pointer;
-      position: relative;
-
-      .expand-clickable-area {
-        width: 501px;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-      }
+    .icon {
+      width: 131px;
+      height: 131px;
+      border-radius: 9px;
+      background-color: #d8d8d8;
+      margin-right: 12px;
+      overflow: hidden;
     }
 
-    .hidden {
-      margin-bottom: 10px;
+    .name {
+      font-size: 16px;
+      color: #757575;
     }
 
-    .challenge-icon {
-      width: 48px;
-      height: 48px;
-      object-fit: contain;
-      margin: 22px 17px 56px 18px;
-      display: inline-block;
-      vertical-align: top;
-    }
-
-    .challenge-info {
-      height: 100%;
-      display: inline-block;
-      margin-top: 23px;
-      max-width: 376px;
-    }
-
-    .Oval {
-      width: 15px;
-      height: 15px;
-      background-color: #87b67b;
-      border-radius: 40px;
-      display: inline-block;
-    }
-
-    .challenge-name {
-      width: 328px;
-      font-size: 30px;
-      font-weight: 900;
-      line-height: normal;
-      letter-spacing: -0.2px;
-      color: #4f5151;
-      margin-top: 7px;
-      margin-bottom: 7px;
-      margin-right: 49px;
-    }
-
-    .image {
-      width: 362px;
-      height: 135px;
-      background-color: #515151;
-      margin-top: 16px;
-      margin-bottom: 18px;
-    }
-
-    .the-challenge {
-      width: 362px;
-      height: 100%;
-      font-family: Raleway;
-      font-size: 24px;
-      font-weight: normal;
-      font-style: normal;
-      font-stretch: normal;
-      line-height: 1.54;
-      letter-spacing: -0.2px;
-      color: #4f5151;
-    }
-
-    .challenge-description {
-      font-size: 24px;
-      display: inline-block;
-    }
-
-    .learn-more {
-      font-size: 24px;
-      line-height: 1.54;
-      letter-spacing: -0.2px;
-      font-weight: bold;
-      color: #4f5151;
-      display: inline-block;
-      margin-bottom: 20px;
-      margin-top: -9px;
-      position: relative;
-      z-index: 3;
+    .description,
+    .steps {
+      font-size: 14px;
+      line-height: 1.21;
     }
 
     .instructions {
-      .title {
+      margin-right: 42px;
+    }
+
+    .alt {
+      list-style: none;
+
+      li::before {
+        content: "\2022";
+        color: #d9bb93;
         font-weight: bold;
+        display: inline-block;
+        width: 15px;
+        margin-left: -18px;
+        font-size: 20px;
+      }
+    }
+
+    .challenge-in-progress,
+    .completed-challenge {
+      text-align: center;
+      margin-bottom: 24px;
+
+      .stat {
+        font-family: Varela;
+        font-size: 14px;
       }
     }
 
     .start-challenge {
-      width: 401px;
-      height: 100%;
-      font-family: Raleway;
-      font-size: 26px;
-      font-weight: 500;
-      font-style: normal;
-      font-stretch: normal;
-      line-height: normal;
-      letter-spacing: -0.2px;
-      color: #4f5151;
-
-      .challenge-started {
-        font-size: 26px;
-        font-weight: bold;
-        letter-spacing: -0.2px;
-        color: #4f5151;
-      }
-
-      .you-got-this {
-        width: 259px;
-        font-family: Raleway;
-        font-size: 26px;
-        font-weight: 500;
-        letter-spacing: -0.2px;
-        color: #4f5151;
-        margin-top: 18px;
-      }
-    }
-
-    .start-question {
-      width: 401px;
-      height: 100%;
-      font-family: Raleway;
-      font-size: 26px;
-      font-weight: bold;
-      font-style: normal;
-      font-stretch: normal;
-      line-height: 1.5;
-      letter-spacing: -0.2px;
-      color: #4f5151;
-      margin-bottom: 17px;
-    }
-
-    #weeks {
-      width: 47px;
-      border: 2px solid #5a5b5a;
-      border-radius: 7px;
-      margin-bottom: 10px;
-      padding: 2px;
-      outline: 0;
-      position: relative;
-      z-index: 3;
-    }
-
-    .label {
-      margin-left: 20px;
-    }
-
-    .challenge-title-to-do {
-      width: 162px;
-      height: 70px;
-      font-family: Raleway;
-      font-size: 60px;
-      font-weight: 900;
-      font-style: normal;
-      font-stretch: normal;
-      line-height: normal;
-      letter-spacing: -0.2px;
-      color: #4f5151;
-      right: 537px;
-      left: 741px;
-      bottom: 1099px;
-      top: 276px;
-      position: fixed;
-    }
-
-    .add-challenge-button {
       width: 232px;
-      height: 53px;
-      margin-top: 22px;
-      margin-bottom: 40px;
-      padding: 0;
-      position: relative;
-      z-index: 3;
-      outline: 0;
-    }
-
-    .show-hidden {
-      background: none;
-      border: none;
-      object-fit: contain;
-      float: right;
-      margin-top: -37px;
-      outline: 0;
-    }
-
-    .Great-Job {
-      width: 303px;
-      height: 70px;
-      font-family: Raleway;
-      font-size: 60px;
-      font-weight: 900;
-      font-style: normal;
-      font-stretch: normal;
-      line-height: normal;
-      letter-spacing: -0.2px;
-      color: #4f5151;
-    }
-
-    .You-unlocked-waste-c {
-      width: 478px;
-      height: 87px;
-      font-family: Raleway;
-      font-size: 32px;
-      font-weight: 500;
-      font-style: normal;
-      font-stretch: normal;
-      line-height: 1.31;
-      letter-spacing: -0.2px;
-      text-align: center;
-      color: #4f5151;
-    }
-
-    .completed-content {
-      float: right;
-      display: inline-block;
-      margin-left: 42px;
-
-      .Completed {
-        font-size: 60px;
-        font-weight: 900;
-        letter-spacing: -0.2px;
-        color: #4f5151;
-        margin-top: 42px;
-      }
-      @-moz-document url-prefix() {
-        .Completed {
-          margin-bottom: -14px;
-        }
-      }
-
-      .Rectangle {
-        width: 502px;
-        height: 347px;
-        border-radius: 2px;
-        box-shadow: 2px 2px 6px 0 rgba(0, 0, 0, 0.5);
-        border: solid 3px #979797;
-        background-color: #f3f3f3;
-        border-style: dashed;
-      }
-
-      .SmallRectangle {
-        width: 267px;
-        height: 183px;
-        background-color: #d8d8d8;
-        object-fit: contain;
-        margin: 44px 117px 20px 118px;
-      }
-
-      .Start-your-journey-t {
-        width: 352px;
-        height: 66px;
-        font-family: Raleway;
-        font-size: 28px;
-        font-weight: bold;
-        font-style: normal;
-        font-stretch: normal;
-        line-height: normal;
-        letter-spacing: -0.2px;
-        color: #4f5151;
-        margin-left: 75px;
-      }
-
-      .complete-icon {
-        width: 48px;
-        height: 48px;
-        object-fit: contain;
-        margin: 22px 17px 22px 18px;
-        display: inline-block;
-        vertical-align: top;
-      }
-
-      .challenge-info {
-        height: 100%;
-        display: inline-block;
-        margin-top: 23px;
-      }
-
-      .completed-box {
-        width: 502px;
-        position: relative;
-        border-radius: 2px;
-        box-shadow: 2px 2px 6px 0 rgba(0, 0, 0, 0.5);
-        background-color: #f3f3f3;
-        margin-bottom: 16px;
-        cursor: pointer;
-
-        .expand-clickable-area {
-          width: 501px;
-          position: absolute;
-          top: 0;
-          bottom: 0;
-        }
-      }
-
-      .completed-name {
-        width: 328px;
-        height: 33px;
-        font-family: Raleway;
-        font-size: 28px;
-        font-weight: bold;
-        font-style: normal;
-        font-stretch: normal;
-        line-height: normal;
-        letter-spacing: -0.2px;
-        color: #4f5151;
-        margin-top: 7px;
-        margin-bottom: 7px;
-        margin-right: 49px;
-      }
-
-      .show-hidden {
-        background: none;
-        border: none;
-        object-fit: contain;
-        float: right;
-        margin-top: -37px;
-      }
-
-      .image {
-        width: 362px;
-        height: 118px;
-        background-color: #515151;
-        margin-top: 16px;
-        margin-bottom: 18px;
-      }
-
-      .completed-header {
-        width: 348px;
-        height: 45px;
-        font-family: Raleway;
-        font-size: 24px;
-        font-weight: bold;
-        font-style: normal;
-        font-stretch: normal;
-        line-height: 1.54;
-        letter-spacing: -0.2px;
-        color: #4f5151;
-        margin-bottom: -5px;
-      }
-
-      .completed-instance {
-        width: 348px;
-        height: 100%;
-        border-radius: 3px;
-        box-shadow: 2px 2px 6px 0 rgba(0, 0, 0, 0.5);
-        background-color: #f3f3f3;
-        margin-bottom: 31px;
-      }
-
-      .completed-info {
-        margin-top: 22px;
-        display: inline-block;
-        max-width: 244px;
-      }
-
-      .completed-time {
-        width: 181px;
-        height: 29px;
-        font-family: Raleway;
-        font-size: 24px;
-        font-weight: bold;
-        font-style: normal;
-        font-stretch: normal;
-        line-height: normal;
-        letter-spacing: -0.2px;
-        color: #4f5151;
-      }
-
-      .instance-description {
-        width: 244px;
-        height: 48px;
-        font-family: Raleway;
-        font-size: 20px;
-        font-weight: 500;
-        font-style: normal;
-        font-stretch: normal;
-        line-height: normal;
-        letter-spacing: -0.2px;
-        color: #4f5151;
-      }
-
-      .start-challenge {
-        width: 401px;
-        height: 100%;
-        font-family: Raleway;
-        font-size: 26px;
-        font-weight: 500;
-        font-style: normal;
-        font-stretch: normal;
-        line-height: normal;
-        letter-spacing: -0.2px;
-        color: #4f5151;
-      }
-
-      .start-question {
-        width: 401px;
-        height: 100%;
-        font-family: Raleway;
-        font-size: 26px;
-        font-weight: bold;
-        font-style: normal;
-        font-stretch: normal;
-        line-height: 1.5;
-        letter-spacing: -0.2px;
-        color: #4f5151;
-        margin-bottom: 17px;
-      }
-
-      #weeks {
-        width: 47px;
-        border: 2px solid #5a5b5a;
-        border-radius: 7px;
-        margin-bottom: 10px;
-        padding: 2px;
-        outline: 0;
-        position: relative;
-        z-index: 3;
-      }
+      height: 129px;
+      border-radius: 6px;
+      border: solid 1px #e9e9e9;
+      padding: 12px;
+      margin: auto auto 12px;
 
       .label {
-        margin-left: 20px;
+        font-size: 14px;
       }
 
       .add-challenge-button {
-        width: 232px;
-        height: 53px;
-        margin-top: 22px;
-        margin-bottom: 40px;
-        padding: 0;
-        position: relative;
-        z-index: 3;
-        outline: 0;
-      }
+        width: 195px;
+        height: 42px;
+        font-size: 14px;
+        font-weight: 600;
+        text-align: center;
+        color: #0e5b2c;
+        border-radius: 5px;
+        border: solid 2px #0e5b2c;
+        background-color: #ffffff;
+        margin-top: 10px;
 
-      .completed-content {
-        margin-left: 42px;
-        display: inline-block;
-        float: right;
-
-        .Completed {
-          font-family: Raleway;
-          font-size: 60px;
-          font-weight: 900;
-          font-style: normal;
-          font-stretch: normal;
-          line-height: normal;
-          letter-spacing: -0.2px;
-          color: #4f5151;
-          margin-bottom: 16px;
-          margin-top: 42px;
-        }
-
-        .Rectangle {
-          width: 502px;
-          height: 347px;
-          border-radius: 2px;
-          box-shadow: 2px 2px 6px 0 rgba(0, 0, 0, 0.5);
-          border: solid 3px #979797;
-          background-color: #f3f3f3;
-          border-style: dashed;
-        }
-
-        .SmallRectangle {
-          width: 267px;
-          height: 183px;
-          background-color: #d8d8d8;
-          object-fit: contain;
-          margin: 44px 117px 20px 118px;
-        }
-
-        .Start-your-journey-t {
-          width: 352px;
-          height: 66px;
-          font-family: Raleway;
-          font-size: 28px;
-          font-weight: bold;
-          font-style: normal;
-          font-stretch: normal;
-          line-height: normal;
-          letter-spacing: -0.2px;
-          color: #4f5151;
-          margin-left: 75px;
-        }
-
-        .complete-icon {
-          width: 48px;
-          height: 48px;
-          object-fit: contain;
-          float: right;
-          margin-top: -37px;
+        &:hover {
+          color: white;
+          border: solid 2px #0e5b2c;
+          background-color: #0e5b2c;
         }
       }
+    }
+
+    ul {
+      font-size: 14px;
+      line-height: 1.12;
+
+      li {
+        margin-bottom: 4px;
+      }
+    }
+
+    ol {
+      counter-reset: list;
+      padding: 0;
+      line-height: 1.12;
+    }
+
+    ol > li {
+      list-style: none;
+    }
+
+    ol > li:before {
+      content: counter(list) ") ";
+      counter-increment: list;
+      font-size: 11px;
+    }
+
+    .link {
+      font-size: 11px;
+      font-weight: 500;
+    }
+
+    .dropdown-click {
+      justify-content: space-around;
+      cursor: pointer;
+      position: absolute;
+      bottom: -10px;
+      width: 121%;
+      left: -153px;
+      border-top: solid 1px #e5e5e5;
+      align-items: center;
+      height: 40px;
+      margin-top: 20px;
+
+      .text {
+        margin-right: 17px;
+        height: 17px;
+      }
+    }
+
+    .spacer {
+      float: left;
+      height: 50px;
+      width: 200px;
     }
   }
 
-  .back-button {
-    display: inline-block;
-    width: 100%;
+  .no-completed-challenges {
+    width: 940px;
+    height: 194px;
+    border-radius: 16px;
+    border: dashed 2px #979797;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 
-    .challenge-title {
-      display: inline-block;
-      vertical-align: middle;
-      font-family: Raleway;
-      font-size: 48px;
+    h3 {
+      width: 176px;
+      font-size: 16px;
       font-weight: 500;
-      font-style: normal;
-      font-stretch: normal;
-      line-height: normal;
-      letter-spacing: -0.2px;
-      color: #4f5151;
-      margin-left: 22px;
-      margin-bottom: 0;
-    }
-
-    .back {
-      border: none;
-      background: none;
-      outline: 0;
+      color: #757575;
     }
   }
 }
 
 .completed-challenges {
   text-align: left;
+  width: 68%;
+  min-height: 800px;
 
   .title {
-    font-size: 55px;
-    font-weight: 600;
-    color: #4a4a4a;
+    font-size: 24px;
+    font-weight: 500;
+    color: #5f5f5f;
   }
 
   .subheader {
-    margin-top: 37px;
+    margin-left: 0;
+    margin-right: 0;
+    justify-content: space-between;
 
     .num-completed {
-      font-size: 30px;
+      font-size: 20px;
       font-weight: 600;
-      float: left;
+      color: #5f5f5f;
     }
 
     .challenges-filter {
-      width: 162px;
-      height: 35px;
-      border: solid 1px #979797;
-      margin-left: 435px;
+      a {
+        font-size: 14px;
+        font-weight: 500;
+        color: #5f5f5f;
+        cursor: pointer;
+
+        &.active {
+          font-weight: 600;
+        }
+      }
+
+      span {
+        margin: 0 14px;
+      }
     }
   }
 
-  .challenge-rows {
-    margin-top: 37px;
+  .panels {
+    .panel {
+      border-bottom: 2px solid #cecece;
+    }
 
-    .row {
-      .challenge-box {
-        width: 226px;
-        height: 313px;
-        border: solid 1px #979797;
-        margin-right: 46px;
-        margin-bottom: 56px;
+    .panel-heading {
+      height: 63px;
+      width: 1032px;
+      padding-right: 20px;
+      padding-left: 20px;
+      padding-top: 9px;
+      vertical-align: middle;
+      cursor: pointer;
+      display: table-cell;
+
+      .icon-box,
+      .num-completed,
+      .title {
+        display: inline-block;
+      }
+
+      .icon-box {
+        margin-right: 13px;
+      }
+
+      .title {
+        font-size: 20px;
+        font-weight: 600;
+        color: #5f5f5f;
+      }
+
+      &:hover {
+        .chevron {
+          color: #5f5f5f;
+        }
+      }
+
+      .chevron {
+        font-size: 20px;
+        float: right;
+        margin-left: 31px;
+        color: #959595;
+      }
+
+      .num-completed {
+        font-size: 16px;
+        font-weight: 500;
+        color: #757575;
+        float: right;
+      }
+    }
+
+    .challenges-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .challenge-box {
+      width: 214px;
+      height: 254px;
+      border-radius: 16px;
+      box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.13);
+      border: solid 1px #e9e9e9;
+      background-color: #ffffff;
+      margin-right: 28px;
+      margin-bottom: 20px;
+      cursor: pointer;
+
+      &.not-completed {
+        background-color: #efefef;
+        cursor: auto;
+        box-shadow: none;
+      }
+
+      &:not(.not-completed):hover {
+        box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.13), 0 2px 13px 0 rgba(0, 0, 0, 0.3);
+        margin-top: -4px;
+      }
+
+      .picture {
+        width: 190px;
+        height: 190px;
+        border-radius: 9px;
+        background-color: white;
+        margin: auto;
         position: relative;
+        margin-top: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        color: #757575;
+        overflow: hidden;
 
-        &.empty {
-          background-color: rgba(216, 216, 216, 0.5);
+        .reflection-reminder {
+          display: block;
+          text-align: center;
+          width: 145px;
+          color: inherit;
         }
 
-        .modal-trigger-area {
-          width: 226px;
-          height: 315px;
-          z-index: 1;
+        .shared {
+          width: 60px;
+          height: 29px;
+          background-color: white;
+          border-radius: 9px 0;
+          right: 0;
           position: absolute;
-          top: 0;
-          cursor: pointer;
+          bottom: 0;
+          font-size: 11px;
+          font-weight: 500;
+          color: #5f5f5f;
+          text-align: center;
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
         }
+      }
 
-        .picture {
-          height: 225px;
-          border-bottom: solid 1px #979797;
-        }
+      .info {
+        margin: 8px 0 12px 12px;
+        font-size: 14px;
+        font-weight: 600;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: normal;
+        color: #5f5f5f;
 
-        .info {
-          position: relative;
-          padding: 10px;
-
-          .name {
-            font-size: 20px;
-            font-weight: 500;
-            width: 189px;
-            line-height: 1;
-          }
-
-          .icon {
-            float: right;
-            position: absolute;
-            top: 0;
-            right: 0;
-            margin: 10px;
-          }
-
-          .metric {
-            font-size: 17px;
-            font-weight: 500;
-            color: #4a4a4a;
-            margin-top: 3px;
-          }
+        .metric {
+          font-weight: 500;
         }
       }
     }
   }
 }
 
+.reflection-review-popup {
+  cursor: auto;
 
-#myModal {
-  .modal-dialog{
-    width: 784px;
-    margin: 7.75rem auto
+  .row {
+    margin: 0;
   }
 
-  .modal-content{
-    width: 784px;
-    border-radius: 33px;
+  .col-8 {
+    padding: 0;
   }
 
-  .modal-header {
-      border-bottom: 0 none;
-      .modal-title{
-        width: 223px;
-        height: 53px;
-        font-size: 45px;
-        font-weight: bold;
-        color: #464646;
-        text-align: center;
-        margin-left: auto;
-        margin-top:45px;
-      }
+  .modal-content {
+    width: 940px;
+    height: 717px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    margin: auto;
   }
 
-  .modal-body{
-    .description{
-      margin: auto;
-      width: 473px;
-      height: 60px;
-      font-size: 25px;
+  .header {
+    border-bottom: solid 1px #979797;
+    margin: 0 -15px;
+    padding: 0 12px 8px 33px;
+
+    .title {
+      display: inline-block;
+      font-size: 20px;
+      font-weight: 600;
+      color: #5f5f5f;
+    }
+
+    .timeframe {
+      display: inline-block;
+      font-size: 16px;
+      color: #757575;
+      margin-left: 12px;
+    }
+  }
+
+  .reflection-summary {
+    margin: 0 -16px -20px;
+    background-color: #f0f1f2;
+    padding: 12px 32px;
+  }
+
+  .question {
+    .heading {
+      font-size: 16px;
       font-weight: 500;
-      color: #777777;
+      color: #757575;
     }
-    .modal-challenges{
-      margin: 43px auto;
-      display:block;
-      width:372px;
 
-      .challenge{
-        display:flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom:25px;
-
-        .completed-name{
-          margin:auto;
-          width: 223px;
-          font-size: 25px;
-          font-weight: 600;
-          color: #384632;
-        }
-      }
+    .reflection-text {
+      width: 876px;
+      height: 136px;
+      border-radius: 7px;
+      border: solid 1px #e9e9e9;
+      background-color: #ffffff;
+      font-size: 14px;
+      font-weight: 500;
+      color: #5f5f5f;
+      margin-bottom: 20px;
+      padding: 12px;
     }
   }
 
-  .modal-footer {
-      border-top: 0 none;
-      display:block;
-      margin:auto;
-      margin-bottom:40px;
-      .btn-default{
-        width: 219px;
-        height: 60px;
-        border-radius: 9px;
-        border: solid 3px #87b67b;
-        background-color: #ffffff;
-        font-size: 25px;
+  .log {
+    .heading {
+      font-size: 16px;
+      font-weight: 500;
+      color: #757575;
+    }
+
+    .summary {
+      font-size: 14px;
+      font-weight: 500;
+      color: #5f5f5f;
+      margin-bottom: 24px;
+    }
+  }
+
+  .graph {
+    height: 260px;
+
+    .box {
+      display: inline-block;
+      text-align: center;
+      width: 50px;
+      position: absolute;
+      top: 317px;
+
+      span {
+        font-size: 12px;
         font-weight: 500;
-        color: #384632;
-        margin: auto;
-      }
-      p{
-        width: 203px;
-         height: 16px;
-         font-size: 14px;
-         font-weight: 300;
-         color: #a8a8a8;
-         margin: auto;
+        color: inherit;
       }
 
-  }
-
-  .progress-circle {
-    height: 128px;
-    width:128px;
-  }
-
-  .worm {
-    position: relative;
-    top: -128px;
-
-    &.last-log {
-      top: -256px;
-    }
-    @keyframes worm-animate {
-      0% {
-        stroke-dashoffset: -385;
+      h2 {
+        font-size: 12px;
+        color: inherit;
       }
 
-      100% {
-        stroke-dashoffset: -565;
+      &.start {
+        left: 1px;
       }
-    }
 
-    circle {
-      fill: transparent;
-      stroke-width: 10px;
-      stroke-linecap: round;
-      transform-origin: 50% 50%;
-      stroke-dashoffset: 358;
-      transform: rotate(-86deg);
-      stroke: #4e8a08;
+      &.end {
+        right: -20px;
+        color: #d0021b;
+      }
     }
   }
 
-  .ring {
-    width: 128px;
-    height: 128px;
-    object-fit: contain;
-    box-shadow: inset 1px 1px 5px 0 rgba(124, 124, 124, 0.5);
-    background-color: #fafafa;
-    display: flex;
-    align-items: center;
-    border-radius: 50%;
+  .picture-col {
+    margin-left: 20px;
+
+    .heading {
+      font-size: 16px;
+      font-weight: 500;
+      color: #757575;
+    }
+
+    .photo {
+      margin-bottom: 14px;
+    }
+
+    .caption {
+      width: 240px;
+      height: 81px;
+      border-radius: 9px;
+      border: solid 1px #e9e9e9;
+      background-color: #ffffff;
+      font-size: 14px;
+      font-weight: 500;
+      color: #5f5f5f;
+      padding: 12px;
+    }
+  }
+
+  .actions {
     text-align: center;
-    .inner {
-      width: 95px;
-      height: 95px;
-      border-radius: 50%;
-      background-color: white;
-      position: relative;
-      z-index: 1;
-      margin: auto;
-      display: flex;
-      box-shadow: 1px 1px 5px grey;
-      img{
-        margin:auto;
-      }
+    border-top: solid 1px #dcdcdc;
+    margin-top: 20px;
+    padding-top: 16px;
+
+    label {
+      font-size: 14px;
+      font-weight: 600;
+      color: #5f5f5f;
+    }
+  }
+}
+
+.reflection-redirect-popup {
+  .modal-content {
+    width: 400px;
+    height: 194px;
+    border-radius: 17px;
+    background-color: #ffffff;
+    margin: auto;
+  }
+
+  .title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #5f5f5f;
+    margin: auto;
+    width: 90px;
+    margin-bottom: 12px;
+    margin-top: 10px;
+  }
+
+  .text {
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    color: #757575;
+    width: 273px;
+    margin: auto auto 15px;
+  }
+
+  .row {
+    width: 240px;
+    margin: auto;
+  }
+
+  .button {
+    display: block;
+    width: 100px;
+    height: 36px;
+    border-radius: 5px;
+    border: solid 2px #575757;
+    background-color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    color: #5f5f5f;
+
+    &.continue {
+      margin-left: 20px;
     }
   }
 }

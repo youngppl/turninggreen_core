@@ -1,5 +1,6 @@
 <div class="dropdown">
   <button class="notifications nav-button" data-toggle="dropdown">
+    <%= image_tag 'notifications-icon.svg' %>
     <% challenges_with_reflections = current_user.challenges.where(completed:true, reflection_completed:false, notification_viewed:false)%>
       <% challenge_date_reminders = current_user.challenges.where(date_complete:Date.today..3.days.from_now, notification_viewed:false)%>
         <% if (challenge_date_reminders.length > 0) || (challenges_with_reflections.length > 0) %>

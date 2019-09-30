@@ -9,11 +9,11 @@ $(window).on('turbolinks:load', function() {
   if (window.location.pathname == '/challenges/completed') {
     params = new URLSearchParams(window.location.search);
     if (params.get('sort_by') == null) {
-      option = 'recent'
+      option = 'theme'
     } else {
       option = params.get('sort_by')
     }
-    $('.challenges-filter').val(option);
+    $('.challenges-filter .'+option).addClass('active');
   }
 });
 
@@ -96,19 +96,26 @@ function onYouTubeIframeAPIReady() {
   }
 }
 
-$(document).on("click", ".expand-clickable-area", function() {
-  $(this).parent().children('.challenge-info').children('.hidden').toggle();
-  $(this).parent().find('i').toggle();
+$(document).on("click", ".dropdown-click ", function() {
+  console.log($(this).children());
+  $(this).find('.up').toggle();
+  $(this).find('.down').toggle();
+  $(this).find('.fa-chevron-down').toggle();
+  $(this).find('.fa-chevron-up').toggle();
+  $(this).parent().children('.hidden').toggle()
+  // $(this).parent().children('.challenge-info').children('.hidden').toggle();
+  // $(this).parent().find('i').toggle();
 });
 
 $(document).on('click', '.add-challenge-button', function(event) {
   var d = new Date();
   length = $(this).parent().children('select').val()
+  end_date = new Date(Date.now() + (6.04e+8 * length))
   $.post('/challenges/add', {
-      challenge_name: 'test challenge name',
+      challenge_name: $(this).parentsUntil('.challenge-box').find('.name').text(),
       theme: challengeName,
       length_of_challenge: length,
-      date_complete: new Date(Date.now() + (6.04e+8 * length)),
+      date_complete: end_date,
       completed: false
     })
     .then(function(data) {
@@ -119,14 +126,12 @@ $(document).on('click', '.add-challenge-button', function(event) {
           content: '<div type="button" class="close">&times;</div>The test challenge challenge has been added to your challenges!'
         }).popover('show');
       }
-      $(event.target).parent().parent().html("<h5 class=\"challenge-started\">You started this challenge on " + (d.getMonth() + 1) + "/" + d.getDate() + " and have " + $(event.target).parent().parent().children('select').val() * 7 + " days left!</h5><h5 class=\"you-got-this\">You got this!</h5>")
+      $(event.target).parent().replaceWith("<div class=\"challenge-in-progress\"><h2 class=\"heading\">🏃‍♀️Challenge in progress…</h2><h2 class=\"stat\">ends on " + (end_date.getMonth() + 1) + "/" + end_date.getDate() + "</h2></div>")
     })
-  // TODO: make date dynamic, read it from challenge object in backend
-  // TODO: change this to set challenge_name to html tag of the challenge box
 });
 
-function sortChallengesByFilter() {
-  window.location.search = "?sort_by=" + $(".challenges-filter").val();
+function sortChallengesByFilter(criteria) {
+  window.location.search = "?sort_by=" + criteria;
 }
 
 function showReflectionModal(event) {

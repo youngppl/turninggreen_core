@@ -9,6 +9,8 @@ class ChallengesController < ApplicationController
     @challenge_data = challenges[@challenge_name.to_sym]
     @theme_data = themesContent[@challenge_name.to_sym]
     @already_unlocked = current_user.unlockedChallenges.include?(@challenge_name)
+    @completed_challenges = current_user.challenges.where(theme: @challenge_name, completed: true)
+    @in_progress_challenges = current_user.challenges.where(theme: @challenge_name, completed: false)
     if !challenges.key?(@challenge_name.to_sym)
       raise ActionController::RoutingError.new('Not Found')
     end
@@ -26,6 +28,7 @@ class ChallengesController < ApplicationController
     if current_user.challenges.where(completed: false).length < 6
       new_challenge = current_user.challenges.create(challenge_params)
       # new_challenge.progress_logs.create(metric: 0) # create empty log at 0
+      current_user.add_points(3)
       render :json => {:showPopover => true}
     else
       message = {:alert => "You can only have a maximum of 6 challenges!"}
@@ -47,17 +50,34 @@ class ChallengesController < ApplicationController
   end
 
   def completed
-    case params[:sort_by]
-    when "recent"
-      @completed = current_user.challenges.limit(8).order("date_complete DESC")
-    when "theme"
-      @completed = current_user.challenges.limit(8).order("theme")
-    # when "global"
+    @user_completed_challenges = current_user.challenges.where(completed: true)
+    @share_with_rootup = !!current_user.permissions && current_user.permissions.include?('challenges')
 
-    when "surprise"
-      @completed = current_user.challenges.limit(8).shuffle
+    case params[:sort_by]
+    when "completion"
+      @completed_challenges = []
+      @incompleted_challenges = []
+      all_challenges.each do |challenge|
+        if @user_completed_challenges.exists?(challenge_name: challenge[:name])
+          @completed_challenges << @user_completed_challenges.where(challenge_name: challenge[:name])
+        else
+          @incompleted_challenges << challenge
+        end
+      end
+    when "shared"
+      @shared_challenges = []
+      @not_shared_challenges = []
+      @user_completed_challenges.each do |challenge|
+        # @chall_obj = @user_completed_challenges.find(@user_completed_challenges.where(challenge_name: challenge[:name]).pluck(:id)[0])
+        if @share_with_rootup || (!!challenge.reflection && challenge.reflection.permission)
+          @shared_challenges << challenge
+        else
+          @not_shared_challenges << challenge
+        end
+      end
     else
-      @completed = current_user.challenges.limit(8).order("date_complete DESC")
+      # themes is selected. the default
+      @completed_challenges = @user_completed_challenges
     end
   end
 

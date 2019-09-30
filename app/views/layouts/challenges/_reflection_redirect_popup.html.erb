@@ -1,0 +1,18 @@
+<div class="modal reflection-redirect-popup" id="reflection-redirect" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&#x2715;</span>
+        </button>
+
+        <h5 class="title">⚠️jlyk⚠️</h5>
+        <h5 class="text">this will lead you to the reflections page to fully complete your challenge.</h5>
+        <div class="row">
+          <button class="back button" onclick="$('#reflection-redirect').modal('hide')">go back</button>
+          <button class="continue button" onclick="window.location.href = '<%= challenges_reflections_path %>'">continue</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
