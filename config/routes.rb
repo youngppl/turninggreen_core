@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   get '/about' => 'about#index'
+  get '/terms' => 'about#terms'
+  get '/resources' => 'about#resources'
   get '/dashboard' => 'users#show'
   get '/themes' => 'themes#index'
   get '/challenges/completed' => 'challenges#completed'
