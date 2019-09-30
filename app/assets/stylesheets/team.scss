@@ -5,8 +5,9 @@
   font-stretch: normal;
   line-height: normal;
   letter-spacing: normal;
-  padding: 2em 15%;
-  margin: auto;
+  // Hacky padding and margin fix
+  padding: 5em 15% 5em 15%;
+  margin-top: -5em;
 
   .heading {
     width: 220px;
