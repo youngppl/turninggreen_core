@@ -9,6 +9,8 @@ class ChallengesController < ApplicationController
     @challenge_data = challenges[@challenge_name.to_sym]
     @theme_data = themesContent[@challenge_name.to_sym]
     @already_unlocked = current_user.unlockedChallenges.include?(@challenge_name)
+    @completed_challenges = current_user.challenges.where(theme: @challenge_name, completed: true)
+    @in_progress_challenges = current_user.challenges.where(theme: @challenge_name, completed: false)
     if !challenges.key?(@challenge_name.to_sym)
       raise ActionController::RoutingError.new('Not Found')
     end
@@ -26,6 +28,7 @@ class ChallengesController < ApplicationController
     if current_user.challenges.where(completed: false).length < 6
       new_challenge = current_user.challenges.create(challenge_params)
       # new_challenge.progress_logs.create(metric: 0) # create empty log at 0
+      current_user.add_points(3)
       render :json => {:showPopover => true}
     else
       message = {:alert => "You can only have a maximum of 6 challenges!"}
@@ -49,13 +52,7 @@ class ChallengesController < ApplicationController
   def completed
     @user_completed_challenges = current_user.challenges.where(completed: true)
     @share_with_rootup = !!current_user.permissions && current_user.permissions.include?('challenges')
-    all_challenges = []
-    # TODO: move this to a helper
-    themes.each do |theme|
-      challenges[theme.to_sym][:challenges].each do |challenge|
-        all_challenges << challenge
-      end
-    end
+
     case params[:sort_by]
     when "completion"
       @completed_challenges = []

@@ -11,140 +11,118 @@ module ChallengesHelper
         :challenges => [
           {
             :name => "Audit your waste",
-            :description => "",
+            :question => "Why does waste matter?",
+            :description => "Our planet has a finite amount of resources. Instead of throwing things away, we should pass it onto someone else to use, OR repurpose it mechanically (recycle) or biologoically (compost) into a useful product. Follow the 5R's in this order, and you'll <a target=\"_blank\" href=\"https://www.plasticpollutioncoalition.org/take-action-1\">minimize your waste</a> real fast: refuse, reduce, reuse, rot, recycle.",
             :links => {
-
+              'How to conduct a waste audit (guide)' => 'https://www.goingzerowaste.com/31-day-challenge/how-to-conduct-a-waste-audit-day-31-of-the-zero-waste-challenge',
+              'What you can do (guide)' => 'https://www.plasticfreejuly.org/get-involved/what-you-can-do/category/getting-started/',
+              'How much plastic do you use? (quiz)' => 'https://survey.thinkfieldpanel.com.au/wcfs/29402'
             },
-            :instructions => ""
+            :instructions => ["Take a bag with you today + collect every piece of waste you'd throw in the trash, recycling, and compost.", 'At end of day, separate your collection into compostable, recyclable, and trash. Evaluate size of each pile.', 'Reflect upon your findings. How could you have avoided the trash you collected? Could you use alternative products to minimize your category sizes?'],
+            :alt_instructions => ["Alternative: Track your waste production with a list + mark them as compostable, recyclable, and trash."],
+            :metric_question => "",
+            :reflection_question => "What are ways in which you can reduce your waste?",
+            :photo_prompt => ""
           },
           {
             :name => "Practice refusing",
-            :description => "There are \"freebies\" passed out all the time. The swag at events.
-            The straw in your drink. The extra napkin for your takeout. The problem is that this \"free\"
-            stuff often ends up in the landfill, which is a waste of resources. When we take \"free\" stuff,
-            we also indirectly send the signal to people to make and buy more of these products for us. To
-            stop this cycle of giving, taking, and throwing away, we need to firmly say 'no thank you' and
-            explain why. This may notify the people who are giving things away that maybe what they're giving isn't that useful.",
+            :question => "Why should I refuse taking freebies?",
+            :description => "\"Freebies\" are passed out all the time. The problem is this \"free\" stuff often ends up in landfills, which is a waste of resources. When we take \"free\" stuff, we indirectly send the signal to make + buy more of these products. To reduce our trash output, we need to firmly say 'no thank you' and explain why. ",
             :links => {
-              "Zero Waste Resolutions" => "https://trashisfortossers.com/13-easy-zero-waste-resolutions-you-can-make-for-2018/"
+              "Ask yourself these questions before taking something (blog)" => "https://www.goingzerowaste.com/blog/2015/9/17/the-power-of-saying-no",
+              'How to ask for no gifts this holiday (guide)' => 'https://www.thegoodtrade.com/features/how-to-ask-for-no-gifts'
             },
-            :instructions => "1) Before you take any \"freebie\", pause and ask yourself: do I really need this?
-            Will I actually use this multiple times later? If you answer 'no', don't take it, say 'No thank you.
-            I won't use this.' with a smile, and walk away. Alternatively, ask: do I already own something that
-            can serve the same purpose? If you answer 'yes', then say 'No thank you, I don't need this.' with a
-            smile and walk away.<br><br>2) If you do need it, feel free to take it. This challenge isn't about saying
-            'no thank you'. It's about knowing when to say 'no' and when to say 'yes'."
+            :instructions => ["Before you take any \"freebie\" (e.g. free stuff at events, <a target=\"_blank\" href=\"https://trashisfortossers.com/why-requesting-no-straw-is-awesome/\">straw in drink</a>, napkin for takeout), pause and ask yourself: will I use this more than 5 times? If no, say 'No thank you. I won't use this.'", "Also consider: do I already own something that can serve the same purpose? If yes, then say 'No thank you, I don't need this.'", "If you do need it, feel free to take it. This challenge is about knowing when to say 'no' and when to say 'yes'."],
+            :metric_question => "How many times did you refuse something you didn't need?",
+            :reflection_question => "How was the experience of refusing things?",
+            :photo_prompt => "Share a photo capturing this experience. Tell us what you refused."
           },
           {
             :name => "Shop with reusables",
-            :description => "In the U.S., containers and packaging account for over 23% of material sent to the landfills.
-            The EU has seen increased recycling rates of packaging waste from 2007-2016; however, it's not close to 100%.
-            Food packaging, in particular, extends food's shelf life and makes it convenient for us to shop at grocery stores,
-            but let's ask: is it always really necessary? Not really. Look at the produce at farmers' markets; it's possible to
-            shop without the packaging and still get the food we need. Many grocery stores also sell loose produce; just be
-            sure to skip the plastic bag. The first of the 5R's is to reduce. If we avoid the packaging to begin with, we don't
-            have to figure out how to dispose of it properly or worry about it harming the environment.",
+            :question => "What's the deal with food packaging?",
+            :description => "Packaging, even if it's recyclable or compostable, still end up in landfills. To best combat this, refuse waste at the root source so you don't have to figure out proper disposal later. For example, food packaging extends shelf life + makes shopping conveninet, but ask yourself: Is it necessary? Think about farmers' markets + grocery stores; it's possible to buy loose produce.",
             :links => {
-              "Tips on how to shop with your own bags + jars" => "https://www.goingzerowaste.com/blog/2016/3/14/ultimate-guide-to-zero-waste-grocery-shopping",
-              "Videos on how to shop package free" => "https://trashisfortossers.com/zero-waste-shopping-how-to-guide/",
-              "Video on zero waste shopping at the farmers\' market" => "https://trashisfortossers.com/how-to-shop-at-farmers-market-withou/",
-              "Is bulk not an option?" => "https://www.goingzerowaste.com/blog/2015/12/31/life-without-bulk"
+              "How to shop with your own bags + jars (guide)" => "https://www.goingzerowaste.com/blog/2016/3/14/ultimate-guide-to-zero-waste-grocery-shopping",
+              "Zero waste shopping at the farmers' market (video)" => "https://trashisfortossers.com/how-to-shop-at-farmers-market-withou/",
+              "Where can I find bulk? (finder)" => "https://app.zerowastehome.com/",
+              "Is bulk not available? (blog)" => "https://www.goingzerowaste.com/blog/2015/12/31/life-without-bulk"
             },
-            :instructions => "The goal of this challenge is to avoid any single-use disposable food packaging when grocery shopping. <br><br>
-            1) Take your reusable bags and jars (if needed) with you when you grocery shop.<br><br>2) Buy loose fruits and veggies without
-            the plastic packaging.<br><br>3) Bring your own reusable container (e.g. jar, lunchbox) to purchase meats and cheese.<br><br>
-            4) Shop at bulk bins with your own reusable bags.<br><br>5) Buy unpackaged bread with a reusable bag or pillow case. ***If your
-            purchases are charged by the unit of weight (e.g. pounds or kilos), don't forget to tare your container!"
+            :instructions => ["Bring your own reusable bags and jars", "Opt for loose goods (e.g. fruits, veggies, meat, cheese, bread) instead of packaged ones. Try to avoid any packaging that will be disposed of.", "Shop at bulk bins.", "Get 3 friends and family to join you! ***If goods are charged by weight (e.g. pounds or kilos), don't forget to tare your reusables before filling them up!"],
+            :metric_question => "How many times did you use reusable containers (e.g. bags, jars) instead of single-use disposables?",
+            :reflection_question => "How challenging was it to avoid food packaging waste?",
+            :photo_prompt => "Share a photo of your shopping experience. Tell us what you learned from this experience."
           },
           {
-            :name => "Eat without diposables",
-            :description => "Paper plates, plastic cutlery, and foam cups are all disposable. You use it once and throw it away; that's a waste.
-            When thrown into the trash, those goods end up sitting in the landfill for a very long time (especially plastic, which takes hundreds
-              of years to degrade in the environment). This process is also problematic because disposable plastic food ware, particularly those
-              with the number 3 and 6 recycling number, are made with chemicals that are classified as carcinogenic to humans. We can't allow this;
-              human, wildlife, and environmental health are at risk. ",
+            :name => "Eat without disposables",
+            :question => "Why is disposable foodware a problem?",
+            :description => "Paper plates, plastic cutlery, and foam cups are disposable. You use it once and throw it away. The problem is they end up sitting in landfills for a <a target=\"_blank\" href=\"https://greendiningalliance.org/2016/12/the-real-cost-of-styrofoam/\">very long time</a>. Additionally, disposable plastic foodware, particularly those with number 3 and 6 recycling number, are made with carcinogens that put wildlife and human health at risk.",
             :links => {
-              "Zero Waste Lunch Essentials" => "https://trashisfortossers.com/how-to-pack-a-zero-waste-lunch/",
-              "Zero Waste Takeout" => "https://www.goingzerowaste.com/blog/zero-waste-takeout?rq=TAKEOUT"
+              "How to avoid plastic cutlery and containers (guide)" => "https://www.plasticfreejuly.org/get-involved/what-you-can-do/takeaway-cutlery-and-containers/",
+              "What are the toxic chemicals in plastics? (blog)" => "https://www.madesafe.org/avoid-toxic-chemicals-plastics/",
+              'Global fast food plastic survey' => 'https://www.plasticpollutioncoalition.org/global-fast-food-plastic-survey'
             },
-            :instructions => "The goal of this challenge is to avoid single-use disposable foodware.<br><br>1) Pack your meals in reusable non-plastic
-            containers.<br><br>2) Bring your own reusable non-plastic utensils.<br><br>3) Bring your own reusable napkins, straws, bowls, cups,
-            whatever you will need to eat your food.<br><br>4) If there's free food at an event, bring your own reusable food container
-            (e.g. lunchbox, glass snapware) and utensils instead of taking what's offered at the event.<br><br>5) If you're getting take out,
-            ask the restaurant to place the food directly into your own food containers instead of a to-go box (do not let them transfer the
-            food from a to-go box to your container; that defeats the purpose of bringing your own reusables). Refuse the to-go utensils
-            and napkins.<br><br>6) People will notice. Some will say something, and some won't. Simply explain to them: \"I bring my own
-            reusable containers and utensils to avoid the unnecessary waste and potential health and environmental risks with using disposable
-            foodware.\" Feel free to engage in conversation or elaborate more."
+            :instructions => ["Refuse any single-use disposables (e.g. food containers, utensils, straws, napkins, bags).", "Bring your own reusable alternatives to events (serving food).", "People will notice. Some will say something, and some won't. Simply explain to them: \"I bring my own reusable ___ to avoid the unnecessary waste.\" Feel free to engage in conversation or elaborate more."],
+            :metric_question => "How many times did you bring your own (e.g. cup, bottle, plate, utensil, bowl, straw, napkin, bag) instead of using single-use disposable? ",
+            :reflection_question => "How has your perspective about single-use disposables changed?",
+            :photo_prompt => "Share a photo of bringing your own reusables. Tell us something you learned from this experience."
           },
           {
             :name => "Compost & recycle",
-            :description => "A problem with plastic is that they're made of petroleum-based chemicals that can leach into our bodies through
-            the food they touch (think: to-go food containers and utensils). When the plastics from to-go foodware and packaging are trashed,
-            many of them end up in our oceans where marine life mistake the colorful plastics for food. In fact, it is estimated that by 2050,
-            there will be more plastic than fish in the oceans. Plastic does not biodegrade on land or in water. However, light degrades this
-            plastic both on land and in water, breaking the material down into smaller and smaller pieces over time. These microplastics can
-            absorb the chemicals in its surrounding areas so much that a small piece of plastic can be thousands of times more toxic than its
-            surrounding area. When animals, especially fish, eat these microplastics, they make their way up the food chain into our food supply.
-            Not only will we be eating the plastics themselves, we also take in the toxins that come with the plastic.",
+            :question => "Why is prioritize composting over recycling? ",
+            :description => "When we <a target=\"_blank\" href=\"https://www.goingzerowaste.com/blog/composting-for-apartments\">compost</a>, the remaining nutrients in food scraps + plant-based goods are reused in our environment. Recycling is also good (way better than sending goods to the landfill). However, <a target=\"_blank\" href=\"https://www.goingzerowaste.com/blog/how-to-recycle-paper-the-right-way?rq=RECYCLE\">recyclables</a> like plastic and paper can't be recycled infinitely. Furthermore, recycling goods requires more resources (e.g. fuel costs, labor, energy, water) than composting.",
             :links => {
-              "Zero Waste Swaps" => "https://www.goingzerowaste.com/blog/the-ultimate-list-of-zero-waste-swaps",
-              "Personal Hygiene Zero Waste Swaps" => "https://trashisfortossers.com/zero-waste-swaps/",
-              "Common Kitchen Items Zero Waste Swaps" => "https://trashisfortossers.com/zero-waste-swaps-common-kitchen-items/"
+              "How to compost at home (video)" => "https://kisstheground.com/how-to-compost-at-home-simple/",
+              "How to compost at home (infographic)" => "https://kisstheground.com/how-to-compost-at-home/",
+              "What do all the plastic numbers mean? (guide)" => "https://www.babygreenthumb.com/p-122-safe-plastic-numbers-guide.aspx"
             },
-            :instructions => "The focus of this challenge is to replenish your home with non-plastic reusable (or compostable and biodegradable
-            if reusable isn't an accessible option) goods.<br><br>1) Find environmentally sustainable alternatives to the plastic products you
-            use.<br><br>2) When the life of your plastic product comes to an end, purchase the alternative you found instead. Here are some
-            ideas to get you started: switch from plastic toothbrushes to bamboo toothbruhes; from plastic floss + disposable container to
-            biodegradable floss + reusable container; plastic single-use razors to reusable stainless steel razors; plastic dishwashing sponge
-            to compostable and biodegradable dishwashing sponges."
+            :background => "Composting can take on any form like starting your own compost pile, putting it in your green bin (if you have municipal composting), giving your compost to local farms, or tossing it into a compost bin in your community.",
+            :instructions => ["Compost any waste that is compostable and biodegradable. If it's not compostable, then recycle it.", "As a last resort, send your trash into the landfill if it isn't reusable, compostable, or recyclable."],
+            :metric_question => "Estimate how many times you composted or recycled instead of trashing something.",
+            :reflection_question => "How challenging was it to avoid sending waste to the landfill?",
+            :photo_prompt => "Take a photo of your compost. Tell us something you learned from this experience."
           },
           {
             :name => "Party zero waste style",
-            :description => "When we compost food scraps and plant-based goods, decomposers will breakdown these materials into nutrients
-            for natural processes in the environment. Therefore, the things we compost are reused in our environment. Recycling is also
-            good (it's way better than putting things into the landfill). However, recyclable goods cannot be recycled indefinitely;
-            there will be a point at which something can no longer be repurposed into something useful. In addition, the process of
-            recycling goods also requires much more resources (e.g. fuel costs, labor, energy, water) than composting. As such, if
-            something is not longer reusable, prioritize composting first, then recycling.",
+            :question => "How does this have an impact?",
+            :description => "How many people do you know actually think about their trash? Hosting a zero waste party is a fun way to show people what reducing your waste looks like and how simple it is. Your party opens up the conversation for you to share what you've learned about waste with your guests and inspire them to reduce their waste as well!",
             :links => {
-              "Video on How to Compost" => "https://kisstheground.com/how-to-compost-at-home-simple/",
-              "How to Compost at Home" => "https://kisstheground.com/how-to-compost-at-home/",
+              "Tips for throwing a zero waste party (guide)" => "https://www.goingzerowaste.com/blog/five-tips-for-throwing-a-zero-waste-party ",
+              "Hosting a zero waste dinner party (blog)" => "http://trashisfortossers.com/hosting-zero-waste-dinner-party/",
               "Composting From Apartment" => "https://www.goingzerowaste.com/blog/composting-for-apartments",
-              "Recycling Paper" => "https://www.goingzerowaste.com/blog/how-to-recycle-paper-the-right-way?rq=RECYCLE",
-              "Recycling Metal" => "https://www.goingzerowaste.com/blog/how-to-recycle-correctly?rq=RECYCLE",
-              "Plastics guide" => "https://www.babygreenthumb.com/p-122-safe-plastic-numbers-guide.aspx"
+              "How to have a trash-free Halloweekend (blog)" => "http://trashisfortossers.com/how-to-have-a-trash-free-halloweekend/",
+              "How to host a zero waste bachelorette party (blog)" => "http://trashisfortossers.com/zero-waste-bachelorette-party/"
             },
-            :instructions => "The goal of this challenge is to avoid sending any waste to the landfill.<br><br>1) Compost any waste that
-            is compostable and biodegradable.<br><br>2) If it's not compostable, then recycle it.<br><br>3) As a last resort, send your
-            trash into the landfill if it isn't reusable, compostable, or recyclable."
+            :instructions => ["Curate a waste-free menu. That is, purchase ingredients with little to no packaging waste, and serve on reusable dishware.", "Provide reusable dishware, utensils, and napkins.", "Decorate as you wish with nature and non-single-use disposable items.", "Make a compost bin accessible.", "Invite at least 3 people and tell them it's a zero waste party!", "If you'd like, invite your guests to help clean up after the party: put things in the dishwasher or handwash; toss dirtied cloths into the laundry; and empty the compost bin. Don't worry, this is bonding time and not as bad as it sounds.", "Have fun!"],
+            :metric_question => "How many people did you invite to your party?",
+            :reflection_question => "What did you like about this challenge?",
+            :photo_prompt => "Take a photo of your party setup. Tell us how you made your party zero waste."
           },
           {
             :name => "Collaborate locally",
-            :description => "We, as individuals, can lead a completely zero waste lifestyle. However, we alone will not reverse the
-            environmental damage already done to our world. This does not mean that what you do doesn't matter. It matters so much,
-            because you're showing and influencing the people around you to consider different ways to live through your actions.
-            The thing is we need to amp up our impact. Anne-Marie Bonneau of the Zero Waste Chef blog simply states: \"We don’t
-            need a handful of people doing zero waste perfectly. We need millions of people doing it imperfectly.\" ",
+            :question => "Why should I even try to be zero waste?",
+            :description => "Anne-Marie says it well: <a target=\"_blank\" href=\"https://zerowastechef.com/2019/02/14/how-to-cope-with-environmental-guilt-syndrome-egs/\">\"We don’t need a handful of people doing zero waste perfectly. We need millions of people doing it imperfectly.\"</a> The few individuals who commit to zero waste won't reverse the environmental damage already done; we need a whole lot more people involved. So what you do counts(! -- no matter how seemingly insignificant), because your actions show people around you an alternative way to live. This is how we slowly inspire change together. :)",
             :links => {
-              "Guide to banning polystyrene in your community" => "https://www.5gyres.org/polystyrene"
+              "Guide to banning polystyrene in your community(guide)" => "https://www.5gyres.org/polystyrene",
+              'Guide to change procurement practices (guide)' => "https://www.plasticfreejuly.org/get-involved/what-you-can-do/workplace-procurement/",
+              'How have governments gotten involved in the zero waste movement? (info)' => 'https://www.greenamerica.org/blog/plastic-out-sustainability-in'
             },
-            :instructions => "The goal of this challenge is to engage your community to reduce their waste.<br><br>1) Choose your target
-            audience. (e.g. local business, local government)<br><br>2) Draft up a proposal of what you want them to change and why it
-            matters to them. Be specific. (e.g. Ask a local restaurant to provide plastic straw only upon request.)<br><br>2) Reach out and
-            give them your pitch.<br><br>3) Offer to work with them to create this change for the community. ***We recognize that people's
-            comfort with speaking up to a larger entity varies widely, and for many, this can be very daunting. Start small by emailing
-            or calling a manager at a business or sit in at a city council meeting. And work your way up. We're here to support you in
-            this endeavor, so please reach out if you have any questions or need support; we're here for you and we believe you can do this!!"
+            :instructions => ["Choose your target audience. (e.g. local business, local government)", "Draft up a proposal of what you want them to change and why it matters to them. Be specific. (e.g. Ask a local restaurant to provide plastic straw only upon request.)", "Reach out and give them your pitch.", "Offer to work with them to create this change for the community."],
+            :metric_question => "How many businesses and government officials did you speak to about waste?",
+            :reflection_question => "How can you engage more of your community of friends and family to reduce their waste?",
+            :photo_prompt => "Take a photo capturing your attempt to speak up. Tell us something how you felt doing this challenge."
           }
           # ,
           # {
           #   :name => "",
+          #   :question => "",
           #   :description => "",
           #   :links => {
           #
           #   },
-          #   :instructions => ""
+          #   :instructions => [],
+          #   :metric_question => "",
+          #   :reflection_question => "",
+          #   :photo_prompt => ""
           # }
         ]
       },
@@ -158,59 +136,113 @@ module ChallengesHelper
         :challenges => [
           {
             :name => "Know your food",
-            :description => "",
+            :question => "Why does food matter?",
+            :description => "Food should nourish our bodies. However, the ways food is grown and processed impact the nutritional quality and quantity we get. To make healthy decisions, we need to ask: what are we eating? Were <a target=\"_blank\" href=\"https://rodaleinstitute.org/why-organic/organic-basics/regenerative-organic-agriculture/ \">regenerative</a> practices used to grow the food we eat?",
             :links => {
-
+              'Questions to ask food distributors (list + info)' => 'https://foodprint.org/shopping-sustainably/',
+              'Food labels to look for (list)' => 'https://foodprint.org/eating-sustainably/food-label-guide/',
+              'What makes up a nutritious diet? (info)' => 'https://www.drfuhrman.com/get-started/eat-to-live-blog/62/the-healthiest-anti-cancer-foods-g-bombs',
+              'Does diet influence allergies? (info)' => 'https://www.drfuhrman.com/get-started/eat-to-live-blog/131/does-diet-influence-seasonal-allergies',
+              "What's your food's foodprint? (finder + info)" => 'https://foodprint.org/eating-sustainably/real-food-encyclopedia/'
             },
-            :instructions => ""
+            :instructions => ["For packaged goods: read ingredient lists. Do you know what the ingredients are and how they impact your body?", "For fruits + veggies:
+ask the people you get your food from (e.g. farmers, store employees) how the food was grown.", "Search the web to learn about the practices
+and values of the farms and companies whose products you buy."],
+            :metric_question => "",
+            :reflection_question => "What was challenging? What did you learn from reading ingredients lists and asking people where your food came from?",
+            :photo_prompt => ""
           },
           {
             :name => "Go to farmers' markets",
-            :description => "",
+            :question => "Why do farmers' markets matter?",
+            :description => "Shopping at farmers' markets means buying freshly harvested fruits, vegetables, nuts, and other goodies at <a target=\"_blank\" href=\"https://foodrevolution.org/blog/why-buy-local-food/\">peak nutrition levels</a>. Plus, you're directly supporting farmers and keeping your money in the <a target=\"_blank\" href=\"https://farmersmarketcoalition.org/education/stimulate-local-economies/ \">local economy</a>, which stimulates job creation and local businesses.",
             :links => {
-
+              "Search for farmers' markets + CSAs near you (finder)" => 'https://www.localharvest.org/search.jsp?lat=37.7697&lon=-122.393295&scale=9&ty=1',
+              'Questions to ask farmers [pg 9] (list + info)' => 'https://kisstheground.com/purchasingguide/',
+              'What are sustainable farming practices? (info)' => 'https://rodaleinstitute.org/why-organic/organic-farming-practices/',
+              'Avoid the Dirty Dozen (list)' => 'https://www.ewg.org/foodnews/dirty-dozen.php',
+              'Okay to buy Clean Fifteen (list)' => 'https://www.ewg.org/foodnews/clean-fifteen.php'
             },
-            :instructions => ""
+            :instructions => ["Shop at a farmers' market. If it's not possible for you to visit one, look for a CSA (community supported agriculture) box to purchase.", "Bring your friends and family along!", "Start a conversation and get to know the farmers who grew your food.", "Ask them about their soil, pest management, and crop rotation practices."],
+            :metric_question => "How many people did you bring with you to the farmers' market?",
+            :reflection_question => "What did you like about your adventure to the farmers' market?",
+            :photo_prompt => "Share a photo of your farmers' market trip. Tell us how your experience was."
           },
           {
             :name => "Make your own snacks",
-            :description => "",
+            :question => "Why should I make my own snacks?",
+            :description => "There are lots of unhealthy snacks in the market. Read the ingredients list, and you'll find they're loaded with a form of refined sugar (e.g. cane sugar, high fructose corn syrup) , imitation flavors (e.g. natural and artificial flavors), and other <a target=\"_blank\" href=\"https://www.ewg.org/research/ewg-s-dirty-dozen-guide-food-additives\">unhealthy additives</a>. Snacking shouldn't be complicated and unhealthy; let's make it more wholesome.",
             :links => {
-
+              'What seasonal produce to snack on? (finder)' => 'https://www.seasonalfoodguide.org/california/early-april',
+              'Common ingredients to avoid in processed food (list)' => 'https://foodbabe.com/ingredients-to-avoid/',
+              'Healthy snacks to munch on (info + recipes)' => 'https://foodrevolution.org/blog/healthy-snacks/'
             },
-            :instructions => ""
+            :instructions => ["Find recipes for your favorite and go-to snacks. Whole fruits, veggies, nuts, and seeds are available to fall back on if you don't want to make your own snacks.", "Shop for local and seasonal ingredients to make your snacks or get your snacks.", "Whip up your snack and take a pic!"],
+            :metric_question => "How many different wholesome snacks did you eat?",
+            :reflection_question => "How has this challenge influenced your perspective about snacks?",
+            :photo_prompt => "Share a photo of your snacks. Tell us what makes it good."
           },
           {
             :name => "Zero your food waste",
-            :description => "",
+            :question => "How problematic is food waste?",
+            :description => "<a target=\"_blank\" href=\"http://www.fao.org/save-food/resources/keyfindings/en/\">1/3</a> of food produced globally each year is wasted. This is a huge waste of resources. In addition, food scraps end up decomposing in landfills, producing methane, which worsens climate change. Let's not be part of the problem: reduce your food waste and engage your community to do so too.",
             :links => {
-
+              'Food Waste 101' => 'https://www.imperfectproduce.com/food-waste-101',
+              'Tips to reduce food waste (list)' => 'https://foodprint.org/blog/15-easy-ways-to-reduce-food-waste/',
+              'More tricks to reduce food waste' => 'https://foodprint.org/blog/10-tips-i-learned-in-culinary-school-to-reduce-food-waste/',
+              "What's the shelf life of food? (finder)" => 'https://www.stilltasty.com/',
+              'How do I dispose of food waste? (video)' => 'https://www.youtube.com/watch?v=bqDQD8cvO5Y&feature=youtu.be&vq=hd1080&rel=0&autoplay=1'
             },
-            :instructions => ""
+            :instructions => ["Buy and take only what you will eat.", "Remember to eat your leftovers or share them with others, so they don't go to waste."],
+            :metric_question => "How many times did you take action to reduce food waste?",
+            :reflection_question => "What surprised you from this challenge?",
+            :photo_prompt => "Share a photo that captures this experience. Tell us how you reduced your food waste."
           },
           {
             :name => "Cook a FLOSN meal",
-            :description => "",
+            :question => "What's FLOSN?",
+            :description => "Eating healthy shouldn't be a compromise; nutrient-dense foods should be affordable. Fresh + local produce = more nutrients. Seasonal produce = more available + affordable. Organic foods = little to no toxic chemicals. Non-GMO foods = not genetically modified, so we're eating what we think we're eating. All these things = nutritious meal; bon apetit!",
             :links => {
-
+              'What should I buy? (guide)' => 'https://kisstheground.com/purchasingguide/',
+              "What's in season? (finder)" => 'https://www.seasonalfoodguide.org/',
+              'Leafy greens are important! (info)' => 'https://www.doctorklaper.com/dark-leafy-greens',
+              'Cook like a chef to reduce food waste (info)' => 'https://foodprint.org/blog/cook-like-a-chef-to-reduce-food-waste/'
             },
-            :instructions => ""
+            :instructions => ["Shop 100% fresh, local, organic, seasonal, non-GMO for your meal.", "Invite at least two other people to join you in this activity (cooking and/or eating).", "Aim to make your meal cost <$9 per person."],
+            :metric_question => "How many <$9 meals did you make in this challenge?",
+            :reflection_question => "How can you incorporate more FLOSN foods in your diet?",
+            :photo_prompt => "Share a photo of the meal you prepared. Tell us how much it cost and how your experience was."
           },
           {
             :name => "Support the ocean",
-            :description => "",
+            :question => "How do our fish consumption relate to the environment?",
+            :description => "Industrial-scale fishing has driven fish populations to <a target=\"_blank\" href=\"https://www.msc.org/what-we-are-doing/oceans-at-risk\">all-time lows</a> and some towards extinction. And toxic chemicals such as mercury, dioxins, antibiotics, and pesticide residue are increasingly found in the fish we eat. Takeaway: know where your fish comes from so you can actively support fisheries with <a target=\"_blank\" href=\"https://foodprint.org/issues/sustainable-seafood/\">sustainable environmental practices</a>.",
             :links => {
-
+              'How are countries striving for sustainable seafood? (list + info)' => 'https://www.seafoodwatch.org/resources',
+              'How do I buy sustainable seafood? (guide)' => 'https://www.nrdc.org/stories/smart-seafood-buying-guide',
+              'How to find local seafood (finder)' => 'https://localcatch.org/',
+              'What is better fish farming? (info)' => 'http://www.betterfishfarming.org/'
             },
-            :instructions => ""
+            :instructions => ["<a target=\"_blank\" href=\"https://foodprint.org/shopping-sustainably/\">Ask fishmongers or store managers</a> whether they sell sustainable seafood and find out where their seafood comes from.", "Do your best to find a local and accessible sustainable seafood source to purchase from."],
+            :metric_question => "How many times did you ask someone whether they sell sustainable seafood?",
+            :reflection_question => "How challenging was this for you?",
+            :photo_prompt => "Share a photo capturing this experience. Tell us something you learned from this challenge."
           },
           {
             :name => "Eat meat responsibly",
-            :description => "",
+            :question => "How does meat impact our environment?",
+            :description => "The <a target=\"_blank\" href=\"https://foodprint.org/issues/raising-animals-industrial-system/ \">livestock industry</a> has resorted to deforesting land for grazing animals and confining them in enclosed spaces, leading to air + water pollution and land degradation. This environmental change stresses the animals, negatively impacting their nutritional content. We can't support this, for the animals' well-being, our environment, or our health. ",
             :links => {
-
+              'Diet that fights climate change (video)' => 'https://www.youtube.com/watch?v=nUnJQWO4YJY',
+              'How do I buy better meat? [pg 21, 27] (guide)' => 'https://kisstheground.com/purchasingguide/',
+              'How can raising animals regenerate the land? [pg 18-28] (info)' => 'https://kisstheground.com/purchasingguide/',
+              'How can meat impact your health? (info)' => 'https://www.drfuhrman.com/get-started/eat-to-live-blog/163/the-protein-problem-how-the-source-affects-cardiovascular-risk'
             },
-            :instructions => ""
+            :background => "Let's be clear: we aren't telling you, \"Don't eat any meat.\" We simply encourage you to eat less meat and better meat.",
+            :instructions => ["Choose to eat meatless for some meals.", "For meat-eaters: Ask the rancher, farmer, butcher, or store manager about the animals' grazing plan, the care given to the animals, and their practices to restore soil and grasslands.", "Purchase grass-fed, pasture-raised, humanely raised meat."],
+            :metric_question => "How many times did you go meatless? How many times did you buy responsibly raised meat?",
+            :reflection_question => "How challenging was this for you?",
+            :photo_prompt => "Share a photo of your meal capturing this experience. Tell us how the experience was."
           }
         ]
       },
@@ -224,59 +256,105 @@ module ChallengesHelper
         :challenges => [
           {
             :name => "Know your products",
-            :description => "",
+            :question => "Why do the  bodycare products you use matter?",
+            :description => "Your skin absorbs about 60% of what it touches, entering your bloodstream. Know what could make up this 60%. There are harmful ingredients that inhibit the beauty and clarity of your natural skin health, but you won't know if you don't read the ingredient lists and look into what those ingredients can do to your body.",
             :links => {
-
+              'EWG Skin Deep database (finder)' => 'https://www.ewg.org/skindeep/',
+              'How do chemicals impact our health? (list + info)' => 'https://www.madesafe.org/education/chemical-profiles/',
+              'Examples of hazardous chemicals in bodycare (list + info)' => 'https://www.madesafe.org/science/hazard-list/'
             },
-            :instructions => ""
+            :background => "We're not asking for hours of research (unless you want to), but take 5 minutes to educate yourself a little bit more.",
+            :instructions => ["Read the ingredients list on skincare products that you use.", "Think about the ingredeints: what's the purpose of each ingredient? Look it up. Is the ingredient necessary for this product to be effective and do its job?"],
+            :metric_question => "",
+            :reflection_question => "What did you learn from reading the ingredients list on your bodycare products? How can you apply what you've learned in your life?",
+            :photo_prompt => ""
           },
           {
             :name => "Make your own",
-            :description => "",
+            :question => "Why should I make my own?",
+            :description => "Making your own means you know exactly what's in it.  You control the ingredients used and can ensure its safety to your body. The excessively long list of ingredients on the back of products often include unnecessary additives that make the product thicker, smell better, or last longer. In many cases, these ingredients aren't safe for your health.",
             :links => {
-
+              '100 DIY recipes to get you started (list)' =>'https://dontmesswithmama.com/100-diy-beauty-recipes/',
+              '8 ingredients to avoid (list)' => 'https://goodonyou.eco/8-toxic-ingredients-to-avoid-in-beauty-products/'
             },
-            :instructions => ""
+            :instructions => ["DIY a bodycare product that you use regularly (e.g. chapstick, lotion).", "Invite at least 3 other people over to join you in this endeavor."],
+            :metric_question => "How many bodycare products did you make?",
+            :reflection_question => "What do you think about making our own bodycare products now?",
+            :photo_prompt => "Share a photo of your homemade product. Tell us what you learned."
           },
           {
             :name => "Find alternatives",
-            :description => "",
+            :question => "What's the impact of finding alternatives?",
+            :description => "Doing a little more research about what's available in the market can help you better care for your skin. Plus, you'll likely be supporting companies that are creating products for people, not just profit. Be careful of greenwashing though. ",
             :links => {
-
+              'What should I look for? (list)' => 'https://www.greenamerica.org/green-living/choose-green-not-body-care',
+              "Don't fall for these 10 labelling traps (list)" => 'http://www.lisabronner.com/10-labeling-traps-to-recognize-in-body-care-products/',
+              'Some good bodycare alternatives (list)' => 'https://www.madesafe.org/find-products/personal-care/'
             },
-            :instructions => ""
+            :instructions => ["Find affordable, safe, and sustainably sourced bodycare alternatives to products you use regularly (e.g. <a target=\"_blank\" href=\"https://www.madesafe.org/education/whats-in-that/shampoo-conditioner/\">shampoo, conditioner</a>, <a target=\"_blank\" href=\"https://www.madesafe.org/education/whats-in-that/deodorant/\">deodorant</a>, <a target=\"_blank\" href=\"https://www.madesafe.org/education/bug-repellent-alternatives-tips/\">bug repellent<a/>, <a target=\"_blank\" href=\"https://www.ewg.org/sunscreen/\">sunscreen</a>).", "Share with at least 3 different people what you learned."],
+            :extra => "To avoid greenwashing: ",
+            :second_list => ["Find the company's website and understand their mission and values.", "Read through those ingredient lists.", "Do a little research and know the ingredients' funciton or check the <a target=\"_blank\" href=\"https://www.ewg.org/skindeep/\">EWG database</a>."],
+            :metric_question => "How many people did you share what you learned with?",
+            :reflection_question => "What was the response when you shared what you learned?",
+            :photo_prompt => "Share a photo capturing this experience. Tell us something you learned."
           },
           {
             :name => "Inform companies",
-            :description => "",
+            :question => "Why does reaching out to companies matter?",
+            :description => "Companies need to know what they’re doing well and not, and that knowledge only comes from potential and existing customers (aka you). Providing feedback is opening dialogue about how they can better their practices for people's health and the environment. Whether they act on your feedback is another story, but you will have done your job in making them aware.",
             :links => {
-
+              'What to ask of bodycare businesses and retailers? (list)' => 'http://www.safecosmetics.org/take-action/businesses-and-retailers/'
             },
-            :instructions => ""
+            :instructions => ["Reach out to conventional brands that you’ve purchased from or know others who purchase from. (e.g. email, call)", "Tell them a) why you don’t support their products anymore, b) what you would like them to change, and c) anything else you’d like them to know. Be polite but firm."],
+            :metric_question => "How many companies did you reach out to?",
+            :reflection_question => "How challenging was reaching out to brand reps for you?",
+            :photo_prompt => "Share a photo of the message you sent to brands. Please remove any personal information from the photo. Tell us how you felt as you sent off your message."
           },
           {
             :name => "Care for your body",
-            :description => "",
+            :question => "What's the deal with menstruation products?",
+            :description => "Conventional menstrual products contain up to 90% petroleum-based plastics. They're also made of pesticide-laden cotton and <a target=\"_blank\" href=\"https://www.natracare.com/why-natracare/chlorine-free/\">bleached with chlorine</a>, both of which involve carcinogens that harm people's health. Women use more than <a target=\"_blank\" href=\"https://www.wen.org.uk/environmenstrual-in-numbers\">11,000</a> disposable menstrual products in their lifetime. That's a lot of exposure to harmful chemicals & a lot of <a target=\"_blank\" href=\"https://divacup.com/eco-divas/\">waste</a> ending up in landfills + oceans.",
             :links => {
-
+              'Menstrual pads 101 (info)' => 'https://www.natracare.com/why-natracare/natural-materials/',
+              'How to talk about menstruation (guide)' => 'https://helloclue.com/articles/culture/how-to-talk-about-menstruation',
+              'Menstrual cup 101 (info)' => 'https://helloclue.com/articles/culture/menstrual-cups-questions-myths-and-misconceptions',
+              'Made Safe Certified menstrual products (list)' => 'https://www.madesafe.org/find-products/feminine-care/'
             },
-            :instructions => ""
+            :background => "This challenge isn't just for females. <br> For females: ",
+            :instructions => ["Use a menstrual cup or organic cotton pads, tampons, or pantyliners during your period.", "Share what you learned with at least 3 other people."],
+            :extra => "For the males: ",
+            :second_list => ["Share this information with your close female friends and family. Be careful how you word your message when you share this. Don't tell them what to do; simply say something like, \"Saw this and feel like it's important for more females to know. What do you think about it?"],
+            :metric_question => "How many people did you share what you learned with?",
+            :reflection_question => "How has this challenge changed your perception of menstrual products?",
+            :photo_prompt => "Share a photo capturing what you learned from this challenge. Tell us what you learned."
           },
           {
             :name => "Replenish zero waste",
-            :description => "",
+            :question => "How does waste relate to bodycare products?",
+            :description => "Paper + plastic cannot be recycled indefinitely, but glass + aluminum can. This is due to how the material degrades each time it's sent through recycling. Glass + aluminum are also <a target=\"_blank\" href=\"https://livegreen.recyclebank.com/column/because-you-asked/should-i-choose-plastic-aluminum-or-glass-bottles\">more widely recycled</a> around the world than plastic. This challenge levels up your game to think about the intersection of body + waste.",
             :links => {
-
+              'Brands with sustainable/no packaging (list)' => 'https://organicallybecca.com/zero-waste-sustainable-packaging/',
+              'How do plastic, glass, and aluminum compare? (info)' => 'https://earth911.com/living-well-being/recycled-beverage-containers/',
+              'How many times can this be recycled? (list)' => 'https://earth911.com/business-policy/how-many-times-recycled/'
             },
-            :instructions => ""
+            :background => "This challenge is for when you're in need to replenish your bodycare product supply.",
+            :instructions => ["Minimize your bodycare product waste by make your own products in a reusable container.", "Alternatively, purchase goods packaged in glass or aluminum bottles (no packaging is ideal, when possible)."],
+            :extra => "The goal is to aim for #plasticfree (1st priority) and #paperfree (2nd priority). ",
+            :metric_question => "How many products did you make or buy that have zero waste or more sustainable packaging?",
+            :reflection_question => "What did you learn from this challenge?",
+            :photo_prompt => "Share a photo of your bodycare product. Tell us how it has a more positive environmental impact than the product you previously used."
           },
           {
             :name => "Be the influencer",
-            :description => "",
+            :question => "Why me?",
+            :description => "You now know more than the average person about the safety and quality of bodycare products. To better our community, it is our responsibility to share this with other people and help them make positive changes in their lives. This will be sometimes easy and sometimes difficult. However, rememeber this: it's more important to say something than stay silent.",
             :links => {
-
+              'Brands with sustainable/no packaging (list)' => 'https://organicallybecca.com/zero-waste-sustainable-packaging/'
             },
-            :instructions => ""
+            :instructions => ["Teach at least 3 different people about what you've learned about bodycare products in this theme.", "Help them make at least 1 switch to a better alternative bodycare product."],
+            :metric_question => "How many people did you teach?",
+            :reflection_question => "How challenging was teaching others and helping them make a swap?",
+            :photo_prompt => "Share a photo of your buddy's swap to a better bodycare product. Tell us how this experience was for you."
           }
         ]
       },
@@ -290,59 +368,103 @@ module ChallengesHelper
         :challenges => [
           {
             :name => "Track your usage",
-            :description => "",
+            :question => "What's your water footprint?",
+            :description => "Water consumption isn't just how much time we shower, water lawn, or wash dishes -- our direct <a target=\"_blank\" href=\"https://waterfootprint.org/en/water-footprint/what-is-water-footprint/\">water footprint</a>. No, our largest footprint is indirect; they stem from our <a target=\"_blank\" href=\"https://foodprint.org/issues/the-water-footprint-of-food/\">diet</a>, purchases, and <a target=\"_blank\" href=\"https://www.watercalculator.org/water-use/the-water-footprint-of-energy/\">transportation</a>. <a target=\"_blank\" href=\"https://www.ewg.org/tapwater/sourcesofwaterpollution.php\">Large amounts of water</a> is needed to grow the food we + animals eat, power manufacturing processes, and source fuel for transportation.",
             :links => {
-
+              'Calculate your water footprint (quiz)' => 'https://www.watercalculator.org',
+              'What is the water footprint of __? (infographic)' => 'https://cdn.shopify.com/s/files/1/0764/0435/files/savewater.jpg?v=1493114807',
+              'FAQs about water footprints (info)' => 'https://waterfootprint.org/en/water-footprint/frequently-asked-questions/',
+              'How do I reduce my water footprint? (guide)' => 'https://www.watercalculator.org/save-water/',
+              'How do microplastics relate to our water? (info)' => 'https://www.earthday.org/2018/03/23/the-invisible-plastic-particles-in-our-drinking-water/'
             },
-            :instructions => ""
+            :instructions => ["<a target=\"_blank\" href=\"https://www.watercalculator.org/wfc2\">Calculate</a> your water footprint."],
+            :metric_question => "",
+            :reflection_question => "What's your water footprint? How can you reduce your water footprint?",
+            :photo_prompt => ""
           },
           {
             :name => "Skip the slip",
-            :description => "",
+            :question => "What's the problem with paper receipts?",
+            :description => "Most receipts end up in the garbage, so what's the point of printing them? In the US alone, 9 billion gallons (34 billion liters) of water is used to create these receipts. Furthermore, 93% of these receipts are coated with BPA and BPS, chemicals known to cause developmental health problems.",
             :links => {
-
+              "What's the impact of paper receipts? [Click the 'Access full report' for details] (info)" => 'https://www.greenamerica.org/report-STS',
+              'How is the government involved? (info)' => 'https://www.greenamerica.org/blog/green-america-supports-ca-skip-slip-bill'
             },
-            :instructions => ""
+            :instructions => ["Tell the cashier that you don't need a receipt, and refuse taking any.", "If you want to see the receipt, take a photo of the computer screen or have it emailed instead (when possible).", "Share with at least 3 different people what you learned about paper receipts."],
+            :metric_question => "How many paper receipts did you refuse to print and take?",
+            :reflection_question => "How many people did you share this information with and what were their reactions?",
+            :photo_prompt => "Share a photo capturing this expereince. Tell us what you learned."
           },
           {
             :name => "Get a bucket buddy",
-            :description => "",
+            :question => "Why does collecting my shower water matter?",
+            :description => "There isn't an infinite supply of clean water. We are fortunate to have water readily accessible to us, while <a target=\"_blank\" href=\"https://charitywater.org\">663 million</a> people in the world don't. However, many times, the water that come out of faucets and showerheads is more than what we actually need. ",
             :links => {
-
+              'Showering with a bucket story (info)' => 'https://www.businessinsider.com/california-los-angeles-drought-shower-bucket-water-conservation-2015-12',
+              'One creative way to shower (video)' => 'https://www.youtube.com/watch?v=ttCx_MjWcls',
+              'How to be more water conscious (guide)' => 'https://www.ewg.org/healthyhomeguide/water-efficiency/'
             },
-            :instructions => ""
+            :background => "We're not trying to get you to shower with a bucket everyday of your life; we know it's inconvenient. We simply want you to be more mindful about your water usage.",
+            :instructions => ["Place a bucket/large cup/bowl next tp you in your shower to collect excess water.", "Take your shower normally.", "Water any plants around the home with your bucket-ful of water."],
+            :extra => "*Avoid getting any non-biodegradable body care products (e.g. soap, shampoo, conditioner) into your bucket, especially if you're going to water edible plants with your collection.",
+            :metric_question => "How many times did you fill your bucket?",
+            :reflection_question => "How has this challenge influenced your perspective on water usage?",
+            :photo_prompt => "Share a photo of your bucket in your shower. Tell us how the experience was."
           },
           {
             :name => "No more single-use bottles",
-            :description => "",
+            :question => "What's the problem with single-use water bottles?",
+            :description => "Did you know it takes 2x more water to make the plastic bottle than to fill it? Plus, bottled water costs <a target=\"_blank\" href=\"https://www.foodandwaterwatch.org/about/live-healthy/tap-water-vs-bottled-water\">2000x more</a> than tap water! <a target=\"_blank\" href=\"https://www.foodandwaterwatch.org/problems/corporate-control-water\">Multinational bottled water companies</a> rake in billions of $ by strategically marketing their water to be 'safer' than tap water (not always true) while contributing to <a target=\"_blank\" href=\"https://www.5gyres.org/plastic-bottles\">ocean plastic pollution</a>. And we're the ones paying for this.",
             :links => {
-
+              'The big business hustle of bottled water (info)' => 'https://www.foodandwaterwatch.org/insight/take-back-tap-big-business-hustle-bottled-water',
+              "What's a good water filter? (guide)" => 'https://www.ewg.org/tapwater/water-filter-guide.php'
             },
-            :instructions => ""
+            :instructions => ["Bring your own reusable water bottle everywhere you go.", "Use it instead of buying water bottles or using plastic cups.", "Teach at least 3 different people about what you learned about single-use water bottles."],
+            :metric_question => "How many single-use water bottles did you refuse?",
+            :reflection_question => "How challenging was bringing your own reusable water bottle for you?",
+            :photo_prompt => "Share a photo of your reusable water bottle. Tell us what you learned from this challenge."
           },
           {
             :name => "Eat plant-based",
-            :description => "",
+            :question => "Why eat plant-based?",
+            :description => "On average, a <a target=\"_blank\" href=\"https://www.drawdown.org/solutions/food/plant-rich-diet\">plant-based diet's</a> water footprint is 1/2 that of a meat-based diet because <a target=\"_blank\" href=\"https://foodtank.com/news/2013/12/why-meat-eats-resources/ \">meat has large water footprints</a>. The process of raising livestock, particularly cattle, requires thousands of pounds/kilograms of crops, which takes an immense amount of water to grow.",
             :links => {
-
+              "If I don't eat meat, how do I get protein? (info)" => 'https://foodrevolution.org/blog/plant-based-protein/',
+              'Simple steps to eating plant-based (guide)' => 'https://www.drfuhrman.com/get-started/quick-start',
+              'What should I eat to feel good? (info)' => 'https://drhyman.com/blog/2014/11/07/pegan-paleo-vegan/',
+              'Water footprint of dietary choices (list)' => 'https://www.watercalculator.org/water-use/water-friendly-food-choices/ '
             },
-            :instructions => ""
+            :instructions => ["Eat more plant-based meals and snacks (sourced locally is ideal). (i.e. whole fruits, vegetables, grains, nuts, and seeds)", "Reduce your meat (e.g. beef, pork, chicken) consumption.", "Reduce your dairy product consumption (e.g. milk, yogurt).", "Reduce your packaged and processed food consumption."],
+            :metric_question => "How many meals did you eat more plant-based?",
+            :reflection_question => "How has this challenge influenced your perspective about food?",
+            :photo_prompt => "Share a photo of your more plant-based meal. Tell us how it is more plant-based."
           },
           {
             :name => "Cruise lightly",
-            :description => "",
+            :question => "How much of an impact does transportation have?",
+            :description => "It takes about 3/4 gallon of water to extract, refine, and transport the gas used to drive one mile. The water footprint of fuel consumption adds up as you travel farther and take more trips. There are many ways to reduce this consumption though. You can reduce this simply by inviting others to join your ride. Skip a gas vehicle and you zero your fuel footprint.",
             :links => {
-
+              "What's the water footprint of gas? (info)" => 'https://www.watercalculator.org/save-water/gasoline/',
+              'How can I change the impact of transportation? (guide)' => 'https://drawdown.ecochallenge.org/challenges/transport'
             },
-            :instructions => ""
+            :instructions => ["<a target=\"_blank\" href=\"https://www.drawdown.org/solutions/transport/ridesharing\">Carpool</a>; take <a target=\"_blank\" href=\"https://www.drawdown.org/solutions/transport/mass-transit\">mass transit</a>; bike/skateboard/scooter; or walk to your destination. Just don't ride in a car alone."],
+            :metric_question => "How many times did you choose alternative transportation to riding alone in a car?",
+            :reflection_question => "How challenging was it for you to not ride alone to get somewhere?",
+            :photo_prompt => "Share a photo of your journey. Tell us how you're reducing your transportation water footprint."
           },
           {
             :name => "Raise awareness",
-            :description => "",
+            :question => "What's the impact of making new clothes?",
+            :description => "About 8,000 synthetic chemicals are used to transform materials into textiles, which contributes to 20% of industrial water pollution. Shopping secondhand reduces this pollution by extending the life of already existing clothes. Simply wearing a piece of clothing 9 months longer reduces its water footprint by 5-10%.",
             :links => {
-
+              'How do I make clothes last? (info + guide)' => 'https://goodonyou.eco/fashion-and-water-the-thirsty-industry/',
+              'How do I support sustainable fashion? (info + guide)' => 'https://articles.mercola.com/sites/articles/archive/2019/01/12/fashion-industry-pollution.aspx '
             },
-            :instructions => ""
+            :background => "Many people don't associate fashion with water consumption.",
+            :instructions => ["Teach at least 3 people about what you've learned about the impact of the textile industry.", "Make posters and/or send emails informing the community about the relationship of water and fashion, why it matters, and how it affects people + environment.", "Get friends to commit to buying less and buying better, more sustainable fashion with you."],
+            :metric_question => "How many people did you teach about the impact of the textile industry?",
+            :reflection_question => "What were the reactions of people you shared what you learned with?",
+            :photo_prompt => "Share a photo capturing this experience. Tell us what you learned from this challenge."
           }
         ]
       },
@@ -356,59 +478,105 @@ module ChallengesHelper
         :challenges => [
           {
             :name => "Biodiversity 101",
-            :description => "",
+            :question => "What is biodiversity?",
+            :description => "Nature is a complex system, where every species plays an important role. Biodiversity is the checks and balances system in nature. A significant loss in biodiversity (in water, soil, and land) can imbalance our world such that food security + human health become at risk. Knowing this helps us understand why <a target=\"_blank\" href=\"https://www.mnn.com/earth-matters/wilderness-resources/blogs/why-biodiversity-big-deal\">it's so important</a> to care for soil health and promote biodiversity.",
             :links => {
-
+              'What is biodiversity? (info)' => 'https://rodaleinstitute.org/why-organic/issues-and-priorities/biodiversity/',
+              'What is healthy soil? (info)' => 'https://rodaleinstitute.org/why-organic/organic-farming-practices/soil-health/',
+              'What is the difference between organic and conventional? (info)' => 'https://rodaleinstitute.org/why-organic/organic-basics/organic-vs-conventional/',
+              'Why biodiversity loss hurts (info)' => 'https://www.ecowatch.com/biodiversity-loss-human-health-2636410357.html?rebelltitem=1#rebelltitem1'
             },
-            :instructions => ""
+            :instructions => ["Watch <a target=\"_blank\" href=\"https://www.youtube.com/watch?v=iR2AyybowPc\">this video</a> to learn what biodiversity is and why it's important.", "Teach what you learned to 3 different people!"],
+            :metric_question => "",
+            :reflection_question => "Where in your community has biodiversity? If you can't think of a place, where in your community could there be more biodiversity?",
+            :photo_prompt => ""
           },
           {
             :name => "Volunteer in garden",
-            :description => "",
+            :question => "Why are gardens important?",
+            :description => "Gardening (with <a target=\"_blank\" href=\"https://rodaleinstitute.org/why-organic/organic-basics/regenerative-organic-agriculture/\">regenerative practices</a>) boosts biodiversity. Growing a variety of plants cultivates <a target=\"_blank\" href=\"https://drive.google.com/file/d/0B0ezvt7UmjxZVTYzTkRfNjdPNFU/view\">healthy soil</a> that fosters organismal communities, which protect + strengthen ecosystems. If disease or pests take out a population of organisms, biodiversity ensures there are other organisms ready to keep the ecosystem thriving.",
             :links => {
-
+              'Search for climate victory gardens (finder)' => 'https://www.greenamerica.org/climate-victory-gardens-map',
+              'Get to know a garden (guide)' => 'https://greenamerica.org/blog/climate-victory-gardens-get-know-your-garden',
+              'Relationship between regenerative organic farming and biodiversity (info)' => ' https://rodaleinstitute.org/why-organic/issues-and-priorities/biodiversity/'
             },
-            :instructions => ""
+            :instructions => ["Volunteer at a local garden (e.g. farm's, community's, neighbor's, friend's) to help out with.", "Bring a friend along with you!"],
+            :metric_question => "How many hours did you volunteer at a local garden?",
+            :reflection_question => "What did you learn from your gardening experience?",
+            :photo_prompt => "Share a photo of you + friend gardening. Tell us how you helped."
           },
           {
             :name => "Start a compost pile",
-            :description => "",
+            :question => "What's the big deal about composting?",
+            :description => "Did you know our <a target=\"_blank\" href=\"http://www.fao.org/resources/infographics/infographics-details/en/c/285727/\">soil houses a quarter of the world's biodiversity</a>? Soil isn't just dirt; it's composed of minerals, water, air, organic matter, and organisms. A loss in any of these can be detrimental to our ecosystems, food security, and weather pattern stability.",
             :links => {
-
+              'Our food comes from soil (infographic)' => 'http://www.fao.org/resources/infographics/infographics-details/en/c/285853/',
+              'Composting 101 (info)' => 'https://rodaleinstitute.org/why-organic/organic-farming-practices/composting/',
+              'How to compost (video)' => 'https://kisstheground.com/how-to-compost-at-home-simple/'
             },
-            :instructions => ""
+            :instructions => ["1) Start your own compost pile in your home or in your patio/backyard/frontyard!", "Refer to the resources for tips on how to get started."],
+            :metric_question => "Estimate how much your compost weighs (in kilos). Note: 1 lb = 0.45 kg",
+            :reflection_question => "What do you think about composting now?",
+            :photo_prompt => "Share a photo of your compost pile. Tell us what you put in it."
           },
           {
             :name => "Attract pollinators",
-            :description => "",
+            :question => "Have you ever seen pollination in action? ",
+            :description => "<a target=\"_blank\" href=\"https://www.youtube.com/watch?v=MQiszdkOwuU\">Pollinators</a>, particularly bees, are responsible for 1/3 of the world's food supply. The problem is <a target=\"_blank\" href=\"https://friendsoftheearth.uk/bees/what-are-causes-bee-decline\">lots of bees are dying</a> due to global warming, pesticide use, pests, and habitat loss. Growing pollinator-friendly plants will provide more natural habitats for pollinators to thrive.",
             :links => {
-
+              'Bee-friendly plants for each season (info + list)' => 'https://friendsoftheearth.uk/bees/beefriendly-plants-every-season',
+              '20 facts you should know about bees (info/list)' => 'https://friendsoftheearth.uk/bees/20-facts-you-need-know-about-bees',
+              'Search for native plants that butterflies and moth species love (finder)' => 'https://nwf.org/NativePlantFinder/'
             },
-            :instructions => ""
+            :instructions => ["Assess the space you have in and around your home for planting.", "Select a pollinator friendly plant that thrives in your home climate at this time of year.", "Get the necessary materials and grow your pollinator-friendly plant!"],
+            :metric_question => "How many pollinator-friendly plants did you plant?",
+            :reflection_question => "How has your perspective about pollinators changed?",
+            :photo_prompt => "Share a photo of your plants. Tell us what you're growing."
           },
           {
             :name => "Plant perennials",
-            :description => "",
+            :question => "Why should I plant perennials?",
+            :description => "<a target=\"_blank\" href=\"https://www.thespruce.com/what-is-a-perennial-flower-or-plant-1402789\">Perennials</a> establish a deeper root system that improves soil structure. This creates a stronger ecosystem that spreads nutrients + moisture throughout the soil to other plants. Because perennials require less maintenance than <a target=\"_blank\" href=\"https://www.thespruce.com/what-is-an-annual-plant-1401924\">annuals</a>, we suggest starting with perennials. Annuals are important too, so feel free to plant them as well!",
             :links => {
-
+              'Know your annuals and perennials [pages 33-34] (guide)' => 'https://kisstheground.com/purchasingguide/',
+              'Should you only grow perennials? (info)' => 'https://kisstheground.com/perennials/',
+              '10 carbon-capturing practices (guide)' => 'https://www.greenamerica.org/sites/default/files/2019-03/10%20Carbon-Capturing%20Practices.pdf',
+              '7 perennial herbs to plant (list)' => 'https://www.ecowatch.com/perennial-herbs-2539981937.html'
             },
-            :instructions => ""
+            :instructions => ["Choose a perennial you'd like to plant.", "Bring a friend to join you.", "Get the necessary materials and plant your perennial together!"],
+            :metric_question => "How many perennials (+ annuals) did you plant?",
+            :reflection_question => "What did you learn from planting perennials?",
+            :photo_prompt => "Share a photo of your plants (+ friend if that's okay with friend). Tell us what you planted."
           },
           {
             :name => "Shop local & organic",
-            :description => "",
+            :question => "How does shopping relate to biodiversity?",
+            :description => "Biodiversity isn't just about growing plants. It's also about supporting gardeners + farmers who practice regenerative agriculture that boost biodiversity. Vote with your dollar; support these people by purchasing their goods because you're enabling them to continue their work.",
             :links => {
-
+              'How does industrial meat impact pollinators? (info)' => 'https://endindustrialmeat.org/ten-reasons-to-opt-out/for-pollinators/'
             },
-            :instructions => ""
+            :instructions => ["Buy 100% local and organic foods at your preferred grocery location. Do your best, trying is all that matters. If you're not in charge of grocery shopping, join the person who is on their next grocery trip.Teach them what you learned and help find local and organic options.", "If there's a very limited selection of local + organic, <a target=\"_blank\" href=\"https://www.thekitchn.com/7-tips-for-influencing-what-goes-on-grocery-store-shelves-224619\">talk to, call, or email</a> the manager requesting organic <insert what you want>. You have the power to tell vendors what you want, and the vendors who care about their customers will listen.", "Don't forget to thank the farmers and store managers. Recognize them for the important work they do in your community."],
+            :metric_question => "How many local and organic items did you purchase?",
+            :reflection_question => "How can you engage your friends and family to buy more local and organic?",
+            :photo_prompt => "Share a photo of your purchase(s). Tell us where you purchased them."
           },
           {
             :name => "Know your community",
-            :description => "",
+            :question => "Do you spend time outdoors?",
+            :description => "If your community regularly sprays toxic chemicals to manage pests in the area, this is a <a target=\"_blank\" href=\"https://rodaleinstitute.org/blog/toxic-playground-are-your-kids-safe/\">problem</a>. Pesticides, herbicides, and insecticides <a target=\"_blank\" href=\"https://www.slu.se/en/Collaborative-Centres-and-Projects/centre-for-chemical-pesticides-ckb1/information-about-pesticides-in-the-environment-/pesticide-spread-in-the-environment/\">spread</a> through air and touch, making their way into our bodies, marine ecosystems, and wildlife. This puts people's health at risk.",
             :links => {
-
+              "A farmer's principles for healthy soil (blog)" => "https://www.nrdc.org/experts/arohi-sharma/gabe-browns-book-dirt-soil-speaks-power",
+              "Pesticides 101 (info)" => 'https://foodprint.org/issues/pesticides/',
+              'Debunking pesticide myths (info)' => 'http://www.panna.org/pesticides-big-picture/myths-facts',
+              'Youth have power to change communities (story)' => 'https://herbicidefreecampus.org/our-story'
             },
-            :instructions => ""
+            :instructions => ["Ask your workplace, school campus, or wherever you spend time in your
+day about what they use to manage their land. Specifically, how do they
+manage pests? What products do they use to maintain the land?", "If they use potentially unsafe methods for your community, voice your
+disapproval; explain to them why; and propose alternatives."],
+            :metric_question => "How many people did you reach out to ask about their land management practices?",
+            :reflection_question => "How has this challenge impacted your perspective about land management practices?",
+            :photo_prompt => "Share a photo capturing the moment. Tell us how you felt in that moment."
           }
         ]
       },
@@ -421,59 +589,111 @@ module ChallengesHelper
         :challenges => [
           {
             :name => "Know your clothes",
-            :description => "",
+            :question => "What does it take to bring new styles to many clothing stores? ",
+            :description => "Especially for <a target=\"_blank\" href=\"https://goodonyou.eco/what-is-fast-fashion/ \">fast fashion</a>, driving up profits means exploiting <a target=\"_blank\" href=\"https://cleanclothes.org/livingwage/\">low cost labor</a> abroad. In addition, making clothing is resource intensive. The typical <a target=\"_blank\" href=\"http://mistrafuturefashion.com/sustainable-fashion/\">non-circular lifespan</a> of clothes worsens the fashion industry's impact; most clothes aren't reused and properly <a target=\"_blank\" href=\"https://borgenproject.org/the-international-impact-of-donated-clothing/ \">donated</a>, ending up in landfills and oceans.",
             :links => {
-
+              'Fashion Revolution Manifesto: an ideal fashion industry' => 'https://www.fashionrevolution.org/manifesto/',
+              '6 fake facts about the clothing industry' => 'https://goodonyou.eco/6-fake-facts-about-the-fashion-industry/',
+              'What can I do about this? (list)' => 'https://www.greenamerica.org/what-can-i-do-make-my-clothes-more-sustainable',
+              'What is the environmental impact of the fashion industry? (info)' => 'https://www.thereformation.com/pages/impact-of-fashion'
             },
-            :instructions => ""
+            :instructions => ["Teach a friend what you've learned.", "Read about what's happening in the clothing industry. You can start with the resource links."],
+            :metric_question => "",
+            :reflection_question => "What is something new you learned about the clothing industry?",
+            :photo_prompt => ""
           },
           {
             :name => "Keep them useful",
-            :description => "",
+            :question => "Why is donating not necessarily \"good\"?",
+            :description => "In the US, less than 10% of donations is resold or reused. The rest is often shipped to another country, which <a target=\"_blank\" href=\"https://borgenproject.org/the-international-impact-of-donated-clothing/\">undercuts the country's local textile industry</a>. People think they're doing good because they're ""donating"", but they may actually be contributing to putting people in other countries out of work.",
             :links => {
-
+              "Why you should wear your clothes until they're worn out (info)" => 'https://goodonyou.eco/why-we-should-wear-clothes-until-theyre-worn-out/',
+              'How to recycle old clothing (blog)' => 'https://trashisfortossers.com/how-to-recycle-old-clothing/',
+              'Search for shoe donation drop-offs (finder)' => 'https://soles4souls.org/get-involved/give-shoes/dropoff-locator/',
+              'What is the impact of making new clothing? (info)' => 'https://www.greenamerica.org/program/toxic-textiles'
             },
-            :instructions => ""
+            :instructions => ["Clean out your closet of clothes you won't wear anymore.", "Repurpose them. (e.g. bag, cleaning rag)", "Swap them with friends.", "Pass them onto someone who will wear them. (Maybe a sibling or cousin?)", "Do the research to find a charity that will actually reuse your donations."],
+            :metric_question => "Estimate how much (in kilos) clothing you repurposed and/or donated. Note: 1 lb = 0.45 kg",
+            :reflection_question => "What can you do to reduce the amount of clothing you won't wear in your closet?",
+            :photo_prompt => "Share a photo capturing this experience. Tell us what you discovered from this challenge."
           },
           {
             :name => "Find alternatives",
-            :description => "",
+            :question => "How can I avoid fast fashion?",
+            :description => "Choose <a target=\"_blank\" href=\"https://truecostmovie.com/learn-more/buying-better/\">quality over quantity</a>. Wearing something more reduces cost per wear. (Ex: a $60 pair of pants worn 2x a week per year costs about $0.57 per wear!) Thinking long-term and buying better diminishes the impact of clothing's lifecycle. What's even better: <a target=\"_blank\" href=\"https://trashisfortossers.com/zero-waste-wardrobe-secondhand-shopping/\">buying secondhand</a>, because you're extending the lifespan of something that already exists.",
             :links => {
-
+              'Clothing materials 101 (guide)' => 'https://goodonyou.eco/category/made-from/',
+              'Brand directory (ratings)' => 'https://directory.goodonyou.eco/',
+              'How to pinpoint greenwashing (guide)' => 'https://goodonyou.eco/how-can-you-tell-when-a-fashion-brand-is-greenwashing/'
             },
-            :instructions => ""
+            :background => "This challenge is intended for when your'e in need of new clothes. ",
+            :instructions => ["Buy less.", "Buy secondhand or clothes made of the most sustainable
+fabrics (e.g. hemp, linen, recycled organic cotton), not synthetic
+material (e.g. polyester, rayon, acrylics, blend of these).", "Shift
+your mindset towards investing in a quality; reduce the cost per wear.",
+"Bring friends along and share what you learned."],
+            :metric_question => "How many people did you share what you learned?",
+            :reflection_question => "With what you know now, what do you look for in companies and clothing when shopping?",
+            :photo_prompt => "Share a photo of your shopping spree. Tell us what brands you purchased from and what your clothes are made of."
           },
           {
             :name => "Challenge brands",
-            :description => "",
+            :question => "How can we engage brands to treat their workers respectfully?",
+            :description => "<a target=\"_blank\" href=\"https://www.fashionrevolution.org/emergency-measures-resources/\">Boycotts aren't solutions</a> to human rights violations in the fashion industry. People, like garment workers, can lose their jobs. Fast fashion brands will continue exploiting workers unless customers pressure them otherwise. So, we need to speak up to show these brands that we, as customers, care deeply about who makes our clothes and want their practices to reflect that.",
             :links => {
-
+              'What is transparency in the fashion industry? (info)' => 'https://www.fashionrevolution.org/about/transparency/',
+              'What does the garment industry look like around the world? (info)' => 'https://cleanclothes.org/resources/publications/factsheets',
+              'What to ask, in search for ethical fashion (list)' => 'https://goodonyou.eco/who-made-my-clothes-and-other-important-questions/'
             },
-            :instructions => ""
+            :background => "Select a fast fashion brand.",
+            :instructions => ["Ask the brand's representative for transparency via email or social media (in person would be best, if possible): who made the brand's
+clothes? Here are example scripts to get you started.", "Teach at least 3 other people what you have learned about fast fashion and how this
+particular brand is fast fashion.", "Get at least 3 other people to reach out to the same brand to do the first task."],
+            :metric_question => "How many people (including yourself) did you get to reach out to a brand rep?",
+            :reflection_question => "How does what you learned from this challenge impact your view of fashion?",
+            :photo_prompt => "Share a photo capturing what you learned. Tell us what brand you reached out to and what you asked of them."
           },
           {
             :name => "Clean naturally",
-            :description => "",
+            :question => "Why does the laundry detergent I use matter?",
+            :description => "Whatever is in your laundry detergent ends up in wastewater, which eventually <a target=\"_blank\" href=\"http://theconversation.com/curious-kids-where-does-my-poo-go-when-i-flush-the-toilet-does-it-go-into-the-ocean-78254\">enters the ocean</a>. If the ingredients in the detergent <a target=\"_blank\" href=\"https://www.smallfootprintfamily.com/homemade-laundry-detergent-recipe\">isn't safe for you</a>, it's not safe for the environment. Ingredients in laundry detergent can also irritate the skin, which makes wearing newly-washed clothes uncomfortable.",
             :links => {
-
+              'How can I get started? (info)' => 'https://wellnessmama.com/462/homemade-laundry-detergent/',
+              'What should I know about dry cleaning? (info)' => 'https://greenamerica.org/green-living/green-dry-cleaning'
             },
-            :instructions => ""
+            :instructions => ["Use non-toxic laundry detergent to clean your clothes.", "Wash with <a target=\"_blank\" href=\"https://coldwatersaves.org/\">cold water</a>, might as well save energy.", "Line dry when possible to save energy; this also helps your clothes last longer too.", "Share with at least 3 different people what you learned."],
+            :alt_instructions => ["If you dry clean, avoid <a target=\"_blank\" href=\"https://www.ewg.org/enviroblog/2011/09/dry-cleaning-chemicals-hang-around-your-clothes\">perc</a>."],
+            :metric_question => "How many loads of laundry did you clean with a safer laundry detergent?",
+            :reflection_question => "What have you learned from this challenge?",
+            :photo_prompt => "Share a photo of your laundry washing experience. Tell us what detergent you used and why you chose it."
           },
           {
             :name => "Take a shopping break",
-            :description => "",
+            :question => "What can you be doing instead of shopping?",
+            :description => "The time spent keeping up with the latest trends and deals adds up. The money used to buy another t-shirt on sale or chase after a buy-one-get-one-free deal accumulates. If you have clothes to wear for a week, you don’t need any more clothes. Unless, your clothes are falling apart, or you need to freshen up your style. ",
             :links => {
-
+              "What's the value of not buying anything new? (info)" => 'https://www.bustle.com/articles/47208-9-truly-valuable-things-you-learn-when-you-stop-buying-clothes-after-the-shaking-sweating-and',
+              'How to build a minimalist wardrobe (list)' => 'https://www.thegoodtrade.com/features/how-to-build-a-minimalist-wardrobe'
             },
-            :instructions => ""
+            :instructions => ["Literally, put a pause on clothes shopping, window shopping, online scrolling, and subscriptions to clothing brands.", "Spend that time focusing on your top priorities in life.", "Invite at least 2 people to join you in this challenge."],
+            :metric_question => "How many people (including yourself) took a break from shopping?",
+            :reflection_question => "How challenging was it to take a break from shopping?",
+            :photo_prompt => "Share a photo of something you've been up to (instead of shopping). Tell us what you're doing."
           },
           {
             :name => "No more synthetics",
-            :description => "",
+            :question => "What's the problem?",
+            :description => "About 1.4 million trillion pieces of microfiber are in the ocean. The problem: this plastic absorbs surrounding toxins, causing gut impaction, hormone disruption, and liver damage in the animals that ingest it. Sometimes, these animals rise up in the food chain onto our plates. Let's avoid this by tackling a major source of the problem: production.",
             :links => {
-
+              'Microfiber 101 (info)' => 'https://storyofstuff.org/uncategorized/the-story-of-microfibers-faqs/',
+              'How problematic is microfibers? (blog)' => 'https://storyofstuff.org/blog/microfibers-are-microplastics-1/',
+              'How do our clothes pollute the ocean? (info) ' => 'https://www.vox.com/the-goods/2018/9/19/17800654/clothes-plastic-pollution-polyester-washing-machine'
             },
-            :instructions => ""
+            :background => "Select a brand that makes clothes with synthetic materials.",
+            :instructions => ["Write to the brand representative what you've learned about synthetic material's impact on the environment. Ask them about the brand's plan for bettering their supply source in the future.", "Teach at least 3 other people what you've learned.", "Get them to write to the brand representative to do task 1 (they can copy paste your letter)."],
+            :metric_question => "How many people (including yourself) did you get to reach out to a brand rep?",
+            :reflection_question => "How does what you learned about synthetic materials impact your view of fashion?",
+            :photo_prompt => "Share a photo capturing what you learned. Tell us what brand you reached out to and what you asked of them."
           }
         ]
       },
@@ -485,59 +705,102 @@ module ChallengesHelper
         :challenges => [
           {
             :name => "Audit your products",
-            :description => "",
+            :question => "Why do the cleaning products used around you matter?",
+            :description => "Cleaning products emit chemicals that is breathed into the body, and the skin absorbs about 60% of what it touches. So, know exactly what you're introducing into your environment. Do your research for safe cleaning products (watch out for greenwashing though!), so you can create a safer environment in your home and workplace.",
             :links => {
-
+              'How to avoid greenwashing (guide) [for food, but methods apply to cleaning products]' => 'https://foodrevolution.org/blog/how-to-avoid-greenwashing/',
+              'What do all these cleaning labels mean? (info)' => 'https://www.ewg.org/guides/cleaners/content/decoding_labels'
             },
-            :instructions => ""
+            :instructions => ["Read the ingredient list of all the cleaning products you use in your home.", "If you don't know what an ingredient is or its health rating, look it up in the <a target=\"_blank\" href=\"https://www.ewg.org/guides/cleaners\">Environmental Working Group's database</a>."],
+            :metric_question => "",
+            :reflection_question => "What is something that surprised you from reading the ingredients in your cleaning products and searching the EWG database?",
+            :photo_prompt => ""
           },
           {
             :name => "Make your own",
-            :description => "",
+            :question => "Why should I try to make my own?",
+            :description => "Many conventional cleaning brands use toxic ingredients. \"Natural\" store-bought cleaners aren't necessarily safer though (check <a target=\"_blank\" href=\"https://www.ewg.org/guides/cleaners\">here</a>). Sometimes, safer products cost 2x conventional ones, making them inaccessible. By making your own, you choose the ingredients and know exactly what you're introducing to your home.",
             :links => {
-
+              'How to clean green? (list)' => 'https://www.greenamerica.org/waystocleangreen',
+              'How do cleaners harm your health? (info)' => 'https://dontmesswithmama.com/7-toxic-household-cleaners-avoid-problem-natural-store-bought-cleaners/',
+              '5 ways to make safer cleaning products (recipes)' => 'https://www.thegoodtrade.com/features/diy-non-toxic-cleaning-products'
             },
-            :instructions => ""
+            :instructions => ["Make a cleaning solution that you will use often (e.g. all-purpose cleaner, degreaser). Refer to resources to get started.", "Once you've made it, go clean something with it!"],
+            :metric_question => "How many cleaning solutions did you make?",
+            :reflection_question => "How has this challenge impacted your perspective about cleaning products?",
+            :photo_prompt => "Share a photo of your homemade cleaning solution. Tell us what you made and the recipe!"
           },
           {
             :name => "Find alternatives",
-            :description => "",
+            :question => "Why does shopping for alternatives matter?",
+            :description => "There are many cleaning products that don't prioritize people's health. By shopping intentionally, you will help shift the demand for safer cleaning products and send the signal to the cleaning product industry that we want safe, non-toxic products on the market. ",
             :links => {
-
+              'How to find safer cleaning products (guide)' => 'https://www.madesafe.org/safer-cleaning-products/',
+              'How do cleaners harm you health? (info)' => 'https://dontmesswithmama.com/7-toxic-household-cleaners-avoid-problem-natural-store-bought-cleaners/',
+              "We're not perfect, but it's okay (inspiration)" => 'https://www.lisabronner.com/falling-off-the-green-machine/',
+              'Disinfectants 101 (info)' => 'https://www.womensvoices.org/safe-cleaning-products/disinfectant-overkill/disinfectants-fact-sheet/'
             },
-            :instructions => ""
+            :background => "When you're done using your cleaning products:",
+            :instructions => ["Find safer alternatives within your budget (be careful of <a target=\"_blank\" href=\"https://www.google.com/url?q=https://7billionfor7seas.com/greenwashed-cleaning/\">greenwashing</a>!)", "Purchase them", "And use them!"],
+            :metric_question => "How many safer alternative cleaning solutions did you purchase?",
+            :reflection_question => "How can you engage your friends and family to purchase safer cleaning products?",
+            :photo_prompt => "Share a photo of your cleaning product. Tell us why you decided to purchase this one."
           },
           {
             :name => "Give feedback",
-            :description => "",
+            :question => "Why does feedback matter?",
+            :description => "It is hard to change when we don't know what and how we can improve. Same goes for companies. They can't better serve us, their customers, when they don't know what we desire. Don't let companies decide what you need; tell them what you want.",
             :links => {
-
+              'A group of individuals has power to influence (info)' => 'https://www.results-project.org/safe-cleaning-products-initiative/'
             },
-            :instructions => ""
+            :instructions => ["Reach out to conventional brands that you’ve purchased from. (e.g. email, call)", "Tell them a) why you don’t support their products anymore, b) what you would like them to change, and c) anything else you’d like them to know. Be polite but firm.", "Get at least 2 peers to take this challenge too."],
+            :metric_question => "How many people did you engage to send a note to a brand rep?",
+            :reflection_question => "What did you learn from this experience?",
+            :photo_prompt => "Share a photo capturing your experience. Tell us what you asked of the brand rep."
           },
           {
             :name => "Go plastic-free reusable",
-            :description => "",
+            :question => "What's the problem with single-use and plastic?",
+            :description => "Single-use items and plastic contribute to ocean <a target=\"_blank\" href=\"https://www.plasticpollutioncoalition.org/the-facts\">plastic pollution</a>, waste accumulation, and climate change exacerbation. So, do the opposite. With reusables and plastic-free cleaning products and equipment, there's less trash, so we minimize our contribution to climate change. ",
             :links => {
-
+              "What are some zero waste cleaning supplies? [you'll have to scroll down] (list)" => 'https://www.goingzerowaste.com/31-day-challenge/zero-waste-cleaning-day-9-of-the-zero-waste-challenge',
+              'Zero Waste Toilet Cleaning' => 'https://trashisfortossers.com/cleaning-toilet-naturally/',
+              'More zero waste cleaning products (list)' => 'https://packagefreeshop.com/collections/cleaning-under-20'
             },
-            :instructions => ""
+            :background => "This challenge is for when your current cleaning tools have reached the end of their life.",
+            :instructions => ["Repurpose old t-shirts into cleaning rags.", "For cleaning tasks that can't be accomplished with a rag (e.g. scrubbing, protection), get
+reusable non-plastic tools made of plant-based materials (e.g. bamboo, wood, natural rubber)."],
+            :metric_question => "How many reusable and plastic-free cleaning tools did you get/make?",
+            :reflection_question => "How has this challenge impacted your perspective about plastic and single-use?",
+            :photo_prompt => "Share a photo of your reusable and plastic-free cleaning equipment. Tell us what makes them great!"
           },
           {
             :name => "Host a cleaning party",
-            :description => "",
+            :question => "Why?",
+            :description => "It's more effective to change people's habits when they experience the benefits themselves. Cleaning generally has a bad reputation, so let's change it. Bring the safe cleaning solution(s) + equipment and what you've learned to others' homes. You learn by doing, so prove to your community that cleaning can be simple, fun, and safe.",
             :links => {
-
+              'Health score ratings for cleaning products' => 'https://www.ewg.org/guides/cleaners',
+              'Safe cleaning tips' => 'http://static.ewg.org/files/2009/10/school-cleaners/home-tip-sheet.pdf'
             },
-            :instructions => ""
+            :instructions => ["Get together with your friends and family and clean their homes together (with safe cleaning products, of course)!", "Teach them what you learned about conventional cleaning products and safer alternatives."],
+            :metric_question => "How many people did you teach about safe cleaning products?",
+            :reflection_question => "How did your friends + fam respond to what you taught them?",
+            :photo_prompt => "Share a photo of your cleaning party. Tell us what ya'll used to clean and how fun it was."
           },
           {
             :name => "Push for change",
-            :description => "",
+            :question => "How can I change my community's cleaning practices? ",
+            :description => "The safety of cleaning products isn't something people talk about. But you know more now, so share that knowledge, especially with people who have decision-making power. They impact larger groups of people, so let's work with them to create safer home and workplace environments.",
             :links => {
-
+              'Why does green cleaning matter? (info)' => 'https://healthyschoolscampaign.org/programs/green-clean-schools/',
+              'Actionable steps to demand gov change (list)' => 'https://www.womensvoices.org/take-action/',
+              'How to make the switch in schools (guide)' => 'https://greencleanschools.org/resources/steps/'
             },
-            :instructions => ""
+            :background => "Raise awareness about this topic in your community. Here are some ideas:",
+            :instructions => ["Persuade the person in charge of purchasing the cleaning products at your home or workplace (e.g. office manager, school cleaning director) to switch to safe cleaning products.", "Make posters and/or send emails to inform the community about buying and using safer cleaning products, why it matters, and how it affects them.", "Host a (mini) workshop teaching other people what you've learned."],
+            :metric_question => "How many people did you talk to about this topic?",
+            :reflection_question => "How receptive were people to switching to buying and using safer cleaning products?",
+            :photo_prompt => "Share a photo capturing this moment. Tell us what came out of your conversation(s)."
           }
         ]
       },
@@ -549,59 +812,103 @@ module ChallengesHelper
         :challenges => [
           {
             :name => "Declutter your space",
-            :description => "",
+            :question => "What's in your home?",
+            :description => "When we have large empty spaces, it is easy to fill it up with things that don't add much value to our lives. In fact, a <a target=\"_blank\" href=\"https://onlinelibrary.wiley.com/doi/abs/10.1111/jiec.12371\">study</a> published in the Journal of Industrial Ecology found that our household consumption accounts for 60% of global greenhouse gases.",
             :links => {
-
+              "What's in that? (info)" => 'https://www.madesafe.org/education/whats-in-that/',
+              'Decluttering cheat sheet (list)' => 'https://docs.wixstatic.com/ugd/26357d_637653be3c234bca8b7f1dab3e244a28.pdf',
+              'What toxins are there in a home? (list)' => 'https://www.ewg.org/healthyhomeguide/',
+              'How to detox your home? (list)' => 'https://www.madesafe.org/education/whats-in-that/home-detox/'
             },
-            :instructions => ""
+            :instructions => ["Watch <a target=\"_blank\" href=\"https://www.youtube.com/watch?v=SL0Mv0apjT8\">this video</a> until minute 3.", "Clean out your space. Keep what you need and use, and group the stuff that you don't."],
+            :metric_question => "",
+            :reflection_question => "What did you learn from the video? How can you apply what you've learned from the video to your life?",
+            :photo_prompt => ""
           },
           {
             :name => "Freshen the air",
-            :description => "",
+            :question => "What's there to freshen?",
+            :description => "Indoor air + dust can contain <a target=\"_blank\" href=\"https://www.ewg.org/enviroblog/2008/05/cheatsheet-volatile-organic-compounds\">volatile organic compounds</a> (VOCs), <a target=\"_blank\" href=\"https://www.madesafe.org/flame-retardants/\">flame retardants</a>, <a target=\"_blank\" href=\"http://www.panna.org/pesticides-big-picture/pesticides-101\">pesticides</a>, toxic metals, among other pollutants. Plants can purify the air though. They transform CO2 into oxygen, and they can take in pollutants to incorporate into their plant tissues, which removes pollutants from the air.  ",
             :links => {
-
+              "Best indoor plants for air filtering (list)" => 'https://thebestorganiclifestyle.com/houseplants-best-indoor-air-filters',
+              'How to naturally improve indoor air quality (info)' => 'https://draxe.com/indoor-air-quality-natural-solutions/',
+              'What more can I do to remove odor in home? (guide)' => 'https://www.womensvoices.org/fragrance-ingredients/alternatives/'
             },
-            :instructions => ""
+            :instructions => ["Bring in at least 2 different indoor plants into your home.", "If you don't live in a too polluted area, open your windows to let some fresh air in once in a while too."],
+            :metric_question => "How many plants did you bring into your home?",
+            :reflection_question => "How do you like your plants in your home?",
+            :photo_prompt => "Share a photo of your plant(s). Tell us what kind you have."
           },
           {
             :name => "Conserve energy",
-            :description => "",
+            :question => "Why bother?",
+            :description => "Simple changes in habits reduce your carbon footprint + save you money from utility bills. More importantly, they make you more mindful. Just the thought of turning off the lights, unplugging unused appliances, and setting the thermostat to a reasonable temperature signifies your awareness of the environmental impact of your daily actions.",
             :links => {
-
+              'How can I conserve energy? (guide)' => 'https://www.ewg.org/healthyhomeguide/energy-efficiency/'
             },
-            :instructions => ""
+            :instructions => ["Turn off the lights if you're not in the room for >15 minutes.", "Unplug unused devices and appliances.", "Set your thermostat to a reasonable temperature (e.g. 68F/20C in winter, 78F/26C in summer).", "Use cold water to do laundry.", "Wash clothes when you have a full load."],
+            :metric_question => "Estimate the number of times you took action to save energy.",
+            :reflection_question => "How can you engage friends and family to conserve energy too?",
+            :photo_prompt => "Share a photo capturing your experience. Tell us how you reminded yourself to commit to these energy saving practices."
           },
           {
             :name => "Swap out plastic",
-            :description => "",
+            :question => "Why is plastic a problem?",
+            :description => "When <a target=\"_blank\" href=\"https://www.madesafe.org/education/whats-in-that/plastics/\">plastic</a> touches the food we eat (think: to-go containers + utensils),  the petroleum-based chemicals of plastic can leach into our bodies. When these plastics are trashed, many end up in the ocean. Plastic doesn't biodegrade on land or in water, so they're just there for 100s to 1000s of years. In the ocean, fish mistake these plastics for food, which is how plastic makes its way up the food chain into the food we eat.",
             :links => {
-
+              'What are zero swaps I can make? (list)' => 'https://www.goingzerowaste.com/blog/the-ultimate-list-of-zero-waste-swaps',
+              'Why tackle plastic straws (info)' => 'https://www.strawlessocean.org/faq/',
+              'How to freeze food without plastic (guide)' => 'https://zerowastechef.com/2016/01/06/how-to-freeze-food-without-using-plastic/',
+              'Plastic Service Announcement (info)' => 'https://www.hydratelike.org/',
+              'Why is plastic a problem?' => 'https://www.plasticpollutioncoalition.org/the-facts'
             },
-            :instructions => ""
+            :instructions => ["Find environmentally sustainable alternatives to the plastic products you use. Reusable is ideal, but if reusable isn't a viable option, aim for compostable and biodegradable.", "When the life of your plastic product comes to an end, purchase the alternative you found instead."],
+            :metric_question => "How many zero waste swaps did you make?",
+            :reflection_question => "How do you plan to use less plastic in your day-to-day?",
+            :photo_prompt => "Take a photo of your swaps. Tell us what swaps you made."
           },
           {
             :name => "Detox your bed",
-            :description => "",
+            :question => "How does my bed relate to health?",
+            :description => "You spend a 1/3 of your life sleeping. This is time for your body to heal + repair itself. However, your sleeping environment can inhibit this healing process if it's made of materials that are harmful to your health. For example, foam, polyester, and adhesives are <a target=\"_blank\" href=\"http://endocrinedisruption.org/interactive-tools/endocrine-basics\">endocrine disruptors</a> and carcinogens commonly found in bedding.",
             :links => {
-
+              "What's in your bedding? (info)" => 'https://www.madesafe.org/education/detox-your-sleep/',
+              "What's a healthy mattress? (guide)" => 'https://www.ewg.org/healthyhomeguide/mattresses/'
             },
-            :instructions => ""
+            :instructions => ["Find bedding that is made of sustainably sourced materials: pillow, pillow cover, mattress, blanket, mattress cover, bedspread.", "If you are in need of new bedding and are able to invest, purchase sustainably made and safe bedding.", "Share what you learned with at least 3 other people."],
+            :metric_question => "How many people did you share what you learned with?",
+            :reflection_question => "What were the responses of the people you shared your learnings with?",
+            :photo_prompt => "Share a photo capturing what you learned from this challenge. Share with us something you learned."
           },
           {
             :name => "Show off your home",
-            :description => "",
+            :question => "Why should I share my home?",
+            :description => "Making changes in our lives is more rewarding when we can share the progress we have made. This is why we ask you to show off your living space, and talk about what you have learned and done with other people. Who knows, your actions might end up inspiring others to make similar changes in their lives. It happens!",
             :links => {
-
+              'Recipes for entertaining your guests (list)' => 'https://www.drfuhrman.com/recipes/collections/70/festive-entertaining',
+              'Recipes for "fun" finger foods for your party (list)' => 'https://www.drfuhrman.com/recipes/collections/101/fun-finger-foods'
             },
-            :instructions => ""
+            :instructions => ["Host a house party at whatever scale you are comfortable with. Invite at least 3 people (who don't already live with you).", "Show them the
+changes you've made in your home and teach them the things you have learned.", "It wouldn't be as fun a party without food. Prep some FLOSN foods and enjoy your time together!"],
+            :extra => "*FLOSN = fresh, local, organic, seasonal, non-GMO",
+            :metric_question => "How many people did you invite to your house party?",
+            :reflection_question => "How did your guests react to the changes in your home?",
+            :photo_prompt => "Share a photo of your house party. Tell us what you talked about with your guests."
           },
           {
             :name => "Curate a healthy home",
-            :description => "",
+            :question => "Where do the pollutants in your home come from?",
+            :description => "Did you know indoor air can be <a target=\"_blank\" href=\" https://www.ewg.org/healthyhomeguide/\">2 to 5x</a> more polluted than air outside?  Pollutants come from building products, <a target=\"_blank\" href=\"https://thebestorganiclifestyle.com/non-toxic-area-rugs-for-your-home\">carpet</a>, and paint. It's important to ask questions, like: were pollutants like lead, flame retardants, or PVC used to make the things I bring into my living space?",
             :links => {
-
+              'What are some swaps I can make? (list)' => 'https://www.greenamerica.org/your-home-detoxed/swap-out-toxics-green-your-home',
+              'How do air filters impact your health? (guide)' => 'https://www.ewg.org/healthyhomeguide/air-filters/',
+              'What is safe cookware? (guide)' => 'https://gimmethegoodstuff.org/safe-product-guides/cookware/'
             },
-            :instructions => ""
+            :background => "his challenge is for when you're in need of purchasing a new houseware or furniture. It would be wasteful to toss away things that are still functional.",
+            :instructions => ["Purchase houseware and furniture made of safe materials.", "Share with at least 3 people what you learned."],
+            :metric_question => "How many houseware + furniture made of low-impact materials did you purchase?",
+            :reflection_question => "What was the process for you to find this houseware + furniture?",
+            :photo_prompt => "Share a photo of your houseware made of low-impact materials. Tell us what it's made of and the brand."
           }
         ]
       },
@@ -613,59 +920,99 @@ module ChallengesHelper
         :challenges => [
           {
             :name => "You're #1",
-            :description => "",
+            :question => "Why does self-care matter?",
+            :description => "You're the best you in the entire universe. However, you can only <a target=\"_blank\" href=\"https://80000hours.org/career-guide/how-to-be-successful/\">be your best</a> if you're mentally, physically, and spiritually healthy. What good can you do or fun can you have if you're not feeling your tip top?",
             :links => {
-
+              '12 questions to ask yourself (list)' => 'https://medium.com/thrive-global/12-questions-that-will-change-your-life-9d281c1e4704',
+              '3 questions to ask yourself to get the life you want (list)' => 'https://thoughtcatalog.com/ryan-holiday/2015/04/three-decisions-every-person-needs-to-make-and-make-correctly/'
             },
-            :instructions => ""
+            :instructions => ["Evaluate your current mental, physical, and spiritual health. What's good?", "Look at the questions in the resources; honestly answer at least 3 of them and write your answers down on a piece of paper.", "Having answered at least 3 questions, reflect upon how you can make life better for you."],
+            :metric_question => "",
+            :reflection_question => "Which areas of your health can you improve? How can you take initiative towards improving those areas?",
+            :photo_prompt => ""
           },
           {
             :name => "Get enough sleep",
-            :description => "",
+            :question => "Do you get enough sleep?",
+            :description => "You know sleep is important. We never feel great with <a target=\"_blank\" href=\"https://www.hopkinsmedicine.org/health/wellness-and-prevention/the-effects-of-sleep-deprivation\">little sleep</a>. Getting those zzz's improves your mood, strengthens your immune system, boosts your motivation, maintains your memory retention, and makes the day better. ",
             :links => {
-
+              'Sleep 101 (info)' => 'https://web.stanford.edu/~dement/sleepless.html',
+              '12 steps to improve your sleep (list)' => 'http://healthysleep.med.harvard.edu/healthy/getting/overcoming/tips',
+              'How much sleep do you need? (info)' => 'http://healthysleep.med.harvard.edu/need-sleep/what-can-you-do/assess-needs'
             },
-            :instructions => ""
+            :instructions => ["Get at least 7.5 hours of sleep. <a target=\"_blank\" href=\" https://thoughtcatalog.com/ryan-holiday/2015/07/heres-your-productivity-hack-go-the-fck-to-sleep/\">Period.</a>"],
+            :metric_question => "How many hours of sleep did you get?",
+            :reflection_question => "How did you make sure you got enough sleep?",
+            :photo_prompt => "Share a photo of your bed. Tell us how you feel today and how much sleep you got."
           },
           {
             :name => "Build your relationships",
-            :description => "",
+            :question => "What makes relationships so special?",
+            :description => "Life is no fun without friends or family. It’s important we have our community of people who we can talk to anytime, joke around with, support and get support, and just be our authentic selves. These relationships don’t just come to you on a platter though. You gotta put in effort and time to build, maintain, and strengthen those relationships.",
             :links => {
-
+              'A clue to leading a healthy and happy life (info)' => 'https://news.harvard.edu/gazette/story/2017/04/over-nearly-80-years-harvard-study-has-been-showing-how-to-live-a-healthy-and-happy-life/',
+              "Being too busy for friends won't help you (blog)" => 'https://hbr.org/2017/07/being-too-busy-for-friends-wont-help-your-career'
             },
-            :instructions => ""
+            :instructions => ["Reach out to your friends, family, and people you're interested in getting to know.", "Do something together at least 1.5 hours. (e.g. cook a meal + eat it! walk around the neighborhood or hike. play a game or sport.)", "Ask buddy at least 3 questions about themselves; get to genuinely know them!"],
+            :metric_question => "On a scale from 1-10 (LOTS of enjoyment), how much did you enjoy spending time with someone(s)?",
+            :reflection_question => "What do you want from your relationships?",
+            :photo_prompt => "Share a photo of you and your buddie(s). Tell us how you spent time with them."
           },
           {
             :name => "Exercise",
-            :description => "",
+            :question => "Instead of sitting, how about getting up and moving around?",
+            :description => "We have become sedentary with our conveniences (e.g. chairs, elevators, cars) Here's a reminder of the benefits to exercising: feel more positive, sleep better, ramp up energy levels, maintains memory function, enhances confidence, increases productivity, strengthens immune system, minimizes inflammation, and many more.",
             :links => {
-
+              'Benefits to exercise (list)' => 'https://draxe.com/benefits-of-exercise/'
             },
-            :instructions => ""
+            :instructions => ["Get active for at least 30 minutes each day. We don’t care how intense
+this activity is; just don’t sit for 30 minutes straight. Stand, walk
+around, run, swim, bike, stretch, dance, move every part of your body."],
+            :metric_question => "How many hours did you exercise?",
+            :reflection_question => "What kind of exercise do you like?",
+            :photo_prompt => "Share a photo of you exercising. Tell us how it felt."
           },
           {
             :name => "Take a sugar detox",
-            :description => "",
+            :question => "How does sugar relate to wellness?",
+            :description => "The sugar in the foods + drinks we take in add up. Problem is: <a target=\"_blank\" href=\"https://foodbabe.com/the-10-reasons-you-need-a-sugar-detox-right-now/\">consuming too much</a> sugar reduces your energy levels, promotes tooth decay, induces premature aging, causes chronic inflammation, and contributes to other sub-optimal bodily reactions. The solution? Omit the source of the problem: sugar.",
             :links => {
-
+              'How to satisfy sweet tooth without added sugars (info)' => 'https://www.drfuhrman.com/get-started/eat-to-live-blog/160/a-mature-view-on-sugar',
+              'How to slay the sugary cravings (blog)' => 'https://www.doctorklaper.com/sugar',
+              'How do sugar alternatives compare? (info)' => 'https://foodrevolution.org/blog/sugar-substitutes/?utm_campaign=frn19&utm_medium=email&utm_source=email-automated&utm_content=5445&utm_term=existing-email-list&email=&firstname=Friend&lastname='
             },
-            :instructions => ""
+            :background => "Let's be clear: we aren't telling you, \"Don't eat anything with sugar.\" We simply encourage you to eat less foods with added sugars; substitute them fruits.",
+            :instructions => ["Choose to eat foods with added sugars. (Whole, unprocessed fruit is okay!)", "Check for added sugars by reading the ingredients list on packages.
+Don't make assumptions. If someone else made the food, ask if sugar was added to the dish. If you're unsure, don't eat it for this challenge."],
+            :metric_question => "How many times did you refuse something with added sugar?",
+            :reflection_question => "What surprised you from this challenge?",
+            :photo_prompt => "Share a photo of what you ate or did instead. Tell us about what you accomplished."
           },
           {
             :name => "Free yourself",
-            :description => "",
+            :question => "Why so busy?",
+            :description => "Sometimes we get caught trying to stay busy and please other people; this can be overwhelming. We give you permission to take a break. Take time off from all those responsibilities that really are not that important. Do whatever you want right now (that's within reason); focus on that.",
             :links => {
-
+              'Before you freak out, ask yourself these questions (list)' => 'https://dailystoic.com/before-you-freak-out-ask-these-questions/'
             },
-            :instructions => ""
+            :instructions => ["Do what you want.", "Say 'no' to things you really don't want to do, and either 1) don't do it (if reasonable), or 2) do it later."],
+            :metric_question => "How many times did you choose to do something for yourself?",
+            :reflection_question => "How challenging was it to set aside time for yourself?",
+            :photo_prompt => "Share a photo of you doing something for you. Tell us what you did and how it felt."
           },
           {
             :name => "Find peace",
-            :description => "",
+            :question => "What does it mean to feel peace?",
+            :description => "Hit pause on all the noise and busy-ness in your life. Breathe, spend time with yourself, and evaluate where you are. Let time \"slow\" down for you to process your thoughts so you can appreciate life as it is in the present.",
             :links => {
-
+              'Meditation 101 (info)' => 'https://www.headspace.com/meditation-101/what-is-meditation',
+              'Waking Up by Sam Harris (app)' => 'https://wakingup.com/',
+              'An intro to yoga (video)' => 'https://www.youtube.com/playlist?list=PLui6Eyny-UzwiUzvhM2BjxThodiRWZ2JR'
             },
-            :instructions => ""
+            :instructions => ["Meditate for at least 10 minutes each day; pay attention to your thoughts and observe them.", "Try out yoga each day for 5-10 minutes.", "Write each day for at least 10 minutes; reflect upon your day, feelings, and thoughts. Just let them flow into words on paper."],
+            :metric_question => "How many minutes did you meditate, do yoga, and write?",
+            :reflection_question => "What do you think about meditation, yoga, and writing now?",
+            :photo_prompt => "Share a photo capturing this experience. Tell us how it felt."
           }
         ]
       },
@@ -677,62 +1024,124 @@ module ChallengesHelper
         :challenges => [
           {
             :name => "Know your values",
-            :description => "",
+            :question => "Why should you know your values?",
+            :description => "When you leave your comfort zone, you will be challenged. Don't let your external environment stop you from doing what you believe in though. You will discover ways in which the world enables or inhibits you from living your values. However, these moments are simply hidden opportunities for you to be strong and remain true to yourself. You're not alone; we're in it with you!",
             :links => {
-
+              'Find your tribe (guide)' => 'https://www.plasticfreejuly.org/get-involved/what-you-can-do/find-your-tribe/'
             },
-            :instructions => ""
+            :instructions => ["Identify your values that you will not compromise.", "Think about how you will constructively respond to an event or person that challenges your values. What will you say and do?"],
+            :metric_question => "",
+            :reflection_question => "What are some of your values? Why do they matter to you?",
+            :photo_prompt => ""
           },
           {
             :name => "Go outdoors",
-            :description => "",
+            :question => "Why get outside?",
+            :description => "People in the U.S. spend <a target=\"_blank\" href=\"https://www.epa.gov/report-environment/indoor-air-quality\">about 90%</a> of their time indoors. Go out for a breathe of fresh air; it can relieve stress in your body. Have you ever felt a bit more relaxed when you're outdoors? That's nature's effect; it can boost your mood and immune system all while getting vitamin D from the sun. ",
             :links => {
-
+              "While you're outside, pick up some litter (blog)" => 'https://www.goingzerowaste.com/31-day-challenge/pick-up-litter-day-12-of-the-zero-waste-challenge'
             },
-            :instructions => ""
+            :instructions => ["Spend at least 30 minutes each day outside in nature.", "If you see any litter, pick it up and dispose of it properly. You'll help keep the environment clean from trash."],
+            :metric_question => "How many minutes did you spend outside?",
+            :reflection_question => "How did it feel to get outdoors?",
+            :photo_prompt => "Share a photo of your adventure outdoors. Tell us where you went."
           },
           {
             :name => "Eat out mindfully",
-            :description => "",
+            :question => "Why does this matter?",
+            :description => "Your diet impacts health, waste, wellness, carbon + water footprints, and community (to name a few). Choosing to eat at a place that stands by your values sends a message to the people you eat with and your community what you care about and want more of.",
             :links => {
-
+              'How to dine out sustainably (guide)' => 'https://foodprint.org/dining-out-sustainably/',
+              'Carbon neutral restaurants (list)' => 'http://www.zerofoodprint.org/',
+              'How to avoid stuffing yourself during the holidays (blog)' => 'https://www.drfuhrman.com/get-started/eat-to-live-blog/30/dont-succumb-to-holiday-heart'
             },
-            :instructions => ""
+            :instructions => ["Find and eat at a place that serves as close to 100% FLOSN food.", "Zero your waste in this adventure: refuse any single-use disposable
+items; bring your own reusable food containers for any leftovers or takeout.", "Consider the impact (water + carbon footprint) of your eating choices and travel method.", "Ask the employees questions about the ingredients used in their dishes."],
+            :extra => "*FLOSN = fresh, local, organic, seasonal, non-GMO",
+            :metric_question => "How many times did you eat at a place that serves FLOSN food?",
+            :reflection_question => "How can you be more mindful about your impact when eating out?",
+            :photo_prompt => "Share a photo of your FLOSN meal(s). Share with us the name of the food place and what you ordered!"
           },
           {
             :name => "Refuse single-use",
-            :description => "",
+            :question => "Why focus on refusing single-use?",
+            :description => "If something is used once and thrown away, it's single-use, regardless if the item is compostable. It's a waste of resources when single-use items are used for several minutes (or less) and tossed without another thought. <a target=\"_blank\" href=\"https://www.5gyres.org/animals/ \">Refusing single-use items</a> tackle the root cause of waste. ",
             :links => {
-
+              'What are single-use items I should break up with? (list)' => 'https://goodonyou.eco/awesome-alternatives-to-single-use-items/',
+              "Plastic's relationship with climate change (blog)" => 'https://makingoceansplasticfree.com/reducing-single-use-plastic-distraction-or-solution-to-climate-change/',
+              "What's the problem with plastic?" => 'https://www.plasticpollutioncoalition.org/the-facts'
             },
-            :instructions => ""
+            :instructions => ["Take the reusable items necessary for your next outing with you. (e.g. reusable food containers for eating out; reusable bag for grocery shopping)", "Refuse any single-use items (e.g. utensils, dishes, bag, napkin, <a target=\"_blank\" href=\"https://squareup.com/townsquare/some-scary-stats-about-the-environmental-impact-of-paper-receipts \">paper receipt</a>).", "When you refuse an item, include why so other people know. \"No thank you, I don't need that ___ because I don't want to ___.\"" ],
+            :metric_question => "How many times did you refuse single-use?",
+            :reflection_question => "What surprised you from this challenge?",
+            :photo_prompt => "Share a photo of your reusable travel gear. Tell us how your experience was."
           },
           {
             :name => "Affirm your interests",
-            :description => "",
+            :question => "Why should I talk about my interests?",
+            :description => "There is something powerful about telling someone you care about something. It lends a sense of confidence and certainty in our lives. Try it. Lead by example and show people that it's okay to care about something, to be proud of it, and let them know how you're doing it. ",
             :links => {
-
+              'Who to share with? (guide)' => 'https://www.plasticfreejuly.org/get-involved/what-you-can-do/students-parents/',
+              'How to talk about sustainability with other people (guide)' => 'https://www.thegoodtrade.com/features/being-an-effective-sustainability-advocate'
             },
-            :instructions => ""
+            :instructions => ["Tell someone you care about ___. Insert a word that you feel to be true,
+ something that RootUp inspired. It can be the environment, food
+justice, reducing your waste, or learning. You can casually mention it.
+Have a whole conversation about it. WIth family. With friends. With
+teachers or professors. With strangers. Doesn't matter, just tell
+people."],
+            :metric_question => "How many people did you affirm your interests with?",
+            :reflection_question => "How did you feel telling people that you care about <you insert>?",
+            :photo_prompt => "Share a photo capturing this moment. Tell us what you care about."
           },
           {
             :name => "Shop fair trade",
-            :description => "",
+            :question => "Why support fair trade?",
+            :description => "Many people around the world are exploited to drive business costs down and profits up and satisfy consumers' desires. <a target=\"_blank\" href=\"https://www.fairtrade.org.uk/What-is-Fairtrade\">Fair trade</a> is about empowering farmers and workers abroad with fair wages, decent working conditions, and local sustainability. ",
             :links => {
-
+              'Fair trade principles (info)' => 'https://wfto.com/fair-trade/10-principles-fair-trade',
+              'Search for fair trade products (finder)' => 'https://www.fairtradecertified.org/products',
+              'How do I know something is fair trade certified? (info)' => 'https://fairworldproject.org/get-informed/movements/fair-trade/certifiers-membership-orgs/',
+              'How can fair trade help end human trafficking (blog)' => 'http://fairtradeamerica.org/en-us/media-center/blog/2016/august/how-fairtrade-helps-end-human-trafficking'
             },
-            :instructions => ""
+            :instructions => ["When you go shopping, look for products made with Fair Trade practices.", "If you're not sure if something was made with fair trade practices, ask questions."],
+            :metric_question => "How many fair trade items did you buy?",
+            :reflection_question => "How has this challenge impacted your view on the things you buy?",
+            :photo_prompt => "Share a photo of your fair trade purchase. Tell us something you learned about fair trade."
           },
           {
             :name => "Gift responsibly",
-            :description => "",
+            :question => "What is the power of gift giving?",
+            :description => "Sometimes we want others to change their actions to be more mindful, but we can't force them to. Instead, we can encourage and support them. Giving a useful gift to another person is an easy way to introduce them to new products and also make it accessible for them to change their practices.",
             :links => {
-
+              'Gift ideas (list)' => 'http://trashisfortossers.com/laurens-top-zero-waste-gifts-for-every-budget/',
+              'How to gift forward (guide)' => 'http://trashisfortossers.com/everything-to-know-about-gifting-forward/',
+              'How to gift wrap zero waste style (guide)' => 'http://trashisfortossers.com/a-guide-to-zero-waste-gift-wrapping/',
+              'How to receive gifts (guide)' => 'https://www.goingzerowaste.com/blog/a-zero-waste-guide-to-receiving-gifts'
             },
-            :instructions => ""
+            :background => 'This challenge is for when you want to gift something.',
+            :instructions => ["Get a gift that is sustainably made, in support of a socially
+responsible company, non-toxic to health, or a fun experience. For this
+challenge, please do not get a gift that your giftee will probably not
+use often (unless it's an experience type of gift).", "Wrap it with upcycled materials that are reusable, recyclable, or
+compostable.", "Add a little note of why you think this gift may be
+useful for them."],
+            :metric_question => "How many sustainable gifts did you give?",
+            :reflection_question => "What did you like about this challenge?",
+            :photo_prompt => "Share a photo of your gift. Tell us what makes it a sustainable gift."
           }
         ]
       }
     }
+  end
+
+  def all_challenges
+    all_challenges = []
+    themes.each do |theme|
+      challenges[theme.to_sym][:challenges].each do |challenge|
+        all_challenges << challenge
+      end
+    end
+    all_challenges
   end
 end
