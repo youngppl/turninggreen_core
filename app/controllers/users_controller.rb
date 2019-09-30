@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
-  
+
+  include ChallengesHelper
   include UsersHelper
   require 'chartjs/chart_helpers'
 

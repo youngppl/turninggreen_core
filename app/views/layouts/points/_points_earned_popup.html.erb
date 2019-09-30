@@ -1,7 +1,8 @@
 <%#
 HOW TO USE
 
-arguments: id, default: points-earned
+arguments: id, default: points-earned,
+           heading
            message,
            points,
 
@@ -14,7 +15,7 @@ arguments: id, default: points-earned
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&#x2715;</span>
         </button>
-        <h2 class="heading">👏claps for you!👏</h2>
+        <h2 class="heading"> <%= heading.html_safe %>  </h2>
         <h2 class="message"> <%= message.html_safe %></h2>
         <h5 class="keep-it-up">Keep it up! You’ve got <%= points.to_s %> extra points!</h5>
         <div class="branding"></div>

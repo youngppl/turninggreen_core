@@ -1,3 +1,4 @@
+<% challenge_data = challenges[challenge.theme.to_sym][:challenges].find {|x| x[:name] == challenge.challenge_name} %>
 <div class="modal reflection-review-popup" id="reflection-review-<%= challenge.id %>" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -12,7 +13,7 @@
         </div>
         <div class="reflection-summary">
           <div class="question row">
-            <h2 class="heading">Reflection question goes here?</h2>
+            <h2 class="heading"> <%= challenge_data[:reflection_question] %> </h2>
             <textarea class="reflection-text" disabled><%= challenge.reflection.reflection %></textarea>
           </div>
           <div class="log row">
@@ -32,7 +33,7 @@
               </div>
             </div>
             <div class="picture-col col">
-              <h5 class="heading">Share a photo of your shopping experience!</h5>
+              <h5 class="heading"> <%= challenge_data[:photo_prompt] %></h5>
               <div class="photo">
                 <% if challenge.reflection.photo.attached? %>
                   <%= image_tag url_for(challenge.reflection.photo), size: '240' %>
