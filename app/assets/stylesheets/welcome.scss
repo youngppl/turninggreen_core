@@ -1,17 +1,20 @@
-$brand-color: #f0871e;
-
-/* varela-regular - latin */
+$brand-color: #f0871e; /* varela-regular - latin */
 @font-face {
   font-family: 'Varela';
   font-style: normal;
   font-weight: 400;
-  src: font-url('varela-v10-latin-regular.eot'); /* IE9 Compat Modes */
-  src: local('Varela'),
-  font-url('varela-v10-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  font-url('varela-v10-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
-  font-url('varela-v10-latin-regular.woff') format('woff'), /* Modern Browsers */
-  font-url('varela-v10-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
-  font-url('varela-v10-latin-regular.svg#Varela') format('svg'); /* Legacy iOS */
+  src: font-url('varela-v10-latin-regular.eot');
+  /* IE9 Compat Modes */
+  src:local('Varela'), font-url('varela-v10-latin-regular.eot?#iefix') format('embedded-opentype'),
+  /* IE6-IE8 */
+  font-url('varela-v10-latin-regular.woff2') format('woff2'),
+  /* Super Modern Browsers */
+  font-url('varela-v10-latin-regular.woff') format('woff'),
+  /* Modern Browsers */
+  font-url('varela-v10-latin-regular.ttf') format('truetype'),
+  /* Safari, Android, iOS */
+  font-url( 'varela-v10-latin-regular.svg#Varela') format('svg'))
+  /* Legacy iOS */
   unicode-range: U+30-39;
 }
 
@@ -36,10 +39,11 @@ h3 {
 p {
   font-size: 21px;
 }
-input, button {
+
+button,
+input {
   outline: none;
 }
-
 
 .main-content {
   padding-bottom: 3.125em;
@@ -50,21 +54,24 @@ input, button {
 .landing-page {
   background-color: #fffaee;
   text-align: center;
+
   .border {
     border: solid 1px #979797;
   }
+
   .header {
     padding-top: 4.688em;
     padding-bottom: 4.188em;
     background-image: image-url('landing-page.png');
     background-color: #fffaee;
     background-repeat: no-repeat;
-    height: 75em;
+    height: 82em;
     background-size: 100%;
     font-family: amaranth, sans-serif;
     font-weight: 400;
     font-style: normal;
     color: #0e5b2c;
+
     .hook {
       font-size: 2.5em;
       font-weight: bold;
@@ -95,6 +102,7 @@ input, button {
   .impacts {
     // padding-top: 71px;
     padding-bottom: 4.375em;
+
     .heading {
       font-size: 2.5em;
       font-weight: 500;
@@ -110,6 +118,7 @@ input, button {
         display: inline-block;
         padding-top: 4%;
       }
+
       .picture + .picture {
         margin-left: 7.625em;
       }
@@ -122,6 +131,9 @@ input, button {
     padding-top: 4.375em;
     padding-bottom: 4.375em;
     display: flex;
+    padding-left: 15%;
+    padding-right: 15%;
+
     .heading {
       font-size: 2.5em;
       font-weight: 500;
@@ -136,9 +148,11 @@ input, button {
       text-align: left;
     }
   }
+
   .about-pic {
     margin: auto;
   }
+
   .about-img {
     width: 20.25em;
     height: 17.44em;
@@ -164,9 +178,10 @@ input, button {
 
   .impacts-heading {
     font-size: 1.875em;
-    display:inline-block;
+    display: inline-block;
     margin-bottom: 1em;
   }
+
   .impacts-text {
     font-size: 1em;
     text-align: left;
