@@ -111,7 +111,6 @@
     </div>
   </div>
   <% end %>
-
   <div class="challenges-content">
     <h2 class="heading">Challenges</h2>
     <% (1..6).each do |index| %>
@@ -205,7 +204,6 @@
       <% end %>
     <% end %>
   </div>
-
   <div class="completed-content">
     <h2 class="heading">Completed Challenges</h2>
     <% @completed_challenges.each do |challenge_record| %>
@@ -293,6 +291,7 @@
       </div>
     <% end %>
   </div>
+</div>
   <%= render 'layouts/points/points_earned_popup', {heading: '🏃‍♀️your journey begins🏃‍♂️', message: 'Great job on starting a challenge! You can check on your challenge on the dashboard! We can’t wait to hear what you’ll do!', points: 3} %>
 
     <div class="modal" id="challenge-modal" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false">

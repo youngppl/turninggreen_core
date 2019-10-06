@@ -57,7 +57,10 @@ input {
   }
 
   .header {
-    padding-top: 4.688em;
+    // Hacky fix for margin-top and padding-top for making the margin and padding look good
+    // on the front page for computer views
+    margin-top: -5em;
+    padding-top: 9.688em;
     padding-bottom: 4.188em;
     background-image: image-url('landing-page.png');
     background-color: #fffaee;
@@ -182,5 +185,15 @@ input {
   .impacts-text {
     font-size: 1em;
     text-align: left;
+  }
+}
+
+.resources-page {
+  .heading {
+    color: #78a84f;
+  }
+
+  .section-title {
+    color: #e69138;
   }
 }

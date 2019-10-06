@@ -68,8 +68,8 @@ function toLastSlide(event) {
     player.destroy();
     player = null;
     $('.first')[0].style.display = 'none';
-    $('.modal-content')[0].style.height = '330px';
-    $('.modal-content')[0].style.width = '600px';
+    $('#challenge-modal .modal-content')[0].style.height = '330px';
+    $('#challenge-modal .modal-content')[0].style.width = '600px';
     $('.second')[0].style.display = 'block';
     document.getElementById('modal-close-button').onclick = function() {
       $('#challenge-modal').modal('hide');
