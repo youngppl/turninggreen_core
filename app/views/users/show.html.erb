@@ -31,7 +31,7 @@
     <div class="content">
       <div class="tabs nav flex-column" role="tablist" aria-orientation="vertical">
         <% @current_challenges.each_with_index do |challenge, index| %>
-          <% if !@pre_challenges.include?(challenge.challenge_name) %>
+          <% if challenges[challenge.theme.to_sym][:challenges][0][:name] != challenge.challenge_name %>
             <a class="nav-link <%= 'active' if index == 0 %>" id="v-pills-home-tab" data-toggle="pill" href="#_<%= challenge.id %>" role="tab">
               <span><%= challenge.challenge_name%></span>
             </a>

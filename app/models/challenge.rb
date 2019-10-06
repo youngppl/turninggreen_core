@@ -1,10 +1,17 @@
 # frozen_string_literal: true
 
 include ActionView::Helpers::TextHelper
+include UsersHelper
+include ChallengesHelper
 class Challenge < ApplicationRecord
   belongs_to :user
   has_many :progress_logs
   has_one :reflection
+
+  def point_worth
+    challenge_type = challenges[theme.to_sym][:challenges].find{|chall| chall[:name] == challenge_name}[:type]
+    challenge_points[challenge_type.to_sym]
+  end
 
   def get_time_left
     @weeks = (date_complete - DateTime.now.getutc) / 60 / 60 / 24 / 7
