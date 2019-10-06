@@ -60,7 +60,7 @@
                     <h5 class="log-complete">today’s log complete!</h5>
                   <% else %>
                     <input type="number" min="0" class="log-input _<%= challenge.id %>" oninput="(this.value > 0)? $(this).siblings('button').attr('disabled', false) : $(this).siblings('button').attr('disabled', true) ">
-                    <button type="button" name="button" class="btn" disabled onclick="recordMetric_<%= challenge.id %>(<%= challenge.id %>, $(this).siblings('.log-input').val());$('#metric-logged').modal();updateLogPrompt(this);">button</button>
+                    <button type="button" name="button" class="btn" disabled onclick="recordMetric_<%= challenge.id %>(<%= challenge.id %>, $(this).siblings('.log-input').val());$('#metric-logged').modal();updateLogPrompt(this);">log progress</button>
                   <% end %>
                 </div>
               </div>
