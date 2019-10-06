@@ -68,7 +68,8 @@
     }
 
     .instructions {
-      margin-right: 42px;
+      // margin-right: 42px;
+      font-size: 14px;
     }
 
     .alt {
@@ -91,12 +92,12 @@
       margin-bottom: 24px;
 
       .stat {
-        font-family: Varela;
+        font-family: Raleway;
         font-size: 14px;
       }
     }
 
-    .start-challenge {
+    .start-challenge, .challenge-in-progress {
       width: 232px;
       height: 129px;
       border-radius: 6px;
@@ -128,9 +129,19 @@
       }
     }
 
+    .challenge-in-progress {
+      height: 69px;
+    }
+
+    .learn-more {
+      width: 232px;
+      margin: auto;
+    }
+
     ul {
       font-size: 14px;
       line-height: 1.12;
+      padding-left: 23px;
 
       li {
         margin-bottom: 4px;

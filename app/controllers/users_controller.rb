@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
   include ChallengesHelper
   include UsersHelper
+  include ThemesHelper
   require 'chartjs/chart_helpers'
 
   def show
@@ -12,6 +13,7 @@ class UsersController < ApplicationController
         challenge.update(completed:true, notification_viewed:true)
       end
     end
+    @pre_challenges = ['Audit your waste', 'Biodiversity 101', 'You\'re #1', 'Know your values', 'Declutter your space', 'Know your clothes', 'Know your food', 'Audit your products', 'Track your usage', 'Know your products']
     @current_challenges = current_user.challenges.where(completed:false)
     @level = current_user.level
   end
