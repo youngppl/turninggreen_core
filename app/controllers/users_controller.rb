@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
   include ChallengesHelper
   include UsersHelper
+  include ThemesHelper
   require 'chartjs/chart_helpers'
 
   def show

@@ -8,7 +8,7 @@ arguments: id, default: points-earned,
 
 %>
 
-<div class="modal points-earned-popup" id="<%= (@id) ? id : 'points-earned' %>" tabindex="-1" role="dialog">
+<div class="modal points-earned-popup" id="<%= (defined? id) ? id : 'points-earned' %>" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-body">
@@ -17,7 +17,12 @@ arguments: id, default: points-earned,
         </button>
         <h2 class="heading"> <%= heading.html_safe %>  </h2>
         <h2 class="message"> <%= message.html_safe %></h2>
-        <h5 class="keep-it-up">Keep it up! You’ve got <%= points.to_s %> extra points!</h5>
+        <h5 class="keep-it-up">
+          Keep it up! You’ve got <%= points.to_s %> extra points!
+          <% if current_user.points + points >= level_ranges[current_user.level + 1] %>
+            <br>Congratulations! You just leveled up too!
+          <% end %>
+        </h5>
         <div class="branding"></div>
         <%= render "layouts/points/points_progress", {points_to_add: points} %>
       </div>

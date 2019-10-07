@@ -1,9 +1,13 @@
 class ReflectionsController < ApplicationController
+  include UsersHelper
+  include ChallengesHelper
+
   def new
-    Challenge.find(params[:reflection][:challenge_id]).progress_logs.create(metric: params[:reflection][:log])
+    challenge = Challenge.find(params[:reflection][:challenge_id])
+    challenge.progress_logs.create(metric: params[:reflection][:log])
     Reflection.create(reflection_params)
-    Challenge.find(params[:reflection][:challenge_id]).update(reflection_completed: true)
-    current_user.add_points(3)
+    challenge.update(reflection_completed: true)
+    current_user.add_points(challenge.point_worth)
   end
 
   def edit
