@@ -6,7 +6,6 @@ $(document).on('turbolinks:load', function() {
 
 function updateNotification(id) {
   $.post('/challenges/update-notification', {id:id})
-  console.log($('.notifications-dropdown').children());
   if($('.notifications-dropdown').children('div.notification:visible').length == 0) {
     $('.no-notifications').show();
     $('.notification-alert').hide();
