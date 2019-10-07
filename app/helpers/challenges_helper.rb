@@ -11,6 +11,7 @@ module ChallengesHelper
         :challenges => [
           {
             :name => "Audit your waste",
+            :type => "pre",
             :question => "Why does waste matter?",
             :description => "Our planet has a finite amount of resources. Instead of throwing things away, we should pass it onto someone else to use, OR repurpose it mechanically (recycle) or biologoically (compost) into a useful product. Follow the 5R's in this order, and you'll <a target=\"_blank\" href=\"https://www.plasticpollutioncoalition.org/take-action-1\">minimize your waste</a> real fast: refuse, reduce, reuse, rot, recycle.",
             :links => {
@@ -26,6 +27,7 @@ module ChallengesHelper
           },
           {
             :name => "Practice refusing",
+            :type => "self",
             :question => "Why should I refuse taking freebies?",
             :description => "\"Freebies\" are passed out all the time. The problem is this \"free\" stuff often ends up in landfills, which is a waste of resources. When we take \"free\" stuff, we indirectly send the signal to make + buy more of these products. To reduce our trash output, we need to firmly say 'no thank you' and explain why. ",
             :links => {
@@ -39,6 +41,7 @@ module ChallengesHelper
           },
           {
             :name => "Shop with reusables",
+            :type => "friends",
             :question => "What's the deal with food packaging?",
             :description => "Packaging, even if it's recyclable or compostable, still end up in landfills. To best combat this, refuse waste at the root source so you don't have to figure out proper disposal later. For example, food packaging extends shelf life + makes shopping conveninet, but ask yourself: Is it necessary? Think about farmers' markets + grocery stores; it's possible to buy loose produce.",
             :links => {
@@ -54,6 +57,7 @@ module ChallengesHelper
           },
           {
             :name => "Eat without disposables",
+            :type => "self",
             :question => "Why is disposable foodware a problem?",
             :description => "Paper plates, plastic cutlery, and foam cups are disposable. You use it once and throw it away. The problem is they end up sitting in landfills for a <a target=\"_blank\" href=\"https://greendiningalliance.org/2016/12/the-real-cost-of-styrofoam/\">very long time</a>. Additionally, disposable plastic foodware, particularly those with number 3 and 6 recycling number, are made with carcinogens that put wildlife and human health at risk.",
             :links => {
@@ -68,6 +72,7 @@ module ChallengesHelper
           },
           {
             :name => "Compost & recycle",
+            :type => "self",
             :question => "Why is prioritize composting over recycling? ",
             :description => "When we <a target=\"_blank\" href=\"https://www.goingzerowaste.com/blog/composting-for-apartments\">compost</a>, the remaining nutrients in food scraps + plant-based goods are reused in our environment. Recycling is also good (way better than sending goods to the landfill). However, <a target=\"_blank\" href=\"https://www.goingzerowaste.com/blog/how-to-recycle-paper-the-right-way?rq=RECYCLE\">recyclables</a> like plastic and paper can't be recycled infinitely. Furthermore, recycling goods requires more resources (e.g. fuel costs, labor, energy, water) than composting.",
             :links => {
@@ -83,6 +88,7 @@ module ChallengesHelper
           },
           {
             :name => "Party zero waste style",
+            :type => "friends",
             :question => "How does this have an impact?",
             :description => "How many people do you know actually think about their trash? Hosting a zero waste party is a fun way to show people what reducing your waste looks like and how simple it is. Your party opens up the conversation for you to share what you've learned about waste with your guests and inspire them to reduce their waste as well!",
             :links => {
@@ -99,6 +105,7 @@ module ChallengesHelper
           },
           {
             :name => "Collaborate locally",
+            :type => "community",
             :question => "Why should I even try to be zero waste?",
             :description => "Anne-Marie says it well: <a target=\"_blank\" href=\"https://zerowastechef.com/2019/02/14/how-to-cope-with-environmental-guilt-syndrome-egs/\">\"We don’t need a handful of people doing zero waste perfectly. We need millions of people doing it imperfectly.\"</a> The few individuals who commit to zero waste won't reverse the environmental damage already done; we need a whole lot more people involved. So what you do counts(! -- no matter how seemingly insignificant), because your actions show people around you an alternative way to live. This is how we slowly inspire change together. :)",
             :links => {
@@ -114,6 +121,7 @@ module ChallengesHelper
           # ,
           # {
           #   :name => "",
+          #   :type => "",
           #   :question => "",
           #   :description => "",
           #   :links => {
@@ -136,6 +144,7 @@ module ChallengesHelper
         :challenges => [
           {
             :name => "Know your food",
+            :type => "pre",
             :question => "Why does food matter?",
             :description => "Food should nourish our bodies. However, the ways food is grown and processed impact the nutritional quality and quantity we get. To make healthy decisions, we need to ask: what are we eating? Were <a target=\"_blank\" href=\"https://rodaleinstitute.org/why-organic/organic-basics/regenerative-organic-agriculture/ \">regenerative</a> practices used to grow the food we eat?",
             :links => {
@@ -154,6 +163,7 @@ and values of the farms and companies whose products you buy."],
           },
           {
             :name => "Go to farmers' markets",
+            :type => "friend",
             :question => "Why do farmers' markets matter?",
             :description => "Shopping at farmers' markets means buying freshly harvested fruits, vegetables, nuts, and other goodies at <a target=\"_blank\" href=\"https://foodrevolution.org/blog/why-buy-local-food/\">peak nutrition levels</a>. Plus, you're directly supporting farmers and keeping your money in the <a target=\"_blank\" href=\"https://farmersmarketcoalition.org/education/stimulate-local-economies/ \">local economy</a>, which stimulates job creation and local businesses.",
             :links => {
@@ -170,6 +180,7 @@ and values of the farms and companies whose products you buy."],
           },
           {
             :name => "Make your own snacks",
+            :type => "self",
             :question => "Why should I make my own snacks?",
             :description => "There are lots of unhealthy snacks in the market. Read the ingredients list, and you'll find they're loaded with a form of refined sugar (e.g. cane sugar, high fructose corn syrup) , imitation flavors (e.g. natural and artificial flavors), and other <a target=\"_blank\" href=\"https://www.ewg.org/research/ewg-s-dirty-dozen-guide-food-additives\">unhealthy additives</a>. Snacking shouldn't be complicated and unhealthy; let's make it more wholesome.",
             :links => {
@@ -184,6 +195,7 @@ and values of the farms and companies whose products you buy."],
           },
           {
             :name => "Zero your food waste",
+            :type => "self",
             :question => "How problematic is food waste?",
             :description => "<a target=\"_blank\" href=\"http://www.fao.org/save-food/resources/keyfindings/en/\">1/3</a> of food produced globally each year is wasted. This is a huge waste of resources. In addition, food scraps end up decomposing in landfills, producing methane, which worsens climate change. Let's not be part of the problem: reduce your food waste and engage your community to do so too.",
             :links => {
@@ -200,6 +212,7 @@ and values of the farms and companies whose products you buy."],
           },
           {
             :name => "Cook a FLOSN meal",
+            :type => "friends",
             :question => "What's FLOSN?",
             :description => "Eating healthy shouldn't be a compromise; nutrient-dense foods should be affordable. Fresh + local produce = more nutrients. Seasonal produce = more available + affordable. Organic foods = little to no toxic chemicals. Non-GMO foods = not genetically modified, so we're eating what we think we're eating. All these things = nutritious meal; bon apetit!",
             :links => {
@@ -215,6 +228,7 @@ and values of the farms and companies whose products you buy."],
           },
           {
             :name => "Support the ocean",
+            :type => "friends",
             :question => "How do our fish consumption relate to the environment?",
             :description => "Industrial-scale fishing has driven fish populations to <a target=\"_blank\" href=\"https://www.msc.org/what-we-are-doing/oceans-at-risk\">all-time lows</a> and some towards extinction. And toxic chemicals such as mercury, dioxins, antibiotics, and pesticide residue are increasingly found in the fish we eat. Takeaway: know where your fish comes from so you can actively support fisheries with <a target=\"_blank\" href=\"https://foodprint.org/issues/sustainable-seafood/\">sustainable environmental practices</a>.",
             :links => {
@@ -230,6 +244,7 @@ and values of the farms and companies whose products you buy."],
           },
           {
             :name => "Eat meat responsibly",
+            :type => "friends",
             :question => "How does meat impact our environment?",
             :description => "The <a target=\"_blank\" href=\"https://foodprint.org/issues/raising-animals-industrial-system/ \">livestock industry</a> has resorted to deforesting land for grazing animals and confining them in enclosed spaces, leading to air + water pollution and land degradation. This environmental change stresses the animals, negatively impacting their nutritional content. We can't support this, for the animals' well-being, our environment, or our health. ",
             :links => {
@@ -256,6 +271,7 @@ and values of the farms and companies whose products you buy."],
         :challenges => [
           {
             :name => "Know your products",
+            :type => "pre",
             :question => "Why do the  bodycare products you use matter?",
             :description => "Your skin absorbs about 60% of what it touches, entering your bloodstream. Know what could make up this 60%. There are harmful ingredients that inhibit the beauty and clarity of your natural skin health, but you won't know if you don't read the ingredient lists and look into what those ingredients can do to your body.",
             :links => {
@@ -271,6 +287,7 @@ and values of the farms and companies whose products you buy."],
           },
           {
             :name => "Make your own",
+            :type => "friends",
             :question => "Why should I make my own?",
             :description => "Making your own means you know exactly what's in it.  You control the ingredients used and can ensure its safety to your body. The excessively long list of ingredients on the back of products often include unnecessary additives that make the product thicker, smell better, or last longer. In many cases, these ingredients aren't safe for your health.",
             :links => {
@@ -284,6 +301,7 @@ and values of the farms and companies whose products you buy."],
           },
           {
             :name => "Find alternatives",
+            :type => "friends",
             :question => "What's the impact of finding alternatives?",
             :description => "Doing a little more research about what's available in the market can help you better care for your skin. Plus, you'll likely be supporting companies that are creating products for people, not just profit. Be careful of greenwashing though. ",
             :links => {
@@ -300,6 +318,7 @@ and values of the farms and companies whose products you buy."],
           },
           {
             :name => "Inform companies",
+            :type => "community",
             :question => "Why does reaching out to companies matter?",
             :description => "Companies need to know what they’re doing well and not, and that knowledge only comes from potential and existing customers (aka you). Providing feedback is opening dialogue about how they can better their practices for people's health and the environment. Whether they act on your feedback is another story, but you will have done your job in making them aware.",
             :links => {
@@ -312,6 +331,7 @@ and values of the farms and companies whose products you buy."],
           },
           {
             :name => "Care for your body",
+            :type => "friends",
             :question => "What's the deal with menstruation products?",
             :description => "Conventional menstrual products contain up to 90% petroleum-based plastics. They're also made of pesticide-laden cotton and <a target=\"_blank\" href=\"https://www.natracare.com/why-natracare/chlorine-free/\">bleached with chlorine</a>, both of which involve carcinogens that harm people's health. Women use more than <a target=\"_blank\" href=\"https://www.wen.org.uk/environmenstrual-in-numbers\">11,000</a> disposable menstrual products in their lifetime. That's a lot of exposure to harmful chemicals & a lot of <a target=\"_blank\" href=\"https://divacup.com/eco-divas/\">waste</a> ending up in landfills + oceans.",
             :links => {
@@ -330,6 +350,7 @@ and values of the farms and companies whose products you buy."],
           },
           {
             :name => "Replenish zero waste",
+            :type => "self",
             :question => "How does waste relate to bodycare products?",
             :description => "Paper + plastic cannot be recycled indefinitely, but glass + aluminum can. This is due to how the material degrades each time it's sent through recycling. Glass + aluminum are also <a target=\"_blank\" href=\"https://livegreen.recyclebank.com/column/because-you-asked/should-i-choose-plastic-aluminum-or-glass-bottles\">more widely recycled</a> around the world than plastic. This challenge levels up your game to think about the intersection of body + waste.",
             :links => {
@@ -346,6 +367,7 @@ and values of the farms and companies whose products you buy."],
           },
           {
             :name => "Be the influencer",
+            :type => "friends",
             :question => "Why me?",
             :description => "You now know more than the average person about the safety and quality of bodycare products. To better our community, it is our responsibility to share this with other people and help them make positive changes in their lives. This will be sometimes easy and sometimes difficult. However, rememeber this: it's more important to say something than stay silent.",
             :links => {
@@ -368,6 +390,7 @@ and values of the farms and companies whose products you buy."],
         :challenges => [
           {
             :name => "Track your usage",
+            :type => "pre",
             :question => "What's your water footprint?",
             :description => "Water consumption isn't just how much time we shower, water lawn, or wash dishes -- our direct <a target=\"_blank\" href=\"https://waterfootprint.org/en/water-footprint/what-is-water-footprint/\">water footprint</a>. No, our largest footprint is indirect; they stem from our <a target=\"_blank\" href=\"https://foodprint.org/issues/the-water-footprint-of-food/\">diet</a>, purchases, and <a target=\"_blank\" href=\"https://www.watercalculator.org/water-use/the-water-footprint-of-energy/\">transportation</a>. <a target=\"_blank\" href=\"https://www.ewg.org/tapwater/sourcesofwaterpollution.php\">Large amounts of water</a> is needed to grow the food we + animals eat, power manufacturing processes, and source fuel for transportation.",
             :links => {
@@ -384,6 +407,7 @@ and values of the farms and companies whose products you buy."],
           },
           {
             :name => "Skip the slip",
+            :type => "friends",
             :question => "What's the problem with paper receipts?",
             :description => "Most receipts end up in the garbage, so what's the point of printing them? In the US alone, 9 billion gallons (34 billion liters) of water is used to create these receipts. Furthermore, 93% of these receipts are coated with BPA and BPS, chemicals known to cause developmental health problems.",
             :links => {
@@ -397,6 +421,7 @@ and values of the farms and companies whose products you buy."],
           },
           {
             :name => "Get a bucket buddy",
+            :type => "self",
             :question => "Why does collecting my shower water matter?",
             :description => "There isn't an infinite supply of clean water. We are fortunate to have water readily accessible to us, while <a target=\"_blank\" href=\"https://charitywater.org\">663 million</a> people in the world don't. However, many times, the water that come out of faucets and showerheads is more than what we actually need. ",
             :links => {
@@ -413,6 +438,7 @@ and values of the farms and companies whose products you buy."],
           },
           {
             :name => "No more single-use bottles",
+            :type => "friends",
             :question => "What's the problem with single-use water bottles?",
             :description => "Did you know it takes 2x more water to make the plastic bottle than to fill it? Plus, bottled water costs <a target=\"_blank\" href=\"https://www.foodandwaterwatch.org/about/live-healthy/tap-water-vs-bottled-water\">2000x more</a> than tap water! <a target=\"_blank\" href=\"https://www.foodandwaterwatch.org/problems/corporate-control-water\">Multinational bottled water companies</a> rake in billions of $ by strategically marketing their water to be 'safer' than tap water (not always true) while contributing to <a target=\"_blank\" href=\"https://www.5gyres.org/plastic-bottles\">ocean plastic pollution</a>. And we're the ones paying for this.",
             :links => {
@@ -426,6 +452,7 @@ and values of the farms and companies whose products you buy."],
           },
           {
             :name => "Eat plant-based",
+            :type => "self",
             :question => "Why eat plant-based?",
             :description => "On average, a <a target=\"_blank\" href=\"https://www.drawdown.org/solutions/food/plant-rich-diet\">plant-based diet's</a> water footprint is 1/2 that of a meat-based diet because <a target=\"_blank\" href=\"https://foodtank.com/news/2013/12/why-meat-eats-resources/ \">meat has large water footprints</a>. The process of raising livestock, particularly cattle, requires thousands of pounds/kilograms of crops, which takes an immense amount of water to grow.",
             :links => {
@@ -441,6 +468,7 @@ and values of the farms and companies whose products you buy."],
           },
           {
             :name => "Cruise lightly",
+            :type => "self",
             :question => "How much of an impact does transportation have?",
             :description => "It takes about 3/4 gallon of water to extract, refine, and transport the gas used to drive one mile. The water footprint of fuel consumption adds up as you travel farther and take more trips. There are many ways to reduce this consumption though. You can reduce this simply by inviting others to join your ride. Skip a gas vehicle and you zero your fuel footprint.",
             :links => {
@@ -454,6 +482,7 @@ and values of the farms and companies whose products you buy."],
           },
           {
             :name => "Raise awareness",
+            :type => "community",
             :question => "What's the impact of making new clothes?",
             :description => "About 8,000 synthetic chemicals are used to transform materials into textiles, which contributes to 20% of industrial water pollution. Shopping secondhand reduces this pollution by extending the life of already existing clothes. Simply wearing a piece of clothing 9 months longer reduces its water footprint by 5-10%.",
             :links => {
@@ -478,6 +507,7 @@ and values of the farms and companies whose products you buy."],
         :challenges => [
           {
             :name => "Biodiversity 101",
+            :type => "pre",
             :question => "What is biodiversity?",
             :description => "Nature is a complex system, where every species plays an important role. Biodiversity is the checks and balances system in nature. A significant loss in biodiversity (in water, soil, and land) can imbalance our world such that food security + human health become at risk. Knowing this helps us understand why <a target=\"_blank\" href=\"https://www.mnn.com/earth-matters/wilderness-resources/blogs/why-biodiversity-big-deal\">it's so important</a> to care for soil health and promote biodiversity.",
             :links => {
@@ -493,6 +523,7 @@ and values of the farms and companies whose products you buy."],
           },
           {
             :name => "Volunteer in garden",
+            :type => "friends",
             :question => "Why are gardens important?",
             :description => "Gardening (with <a target=\"_blank\" href=\"https://rodaleinstitute.org/why-organic/organic-basics/regenerative-organic-agriculture/\">regenerative practices</a>) boosts biodiversity. Growing a variety of plants cultivates <a target=\"_blank\" href=\"https://drive.google.com/file/d/0B0ezvt7UmjxZVTYzTkRfNjdPNFU/view\">healthy soil</a> that fosters organismal communities, which protect + strengthen ecosystems. If disease or pests take out a population of organisms, biodiversity ensures there are other organisms ready to keep the ecosystem thriving.",
             :links => {
@@ -507,6 +538,7 @@ and values of the farms and companies whose products you buy."],
           },
           {
             :name => "Start a compost pile",
+            :type => "self",
             :question => "What's the big deal about composting?",
             :description => "Did you know our <a target=\"_blank\" href=\"http://www.fao.org/resources/infographics/infographics-details/en/c/285727/\">soil houses a quarter of the world's biodiversity</a>? Soil isn't just dirt; it's composed of minerals, water, air, organic matter, and organisms. A loss in any of these can be detrimental to our ecosystems, food security, and weather pattern stability.",
             :links => {
@@ -521,6 +553,7 @@ and values of the farms and companies whose products you buy."],
           },
           {
             :name => "Attract pollinators",
+            :type => "self",
             :question => "Have you ever seen pollination in action? ",
             :description => "<a target=\"_blank\" href=\"https://www.youtube.com/watch?v=MQiszdkOwuU\">Pollinators</a>, particularly bees, are responsible for 1/3 of the world's food supply. The problem is <a target=\"_blank\" href=\"https://friendsoftheearth.uk/bees/what-are-causes-bee-decline\">lots of bees are dying</a> due to global warming, pesticide use, pests, and habitat loss. Growing pollinator-friendly plants will provide more natural habitats for pollinators to thrive.",
             :links => {
@@ -535,6 +568,7 @@ and values of the farms and companies whose products you buy."],
           },
           {
             :name => "Plant perennials",
+            :type => "friends",
             :question => "Why should I plant perennials?",
             :description => "<a target=\"_blank\" href=\"https://www.thespruce.com/what-is-a-perennial-flower-or-plant-1402789\">Perennials</a> establish a deeper root system that improves soil structure. This creates a stronger ecosystem that spreads nutrients + moisture throughout the soil to other plants. Because perennials require less maintenance than <a target=\"_blank\" href=\"https://www.thespruce.com/what-is-an-annual-plant-1401924\">annuals</a>, we suggest starting with perennials. Annuals are important too, so feel free to plant them as well!",
             :links => {
@@ -550,6 +584,7 @@ and values of the farms and companies whose products you buy."],
           },
           {
             :name => "Shop local & organic",
+            :type => "self",
             :question => "How does shopping relate to biodiversity?",
             :description => "Biodiversity isn't just about growing plants. It's also about supporting gardeners + farmers who practice regenerative agriculture that boost biodiversity. Vote with your dollar; support these people by purchasing their goods because you're enabling them to continue their work.",
             :links => {
@@ -562,6 +597,7 @@ and values of the farms and companies whose products you buy."],
           },
           {
             :name => "Know your community",
+            :type => "community",
             :question => "Do you spend time outdoors?",
             :description => "If your community regularly sprays toxic chemicals to manage pests in the area, this is a <a target=\"_blank\" href=\"https://rodaleinstitute.org/blog/toxic-playground-are-your-kids-safe/\">problem</a>. Pesticides, herbicides, and insecticides <a target=\"_blank\" href=\"https://www.slu.se/en/Collaborative-Centres-and-Projects/centre-for-chemical-pesticides-ckb1/information-about-pesticides-in-the-environment-/pesticide-spread-in-the-environment/\">spread</a> through air and touch, making their way into our bodies, marine ecosystems, and wildlife. This puts people's health at risk.",
             :links => {
@@ -589,6 +625,7 @@ disapproval; explain to them why; and propose alternatives."],
         :challenges => [
           {
             :name => "Know your clothes",
+            :type => "pre",
             :question => "What does it take to bring new styles to many clothing stores? ",
             :description => "Especially for <a target=\"_blank\" href=\"https://goodonyou.eco/what-is-fast-fashion/ \">fast fashion</a>, driving up profits means exploiting <a target=\"_blank\" href=\"https://cleanclothes.org/livingwage/\">low cost labor</a> abroad. In addition, making clothing is resource intensive. The typical <a target=\"_blank\" href=\"http://mistrafuturefashion.com/sustainable-fashion/\">non-circular lifespan</a> of clothes worsens the fashion industry's impact; most clothes aren't reused and properly <a target=\"_blank\" href=\"https://borgenproject.org/the-international-impact-of-donated-clothing/ \">donated</a>, ending up in landfills and oceans.",
             :links => {
@@ -604,6 +641,7 @@ disapproval; explain to them why; and propose alternatives."],
           },
           {
             :name => "Keep them useful",
+            :type => "self",
             :question => "Why is donating not necessarily \"good\"?",
             :description => "In the US, less than 10% of donations is resold or reused. The rest is often shipped to another country, which <a target=\"_blank\" href=\"https://borgenproject.org/the-international-impact-of-donated-clothing/\">undercuts the country's local textile industry</a>. People think they're doing good because they're ""donating"", but they may actually be contributing to putting people in other countries out of work.",
             :links => {
@@ -619,6 +657,7 @@ disapproval; explain to them why; and propose alternatives."],
           },
           {
             :name => "Find alternatives",
+            :type => "friends",
             :question => "How can I avoid fast fashion?",
             :description => "Choose <a target=\"_blank\" href=\"https://truecostmovie.com/learn-more/buying-better/\">quality over quantity</a>. Wearing something more reduces cost per wear. (Ex: a $60 pair of pants worn 2x a week per year costs about $0.57 per wear!) Thinking long-term and buying better diminishes the impact of clothing's lifecycle. What's even better: <a target=\"_blank\" href=\"https://trashisfortossers.com/zero-waste-wardrobe-secondhand-shopping/\">buying secondhand</a>, because you're extending the lifespan of something that already exists.",
             :links => {
@@ -638,6 +677,7 @@ your mindset towards investing in a quality; reduce the cost per wear.",
           },
           {
             :name => "Challenge brands",
+            :type => "community",
             :question => "How can we engage brands to treat their workers respectfully?",
             :description => "<a target=\"_blank\" href=\"https://www.fashionrevolution.org/emergency-measures-resources/\">Boycotts aren't solutions</a> to human rights violations in the fashion industry. People, like garment workers, can lose their jobs. Fast fashion brands will continue exploiting workers unless customers pressure them otherwise. So, we need to speak up to show these brands that we, as customers, care deeply about who makes our clothes and want their practices to reflect that.",
             :links => {
@@ -655,6 +695,7 @@ particular brand is fast fashion.", "Get at least 3 other people to reach out to
           },
           {
             :name => "Clean naturally",
+            :type => "self",
             :question => "Why does the laundry detergent I use matter?",
             :description => "Whatever is in your laundry detergent ends up in wastewater, which eventually <a target=\"_blank\" href=\"http://theconversation.com/curious-kids-where-does-my-poo-go-when-i-flush-the-toilet-does-it-go-into-the-ocean-78254\">enters the ocean</a>. If the ingredients in the detergent <a target=\"_blank\" href=\"https://www.smallfootprintfamily.com/homemade-laundry-detergent-recipe\">isn't safe for you</a>, it's not safe for the environment. Ingredients in laundry detergent can also irritate the skin, which makes wearing newly-washed clothes uncomfortable.",
             :links => {
@@ -669,6 +710,7 @@ particular brand is fast fashion.", "Get at least 3 other people to reach out to
           },
           {
             :name => "Take a shopping break",
+            :type => "friends",
             :question => "What can you be doing instead of shopping?",
             :description => "The time spent keeping up with the latest trends and deals adds up. The money used to buy another t-shirt on sale or chase after a buy-one-get-one-free deal accumulates. If you have clothes to wear for a week, you don’t need any more clothes. Unless, your clothes are falling apart, or you need to freshen up your style. ",
             :links => {
@@ -682,6 +724,7 @@ particular brand is fast fashion.", "Get at least 3 other people to reach out to
           },
           {
             :name => "No more synthetics",
+            :type => "community",
             :question => "What's the problem?",
             :description => "About 1.4 million trillion pieces of microfiber are in the ocean. The problem: this plastic absorbs surrounding toxins, causing gut impaction, hormone disruption, and liver damage in the animals that ingest it. Sometimes, these animals rise up in the food chain onto our plates. Let's avoid this by tackling a major source of the problem: production.",
             :links => {
@@ -705,6 +748,7 @@ particular brand is fast fashion.", "Get at least 3 other people to reach out to
         :challenges => [
           {
             :name => "Audit your products",
+            :type => "pre",
             :question => "Why do the cleaning products used around you matter?",
             :description => "Cleaning products emit chemicals that is breathed into the body, and the skin absorbs about 60% of what it touches. So, know exactly what you're introducing into your environment. Do your research for safe cleaning products (watch out for greenwashing though!), so you can create a safer environment in your home and workplace.",
             :links => {
@@ -718,6 +762,7 @@ particular brand is fast fashion.", "Get at least 3 other people to reach out to
           },
           {
             :name => "Make your own",
+            :type => "self",
             :question => "Why should I try to make my own?",
             :description => "Many conventional cleaning brands use toxic ingredients. \"Natural\" store-bought cleaners aren't necessarily safer though (check <a target=\"_blank\" href=\"https://www.ewg.org/guides/cleaners\">here</a>). Sometimes, safer products cost 2x conventional ones, making them inaccessible. By making your own, you choose the ingredients and know exactly what you're introducing to your home.",
             :links => {
@@ -732,6 +777,7 @@ particular brand is fast fashion.", "Get at least 3 other people to reach out to
           },
           {
             :name => "Find alternatives",
+            :type => "self",
             :question => "Why does shopping for alternatives matter?",
             :description => "There are many cleaning products that don't prioritize people's health. By shopping intentionally, you will help shift the demand for safer cleaning products and send the signal to the cleaning product industry that we want safe, non-toxic products on the market. ",
             :links => {
@@ -748,6 +794,7 @@ particular brand is fast fashion.", "Get at least 3 other people to reach out to
           },
           {
             :name => "Give feedback",
+            :type => "community",
             :question => "Why does feedback matter?",
             :description => "It is hard to change when we don't know what and how we can improve. Same goes for companies. They can't better serve us, their customers, when they don't know what we desire. Don't let companies decide what you need; tell them what you want.",
             :links => {
@@ -760,6 +807,7 @@ particular brand is fast fashion.", "Get at least 3 other people to reach out to
           },
           {
             :name => "Go plastic-free reusable",
+            :type => "self",
             :question => "What's the problem with single-use and plastic?",
             :description => "Single-use items and plastic contribute to ocean <a target=\"_blank\" href=\"https://www.plasticpollutioncoalition.org/the-facts\">plastic pollution</a>, waste accumulation, and climate change exacerbation. So, do the opposite. With reusables and plastic-free cleaning products and equipment, there's less trash, so we minimize our contribution to climate change. ",
             :links => {
@@ -776,6 +824,7 @@ reusable non-plastic tools made of plant-based materials (e.g. bamboo, wood, nat
           },
           {
             :name => "Host a cleaning party",
+            :type => "friends",
             :question => "Why?",
             :description => "It's more effective to change people's habits when they experience the benefits themselves. Cleaning generally has a bad reputation, so let's change it. Bring the safe cleaning solution(s) + equipment and what you've learned to others' homes. You learn by doing, so prove to your community that cleaning can be simple, fun, and safe.",
             :links => {
@@ -789,6 +838,7 @@ reusable non-plastic tools made of plant-based materials (e.g. bamboo, wood, nat
           },
           {
             :name => "Push for change",
+            :type => "community",
             :question => "How can I change my community's cleaning practices? ",
             :description => "The safety of cleaning products isn't something people talk about. But you know more now, so share that knowledge, especially with people who have decision-making power. They impact larger groups of people, so let's work with them to create safer home and workplace environments.",
             :links => {
@@ -812,6 +862,7 @@ reusable non-plastic tools made of plant-based materials (e.g. bamboo, wood, nat
         :challenges => [
           {
             :name => "Declutter your space",
+            :type => "pre",
             :question => "What's in your home?",
             :description => "When we have large empty spaces, it is easy to fill it up with things that don't add much value to our lives. In fact, a <a target=\"_blank\" href=\"https://onlinelibrary.wiley.com/doi/abs/10.1111/jiec.12371\">study</a> published in the Journal of Industrial Ecology found that our household consumption accounts for 60% of global greenhouse gases.",
             :links => {
@@ -827,6 +878,7 @@ reusable non-plastic tools made of plant-based materials (e.g. bamboo, wood, nat
           },
           {
             :name => "Freshen the air",
+            :type => "self",
             :question => "What's there to freshen?",
             :description => "Indoor air + dust can contain <a target=\"_blank\" href=\"https://www.ewg.org/enviroblog/2008/05/cheatsheet-volatile-organic-compounds\">volatile organic compounds</a> (VOCs), <a target=\"_blank\" href=\"https://www.madesafe.org/flame-retardants/\">flame retardants</a>, <a target=\"_blank\" href=\"http://www.panna.org/pesticides-big-picture/pesticides-101\">pesticides</a>, toxic metals, among other pollutants. Plants can purify the air though. They transform CO2 into oxygen, and they can take in pollutants to incorporate into their plant tissues, which removes pollutants from the air.  ",
             :links => {
@@ -841,6 +893,7 @@ reusable non-plastic tools made of plant-based materials (e.g. bamboo, wood, nat
           },
           {
             :name => "Conserve energy",
+            :type => "self",
             :question => "Why bother?",
             :description => "Simple changes in habits reduce your carbon footprint + save you money from utility bills. More importantly, they make you more mindful. Just the thought of turning off the lights, unplugging unused appliances, and setting the thermostat to a reasonable temperature signifies your awareness of the environmental impact of your daily actions.",
             :links => {
@@ -853,6 +906,7 @@ reusable non-plastic tools made of plant-based materials (e.g. bamboo, wood, nat
           },
           {
             :name => "Swap out plastic",
+            :type => "self",
             :question => "Why is plastic a problem?",
             :description => "When <a target=\"_blank\" href=\"https://www.madesafe.org/education/whats-in-that/plastics/\">plastic</a> touches the food we eat (think: to-go containers + utensils),  the petroleum-based chemicals of plastic can leach into our bodies. When these plastics are trashed, many end up in the ocean. Plastic doesn't biodegrade on land or in water, so they're just there for 100s to 1000s of years. In the ocean, fish mistake these plastics for food, which is how plastic makes its way up the food chain into the food we eat.",
             :links => {
@@ -869,6 +923,7 @@ reusable non-plastic tools made of plant-based materials (e.g. bamboo, wood, nat
           },
           {
             :name => "Detox your bed",
+            :type => "friends",
             :question => "How does my bed relate to health?",
             :description => "You spend a 1/3 of your life sleeping. This is time for your body to heal + repair itself. However, your sleeping environment can inhibit this healing process if it's made of materials that are harmful to your health. For example, foam, polyester, and adhesives are <a target=\"_blank\" href=\"http://endocrinedisruption.org/interactive-tools/endocrine-basics\">endocrine disruptors</a> and carcinogens commonly found in bedding.",
             :links => {
@@ -882,6 +937,7 @@ reusable non-plastic tools made of plant-based materials (e.g. bamboo, wood, nat
           },
           {
             :name => "Show off your home",
+            :type => "friends",
             :question => "Why should I share my home?",
             :description => "Making changes in our lives is more rewarding when we can share the progress we have made. This is why we ask you to show off your living space, and talk about what you have learned and done with other people. Who knows, your actions might end up inspiring others to make similar changes in their lives. It happens!",
             :links => {
@@ -897,6 +953,7 @@ changes you've made in your home and teach them the things you have learned.", "
           },
           {
             :name => "Curate a healthy home",
+            :type => "friends",
             :question => "Where do the pollutants in your home come from?",
             :description => "Did you know indoor air can be <a target=\"_blank\" href=\" https://www.ewg.org/healthyhomeguide/\">2 to 5x</a> more polluted than air outside?  Pollutants come from building products, <a target=\"_blank\" href=\"https://thebestorganiclifestyle.com/non-toxic-area-rugs-for-your-home\">carpet</a>, and paint. It's important to ask questions, like: were pollutants like lead, flame retardants, or PVC used to make the things I bring into my living space?",
             :links => {
@@ -920,6 +977,7 @@ changes you've made in your home and teach them the things you have learned.", "
         :challenges => [
           {
             :name => "You're #1",
+            :type => "pre",
             :question => "Why does self-care matter?",
             :description => "You're the best you in the entire universe. However, you can only <a target=\"_blank\" href=\"https://80000hours.org/career-guide/how-to-be-successful/\">be your best</a> if you're mentally, physically, and spiritually healthy. What good can you do or fun can you have if you're not feeling your tip top?",
             :links => {
@@ -933,6 +991,7 @@ changes you've made in your home and teach them the things you have learned.", "
           },
           {
             :name => "Get enough sleep",
+            :type => "self",
             :question => "Do you get enough sleep?",
             :description => "You know sleep is important. We never feel great with <a target=\"_blank\" href=\"https://www.hopkinsmedicine.org/health/wellness-and-prevention/the-effects-of-sleep-deprivation\">little sleep</a>. Getting those zzz's improves your mood, strengthens your immune system, boosts your motivation, maintains your memory retention, and makes the day better. ",
             :links => {
@@ -947,6 +1006,7 @@ changes you've made in your home and teach them the things you have learned.", "
           },
           {
             :name => "Build your relationships",
+            :type => "friends",
             :question => "What makes relationships so special?",
             :description => "Life is no fun without friends or family. It’s important we have our community of people who we can talk to anytime, joke around with, support and get support, and just be our authentic selves. These relationships don’t just come to you on a platter though. You gotta put in effort and time to build, maintain, and strengthen those relationships.",
             :links => {
@@ -960,6 +1020,7 @@ changes you've made in your home and teach them the things you have learned.", "
           },
           {
             :name => "Exercise",
+            :type => "self",
             :question => "Instead of sitting, how about getting up and moving around?",
             :description => "We have become sedentary with our conveniences (e.g. chairs, elevators, cars) Here's a reminder of the benefits to exercising: feel more positive, sleep better, ramp up energy levels, maintains memory function, enhances confidence, increases productivity, strengthens immune system, minimizes inflammation, and many more.",
             :links => {
@@ -974,6 +1035,7 @@ around, run, swim, bike, stretch, dance, move every part of your body."],
           },
           {
             :name => "Take a sugar detox",
+            :type => "self",
             :question => "How does sugar relate to wellness?",
             :description => "The sugar in the foods + drinks we take in add up. Problem is: <a target=\"_blank\" href=\"https://foodbabe.com/the-10-reasons-you-need-a-sugar-detox-right-now/\">consuming too much</a> sugar reduces your energy levels, promotes tooth decay, induces premature aging, causes chronic inflammation, and contributes to other sub-optimal bodily reactions. The solution? Omit the source of the problem: sugar.",
             :links => {
@@ -990,6 +1052,7 @@ Don't make assumptions. If someone else made the food, ask if sugar was added to
           },
           {
             :name => "Free yourself",
+            :type => "self",
             :question => "Why so busy?",
             :description => "Sometimes we get caught trying to stay busy and please other people; this can be overwhelming. We give you permission to take a break. Take time off from all those responsibilities that really are not that important. Do whatever you want right now (that's within reason); focus on that.",
             :links => {
@@ -1002,6 +1065,7 @@ Don't make assumptions. If someone else made the food, ask if sugar was added to
           },
           {
             :name => "Find peace",
+            :type => "self",
             :question => "What does it mean to feel peace?",
             :description => "Hit pause on all the noise and busy-ness in your life. Breathe, spend time with yourself, and evaluate where you are. Let time \"slow\" down for you to process your thoughts so you can appreciate life as it is in the present.",
             :links => {
@@ -1024,6 +1088,7 @@ Don't make assumptions. If someone else made the food, ask if sugar was added to
         :challenges => [
           {
             :name => "Know your values",
+            :type => "pre",
             :question => "Why should you know your values?",
             :description => "When you leave your comfort zone, you will be challenged. Don't let your external environment stop you from doing what you believe in though. You will discover ways in which the world enables or inhibits you from living your values. However, these moments are simply hidden opportunities for you to be strong and remain true to yourself. You're not alone; we're in it with you!",
             :links => {
@@ -1036,6 +1101,7 @@ Don't make assumptions. If someone else made the food, ask if sugar was added to
           },
           {
             :name => "Go outdoors",
+            :type => "self",
             :question => "Why get outside?",
             :description => "People in the U.S. spend <a target=\"_blank\" href=\"https://www.epa.gov/report-environment/indoor-air-quality\">about 90%</a> of their time indoors. Go out for a breathe of fresh air; it can relieve stress in your body. Have you ever felt a bit more relaxed when you're outdoors? That's nature's effect; it can boost your mood and immune system all while getting vitamin D from the sun. ",
             :links => {
@@ -1048,6 +1114,7 @@ Don't make assumptions. If someone else made the food, ask if sugar was added to
           },
           {
             :name => "Eat out mindfully",
+            :type => "self",
             :question => "Why does this matter?",
             :description => "Your diet impacts health, waste, wellness, carbon + water footprints, and community (to name a few). Choosing to eat at a place that stands by your values sends a message to the people you eat with and your community what you care about and want more of.",
             :links => {
@@ -1064,6 +1131,7 @@ items; bring your own reusable food containers for any leftovers or takeout.", "
           },
           {
             :name => "Refuse single-use",
+            :type => "self",
             :question => "Why focus on refusing single-use?",
             :description => "If something is used once and thrown away, it's single-use, regardless if the item is compostable. It's a waste of resources when single-use items are used for several minutes (or less) and tossed without another thought. <a target=\"_blank\" href=\"https://www.5gyres.org/animals/ \">Refusing single-use items</a> tackle the root cause of waste. ",
             :links => {
@@ -1078,6 +1146,7 @@ items; bring your own reusable food containers for any leftovers or takeout.", "
           },
           {
             :name => "Affirm your interests",
+            :type => "self",
             :question => "Why should I talk about my interests?",
             :description => "There is something powerful about telling someone you care about something. It lends a sense of confidence and certainty in our lives. Try it. Lead by example and show people that it's okay to care about something, to be proud of it, and let them know how you're doing it. ",
             :links => {
@@ -1096,6 +1165,7 @@ people."],
           },
           {
             :name => "Shop fair trade",
+            :type => "self",
             :question => "Why support fair trade?",
             :description => "Many people around the world are exploited to drive business costs down and profits up and satisfy consumers' desires. <a target=\"_blank\" href=\"https://www.fairtrade.org.uk/What-is-Fairtrade\">Fair trade</a> is about empowering farmers and workers abroad with fair wages, decent working conditions, and local sustainability. ",
             :links => {
@@ -1111,6 +1181,7 @@ people."],
           },
           {
             :name => "Gift responsibly",
+            :type => "self",
             :question => "What is the power of gift giving?",
             :description => "Sometimes we want others to change their actions to be more mindful, but we can't force them to. Instead, we can encourage and support them. Giving a useful gift to another person is an easy way to introduce them to new products and also make it accessible for them to change their practices.",
             :links => {

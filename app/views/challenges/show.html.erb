@@ -41,33 +41,31 @@
       <div class="hidden row" style="display:none;">
         <div class="instructions col">
           <h4 class="heading">🤔How do I do this?🤔</h4>
-          <p class="steps">
-            <% if challenge[:background] %>
+          <% if challenge[:background] %>
             <%= challenge[:background].html_safe %>
+          <% end %>
+          <ul>
+            <% challenge[:instructions].each do |item| %>
+            <li> <%= item.html_safe %> </li>
             <% end %>
-            <ul>
-              <% challenge[:instructions].each do |item| %>
-              <li> <%= item.html_safe %> </li>
-              <% end %>
-            </ul>
-            <% if challenge[:alt_instructions] %>
-            <ul class="alt">
-              <% challenge[:alt_instructions].each do |item| %>
-              <li> <%= item.html_safe %> </li>
-              <% end %>
-            </ul>
+          </ul>
+          <% if challenge[:alt_instructions] %>
+          <ul class="alt">
+            <% challenge[:alt_instructions].each do |item| %>
+            <li> <%= item.html_safe %> </li>
             <% end %>
-            <% if challenge[:extra] %>
-            <%= challenge[:extra].html_safe %>
+          </ul>
+          <% end %>
+          <% if challenge[:extra] %>
+           <%= challenge[:extra].html_safe %>
+          <% end %>
+          <% if challenge[:second_list] %>
+          <ul>
+            <% challenge[:second_list].each do |item| %>
+            <li> <%= item.html_safe %> </li>
             <% end %>
-            <% if challenge[:second_list] %>
-            <ul>
-              <% challenge[:second_list].each do |item| %>
-              <li> <%= item.html_safe %> </li>
-              <% end %>
-            </ul>
-            <% end %>
-          </p>
+          </ul>
+          <% end %>
           <div class="spacer"></div>
         </div>
         <div class="col-5">
@@ -132,33 +130,31 @@
             <div class="hidden row" style="display:none;">
               <div class="instructions col">
                 <h4 class="heading">🤔How do I do this?🤔</h4>
-                <p class="steps">
-                  <% if challenge[:background] %>
-                    <%= challenge[:background].html_safe %>
+                <% if challenge[:background] %>
+                  <%= challenge[:background].html_safe %>
+                <% end %>
+                <ul>
+                  <% challenge[:instructions].each do |item| %>
+                    <li> <%= item.html_safe %> </li>
                   <% end %>
-                  <ul>
-                    <% challenge[:instructions].each do |item| %>
+                </ul>
+                <% if challenge[:alt_instructions] %>
+                  <ul class="alt">
+                    <% challenge[:alt_instructions].each do |item| %>
                       <li> <%= item.html_safe %> </li>
                     <% end %>
                   </ul>
-                  <% if challenge[:alt_instructions] %>
-                    <ul class="alt">
-                      <% challenge[:alt_instructions].each do |item| %>
-                        <li> <%= item.html_safe %> </li>
-                      <% end %>
-                    </ul>
-                  <% end %>
-                  <% if challenge[:extra] %>
-                    <%= challenge[:extra].html_safe %>
-                  <% end %>
-                  <% if challenge[:second_list] %>
-                    <ul>
-                      <% challenge[:second_list].each do |item| %>
-                        <li> <%= item.html_safe %> </li>
-                      <% end %>
-                    </ul>
-                  <% end %>
-                </p>
+                <% end %>
+                <% if challenge[:extra] %>
+                  <%= challenge[:extra].html_safe %>
+                <% end %>
+                <% if challenge[:second_list] %>
+                  <ul>
+                    <% challenge[:second_list].each do |item| %>
+                      <li> <%= item.html_safe %> </li>
+                    <% end %>
+                  </ul>
+                <% end %>
                 <div class="spacer"></div>
               </div>
               <div class="col-5">
@@ -224,33 +220,31 @@
           <div class="hidden row" style="display:none;">
             <div class="instructions col">
               <h4 class="heading">🤔How do I do this?🤔</h4>
-              <p class="steps">
-                <% if challenge[:background] %>
-                  <%= challenge[:background].html_safe %>
+              <% if challenge[:background] %>
+                <%= challenge[:background].html_safe %>
+              <% end %>
+              <ul>
+                <% challenge[:instructions].each do |item| %>
+                  <li> <%= item.html_safe %> </li>
                 <% end %>
-                <ul>
-                  <% challenge[:instructions].each do |item| %>
+              </ul>
+              <% if challenge[:alt_instructions] %>
+                <ul class="alt">
+                  <% challenge[:alt_instructions].each do |item| %>
                     <li> <%= item.html_safe %> </li>
                   <% end %>
                 </ul>
-                <% if challenge[:alt_instructions] %>
-                  <ul class="alt">
-                    <% challenge[:alt_instructions].each do |item| %>
-                      <li> <%= item.html_safe %> </li>
-                    <% end %>
-                  </ul>
-                <% end %>
-                <% if challenge[:extra] %>
-                  <%= challenge[:extra].html_safe %>
-                <% end %>
-                <% if challenge[:second_list] %>
-                  <ul>
-                    <% challenge[:second_list].each do |item| %>
-                      <li> <%= item.html_safe %> </li>
-                    <% end %>
-                  </ul>
-                <% end %>
-              </p>
+              <% end %>
+              <% if challenge[:extra] %>
+                <%= challenge[:extra].html_safe %>
+              <% end %>
+              <% if challenge[:second_list] %>
+                <ul>
+                  <% challenge[:second_list].each do |item| %>
+                    <li> <%= item.html_safe %> </li>
+                  <% end %>
+                </ul>
+              <% end %>
               <div class="spacer"></div>
             </div>
             <div class="col-5">

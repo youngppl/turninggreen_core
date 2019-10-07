@@ -5,7 +5,7 @@
 <div class="reflections">
   <h2 class="heading">Reflections
   </h2>
-  <h2 class="info">Click on the each theme below to complete challenges and make a difference!</h2>
+  <h2 class="info">Share and document your challenge experience! Click on your completed challenge(s) below to get started.</h2>
   <div class="reflection-cards">
     <% current_user.challenges.where(reflection_completed:false, completed: true).each do |challenge| %>
       <% challenge_data = challenges[challenge.theme.to_sym][:challenges].find {|x| x[:name] == challenge.challenge_name} %>
@@ -22,17 +22,19 @@
           </button>
         </div>
         <div class="panel-collapse collapse" style="display:none;">
-          <%= form_for :reflection, url: new_reflection_path do |f| %>
+          <%= form_for :reflection, url: new_reflection_path, html: {class: 'form-wrapper'} do |f| %>
           <%= f.hidden_field :challenge_id, value: challenge.id %>
           <div class="question row">
             <h2 class="heading"><%= challenge_data[:reflection_question] %></h2>
             <%= f.text_area :reflection, class: "reflection-question", placeholder: "Type away! We can’t wait to hear your experience!" %>
+            <h5 id="question-error" class="error-message">you must type a response</h5>
           </div>
           <div class="log row">
             <div class="col-8">
                 <h5 class="instructions">Since your last log:</h5>
                 <h5 class="log-question"> <%= challenge_data[:metric_question] %> </h5>
                 <%= f.number_field :log, {min: 0, class: "log-input"} %>
+                <h5 id="log-error" class="error-message">you must type a response</h5>
               <div class="graph">
                 <%= line_chart challenge.data, challenge.options %>
                 <div class="start box">
@@ -53,18 +55,20 @@
                   <%= f.file_field :photo, id: "upload-photo", class: "", onchange: "loadUpload(event)", accept: "image/*", hidden: true %>
                 </label>
               </div>
+              <h5 id="photo-error" class="error-message">you must upload a photo</h5>
               <%= f.text_area :caption, class: "caption", placeholder: "Caption it!" %>
+              <h5 id="caption-error" class="error-message">you must type a response</h5>
             </div>
           </div>
           <div class="actions">
             <%= f.check_box :permission %>
             <label>I give TG permission to share this check-in <a href=" <%= privacy_path %> " target="_blank">Learn more</a></label><br>
-            <%= f.submit "button", class: "submit", onclick: "$('#points-earned').modal();$(this).parents('.panel').hide();" %>
+            <button type="button" class="submit" onclick="submitReflection(this, <%= challenge.id %> )">submit</button>
           </div>
           <% end %>
         </div>
       </div>
+      <%= render "layouts/points/points_earned_popup", {id: "points-earned-#{challenge.id}", heading:'👏claps for you!👏', message: 'Great job on submitting your reflection! You can check out this and your previous reflections on the Completed Challenges page!', points: challenge.point_worth}%>
     <% end %>
   </div>
-  <%= render "layouts/points/points_earned_popup", {heading:'👏claps for you!👏', message: 'Great job on submitting your reflection! You can check out this and your previous reflections on the Completed Challenges page!', points: 3}%>
 </div>

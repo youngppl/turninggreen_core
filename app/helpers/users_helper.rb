@@ -27,4 +27,13 @@ module UsersHelper
   def level_ranges
     [0, 3, 8, 21, 51, 101, 158, 257, 352, 468, 602, 702, 752, 902, 1000]
   end
+
+  def challenge_points
+    {
+      'pre': 5,
+      'self': 10,
+      'friends': 20,
+      'community': 40
+    }
+  end
 end

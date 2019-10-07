@@ -13,6 +13,9 @@
     </li>
     <li class="nav-item <%= active?(challenges_reflections_path) %>">
       <%= link_to "Reflections", challenges_reflections_path, class: "nav-link"%>
+      <div class="reflections-bubble">
+        <%= current_user.challenges.where(completed:true, reflection_completed:false).length %>
+      </div>
     </li>
     <li class="nav-item <%= active?(challenges_completed_path) %>">
       <%= link_to "Completed Challenges", challenges_completed_path, class: "nav-link"%>
