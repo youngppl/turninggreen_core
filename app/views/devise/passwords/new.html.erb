@@ -1,17 +1,15 @@
-<div class="loginContainer">
-  <div class="formContainer">
-    <h2>Reset your password</h2>
-    <p class="forgotPwdMessage">Enter the email address associated with your account</p>
+<div class="forgot-pwd-page">
+  <div class="forgot-pwd-box">
+    <h2 class="heading">Forgot Your Password</h2>
+    <p class="message">We will send you a password reset link. Please input the email you signed up with. </p>
     <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
       <div>
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "email@example.com", :class => "inputField", :required => true %>
-
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "email", :class => "input", :required => true %>
       </div>
-      <div class="actions">
-        <%= f.submit "Next", :class => "submitButton" %>
-      </div>
-
-      <%= render "devise/shared/links" %>
+        <%= f.submit "reset password", :class => "account-button", :onclick => "$('#pwd-reset-confirm').show()" %>
     <% end %>
+    <div class="confirmation" id="pwd-reset-confirm">
+      check your email for a password reset link!
+    </div>
   </div>
 </div>
