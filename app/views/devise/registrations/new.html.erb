@@ -1,33 +1,36 @@
-<div class="loginContainer">
-  <div class="formContainer">
-
+<div class="sign-up-page">
+  <div class="sign-up-box">
+    <h2 class="header">Sign Up</h2>
     <%= form_for(resource, as: resource_name, url: user_registration_path(resource_name), html: {onsubmit: "convertDate();"}) do |f| %>
       <%= devise_error_messages! %>
 
-      <div>
-        <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "First name or nickname", :class => "inputField", :required => true %>
+      <div class="section">
+        <label>full name</label>
+        <%= f.text_field :name, autofocus: true, autocomplete: "name", :class => "input", :required => true %>
       </div>
 
-
-      <div>
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "email@example.com", :class => "inputField", :required => true %>
+      <div class="section">
+        <label>location</label>
+        <label>state</label>
+        <span>
+          <%= f.select :state, options_for_select(us_states, params.include?(:user)? params[:user][:state] : ""), {}, {:class => "input", :required => true, :onchange => "updateCountryField();"}  %>
+        </span>
+        <label>country</label>
+        <span>
+          <%= f.select :country, options_for_select(countries, params.include?(:user)? params[:user][:country] : ""), {}, {:class => "input", :required => true, :onchange => "updateStateField();"} %>
+        </span>
       </div>
 
-      <div class="formGroup">
-        <span>
-          <%= f.select :state, options_for_select(us_states, params.include?(:user)? params[:user][:state] : ""), {:prompt => "State"}, {:class => "inputField inputFieldSm", :required => true, :onchange => "updateCountryField();"}  %>
-        </span>
-
-        <span>
-          <%= f.select :country, options_for_select(countries, params.include?(:user)? params[:user][:country] : ""), {:prompt => "Country"}, {:class => "inputField inputFieldSm", :required => true, :onchange => "updateStateField();"} %>
-        </span>
+      <div class="section">
+        <label>email</label>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", :class => "input", :required => true %>
       </div>
 
       <script type="text/javascript">
         $('[data-toggle="tooltip"]').tooltip()
       </script>
-      <div>
-        <%= f.text_field :birthday, {class: "inputField", required: true, id: "datepicker", readonly: "", autocomplete: "off", placeholder: "mm/dd/yyyy"} %>
+      <div class="section">
+        <%= f.text_field :birthday, {class: "input", required: true, id: "datepicker", readonly: "", autocomplete: "off", placeholder: "mm/dd/yyyy"} %>
       </div>
       <script type="text/javascript">
         $('#datepicker').datepicker({
@@ -41,24 +44,25 @@
           }
         })
       </script>
-      <div>
-        <%= f.password_field :password, autocomplete: "current-password", placeholder: "Password", :class => "inputField", :required => true %>
+
+      <div class="section">
+        <label>password</label>
+        <%= f.password_field :password, autocomplete: "current-password", :class => "input", :required => true %>
+        <label>confirm password</label>
+        <%= f.password_field :password_confirmation, :class => "input", :required => true %>
+      </div>
+
+      <div class="section">
+        <%= f.select :referral, options_for_select(referral_choices), {:prompt => "How did you hear about us?"}, {:class => "input", :required => true} %>
       </div>
 
       <div>
-        <%= f.password_field :password_confirmation, placeholder: "Reenter password", :class => "inputField", :required => true %>
+        <%= f.submit "sign up", :class => "account-button",  onclick: 'save_timezone();'%>
       </div>
 
-      <div>
-        <%= f.select :referral, options_for_select(referral_choices), {:prompt => "How did you hear about us?"}, {:class => "inputField", :required => true} %>
-      </div>
-
-      <div class="termsAndConditions">
-        <i>By registering, I agree to Terms and Conditions (and more legal stuff)</i>
-      </div>
-
-      <div>
-        <%= f.submit "REGISTER", :class => "actions submitButton",  onclick: 'save_timezone();'%>
+      <div class="sign-in account-link">
+        <span>already have an account?</span>
+        <%= link_to "sign in", new_session_path(resource_name) %><br />
       </div>
 
     <% end %>
