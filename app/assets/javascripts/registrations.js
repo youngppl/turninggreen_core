@@ -65,7 +65,6 @@ function updatePicture() {
       type: 'blob',
       circle: true
     }).then(function(blob) {
-      console.log(blob);
         "use strict";
         var input = document.querySelector('input[type=file]');
         var url = input.dataset.directUploadUrl;

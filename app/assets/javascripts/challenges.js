@@ -97,22 +97,20 @@ function onYouTubeIframeAPIReady() {
 }
 
 $(document).on("click", ".dropdown-click ", function() {
-  console.log($(this).children());
   $(this).find('.up').toggle();
   $(this).find('.down').toggle();
   $(this).find('.fa-chevron-down').toggle();
   $(this).find('.fa-chevron-up').toggle();
   $(this).parent().children('.hidden').toggle()
-  // $(this).parent().children('.challenge-info').children('.hidden').toggle();
-  // $(this).parent().find('i').toggle();
 });
 
 $(document).on('click', '.add-challenge-button', function(event) {
   var d = new Date();
   length = $(this).parent().children('select').val()
   end_date = new Date(Date.now() + (6.04e+8 * length))
+  challenge_name = $(this).parentsUntil('.challenge-box').find('.name').text()
   $.post('/challenges/add', {
-      challenge_name: $(this).parentsUntil('.challenge-box').find('.name').text(),
+      challenge_name: challenge_name,
       theme: challengeName,
       length_of_challenge: length,
       date_complete: end_date,
@@ -123,7 +121,7 @@ $(document).on('click', '.add-challenge-button', function(event) {
         $('#challenge_added_popover').popover({
           html: true,
           template: '<div class="popover challenge_added_popover" role="tooltip"><div class="arrow"></div><h3 class="popover-header"></h3><button type="button" class="close">&times;</button><div class="popover-body"></div></div>',
-          content: '<div type="button" class="close">&times;</div>The test challenge challenge has been added to your challenges!'
+          content: '<div type="button" class="close">&times;</div>The '+ challenge_name +' challenge has been added to your challenges!'
         }).popover('show');
       }
       $(event.target).parent().replaceWith("<div class=\"challenge-in-progress\"><h2 class=\"heading\">🏃‍♀️Challenge in progress…</h2><h2 class=\"stat\">ends on " + (end_date.getMonth() + 1) + "/" + end_date.getDate() + "</h2></div>")
