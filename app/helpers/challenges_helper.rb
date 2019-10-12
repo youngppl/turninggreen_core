@@ -991,8 +991,9 @@ changes you've made in your home and teach them the things you have learned.", "
             :description => "You're the best you in the entire universe. However, you can only <a target=\"_blank\" href=\"https://80000hours.org/career-guide/how-to-be-successful/\">be your best</a> if you're mentally, physically, and spiritually healthy. What good can you do or fun can you have if you're not feeling your tip top?",
             :links => {
               'Ask yourself these 12 questions (list)' => 'https://medium.com/thrive-global/12-questions-that-will-change-your-life-9d281c1e4704',
-              '3 questions to ask to get the life you want (list)' => 'https://thoughtcatalog.com/ryan-holiday/2015/04/three-decisions-every-person-needs-to-make-and-make-correctly/'
-            },
+              "This could be why you're depressed + anxious (video)" => 'https://www.ted.com/talks/johann_hari_this_could_be_why_you_re_depressed_or_anxious#t-263872',
+	      '3 questions to ask to get the life you want (list)' => 'https://thoughtcatalog.com/ryan-holiday/2015/04/three-decisions-every-person-needs-to-make-and-make-correctly/'
+	    },
             :instructions => ["Evaluate your current mental, physical, and spiritual health. What's good?", "Look at the questions in the resources; honestly answer at least 3 of them and write your answers down on a piece of paper.", "Having answered at least 3 questions, reflect upon how you can make life better for you."],
             :metric_question => "",
             :reflection_question => "Which areas of your health can you improve? How can you take initiative towards improving those areas?",
