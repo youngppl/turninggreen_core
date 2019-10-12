@@ -24,6 +24,6 @@ RSpec.describe "devise/sessions/new.html.erb", type: :view do
 
   it 'has a password reset link' do
     visit new_user_session_path
-    expect(page).to have_link('Forgot your password?')
+    expect(page).to have_link('forgot your password?')
   end
 end

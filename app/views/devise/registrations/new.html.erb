@@ -10,26 +10,7 @@
       </div>
 
       <div class="section">
-        <label>location</label>
-        <label>state</label>
-        <span>
-          <%= f.select :state, options_for_select(us_states, params.include?(:user)? params[:user][:state] : ""), {}, {:class => "input", :required => true, :onchange => "updateCountryField();"}  %>
-        </span>
-        <label>country</label>
-        <span>
-          <%= f.select :country, options_for_select(countries, params.include?(:user)? params[:user][:country] : ""), {}, {:class => "input", :required => true, :onchange => "updateStateField();"} %>
-        </span>
-      </div>
-
-      <div class="section">
-        <label>email</label>
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", :class => "input", :required => true %>
-      </div>
-
-      <script type="text/javascript">
-        $('[data-toggle="tooltip"]').tooltip()
-      </script>
-      <div class="section">
+        <label>birthdate</label>
         <%= f.text_field :birthday, {class: "input", required: true, id: "datepicker", readonly: "", autocomplete: "off", placeholder: "mm/dd/yyyy"} %>
       </div>
       <script type="text/javascript">
@@ -46,6 +27,28 @@
       </script>
 
       <div class="section">
+        <label>location</label>
+        <label>state</label>
+        <span>
+          <%= f.select :state, options_for_select(us_states, params.include?(:user)? params[:user][:state] : ""), {}, {:class => "input", :required => true, :onchange => "updateCountryField();"}  %>
+        </span>
+        <label>country</label>
+        <span>
+          <%= f.select :country, options_for_select(countries, params.include?(:user)? params[:user][:country] : ""), {}, {:class => "input", :required => true, :onchange => "updateStateField();"} %>
+        </span>
+      </div>
+
+      <div class="section">
+        <label>email</label>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", :class => "input", :required => true %>
+      </div>
+
+      <!-- <script type="text/javascript">
+        $('[data-toggle="tooltip"]').tooltip()
+      </script> -->
+
+
+      <div class="section">
         <label>password</label>
         <%= f.password_field :password, autocomplete: "current-password", :class => "input", :required => true %>
         <label>confirm password</label>
@@ -53,8 +56,11 @@
       </div>
 
       <div class="section">
-        <%= f.select :referral, options_for_select(referral_choices), {:prompt => "How did you hear about us?"}, {:class => "input", :required => true} %>
+        <label>how did you hear about us?</label>
+        <%= f.select :referral, options_for_select(referral_choices), {}, {:class => "input", :required => true} %>
       </div>
+
+      <h5 class="conditions">By signing up, I agree to the Terms and Conditions</h5>
 
       <div>
         <%= f.submit "sign up", :class => "account-button",  onclick: 'save_timezone();'%>
