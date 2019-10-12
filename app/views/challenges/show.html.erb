@@ -18,7 +18,7 @@
 <div class="challenge-page" style="display:none;">
   <div class="header">
     <h2 class="title"><%= @challenge_name %> Challenges</h2>
-    <h2 class="instructions">Click on a challenge (listed in recommended order) to get started and learn more!</h2>
+    <h2 class="instructions"> <%= @challenge_data[:instruction].html_safe %></h2>
   </div>
 
   <% if !@completed_challenges.exists?(challenge_name: @challenge_data[:challenges][0][:name]) %>

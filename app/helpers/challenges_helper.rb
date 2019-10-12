@@ -8,6 +8,7 @@ module ChallengesHelper
         we don't think about it after closing the trash lid. How much trash do
         you toss everyday? Have you ever thought about where it all goes? Do you
         consider how you could avoid the waste to begin with?",
+        :instruction => "test instruction here",
         :challenges => [
           {
             :name => "Audit your waste",
