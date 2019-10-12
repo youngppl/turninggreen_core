@@ -1,73 +1,73 @@
-// Place all the styles related to the login controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-body {
-  background-color: #fff;
-}
+.login-page {
+  min-height: 500px;
 
-span {
-  color: #000;
-}
+  .sign-in-box {
+    width: 500px;
+    min-height: 299px;
+    border-radius: 13px;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.21), 0 2px 10px 0 rgba(0, 0, 0, 0.13);
+    margin: auto;
+    padding: 20px 60px;
+  }
 
-a.createAccount {
-  color: #7FA86F;
-}
+  .header {
+    font-size: 24px;
+    font-weight: 500;
+    color: #5f5f5f;
+    text-align: center;
+    margin-bottom: 20px;
+  }
 
-.loginContainer {
-  padding-top: 87px;
-  padding-bottom: 5px;
+  .input {
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    border: solid 1px #cbcbcb;
+    margin-bottom: 12px;
+    padding: 12px;
+  }
+
+  .forgot-pwd {
+    display: inline-block;
+    text-decoration: underline;
+    color: #5f5f5f;
+  }
+
+  .remember-me {
+    float: right;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+
+    label {
+      margin: 0 8px;
+    }
+  }
+
+}
+.account-button {
   width: 100%;
-  background-color: #fff;
-  display:flex;
-  justify-content: center;
-  color: black;
-}
-
-.formContainer {
-  margin: 65px 30px;
+  height: 42px;
+  font-size: 14px;
+  font-weight: 600;
   text-align: center;
-}
-
-.forgotPwdMessage {
-  font-size: 18px;
-  font-style: italic;
-}
-
-.inputField {
-  width: 350px;
-  height: 45px;
+  color: #ffffff;
+  background: none;
+  outline: none;
   border-radius: 5px;
-  border: 1px solid #000;
-  padding: 10px;
-  font-size: 18px;
-  margin-bottom: 20px;
-}
-
-.inputFieldSm {
-  width: 165px;
-}
-
-.required {
-  color: red;
-  font-size: 18px;
-}
-
-.submitButton {
-  width: 371px;
-  height: 50px;
-  background-color: #7FA86F;
-  color: #fff;
+  background-color: #0e5b2c;
   border: none;
-  margin-bottom: 25px;
-  font-size: 18px;
+  margin: 12px 0;
 }
 
-.navigateRegister {
-  font-style: italic;
-}
+.account-link {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
 
-.termsAndConditions {
-  font-style: italic;
-  color: #000;
-  margin-bottom: 25px;
+  a {
+    font-weight: bold;
+    color: #0e5b2c;
+  }
 }
