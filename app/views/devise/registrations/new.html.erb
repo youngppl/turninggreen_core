@@ -1,8 +1,10 @@
+<script type="text/javascript">
+  $('.navbar').css("background-color","#fafafa");
+</script>
 <div class="sign-up-page">
   <div class="sign-up-box">
     <h2 class="header">Sign Up</h2>
     <%= form_for(resource, as: resource_name, url: user_registration_path(resource_name), html: {onsubmit: "convertDate();"}) do |f| %>
-      <%= devise_error_messages! %>
 
       <div class="section">
         <label>full name</label>
@@ -11,20 +13,14 @@
 
       <div class="section">
         <label>birthdate</label>
-        <%= f.text_field :birthday, {class: "input", required: true, id: "datepicker", readonly: "", autocomplete: "off", placeholder: "mm/dd/yyyy"} %>
+        <%= f.date_field :birthday, {class: "input", required: true, id: "datepicker", autocomplete: "off", placeholder: "mm/dd/yyyy"} %>
+        <div class="error-msg">
+          you must be at least 13 years old to register
+        </div>
+        <script type="text/javascript">
+          $('#datepicker').prop('max', new Date().toISOString().split("T")[0])
+        </script>
       </div>
-      <script type="text/javascript">
-        $('#datepicker').datepicker({
-          maxDate: new Date(),
-          changeMonth: true,
-          changeYear: true,
-          yearRange: "1900:" + new Date().getFullYear(),
-          formatter: (input, date, instance) => {
-            const value = date.toLocaleDateString()
-            input.value = value
-          }
-        })
-      </script>
 
       <div class="section">
         <label>location</label>
@@ -41,6 +37,9 @@
       <div class="section">
         <label>email</label>
         <%= f.email_field :email, autofocus: true, autocomplete: "email", :class => "input", :required => true %>
+        <div class="error-msg">
+          please enter a valid email
+        </div>
       </div>
 
       <!-- <script type="text/javascript">
@@ -51,8 +50,14 @@
       <div class="section">
         <label>password</label>
         <%= f.password_field :password, autocomplete: "current-password", :class => "input", :required => true %>
+        <div class="error-msg">
+          password must be at least 8 characters
+        </div>
         <label>confirm password</label>
         <%= f.password_field :password_confirmation, :class => "input", :required => true %>
+        <div class="error-msg">
+          password does not match
+        </div>
       </div>
 
       <div class="section">

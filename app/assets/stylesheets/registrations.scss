@@ -1,5 +1,17 @@
+.error-msg {
+  display: none;
+  color: red;
+  font-size: 13px;
+  margin-top: -5px;
+}
+
+.field_with_errors + .error-msg {
+  display: block;
+}
+
 .sign-up-page {
   min-height: 900px;
+  background-color: #fafafa;
 
   .sign-up-box {
     width: 382px;
@@ -29,7 +41,13 @@
     border: solid 1px #cbcbcb;
     background-color: #ffffff;
     margin-bottom: 8px;
-    padding: 12px;
+    padding: 9px;
+  }
+
+  .field_with_errors {
+    input {
+      border: solid 1px red;
+    }
   }
 
   .conditions {

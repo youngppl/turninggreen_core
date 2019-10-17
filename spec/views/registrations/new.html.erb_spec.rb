@@ -16,21 +16,21 @@ RSpec.describe "devise/registrations/new.html.erb", type: :view do
       @user.confirm
       fillRegistrationsForm(name='asdf', email='bob@gmal.com')
       clickRegister
-      expect(page).to have_content('Email has already been taken')
+      expect(page).to have_content('please enter a valid email')
     end
   end
   context 'when entered password is too short' do
     it 'displays password too short error', js: true do
       fillRegistrationsForm('asdf', 'bob@gmal.com', "California", "United States", '2000-04-09', "123", "123")
       clickRegister
-      expect(page).to have_content('Password is too short (minimum is 8 characters)')
+      expect(page).to have_content('password must be at least 8 characters')
     end
   end
   context 'when entered passwords do not match' do
     it 'displays passwords do not match error', js: true do
       fillRegistrationsForm('asdf', 'bob@gmal.com', "California", "United States", '2000-04-09', "123qwe", "qwe123")
       clickRegister
-      expect(page).to have_content('Password confirmation doesn\'t match Password')
+      expect(page).to have_content('password does not match')
     end
   end
   context 'when user selects country thats not USA' do
@@ -43,7 +43,7 @@ RSpec.describe "devise/registrations/new.html.erb", type: :view do
     it 'displays an error message' do
       fillRegistrationsForm('asdf', 'bob@gmal.com', "California", "United States", 13.years.ago+1.day, "123qweqwe", "123qweqwe", "Friend")
       clickRegister
-      expect(page).to have_content('You must be at least 13 years old to register')
+      expect(page).to have_content('you must be at least 13 years old to register')
     end
   end
   # context 'when a US state but non-US country is selected' do
