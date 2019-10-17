@@ -1,20 +1,110 @@
-// Place all the styles related to the registrations controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
-.dot {
-  background-color: #92b584;
-  vertical-align: middle;
-  border-radius: 50%;
-  width: 15px;
-  height: 15px;
-  display: inline-block;
+.error-msg {
+  display: none;
+  color: red;
+  font-size: 13px;
+  margin-top: -5px;
 }
 
-.i {
-  text-align: center;
-  font-size: 11.5px;
-  color: #ffffff;
-  padding-left: 6px;
-  display: table-cell;
+.field_with_errors + .error-msg {
+  display: block;
+}
+
+.sign-up-page {
+  min-height: 900px;
+  background-color: #fafafa;
+
+  .sign-up-box {
+    width: 382px;
+    margin: auto;
+  }
+
+  .header {
+    font-size: 24px;
+    color: #5f5f5f;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: normal;
+    color: #757575;
+  }
+
+  .input {
+    width: 382px;
+    height: 40px;
+    border-radius: 5px;
+    border: solid 1px #cbcbcb;
+    background-color: #ffffff;
+    margin-bottom: 8px;
+    padding: 9px;
+  }
+
+  .field_with_errors {
+    input {
+      border: solid 1px red;
+    }
+  }
+
+  .conditions {
+    font-size: 12px;
+    font-style: italic;
+    color: #757575;
+    text-align: center;
+    margin-bottom: 0;
+  }
+
+  .section {
+    margin-bottom: 16px;
+  }
+}
+
+.forgot-pwd-page {
+  min-height: 600px;
+
+  .forgot-pwd-box {
+    width: 500px;
+    border-radius: 13px;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.21), 0 2px 10px 0 rgba(0, 0, 0, 0.13);
+    background-color: #ffffff;
+    padding: 20px 60px;
+    margin: auto;
+  }
+
+  .heading {
+    font-size: 24px;
+    color: #5f5f5f;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .message {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: normal;
+    color: #5f5f5f;
+    margin-bottom: 12px;
+  }
+
+  .input {
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    border: solid 1px #cbcbcb;
+    background-color: #ffffff;
+    margin-bottom: 8px;
+    padding: 12px;
+  }
+
+  .confirmation {
+    display: none;
+    font-size: 14px;
+    color: #0e5b2c;
+    text-align: center;
+  }
+
 }
