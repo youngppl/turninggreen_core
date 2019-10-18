@@ -786,58 +786,6 @@
   }
 }
 
-.changes-saved-popup {
-  .modal-dialog {
-    padding-top: 7%;
-  }
-
-  .modal-content {
-    width: 459px;
-    border-radius: 10px;
-    border: solid 1px #979797;
-    background-color: #ffffff;
-    margin: auto;
-
-    .modal-body {
-      text-align: center;
-
-      .close {
-        font-size: 38px;
-        position: absolute;
-        top: 25px;
-        right: 25px;
-      }
-
-      .heading {
-        font-size: 35px;
-        font-weight: 600;
-        color: #384632;
-        margin-top: 37px;
-      }
-
-      .message {
-        font-size: 30px;
-        font-weight: 500;
-        color: #777777;
-        width: 300px;
-        margin: 35px auto;
-      }
-
-      .branding {
-        width: 200px;
-        height: 200px;
-        border: solid 1px #979797;
-        border-radius: 50%;
-        margin: 41px auto 28px;
-
-        &.filler {
-          background-color: #d8d8d8;
-        }
-      }
-    }
-  }
-}
-
 .account-deactivate-popup {
   .modal-dialog {
     padding-top: 7%;
