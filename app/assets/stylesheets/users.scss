@@ -11,7 +11,7 @@
   }
 
   input[type=number] {
-      -moz-appearance:textfield;
+    -moz-appearance: textfield;
   }
 
   .level {
@@ -168,6 +168,7 @@
             text-align: center;
             line-height: 1;
             color: gray;
+
             &:hover {
               color: #5f5f5f;
             }
@@ -197,7 +198,6 @@
         .date {
           text-align: center;
           // margin-bottom: 38px;
-
           .month {
             font-size: 20px;
             font-weight: 600;
@@ -305,20 +305,24 @@
             right: -8px;
           }
         }
+
         .no-challenges {
           margin: auto;
           width: 203px;
+
           .heading {
             font-size: 20px;
             font-weight: 600;
             color: #5f5f5f;
           }
+
           .instructions {
             font-size: 12px;
             font-weight: 600;
             width: 203px;
             color: #5f5f5f;
           }
+
           .branding {
             width: 203px;
             height: 171px;
@@ -622,326 +626,128 @@
 }
 
 .settings {
+  color: #5f5f5f;
 
-  h2.settings-title {
-    font-size: 45px;
-    font-weight: bold;
-    color: #464646;
-    margin-bottom: 37px;
-    margin-left: 90px;
+  .settings-title {
+    font-size: 24px;
+    margin-bottom: 40px;
   }
 
-  .settings-tabs {
-    li {
-      font-size: 30px;
-      font-weight: 500;
+  .row {
+    margin-bottom: 20px;
+  }
 
-      a {
-        display: block;
-        height: 60px;
-        width: 268px;
-        text-align: center;
-        color: #384632 !important;
-        border-radius: 6px;
+  .section-title h2 {
+    font-size: 20px;
+    font-weight: 600;
+  }
 
-        &:hover {
-          text-decoration: none;
-        }
+  .section-label {
+    margin-top: 12px;
+    margin-bottom: 0;
 
-        &.active {
-          border-bottom: solid 6px #87b67b;
-        }
-      }
+    &.first {
+      margin-top: 0;
     }
   }
 
-  .separator {
-    width: 1070px;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
-    border: solid 1px #979797;
-    margin-top: inherit;
-  }
-
-  .tab-content {
-    .tab-pane {
-      width: 600px;
-      margin: 42px auto auto;
-    }
-
-    #profile {
-      .user-name {
-        font-size: 28px;
-        font-weight: 600;
-        color: #384632;
-        margin-bottom: 20px;
-      }
-
-      #user_email {
-        margin-bottom: 43px;
-        width: 395px;
-
-        &:invalid {
-          border: solid 2px #d13838;
-        }
-      }
-
-      .verify-email {
-        font-size: 20px;
-        font-weight: 600;
-        color: #517e3d;
-        text-decoration: underline;
-        margin-left: 184px;
-        cursor: pointer;
-      }
-
-      label.country,
-      label.state {
-        width: 78px;
-        text-align: right;
-        font-size: 18px;
-        font-weight: 600;
-        color: #777777;
-        margin-right: 18px;
-      }
-
-      #user_state {
-        margin-bottom: 31px;
-      }
-
-      #user_country,
-      #user_state {
-        width: 293px;
+  #profile {
+    #user_email {
+      &:invalid {
+        border: solid 1px #d13838;
       }
     }
 
-    #account {
-      .panel-default {
-        width: 523px;
-        height: 100%;
-        border-bottom: solid 1px #979797;
-        padding-bottom: 40.5px;
-        padding-top: 41.5px;
-        display: inline-block;
-        position: relative;
-        cursor: pointer;
-
-        .expand-clickable-area {
-          width: 523px;
-          position: absolute;
-          top: 0;
-          bottom: 0;
-          height: 100px;
-        }
-
-        .panel-heading {
-          .panel-title {
-            font-size: 28px;
-            font-weight: 600;
-            color: #384632;
-            display: inline-block;
-          }
-
-          .show-hidden {
-            background: none;
-            border: none;
-            object-fit: contain;
-            float: right;
-            outline: 0;
-            margin-top: 13px;
-          }
-        }
-
-        #password {
-          margin-top: 19px;
-
-          label {
-            text-align: right;
-            width: 154px;
-            height: 21px;
-            font-size: 18px;
-            font-weight: 500;
-            color: #777777;
-          }
-
-          .inputField {
-            width: 277px;
-            margin-left: 30px;
-          }
-
-          .field {
-            margin-left: 30px;
-          }
-
-          .actions {
-            max-width: 219px;
-            margin: 34px 30px 0 auto;
-          }
-
-          .save-changes-button {
-            width: 219px;
-          }
-
-          .field_with_errors {
-            > #user_password,
-            > #user_password_confirmation {
-              border-radius: 5px;
-              border: solid 2px #dc6666;
-            }
-
-            + .confirm.error,
-            + .password.error {
-              display: block !important;
-            }
-          }
-
-          .error {
-            .error-icon,
-            .message {
-              top: -20px;
-              left: 189px;
-            }
-          }
-        }
-
-        #devices {
-          .field {
-            margin-left: 60px;
-            display: inline-block;
-          }
-
-          .actions {
-            max-width: 181px;
-            margin: 34px auto 0;
-          }
-
-          .save-changes-button {
-            width: 119px;
-          }
-        }
-
-        #deactivate a {
-          width: 187px;
-          height: 24px;
-          font-size: 20px;
-          font-weight: 600;
-          color: #808080;
-        }
-
-        .deactivate {
-          text-align: center;
-        }
-
-        p {
-          width: 466px;
-          margin: 25px auto;
-        }
-      }
-    }
-
-    #privacy {
-      div {
-        margin-bottom: 37px;
-      }
-
-      h2 {
-        font-size: 28px;
-        font-weight: 600;
-        color: #384632;
-        margin-bottom: 20px;
-      }
-
-      label {
-        margin-left: 20px;
-        vertical-align: top;
-        margin-top: -4px;
-      }
-
-      p {
-        font-size: 12px;
-        font-weight: 500;
-        line-height: normal;
-        color: #384632;
-        width: 457px;
-        margin-left: 39px;
-      }
-
-      .more-info {
-        font-weight: 500;
-        color: #384632;
-        margin-bottom: 23px;
-      }
-    }
-
-    #notifications {
-      color: #384632;
-
-      .title {
-        font-size: 28px;
-        font-weight: 600;
-      }
-
-      .notifications-label {
-        font-family: Raleway;
-        font-size: 20px;
-        font-weight: 500;
-      }
-
-      .notifications-select {
-        width: 277px;
-        margin-top: 16px;
-        margin-bottom: 37px;
-      }
-
-      .content-heading {
-        font-size: 28px;
-        font-weight: 600;
-      }
-
-      .send-label {
-        font-size: 20px;
-        font-weight: 500;
-      }
-
-      .ContentList {
-        margin-top: 16px;
-        width: 334px;
-        height: 110px;
-        margin-bottom: 42px;
-
-        .options {
-          font-size: 20px;
-          font-weight: 500;
-          margin-left: 18px;
-        }
-      }
-    }
-
-    label {
+    .verify-email {
       font-size: 20px;
       font-weight: 600;
-      color: #384632;
+      color: #517e3d;
+      text-decoration: underline;
+      margin-left: 184px;
+      cursor: pointer;
     }
+  }
+
+  #password {
+    .field_with_errors {
+      > #user_password_confirmation,
+      > #user_password {
+        border-radius: 5px;
+        border: solid 2px #dc6666;
+      }
+
+      + .confirm.error,
+      + .password.error {
+        display: block !important;
+      }
+    }
+  }
+
+  #deactivate {
+    p {
+      font-size: 14px;
+    }
+
+    a {
+      width: 187px;
+      height: 24px;
+      font-size: 20px;
+      font-weight: 600;
+      color: #808080;
+    }
+
+    .deactivate-button {
+      border: solid 1px #5f5f5f;
+      color: #5f5f5f;
+      background-color: transparent;
+      margin: 0;
+    }
+  }
+
+  #privacy {
+    div {
+      margin-bottom: 37px;
+    }
+
+    .more-info {
+      font-size: 14px;
+    }
+  }
+
+  span {
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  label {
+    font-size: 16px;
+    color: #757575;
+    display: block;
   }
 
   .save-changes-button {
-    width: 181px;
-    height: 65px;
-    border-radius: 7px;
-    border: solid 3px #87b67b;
-    background-color: #ffffff;
-    font-size: 20px;
+    width: 145px;
+    height: 42px;
+    border-radius: 5px;
+    border: solid 1px #0e5b2c;
+    font-size: 14px;
     font-weight: 600;
-    color: #384632;
+    color: #0e5b2c;
+    margin-top: 20px;
 
     &:disabled {
-      border: solid 3px #cacaca;
+      border: solid 1px #cacaca;
+      color: #cacaca;
     }
   }
 
   .inputField {
     border-radius: 5px;
-    border: solid 1px #787878;
-    height: 48px;
+    border: solid 1px #cbcbcb;
+    height: 40px;
+    width: 288px;
+    font-size: 14px;
+    padding: 10px;
   }
 }
 
