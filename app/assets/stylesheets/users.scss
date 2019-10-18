@@ -654,7 +654,7 @@
   #profile {
     #user_email {
       &:invalid {
-        border: solid 1px #d13838;
+        border: solid 1px red;
       }
     }
 
@@ -670,14 +670,11 @@
 
   #password {
     .field_with_errors {
-      > #user_password_confirmation,
-      > #user_password {
-        border-radius: 5px;
-        border: solid 2px #dc6666;
+      input {
+        border: solid 1px red;
       }
 
-      + .confirm.error,
-      + .password.error {
+      + .error {
         display: block !important;
       }
     }
@@ -751,33 +748,41 @@
   }
 }
 
-.error {
-  .error-icon {
-    width: 15px;
-    height: 15px;
-    background-color: #d13838;
-    border-radius: 50%;
-    font-size: 13px;
-    text-align: center;
-    line-height: 15px;
-    color: #ffffff;
-    padding-left: 1px;
-    position: relative;
-    top: -41px;
-    display: inline-block;
+.changes-saved-notification {
+  display: flex;
+  align-items: center;
+  margin-top: 4px;
+  display: none;
 
-    &::before {
-      content: "!";
-    }
+  .icon {
+    width: 11px;
+    height: 11px;
+    background-color: #87b67b;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 11px;
+    justify-content: center;
+    margin-right: 4px;
   }
 
   .message {
     display: inline-block;
+    font-size: 11px;
+    font-weight: 500;
+    color: #417505;
+  }
+}
+
+.error {
+  display: none;
+
+  .message {
+    display: inline-block;
     position: relative;
-    top: -41px;
     font-size: 12px;
-    color: #d13838;
-    margin-left: 6px;
+    color: red;
   }
 }
 

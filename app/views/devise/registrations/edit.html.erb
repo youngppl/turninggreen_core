@@ -11,8 +11,6 @@
       </div>
 
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: 'col' }) do |f| %>
-        <%= devise_error_messages! %>
-
         <div class="field">
           <label class="section-label first">email</label>
           <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -20,9 +18,8 @@
           <% end %>
           <br/>
           <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "inputField", placeholder: "email@example.com", oninput: "checkEmail();allowSaveButton();" %>
-          <div class="email error" style="display:none;">
-            <!-- <div class="error-icon"></div> -->
-            <span class="message">you must enter a valid email</span>
+          <div class="email error">
+            <span class="message">please enter a valid email</span>
           </div>
         </div>
 
@@ -36,7 +33,11 @@
         </div>
 
         <div class="actions">
-          <%= f.submit "save changes", class: "btn save-changes-button", id: "profile-save-button", disabled: "true", onclick: "$('#changes-saved').modal();" %>
+          <%= f.submit "save changes", class: "btn save-changes-button", id: "profile-save-button", disabled: "true", onclick: "$(this).siblings('.changes-saved-notification').css('display', 'flex');" %>
+          <div class="changes-saved-notification">
+            <span class="icon">&#x2713;</span>
+            <span class="message">Your changes have been saved</span>
+          </div>
         </div>
       <% end %>
     </div>
@@ -47,31 +48,34 @@
       </div>
 
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: 'col' }) do |f| %>
-        <%= devise_error_messages! %>
-
         <div class="field">
           <label>current password</label>
           <%= f.password_field :current_password, autofocus: true, class: "inputField", oninput: "enablePasswordFields();" %>
+          <div class="error">
+            <span class="message">the password you entered is incorrect</span>
+          </div>
         </div>
         <div class="field">
           <label>new password</label>
           <%= f.password_field :password, autofocus: true, disabled: true, class: "inputField" %>
-          <div class="password error" style="display:none;">
-            <!-- <div class="error-icon"></div> -->
-            <span class="message">password must be at least 6 characters</span>
+          <div class="password error">
+            <span class="message">password must include at least 8 characters</span>
           </div>
         </div>
         <div class="field">
           <label>confirm password</label>
           <%= f.password_field :password_confirmation, autofocus: true, disabled: true, class: "inputField" %>
-          <div class="confirm error" style="display:none;">
-            <!-- <div class="error-icon"></div> -->
-            <span class="message">passwords do not match</span>
+          <div class="confirm error">
+            <span class="message">the password doesn’t match</span>
           </div>
         </div>
 
         <div class="actions">
-          <%= f.submit "save changes", id: "update-password-button", class: "btn save-changes-button", disabled: "true", onclick: "$('#password-updated').modal();" %>
+          <%= f.submit "save changes", id: "update-password-button", class: "btn save-changes-button", disabled: "true", onclick: "$(this).siblings('.changes-saved-notification').css('display', 'flex');" %>
+          <div class="changes-saved-notification">
+            <span class="icon">&#x2713;</span>
+            <span class="message">Your changes have been saved</span>
+          </div>
         </div>
       <% end %>
     </div>
@@ -89,7 +93,11 @@
           <h5 class="more-info">To manage sharing settings for challenges individually please check the <strong>completed challenges</strong> page. </h5>
           <%= f.check_box :permissions, {multiple: true, onclick:"$('#privacy-save-button').prop('disabled', false);"}, 'challenges', nil %>
           <span>I give Turning Green permission to share <strong>ALL</strong> of my completed challenges <a target="_blank" href=" <%= privacy_path %>">Learn more</a></span>
-        <%= f.submit "save changes", class: "btn save-changes-button", id: "privacy-save-button", disabled: "true", onclick: "$('#changes-saved').modal();" %>
+        <%= f.submit "save changes", class: "btn save-changes-button", id: "privacy-save-button", disabled: "true", onclick: "$(this).siblings('.changes-saved-notification').css('display', 'flex');" %>
+        <div class="changes-saved-notification">
+          <span class="icon">&#x2713;</span>
+          <span class="message">Your changes have been saved</span>
+        </div>
       <% end %>
     </div>
 
@@ -99,7 +107,6 @@
       </div>
 
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, id: "edit-notifications", class: "col" }) do |f| %>
-          <%= devise_error_messages! %>
           <label class="section-label first">frequency</label>
           <div class="field">
             <%= f.label 'I would like to receive emails:' %>
@@ -117,7 +124,11 @@
             <%= f.check_box :notifications_content, {multiple: true, onclick:"$('#notifications-save-button').prop('disabled', false);"}, 'newsletter', nil %>
             <span class="options">The rootup newsletter</span>
           </div>
-          <%= f.submit "save changes", class: "btn save-changes-button", id: "notifications-save-button", disabled: "true", onclick: "$('#changes-saved').modal();" %>
+          <%= f.submit "save changes", class: "btn save-changes-button", id: "notifications-save-button", disabled: "true", onclick: "$(this).siblings('.changes-saved-notification').css('display', 'flex');" %>
+          <div class="changes-saved-notification">
+            <span class="icon">&#x2713;</span>
+            <span class="message">Your changes have been saved</span>
+          </div>
         <% end %>
     </div>
 
@@ -132,9 +143,6 @@
       </div>
     </div>
 
-  <%= render "layouts/settings/changes_saved_popup" %>
   <%= render "layouts/settings/account_deactivate_popup" %>
-  <%= render "layouts/settings/email_updated_popup" %>
-  <%= render "layouts/settings/password_updated_popup" %>
   <%= render "layouts/settings/verify_email_popup" %>
 </div>
