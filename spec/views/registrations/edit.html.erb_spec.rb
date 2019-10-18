@@ -85,7 +85,7 @@ RSpec.describe 'devise/registrations/edit.html.erb', type: :view, js: true do
       fill_in 'user_password', with: 'newpassword'
       fill_in 'user_password_confirmation', with: 'newpassword'
       click_on 'save changes'
-      expect(page).to have_content('Your changes have been saved')
+      expect(page).to have_content('Your account has been updated successfully.')
     end
   end
 
@@ -119,7 +119,7 @@ RSpec.describe 'devise/registrations/edit.html.erb', type: :view, js: true do
       visit edit_user_registration_path
       check 'user_permissions_challenges'
       click_on 'save changes'
-      expect(page).to have_content('Your changes have been saved')
+      expect(page).to have_content('Your account has been updated successfully.')
     end
   end
 
@@ -142,7 +142,7 @@ RSpec.describe 'devise/registrations/edit.html.erb', type: :view, js: true do
       visit edit_user_registration_path
       check 'user_notifications_content_newsletter'
       click_on 'save changes'
-      expect(page).to have_content('Your changes have been saved')
+      expect(page).to have_content('Your account has been updated successfully.')
     end
   end
 
