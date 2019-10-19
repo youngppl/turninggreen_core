@@ -53,9 +53,7 @@
                 <label class="upload" onclick="$(this).siblings('#photo-upload').modal();">
                   upload
                 </label>
-                <input type="file" id="upload-photo" onchange="linkCroppie(this);" accept="image/*" hidden>
-                <%# <%= f.file_field :photo, , class: "", , , %>
-                <%= f.hidden_field :photo, id: "upload-hidden-field" %>
+                <%= f.file_field :photo, id: "upload-photo" , onchange: "linkCroppie(this);", accept: "image/*" , hidden: true, direct_upload: true %>
                 <%= render "layouts/challenges/photo_upload_popup" %>
               </div>
               <h5 id="photo-error" class="error-message">you must upload a photo</h5>

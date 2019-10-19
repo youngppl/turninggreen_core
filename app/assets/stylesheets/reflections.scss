@@ -11,7 +11,7 @@
   }
 
   input[type=number] {
-      -moz-appearance:textfield;
+    -moz-appearance: textfield;
   }
 
   .row {
@@ -19,7 +19,7 @@
   }
 
   .col-8 {
-    padding: 0
+    padding: 0;
   }
 
   .heading {
@@ -62,12 +62,13 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 0px 20px;
+      padding: 0 20px;
 
       .panel-title {
         font-size: 20px;
         font-weight: 600;
         color: #5f5f5f;
+
         img {
           margin-right: 4px;
         }
@@ -93,8 +94,8 @@
           font-size: 16px;
           font-weight: 500;
           color: #757575;
-          padding-top: 11px;  border-radius: 8px;
-
+          padding-top: 11px;
+          border-radius: 8px;
         }
 
         textarea {
@@ -137,6 +138,7 @@
 
         .graph {
           height: 260px;
+
           .box {
             display: inline-block;
             text-align: center;
@@ -221,6 +223,7 @@
         border-top: solid 1px #dcdcdc;
         margin-top: 20px;
         padding-top: 10px;
+
         label {
           font-size: 14px;
           font-weight: 600;
@@ -332,6 +335,7 @@
 
   .error {
     border: solid 1px #d0021b !important;
+
     &.upload {
       color: #d0021b !important;
     }
@@ -345,7 +349,7 @@
     font-size: 12px;
     font-weight: 500;
     color: #5f5f5f;
-    padding: 0px 18px;
+    padding: 0 18px;
     display: flex;
     align-items: center;
   }
@@ -360,7 +364,6 @@
     background-color: #ffffff;
     margin: auto;
     color: #5f5f5f;
-
   }
 
   .modal-title {
