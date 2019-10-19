@@ -193,11 +193,49 @@ input {
 }
 
 .resources-page {
+  color: #5f5f5f;
+  padding: 0 15%;
+
+  .title {
+    font-size: 30px;
+    font-weight: 600;
+  }
+
+  p {
+    font-size: 12px;
+  }
+
+  :not(.heading) > strong {
+    font-size: 16px;
+  }
+
   .heading {
-    color: #78a84f;
+    font-size: 20px;
+    font-weight: 600;
+    color: #105b2f;
   }
 
   .section-title {
-    color: #e69138;
+    &.waste {
+      color: #93989c;
+    }
+    &.biodiversity {
+      color: #974f15;
+    }
+    &.travel {
+      color: #8f64a8;
+    }
+    &.fashion {
+      color: #f3e95d;
+    }
+    &.clean {
+      color: #db6699;
+    }
+    &.food {
+      color: #f0871e;
+    }
+    &.water {
+      color: #57caf0;
+    }
   }
 }

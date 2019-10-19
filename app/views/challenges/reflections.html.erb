@@ -71,4 +71,9 @@
       <%= render "layouts/points/points_earned_popup", {id: "points-earned-#{challenge.id}", heading:'👏claps for you!👏', message: 'Great job on submitting your reflection! You can check out this and your previous reflections on the Completed Challenges page!', points: challenge.point_worth}%>
     <% end %>
   </div>
+  <% if current_user.challenges.where(reflection_completed:false, completed: true).length == 0 %>
+    <div class="no-reflections">
+      No reflections, yet. Finish a challenge, and come check back then!
+    </div>
+  <% end %>
 </div>
