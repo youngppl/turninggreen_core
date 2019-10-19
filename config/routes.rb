@@ -30,6 +30,9 @@ Rails.application.routes.draw do
   post 'reflections/new' => 'reflections#new', :as => 'new_reflection'
   post 'reflections/edit' => 'reflections#edit', :as => 'edit_reflection'
   post '/feedback' => 'users#feedback'
+  # email reminders routes
+  post '/send-out-challenge-reminders' => 'challenge_mailer#send_out_challenge_reminders'
+  post '/reset-email-tracking' => 'challenge_mailer#reset_email_tracking'
   devise_scope :user do
     post '/deactivate' => 'registrations#deactivate'
   end
