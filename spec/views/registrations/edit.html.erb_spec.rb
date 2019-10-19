@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe 'devise/registrations/edit.html.erb', type: :view, js: true do
-  
+
   context 'when user types email with no @ sign' do
     it 'shows error' do
       @user = User.create(email: 'bob@gmal.com', password: 'wataasdadf', name: 'bob', state: 'CA', country: 'United States', timezone: 'Pacific Time (US & Canada)')
@@ -11,7 +11,7 @@ RSpec.describe 'devise/registrations/edit.html.erb', type: :view, js: true do
       signInUser(@user.email, @user.password)
       visit edit_user_registration_path
       fill_in 'user_email', with: 'bobnewemail.com'
-      expect(page).to have_content('You must enter a valid email')
+      expect(page).to have_content('please enter a valid email')
     end
   end
 
@@ -22,7 +22,7 @@ RSpec.describe 'devise/registrations/edit.html.erb', type: :view, js: true do
       signInUser(@user.email, @user.password)
       visit edit_user_registration_path
       fill_in 'user_email', with: 'bob@newemail.com'
-      expect(page).to have_button('Save Changes', disabled: false)
+      expect(page).to have_button('save changes', disabled: false)
     end
   end
 
@@ -33,7 +33,7 @@ RSpec.describe 'devise/registrations/edit.html.erb', type: :view, js: true do
       signInUser(@user.email, @user.password)
       visit edit_user_registration_path
       fill_in 'user_email', with: 'bob@newemail.com'
-      click_on 'Save Changes'
+      click_on 'save changes'
       expect(page).to have_content('Verify your email')
     end
   end
@@ -45,7 +45,7 @@ RSpec.describe 'devise/registrations/edit.html.erb', type: :view, js: true do
       signInUser(@user.email, @user.password)
       visit edit_user_registration_path
       fill_in 'user_email', with: 'bob@newemail.com'
-      click_on 'Save Changes'
+      click_on 'save changes'
       find('#verify-email-link').click
       expect(page).to have_button('Resend email', disabled: false)
     end
@@ -57,41 +57,35 @@ RSpec.describe 'devise/registrations/edit.html.erb', type: :view, js: true do
       @user.confirm
       signInUser(@user.email, @user.password)
       visit edit_user_registration_path
-      click_on 'Account'
-      first('.expand-clickable-area').click # password section
       fill_in 'user_current_password', with: 'asdf'
       expect(page).to have_field('user_password', disabled: false)
     end
   end
 
   context 'when user updates password' do
-    it 'update password is clickable' do
+    it 'save button is clickable' do
       @user = User.create(email: 'bob@gmal.com', password: 'wataasdadf', name: 'bob', state: 'CA', country: 'United States', timezone: 'Pacific Time (US & Canada)')
       @user.confirm
       signInUser(@user.email, @user.password)
       visit edit_user_registration_path
-      click_on 'Account'
-      first('.expand-clickable-area').click # password section
       fill_in 'user_current_password', with: 'wataasdadf'
       fill_in 'user_password', with: 'newpas'
       fill_in 'user_password_confirmation', with: 'newpas'
-      expect(page).to have_button('Update Password', disabled: false)
+      expect(page).to have_button('save changes', disabled: false)
     end
   end
 
   context 'when user updates password' do
-    it 'password updated popup shows up' do
+    it 'changes saved notification shows up' do
       @user = User.create(email: 'bob@gmal.com', password: 'wataasdadf', name: 'bob', state: 'CA', country: 'United States', timezone: 'Pacific Time (US & Canada)')
       @user.confirm
       signInUser(@user.email, @user.password)
       visit edit_user_registration_path
-      click_on 'Account'
-      first('.expand-clickable-area').click # password section
       fill_in 'user_current_password', with: 'wataasdadf'
       fill_in 'user_password', with: 'newpassword'
       fill_in 'user_password_confirmation', with: 'newpassword'
-      page.execute_script("$('#password-updated').modal();")
-      expect(page).to have_content('Your password has been updated!')
+      click_on 'save changes'
+      expect(page).to have_content('Your account has been updated successfully.')
     end
   end
 
@@ -101,9 +95,7 @@ RSpec.describe 'devise/registrations/edit.html.erb', type: :view, js: true do
       @user.confirm
       signInUser(@user.email, @user.password)
       visit edit_user_registration_path
-      click_on 'Account'
-      all('.expand-clickable-area').last.click # deactivate section
-      find('#deactivate-account-button').click
+      find('.deactivate-button').click
       expect(page).to have_content('Account Deactivation')
     end
   end
@@ -114,21 +106,19 @@ RSpec.describe 'devise/registrations/edit.html.erb', type: :view, js: true do
       @user.confirm
       signInUser(@user.email, @user.password)
       visit edit_user_registration_path
-      click_on 'Privacy'
       check 'user_permissions_challenges'
-      expect(page).to have_button('Save Changes', disabled: false)
+      expect(page).to have_button('save changes', disabled: false)
     end
   end
 
   context 'when user saves privacy settings' do
-    it 'shows popup when save is clicked' do
+    it 'shows notification when save is clicked' do
       @user = User.create(email: 'bob@gmal.com', password: 'wataasdadf', name: 'bob', state: 'CA', country: 'United States', timezone: 'Pacific Time (US & Canada)')
       @user.confirm
       signInUser(@user.email, @user.password)
       visit edit_user_registration_path
-      click_on 'Privacy'
       check 'user_permissions_challenges'
-      click_on 'Save Changes'
+      click_on 'save changes'
       expect(page).to have_content('Your account has been updated successfully.')
     end
   end
@@ -139,21 +129,19 @@ RSpec.describe 'devise/registrations/edit.html.erb', type: :view, js: true do
       @user.confirm
       signInUser(@user.email, @user.password)
       visit edit_user_registration_path
-      click_on 'Notifications'
       check 'user_notifications_content_newsletter'
-      expect(page).to have_button('Save Changes', disabled: false)
+      expect(page).to have_button('save changes', disabled: false)
     end
   end
 
-  context 'when use saves notifications settings' do
-    it 'shows popup when save is clicked' do
+  context 'when user saves notifications settings' do
+    it 'shows notification when save is clicked' do
       @user = User.create(email: 'bob@gmal.com', password: 'wataasdadf', name: 'bob', state: 'CA', country: 'United States', timezone: 'Pacific Time (US & Canada)')
       @user.confirm
       signInUser(@user.email, @user.password)
       visit edit_user_registration_path
-      click_on 'Notifications'
       check 'user_notifications_content_newsletter'
-      click_on 'Save Changes'
+      click_on 'save changes'
       expect(page).to have_content('Your account has been updated successfully.')
     end
   end
