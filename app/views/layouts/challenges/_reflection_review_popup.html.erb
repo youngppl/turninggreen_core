@@ -19,7 +19,7 @@
           <div class="log row">
             <div class="col-8">
               <h5 class="heading">Your actions</h5>
-              <h5 class="summary">You did <strong><%= challenge.cumulative_metrics %></strong> <%= challenge_data[:metric_unit] %></h5>
+              <h5 class="summary"> <%= challenge_data[:metric_verb] %> <strong><%= challenge.cumulative_metrics %></strong> <%= challenge_data[:metric_unit] %></h5>
               <div class="graph">
                 <%= line_chart challenge.data, challenge.options %>
                 <div class="start box">
