@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <p>Hi <%= @user.name %>!</p>
+
+    <p>Your challenge is up! Log your progress and reflection <a target="_blank" href=" <%= dashboard_url %> ">here</a>.</p>
+
+    <p>This info will be collected for the Global Impact (currently under progress) page so you can see the greater impact of your actions on the environment and community.</p>
+
+    <ol>
+      <% @user_completed_challenges.each do |challenge| %>
+        <li>  <%= challenge.challenge_name %> (complete)</li>
+      <% end %>
+      <% @user_incomplete_challenges.each do |challenge| %>
+        <li>  <%= challenge.challenge_name %> (ends in <%= challenge.get_time_left %>)</li>
+      <% end %>
+    </ol>
+
+    <p>We’re excited to read about what you have accomplished!</p>
+
+    <p>
+      Keep rocking it!<br>
+      The Rootup team
+    </p>
+
+    <p>P.S. We’re testing out this email feature, so let us know if you like these email reminders, if you’re getting too many emails from us, etc. (just reply to this email)</p>
+  </body>
+</html>

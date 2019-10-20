@@ -23,6 +23,8 @@ module ChallengesHelper
             :instructions => ["Take a bag with you today + collect every piece of waste you'd throw in the trash, recycling, and compost.", 'At end of day, separate your collection into compostable, recyclable, and trash. Evaluate size of each pile.', 'Reflect upon your findings. How could you have avoided the trash you collected? Could you use alternative products to minimize your category sizes?'],
             :alt_instructions => ["Alternative: Track your waste production with a list + mark them as compostable, recyclable, and trash."],
             :metric_question => "",
+:metric_verb => "N/A",
+:metric_unit => "",
             :reflection_question => "What are ways in which you can reduce your waste?",
             :photo_prompt => ""
           },
@@ -37,6 +39,8 @@ module ChallengesHelper
             },
             :instructions => ["Before you take any \"freebie\" (e.g. free stuff at events, <a target=\"_blank\" href=\"https://trashisfortossers.com/why-requesting-no-straw-is-awesome/\">straw in drink</a>, napkin for takeout), pause and ask yourself: will I use this more than 5 times? If no, say 'No thank you. I won't use this.'", "Also consider: do I already own something that can serve the same purpose? If yes, then say 'No thank you, I don't need this.'", "If you do need it, feel free to take it. This challenge is about knowing when to say 'no' and when to say 'yes'."],
             :metric_question => "How many times did you refuse something you didn't need?",
+:metric_verb => "You refused something you didn't need ",
+:metric_unit => " times!",
             :reflection_question => "How was the experience of refusing things?",
             :photo_prompt => "Share a photo capturing this experience. Tell us what you refused."
           },
@@ -44,9 +48,7 @@ module ChallengesHelper
             :name => "Shop with reusables",
             :type => "friends",
             :question => "What's the deal with food packaging?",
-            :metric_verb => "You did",
-            :metric_unit => "test unit here",
-            :description => "Packaging, even if it's recyclable or compostable, still end up in landfills. To best combat this, refuse waste at the root source so you don't have to figure out proper disposal later. For example, food packaging extends shelf life + makes shopping conveninet, but ask yourself: Is it necessary? Think about farmers' markets + grocery stores; it's possible to buy loose produce.",
+            :description => "Packaging, even if it's recyclable or compostable, still end up in landfills. To best combat this, refuse waste at the root source so you don't have to figure out proper disposal later. For example, food packaging extends shelf life + makes shopping convenient, but ask yourself: Is it necessary? Think about farmers' markets + grocery stores; it's possible to buy loose produce.",
             :links => {
               "Shopping with your own bags + jars (guide)" => "https://www.goingzerowaste.com/blog/2016/3/14/ultimate-guide-to-zero-waste-grocery-shopping",
               "Zero waste shopping at the farmers' market (video)" => "https://trashisfortossers.com/how-to-shop-at-farmers-market-withou/",
@@ -56,6 +58,8 @@ module ChallengesHelper
             :instructions => ["Bring your own reusable bags and jars", "Opt for loose goods (e.g. fruits, veggies, meat, cheese, bread) instead of packaged ones. Try to avoid any packaging that will be disposed of.", "Shop at bulk bins.", "Get 3 friends and family to join you!"],
 	          :extra => "*If goods are charged by weight (e.g. pounds or kilos), don't forget to tare your reusables before filling them up!",
             :metric_question => "How many times did you use reusable containers (e.g. bags, jars) instead of single-use disposables?",
+:metric_verb => "You used reusable containers instead of single-use disposables ",
+:metric_unit => " times!",
             :reflection_question => "How challenging was it to avoid food packaging waste?",
             :photo_prompt => "Share a photo of your shopping experience. Tell us what you learned from this experience."
           },
@@ -71,6 +75,8 @@ module ChallengesHelper
             },
             :instructions => ["Refuse any single-use disposables (e.g. food containers, utensils, straws, napkins, bags).", "Bring your own reusable alternatives to events (serving food).", "People will notice. Some will say something, and some won't. Simply explain to them: \"I bring my own reusable ___ to avoid the unnecessary waste.\" Feel free to engage in conversation or elaborate more."],
             :metric_question => "How many times did you bring your own (e.g. cup, bottle, plate, utensil, bowl, straw, napkin, bag) instead of using single-use disposable? ",
+:metric_verb => "You brought your own reusable items ",
+:metric_unit => " times, instead of using single-use disposables!",
             :reflection_question => "How has your perspective about single-use disposables changed?",
             :photo_prompt => "Share a photo of bringing your own reusables. Tell us something you learned from this experience."
           },
@@ -87,6 +93,8 @@ module ChallengesHelper
             :background => "Composting can take on any form like starting your own compost pile, putting it in your green bin (if you have municipal composting), giving your compost to local farms, or tossing it into a compost bin in your community.",
             :instructions => ["Compost any waste that is compostable and biodegradable. If it's not compostable, then recycle it.", "As a last resort, send your trash into the landfill if it isn't reusable, compostable, or recyclable."],
             :metric_question => "Estimate how many times you composted or recycled instead of trashing something.",
+:metric_verb => "You composted or recycled ",
+:metric_unit => " about times!",
             :reflection_question => "How challenging was it to avoid sending waste to the landfill?",
             :photo_prompt => "Take a photo of your compost. Tell us something you learned from this experience."
           },
@@ -103,6 +111,8 @@ module ChallengesHelper
             },
             :instructions => ["Curate a waste-free menu. That is, purchase ingredients with little to no packaging waste, and serve on reusable dishware.", "Provide reusable dishware, utensils, and napkins.", "Decorate as you wish with nature and non-single-use disposable items.", "Make a compost bin accessible.", "Invite at least 3 people and tell them it's a zero waste party!", "If you'd like, invite your guests to help clean up after the party: put things in the dishwasher or handwash; toss dirtied cloths into the laundry; and empty the compost bin. Don't worry, this is bonding time and not as bad as it sounds.", "Have fun!"],
             :metric_question => "How many people did you invite to your party?",
+:metric_verb => "You invited ",
+:metric_unit => " people to your party!",
             :reflection_question => "What did you like about this challenge?",
             :photo_prompt => "Take a photo of your party setup. Tell us how you made your party zero waste."
           },
@@ -118,6 +128,8 @@ module ChallengesHelper
             },
             :instructions => ["Choose your target audience. (e.g. local business, local government)", "Draft up a proposal of what you want them to change and why it matters to them. Be specific. (e.g. Ask a local restaurant to provide plastic straw only upon request.)", "Reach out and give them your pitch.", "Offer to work with them to create this change for the community."],
             :metric_question => "How many businesses and government officials did you speak to about waste?",
+:metric_verb => "You spoke with ",
+:metric_unit => " businesses and government officials about waste!",
             :reflection_question => "How can you engage more of your community of friends and family to reduce their waste?",
             :photo_prompt => "Take a photo capturing your attempt to speak up. Tell us something how you felt doing this challenge."
           }
@@ -162,6 +174,8 @@ module ChallengesHelper
 ask the people you get your food from (e.g. farmers, store employees) how the food was grown.", "Search the web to learn about the practices
 and values of the farms and companies whose products you buy."],
             :metric_question => "",
+:metric_verb => "N/A",
+:metric_unit => "",
             :reflection_question => "What was challenging? What did you learn from reading ingredients lists and asking people where your food came from?",
             :photo_prompt => ""
           },
@@ -179,6 +193,8 @@ and values of the farms and companies whose products you buy."],
             },
             :instructions => ["Shop at a farmers' market. If it's not possible for you to visit one, look for a CSA (community supported agriculture) box to purchase.", "Bring your friends and family along!", "Start a conversation and get to know the farmers who grew your food.", "Ask them about their soil, pest management, and crop rotation practices."],
             :metric_question => "How many people did you bring with you to the farmers' market?",
+:metric_verb => "You brought ",
+:metric_unit => " people to the farmers' market with you!",
             :reflection_question => "What did you like about your adventure to the farmers' market?",
             :photo_prompt => "Share a photo of your farmers' market trip. Tell us how your experience was."
           },
@@ -194,6 +210,8 @@ and values of the farms and companies whose products you buy."],
             },
             :instructions => ["Find recipes for your favorite and go-to snacks. Whole fruits, veggies, nuts, and seeds are available to fall back on if you don't want to make your own snacks.", "Shop for local and seasonal ingredients to make your snacks or get your snacks.", "Whip up your snack and take a pic!"],
             :metric_question => "How many different wholesome snacks did you eat?",
+:metric_verb => "You homemade ",
+:metric_unit => " different snacks!",
             :reflection_question => "How has this challenge influenced your perspective about snacks?",
             :photo_prompt => "Share a photo of your snacks. Tell us what makes it good."
           },
@@ -211,6 +229,8 @@ and values of the farms and companies whose products you buy."],
             },
             :instructions => ["Buy and take only what you will eat.", "Remember to eat your leftovers or share them with others, so they don't go to waste."],
             :metric_question => "How many times did you take action to reduce food waste?",
+:metric_verb => "You took action to reduce food waste ",
+:metric_unit => " times!",
             :reflection_question => "What surprised you from this challenge?",
             :photo_prompt => "Share a photo that captures this experience. Tell us how you reduced your food waste."
           },
@@ -227,6 +247,8 @@ and values of the farms and companies whose products you buy."],
             },
             :instructions => ["Shop 100% fresh, local, organic, seasonal, non-GMO for your meal.", "Invite at least two other people to join you in this activity (cooking and/or eating).", "Aim to make your meal cost <$9 per person."],
             :metric_question => "How many <$9 meals did you make in this challenge?",
+:metric_verb => "You made ",
+:metric_unit => " meals that cost less than $9!",
             :reflection_question => "How can you incorporate more FLOSN foods in your diet?",
             :photo_prompt => "Share a photo of the meal you prepared. Tell us how much it cost and how your experience was."
           },
@@ -243,6 +265,8 @@ and values of the farms and companies whose products you buy."],
             },
             :instructions => ["<a target=\"_blank\" href=\"https://foodprint.org/shopping-sustainably/\">Ask fishmongers or store managers</a> whether they sell sustainable seafood and find out where their seafood comes from.", "Do your best to find a local and accessible sustainable seafood source to purchase from."],
             :metric_question => "How many times did you ask someone whether they sell sustainable seafood?",
+:metric_verb => "You asked whether someone sells sustainable seafood ",
+:metric_unit => " times!",
             :reflection_question => "How challenging was this for you?",
             :photo_prompt => "Share a photo capturing this experience. Tell us something you learned from this challenge."
           },
@@ -260,6 +284,8 @@ and values of the farms and companies whose products you buy."],
             :background => "Let's be clear: we aren't telling you, \"Don't eat any meat.\" We simply encourage you to eat less meat and better meat.",
             :instructions => ["Choose to eat meatless for some meals.", "For meat-eaters: Ask the rancher, farmer, butcher, or store manager about the animals' grazing plan, the care given to the animals, and their practices to restore soil and grasslands.", "Purchase grass-fed, pasture-raised, humanely raised meat."],
             :metric_question => "How many times did you go meatless? How many times did you buy responsibly raised meat?",
+:metric_verb => "You ate meatless and/or bought responsibly raised meat ",
+:metric_unit => " times!",
             :reflection_question => "How challenging was this for you?",
             :photo_prompt => "Share a photo of your meal capturing this experience. Tell us how the experience was."
           }
@@ -287,6 +313,8 @@ and values of the farms and companies whose products you buy."],
             :background => "We're not asking for hours of research (unless you want to), but take 5 minutes to educate yourself a little bit more.",
             :instructions => ["Read the ingredients list on skincare products that you use.", "Think about the ingredeints: what's the purpose of each ingredient? Look it up. Is the ingredient necessary for this product to be effective and do its job?"],
             :metric_question => "",
+:metric_verb => "N/A",
+:metric_unit => "",
             :reflection_question => "What did you learn from reading the ingredients list on your bodycare products? How can you apply what you've learned in your life?",
             :photo_prompt => ""
           },
@@ -301,6 +329,8 @@ and values of the farms and companies whose products you buy."],
             },
             :instructions => ["DIY a bodycare product that you use regularly (e.g. chapstick, lotion).", "Invite at least 3 other people over to join you in this endeavor."],
             :metric_question => "How many bodycare products did you make?",
+	:metric_verb => "You made ",
+:metric_unit => " bodycare products!",
             :reflection_question => "What do you think about making our own bodycare products now?",
             :photo_prompt => "Share a photo of your homemade product. Tell us what you learned."
           },
@@ -318,6 +348,8 @@ and values of the farms and companies whose products you buy."],
             :extra => "To avoid greenwashing: ",
             :second_list => ["Find the company's website and understand their mission and values.", "Read through those ingredient lists.", "Do a little research and know the ingredients' funciton or check the <a target=\"_blank\" href=\"https://www.ewg.org/skindeep/\">EWG database</a>."],
             :metric_question => "How many people did you share what you learned with?",
+:metric_verb => "You shared what you learned about safe bodycare products with ",
+:metric_unit => " people!",
             :reflection_question => "What was the response when you shared what you learned?",
             :photo_prompt => "Share a photo capturing this experience. Tell us something you learned."
           },
@@ -331,6 +363,8 @@ and values of the farms and companies whose products you buy."],
             },
             :instructions => ["Reach out to conventional brands that you’ve purchased from or know others who purchase from. (e.g. email, call)", "Tell them a) why you don’t support their products anymore, b) what you would like them to change, and c) anything else you’d like them to know. Be polite but firm."],
             :metric_question => "How many companies did you reach out to?",
+:metric_verb => "You gave feedback to ",
+:metric_unit => " companies about their products!",
             :reflection_question => "How challenging was reaching out to brand reps for you?",
             :photo_prompt => "Share a photo of the message you sent to brands. Please remove any personal information from the photo. Tell us how you felt as you sent off your message."
           },
@@ -350,6 +384,8 @@ and values of the farms and companies whose products you buy."],
             :extra => "For the males: ",
             :second_list => ["Share this information with your close female friends and family. Be careful how you word your message when you share this. Don't tell them what to do; simply say something like, \"Saw this and feel like it's important for more females to know. What do you think about it?"],
             :metric_question => "How many people did you share what you learned with?",
+:metric_verb => "You shared what you learned about menstrual products with ",
+:metric_unit => " people!",
             :reflection_question => "How has this challenge changed your perception of menstrual products?",
             :photo_prompt => "Share a photo capturing what you learned from this challenge. Tell us what you learned."
           },
@@ -364,9 +400,11 @@ and values of the farms and companies whose products you buy."],
               'How many times can this be recycled? (list)' => 'https://earth911.com/business-policy/how-many-times-recycled/'
             },
             :background => "This challenge is for when you're in need to replenish your bodycare product supply.",
-            :instructions => ["Minimize your bodycare product waste by make your own products in a reusable container.", "Alternatively, purchase goods packaged in glass or aluminum bottles (no packaging is ideal, when possible)."],
+            :instructions => ["Minimize your bodycare product waste by making your own products in a reusable container.", "Alternatively, purchase goods packaged in glass or aluminum bottles (no packaging is ideal, when possible)."],
             :extra => "The goal is to aim for #plasticfree (1st priority) and #paperfree (2nd priority). ",
             :metric_question => "How many products did you make or buy that have zero waste or more sustainable packaging?",
+:metric_verb => "You made/bought ",
+:metric_unit => " products that have zero waste or sustainable packaging!",
             :reflection_question => "What did you learn from this challenge?",
             :photo_prompt => "Share a photo of your bodycare product. Tell us how it has a more positive environmental impact than the product you previously used."
           },
@@ -380,6 +418,8 @@ and values of the farms and companies whose products you buy."],
             },
             :instructions => ["Teach at least 3 different people about what you've learned about bodycare products in this theme.", "Help them make at least 1 switch to a better alternative bodycare product."],
             :metric_question => "How many people did you teach?",
+:metric_verb => "You taught ",
+:metric_unit => " people what you learned about bodycare products!",
             :reflection_question => "How challenging was teaching others and helping them make a swap?",
             :photo_prompt => "Share a photo of your buddy's swap to a better bodycare product. Tell us how this experience was for you."
           }
@@ -408,6 +448,8 @@ and values of the farms and companies whose products you buy."],
             },
             :instructions => ["<a target=\"_blank\" href=\"https://www.watercalculator.org/wfc2\">Calculate</a> your water footprint."],
             :metric_question => "",
+:metric_verb => "N/A",
+:metric_unit => "",
             :reflection_question => "What's your water footprint? How can you reduce your water footprint?",
             :photo_prompt => ""
           },
@@ -422,6 +464,8 @@ and values of the farms and companies whose products you buy."],
             },
             :instructions => ["Tell the cashier that you don't need a receipt, and refuse taking any.", "If you want to see the receipt, take a photo of the computer screen or have it emailed instead (when possible).", "Share with at least 3 different people what you learned about paper receipts."],
             :metric_question => "How many paper receipts did you refuse to print and take?",
+:metric_verb => "You refused to take ",
+:metric_unit => " receipts!",
             :reflection_question => "How many people did you share this information with and what were their reactions?",
             :photo_prompt => "Share a photo capturing this expereince. Tell us what you learned."
           },
@@ -439,6 +483,8 @@ and values of the farms and companies whose products you buy."],
             :instructions => ["Place a bucket/large cup/bowl next tp you in your shower to collect excess water.", "Take your shower normally.", "Water any plants around the home with your bucket-ful of water."],
             :extra => "*Avoid getting any non-biodegradable body care products (e.g. soap, shampoo, conditioner) into your bucket, especially if you're going to water edible plants with your collection.",
             :metric_question => "How many times did you fill your bucket?",
+:metric_verb => "You saved ",
+:metric_unit => " buckets of water!",
             :reflection_question => "How has this challenge influenced your perspective on water usage?",
             :photo_prompt => "Share a photo of your bucket in your shower. Tell us how the experience was."
           },
@@ -453,6 +499,8 @@ and values of the farms and companies whose products you buy."],
             },
             :instructions => ["Bring your own reusable water bottle everywhere you go.", "Use it instead of buying water bottles or using plastic cups.", "Teach at least 3 different people about what you learned about single-use water bottles."],
             :metric_question => "How many single-use water bottles did you refuse?",
+:metric_verb => "You refused ",
+:metric_unit => " single-use water bottles!",
             :reflection_question => "How challenging was bringing your own reusable water bottle for you?",
             :photo_prompt => "Share a photo of your reusable water bottle. Tell us what you learned from this challenge."
           },
@@ -469,6 +517,8 @@ and values of the farms and companies whose products you buy."],
             },
             :instructions => ["Eat more plant-based meals and snacks (sourced locally is ideal). (i.e. whole fruits, vegetables, grains, nuts, and seeds)", "Reduce your meat (e.g. beef, pork, chicken) consumption.", "Reduce your dairy product consumption (e.g. milk, yogurt).", "Reduce your packaged and processed food consumption."],
             :metric_question => "How many meals did you eat more plant-based?",
+:metric_verb => "You ate ",
+:metric_unit => " plant-based meals!",
             :reflection_question => "How has this challenge influenced your perspective about food?",
             :photo_prompt => "Share a photo of your more plant-based meal. Tell us how it is more plant-based."
           },
@@ -483,6 +533,8 @@ and values of the farms and companies whose products you buy."],
             },
             :instructions => ["<a target=\"_blank\" href=\"https://www.drawdown.org/solutions/transport/ridesharing\">Carpool</a>; take <a target=\"_blank\" href=\"https://www.drawdown.org/solutions/transport/mass-transit\">mass transit</a>; bike/skateboard/scooter; or walk to your destination. Just don't ride in a car alone."],
             :metric_question => "How many times did you choose alternative transportation to riding alone in a car?",
+:metric_verb => "You reduced your water footprint by choosing not to ride alone in a car ",
+:metric_unit => " times!",
             :reflection_question => "How challenging was it for you to not ride alone to get somewhere?",
             :photo_prompt => "Share a photo of your journey. Tell us how you're reducing your transportation water footprint."
           },
@@ -498,6 +550,8 @@ and values of the farms and companies whose products you buy."],
             :background => "Many people don't associate fashion with water consumption.",
             :instructions => ["Teach at least 3 people about what you've learned about the impact of the textile industry.", "Make posters and/or send emails informing the community about the relationship of water and fashion, why it matters, and how it affects people + environment.", "Get friends to commit to buying less and buying better, more sustainable fashion with you."],
             :metric_question => "How many people did you teach about the impact of the textile industry?",
+:metric_verb => "You taught ",
+:metric_unit => " people about the impact of the textile industry!",
             :reflection_question => "What were the reactions of people you shared what you learned with?",
             :photo_prompt => "Share a photo capturing this experience. Tell us what you learned from this challenge."
           }
@@ -525,6 +579,8 @@ and values of the farms and companies whose products you buy."],
             },
             :instructions => ["Watch <a target=\"_blank\" href=\"https://www.youtube.com/watch?v=iR2AyybowPc\">this video</a> to learn what biodiversity is and why it's important.", "Teach what you learned to 3 different people!"],
             :metric_question => "",
+:metric_verb => "N/A",
+:metric_unit => "",
             :reflection_question => "Where in your community has biodiversity? If you can't think of a place, where in your community could there be more biodiversity?",
             :photo_prompt => ""
           },
@@ -540,6 +596,8 @@ and values of the farms and companies whose products you buy."],
             },
             :instructions => ["Volunteer at a local garden (e.g. farm's, community's, neighbor's, friend's) to help out with.", "Bring a friend along with you!"],
             :metric_question => "How many hours did you volunteer at a local garden?",
+:metric_verb => "You volunteered at a local garden for ",
+:metric_unit => " hours!",
             :reflection_question => "What did you learn from your gardening experience?",
             :photo_prompt => "Share a photo of you + friend gardening. Tell us how you helped."
           },
@@ -555,6 +613,8 @@ and values of the farms and companies whose products you buy."],
             },
             :instructions => ["1) Start your own compost pile in your home or in your patio/backyard/frontyard!", "Refer to the resources for tips on how to get started."],
             :metric_question => "Estimate how much your compost weighs (in kilos). Note: 1 lb = 0.45 kg",
+:metric_verb => "You composted about",
+:metric_unit => " kg of waste! (1 lb = 0.45 kg)",
             :reflection_question => "What do you think about composting now?",
             :photo_prompt => "Share a photo of your compost pile. Tell us what you put in it."
           },
@@ -570,6 +630,8 @@ and values of the farms and companies whose products you buy."],
             },
             :instructions => ["Assess the space you have in and around your home for planting.", "Select a pollinator friendly plant that thrives in your home climate at this time of year.", "Get the necessary materials and grow your pollinator-friendly plant!"],
             :metric_question => "How many pollinator-friendly plants did you plant?",
+:metric_verb => "You planted ",
+:metric_unit => " pollinator-friendly plants!",
             :reflection_question => "How has your perspective about pollinators changed?",
             :photo_prompt => "Share a photo of your plants. Tell us what you're growing."
           },
@@ -586,6 +648,8 @@ and values of the farms and companies whose products you buy."],
             },
             :instructions => ["Choose a perennial you'd like to plant.", "Bring a friend to join you.", "Get the necessary materials and plant your perennial together!"],
             :metric_question => "How many perennials (+ annuals) did you plant?",
+:metric_verb => "You planted ",
+:metric_unit => " perennials/annuals!",
             :reflection_question => "What did you learn from planting perennials?",
             :photo_prompt => "Share a photo of your plants (+ friend if that's okay with friend). Tell us what you planted."
           },
@@ -599,6 +663,8 @@ and values of the farms and companies whose products you buy."],
             },
             :instructions => ["Buy 100% local and organic foods at your preferred grocery location. Do your best, trying is all that matters. If you're not in charge of grocery shopping, join the person who is on their next grocery trip.Teach them what you learned and help find local and organic options.", "If there's a very limited selection of local + organic, <a target=\"_blank\" href=\"https://www.thekitchn.com/7-tips-for-influencing-what-goes-on-grocery-store-shelves-224619\">talk to, call, or email</a> the manager requesting organic <insert what you want>. You have the power to tell vendors what you want, and the vendors who care about their customers will listen.", "Don't forget to thank the farmers and store managers. Recognize them for the important work they do in your community."],
             :metric_question => "How many local and organic items did you purchase?",
+:metric_verb => "You purchased ",
+:metric_unit => " local and organic items when grocery shopping!",
             :reflection_question => "How can you engage your friends and family to buy more local and organic?",
             :photo_prompt => "Share a photo of your purchase(s). Tell us where you purchased them."
           },
@@ -618,6 +684,8 @@ day about what they use to manage their land. Specifically, how do they
 manage pests? What products do they use to maintain the land?", "If they use potentially unsafe methods for your community, voice your
 disapproval; explain to them why; and propose alternatives."],
             :metric_question => "How many people did you reach out to ask about their land management practices?",
+:metric_verb => "You asked ",
+:metric_unit => " people about their land management practices!",
             :reflection_question => "How has this challenge impacted your perspective about land management practices?",
             :photo_prompt => "Share a photo capturing the moment. Tell us how you felt in that moment."
           }
@@ -644,6 +712,8 @@ disapproval; explain to them why; and propose alternatives."],
             },
             :instructions => ["Teach a friend what you've learned.", "Read about what's happening in the clothing industry. You can start with the resource links."],
             :metric_question => "",
+:metric_verb => "N/A",
+:metric_unit => "",
             :reflection_question => "What is something new you learned about the clothing industry?",
             :photo_prompt => ""
           },
@@ -660,6 +730,8 @@ disapproval; explain to them why; and propose alternatives."],
             },
             :instructions => ["Clean out your closet of clothes you won't wear anymore.", "Repurpose them. (e.g. bag, cleaning rag)", "Swap them with friends.", "Pass them onto someone who will wear them. (Maybe a sibling or cousin?)", "Do the research to find a charity that will actually reuse your donations."],
             :metric_question => "Estimate how much (in kilos) clothing you repurposed and/or donated. Note: 1 lb = 0.45 kg",
+:metric_verb => "You repurposed and/or donated about ",
+:metric_unit => " kg of clothing! (1 lb = 0.45 kg)",
             :reflection_question => "What can you do to reduce the amount of clothing you won't wear in your closet?",
             :photo_prompt => "Share a photo capturing this experience. Tell us what you discovered from this challenge."
           },
@@ -680,6 +752,8 @@ material (e.g. polyester, rayon, acrylics, blend of these).", "Shift
 your mindset towards investing in a quality; reduce the cost per wear.",
 "Bring friends along and share what you learned."],
             :metric_question => "How many people did you share what you learned?",
+:metric_verb => "You shared with ",
+:metric_unit => " people what you learned about buying less.",
             :reflection_question => "With what you know now, what do you look for in companies and clothing when shopping?",
             :photo_prompt => "Share a photo of your shopping spree. Tell us what brands you purchased from and what your clothes are made of."
           },
@@ -698,6 +772,8 @@ your mindset towards investing in a quality; reduce the cost per wear.",
 clothes? Here are example scripts to get you started.", "Teach at least 3 other people what you have learned about fast fashion and how this
 particular brand is fast fashion.", "Get at least 3 other people to reach out to the same brand to do the first task."],
             :metric_question => "How many people (including yourself) did you get to reach out to a brand rep?",
+:metric_verb => "You got ",
+:metric_unit => " people to contact a brand rep about increasing transparency!",
             :reflection_question => "How does what you learned from this challenge impact your view of fashion?",
             :photo_prompt => "Share a photo capturing what you learned. Tell us what brand you reached out to and what you asked of them."
           },
@@ -713,6 +789,8 @@ particular brand is fast fashion.", "Get at least 3 other people to reach out to
             :instructions => ["Use non-toxic laundry detergent to clean your clothes.", "Wash with <a target=\"_blank\" href=\"https://coldwatersaves.org/\">cold water</a>, might as well save energy.", "Line dry when possible to save energy; this also helps your clothes last longer too.", "Share with at least 3 different people what you learned."],
             :alt_instructions => ["If you dry clean, avoid <a target=\"_blank\" href=\"https://www.ewg.org/enviroblog/2011/09/dry-cleaning-chemicals-hang-around-your-clothes\">perc</a>."],
             :metric_question => "How many loads of laundry did you clean with a safer laundry detergent?",
+:metric_verb => "You cleaned ",
+:metric_unit => " loads of laundry with a safer laundry detergent!",
             :reflection_question => "What have you learned from this challenge?",
             :photo_prompt => "Share a photo of your laundry washing experience. Tell us what detergent you used and why you chose it."
           },
@@ -727,6 +805,8 @@ particular brand is fast fashion.", "Get at least 3 other people to reach out to
             },
             :instructions => ["Literally, put a pause on clothes shopping, window shopping, online scrolling, and subscriptions to clothing brands.", "Spend that time focusing on your top priorities in life.", "Invite at least 2 people to join you in this challenge."],
             :metric_question => "How many people (including yourself) took a break from shopping?",
+:metric_verb => "You got ",
+:metric_unit => " people to take a break from shopping for 1+ weeks!",
             :reflection_question => "How challenging was it to take a break from shopping?",
             :photo_prompt => "Share a photo of something you've been up to (instead of shopping). Tell us what you're doing."
           },
@@ -743,6 +823,8 @@ particular brand is fast fashion.", "Get at least 3 other people to reach out to
             :background => "Select a brand that makes clothes with synthetic materials.",
             :instructions => ["Write to the brand representative what you've learned about synthetic material's impact on the environment. Ask them about the brand's plan for bettering their supply source in the future.", "Teach at least 3 other people what you've learned.", "Get them to write to the brand representative to do task 1 (they can copy paste your letter)."],
             :metric_question => "How many people (including yourself) did you get to reach out to a brand rep?",
+:metric_verb => "You got ",
+:metric_unit => " people to write to a brand rep asking them to better their supply sourcing!",
             :reflection_question => "How does what you learned about synthetic materials impact your view of fashion?",
             :photo_prompt => "Share a photo capturing what you learned. Tell us what brand you reached out to and what you asked of them."
           }
@@ -766,6 +848,8 @@ particular brand is fast fashion.", "Get at least 3 other people to reach out to
             },
             :instructions => ["Read the ingredient list of all the cleaning products you use in your home.", "If you don't know what an ingredient is or its health rating, look it up in the <a target=\"_blank\" href=\"https://www.ewg.org/guides/cleaners\">Environmental Working Group's database</a>."],
             :metric_question => "",
+:metric_verb => "N/A",
+:metric_unit => "",
             :reflection_question => "What is something that surprised you from reading the ingredients in your cleaning products and searching the EWG database?",
             :photo_prompt => ""
           },
@@ -781,6 +865,8 @@ particular brand is fast fashion.", "Get at least 3 other people to reach out to
             },
             :instructions => ["Make a cleaning solution that you will use often (e.g. all-purpose cleaner, degreaser). Refer to resources to get started.", "Once you've made it, go clean something with it!"],
             :metric_question => "How many cleaning solutions did you make?",
+:metric_verb => "You made ",
+:metric_unit => " homemade safe cleaning solutions!",
             :reflection_question => "How has this challenge impacted your perspective about cleaning products?",
             :photo_prompt => "Share a photo of your homemade cleaning solution. Tell us what you made and the recipe!"
           },
@@ -798,6 +884,8 @@ particular brand is fast fashion.", "Get at least 3 other people to reach out to
             :background => "When you're done using your cleaning products:",
             :instructions => ["Find safer alternatives within your budget (be careful of <a target=\"_blank\" href=\"https://www.google.com/url?q=https://7billionfor7seas.com/greenwashed-cleaning/\">greenwashing</a>!)", "Purchase them", "And use them!"],
             :metric_question => "How many safer alternative cleaning solutions did you purchase?",
+:metric_verb => "You bought ",
+:metric_unit => " safer alternative cleaning solutions!",
             :reflection_question => "How can you engage your friends and family to purchase safer cleaning products?",
             :photo_prompt => "Share a photo of your cleaning product. Tell us why you decided to purchase this one."
           },
@@ -811,6 +899,8 @@ particular brand is fast fashion.", "Get at least 3 other people to reach out to
             },
             :instructions => ["Reach out to conventional brands that you’ve purchased from. (e.g. email, call)", "Tell them a) why you don’t support their products anymore, b) what you would like them to change, and c) anything else you’d like them to know. Be polite but firm.", "Get at least 2 peers to take this challenge too."],
             :metric_question => "How many people did you engage to send a note to a brand rep?",
+:metric_verb => "You engaged ",
+:metric_unit => " people to send a note to a brand rep to better their company practices!",
             :reflection_question => "What did you learn from this experience?",
             :photo_prompt => "Share a photo capturing your experience. Tell us what you asked of the brand rep."
           },
@@ -828,6 +918,8 @@ particular brand is fast fashion.", "Get at least 3 other people to reach out to
             :instructions => ["Repurpose old t-shirts into cleaning rags.", "For cleaning tasks that can't be accomplished with a rag (e.g. scrubbing, protection), get
 reusable non-plastic tools made of plant-based materials (e.g. bamboo, wood, natural rubber)."],
             :metric_question => "How many reusable and plastic-free cleaning tools did you get/make?",
+:metric_verb => "You got/made ",
+:metric_unit => " reusable and plastic-free cleaning tools!",
             :reflection_question => "How has this challenge impacted your perspective about plastic and single-use?",
             :photo_prompt => "Share a photo of your reusable and plastic-free cleaning equipment. Tell us what makes them great!"
           },
@@ -842,6 +934,8 @@ reusable non-plastic tools made of plant-based materials (e.g. bamboo, wood, nat
             },
             :instructions => ["Get together with your friends and family and clean their homes together (with safe cleaning products, of course)!", "Teach them what you learned about conventional cleaning products and safer alternatives."],
             :metric_question => "How many people did you teach about safe cleaning products?",
+:metric_verb => "You taught ",
+:metric_unit => " people about safe cleaning products!",
             :reflection_question => "How did your friends + fam respond to what you taught them?",
             :photo_prompt => "Share a photo of your cleaning party. Tell us what ya'll used to clean and how fun it was."
           },
@@ -858,6 +952,8 @@ reusable non-plastic tools made of plant-based materials (e.g. bamboo, wood, nat
             :background => "Raise awareness about this topic in your community. Here are some ideas:",
             :instructions => ["Persuade the person in charge of purchasing the cleaning products at your home or workplace (e.g. office manager, school cleaning director) to switch to safe cleaning products.", "Make posters and/or send emails to inform the community about buying and using safer cleaning products, why it matters, and how it affects them.", "Host a (mini) workshop teaching other people what you've learned."],
             :metric_question => "How many people did you talk to about this topic?",
+:metric_verb => "You talked to ",
+:metric_unit => " people about purchasing safer cleaning products!",
             :reflection_question => "How receptive were people to switching to buying and using safer cleaning products?",
             :photo_prompt => "Share a photo capturing this moment. Tell us what came out of your conversation(s)."
           }
@@ -883,6 +979,8 @@ reusable non-plastic tools made of plant-based materials (e.g. bamboo, wood, nat
             },
             :instructions => ["Watch <a target=\"_blank\" href=\"https://www.youtube.com/watch?v=SL0Mv0apjT8\">this video</a> until minute 3.", "Clean out your space. Keep what you need and use, and group the stuff that you don't."],
             :metric_question => "",
+:metric_verb => "N/A",
+:metric_unit => "",
             :reflection_question => "What did you learn from the video? How can you apply what you've learned from the video to your life?",
             :photo_prompt => ""
           },
@@ -898,6 +996,8 @@ reusable non-plastic tools made of plant-based materials (e.g. bamboo, wood, nat
             },
             :instructions => ["Bring in at least 2 different indoor plants into your home.", "If you don't live in a too polluted area, open your windows to let some fresh air in once in a while too."],
             :metric_question => "How many plants did you bring into your home?",
+:metric_verb => "You brought in ",
+:metric_unit => " plants into your home to improve air quality!",
             :reflection_question => "How do you like your plants in your home?",
             :photo_prompt => "Share a photo of your plant(s). Tell us what kind you have."
           },
@@ -911,6 +1011,8 @@ reusable non-plastic tools made of plant-based materials (e.g. bamboo, wood, nat
             },
             :instructions => ["Turn off the lights if you're not in the room for >15 minutes.", "Unplug unused devices and appliances.", "Set your thermostat to a reasonable temperature (e.g. 68F/20C in winter, 78F/26C in summer).", "Use cold water to do laundry.", "Wash clothes when you have a full load."],
             :metric_question => "Estimate the number of times you took action to save energy.",
+:metric_verb => "You took about",
+:metric_unit => " actions to save energy!",
             :reflection_question => "How can you engage friends and family to conserve energy too?",
             :photo_prompt => "Share a photo capturing your experience. Tell us how you reminded yourself to commit to these energy saving practices."
           },
@@ -928,6 +1030,8 @@ reusable non-plastic tools made of plant-based materials (e.g. bamboo, wood, nat
             },
             :instructions => ["Find environmentally sustainable alternatives to the plastic products you use. Reusable is ideal, but if reusable isn't a viable option, aim for compostable and biodegradable.", "When the life of your plastic product comes to an end, purchase the alternative you found instead."],
             :metric_question => "How many zero waste swaps did you make?",
+:metric_verb => "You made ",
+:metric_unit => " zero waste swaps!",
             :reflection_question => "How do you plan to use less plastic in your day-to-day?",
             :photo_prompt => "Take a photo of your swaps. Tell us what swaps you made."
           },
@@ -942,6 +1046,8 @@ reusable non-plastic tools made of plant-based materials (e.g. bamboo, wood, nat
             },
             :instructions => ["Find bedding that is made of sustainably sourced materials: pillow, pillow cover, mattress, blanket, mattress cover, bedspread.", "If you are in need of new bedding and are able to invest, purchase sustainably made and safe bedding.", "Share what you learned with at least 3 other people."],
             :metric_question => "How many people did you share what you learned with?",
+:metric_verb => "You shared with ",
+:metric_unit => " people what you learned about healthy bedding!",
             :reflection_question => "What were the responses of the people you shared your learnings with?",
             :photo_prompt => "Share a photo capturing what you learned from this challenge. Share with us something you learned."
           },
@@ -958,6 +1064,8 @@ reusable non-plastic tools made of plant-based materials (e.g. bamboo, wood, nat
 changes you've made in your home and teach them the things you have learned.", "It wouldn't be as fun a party without food. Prep some FLOSN foods and enjoy your time together!"],
             :extra => "*FLOSN = fresh, local, organic, seasonal, non-GMO",
             :metric_question => "How many people did you invite to your house party?",
+:metric_verb => "You invited ",
+:metric_unit => " to your house party!",
             :reflection_question => "How did your guests react to the changes in your home?",
             :photo_prompt => "Share a photo of your house party. Tell us what you talked about with your guests."
           },
@@ -974,6 +1082,8 @@ changes you've made in your home and teach them the things you have learned.", "
             :background => "his challenge is for when you're in need of purchasing a new houseware or furniture. It would be wasteful to toss away things that are still functional.",
             :instructions => ["Purchase houseware and furniture made of safe materials.", "Share with at least 3 people what you learned."],
             :metric_question => "How many houseware + furniture made of low-impact materials did you purchase?",
+:metric_verb => "You bought ",
+:metric_unit => " houseware + furniture made of low-impact materials!",
             :reflection_question => "What was the process for you to find this houseware + furniture?",
             :photo_prompt => "Share a photo of your houseware made of low-impact materials. Tell us what it's made of and the brand."
           }
@@ -998,6 +1108,8 @@ changes you've made in your home and teach them the things you have learned.", "
 	    },
             :instructions => ["Evaluate your current mental, physical, and spiritual health. What's good?", "Look at the questions in the resources; honestly answer at least 3 of them and write your answers down on a piece of paper.", "Having answered at least 3 questions, reflect upon how you can make life better for you."],
             :metric_question => "",
+:metric_verb => "N/A",
+:metric_unit => "",
             :reflection_question => "Which areas of your health can you improve? How can you take initiative towards improving those areas?",
             :photo_prompt => ""
           },
@@ -1013,6 +1125,8 @@ changes you've made in your home and teach them the things you have learned.", "
             },
             :instructions => ["Get at least 7.5 hours of sleep. <a target=\"_blank\" href=\" https://thoughtcatalog.com/ryan-holiday/2015/07/heres-your-productivity-hack-go-the-fck-to-sleep/\">Period.</a>"],
             :metric_question => "How many hours of sleep did you get?",
+:metric_verb => "You slept ",
+:metric_unit => " hours!",
             :reflection_question => "How did you make sure you got enough sleep?",
             :photo_prompt => "Share a photo of your bed. Tell us how you feel today and how much sleep you got."
           },
@@ -1027,6 +1141,8 @@ changes you've made in your home and teach them the things you have learned.", "
             },
             :instructions => ["Reach out to your friends, family, and people you're interested in getting to know.", "Do something together at least 1.5 hours. (e.g. cook a meal + eat it! walk around the neighborhood or hike. play a game or sport.)", "Ask buddy at least 3 questions about themselves; get to genuinely know them!"],
             :metric_question => "On a scale from 1-10 (LOTS of enjoyment), how much did you enjoy spending time with someone(s)?",
+:metric_verb => "You rated the time spent with someone a ",
+:metric_unit => " . (10 = really enjoyed time spent)",
             :reflection_question => "What do you want from your relationships?",
             :photo_prompt => "Share a photo of you and your buddie(s). Tell us how you spent time with them."
           },
@@ -1042,6 +1158,8 @@ changes you've made in your home and teach them the things you have learned.", "
 this activity is; just don’t sit for 30 minutes straight. Stand, walk
 around, run, swim, bike, stretch, dance, move every part of your body."],
             :metric_question => "How many hours did you exercise?",
+:metric_verb => "You exercised ",
+:metric_unit => " hours!",
             :reflection_question => "What kind of exercise do you like?",
             :photo_prompt => "Share a photo of you exercising. Tell us how it felt."
           },
@@ -1059,6 +1177,8 @@ around, run, swim, bike, stretch, dance, move every part of your body."],
             :instructions => ["Choose to eat foods with added sugars. (Whole, unprocessed fruit is okay!)", "Check for added sugars by reading the ingredients list on packages.
 Don't make assumptions. If someone else made the food, ask if sugar was added to the dish. If you're unsure, don't eat it for this challenge."],
             :metric_question => "How many times did you refuse something with added sugar?",
+:metric_verb => "You refused something with added sugar ",
+:metric_unit => " times!",
             :reflection_question => "What surprised you from this challenge?",
             :photo_prompt => "Share a photo of what you ate or did instead. Tell us about what you accomplished."
           },
@@ -1072,6 +1192,8 @@ Don't make assumptions. If someone else made the food, ask if sugar was added to
             },
             :instructions => ["Do what you want.", "Say 'no' to things you really don't want to do, and either 1) don't do it (if reasonable), or 2) do it later."],
             :metric_question => "How many times did you choose to do something for yourself?",
+:metric_verb => "You chose to do something for yourself ",
+:metric_unit => " times!",
             :reflection_question => "How challenging was it to set aside time for yourself?",
             :photo_prompt => "Share a photo of you doing something for you. Tell us what you did and how it felt."
           },
@@ -1087,6 +1209,8 @@ Don't make assumptions. If someone else made the food, ask if sugar was added to
             },
             :instructions => ["Meditate for at least 10 minutes each day; pay attention to your thoughts and observe them.", "Try out yoga each day for 5-10 minutes.", "Write each day for at least 10 minutes; reflect upon your day, feelings, and thoughts. Just let them flow into words on paper."],
             :metric_question => "How many minutes did you meditate, do yoga, and write?",
+:metric_verb => "You meditated, did yoga, and/or wrote for ",
+:metric_unit => " minutes!",
             :reflection_question => "What do you think about meditation, yoga, and writing now?",
             :photo_prompt => "Share a photo capturing this experience. Tell us how it felt."
           }
@@ -1109,6 +1233,8 @@ Don't make assumptions. If someone else made the food, ask if sugar was added to
             },
             :instructions => ["Identify your values that you will not compromise.", "Think about how you will constructively respond to an event or person that challenges your values. What will you say and do?"],
             :metric_question => "",
+:metric_verb => "N/A",
+:metric_unit => "",
             :reflection_question => "What are some of your values? Why do they matter to you?",
             :photo_prompt => ""
           },
@@ -1122,6 +1248,8 @@ Don't make assumptions. If someone else made the food, ask if sugar was added to
             },
             :instructions => ["Spend at least 30 minutes each day outside in nature.", "If you see any litter, pick it up and dispose of it properly. You'll help keep the environment clean from trash."],
             :metric_question => "How many minutes did you spend outside?",
+:metric_verb => "You spent ",
+:metric_unit => " minutes outside!",
             :reflection_question => "How did it feel to get outdoors?",
             :photo_prompt => "Share a photo of your adventure outdoors. Tell us where you went."
           },
@@ -1139,6 +1267,8 @@ Don't make assumptions. If someone else made the food, ask if sugar was added to
 items; bring your own reusable food containers for any leftovers or takeout.", "Consider the impact (water + carbon footprint) of your eating choices and travel method.", "Ask the employees questions about the ingredients used in their dishes."],
             :extra => "*FLOSN = fresh, local, organic, seasonal, non-GMO",
             :metric_question => "How many times did you eat at a place that serves FLOSN food?",
+:metric_verb => "You ate ",
+:metric_unit => " times at a place serving FLOSN food!",
             :reflection_question => "How can you be more mindful about your impact when eating out?",
             :photo_prompt => "Share a photo of your FLOSN meal(s). Share with us the name of the food place and what you ordered!"
           },
@@ -1154,6 +1284,8 @@ items; bring your own reusable food containers for any leftovers or takeout.", "
             },
             :instructions => ["Take the reusable items necessary for your next outing with you. (e.g. reusable food containers for eating out; reusable bag for grocery shopping)", "Refuse any single-use items (e.g. utensils, dishes, bag, napkin, <a target=\"_blank\" href=\"https://squareup.com/townsquare/some-scary-stats-about-the-environmental-impact-of-paper-receipts \">paper receipt</a>).", "When you refuse an item, include why so other people know. \"No thank you, I don't need that ___ because I don't want to ___.\"" ],
             :metric_question => "How many times did you refuse single-use?",
+:metric_verb => "You refused taking and using single-use items ",
+:metric_unit => " times!",
             :reflection_question => "What surprised you from this challenge?",
             :photo_prompt => "Share a photo of your reusable travel gear. Tell us how your experience was."
           },
@@ -1173,6 +1305,8 @@ Have a whole conversation about it. WIth family. With friends. With
 teachers or professors. With strangers. Doesn't matter, just tell
 people."],
             :metric_question => "How many people did you affirm your interests with?",
+:metric_verb => "You affirmed your interests with ",
+:metric_unit => " people!",
             :reflection_question => "How did you feel telling people that you care about <you insert>?",
             :photo_prompt => "Share a photo capturing this moment. Tell us what you care about."
           },
@@ -1189,6 +1323,8 @@ people."],
             },
             :instructions => ["When you go shopping, look for products made with Fair Trade practices.", "If you're not sure if something was made with fair trade practices, ask questions."],
             :metric_question => "How many fair trade items did you buy?",
+:metric_verb => "You bought ",
+:metric_unit => " fair trade items!",
             :reflection_question => "How has this challenge impacted your view on the things you buy?",
             :photo_prompt => "Share a photo of your fair trade purchase. Tell us something you learned about fair trade."
           },
@@ -1211,6 +1347,8 @@ use often (unless it's an experience type of gift).", "Wrap it with upcycled mat
 compostable.", "Add a little note of why you think this gift may be
 useful for them."],
             :metric_question => "How many sustainable gifts did you give?",
+:metric_verb => "You gave ",
+:metric_unit => " sustainable gifts!",
             :reflection_question => "What did you like about this challenge?",
             :photo_prompt => "Share a photo of your gift. Tell us what makes it a sustainable gift."
           }
