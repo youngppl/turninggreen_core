@@ -69,8 +69,8 @@ RSpec.describe 'devise/registrations/edit.html.erb', type: :view, js: true do
       signInUser(@user.email, @user.password)
       visit edit_user_registration_path
       fill_in 'user_current_password', with: 'wataasdadf'
-      fill_in 'user_password', with: 'newpas'
-      fill_in 'user_password_confirmation', with: 'newpas'
+      fill_in 'user_password', with: 'newpassword'
+      fill_in 'user_password_confirmation', with: 'newpassword'
       expect(page).to have_button('save changes', disabled: false)
     end
   end
