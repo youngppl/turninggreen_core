@@ -57,14 +57,14 @@
         </div>
         <div class="field">
           <label>new password</label>
-          <%= f.password_field :password, autofocus: true, disabled: true, class: "inputField" %>
+          <%= f.password_field :password, autofocus: true, disabled: true, class: "inputField", oninput: "enablePasswordFields();" %>
           <div class="password error">
             <span class="message">password must include at least 8 characters</span>
           </div>
         </div>
         <div class="field">
           <label>confirm password</label>
-          <%= f.password_field :password_confirmation, autofocus: true, disabled: true, class: "inputField" %>
+          <%= f.password_field :password_confirmation, autofocus: true, disabled: true, class: "inputField", oninput: "enablePasswordFields();" %>
           <div class="confirm error">
             <span class="message">the password doesn’t match</span>
           </div>
