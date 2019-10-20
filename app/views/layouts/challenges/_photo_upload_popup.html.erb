@@ -1,0 +1,18 @@
+<div class="modal photo-upload-popup" id="photo-upload" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title">Upload a picture</h2>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&#x2715;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <button type="button" class="browse upload button" onclick="$(this).parents('.photo-upload').find('#upload-photo').trigger('click')">browse</button>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="upload button" disabled onclick="updatePicture()">upload</button>
+      </div>
+    </div>
+  </div>
+</div>

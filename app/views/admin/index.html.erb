@@ -84,7 +84,7 @@
       <div class="user-reflection-deck card-body">
         <h5>User Reflections</h5>
         <% Reflection.last(20).each_with_index do |reflection, index| %>
-          <div class="row collapse" id="_<%= index %>">
+          <div class="row collapse" id="_<%= index + 1%>">
             <div class="col">
               <h4>Reflection for: <%= reflection.challenge.challenge_name %> </h4>
               <h4>Reflection:</h4>
