@@ -17,6 +17,6 @@ class ReflectionsController < ApplicationController
   private
 
   def reflection_params
-    params.require(:reflection).permit(:challenge_id, :reflection, :photo, :caption, :permission)
+    params.require(:reflection).permit(:challenge_id, :reflection, :caption, :permission, :photo)
   end
 end
