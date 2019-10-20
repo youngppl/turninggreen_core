@@ -30,6 +30,7 @@
           <div class="challenges-wrapper">
             <% @completed_challenges.each do |challenge| %>
               <% @completed_challenge = @user_completed_challenges.find(challenge.pluck(:id)[0]) %>
+              <% challenge_data = challenges[challenge.theme.to_sym][:challenges].find {|x| x[:name] == challenge.challenge_name} %>
               <%# TODO: clean up code   %>
               <div class="challenge-box <%= 'not-completed' if !@completed_challenge %>" <%= "onclick=$('#reflection-review-#{@completed_challenge.id}').modal('show');" if @completed_challenge && @completed_challenge.reflection %> <%= "onclick=$('#reflection-redirect').modal();" if @completed_challenge && !@completed_challenge.reflection %>>
                 <div class="picture">
@@ -52,15 +53,15 @@
                     <% if !@completed_challenge.reflection %>
                       no info to share yet
                     <% else %>
-                      <%= @completed_challenge.cumulative_metrics %> metric
+                      <%= @completed_challenge.cumulative_metrics %> <%= challenge_data[:metric_unit] %>
                     <% end %>
                   </div>
                 </div>
-                <% if @completed_challenge && @completed_challenge.reflection %>
-                  <%= render 'layouts/challenges/reflection_review_popup', {challenge: @completed_challenge} %>
-                <% end %>
-                <% @completed_challenge = nil %>
               </div>
+              <% if @completed_challenge && @completed_challenge.reflection %>
+              <%= render 'layouts/challenges/reflection_review_popup', {challenge: @completed_challenge} %>
+              <% end %>
+              <% @completed_challenge = nil %>
             <% end %>
           </div>
         </div>
@@ -104,6 +105,7 @@
           <div class="challenges-wrapper">
             <% @shared_challenges.each do |challenge| %>
               <% @completed_challenge = challenge %>
+              <% challenge_data = challenges[challenge.theme.to_sym][:challenges].find {|x| x[:name] == challenge.challenge_name} %>
               <%# TODO: clean up code   %>
               <div class="challenge-box <%= 'not-completed' if !@completed_challenge %>" <%= "onclick=$('#reflection-review-#{@completed_challenge.id}').modal('show');" if @completed_challenge && @completed_challenge.reflection %> <%= "onclick=$('#reflection-redirect').modal();" if @completed_challenge && !@completed_challenge.reflection %>>
                 <div class="picture">
@@ -126,15 +128,15 @@
                     <% if !@completed_challenge.reflection %>
                       no info to share yet
                     <% else %>
-                      <%= @completed_challenge.cumulative_metrics %> metric
+                      <%= @completed_challenge.cumulative_metrics %> <%= challenge_data[:metric_unit] %>
                     <% end %>
                   </div>
                 </div>
-                <% if @completed_challenge && @completed_challenge.reflection %>
-                  <%= render 'layouts/challenges/reflection_review_popup', {challenge: @completed_challenge} %>
-                <% end %>
-                <% @completed_challenge = nil %>
               </div>
+              <% if @completed_challenge && @completed_challenge.reflection %>
+              <%= render 'layouts/challenges/reflection_review_popup', {challenge: @completed_challenge} %>
+              <% end %>
+              <% @completed_challenge = nil %>
             <% end %>
           </div>
         </div>
@@ -149,6 +151,7 @@
           <div class="challenges-wrapper">
             <% @not_shared_challenges.each do |challenge| %>
               <% @completed_challenge = challenge %>
+              <% challenge_data = challenges[challenge.theme.to_sym][:challenges].find {|x| x[:name] == challenge.challenge_name} %>
               <%# TODO: clean up code   %>
               <div class="challenge-box <%= 'not-completed' if !@completed_challenge %>" <%= "onclick=$('#reflection-review-#{@completed_challenge.id}').modal('show');" if @completed_challenge && @completed_challenge.reflection %> <%= "onclick=$('#reflection-redirect').modal();" if @completed_challenge && !@completed_challenge.reflection %>>
                 <div class="picture">
@@ -171,15 +174,15 @@
                     <% if !@completed_challenge.reflection %>
                       no info to share yet
                     <% else %>
-                      <%= @completed_challenge.cumulative_metrics %> metric
+                      <%= @completed_challenge.cumulative_metrics %> <%= challenge_data[:metric_unit] %>
                     <% end %>
                   </div>
                 </div>
-                <% if @completed_challenge && @completed_challenge.reflection %>
-                  <%= render 'layouts/challenges/reflection_review_popup', {challenge: @completed_challenge} %>
-                <% end %>
-                <% @completed_challenge = nil %>
               </div>
+              <% if @completed_challenge && @completed_challenge.reflection %>
+              <%= render 'layouts/challenges/reflection_review_popup', {challenge: @completed_challenge} %>
+              <% end %>
+              <% @completed_challenge = nil %>
             <% end %>
           </div>
         </div>
@@ -227,16 +230,16 @@
                         <% if !@completed_challenge.reflection %>
                           no info to share yet
                         <% else %>
-                          <%= @completed_challenge.cumulative_metrics %> metric
+                          <%= @completed_challenge.cumulative_metrics %> <%= challenge[:metric_unit] %>
                         <% end %>
                       </div>
                     <% end %>
                   </div>
-                  <% if @completed_challenge && @completed_challenge.reflection %>
-                    <%= render 'layouts/challenges/reflection_review_popup', {challenge: @completed_challenge} %>
-                  <% end %>
-                  <% @completed_challenge = nil %>
                 </div>
+                <% if @completed_challenge && @completed_challenge.reflection %>
+                <%= render 'layouts/challenges/reflection_review_popup', {challenge: @completed_challenge} %>
+                <% end %>
+                <% @completed_challenge = nil %>
                 <% end %>
               </div>
             </div>

@@ -251,7 +251,7 @@
               <div class="completed-challenge">
                 <h6 class="heading">🙌challenge completed🙌 </h6>
                 <h2 class="stat"><%=challenge_record.created_at.month%>/<%=challenge_record.created_at.day%> - <%=challenge_record.date_complete.month%>/<%=challenge_record.date_complete.day%></h2>
-                <h2 class="stat"> <%= challenge_record.cumulative_metrics %> metrics done</h2>
+                <h2 class="stat"> <%= challenge_record.cumulative_metrics %> <%= challenge[:metric_unit] %> </h2>
               </div>
               <div class="learn-more">
                 <h7 class="heading">🤓Wanna learn more?</h7>
