@@ -22,7 +22,7 @@
           </button>
         </div>
         <div class="panel-collapse collapse" style="display:none;">
-          <%= form_for :reflection, url: new_reflection_path, html: {class: 'form-wrapper'} do |f| %>
+          <%= form_for :reflection, url: new_reflection_path, html: {class: 'form-wrapper'}, multipart: true do |f| %>
           <%= f.hidden_field :challenge_id, value: challenge.id %>
           <div class="question row">
             <h2 class="heading"><%= challenge_data[:reflection_question] %></h2>
@@ -50,10 +50,11 @@
             <div class="picture col">
               <h5 class="heading"> <%= challenge_data[:photo_prompt] %> </h5>
               <div class="photo-upload">
-                <label class="upload">
+                <label class="upload" onclick="$(this).siblings('#photo-upload').modal();">
                   upload
-                  <%= f.file_field :photo, id: "upload-photo", class: "", onchange: "loadUpload(event)", accept: "image/*", hidden: true %>
                 </label>
+                <%= f.file_field :photo, id: "upload-photo" , onchange: "linkCroppie(this);", accept: "image/*" , hidden: true, direct_upload: true %>
+                <%= render "layouts/challenges/photo_upload_popup" %>
               </div>
               <h5 id="photo-error" class="error-message">you must upload a photo</h5>
               <%= f.text_area :caption, class: "caption", placeholder: "Caption it!" %>
