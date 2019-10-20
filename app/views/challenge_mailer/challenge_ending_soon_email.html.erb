@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <p>Hi <%= @user.name %>!</p>
+
+    <p>You’ve got challenges ending soon! When they end, you can log your final progress and reflection on your experience in the “Reflections” tab on the left hand side menu. </p>
+
+    <p>This info will be collected for the Global Impact (currently under progress) page so you can see the greater impact of your actions on the environment and community.</p>
+
+    <ol>
+      <% @user_incomplete_challenges.each do |challenge| %>
+        <li>  <%= challenge.challenge_name %> (ends in <%= challenge.get_time_left %>)</li>
+      <% end %>
+    </ol>
+
+    <p>We’re excited to see what you have accomplished! Don’t ever hesitate to reach out to us about anything. Just reply to this email because we’re here for you!</p>
+
+    <p>
+      Rootin for ya,<br>
+      The Rootup team
+    </p>
+
+    <p>P.S. We’re testing out this email reminder feature, so let us know if you like these email reminders, if you’re getting too many emails from us, etc. (just reply to this email)</p>
+  </body>
+</html>
