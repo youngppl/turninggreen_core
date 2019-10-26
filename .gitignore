@@ -1,5 +1,6 @@
 app.yaml
 /config/secrets/*
+cors.json
 
 # Ignore all logfiles and tempfiles.
 /log/*
