@@ -1,6 +1,6 @@
 module ThemesHelper
   def themes
-    ["Waste", "Body", "Home", "Water", "Food", "Travel", "Biodiversity", "Wellness", "Clean", "Fashion"]
+    ["Waste", "Body", "Fashion", "Water", "Food", "Biodiversity", "Clean", "Wellness", "Home", "Travel"]
   end
 
   def themes_description
