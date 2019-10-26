@@ -6,7 +6,7 @@
   <body>
     <p>Hi <%= @user.name %>!</p>
 
-    <p>You’ve got challenges in progress, so we’re just checking in. How are they going?</p>
+    <p>You’ve got challenges in progress, so we’re just checking in. How are they going? Don’t forget to log your progress <a target="_blank" href=" <%= dashboard_url %> ">here</a>!</p>
 
     <ol>
       <% @user_incomplete_challenges.each do |challenge| %>
