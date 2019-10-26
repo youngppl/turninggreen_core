@@ -56,9 +56,7 @@
                 <%= f.file_field :photo, id: "upload-photo" , onchange: "linkCroppie(this);", accept: "image/*" , hidden: true, direct_upload: true %>
                 <%= render "layouts/challenges/photo_upload_popup" %>
               </div>
-              <h5 id="photo-error" class="error-message">you must upload a photo</h5>
               <%= f.text_area :caption, class: "caption", placeholder: "Caption it!" %>
-              <h5 id="caption-error" class="error-message">you must type a response</h5>
             </div>
           </div>
           <div class="actions">
