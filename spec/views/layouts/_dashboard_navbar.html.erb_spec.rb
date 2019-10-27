@@ -20,28 +20,28 @@ RSpec.describe "layouts/_dashboard_navbar.html.erb", type: :view, js: true do
     let!(:current_user) {@user}
     it 'takes user to home page' do
       click_on "Dashboard"
-      expect(current_path).to eq '/dashboard'
+      expect(page).to have_current_path(dashboard_path)
     end
   end
 
   context 'when user clicks on the challenges link' do
     it 'takes user to themes page' do
       click_link "Challenges"
-      expect(current_path).to eq '/themes'
+      expect(page).to have_current_path(themes_path)
     end
   end
 
   context 'when a user logs out' do
     it 'takes user to the front page' do
       click_link 'log out'
-      expect(current_path).to eq '/'
+      expect(page).to have_current_path(root_path)
     end
   end
 
   context 'when a user click on settings' do
     it 'takes user to the settings page' do
       click_link 'Settings'
-      expect(current_path).to eq '/settings'
+      expect(page).to have_current_path(edit_user_registration_path) 
     end
   end
 end
