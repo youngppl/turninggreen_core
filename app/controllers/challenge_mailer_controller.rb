@@ -8,7 +8,7 @@ class ChallengeMailerController < ApplicationController
           ChallengeMailer.challenge_completed_email(user).deliver_later
           user.emails_sent << 'completed'
           user.save!
-        elsif !user.emails_sent.include?('ending') and !user.challenges.where(completed: false, date_complete: Date.today..1.week.from_now).empty?
+        elsif !user.emails_sent.include?('ending') and !user.challenges.where(completed: false, date_complete: Date.today..3.days.from_now).empty?
           ChallengeMailer.challenge_ending_soon_email(user).deliver_later
           user.emails_sent << 'ending'
           user.save!

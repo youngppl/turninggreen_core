@@ -19,7 +19,7 @@ RSpec.describe "challenges/show.html.erb", type: :view do
       signInUser(@user.email, @user.password)
       @user.update(unlockedChallenges:['Water'])
       (1..6).each do
-        @user.challenges.create(completed: false)
+        @user.challenges.create(completed: false, challenge_name: "Track your usage", theme: "Water", date_complete: 2.week.from_now)
       end
       visit '/challenges/Water'
       page.execute_script("$.post('/challenges/add', {challenge_name:'test challenge name',theme:'challengeName',length_of_challenge:1, completed:false})")

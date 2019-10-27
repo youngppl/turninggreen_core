@@ -181,7 +181,7 @@ and values of the farms and companies whose products you buy."],
           },
           {
             :name => "Go to farmers' markets",
-            :type => "friend",
+            :type => "friends",
             :question => "Why do farmers' markets matter?",
             :description => "Shopping at farmers' markets means buying freshly harvested fruits, vegetables, nuts, and other goodies at <a target=\"_blank\" href=\"https://foodrevolution.org/blog/why-buy-local-food/\">peak nutrition levels</a>. Plus, you're directly supporting farmers and keeping your money in the <a target=\"_blank\" href=\"https://farmersmarketcoalition.org/education/stimulate-local-economies/ \">local economy</a>, which stimulates job creation and local businesses.",
             :links => {

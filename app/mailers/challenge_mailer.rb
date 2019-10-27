@@ -4,7 +4,7 @@ class ChallengeMailer < ApplicationMailer
     @user_challenges = @user.challenges.all
     @user_completed_challenges = @user_challenges.where(completed: true, reflection_completed: false)
     @user_incomplete_challenges = @user_challenges.where(completed: false)
-    mail(to: @user.email, subject: 'Your rootup challenges are complete! :D')
+    mail(to: @user.email, subject: 'Your rootup challenge is complete! :D')
   end
 
   def challenge_ending_soon_email(user)
@@ -18,6 +18,6 @@ class ChallengeMailer < ApplicationMailer
     @user = user
     @user_challenges = @user.challenges.all
     @user_incomplete_challenges = @user_challenges.where(completed: false)
-    mail(to: @user.email, subject: 'Still doing those rootup challenges?')
+    mail(to: @user.email, subject: 'How’s your rootup challenges going? :)')
   end
 end

@@ -11,16 +11,6 @@ function submitReflection(self, challenge_id) {
     parent.find('#log-error').show()
     error = true
   }
-  if (!parent.find('#upload-photo').val()) {
-    parent.find('label.upload').addClass('error')
-    parent.find('#photo-error').show()
-    error = true
-  }
-  if (!parent.find('.caption').val()) {
-    parent.find('.caption').addClass('error')
-    parent.find('#caption-error').show()
-    error = true
-  }
   if (!error) {
     parent.find('.form-wrapper').submit()
     $(self).parents('.panel').hide();

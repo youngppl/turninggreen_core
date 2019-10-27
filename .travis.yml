@@ -18,5 +18,5 @@ before_script:
   - psql -c 'create database turninggreen_test;' -U postgres
   - bundle exec rake db:create
   - bundle exec rake db:migrate RAILS_ENV=test
-  - bundle exec chromedriver-update 76.0.3809.68
+  - bundle exec chromedriver-update 78.0.3904.70
 script: bundle exec rspec
