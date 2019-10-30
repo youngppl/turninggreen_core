@@ -46,6 +46,13 @@ input {
   outline: none;
 }
 
+[type="date"]::-webkit-inner-spin-button {
+  display: none;
+}
+[type="date"]::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
 .main-content {
   padding-bottom: 3.125em;
   padding-top: 1.25em;

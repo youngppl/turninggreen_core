@@ -1,5 +1,8 @@
 $(window).on('load', function() {
   $('[data-toggle="tooltip"]').tooltip()
+  $('input[type=date]').on('click', function(e) {
+    e.preventDefault();
+  })
 });
 
 function save_timezone() {
