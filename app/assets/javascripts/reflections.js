@@ -48,10 +48,12 @@ function linkCroppie(input) {
   container.siblings('.modal-footer').find('.upload').addClass('green')
   container.siblings('.modal-footer').find('.upload').prop('disabled', false)
   container.find('.browse').hide()
+  container.parent().find('.rotate').show()
   $uploadCrop = container.croppie({
     enableExif: true,
     url: rawImg,
-    showZoomer: false,
+    showZoomer: true,
+    enableOrientation: true,
     viewport: {
       width: 240,
       height: 240,

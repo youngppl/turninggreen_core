@@ -11,6 +11,7 @@
         <button type="button" class="browse upload button" onclick="$(this).parents('.photo-upload').find('#upload-photo').trigger('click')">browse</button>
       </div>
       <div class="modal-footer">
+        <button type="button" class="rotate upload button" style="display:none;" onclick="$uploadCrop.croppie('rotate', 90);">rotate</button>
         <button type="button" class="upload button" disabled onclick="updatePicture()">upload</button>
       </div>
     </div>
