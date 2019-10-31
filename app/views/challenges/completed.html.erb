@@ -36,7 +36,7 @@
                 <div class="picture">
                   <% if @completed_challenge %>
                     <% if @completed_challenge.reflection && @completed_challenge.reflection.photo.attached? %>
-                      <%= image_tag url_for(@completed_challenge.reflection.photo), size: '190' %>
+                      <%= image_tag rails_blob_path(@completed_challenge.reflection.photo, only_path: true), size: '190' %>
                     <% end %>
                   <% end %>
                   <% if !@completed_challenge.reflection %>
@@ -111,7 +111,7 @@
                 <div class="picture">
                   <% if @completed_challenge %>
                     <% if @completed_challenge.reflection && @completed_challenge.reflection.photo.attached? %>
-                      <%= image_tag url_for(@completed_challenge.reflection.photo), size: '190' %>
+                      <%= image_tag rails_blob_path(@completed_challenge.reflection.photo, only_path: true), size: '190' %>
                     <% end %>
                   <% end %>
                   <% if !@completed_challenge.reflection %>
@@ -157,7 +157,7 @@
                 <div class="picture">
                   <% if @completed_challenge %>
                     <% if @completed_challenge.reflection && @completed_challenge.reflection.photo.attached? %>
-                      <%= image_tag url_for(@completed_challenge.reflection.photo), size: '190' %>
+                      <%= image_tag rails_blob_path(@completed_challenge.reflection.photo, only_path: true), size: '190' %>
                     <% end %>
                   <% end %>
                   <% if !@completed_challenge.reflection %>
@@ -209,7 +209,7 @@
                   <div class="picture">
                     <% if @completed_challenge %>
                       <% if @completed_challenge.reflection && @completed_challenge.reflection.photo.attached? %>
-                        <%= image_tag url_for(@completed_challenge.reflection.photo), size: '190' %>
+                        <%= image_tag rails_blob_path(@completed_challenge.reflection.photo, only_path: true), size: '190' %>
                       <% end %>
                     <% end %>
                     <% if !@completed_challenges.exists?(challenge_name: challenge[:name], theme: theme) %>

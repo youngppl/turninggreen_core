@@ -31,7 +31,7 @@ Rails.application.configure do
   config.assets.compile = false
 
   # google cloud storage cdn configure
-  config.action_controller.asset_host = 'storage.googleapis.com/rootup/assets'
+  # config.action_controller.asset_host = 'storage.googleapis.com/rootup/assets'
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
