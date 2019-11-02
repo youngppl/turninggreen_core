@@ -2,6 +2,6 @@
 include ChallengeMailerHelper
 class ChallengeMailerPreview < ActionMailer::Preview
   def challenge_reminder_email_preview
-    ChallengeMailer.challenge_reminder_email(User.find(35), false, fun_facts.sample)
+    ChallengeMailer.challenge_reminder_email(User.find(35), site_updates, fun_facts.sample)
   end
 end
