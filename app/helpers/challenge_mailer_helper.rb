@@ -16,7 +16,7 @@ module ChallengeMailerHelper
         site_updates << cell["content"]["$t"]
       end
     rescue
-      nil
+      site_updates = false
     end
     site_updates
   end
