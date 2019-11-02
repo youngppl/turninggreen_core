@@ -31,7 +31,7 @@ Rails.application.configure do
   config.assets.compile = false
 
   # google cloud storage cdn configure
-  config.action_controller.asset_host = 'storage.googleapis.com/rootup/assets'
+  # config.action_controller.asset_host = 'storage.googleapis.com/rootup/assets'
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
@@ -51,7 +51,7 @@ Rails.application.configure do
   # config.action_cable.allowed_request_origins = [ 'http://example.com', /http:\/\/example.*/ ]
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
-  # config.force_ssl = true
+  config.force_ssl = true
 
   # Use the lowest log level to ensure availability of diagnostic information
   # when problems arise.
