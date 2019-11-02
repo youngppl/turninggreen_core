@@ -203,7 +203,7 @@
   <div class="completed-content">
     <h2 class="heading">Completed Challenges</h2>
     <% @completed_challenges.each do |challenge_record| %>
-      <% challenge = all_challenges.detect {|challenge| challenge[:name] > challenge_record.challenge_name}  %>
+      <% challenge = all_challenges.detect {|challenge| challenge[:name] == challenge_record.challenge_name}  %>
       <div class="challenge-box row">
         <div class="icon">
           <% challenge_icon_path = "challenges/#{@challenge_name.downcase}/#{challenge[:name].downcase.tr(' ','-').tr('#','')}.png" %>
