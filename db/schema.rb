@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_19_224930) do
+ActiveRecord::Schema.define(version: 2019_11_02_214527) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -97,7 +97,7 @@ ActiveRecord::Schema.define(version: 2019_10_19_224930) do
     t.datetime "confirmation_sent_at"
     t.string "timezone"
     t.text "unlockedChallenges", default: [], array: true
-    t.string "notifications", default: "Daily"
+    t.string "notifications", default: "Every other day"
     t.string "unconfirmed_email"
     t.datetime "deleted_at"
     t.text "deactivation_reasons", default: [], array: true
