@@ -93,7 +93,7 @@
             <div class="col">
               <% if reflection.photo.attached? %>
                 <h4>Photo</h4>
-                <%= image_tag url_for(reflection.photo), size: "200" %>
+                <%= image_tag rails_blob_path(reflection.photo, only_path: true), size: "200" %>
                 <h4>Caption</h4>
                 <p> <%= reflection.caption %> </p>
               <% else %>
