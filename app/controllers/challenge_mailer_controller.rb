@@ -18,11 +18,6 @@ class ChallengeMailerController < ApplicationController
         (user.notifications == "Every other day" && Date.today.day % 2 == 0)
           ChallengeMailer.challenge_reminder_email(user, updates, facts.sample).deliver_later
       end
-      if user.notifications == "Daily" ||
-        (user.notifications == "Weekly" && Date.today.sunday?) ||
-        (user.notifications == "Every other day" && Date.today.day % 2 == 0)
-          ChallengeMailer.challenge_reminder_email(user, updates, facts.sample).deliver_later
-      end
     end
   end
 
