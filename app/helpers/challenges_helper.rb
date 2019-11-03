@@ -219,7 +219,7 @@ and values of the farms and companies whose products you buy."],
             :name => "Zero your food waste",
             :type => "self",
             :question => "How problematic is food waste?",
-            :description => "<a target=\"_blank\" href=\"http://www.fao.org/save-food/resources/keyfindings/en/\">1/3 of food produced globally</a> each year is wasted. This is a huge waste of resources. In addition, food scraps end up decomposing in landfills, producing methane, which worsens climate change. Let's not be part of the problem: reduce your food waste and engage your community to do so too.",
+            :description => "<a target=\"_blank\" href=\"https://www.lovefoodhatewaste.com/compleating\">1/3 of food produced globally</a> each year is wasted. This is a <a target=\"_blank\" href=\"https://www.lovefoodhatewaste.com/article/spoiled-rotten\">huge waste of resources</a>. In addition, food scraps end up decomposing in landfills, producing methane, which worsens climate change. Let's not be part of the problem: reduce your food waste and engage your community to do so too. Each bite matters, because they <a target=\"_blank\" href=\"https://www.lovefoodhatewaste.com/it-all-adds-up/\">all add up</a>.",
             :links => {
               'Food Waste 101 (info)' => 'https://www.imperfectproduce.com/food-waste-101',
               'How to reduce food waste (list)' => 'https://foodprint.org/blog/15-easy-ways-to-reduce-food-waste/',
@@ -227,7 +227,7 @@ and values of the farms and companies whose products you buy."],
               "What's the shelf life of food? (finder)" => 'https://www.stilltasty.com/',
               'How do I dispose of food waste? (video)' => 'https://www.youtube.com/watch?v=bqDQD8cvO5Y&feature=youtu.be&vq=hd1080&rel=0&autoplay=1'
             },
-            :instructions => ["Buy and take only what you will eat.", "Remember to eat your leftovers or share them with others, so they don't go to waste."],
+            :instructions => ["Buy and take only what you will eat.", "Use the <a target=\"_blank\" href=\"https://www.lovefoodhatewaste.com/compleating\">whole ingredient</a>. Don't waste any of the skins, leaves, or seeds.", "Remember to eat your leftovers or share them with others, so they don't go to waste."],
             :metric_question => "How many times did you take action to reduce food waste?",
 :metric_verb => "You took action to reduce food waste ",
 :metric_unit => " times!",
@@ -728,7 +728,7 @@ disapproval; explain to them why; and propose alternatives."],
               'Shoe donation drop-off locations (finder)' => 'https://soles4souls.org/get-involved/give-shoes/dropoff-locator/',
               "What's the impact of new clothes? (info)" => 'https://www.greenamerica.org/program/toxic-textiles'
             },
-            :instructions => ["Clean out your closet of clothes you won't wear anymore.", "Repurpose them. (e.g. bag, cleaning rag)", "Swap them with friends.", "Pass them onto someone who will wear them. (Maybe a sibling or cousin?)", "Do the research to find a charity that will actually reuse your donations."],
+            :instructions => ["Clean out your closet of clothes you won't wear anymore.", "Repurpose them. (e.g. bag, cleaning rag)", "Swap them with friends.", "Pass them onto someone who will wear them. (Maybe a sibling or cousin?)", "Do the research to find a charity that will actually reuse your donations.", "Or, sell them to a local thrift store or secondhand shop. (ex: <a target=\"_blank\" href=\"https://www.thredup.com/cleanout/donate-clothes\">thredUP</a>)"],
             :metric_question => "Estimate how much (in kilos) clothing you repurposed and/or donated. Note: 1 lb = 0.45 kg",
 :metric_verb => "You repurposed and/or donated about ",
 :metric_unit => " kg of clothing! (1 lb = 0.45 kg)",
@@ -736,7 +736,7 @@ disapproval; explain to them why; and propose alternatives."],
             :photo_prompt => "Share a photo capturing this experience. Tell us what you discovered from this challenge."
           },
           {
-            :name => "Find alternatives",
+            :name => "Find better clothing",
             :type => "friends",
             :question => "How can I avoid fast fashion?",
             :description => "Choose <a target=\"_blank\" href=\"https://truecostmovie.com/learn-more/buying-better/\">quality over quantity</a>. Wearing something more reduces cost per wear. (Ex: a $60 pair of pants worn 2x a week per year costs about $0.57 per wear!) Thinking long-term and buying better diminishes the impact of clothing's lifecycle. What's even better: <a target=\"_blank\" href=\"https://trashisfortossers.com/zero-waste-wardrobe-secondhand-shopping/\">buying secondhand</a>, because you're extending the lifespan of something that already exists.",
@@ -1367,3 +1367,4 @@ useful for them."],
     all_challenges
   end
 end
+
