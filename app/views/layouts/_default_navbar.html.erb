@@ -1,9 +1,19 @@
-<nav class="navbar default">
+<nav class="navbar default navbar-expand-lg navbar-light">
   <a class="navbar-brand" href=" <%= root_path %>">
     <%= image_tag "rootup-logo.png", class: "logo" %>
   </a>
-  <div class="about-team">
-    <%= link_to "about", about_path, class: "about-team-item navbar-brand"%>
-    <%= link_to "team", team_path, class: "about-team-item navbar-brand"%>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="about-team collapse navbar-collapse" id="navbarToggle">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <%= link_to "about", about_path, class: "about-team-item"%>
+      </li>
+      <li class="nav-item">
+        <%= link_to "team", team_path, class: "about-team-item"%>
+      </li>
+    </ul>
   </div>
 </nav>

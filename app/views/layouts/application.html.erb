@@ -5,10 +5,15 @@
     <% if content_for?(:navbar) %>
       <!-- rest of app view -->
       <div class="row">
-        <div id="navbar col">
+        <div id="navbar">
           <%= yield(:navbar) %>
         </div>
         <div class="col">
+          <nav class="sidebar-toggle navbar-light position-absolute d-xl-none">
+            <button type="button" data-toggle="collapse" data-target="#navbarToggle" class="btn">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </nav>
           <div class="top-nav">
             <%= render 'layouts/notifications_dropdown' %>
             <%= render 'layouts/feedback_dropdown' %>

@@ -1,30 +1,32 @@
-<nav class="dash-nav">
-  <a href="<%= root_path %>" tabindex="0" id="challenge_added_popover" class="tg-logo" data-toggle="popover" data-placement="bottom">
-    <%= image_tag "rootup-logo.png", class: "logo" %>
-  </a>
-  <h5 class="level">lvl<%= current_user.level %></h5>
-  <h5 class="username"><%= current_user.name %></h5>
-  <ul class="nav flex-column">
-    <li class="nav-item <%= active?(dashboard_path) %>">
-      <%= link_to "Dashboard", dashboard_path, class: "nav-link"%>
-    </li>
-    <li class="nav-item <%= active?(themes_path) %>">
-      <%= link_to "Challenges", themes_path, class: "nav-link"%>
-    </li>
-    <li class="nav-item <%= active?(challenges_reflections_path) %>">
-      <%= link_to "Reflections", challenges_reflections_path, class: "nav-link"%>
-      <div class="reflections-bubble">
-        <%= current_user.challenges.where(completed:true, reflection_completed:false).length %>
-      </div>
-    </li>
-    <li class="nav-item <%= active?(challenges_completed_path) %>">
-      <%= link_to "Completed Challenges", challenges_completed_path, class: "nav-link"%>
-    </li>
-    <li class="nav-item <%= active?(edit_user_registration_path) %>">
-      <%= link_to 'Settings', edit_user_registration_path, class: "nav-link" %>
-    </li>
-    <li class="nav-item log-out">
-      <%= link_to 'log out', destroy_user_session_path, method: :delete %>
-    </li>
-  </ul>
+<nav class="navbar dash-nav navbar-expand-xl navbar-light flex-column">
+  <div class="collapse navbar-collapse flex-column" id="navbarToggle">
+    <a href="<%= root_path %>" tabindex="0" id="challenge_added_popover" class="navbar-brand tg-logo" data-toggle="popover" data-placement="bottom">
+      <%= image_tag "rootup-logo.png", class: "logo" %>
+    </a>
+    <h5 class="level">lvl<%= current_user.level %></h5>
+    <h5 class="username"><%= current_user.name %></h5>
+    <ul class="navbar-nav flex-column">
+      <li class="nav-item <%= active?(dashboard_path) %>">
+        <%= link_to "Dashboard", dashboard_path, class: "nav-link"%>
+      </li>
+      <li class="nav-item <%= active?(themes_path) %>">
+        <%= link_to "Challenges", themes_path, class: "nav-link"%>
+      </li>
+      <li class="nav-item <%= active?(challenges_reflections_path) %>">
+        <%= link_to "Reflections", challenges_reflections_path, class: "nav-link"%>
+        <div class="reflections-bubble">
+          <%= current_user.challenges.where(completed:true, reflection_completed:false).length %>
+        </div>
+      </li>
+      <li class="nav-item <%= active?(challenges_completed_path) %>">
+        <%= link_to "Completed Challenges", challenges_completed_path, class: "nav-link"%>
+      </li>
+      <li class="nav-item <%= active?(edit_user_registration_path) %>">
+        <%= link_to 'Settings', edit_user_registration_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item log-out">
+        <%= link_to 'log out', destroy_user_session_path, method: :delete %>
+      </li>
+    </ul>
+  </div>
 </nav>

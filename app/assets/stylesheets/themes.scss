@@ -1,5 +1,8 @@
 .themes-page {
   margin: auto;
+  @media only screen and (max-width: 500px) {
+    max-width: 345px;
+  }
 
   .title {
     font-size: 24px;
@@ -15,7 +18,7 @@
   }
 
   .themes-row {
-    margin-bottom: 32px;
+    min-height: 170px;
 
     a {
       text-decoration: none;
@@ -23,6 +26,9 @@
 
     .theme {
       width: 445px;
+      @media only screen and (max-width: 445px) {
+        width: 100% !important;
+      }
       height: 140px;
       border-radius: 8px;
       box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.21), 0 2px 10px 0 rgba(0, 0, 0, 0.14);
@@ -31,6 +37,7 @@
       margin-right: 44px;
       margin-left: 0;
       display: flex;
+      margin-bottom: 32px;
 
       &:hover:not(.locked) {
         box-shadow: 0 7px 31px 0 rgba(0, 0, 0, 0.1), 0 2px 10px 0 rgba(0, 0, 0, 0.17), 0 7px 12px 0 rgba(0, 0, 0, 0.17);
@@ -44,10 +51,14 @@
       .icon-box {
         text-align: center;
         position: relative;
+        flex: 0 0 33.33333%;
+        max-width: 150px;
+        padding: 0 5.5%;
 
         .ring {
           position: relative;
           top: 20px;
+
           &.locked {
             opacity: 0.3;
           }
