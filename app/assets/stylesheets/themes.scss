@@ -1,6 +1,6 @@
 .themes-page {
   margin: auto;
-  @media only screen and (max-width: 500px){
+  @media only screen and (max-width: 500px) {
     max-width: 345px;
   }
 
@@ -26,7 +26,7 @@
 
     .theme {
       width: 445px;
-      @media only screen and (max-width: 445px){
+      @media only screen and (max-width: 445px) {
         width: 100% !important;
       }
       height: 140px;
@@ -58,6 +58,7 @@
         .ring {
           position: relative;
           top: 20px;
+
           &.locked {
             opacity: 0.3;
           }
