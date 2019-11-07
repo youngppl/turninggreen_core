@@ -348,8 +348,8 @@
     }
 
     .global-impact-content {
-      @media only screen and (max-width: 996px){
-        width: 100% !important
+      @media only screen and (max-width: 996px) {
+        width: 100% !important;
       }
       width: 940px;
       min-height: 207px;
@@ -644,9 +644,15 @@
     margin-bottom: 20px;
   }
 
-  .section-title h2 {
-    font-size: 20px;
-    font-weight: 600;
+  .section-title {
+    @media only screen and (max-width: 500px) {
+      min-width: 60%;
+    }
+
+    h2 {
+      font-size: 20px;
+      font-weight: 600;
+    }
   }
 
   .section-label {

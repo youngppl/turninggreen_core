@@ -15,7 +15,7 @@
   <% end %>
 </script>
 
-<div class="challenge-page" style="display:none;">
+<div class="challenge-page container" style="display:none;">
   <div class="header">
     <h2 class="title"><%= @challenge_name %> Challenges</h2>
     <h2 class="instructions"> <%= @challenge_data[:instruction].html_safe %></h2>
@@ -25,85 +25,87 @@
   <%# PRE-CHALLENGE %>
   <% challenge = @challenge_data[:challenges][0] %>
   <h2 class="heading">Pre-challenge</h2>
-  <div class="challenge-box row">
-    <div class="icon">
-      <% challenge_icon_path = "challenges/#{@challenge_name.downcase}/#{@challenge_data[:challenges][0][:name].downcase.tr(' ','-').tr('#','')}.png" %>
-      <% if FileTest.exists? "#{::Rails.root}/app/assets/images/" + challenge_icon_path %>
-      <%= image_tag challenge_icon_path, size: '130' %>
-      <% end %>
-    </div>
-    <div class="challenge-container col">
-      <div class="info">
-        <h5 class="name"><%= challenge[:name] %></h5>
-        <h5 class="heading"><%= challenge[:question] %></h5>
-        <p class="description"><%= challenge[:description].html_safe %></p>
+  <div class="challenge-box">
+    <div class="row">
+      <div class="icon">
+        <% challenge_icon_path = "challenges/#{@challenge_name.downcase}/#{@challenge_data[:challenges][0][:name].downcase.tr(' ','-').tr('#','')}.png" %>
+        <% if FileTest.exists? "#{::Rails.root}/app/assets/images/" + challenge_icon_path %>
+        <%= image_tag challenge_icon_path, size: '130' %>
+        <% end %>
       </div>
-      <div class="hidden row" style="display:none;">
-        <div class="instructions col">
-          <h4 class="heading">🤔How do I do this?🤔</h4>
-          <% if challenge[:background] %>
+      <div class="challenge-container col">
+        <div class="info">
+          <h5 class="name"><%= challenge[:name] %></h5>
+          <h5 class="heading"><%= challenge[:question] %></h5>
+          <p class="description"><%= challenge[:description].html_safe %></p>
+        </div>
+        <div class="hidden row" style="display:none;">
+          <div class="instructions col">
+            <h4 class="heading">🤔How do I do this?🤔</h4>
+            <% if challenge[:background] %>
             <%= challenge[:background].html_safe %>
-          <% end %>
-          <ul>
-            <% challenge[:instructions].each do |item| %>
-            <li> <%= item.html_safe %> </li>
             <% end %>
-          </ul>
-          <% if challenge[:alt_instructions] %>
-          <ul class="alt">
-            <% challenge[:alt_instructions].each do |item| %>
-            <li> <%= item.html_safe %> </li>
-            <% end %>
-          </ul>
-          <% end %>
-          <% if challenge[:extra] %>
-           <%= challenge[:extra].html_safe %>
-          <% end %>
-          <% if challenge[:second_list] %>
-          <ul>
-            <% challenge[:second_list].each do |item| %>
-            <li> <%= item.html_safe %> </li>
-            <% end %>
-          </ul>
-          <% end %>
-          <div class="spacer"></div>
-        </div>
-        <div class="col-5">
-          <% if @in_progress_challenges.exists?(challenge_name: challenge[:name]) %>
-          <% chall_obj = @in_progress_challenges.where(challenge_name: challenge[:name]) %>
-          <div class="challenge-in-progress">
-            <h2 class="heading">🏃‍♀️Challenge in progress…</h2>
-            <h2 class="stat">ends on <%=chall_obj.pluck(:date_complete)[0].month%>/<%=chall_obj.pluck(:date_complete)[0].day%></h2>
-          </div>
-          <% else %>
-          <div class="start-challenge">
-            <h6 class="heading">🏁Start this challenge…</h6>
-            <%= select_tag "weeks", options_for_select((1..8).to_a)%>
-            <span class="label">week starting today</span><br>
-            <button type="button" class="btn add-challenge-button" name="button" onclick="$('#points-earned').modal()">start challenge</button>
-          </div>
-          <% end %>
-          <div class="learn-more">
-            <h7 class="heading">🤓Wanna learn more?</h7>
-            <ol>
-              <% challenge[:links].each do |text, link| %>
-              <li><%= link_to text, link, class: "link", target: "_blank"%></li>
+            <ul>
+              <% challenge[:instructions].each do |item| %>
+              <li> <%= item.html_safe %> </li>
               <% end %>
-            </ol>
+            </ul>
+            <% if challenge[:alt_instructions] %>
+            <ul class="alt">
+              <% challenge[:alt_instructions].each do |item| %>
+              <li> <%= item.html_safe %> </li>
+              <% end %>
+            </ul>
+            <% end %>
+            <% if challenge[:extra] %>
+            <%= challenge[:extra].html_safe %>
+            <% end %>
+            <% if challenge[:second_list] %>
+            <ul>
+              <% challenge[:second_list].each do |item| %>
+              <li> <%= item.html_safe %> </li>
+              <% end %>
+            </ul>
+            <% end %>
+            <div class="spacer"></div>
           </div>
-          <div class="spacer"></div>
+          <div class="col col-lg-5">
+            <% if @in_progress_challenges.exists?(challenge_name: challenge[:name]) %>
+            <% chall_obj = @in_progress_challenges.where(challenge_name: challenge[:name]) %>
+            <div class="challenge-in-progress">
+              <h2 class="heading">🏃‍♀️Challenge in progress…</h2>
+              <h2 class="stat">ends on <%=chall_obj.pluck(:date_complete)[0].month%>/<%=chall_obj.pluck(:date_complete)[0].day%></h2>
+            </div>
+            <% else %>
+            <div class="start-challenge">
+              <h6 class="heading">🏁Start this challenge…</h6>
+              <%= select_tag "weeks", options_for_select((1..8).to_a)%>
+              <span class="label">week starting today</span><br>
+              <button type="button" class="btn add-challenge-button" name="button" onclick="$('#points-earned').modal()">start challenge</button>
+            </div>
+            <% end %>
+            <div class="learn-more">
+              <h7 class="heading">🤓Wanna learn more?</h7>
+              <ol>
+                <% challenge[:links].each do |text, link| %>
+                <li><%= link_to text, link, class: "link", target: "_blank"%></li>
+                <% end %>
+              </ol>
+            </div>
+            <div class="spacer"></div>
+          </div>
         </div>
       </div>
-      <div class="dropdown-click row">
-        <div class="row align-items-center">
-          <div class="text">
-            <h2 class="up heading">TAKE ON THIS CHALLENGE</h2>
-            <h2 class="down heading" style="display:none;">SHOW LESS</h2>
-          </div>
-          <div>
-            <i class="fas fa-chevron-down"></i>
-            <i class="fas fa-chevron-up" style="display:none;"></i>
-          </div>
+    </div>
+    <div class="dropdown-click row">
+      <div class="row align-items-center">
+        <div class="text">
+          <h2 class="up heading">TAKE ON THIS CHALLENGE</h2>
+          <h2 class="down heading" style="display:none;">SHOW LESS</h2>
+        </div>
+        <div>
+          <i class="fas fa-chevron-down"></i>
+          <i class="fas fa-chevron-up" style="display:none;"></i>
         </div>
       </div>
     </div>
@@ -114,85 +116,87 @@
     <% (1..6).each do |index| %>
       <% challenge = @challenge_data[:challenges][index]%>
       <% if !@completed_challenges.exists?(challenge_name: challenge[:name])%>
-        <div class="challenge-box row">
-          <div class="icon">
-            <% challenge_icon_path = "challenges/#{@challenge_name.downcase}/#{challenge[:name].downcase.tr(' ','-').tr('#','')}.png" %>
-            <% if FileTest.exists? "#{::Rails.root}/app/assets/images/" + challenge_icon_path %>
+        <div class="challenge-box">
+          <div class="row">
+            <div class="icon">
+              <% challenge_icon_path = "challenges/#{@challenge_name.downcase}/#{challenge[:name].downcase.tr(' ','-').tr('#','')}.png" %>
+              <% if FileTest.exists? "#{::Rails.root}/app/assets/images/" + challenge_icon_path %>
               <%= image_tag challenge_icon_path, size: '130' %>
-            <% end %>
-          </div>
-          <div class="challenge-container col">
-            <div class="info">
-              <h5 class="name"><%= challenge[:name] %></h5>
-              <h5 class="heading"><%= challenge[:question] %></h5>
-              <p class="description"><%= challenge[:description].html_safe %></p>
+              <% end %>
             </div>
-            <div class="hidden row" style="display:none;">
-              <div class="instructions col">
-                <h4 class="heading">🤔How do I do this?🤔</h4>
-                <% if challenge[:background] %>
+            <div class="challenge-container col">
+              <div class="info">
+                <h5 class="name"><%= challenge[:name] %></h5>
+                <h5 class="heading"><%= challenge[:question] %></h5>
+                <p class="description"><%= challenge[:description].html_safe %></p>
+              </div>
+              <div class="hidden row" style="display:none;">
+                <div class="instructions col">
+                  <h4 class="heading">🤔How do I do this?🤔</h4>
+                  <% if challenge[:background] %>
                   <%= challenge[:background].html_safe %>
-                <% end %>
-                <ul>
-                  <% challenge[:instructions].each do |item| %>
-                    <li> <%= item.html_safe %> </li>
                   <% end %>
-                </ul>
-                <% if challenge[:alt_instructions] %>
+                  <ul>
+                    <% challenge[:instructions].each do |item| %>
+                    <li> <%= item.html_safe %> </li>
+                    <% end %>
+                  </ul>
+                  <% if challenge[:alt_instructions] %>
                   <ul class="alt">
                     <% challenge[:alt_instructions].each do |item| %>
-                      <li> <%= item.html_safe %> </li>
+                    <li> <%= item.html_safe %> </li>
                     <% end %>
                   </ul>
-                <% end %>
-                <% if challenge[:extra] %>
+                  <% end %>
+                  <% if challenge[:extra] %>
                   <%= challenge[:extra].html_safe %>
-                <% end %>
-                <% if challenge[:second_list] %>
+                  <% end %>
+                  <% if challenge[:second_list] %>
                   <ul>
                     <% challenge[:second_list].each do |item| %>
-                      <li> <%= item.html_safe %> </li>
+                    <li> <%= item.html_safe %> </li>
                     <% end %>
                   </ul>
-                <% end %>
-                <div class="spacer"></div>
-              </div>
-              <div class="col-5">
-                <% if @in_progress_challenges.exists?(challenge_name: challenge[:name]) %>
+                  <% end %>
+                  <div class="spacer"></div>
+                </div>
+                <div class="col col-lg-5">
+                  <% if @in_progress_challenges.exists?(challenge_name: challenge[:name]) %>
                   <% chall_obj = @in_progress_challenges.where(challenge_name: challenge[:name]) %>
                   <div class="challenge-in-progress">
                     <h2 class="heading">🏃‍♀️Challenge in progress…</h2>
                     <h2 class="stat">ends on <%=chall_obj.pluck(:date_complete)[0].month%>/<%=chall_obj.pluck(:date_complete)[0].day%></h2>
                   </div>
-                <% else %>
+                  <% else %>
                   <div class="start-challenge">
                     <h6 class="heading">🏁Start this challenge…</h6>
                     <%= select_tag "weeks", options_for_select((1..8).to_a)%>
                     <span class="label">week starting today</span><br>
                     <button type="button" class="btn add-challenge-button" name="button" onclick="$('#points-earned').modal()">start challenge</button>
                   </div>
-                <% end %>
-                <div class="learn-more">
-                  <h7 class="heading">🤓Wanna learn more?</h7>
-                  <ol>
-                    <% challenge[:links].each do |text, link| %>
+                  <% end %>
+                  <div class="learn-more">
+                    <h7 class="heading">🤓Wanna learn more?</h7>
+                    <ol>
+                      <% challenge[:links].each do |text, link| %>
                       <li><%= link_to text, link, class: "link", target: "_blank"%></li>
-                    <% end %>
-                  </ol>
+                      <% end %>
+                    </ol>
+                  </div>
+                  <div class="spacer"></div>
                 </div>
-                <div class="spacer"></div>
               </div>
             </div>
-            <div class="dropdown-click row ">
-              <div class="row align-items-center ">
-                <div class="text">
-                  <h2 class="up heading">TAKE ON THIS CHALLENGE</h2>
-                  <h2 class="down heading" style="display:none;">SHOW LESS</h2>
-                </div>
-                <div>
-                  <i class="fas fa-chevron-down"></i>
-                  <i class="fas fa-chevron-up" style="display:none;"></i>
-                </div>
+          </div>
+          <div class="dropdown-click row">
+            <div class="row align-items-center ">
+              <div class="text">
+                <h2 class="up heading">TAKE ON THIS CHALLENGE</h2>
+                <h2 class="down heading" style="display:none;">SHOW LESS</h2>
+              </div>
+              <div>
+                <i class="fas fa-chevron-down"></i>
+                <i class="fas fa-chevron-up" style="display:none;"></i>
               </div>
             </div>
           </div>
@@ -204,76 +208,78 @@
     <h2 class="heading">Completed Challenges</h2>
     <% @completed_challenges.each do |challenge_record| %>
       <% challenge = all_challenges.detect {|challenge| challenge[:name] == challenge_record.challenge_name}  %>
-      <div class="challenge-box row">
-        <div class="icon">
-          <% challenge_icon_path = "challenges/#{@challenge_name.downcase}/#{challenge[:name].downcase.tr(' ','-').tr('#','')}.png" %>
-          <% if FileTest.exists? "#{::Rails.root}/app/assets/images/" + challenge_icon_path %>
+      <div class="challenge-box">
+        <div class="row">
+          <div class="icon">
+            <% challenge_icon_path = "challenges/#{@challenge_name.downcase}/#{challenge[:name].downcase.tr(' ','-').tr('#','')}.png" %>
+            <% if FileTest.exists? "#{::Rails.root}/app/assets/images/" + challenge_icon_path %>
             <%= image_tag challenge_icon_path, size: '130' %>
-          <% end %>
-        </div>
-        <div class="challenge-container col">
-          <div class="info">
-            <h5 class="name"><%= challenge_record.challenge_name %></h5>
-            <h5 class="heading"><%= challenge[:question] %></h5>
-            <p class="description"><%= challenge[:description].html_safe %></p>
+            <% end %>
           </div>
-          <div class="hidden row" style="display:none;">
-            <div class="instructions col">
-              <h4 class="heading">🤔How do I do this?🤔</h4>
-              <% if challenge[:background] %>
+          <div class="challenge-container col">
+            <div class="info">
+              <h5 class="name"><%= challenge_record.challenge_name %></h5>
+              <h5 class="heading"><%= challenge[:question] %></h5>
+              <p class="description"><%= challenge[:description].html_safe %></p>
+            </div>
+            <div class="hidden row" style="display:none;">
+              <div class="instructions col">
+                <h4 class="heading">🤔How do I do this?🤔</h4>
+                <% if challenge[:background] %>
                 <%= challenge[:background].html_safe %>
-              <% end %>
-              <ul>
-                <% challenge[:instructions].each do |item| %>
-                  <li> <%= item.html_safe %> </li>
                 <% end %>
-              </ul>
-              <% if challenge[:alt_instructions] %>
+                <ul>
+                  <% challenge[:instructions].each do |item| %>
+                  <li> <%= item.html_safe %> </li>
+                  <% end %>
+                </ul>
+                <% if challenge[:alt_instructions] %>
                 <ul class="alt">
                   <% challenge[:alt_instructions].each do |item| %>
-                    <li> <%= item.html_safe %> </li>
+                  <li> <%= item.html_safe %> </li>
                   <% end %>
                 </ul>
-              <% end %>
-              <% if challenge[:extra] %>
+                <% end %>
+                <% if challenge[:extra] %>
                 <%= challenge[:extra].html_safe %>
-              <% end %>
-              <% if challenge[:second_list] %>
+                <% end %>
+                <% if challenge[:second_list] %>
                 <ul>
                   <% challenge[:second_list].each do |item| %>
-                    <li> <%= item.html_safe %> </li>
+                  <li> <%= item.html_safe %> </li>
                   <% end %>
                 </ul>
-              <% end %>
-              <div class="spacer"></div>
-            </div>
-            <div class="col-5">
-              <div class="completed-challenge">
-                <h6 class="heading">🙌challenge completed🙌 </h6>
-                <h2 class="stat"><%=challenge_record.created_at.month%>/<%=challenge_record.created_at.day%> - <%=challenge_record.date_complete.month%>/<%=challenge_record.date_complete.day%></h2>
-                <h2 class="stat"> <%= challenge_record.cumulative_metrics %> <%= challenge[:metric_unit] %> </h2>
+                <% end %>
+                <div class="spacer"></div>
               </div>
-              <div class="learn-more">
-                <h7 class="heading">🤓Wanna learn more?</h7>
-                <ol>
-                  <% challenge[:links].each do |text, link| %>
+              <div class="col col-lg-5">
+                <div class="completed-challenge">
+                  <h6 class="heading">🙌challenge completed🙌 </h6>
+                  <h2 class="stat"><%=challenge_record.created_at.month%>/<%=challenge_record.created_at.day%> - <%=challenge_record.date_complete.month%>/<%=challenge_record.date_complete.day%></h2>
+                  <h2 class="stat"> <%= challenge_record.cumulative_metrics %> <%= challenge[:metric_unit] %> </h2>
+                </div>
+                <div class="learn-more">
+                  <h7 class="heading">🤓Wanna learn more?</h7>
+                  <ol>
+                    <% challenge[:links].each do |text, link| %>
                     <li><%= link_to text, link, class: "link", target: "_blank"%></li>
-                  <% end %>
-                </ol>
+                    <% end %>
+                  </ol>
+                </div>
+                <div class="spacer"></div>
               </div>
-              <div class="spacer"></div>
             </div>
           </div>
-          <div class="dropdown-click row">
-            <div class="row align-items-center">
-              <div class="text">
-                <h2 class="up heading">TAKE ON THIS CHALLENGE</h2>
-                <h2 class="down heading" style="display:none;">SHOW LESS</h2>
-              </div>
-              <div>
-                <i class="fas fa-chevron-down"></i>
-                <i class="fas fa-chevron-up" style="display:none;"></i>
-              </div>
+        </div>
+        <div class="dropdown-click row">
+          <div class="row align-items-center">
+            <div class="text">
+              <h2 class="up heading">TAKE ON THIS CHALLENGE</h2>
+              <h2 class="down heading" style="display:none;">SHOW LESS</h2>
+            </div>
+            <div>
+              <i class="fas fa-chevron-down"></i>
+              <i class="fas fa-chevron-up" style="display:none;"></i>
             </div>
           </div>
         </div>

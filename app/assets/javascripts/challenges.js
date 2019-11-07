@@ -101,7 +101,7 @@ $(document).on("click", ".dropdown-click ", function() {
   $(this).find('.down').toggle();
   $(this).find('.fa-chevron-down').toggle();
   $(this).find('.fa-chevron-up').toggle();
-  $(this).parent().children('.hidden').toggle()
+  $(this).siblings('.row').find('.hidden').toggle()
 });
 
 $(document).on('click', '.add-challenge-button', function(event) {

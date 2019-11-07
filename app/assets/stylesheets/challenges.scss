@@ -34,7 +34,7 @@
   }
 
   .challenge-box {
-    width: 940px;
+    width: 100%;
     min-height: 194px;
     border-radius: 16px;
     box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.21), 0 2px 10px 0 rgba(0, 0, 0, 0.13);
@@ -172,13 +172,9 @@
     .dropdown-click {
       justify-content: space-around;
       cursor: pointer;
-      position: absolute;
-      bottom: -10px;
-      width: 121%;
-      left: -153px;
       border-top: solid 1px #e5e5e5;
       align-items: center;
-      height: 40px;
+      height: 35px;
       margin-top: 20px;
 
       .text {
