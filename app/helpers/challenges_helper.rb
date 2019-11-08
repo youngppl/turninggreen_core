@@ -14,7 +14,7 @@ module ChallengesHelper
             :name => "Audit your waste",
             :type => "pre",
             :question => "Why does waste matter?",
-            :description => "Our planet has a finite amount of resources. Instead of throwing things away, we should pass it onto someone else to use, OR repurpose it mechanically (recycle) or biologoically (compost) into a useful product. Follow the 5R's in this order, and you'll <a target=\"_blank\" href=\"https://www.plasticpollutioncoalition.org/take-action-1\">minimize your waste</a> real fast: refuse, reduce, reuse, rot, recycle.",
+            :description => "The chemicals used in the production of goods impact workers' health. The materials and energy required to make and transport goods contribute to climate change. The generation and accumulation of waste disproportionately affects the world's poorest communities. Waste matters. And it comes from <a target=\"_blank\" href=\"https://www.breakfreefromplastic.org/globalbrandauditreport2019/?mc_cid=8671ee16ab&mc_eid=f265c1970f\">every part of the production, usage, and disposal of goods.</a> <a target=\"_blank\" href=\"https://www.plasticpollutioncoalition.org/take-action-1\">Minimize your waste</a> (in this order): refuse, reduce, reuse, rot, recycle.",
             :links => {
               'How to conduct a waste audit (guide)' => 'https://www.goingzerowaste.com/31-day-challenge/how-to-conduct-a-waste-audit-day-31-of-the-zero-waste-challenge',
               'What you can do (guide)' => 'https://www.plasticfreejuly.org/get-involved/what-you-can-do/category/getting-started/',
@@ -48,12 +48,13 @@ module ChallengesHelper
             :name => "Shop with reusables",
             :type => "friends",
             :question => "What's the deal with food packaging?",
-            :description => "Packaging, even if it's recyclable or compostable, still end up in landfills. To best combat this, refuse waste at the root source so you don't have to figure out proper disposal later. For example, food packaging extends shelf life + makes shopping convenient, but ask yourself: Is it necessary? Think about farmers' markets + grocery stores; it's possible to buy loose produce.",
+            :description => "Packaging, even if it's <a target=\"_blank\" href=\"https://www.youtube.com/watch?v=urFZ5o0az_4\">recyclable</a> or compostable, still end up in landfills. To best combat this, refuse waste at the root source so you don't have to figure out proper disposal later. For example, food packaging extends shelf life + makes shopping convenient, but ask yourself: Is it necessary? Think about farmers' markets + grocery stores; it's possible to buy loose produce.",
             :links => {
               "Shopping with your own bags + jars (guide)" => "https://www.goingzerowaste.com/blog/2016/3/14/ultimate-guide-to-zero-waste-grocery-shopping",
               "Zero waste shopping at the farmers' market (video)" => "https://trashisfortossers.com/how-to-shop-at-farmers-market-withou/",
               "Where can I find bulk? (finder)" => "https://app.zerowastehome.com/",
-              "Is bulk not available? (blog)" => "https://www.goingzerowaste.com/blog/2015/12/31/life-without-bulk"
+              "Is bulk not available? (blog)" => "https://www.goingzerowaste.com/blog/2015/12/31/life-without-bulk",
+	      "The Indonesian Plastic Bag Diet (video)" => "https://www.youtube.com/watch?v=PBhakv9DQFQ"
             },
             :instructions => ["Bring your own reusable bags and jars", "Opt for loose goods (e.g. fruits, veggies, meat, cheese, bread) instead of packaged ones. Try to avoid any packaging that will be disposed of.", "Shop at bulk bins.", "Get 3 friends and family to join you!"],
 	          :extra => "*If goods are charged by weight (e.g. pounds or kilos), don't forget to tare your reusables before filling them up!",
@@ -124,7 +125,8 @@ module ChallengesHelper
             :links => {
               "Guide to banning polystyrene (guide)" => "https://www.5gyres.org/polystyrene",
               'Changing purchasing practices (guide)' => "https://www.plasticfreejuly.org/get-involved/what-you-can-do/workplace-procurement/",
-              'How governments go zero waste (info)' => 'https://www.greenamerica.org/blog/plastic-out-sustainability-in'
+              'How governments go zero waste (info)' => 'https://www.greenamerica.org/blog/plastic-out-sustainability-in',
+	      'How Plastic Production Pollutes Small Towns (video)' => 'https://www.youtube.com/watch?v=OFMau-t3QaI'
             },
             :instructions => ["Choose your target audience. (e.g. local business, local government)", "Draft up a proposal of what you want them to change and why it matters to them. Be specific. (e.g. Ask a local restaurant to provide plastic straw only upon request.)", "Reach out and give them your pitch.", "Offer to work with them to create this change for the community."],
             :metric_question => "How many businesses and government officials did you speak to about waste?",
@@ -542,7 +544,7 @@ and values of the farms and companies whose products you buy."],
             :name => "Raise awareness",
             :type => "community",
             :question => "What's the impact of making new clothes?",
-            :description => "About 8,000 synthetic chemicals are used to transform materials into textiles, which contributes to 20% of industrial water pollution. Shopping secondhand reduces this pollution by extending the life of already existing clothes. Simply wearing a piece of clothing 9 months longer reduces its water footprint by 5-10%.",
+            :description => "About 8,000 synthetic chemicals are used to transform materials into textiles, contributing to 20% of industrial water pollution. <a target=\"_blank\" href=\"https://www.soilassociation.org/thirsty-for-fashion/\">Growing cotton accounts for 16% of global insecticide usage, many of which gets washed into water supplies and soil.</a> So, making new clothes is resource intensive and polluting. Shopping secondhand avoids these issues by extending the life of already existing clothes. Simply wearing a piece of clothing 9 months longer reduces its water footprint by 5-10%.",
             :links => {
               'How do I make clothes last? (info + guide)' => 'https://goodonyou.eco/fashion-and-water-the-thirsty-industry/',
               'How do I support sustainable fashion? (info + guide)' => 'https://articles.mercola.com/sites/articles/archive/2019/01/12/fashion-industry-pollution.aspx '
@@ -760,8 +762,8 @@ your mindset towards investing in a quality; reduce the cost per wear.",
           {
             :name => "Challenge brands",
             :type => "community",
-            :question => "How can we engage brands to treat their workers respectfully?",
-            :description => "<a target=\"_blank\" href=\"https://www.fashionrevolution.org/emergency-measures-resources/\">Boycotts aren't solutions</a> to human rights violations in the fashion industry. People, like garment workers, can lose their jobs. Fast fashion brands will continue exploiting workers unless customers pressure them otherwise. So, we need to speak up to show these brands that we, as customers, care deeply about who makes our clothes and want their practices to reflect that.",
+            :question => "Why is what the fashion industry doing unacceptable?",
+            :description => "<a target=\"_blank\" href=\"https://www.lowestwagechallenge.com/post/state-of-the-industry\"> It's estimated that only 2% of fashion’s manufacturing workers earn a living wage. That means 98% of workers don't make enough for basic needs, and 75% of them are women(!!).</a> Something needs to change. <a target=\"_blank\" href=\"https://www.fashionrevolution.org/emergency-measures-resources/\">Boycotts aren't the solution though.</a> People, like garment workers, can lose their jobs. Fashion brands will continue exploiting workers unless customers pressure them otherwise. So, we need to speak up to show these brands that we, as customers, care deeply about who makes our clothes and want their practices to reflect that.",
             :links => {
               "What's transparency in fashion? (info)" => 'https://www.fashionrevolution.org/about/transparency/',
               'The garment industry around the world (info)' => 'https://cleanclothes.org/resources/publications/factsheets',
