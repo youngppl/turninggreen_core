@@ -23,6 +23,9 @@ Rails.application.routes.draw do
   get '/privacy' => 'welcome#privacy'
   get '/admin' => 'admin#index'
   get '/team' => 'team#index'
+  # email reminders routes
+  get '/send-out-challenge-reminders' => 'challenge_mailer#send_out_challenge_reminders'
+  get '/reset-email-tracking' => 'challenge_mailer#reset_email_tracking'
   post '/challenges/unlock' => 'challenges#unlock'
   post '/challenges/add' => 'challenges#create'
   post '/challenges/update-notification' => 'challenges#update_notification_viewed'
@@ -30,9 +33,6 @@ Rails.application.routes.draw do
   post 'reflections/new' => 'reflections#new', :as => 'new_reflection'
   post 'reflections/edit' => 'reflections#edit', :as => 'edit_reflection'
   post '/feedback' => 'users#feedback'
-  # email reminders routes
-  post '/send-out-challenge-reminders' => 'challenge_mailer#send_out_challenge_reminders'
-  post '/reset-email-tracking' => 'challenge_mailer#reset_email_tracking'
   devise_scope :user do
     post '/deactivate' => 'registrations#deactivate'
   end
