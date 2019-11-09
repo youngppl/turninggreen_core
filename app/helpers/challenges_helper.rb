@@ -340,7 +340,7 @@ and values of the farms and companies whose products you buy."],
             :name => "Find alternatives",
             :type => "friends",
             :question => "What's the impact of finding alternatives?",
-            :description => "Doing a little more research about what's available in the market can help you better care for your skin. Plus, you'll likely be supporting companies that are creating products for people, not just profit. Be careful of greenwashing though. ",
+            :description => "Doing a little more research about what's available in the market can help you better care for your skin. Plus, you'll likely be supporting companies that are creating products for people, not just profit. Be careful of greenwashing though!",
             :links => {
               'What should I look for? (list)' => 'https://www.greenamerica.org/green-living/choose-green-not-body-care',
               "Don't fall for these 10 labelling traps (list)" => 'http://www.lisabronner.com/10-labeling-traps-to-recognize-in-body-care-products/',
@@ -771,8 +771,7 @@ your mindset towards investing in a quality; reduce the cost per wear.",
             },
             :background => "Select a fast fashion brand.",
             :instructions => ["Ask the brand's representative for transparency via email or social media (in person would be best, if possible): who made the brand's
-clothes? Here are example scripts to get you started.", "Teach at least 3 other people what you have learned about fast fashion and how this
-particular brand is fast fashion.", "Get at least 3 other people to reach out to the same brand to do the first task."],
+clothes? Here are example scripts to get you started.", "Teach at least 3 other people what you have learned about fast fashion.", "Get at least 3 other people to reach out to the same brand to do the first task."],
             :metric_question => "How many people (including yourself) did you get to reach out to a brand rep?",
 :metric_verb => "You got ",
 :metric_unit => " people to contact a brand rep about increasing transparency!",
