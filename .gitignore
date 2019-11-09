@@ -1,4 +1,5 @@
 app.yaml
+cron.yaml
 /config/secrets/*
 cors.json
 spec/examples.txt
