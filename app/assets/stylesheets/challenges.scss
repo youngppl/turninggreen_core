@@ -67,6 +67,10 @@
       line-height: 1.21;
     }
 
+    .description {
+      padding-right: 36px;
+    }
+
     .instructions {
       // margin-right: 42px;
       font-size: 14px;
@@ -97,7 +101,8 @@
       }
     }
 
-    .start-challenge, .challenge-in-progress {
+    .challenge-in-progress,
+    .start-challenge {
       width: 232px;
       height: 129px;
       border-radius: 6px;
@@ -126,6 +131,15 @@
           border: solid 2px #0e5b2c;
           background-color: #0e5b2c;
         }
+      }
+    }
+
+    .start-challenge {
+      text-align: center;
+
+      .heading,
+      .length-select {
+        text-align: left;
       }
     }
 
