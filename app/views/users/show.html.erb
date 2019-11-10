@@ -51,9 +51,10 @@
           <div class="tab-pane fade <%= 'active show' if index == 0 %>" id="_<%= challenge.id %>" role="tabpanel">
             <div class="row">
               <div class="col-3">
-                <div class="date">
-                  <h5 class="month"><%= month_names[Date.today.month - 1] %></h5>
-                  <h5 class="day"><%= Date.today.day %></h5>
+                <div class="theme">
+                  <%= image_tag("themes/icons/"+challenge.theme.downcase+".svg", class: "icon") %>
+                  <h5 class="name"><%= challenge.theme.downcase %></h5>
+                  <%= link_to "go to challenge", challenges_path(challenge.theme), class: "link" %>
                 </div>
                 <div class="log-question">
                   <h5 class="heading">Since your last log:</h5>
