@@ -18,7 +18,7 @@
 <div class="challenge-page" style="display:none;">
   <div class="header">
     <div class="row align-items-center">
-      <i class="back-icon fas fa-chevron-left" onclick="history.back()"></i>
+      <i class="back-icon fas fa-chevron-left" onclick="location.href='/themes'"></i>
       <h2 class="title"><%= @challenge_name %> Challenges</h2>
     </div>
     <h2 class="instructions"> <%= @challenge_data[:instruction].html_safe %></h2>

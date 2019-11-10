@@ -78,7 +78,7 @@
                 <div class="theme">
                   <%= image_tag("themes/icons/"+challenge.theme.downcase+".svg", class: "icon") %>
                   <h5 class="name"><%= challenge.theme.downcase %></h5>
-                  <%= link_to "go to challenge", challenges_path(challenge.theme), class: "link" %>
+                  <%= link_to "go to challenge", challenges_path(challenge.theme), class: "link", target: "_blank" %>
                 </div>
                 <div class="log-question">
                   <h5 class="heading">Since your last log:</h5>
