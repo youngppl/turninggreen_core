@@ -11,6 +11,16 @@ class User < ApplicationRecord
   has_one_attached :profile_pic
   has_many :challenges
 
+  # challenges
+
+  def all_pre_challenges_completed
+    count = 0
+    challenges.where(completed: true).each do |challenge|
+      count += 1 if challenge.type == 'pre'
+    end
+    count
+  end
+
   # points
 
   def add_points(pts)

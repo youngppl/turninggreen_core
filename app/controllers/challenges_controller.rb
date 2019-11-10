@@ -46,7 +46,12 @@ class ChallengesController < ApplicationController
   helper_method :endDate
 
   def update_notification_viewed
-    Challenge.where(id:params[:id]).update(notification_viewed:true)
+    Challenge.where(id:params[:id]).update(notification_viewed: true)
+  end
+
+  def complete_challenge
+    Challenge.where(id:params[:id]).update(completed: true, date_complete: Time.now.getutc)
+    redirect_to challenges_reflections_path
   end
 
   def completed
@@ -82,7 +87,7 @@ class ChallengesController < ApplicationController
   end
 
   def reflections
-  
+
   end
 
   private

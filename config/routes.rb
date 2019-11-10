@@ -29,6 +29,7 @@ Rails.application.routes.draw do
   post '/challenges/unlock' => 'challenges#unlock'
   post '/challenges/add' => 'challenges#create'
   post '/challenges/update-notification' => 'challenges#update_notification_viewed'
+  post '/challenges/complete-challenge' => 'challenges#complete_challenge'
   post '/logs/new' => 'logs#new'
   post 'reflections/new' => 'reflections#new', :as => 'new_reflection'
   post 'reflections/edit' => 'reflections#edit', :as => 'edit_reflection'

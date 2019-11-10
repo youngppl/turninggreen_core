@@ -8,9 +8,16 @@ class Challenge < ApplicationRecord
   has_many :progress_logs
   has_one :reflection
 
+  def content_data
+    challenges[theme.to_sym][:challenges].find{|chall| chall[:name] == challenge_name}
+  end
+
+  def type
+    content_data[:type]
+  end
+
   def point_worth
-    challenge_type = challenges[theme.to_sym][:challenges].find{|chall| chall[:name] == challenge_name}[:type]
-    challenge_points[challenge_type.to_sym]
+    challenge_points[type.to_sym]
   end
 
   def get_time_left
