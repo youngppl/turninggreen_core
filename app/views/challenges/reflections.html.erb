@@ -2,11 +2,11 @@
   <%= render 'layouts/dashboard_navbar' %>
 <% end %>
 
-<div class="reflections">
+<div class="reflections container">
   <h2 class="heading">Reflections
   </h2>
   <h2 class="info">Share and document your challenge experience! Click on your completed challenge(s) below to get started.</h2>
-  <div class="reflection-cards">
+  <div class="reflection-cards container">
     <% current_user.challenges.where(reflection_completed:false, completed: true).each do |challenge| %>
       <% challenge_data = challenges[challenge.theme.to_sym][:challenges].find {|x| x[:name] == challenge.challenge_name} %>
       <div class="panel panel-default">
