@@ -14,7 +14,7 @@ module ChallengesHelper
             :name => "Audit your waste",
             :type => "pre",
             :question => "Why does waste matter?",
-            :description => "Our planet has a finite amount of resources. Instead of throwing things away, we should pass it onto someone else to use, OR repurpose it mechanically (recycle) or biologoically (compost) into a useful product. Follow the 5R's in this order, and you'll <a target=\"_blank\" href=\"https://www.plasticpollutioncoalition.org/take-action-1\">minimize your waste</a> real fast: refuse, reduce, reuse, rot, recycle.",
+            :description => "The chemicals used in the production of goods impact workers' health. The materials and energy required to make and transport goods contribute to climate change. The generation and accumulation of waste disproportionately affects the world's poorest communities. Waste matters. And it comes from <a target=\"_blank\" href=\"https://www.breakfreefromplastic.org/globalbrandauditreport2019/?mc_cid=8671ee16ab&mc_eid=f265c1970f\">every part of the production, usage, and disposal of goods.</a> <a target=\"_blank\" href=\"https://www.plasticpollutioncoalition.org/take-action-1\">Minimize your waste</a> (in this order): refuse, reduce, reuse, rot, recycle.",
             :links => {
               'How to conduct a waste audit (guide)' => 'https://www.goingzerowaste.com/31-day-challenge/how-to-conduct-a-waste-audit-day-31-of-the-zero-waste-challenge',
               'What you can do (guide)' => 'https://www.plasticfreejuly.org/get-involved/what-you-can-do/category/getting-started/',
@@ -48,12 +48,13 @@ module ChallengesHelper
             :name => "Shop with reusables",
             :type => "friends",
             :question => "What's the deal with food packaging?",
-            :description => "Packaging, even if it's recyclable or compostable, still end up in landfills. To best combat this, refuse waste at the root source so you don't have to figure out proper disposal later. For example, food packaging extends shelf life + makes shopping convenient, but ask yourself: Is it necessary? Think about farmers' markets + grocery stores; it's possible to buy loose produce.",
+            :description => "Packaging, even if it's <a target=\"_blank\" href=\"https://www.youtube.com/watch?v=urFZ5o0az_4\">recyclable</a> or compostable, still end up in landfills. To best combat this, refuse waste at the root source so you don't have to figure out proper disposal later. For example, food packaging extends shelf life + makes shopping convenient, but ask yourself: Is it necessary? Think about farmers' markets + grocery stores; it's possible to buy loose produce.",
             :links => {
               "Shopping with your own bags + jars (guide)" => "https://www.goingzerowaste.com/blog/2016/3/14/ultimate-guide-to-zero-waste-grocery-shopping",
               "Zero waste shopping at the farmers' market (video)" => "https://trashisfortossers.com/how-to-shop-at-farmers-market-withou/",
               "Where can I find bulk? (finder)" => "https://app.zerowastehome.com/",
-              "Is bulk not available? (blog)" => "https://www.goingzerowaste.com/blog/2015/12/31/life-without-bulk"
+              "Is bulk not available? (blog)" => "https://www.goingzerowaste.com/blog/2015/12/31/life-without-bulk",
+	      "The Indonesian Plastic Bag Diet (video)" => "https://www.youtube.com/watch?v=PBhakv9DQFQ"
             },
             :instructions => ["Bring your own reusable bags and jars", "Opt for loose goods (e.g. fruits, veggies, meat, cheese, bread) instead of packaged ones. Try to avoid any packaging that will be disposed of.", "Shop at bulk bins.", "Get 3 friends and family to join you!"],
 	          :extra => "*If goods are charged by weight (e.g. pounds or kilos), don't forget to tare your reusables before filling them up!",
@@ -74,16 +75,16 @@ module ChallengesHelper
               'Global fast food plastic survey (list)' => 'https://www.plasticpollutioncoalition.org/global-fast-food-plastic-survey'
             },
             :instructions => ["Refuse any single-use disposables (e.g. food containers, utensils, straws, napkins, bags).", "Bring your own reusable alternatives to events (serving food).", "People will notice. Some will say something, and some won't. Simply explain to them: \"I bring my own reusable ___ to avoid the unnecessary waste.\" Feel free to engage in conversation or elaborate more."],
-            :metric_question => "How many times did you bring your own (e.g. cup, bottle, plate, utensil, bowl, straw, napkin, bag) instead of using single-use disposable? ",
-:metric_verb => "You brought your own reusable items ",
-:metric_unit => " times, instead of using single-use disposables!",
+            :metric_question => "How many times did you opt for a reusable cup, bottle, plate, utensil, bowl, straw, napkin, bag, etc. over single-use outside of your home?",
+:metric_verb => "You opted for reusable items ",
+:metric_unit => " times over single-use!",
             :reflection_question => "How has your perspective about single-use disposables changed?",
             :photo_prompt => "Share a photo of bringing your own reusables. Tell us something you learned from this experience."
           },
           {
             :name => "Compost & recycle",
             :type => "self",
-            :question => "Why is prioritize composting over recycling? ",
+            :question => "Why prioritize composting over recycling? ",
             :description => "When we <a target=\"_blank\" href=\"https://www.goingzerowaste.com/blog/composting-for-apartments\">compost</a>, the remaining nutrients in food scraps + plant-based goods are reused in our environment. Recycling is also good (way better than sending goods to the landfill). However, <a target=\"_blank\" href=\"https://www.goingzerowaste.com/blog/how-to-recycle-paper-the-right-way?rq=RECYCLE\">recyclables</a> like plastic and paper can't be recycled infinitely. Furthermore, recycling goods requires more resources (e.g. fuel costs, labor, energy, water) than composting.",
             :links => {
               "How to compost at home (video)" => "https://kisstheground.com/how-to-compost-at-home-simple/",
@@ -92,9 +93,9 @@ module ChallengesHelper
             },
             :background => "Composting can take on any form like starting your own compost pile, putting it in your green bin (if you have municipal composting), giving your compost to local farms, or tossing it into a compost bin in your community.",
             :instructions => ["Compost any waste that is compostable and biodegradable. If it's not compostable, then recycle it.", "As a last resort, send your trash into the landfill if it isn't reusable, compostable, or recyclable."],
-            :metric_question => "Estimate how many times you composted or recycled instead of trashing something.",
+            :metric_question => "Estimate how much (in kilos) waste you composted and/or recycled. Note: 1 lb = 0.45 kg",
 :metric_verb => "You composted or recycled ",
-:metric_unit => " about times!",
+:metric_unit => " about kg! (Note: 1lb = 0.45kg)",
             :reflection_question => "How challenging was it to avoid sending waste to the landfill?",
             :photo_prompt => "Take a photo of your compost. Tell us something you learned from this experience."
           },
@@ -110,21 +111,22 @@ module ChallengesHelper
               "Hosting a zero waste bachelorette party (blog)" => "http://trashisfortossers.com/zero-waste-bachelorette-party/"
             },
             :instructions => ["Curate a waste-free menu. That is, purchase ingredients with little to no packaging waste, and serve on reusable dishware.", "Provide reusable dishware, utensils, and napkins.", "Decorate as you wish with nature and non-single-use disposable items.", "Make a compost bin accessible.", "Invite at least 3 people and tell them it's a zero waste party!", "If you'd like, invite your guests to help clean up after the party: put things in the dishwasher or handwash; toss dirtied cloths into the laundry; and empty the compost bin. Don't worry, this is bonding time and not as bad as it sounds.", "Have fun!"],
-            :metric_question => "How many people did you invite to your party?",
-:metric_verb => "You invited ",
-:metric_unit => " people to your party!",
+            :metric_question => "How many people came to your party?",
+:metric_verb => "",
+:metric_unit => " people came to your zero waste party!",
             :reflection_question => "What did you like about this challenge?",
             :photo_prompt => "Take a photo of your party setup. Tell us how you made your party zero waste."
           },
           {
-            :name => "Collaborate locally",
+            :name => "Reduce community waste",
             :type => "community",
             :question => "Why should I even try to be zero waste?",
             :description => "Anne-Marie says it well: <a target=\"_blank\" href=\"https://zerowastechef.com/2019/02/14/how-to-cope-with-environmental-guilt-syndrome-egs/\">\"We don’t need a handful of people doing zero waste perfectly. We need millions of people doing it imperfectly.\"</a> The few individuals who commit to zero waste won't reverse the environmental damage already done; we need a whole lot more people involved. So what you do counts(! -- no matter how seemingly insignificant), because your actions show people around you an alternative way to live. This is how we slowly inspire change together. :)",
             :links => {
               "Guide to banning polystyrene (guide)" => "https://www.5gyres.org/polystyrene",
               'Changing purchasing practices (guide)' => "https://www.plasticfreejuly.org/get-involved/what-you-can-do/workplace-procurement/",
-              'How governments go zero waste (info)' => 'https://www.greenamerica.org/blog/plastic-out-sustainability-in'
+              'How governments go zero waste (info)' => 'https://www.greenamerica.org/blog/plastic-out-sustainability-in',
+	      'How Plastic Production Pollutes Small Towns (video)' => 'https://www.youtube.com/watch?v=OFMau-t3QaI'
             },
             :instructions => ["Choose your target audience. (e.g. local business, local government)", "Draft up a proposal of what you want them to change and why it matters to them. Be specific. (e.g. Ask a local restaurant to provide plastic straw only upon request.)", "Reach out and give them your pitch.", "Offer to work with them to create this change for the community."],
             :metric_question => "How many businesses and government officials did you speak to about waste?",
@@ -231,7 +233,7 @@ and values of the farms and companies whose products you buy."],
             :metric_question => "How many times did you take action to reduce food waste?",
 :metric_verb => "You took action to reduce food waste ",
 :metric_unit => " times!",
-            :reflection_question => "What surprised you from this challenge?",
+            :reflection_question => "What steps did you take to reduce your food waste? Anything surprise you from this challenge?",
             :photo_prompt => "Share a photo that captures this experience. Tell us how you reduced your food waste."
           },
           {
@@ -319,7 +321,7 @@ and values of the farms and companies whose products you buy."],
             :photo_prompt => ""
           },
           {
-            :name => "Make your own",
+            :name => "DIY body products",
             :type => "friends",
             :question => "Why should I make my own?",
             :description => "Making your own means you know exactly what's in it.  You control the ingredients used and can ensure its safety to your body. The excessively long list of ingredients on the back of products often include unnecessary additives that make the product thicker, smell better, or last longer. In many cases, these ingredients aren't safe for your health.",
@@ -335,10 +337,10 @@ and values of the farms and companies whose products you buy."],
             :photo_prompt => "Share a photo of your homemade product. Tell us what you learned."
           },
           {
-            :name => "Find alternatives",
+            :name => "Choose safer bodycare",
             :type => "friends",
             :question => "What's the impact of finding alternatives?",
-            :description => "Doing a little more research about what's available in the market can help you better care for your skin. Plus, you'll likely be supporting companies that are creating products for people, not just profit. Be careful of greenwashing though. ",
+            :description => "Doing a little more research about what's available in the market can help you better care for your skin. Plus, you'll likely be supporting companies that are creating products for people, not just profit. Be careful of greenwashing though!",
             :links => {
               'What should I look for? (list)' => 'https://www.greenamerica.org/green-living/choose-green-not-body-care',
               "Don't fall for these 10 labelling traps (list)" => 'http://www.lisabronner.com/10-labeling-traps-to-recognize-in-body-care-products/',
@@ -354,7 +356,7 @@ and values of the farms and companies whose products you buy."],
             :photo_prompt => "Share a photo capturing this experience. Tell us something you learned."
           },
           {
-            :name => "Inform companies",
+            :name => "Contact bodycare companies",
             :type => "community",
             :question => "Why does reaching out to companies matter?",
             :description => "Companies need to know what they’re doing well and not, and that knowledge only comes from potential and existing customers (aka you). Providing feedback is opening dialogue about how they can better their practices for people's health and the environment. Whether they act on your feedback is another story, but you will have done your job in making them aware.",
@@ -369,7 +371,7 @@ and values of the farms and companies whose products you buy."],
             :photo_prompt => "Share a photo of the message you sent to brands. Please remove any personal information from the photo. Tell us how you felt as you sent off your message."
           },
           {
-            :name => "Care for your body",
+            :name => "Care for periods",
             :type => "friends",
             :question => "What's the deal with menstruation products?",
             :description => "Conventional menstrual products contain up to 90% petroleum-based plastics. They're also made of pesticide-laden cotton and <a target=\"_blank\" href=\"https://www.natracare.com/why-natracare/chlorine-free/\">bleached with chlorine</a>, both of which involve carcinogens that harm people's health. Women use more than <a target=\"_blank\" href=\"https://www.wen.org.uk/environmenstrual-in-numbers\">11,000</a> disposable menstrual products in their lifetime. That's a lot of exposure to harmful chemicals & a lot of <a target=\"_blank\" href=\"https://divacup.com/eco-divas/\">waste</a> ending up in landfills + oceans.",
@@ -417,9 +419,9 @@ and values of the farms and companies whose products you buy."],
               'Brands with sustainable/no packaging (list)' => 'https://organicallybecca.com/zero-waste-sustainable-packaging/'
             },
             :instructions => ["Teach at least 3 different people about what you've learned about bodycare products in this theme.", "Help them make at least 1 switch to a better alternative bodycare product."],
-            :metric_question => "How many people did you teach?",
-:metric_verb => "You taught ",
-:metric_unit => " people what you learned about bodycare products!",
+            :metric_question => "How many people did you help make a switch to a safer bodycare product?",
+:metric_verb => "You helped ",
+:metric_unit => " people switch to safer bodycare products!",
             :reflection_question => "How challenging was teaching others and helping them make a swap?",
             :photo_prompt => "Share a photo of your buddy's swap to a better bodycare product. Tell us how this experience was for you."
           }
@@ -482,9 +484,9 @@ and values of the farms and companies whose products you buy."],
             :background => "We're not trying to get you to shower with a bucket everyday of your life; we know it's inconvenient. We simply want you to be more mindful about your water usage.",
             :instructions => ["Place a bucket/large cup/bowl next tp you in your shower to collect excess water.", "Take your shower normally.", "Water any plants around the home with your bucket-ful of water."],
             :extra => "*Avoid getting any non-biodegradable body care products (e.g. soap, shampoo, conditioner) into your bucket, especially if you're going to water edible plants with your collection.",
-            :metric_question => "How many times did you fill your bucket?",
-:metric_verb => "You saved ",
-:metric_unit => " buckets of water!",
+            :metric_question => "Estimate how much (in kilos) of water you collected. Note: 1 gal = appx 4 kg",
+:metric_verb => "You collected ",
+:metric_unit => " kg of water while showering! (Note: 1 gal = appx 4 kg)",
             :reflection_question => "How has this challenge influenced your perspective on water usage?",
             :photo_prompt => "Share a photo of your bucket in your shower. Tell us how the experience was."
           },
@@ -532,7 +534,7 @@ and values of the farms and companies whose products you buy."],
               'How can I change the impact of transportation? (guide)' => 'https://drawdown.ecochallenge.org/challenges/transport'
             },
             :instructions => ["<a target=\"_blank\" href=\"https://www.drawdown.org/solutions/transport/ridesharing\">Carpool</a>; take <a target=\"_blank\" href=\"https://www.drawdown.org/solutions/transport/mass-transit\">mass transit</a>; bike/skateboard/scooter; or walk to your destination. Just don't ride in a car alone."],
-            :metric_question => "How many times did you choose alternative transportation to riding alone in a car?",
+            :metric_question => "How many times did you choose alternative transportation over riding alone in a car?",
 :metric_verb => "You reduced your water footprint by choosing not to ride alone in a car ",
 :metric_unit => " times!",
             :reflection_question => "How challenging was it for you to not ride alone to get somewhere?",
@@ -542,7 +544,7 @@ and values of the farms and companies whose products you buy."],
             :name => "Raise awareness",
             :type => "community",
             :question => "What's the impact of making new clothes?",
-            :description => "About 8,000 synthetic chemicals are used to transform materials into textiles, which contributes to 20% of industrial water pollution. Shopping secondhand reduces this pollution by extending the life of already existing clothes. Simply wearing a piece of clothing 9 months longer reduces its water footprint by 5-10%.",
+            :description => "About 8,000 synthetic chemicals are used to transform materials into textiles, contributing to 20% of industrial water pollution. <a target=\"_blank\" href=\"https://www.soilassociation.org/thirsty-for-fashion/\">Growing cotton accounts for 16% of global insecticide usage, many of which gets washed into water supplies and soil.</a> So, making new clothes is resource intensive and polluting. Shopping secondhand avoids these issues by extending the life of already existing clothes. Simply wearing a piece of clothing 9 months longer reduces its water footprint by 5-10%.",
             :links => {
               'How do I make clothes last? (info + guide)' => 'https://goodonyou.eco/fashion-and-water-the-thirsty-industry/',
               'How do I support sustainable fashion? (info + guide)' => 'https://articles.mercola.com/sites/articles/archive/2019/01/12/fashion-industry-pollution.aspx '
@@ -669,7 +671,7 @@ and values of the farms and companies whose products you buy."],
             :photo_prompt => "Share a photo of your purchase(s). Tell us where you purchased them."
           },
           {
-            :name => "Know your community",
+            :name => "Ensure public space safety",
             :type => "community",
             :question => "Do you spend time outdoors?",
             :description => "If your community regularly sprays toxic chemicals to manage pests in the area, this is a <a target=\"_blank\" href=\"https://rodaleinstitute.org/blog/toxic-playground-are-your-kids-safe/\">problem</a>. Pesticides, herbicides, and insecticides <a target=\"_blank\" href=\"https://www.slu.se/en/Collaborative-Centres-and-Projects/centre-for-chemical-pesticides-ckb1/information-about-pesticides-in-the-environment-/pesticide-spread-in-the-environment/\">spread</a> through air and touch, making their way into our bodies, marine ecosystems, and wildlife. This puts people's health at risk.",
@@ -718,7 +720,7 @@ disapproval; explain to them why; and propose alternatives."],
             :photo_prompt => ""
           },
           {
-            :name => "Keep them useful",
+            :name => "Keep clothes useful",
             :type => "self",
             :question => "Why is donating not necessarily \"good\"?",
             :description => "In the US, less than 10% of donations is resold or reused. The rest is often shipped to another country, which <a target=\"_blank\" href=\"https://borgenproject.org/the-international-impact-of-donated-clothing/\">undercuts the country's local textile industry</a>. People think they're doing good because they're ""donating"", but they may actually be contributing to putting people in other countries out of work.",
@@ -751,17 +753,17 @@ fabrics (e.g. hemp, linen, recycled organic cotton), not synthetic
 material (e.g. polyester, rayon, acrylics, blend of these).", "Shift
 your mindset towards investing in a quality; reduce the cost per wear.",
 "Bring friends along and share what you learned."],
-            :metric_question => "How many people did you share what you learned?",
+            :metric_question => "How many people did you share what you learned with?",
 :metric_verb => "You shared with ",
 :metric_unit => " people what you learned about buying less.",
             :reflection_question => "With what you know now, what do you look for in companies and clothing when shopping?",
             :photo_prompt => "Share a photo of your shopping spree. Tell us what brands you purchased from and what your clothes are made of."
           },
           {
-            :name => "Challenge brands",
+            :name => "Contact fashion brands",
             :type => "community",
-            :question => "How can we engage brands to treat their workers respectfully?",
-            :description => "<a target=\"_blank\" href=\"https://www.fashionrevolution.org/emergency-measures-resources/\">Boycotts aren't solutions</a> to human rights violations in the fashion industry. People, like garment workers, can lose their jobs. Fast fashion brands will continue exploiting workers unless customers pressure them otherwise. So, we need to speak up to show these brands that we, as customers, care deeply about who makes our clothes and want their practices to reflect that.",
+            :question => "Why should we bother reaching out to brands?",
+            :description => "<a target=\"_blank\" href=\"https://www.lowestwagechallenge.com/post/state-of-the-industry\"> It's estimated that only 2% of fashion’s manufacturing workers earn a living wage. That means 98% of workers don't make enough for basic needs, and 75% of them are women(!!).</a> Something needs to change. <a target=\"_blank\" href=\"https://www.fashionrevolution.org/emergency-measures-resources/\">Boycotts aren't the solution though.</a> People, like garment workers, can lose their jobs. Fashion brands will continue exploiting workers unless customers pressure them otherwise.",
             :links => {
               "What's transparency in fashion? (info)" => 'https://www.fashionrevolution.org/about/transparency/',
               'The garment industry around the world (info)' => 'https://cleanclothes.org/resources/publications/factsheets',
@@ -769,8 +771,7 @@ your mindset towards investing in a quality; reduce the cost per wear.",
             },
             :background => "Select a fast fashion brand.",
             :instructions => ["Ask the brand's representative for transparency via email or social media (in person would be best, if possible): who made the brand's
-clothes? Here are example scripts to get you started.", "Teach at least 3 other people what you have learned about fast fashion and how this
-particular brand is fast fashion.", "Get at least 3 other people to reach out to the same brand to do the first task."],
+clothes? Here are example scripts to get you started.", "Teach at least 3 other people what you have learned about fast fashion.", "Get at least 3 other people to reach out to the same brand to do the first task."],
             :metric_question => "How many people (including yourself) did you get to reach out to a brand rep?",
 :metric_verb => "You got ",
 :metric_unit => " people to contact a brand rep about increasing transparency!",
@@ -854,9 +855,9 @@ particular brand is fast fashion.", "Get at least 3 other people to reach out to
             :photo_prompt => ""
           },
           {
-            :name => "Make your own",
+            :name => "DIY cleaning products",
             :type => "self",
-            :question => "Why should I try to make my own?",
+            :question => "Why should I make my own?",
             :description => "Many conventional cleaning brands use toxic ingredients. \"Natural\" store-bought cleaners aren't necessarily safer though (check <a target=\"_blank\" href=\"https://www.ewg.org/guides/cleaners\">here</a>). Sometimes, safer products cost 2x conventional ones, making them inaccessible. By making your own, you choose the ingredients and know exactly what you're introducing to your home.",
             :links => {
               'How to clean green? (list)' => 'https://www.greenamerica.org/waystocleangreen',
@@ -871,7 +872,7 @@ particular brand is fast fashion.", "Get at least 3 other people to reach out to
             :photo_prompt => "Share a photo of your homemade cleaning solution. Tell us what you made and the recipe!"
           },
           {
-            :name => "Find alternatives",
+            :name => "Opt for safe cleaning",
             :type => "self",
             :question => "Why does shopping for alternatives matter?",
             :description => "There are many cleaning products that don't prioritize people's health. By shopping intentionally, you will help shift the demand for safer cleaning products and send the signal to the cleaning product industry that we want safe, non-toxic products on the market. ",
@@ -940,7 +941,7 @@ reusable non-plastic tools made of plant-based materials (e.g. bamboo, wood, nat
             :photo_prompt => "Share a photo of your cleaning party. Tell us what ya'll used to clean and how fun it was."
           },
           {
-            :name => "Push for change",
+            :name => "Push for safer cleaning",
             :type => "community",
             :question => "How can I change my community's cleaning practices? ",
             :description => "The safety of cleaning products isn't something people talk about. But you know more now, so share that knowledge, especially with people who have decision-making power. They impact larger groups of people, so let's work with them to create safer home and workplace environments.",
@@ -1063,9 +1064,9 @@ reusable non-plastic tools made of plant-based materials (e.g. bamboo, wood, nat
             :instructions => ["Host a house party at whatever scale you are comfortable with. Invite at least 3 people (who don't already live with you).", "Show them the
 changes you've made in your home and teach them the things you have learned.", "It wouldn't be as fun a party without food. Prep some FLOSN foods and enjoy your time together!"],
             :extra => "*FLOSN = fresh, local, organic, seasonal, non-GMO",
-            :metric_question => "How many people did you invite to your house party?",
-:metric_verb => "You invited ",
-:metric_unit => " to your house party!",
+            :metric_question => "How many people came to your house party?",
+:metric_verb => "",
+:metric_unit => " came to your house party!",
             :reflection_question => "How did your guests react to the changes in your home?",
             :photo_prompt => "Share a photo of your house party. Tell us what you talked about with your guests."
           },
@@ -1097,7 +1098,7 @@ changes you've made in your home and teach them the things you have learned.", "
         :instruction => "Click on a challenge (listed in recommended order) below to get started and learn more!",
 	:challenges => [
           {
-            :name => "You're #1",
+            :name => "Evaluate your health",
             :type => "pre",
             :question => "Why does self-care matter?",
             :description => "You're the best you in the entire universe. However, you can only <a target=\"_blank\" href=\"https://80000hours.org/career-guide/how-to-be-successful/\">be your best</a> if you're mentally, physically, and spiritually healthy. What good can you do or fun can you have if you're not feeling your tip top?",
@@ -1140,10 +1141,10 @@ changes you've made in your home and teach them the things you have learned.", "
               "Being too busy for friends won't help you (blog)" => 'https://hbr.org/2017/07/being-too-busy-for-friends-wont-help-your-career'
             },
             :instructions => ["Reach out to your friends, family, and people you're interested in getting to know.", "Do something together at least 1.5 hours. (e.g. cook a meal + eat it! walk around the neighborhood or hike. play a game or sport.)", "Ask buddy at least 3 questions about themselves; get to genuinely know them!"],
-            :metric_question => "On a scale from 1-10 (LOTS of enjoyment), how much did you enjoy spending time with someone(s)?",
-:metric_verb => "You rated the time spent with someone a ",
-:metric_unit => " . (10 = really enjoyed time spent)",
-            :reflection_question => "What do you want from your relationships?",
+            :metric_question => "How many people did you spend time with for this challenge?",
+:metric_verb => "You spent time with ",
+:metric_unit => " people for this challenge!",
+            :reflection_question => "What can you do regularly to further build your relationships?",
             :photo_prompt => "Share a photo of you and your buddie(s). Tell us how you spent time with them."
           },
           {
