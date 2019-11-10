@@ -20,6 +20,11 @@ $(window).on('turbolinks:load', function() {
     $('.feedback-dropdown .confirmation').hide();
   });
 });
+
+function complete_challenge(id) {
+  $.post('/challenges/complete-challenge', {id:id})
+}
+
 $(document).on("click", ".popover .close", function() {
   $(this).parents(".popover").popover('hide');
 });

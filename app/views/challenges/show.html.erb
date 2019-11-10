@@ -81,8 +81,6 @@
           <% else %>
           <div class="start-challenge">
             <h6 class="heading">🏁Start this challenge…</h6>
-            <%= select_tag "weeks", options_for_select((1..8).to_a)%>
-            <span class="label">week starting today</span><br>
             <button type="button" class="btn add-challenge-button" name="button" onclick="$('#points-earned').modal()">start challenge</button>
           </div>
           <% end %>

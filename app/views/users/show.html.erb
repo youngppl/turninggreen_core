@@ -32,7 +32,7 @@
     <div class="challenges row">
       <% current_user.challenges.where(completed: false).each do |challenge| %>
         <% if challenge.type == 'pre' %>
-          <div class="pre-challenge-box" onclick="location.href='<%= challenges_reflections_path %>'">
+          <div class="pre-challenge-box" onclick="complete_challenge(<%= challenge.id %>);">
             <%= image_tag("themes/icons/"+challenge.theme.downcase+".svg", size: '30', class: "icon") %>
             <div class="challenge">
               <h2 class="name"> <%= challenge.challenge_name %> </h2>
@@ -41,7 +41,7 @@
           </div>
         <% end %>
       <% end %>
-      <% if current_user.all_pre_challenges_completed == 0 %>
+      <% if current_user.all_pre_challenges_completed < 4 %>
       <div class="add-pre-challenge" onclick="location.href='<%= themes_path %>'">
         <span class="plus">+</span>
         <h5 class="text" style="display:none;">take on a pre-challenge!</h5>
