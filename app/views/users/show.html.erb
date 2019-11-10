@@ -26,12 +26,36 @@
       <div class="end box"> <%= level_ranges[@level + 1] %></div>
     </div>
   </div>
+  <% unless current_user.all_pre_challenges_completed == 10 %>
+  <div class="pre-challenges container">
+    <h2 class="heading">My Pre-Challenges</h2>
+    <div class="challenges row">
+      <% current_user.challenges.where(completed: false).or(current_user.challenges.where(reflection_completed: false)).each do |challenge| %>
+        <% if challenge.type == 'pre' %>
+          <div class="pre-challenge-box" onclick="complete_challenge(<%= challenge.id %>);">
+            <%= image_tag("themes/icons/"+challenge.theme.downcase+".svg", size: '30', class: "icon") %>
+            <div class="challenge">
+              <h2 class="name"> <%= challenge.challenge_name %> </h2>
+              <h5 class="info">Done? Click to complete your reflections!</h5>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+      <% if current_user.all_pre_challenges_completed < 10 %>
+      <div class="add-pre-challenge" onclick="location.href='<%= themes_path %>'">
+        <span class="plus">+</span>
+        <h5 class="text" style="display:none;">take on a pre-challenge!</h5>
+      </div>
+      <% end %>
+    </div>
+  </div>
+  <% end %>
   <div class="current-challenges container">
     <h2 class="heading">My Current Challenges</h2>
     <div class="content">
       <div class="tabs nav flex-column" role="tablist" aria-orientation="vertical">
         <% @current_challenges.each_with_index do |challenge, index| %>
-          <% if challenges[challenge.theme.to_sym][:challenges][0][:name] != challenge.challenge_name %>
+          <% if challenge.type != 'pre' %>
             <a class="nav-link <%= 'active' if index == 0 %>" id="v-pills-home-tab" data-toggle="pill" href="#_<%= challenge.id %>" role="tab">
               <span><%= challenge.challenge_name%></span>
             </a>
@@ -40,7 +64,7 @@
         <% empty_tabs = @current_challenges.length %>
         <% if @current_challenges.length < 6 %>
           <a class="nav-link add-challenge" href="<%= themes_path %>">&#43;</a>
-          <% empty_tabs += 1%>
+          <% empty_tabs += 1 %>
         <% end %>
         <% (1..6-empty_tabs).each do %>
           <a class="nav-link" ></a>
@@ -48,12 +72,13 @@
       </div>
       <div class="challenge-content tab-content">
         <% @current_challenges.each_with_index do |challenge, index| %>
-          <div class="tab-pane fade <%= 'active show' if index == 0 %>" id="_<%= challenge.id %>" role="tabpanel">
+          <div class="tab-pane fade <%= 'active show' if index == 0 && challenge.type != 'pre' %>" id="_<%= challenge.id %>" role="tabpanel">
             <div class="row">
               <div class="col-3">
-                <div class="date">
-                  <h5 class="month"><%= month_names[Date.today.month - 1] %></h5>
-                  <h5 class="day"><%= Date.today.day %></h5>
+                <div class="theme">
+                  <%= image_tag("themes/icons/"+challenge.theme.downcase+".svg", class: "icon") %>
+                  <h5 class="name"><%= challenge.theme.downcase %></h5>
+                  <%= link_to "go to challenge", challenges_path(challenge.theme), class: "link", target: "_blank" %>
                 </div>
                 <div class="log-question">
                   <h5 class="heading">Since your last log:</h5>
