@@ -101,13 +101,13 @@ $(document).on("click", ".dropdown-click ", function() {
   $(this).find('.down').toggle();
   $(this).find('.fa-chevron-down').toggle();
   $(this).find('.fa-chevron-up').toggle();
-  $(this).parent().children('.hidden').toggle()
+  $(this).siblings('.row').find('.hidden').toggle()
 });
 
 $(document).on('click', '.add-challenge-button', function(event) {
   var d = new Date();
-  length = $(this).parent().children('select').val()
-  end_date = new Date(Date.now() + (6.04e+8 * length))
+  length = ($(this).parent().children('select').length)? $(this).parent().children('select').val() : 0
+  end_date = (length == 0)? new Date(Date.now() + (6.04e+8 * 8)) : new Date(Date.now() + (6.04e+8 * length))
   challenge_name = $(this).parentsUntil('.challenge-box').find('.name').text()
   $.post('/challenges/add', {
       challenge_name: challenge_name,
