@@ -17,7 +17,10 @@
 
 <div class="challenge-page container" style="display:none;">
   <div class="header">
-    <h2 class="title"><%= @challenge_name %> Challenges</h2>
+    <div class="row align-items-center">
+      <i class="back-icon fas fa-chevron-left" onclick="location.href='/themes'"></i>
+      <h2 class="title"><%= @challenge_name %> Challenges</h2>
+    </div>
     <h2 class="instructions"> <%= @challenge_data[:instruction].html_safe %></h2>
   </div>
 
@@ -78,10 +81,6 @@
             <% else %>
             <div class="start-challenge">
               <h6 class="heading">🏁Start this challenge…</h6>
-              <div class="length-select">
-                <%= select_tag "weeks", options_for_select((1..8).to_a)%>
-                <span class="label">week starting today</span><br>
-              </div>
               <button type="button" class="btn add-challenge-button" name="button" onclick="$('#points-earned').modal()">start challenge</button>
             </div>
             <% end %>
@@ -169,10 +168,8 @@
                   <% else %>
                   <div class="start-challenge">
                     <h6 class="heading">🏁Start this challenge…</h6>
-                    <div class="length-select">
-                      <%= select_tag "weeks", options_for_select((1..8).to_a)%>
-                      <span class="label">week starting today</span><br>
-                    </div>
+                    <%= select_tag "weeks", options_for_select((1..8).to_a)%>
+                    <span class="label">week starting today</span><br>
                     <button type="button" class="btn add-challenge-button" name="button" onclick="$('#points-earned').modal()">start challenge</button>
                   </div>
                   <% end %>
