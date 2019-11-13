@@ -7,15 +7,16 @@ class ChallengeMailerController < ApplicationController
     facts = fun_facts
     updates = site_updates
     User.all.each do |user|
-      if user.emails_sent.include?('updates')
-        updates = false
-      else
-        user.emails_sent << 'updates'
-        user.save!
-      end
-      if user.notifications == "Daily" ||
+      if (user.notifications == "Daily" ||
         (user.notifications == "Weekly" && Date.today.sunday?) ||
-        (user.notifications == "Every other day" && Date.today.day % 2 == 0)
+        (user.notifications == "Every other day" && Date.today.day % 2 == 0)) &&
+        user.challenges.length > 0
+          if user.emails_sent.count('updates') >= 2
+            updates = false
+          else
+            user.emails_sent << 'updates'
+            user.save!
+          end
           ChallengeMailer.challenge_reminder_email(user, updates, facts.sample).deliver_later
       end
     end
