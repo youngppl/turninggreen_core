@@ -16,3 +16,8 @@ function sendFeedback(){
   $.post('/feedback', {feedback: $(".feedback-input").val()});
   $(".confirmation").show();
 }
+
+function toggleDashNav() {
+  $('.dash-nav').toggleClass('nav-toggled');
+  $('.content-col').toggleClass('nav-toggled')
+}

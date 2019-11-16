@@ -58,6 +58,13 @@ img {
   display: none;
 }
 
+.content-col {
+  &.nav-toggled {
+    margin-left: 270px;
+    transition: margin-left 0.5s;
+  }
+}
+
 .main-content {
   padding-bottom: 3.125em;
   padding-top: 1.25em;
