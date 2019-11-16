@@ -46,6 +46,11 @@ input {
   outline: none;
 }
 
+img {
+    height: auto;
+    max-width: 100%;
+}
+
 [type="date"]::-webkit-inner-spin-button {
   display: none;
 }
