@@ -2,7 +2,7 @@
   <%= render 'layouts/dashboard_navbar' %>
 <% end %>
 
-<div class="completed-challenges container">
+<div class="completed-challenges">
   <h2 class="title">Completed Challenges</h2>
   <div class="subheader row">
     <h2 class="num-completed"><%= Challenge.where(user: current_user, completed:true).length %> of 70 challenges completed</h2>

@@ -10,7 +10,7 @@
         <h2>profile</h2>
       </div>
 
-      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: 'col' }) do |f| %>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: 'col section-content' }) do |f| %>
         <div class="field">
           <label class="section-label first">email</label>
           <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -47,7 +47,7 @@
         <h2>password</h2>
       </div>
 
-      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: 'col' }) do |f| %>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: 'col section-content' }) do |f| %>
         <div class="field">
           <label>current password</label>
           <%= f.password_field :current_password, autofocus: true, class: "inputField", oninput: "enablePasswordFields();" %>
@@ -85,14 +85,14 @@
         <h2>privacy</h2>
       </div>
 
-      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, id: "edit-privacy", class: 'col' }) do |f| %>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, id: "edit-privacy", class: 'col section-content' }) do |f| %>
           <label class="section-label first">location</label>
           <%= f.check_box :permissions, {multiple: true, onclick:"$('#privacy-save-button').prop('disabled', false);"}, 'location', nil %>
           <span>I give permission for Turning Green to use my location <a target="_blank" href=" <%= privacy_path %>">Learn more</a></span>
           <label class="section-label">challenges</label>
           <h5 class="more-info">To manage sharing settings for challenges individually please check the <strong>completed challenges</strong> page. </h5>
           <%= f.check_box :permissions, {multiple: true, onclick:"$('#privacy-save-button').prop('disabled', false);"}, 'challenges', nil %>
-          <span>I give Turning Green permission to share <strong>ALL</strong> of my completed challenges <a target="_blank" href=" <%= privacy_path %>">Learn more</a></span>
+          <span>I give Turning Green permission to share <strong>ALL</strong> of my completed challenges <a target="_blank" href=" <%= privacy_path %>">Learn more</a></span><br>
         <%= f.submit "save changes", class: "btn save-changes-button", id: "privacy-save-button", disabled: "true", onclick: "$(this).siblings('.changes-saved-notification').css('display', 'flex');" %>
         <div class="changes-saved-notification">
           <span class="icon">&#x2713;</span>
@@ -106,7 +106,7 @@
         <h2>notifications</h2>
       </div>
 
-      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, id: "edit-notifications", class: "col" }) do |f| %>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, id: "edit-notifications", class: "col section-content" }) do |f| %>
           <label class="section-label first">frequency</label>
           <div class="field">
             <%= f.label 'I would like to receive emails:' %>
@@ -137,7 +137,7 @@
         <h2>deactivate</h2>
       </div>
 
-      <div class="col">
+      <div class="col section-content">
         <p>If you deactivate your account, you will lose access to all the data you’ve shared on rootup.</p>
         <button class="deactivate-button save-changes-button" onclick="$('#account-deactivate').modal();">deactivate</button>
       </div>

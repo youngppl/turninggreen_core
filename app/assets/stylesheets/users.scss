@@ -735,7 +735,19 @@
     h2 {
       font-size: 20px;
       font-weight: 600;
+      z-index: 3;
+      position: relative;
     }
+  }
+
+  .section-content {
+    background-color: white;
+    border-radius: 15px;
+    padding: 24px;
+    margin: -24px -24px -20px -24px;
+    width: 390px;
+    flex-basis: unset;
+    flex-grow: unset;
   }
 
   .section-label {
