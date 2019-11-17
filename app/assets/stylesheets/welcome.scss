@@ -46,11 +46,23 @@ input {
   outline: none;
 }
 
+img {
+    height: auto;
+    max-width: 100%;
+}
+
 [type="date"]::-webkit-inner-spin-button {
   display: none;
 }
 [type="date"]::-webkit-calendar-picker-indicator {
   display: none;
+}
+
+.content-col {
+  &.nav-toggled {
+    margin-left: 270px;
+    transition: margin-left 0.5s;
+  }
 }
 
 .main-content {
