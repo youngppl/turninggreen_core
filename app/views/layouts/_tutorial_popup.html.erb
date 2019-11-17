@@ -1,0 +1,73 @@
+<div class="modal" id="tutorial-popup" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="slide one">
+        <h2 class="heading">Welcome to rootup!</h2>
+        <h5 class="subheading">Caring for your health and the environment requires action.<br> We'll show you how to get started!</h5>
+        <div class="actions row justify-content-between">
+          <button type="button" name="button" class="skip" onclick="$('#tutorial-popup').modal('hide')">skip</button>
+          <button type="button" name="button" class="continue" onclick="tutoialSecondSlide()">continue</button>
+        </div>
+      </div>
+      <div class="slide two">
+        <div id="tutorial-carousel" class="carousel slide" data-interval="false">
+          <ol class="carousel-indicators">
+            <li data-target="#tutorial-carousel" data-slide-to="0" class="active"></li>
+            <li data-target="#tutorial-carousel" data-slide-to="1"></li>
+            <li data-target="#tutorial-carousel" data-slide-to="2"></li>
+            <li data-target="#tutorial-carousel" data-slide-to="3"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <h2 class="heading">Take Challenges</h2>
+              <p class="info">Start a challenge by clicking:
+                <ul>
+                  <li>the "Challenges" tab on the nav bar, or</li>
+                  <li>the "+" in the "My Current Challenges" section of your dashboard</li>
+                </ul>
+              </p>
+              <div class="placeholder"></div>
+            </div>
+            <div class="carousel-item">
+              <h2 class="heading">Select a theme you're interested in</h2>
+              <p class="info">Then, click on a challenge to learn more about the topic and start the challenge.<br> Once you've chosen to start a challenge, go do it!
+              </p>
+              <div class="placeholder"></div>
+            </div>
+            <div class="carousel-item">
+              <h2 class="heading">Come back to rootup another day to log your progress</h2>
+              <p class="info">Don't worry if you forget, we'll remind you! We'll aggregate this data to show everyone what the rootup community has accomplished</p>
+              <div class="placeholder"></div>
+            </div>
+            <div class="carousel-item">
+              <h2 class="heading">Share your reflections</h2>
+              <p class="info">At the end of your challenges, you can share your experience with us. <br>We'll share these with the rootup community so others know the challenges you've tackled and see the cools things you've accomplished!</p>
+              <div class="placeholder"></div>
+            </div>
+          </div>
+          <a class="carousel-control-next" href="#tutorial-carousel" role="button" data-slide="next">
+            <i class="fas fa-chevron-right"></i>
+          </a>
+        </div>
+      </div>
+      <div class="slide three">
+        <h2 class="heading">You’re all set!</h2>
+        <p class="info">Ready to take action? Here's your seed, which will grow as you take more actions and share your reflections with us.</p>
+        <div class="placeholder"></div>
+        <button type="button" name="button" class="start" onclick="$('#tutorial-popup').modal('hide')">start rootup</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+  $('#tutorial-popup').modal({'backdrop': 'static'})
+  $('#tutorial-carousel').on('slid.bs.carousel', function () {
+    if ($('.carousel-item.active').index() == 3) {
+      $('.carousel-control-next').click(function () {
+        $('.slide.two').hide()
+        $('.slide.three').show()
+        $('.modal-content').width(461)
+      })
+    }
+  })
+</script>

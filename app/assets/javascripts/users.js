@@ -22,7 +22,9 @@ $(window).on('turbolinks:load', function() {
 });
 
 function complete_challenge(id) {
-  $.post('/challenges/complete-challenge', {id:id})
+  $.post('/challenges/complete-challenge', {
+    id: id
+  })
 }
 
 $(document).on("click", ".popover .close", function() {
@@ -100,4 +102,11 @@ function enablePasswordFields() {
 function updateLogPrompt(e) {
   $(e).siblings('.log-input').prop('disabled', true);
   $(e).replaceWith('<h5 class="log-complete">today’s log complete!</h5>')
+}
+
+function tutoialSecondSlide() {
+  $('.slide.one').hide()
+  $('.slide.two').show()
+  $('.modal-content').width(670)
+  $('.modal-content').height(370)
 }
