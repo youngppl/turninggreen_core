@@ -10,6 +10,7 @@ RSpec.describe "layouts/_dashboard_navbar.html.erb", type: :view, js: true do
     content_for :navbar do
       render 'layouts/dashboard_navbar'
     end
+    page.execute_script("$('#tutorial-popup').modal('hide');")
   end
 
   after(:each) do
@@ -41,7 +42,7 @@ RSpec.describe "layouts/_dashboard_navbar.html.erb", type: :view, js: true do
   context 'when a user click on settings' do
     it 'takes user to the settings page' do
       click_link 'Settings'
-      expect(page).to have_current_path(edit_user_registration_path) 
+      expect(page).to have_current_path(edit_user_registration_path)
     end
   end
 end
