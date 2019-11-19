@@ -146,7 +146,7 @@
     }
 
     .learn-more {
-      width: 232px;
+      width: 215px;
       margin: auto;
     }
 
@@ -188,6 +188,7 @@
       align-items: center;
       height: 35px;
       margin-top: 20px;
+      padding-top: 10px;
 
       .text {
         margin-right: 17px;
@@ -345,6 +346,10 @@
         color: #757575;
         overflow: hidden;
 
+        &.not-provided {
+          background-color: #fafafa;
+        }
+
         .reflection-reminder {
           display: block;
           text-align: center;
@@ -429,7 +434,7 @@
 
   .reflection-summary {
     margin: 0 -16px -20px;
-    background-color: #f0f1f2;
+    background-color: #fafafa;
     padding: 12px 32px;
   }
 

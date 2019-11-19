@@ -2,7 +2,7 @@
   <div class="progress-bar" role="progressbar" style="width: <%= current_user.level_progress(points_to_add) %>% !important" aria-valuemin="0" aria-valuemax="100"></div>
   <div class="marker-container">
     <% if current_user.level_progress(points_to_add) != 0 && current_user.level_progress(points_to_add) != 100 %>
-      <div class="marker" style="left: <%= current_user.level_progress(points_to_add) - 6 %>%">
+      <div class="marker" style="left: <%= current_user.level_progress(points_to_add) - 3 %>%">
         <%= current_user.points + points_to_add %>
       </div>
     <% end %>
