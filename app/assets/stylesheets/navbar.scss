@@ -9,7 +9,7 @@
   position: relative;
   height: 100%;
   padding-top: 20px;
-  @media only screen and (max-width: 1200px){
+  @media only screen and (max-width: 1250px){
     position: fixed;
     top: 0;
     left: 0;
@@ -66,7 +66,7 @@
     position: relative;
 
     &.active {
-      background-color: #f0f1f2;
+      background-color: #fafafa;
       width: 260px;
       margin-right: -135px;
     }
@@ -188,7 +188,7 @@
     margin-left: -12px;
     margin-bottom: -11px;
     padding: 5px 0px;
-    background-color: #f0f1f2;
+    background-color: #fafafa;
   }
 
   .notification {
@@ -246,7 +246,7 @@
   .gray-background {
     width: 432px;
     height: 327px;
-    background-color: #f0f1f2;
+    background-color: #fafafa;
     margin-left: -12px;
     padding: 12px;
     margin-bottom: -12px;

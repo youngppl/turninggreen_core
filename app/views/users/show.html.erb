@@ -16,7 +16,7 @@
         <div class="progress-bar" role="progressbar" style="width: <%= current_user.level_progress %>% !important" aria-valuemin="0" aria-valuemax="100"></div>
         <div class="marker-container">
           <% if current_user.level_progress != 0 && current_user.level_progress != 100 %>
-            <div class="marker" style="left: <%= current_user.level_progress - 3%>%">
+            <div class="marker" style="left: <%= current_user.level_progress - 5 %>%">
               <%= current_user.points %>
             </div>
           <% end %>
@@ -29,7 +29,7 @@
   <% unless current_user.all_pre_challenges_completed == 10 %>
   <div class="pre-challenges container">
     <h2 class="heading">My Pre-Challenges</h2>
-    <div class="challenges row">
+    <div class="challenges">
       <% current_user.challenges.where(completed: false).or(current_user.challenges.where(reflection_completed: false)).each do |challenge| %>
         <% if challenge.type == 'pre' %>
           <div class="pre-challenge-box" onclick="complete_challenge(<%= challenge.id %>);">
@@ -44,7 +44,6 @@
       <% if current_user.all_pre_challenges_completed < 10 %>
       <div class="add-pre-challenge" onclick="location.href='<%= themes_path %>'">
         <span class="plus">+</span>
-        <h5 class="text" style="display:none;">take on a pre-challenge!</h5>
       </div>
       <% end %>
     </div>

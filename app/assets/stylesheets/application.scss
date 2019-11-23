@@ -11,6 +11,7 @@
  * It is generally better to create a new file per style scope.
  *
  */
+ @import "vars.scss";
  @import "bootstrap";
  @import "welcome.scss";
  @import "login.scss";

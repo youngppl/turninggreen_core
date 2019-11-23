@@ -39,7 +39,7 @@
     }
 
     .marker-container {
-      width: 765px;
+      width: 465px;
       position: absolute;
       left: 0;
       margin-top: 25px;
@@ -49,6 +49,8 @@
     .marker {
       position: relative;
       display: inline-block;
+      text-align: center;
+      width: 28px;
 
       .label {
         font-size: 12px;
