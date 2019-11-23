@@ -1,5 +1,6 @@
 .reflections {
   min-height: 800px;
+  min-width: 940px;
 
   input[type=number]::-webkit-inner-spin-button,
   input[type=number]::-webkit-outer-spin-button {
@@ -33,9 +34,9 @@
     margin-bottom: 20px;
   }
 
-  // .reflection-cards {
-  //   width: 960px;
-  // }
+  .reflection-cards {
+    max-width: 940px;
+  }
 
   .panel-default {
     width: 100%;

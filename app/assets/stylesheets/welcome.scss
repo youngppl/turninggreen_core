@@ -67,6 +67,10 @@ a {
   display: none;
 }
 
+.content-container {
+  max-width: 940px;
+}
+
 .content-col {
   &.nav-toggled {
     margin-left: 270px;
