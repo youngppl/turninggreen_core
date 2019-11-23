@@ -527,7 +527,7 @@ and values of the farms and companies whose products you buy."],
           {
             :name => "Cruise lightly",
             :type => "self",
-            :question => "How much of an impact does transportation have?",
+            :question => "What is transportation's impact?",
             :description => "It takes about 3/4 gallon of water to extract, refine, and transport the gas used to drive one mile. The water footprint of fuel consumption adds up as you travel farther and take more trips. There are many ways to reduce this consumption though. You can reduce this simply by inviting others to join your ride. Skip a gas vehicle and you zero your fuel footprint.",
             :links => {
               "What's the water footprint of gas? (info)" => 'https://www.watercalculator.org/save-water/gasoline/',
@@ -989,7 +989,7 @@ reusable non-plastic tools made of plant-based materials (e.g. bamboo, wood, nat
             :name => "Freshen the air",
             :type => "self",
             :question => "What's there to freshen?",
-            :description => "Indoor air + dust can contain <a target=\"_blank\" href=\"https://www.ewg.org/enviroblog/2008/05/cheatsheet-volatile-organic-compounds\">volatile organic compounds</a> (VOCs), <a target=\"_blank\" href=\"https://www.madesafe.org/flame-retardants/\">flame retardants</a>, <a target=\"_blank\" href=\"http://www.panna.org/pesticides-big-picture/pesticides-101\">pesticides</a>, toxic metals, among other pollutants. Plants can purify the air though. They transform CO2 into oxygen, and they can take in pollutants to incorporate into their plant tissues, which removes pollutants from the air.  ",
+            :description => "Your health is largely impacted by what you eat, what you drink, and what you breathe. Indoor air + dust can contain <a target=\"_blank\" href=\"https://www.ewg.org/enviroblog/2008/05/cheatsheet-volatile-organic-compounds\">volatile organic compounds</a>, <a target=\"_blank\" href=\"https://www.madesafe.org/flame-retardants/\">flame retardants</a>, <a target=\"_blank\" href=\"http://www.panna.org/pesticides-big-picture/pesticides-101\">pesticides</a>, toxic metals, among other pollutants that enter your bloodstream with each breath. Plants can take in pollutants from the air and incorporate them into their tissues, which purifies the air you breathe.",
             :links => {
               "Best indoor plants for air filtering (list)" => 'https://thebestorganiclifestyle.com/houseplants-best-indoor-air-filters',
               'How to naturally improve indoor air quality (info)' => 'https://draxe.com/indoor-air-quality-natural-solutions/',
@@ -1073,8 +1073,8 @@ changes you've made in your home and teach them the things you have learned.", "
           {
             :name => "Curate a healthy home",
             :type => "friends",
-            :question => "Where do the pollutants in your home come from?",
-            :description => "Did you know indoor air can be <a target=\"_blank\" href=\" https://www.ewg.org/healthyhomeguide/\">2 to 5x</a> more polluted than air outside?  Pollutants come from building products, <a target=\"_blank\" href=\"https://thebestorganiclifestyle.com/non-toxic-area-rugs-for-your-home\">carpet</a>, and paint. It's important to ask questions, like: were pollutants like lead, flame retardants, or PVC used to make the things I bring into my living space?",
+            :question => "What pollutants could be in your home?",
+            :description => "Every person intakes millions of air particles into their bodies per breath. So, that raises the question: what are you breathing in? Did you know indoor air can be <a target=\"_blank\" href=\" https://www.ewg.org/healthyhomeguide/\">2-5x</a> more polluted than air outside?  Pollutants come from the things in your living space, like building products, <a target=\"_blank\" href=\"https://thebestorganiclifestyle.com/non-toxic-area-rugs-for-your-home\">carpet</a>, and paint. It's important to ask if pollutants like lead, flame retardants, or PVC are in the space you live in.",
             :links => {
               'Swap out the toxics (list)' => 'https://www.greenamerica.org/your-home-detoxed/swap-out-toxics-green-your-home',
               'How do air filters impact your health? (guide)' => 'https://www.ewg.org/healthyhomeguide/air-filters/',
@@ -1151,7 +1151,7 @@ changes you've made in your home and teach them the things you have learned.", "
             :name => "Exercise",
             :type => "self",
             :question => "Instead of sitting, how about getting up and moving around?",
-            :description => "We have become sedentary with our conveniences (e.g. chairs, elevators, cars) Here's a reminder of the benefits to exercising: feel more positive, sleep better, ramp up energy levels, maintains memory function, enhances confidence, increases productivity, strengthens immune system, minimizes inflammation, and many more.",
+            :description => "We have <a target=\"_blank\" href=\"https://www.bbc.com/news/health-50466061?ns_source=facebook&ns_campaign=bbcnews&ns_mchannel=social&ocid=socialflow_facebook\">become sedentary</a> with our conveniences (e.g. chairs, elevators, cars) Here's a reminder of the benefits to exercising: feel more positive, sleep better, ramp up energy levels, maintains memory function, enhances confidence, increases productivity, strengthens immune system, minimizes inflammation, and many more.",
             :links => {
               'Benefits of exercise (list)' => 'https://draxe.com/benefits-of-exercise/'
             },
@@ -1368,4 +1368,3 @@ useful for them."],
     all_challenges
   end
 end
-
