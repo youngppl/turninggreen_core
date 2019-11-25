@@ -107,6 +107,6 @@ function updateLogPrompt(e) {
 function tutoialSecondSlide() {
   $('.slide.one').hide()
   $('.slide.two').show()
-  $('.modal-content').width(670)
-  $('.modal-content').height(370)
+  $('.modal-content').width(535)
+  $('.modal-content').height(355)
 }
