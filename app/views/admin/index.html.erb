@@ -111,4 +111,15 @@
       </div>
     </div>
   </div>
+  <div class="row">
+    <div class="card">
+      <div class="card-body">
+        <h5>User Email Notification Settings</h5>
+        <p>Daily: <%= User.all.where(notifications: "Daily").length %></p>
+        <p>Every other day: <%= User.all.where(notifications: "Every other day").length %></p>
+        <p>Weekly: <%= User.all.where(notifications: "Weekly").length %></p>
+        <p>Never: <%= User.all.where(notifications: "Never").length %></p>
+      </div>
+    </div>
+  </div>
 </div>
