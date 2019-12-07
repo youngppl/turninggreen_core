@@ -1,4 +1,5 @@
 class ChallengeMailer < ApplicationMailer
+  track open: true, click: true
   def challenge_reminder_email(user, updates=false, fact)
     @user = user
     @updates = updates
