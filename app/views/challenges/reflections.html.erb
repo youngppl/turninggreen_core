@@ -2,7 +2,7 @@
   <%= render 'layouts/dashboard_navbar' %>
 <% end %>
 
-<div class="reflections container">
+<div class="reflections">
   <h2 class="heading">Reflections
   </h2>
   <h2 class="info">Share and document your challenge experience! Click on your completed challenge(s) below to get started.</h2>
@@ -30,7 +30,7 @@
             <h5 id="question-error" class="error-message">you must type a response</h5>
           </div>
           <div class="log row">
-            <div class="col-8">
+            <div class="col-7">
                 <h5 class="instructions">Since your last log:</h5>
                 <h5 class="log-question"> <%= challenge_data[:metric_question] %> </h5>
                 <%= f.number_field :log, {min: 0, class: "log-input"} %>

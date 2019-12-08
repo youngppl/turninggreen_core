@@ -1,47 +1,38 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
-  </head>
-  <body>
-    <p>Hi <%= @user.name %>!</p>
+<p>Hi <%= @user.name %>!</p>
 
-    <p>Did you know? <%= @fact %></p>
+<p>Did you know? <%= @fact %></p>
 
-    <% if @updates %>
-      <p>We also have some updates for you:</p>
-      <ul>
-        <% @updates.each do |update| %>
-          <li><%= update.html_safe %> </li>
-        <% end %>
-      </ul>
+<% if @updates %>
+  <p>We also have some updates for you:</p>
+  <ul>
+    <% @updates.each do |update| %>
+      <li><%= update.html_safe %> </li>
     <% end %>
+  </ul>
+<% end %>
 
-    <p>This is a friendly reminder that you can:</p>
-    <ul>
-      <li>Learn more about what actions you can take <a target="_blank" href=" <%= themes_url %> ">here</a></li>
-      <li>Log your challenge progress <a target="_blank" href=" <%= dashboard_url %> ">here</a></li>
-      <li>Share your reflections <a target="_blank" href=" <%= challenges_reflections_url %> ">here</a> for completed challenges</li>
-    </ul>
+<p>This is a friendly reminder that you can:</p>
+<ul>
+  <li>Learn more about what actions you can take <a target="_blank" href=" <%= themes_url %> ">here</a></li>
+  <li>Log your challenge progress <a target="_blank" href=" <%= dashboard_url %> ">here</a></li>
+  <li>Share your reflections <a target="_blank" href=" <%= challenges_reflections_url %> ">here</a> for completed challenges</li>
+</ul>
 
-    <p>Here’s a summary of your challenges:</p>
-    <ol>
-      <% @user_completed_challenges.each do |challenge| %>
-        <li>  <%= challenge.challenge_name %> (complete)</li>
-      <% end %>
-      <% @user_incomplete_challenges.each do |challenge| %>
-        <li>  <%= challenge.challenge_name %> (ends in <%= challenge.get_time_left %>)</li>
-      <% end %>
-    </ol>
+<p>Here’s a summary of your challenges:</p>
+<ol>
+  <% @user_completed_challenges.each do |challenge| %>
+    <li>  <%= challenge.challenge_name %> (complete)</li>
+  <% end %>
+  <% @user_incomplete_challenges.each do |challenge| %>
+    <li>  <%= challenge.challenge_name %> (ends in <%= challenge.get_time_left %>)</li>
+  <% end %>
+</ol>
 
-    <p>Don’t ever hesitate to reach out to us about anything. Just reply to this email because we’re here for you!</p>
+<p>Don’t ever hesitate to reach out to us about anything. Just reply to this email because we’re here for you!</p>
 
-    <p>
-      Cheering you on,<br>
-      The Rootup team
-    </p>
-
-    <p>P.S. You can manage your email reminder settings <a target="_blank" href="<%= edit_user_registration_url %> ">here</a>.
+<p>
+  Cheering you on,<br>
+  The Rootup team
 </p>
-  </body>
-</html>
+
+<p>P.S. You can manage your email reminder settings <a target="_blank" href="<%= edit_user_registration_url %> ">here</a>.</p>

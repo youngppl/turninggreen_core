@@ -10,6 +10,7 @@ class User < ApplicationRecord
   validate :validate_age
   has_one_attached :profile_pic
   has_many :challenges
+  has_many :messages, class_name: "Ahoy::Message", as: :user
 
   # challenges
 
