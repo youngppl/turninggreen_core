@@ -14,7 +14,7 @@ RSpec.describe "challenges/show.html.erb", type: :view do
 
   context 'when user already has 6 current challenges' do
     it 'shows an error' do
-      @user = User.create(email: "bob@gmal.com", state: 'California', country: 'United States', birthday:'2000-04-09', password: '123qwerty', password_confirmation: '123qwerty', referral: 'Friend')
+      @user = User.create(name: "bob", email: "bob@gmal.com", state: 'California', country: 'United States', birthday:'2000-04-09', password: '123qwerty', password_confirmation: '123qwerty', referral: 'Friend')
       @user.confirm
       signInUser(@user.email, @user.password)
       @user.update(unlockedChallenges:['Water'])

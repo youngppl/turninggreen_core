@@ -8,15 +8,16 @@
         <div id="navbar">
           <%= yield(:navbar) %>
         </div>
-        <div class="col">
+        <div class="col content-col">
           <nav class="sidebar-toggle navbar-light position-absolute d-xl-none">
-            <button type="button" data-toggle="collapse" data-target="#navbarToggle" class="btn">
+            <button type="button" data-toggle="collapse" data-target="#navbarToggle" class="btn" onclick="toggleDashNav()">
               <span class="navbar-toggler-icon"></span>
             </button>
           </nav>
           <div class="top-nav">
             <%= render 'layouts/notifications_dropdown' %>
             <%= render 'layouts/feedback_dropdown' %>
+            <%= render 'layouts/profile_dropdown' %>
           </div>
           <%= render "layouts/alerts"%>
           <div class="main-content row justify-content-center">

@@ -46,6 +46,20 @@ input {
   outline: none;
 }
 
+img {
+    height: auto;
+    max-width: 100%;
+}
+
+a {
+  color: #3B8300;
+
+  &:hover {
+    color: #3B8300;
+    text-decoration: underline;
+  }
+}
+
 [type="date"]::-webkit-inner-spin-button {
   display: none;
 }
@@ -53,10 +67,21 @@ input {
   display: none;
 }
 
+.content-container {
+  max-width: 940px;
+}
+
+.content-col {
+  &.nav-toggled {
+    margin-left: 270px;
+    transition: margin-left 0.5s;
+  }
+}
+
 .main-content {
   padding-bottom: 3.125em;
   padding-top: 1.25em;
-  background-color: #f0f1f2;
+  background-color: #fafafa;
 }
 
 .landing-page {

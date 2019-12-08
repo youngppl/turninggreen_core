@@ -1,5 +1,6 @@
 .themes-page {
   margin: auto;
+  padding-left: 25px;
   @media only screen and (max-width: 500px) {
     max-width: 345px;
   }
@@ -25,7 +26,7 @@
     }
 
     .theme {
-      width: 445px;
+      width: 425px;
       @media only screen and (max-width: 445px) {
         width: 100% !important;
       }
@@ -51,7 +52,7 @@
       .icon-box {
         text-align: center;
         position: relative;
-        flex: 0 0 33.33333%;
+        flex: 0 0 35%;
         max-width: 150px;
         padding: 0 5.5%;
 
