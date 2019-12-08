@@ -85,14 +85,14 @@ module ChallengesHelper
             :name => "Compost & recycle",
             :type => "self",
             :question => "Why prioritize composting over recycling? ",
-            :description => "When we <a target=\"_blank\" href=\"https://www.goingzerowaste.com/blog/composting-for-apartments\">compost</a>, the remaining nutrients in food scraps + plant-based goods are reused in our environment. Recycling is also good (way better than sending goods to the landfill). However, <a target=\"_blank\" href=\"https://www.goingzerowaste.com/blog/how-to-recycle-paper-the-right-way?rq=RECYCLE\">recyclables</a> like plastic and paper can't be recycled infinitely. Furthermore, recycling goods requires more resources (e.g. fuel costs, labor, energy, water) than composting.",
+            :description => "When we <a target=\"_blank\" href=\"https://www.goingzerowaste.com/blog/composting-for-apartments\">compost</a>, the remaining nutrients in food scraps + plant-based goods are reused in our environment. Recycling is also good (way better than sending goods to the landfill). However, <a target=\"_blank\" href=\"https://www.goingzerowaste.com/blog/how-to-recycle-paper-the-right-way?rq=RECYCLE\">recyclables</a> like plastic and paper can't be recycled infinitely. Furthermore, recycling goods requires more resources (e.g. fuel costs, labor, energy, water) to process than composting.",
             :links => {
               "How to compost at home (video)" => "https://kisstheground.com/how-to-compost-at-home-simple/",
               "How to compost at home (infographic)" => "https://kisstheground.com/how-to-compost-at-home/",
               "What do all the plastic numbers mean? (guide)" => "https://www.babygreenthumb.com/p-122-safe-plastic-numbers-guide.aspx"
             },
             :background => "Composting can take on any form like starting your own compost pile, putting it in your green bin (if you have municipal composting), giving your compost to local farms, or tossing it into a compost bin in your community.",
-            :instructions => ["Compost any waste that is compostable and biodegradable. If it's not compostable, then recycle it.", "As a last resort, send your trash into the landfill if it isn't reusable, compostable, or recyclable."],
+            :instructions => ["Compost any waste that is compostable and biodegradable. If it's not compostable, then <a target=\"_blank\" href=\"http://apps.npr.org/plastics-recycling/?utm_medium=social&utm_source=facebook.com&utm_term=nprnews&utm_campaign=npr\">recycle it</a>.", "As a last resort, send your trash into the landfill if it isn't reusable, compostable, or recyclable."],
             :metric_question => "Estimate how much (in kilos) waste you composted and/or recycled. Note: 1 lb = 0.45 kg",
 :metric_verb => "You composted or recycled ",
 :metric_unit => " about kg! (Note: 1lb = 0.45kg)",
@@ -482,7 +482,7 @@ and values of the farms and companies whose products you buy."],
               'How to be more water conscious (guide)' => 'https://www.ewg.org/healthyhomeguide/water-efficiency/'
             },
             :background => "We're not trying to get you to shower with a bucket everyday of your life; we know it's inconvenient. We simply want you to be more mindful about your water usage.",
-            :instructions => ["Place a bucket/large cup/bowl next tp you in your shower to collect excess water.", "Take your shower normally.", "Water any plants around the home with your bucket-ful of water."],
+            :instructions => ["Place a bucket/large cup/bowl next to you in your shower to collect excess water", "Turn off the water when lathering shampoo, conditioner, and body wash", "Turn on the water when you need the water", "Water any plants around the home with your bucket-ful of water"],
             :extra => "*Avoid getting any non-biodegradable body care products (e.g. soap, shampoo, conditioner) into your bucket, especially if you're going to water edible plants with your collection.",
             :metric_question => "Estimate how much (in kilos) of water you collected. Note: 1 gal = appx 4 kg",
 :metric_verb => "You collected ",
@@ -527,7 +527,7 @@ and values of the farms and companies whose products you buy."],
           {
             :name => "Cruise lightly",
             :type => "self",
-            :question => "How much of an impact does transportation have?",
+            :question => "What is transportation's impact?",
             :description => "It takes about 3/4 gallon of water to extract, refine, and transport the gas used to drive one mile. The water footprint of fuel consumption adds up as you travel farther and take more trips. There are many ways to reduce this consumption though. You can reduce this simply by inviting others to join your ride. Skip a gas vehicle and you zero your fuel footprint.",
             :links => {
               "What's the water footprint of gas? (info)" => 'https://www.watercalculator.org/save-water/gasoline/',
@@ -909,7 +909,7 @@ clothes? Here are example scripts to get you started.", "Teach at least 3 other 
             :name => "Go plastic-free reusable",
             :type => "self",
             :question => "What's the problem with single-use and plastic?",
-            :description => "Single-use items and plastic contribute to ocean <a target=\"_blank\" href=\"https://www.plasticpollutioncoalition.org/the-facts\">plastic pollution</a>, waste accumulation, and climate change exacerbation. So, do the opposite. With reusables and plastic-free cleaning products and equipment, there's less trash, so we minimize our contribution to climate change. ",
+            :description => "Single-use items and <a target=\"_blank\" href=\"http://apps.npr.org/plastics-recycling/?utm_medium=social&utm_source=facebook.com&utm_term=nprnews&utm_campaign=npr\">plastic</a> contribute to ocean <a target=\"_blank\" href=\"https://www.plasticpollutioncoalition.org/the-facts\">plastic pollution</a>, waste accumulation, and climate change exacerbation. So, do the opposite. With reusables and plastic-free cleaning products and equipment, there's less trash, so we minimize our contribution to climate change. ",
             :links => {
               "What are zero waste cleaning supplies? [scroll down] (list)" => 'https://www.goingzerowaste.com/31-day-challenge/zero-waste-cleaning-day-9-of-the-zero-waste-challenge',
               'Zero Waste Toilet Cleaning' => 'https://trashisfortossers.com/cleaning-toilet-naturally/',
@@ -989,7 +989,7 @@ reusable non-plastic tools made of plant-based materials (e.g. bamboo, wood, nat
             :name => "Freshen the air",
             :type => "self",
             :question => "What's there to freshen?",
-            :description => "Indoor air + dust can contain <a target=\"_blank\" href=\"https://www.ewg.org/enviroblog/2008/05/cheatsheet-volatile-organic-compounds\">volatile organic compounds</a> (VOCs), <a target=\"_blank\" href=\"https://www.madesafe.org/flame-retardants/\">flame retardants</a>, <a target=\"_blank\" href=\"http://www.panna.org/pesticides-big-picture/pesticides-101\">pesticides</a>, toxic metals, among other pollutants. Plants can purify the air though. They transform CO2 into oxygen, and they can take in pollutants to incorporate into their plant tissues, which removes pollutants from the air.  ",
+            :description => "Your health is largely impacted by what you eat, what you drink, and what you breathe. Indoor air + dust can contain <a target=\"_blank\" href=\"https://www.ewg.org/enviroblog/2008/05/cheatsheet-volatile-organic-compounds\">volatile organic compounds</a>, <a target=\"_blank\" href=\"https://www.madesafe.org/flame-retardants/\">flame retardants</a>, <a target=\"_blank\" href=\"http://www.panna.org/pesticides-big-picture/pesticides-101\">pesticides</a>, toxic metals, among other pollutants that enter your bloodstream with each breath. Plants can take in pollutants from the air and incorporate them into their tissues, which purifies the air you breathe.",
             :links => {
               "Best indoor plants for air filtering (list)" => 'https://thebestorganiclifestyle.com/houseplants-best-indoor-air-filters',
               'How to naturally improve indoor air quality (info)' => 'https://draxe.com/indoor-air-quality-natural-solutions/',
@@ -1021,7 +1021,7 @@ reusable non-plastic tools made of plant-based materials (e.g. bamboo, wood, nat
             :name => "Swap out plastic",
             :type => "self",
             :question => "Why is plastic a problem?",
-            :description => "When <a target=\"_blank\" href=\"https://www.madesafe.org/education/whats-in-that/plastics/\">plastic</a> touches the food we eat (think: to-go containers + utensils),  the petroleum-based chemicals of plastic can leach into our bodies. When these plastics are trashed, many end up in the ocean. Plastic doesn't biodegrade on land or in water, so they're just there for 100s to 1000s of years. In the ocean, fish mistake these plastics for food, which is how plastic makes its way up the food chain into the food we eat.",
+            :description => "When <a target=\"_blank\" href=\"https://www.madesafe.org/education/whats-in-that/plastics/\">plastic</a> touches the food we eat (think: to-go containers + utensils),  the petroleum-based chemicals of plastic can leach into our bodies. When these <a target=\"_blank\" href=\"http://apps.npr.org/plastics-recycling/?utm_medium=social&utm_source=facebook.com&utm_term=nprnews&utm_campaign=npr\">plastics are trashed</a>, many end up in the ocean. Plastic doesn't biodegrade on land or in water, so they're just there for 100s to 1000s of years. In the ocean, fish mistake these plastics for food, which is how plastic makes its way up the food chain into the food we eat.",
             :links => {
               'Zero waste swaps (list)' => 'https://www.goingzerowaste.com/blog/the-ultimate-list-of-zero-waste-swaps',
               'Why tackle plastic straws? (info)' => 'https://www.strawlessocean.org/faq/',
@@ -1073,8 +1073,8 @@ changes you've made in your home and teach them the things you have learned.", "
           {
             :name => "Curate a healthy home",
             :type => "friends",
-            :question => "Where do the pollutants in your home come from?",
-            :description => "Did you know indoor air can be <a target=\"_blank\" href=\" https://www.ewg.org/healthyhomeguide/\">2 to 5x</a> more polluted than air outside?  Pollutants come from building products, <a target=\"_blank\" href=\"https://thebestorganiclifestyle.com/non-toxic-area-rugs-for-your-home\">carpet</a>, and paint. It's important to ask questions, like: were pollutants like lead, flame retardants, or PVC used to make the things I bring into my living space?",
+            :question => "What pollutants could be in your home?",
+            :description => "Every person intakes millions of air particles into their bodies per breath. So, that raises the question: what are you breathing in? Did you know indoor air can be <a target=\"_blank\" href=\" https://www.ewg.org/healthyhomeguide/\">2-5x</a> more polluted than air outside?  Pollutants come from the things in your living space, like building products, <a target=\"_blank\" href=\"https://thebestorganiclifestyle.com/non-toxic-area-rugs-for-your-home\">carpet</a>, and paint. It's important to ask if pollutants like lead, flame retardants, or PVC are in the space you live in.",
             :links => {
               'Swap out the toxics (list)' => 'https://www.greenamerica.org/your-home-detoxed/swap-out-toxics-green-your-home',
               'How do air filters impact your health? (guide)' => 'https://www.ewg.org/healthyhomeguide/air-filters/',
@@ -1151,7 +1151,7 @@ changes you've made in your home and teach them the things you have learned.", "
             :name => "Exercise",
             :type => "self",
             :question => "Instead of sitting, how about getting up and moving around?",
-            :description => "We have become sedentary with our conveniences (e.g. chairs, elevators, cars) Here's a reminder of the benefits to exercising: feel more positive, sleep better, ramp up energy levels, maintains memory function, enhances confidence, increases productivity, strengthens immune system, minimizes inflammation, and many more.",
+            :description => "We have <a target=\"_blank\" href=\"https://www.bbc.com/news/health-50466061?ns_source=facebook&ns_campaign=bbcnews&ns_mchannel=social&ocid=socialflow_facebook\">become sedentary</a> with our conveniences (e.g. chairs, elevators, cars) Here's a reminder of the benefits to exercising: feel more positive, sleep better, ramp up energy levels, maintains memory function, enhances confidence, increases productivity, strengthens immune system, minimizes inflammation, and many more.",
             :links => {
               'Benefits of exercise (list)' => 'https://draxe.com/benefits-of-exercise/'
             },
@@ -1368,4 +1368,3 @@ useful for them."],
     all_challenges
   end
 end
-
