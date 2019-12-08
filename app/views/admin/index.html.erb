@@ -53,28 +53,10 @@
           </div>
         </div>
         <div class="col">
-          <h5>Challenge Completed by Challenge</h5>
-          <div id="accordion">
-            <% @challenges_completed_per_challenge.each do |challenge, completed_challenges| %>
-            <div class="card">
-              <div class="card-header" id="headingOne">
-                <h5 class="mb-0">
-                  <button class="btn btn-link" data-toggle="collapse" data-target="#<%= challenge.parameterize.underscore %>" aria-expanded="true" aria-controls="collapseOne">
-                    <%= challenge %>
-                  </button>
-                </h5>
-              </div>
-
-              <div id="<%= challenge.parameterize.underscore %>" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-                <div class="card-body">
-                  <% completed_challenges.each do |label, number| %>
-                  <p> <%= label %>:  <%= number %> </p>
-                  <% end %>
-                </div>
-              </div>
-            </div>
+          <h5>Challenge Completed by Challenge (<%= Date::MONTHNAMES[Date.today.month] %>)</h5>
+            <% @challenges_completed_per_challenge.each do |challenge, total| %>
+                <h5><%= challenge %>: <%= total %></h5>
             <% end %>
-          </div>
         </div>
       </div>
     </div>

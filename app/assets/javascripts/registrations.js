@@ -3,6 +3,9 @@ $(window).on('load', function() {
   $('input[type=date]').on('click', function(e) {
     e.preventDefault();
   })
+  $([name='user[birthday]']).on('click', function() {
+    return false;
+  })
 });
 
 function save_timezone() {
