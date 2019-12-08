@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe "layouts/_dashboard_navbar.html.erb", type: :view, js: true do
   before(:each) do
 
-    @user = User.create(email: "bob@gmal.com", state: 'California', country: 'United States', birthday:'2000-04-09', password: '123qwerty', password_confirmation: '123qwerty', referral: 'Friend')
+    @user = User.create(name: "bob", email: "bob@gmal.com", state: 'California', country: 'United States', birthday:'2000-04-09', password: '123qwerty', password_confirmation: '123qwerty', referral: 'Friend')
     @user.confirm
     signInUser(@user.email, @user.password)
     sign_in @user
@@ -41,7 +41,7 @@ RSpec.describe "layouts/_dashboard_navbar.html.erb", type: :view, js: true do
   context 'when a user click on settings' do
     it 'takes user to the settings page' do
       click_link 'Settings'
-      expect(page).to have_current_path(edit_user_registration_path) 
+      expect(page).to have_current_path(edit_user_registration_path)
     end
   end
 end
