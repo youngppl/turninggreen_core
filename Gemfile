@@ -16,6 +16,7 @@ gem 'rails-assets-jstzdetect', source: 'https://rails-assets.org'
 gem "nokogiri", ">= 1.10.4"
 gem 'chartjs-ror'
 gem 'rest-client'
+gem 'ahoy_email'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

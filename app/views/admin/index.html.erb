@@ -93,4 +93,25 @@
       </div>
     </div>
   </div>
+  <div class="row">
+    <div class="card">
+      <div class="card-body">
+        <h5>User Email Notification Settings</h5>
+        <p>Daily: <%= User.all.where(notifications: "Daily").length %></p>
+        <p>Every other day: <%= User.all.where(notifications: "Every other day").length %></p>
+        <p>Weekly: <%= User.all.where(notifications: "Weekly").length %></p>
+        <p>Never: <%= User.all.where(notifications: "Never").length %></p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <% weekly_emails = Ahoy::Message.where(sent_at: 7.days.ago..DateTime.now) %>
+        <% total_weekly_emails = Ahoy::Message.where(sent_at: 7.days.ago..DateTime.now).length %>
+        <h5>Email Engagement(for emails sent in the past week)</h5>
+        <p>Email Opens: <%= weekly_emails.where.not(opened_at: nil).length %>/<%= total_weekly_emails %> (<%= number_to_percentage(weekly_emails.where.not(opened_at: nil).length/total_weekly_emails.to_f) %>) </p>
+        <p>Email Clicks: <%= weekly_emails.where.not(clicked_at: nil).length %>/<%= total_weekly_emails %> (<%= number_to_percentage(weekly_emails.where.not(clicked_at: nil).length/total_weekly_emails.to_f)%>) </p>
+        <p>Email Click and Opens: <%= weekly_emails.where.not(opened_at: nil, clicked_at: nil).length %>/<%= total_weekly_emails %> (<%= number_to_percentage(weekly_emails.where.not(opened_at: nil, clicked_at: nil).length/total_weekly_emails.to_f)%>) </p>
+      </div>
+    </div>
+  </div>
 </div>
