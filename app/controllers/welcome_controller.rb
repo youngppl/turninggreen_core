@@ -1,4 +1,6 @@
 class WelcomeController < ApplicationController
+  include ChallengesHelper
+  
   def index
     @highlighted_challenges = [
       challenges[:Waste][:challenges].select {|x| x[:name] == "Audit your waste" }[0],
