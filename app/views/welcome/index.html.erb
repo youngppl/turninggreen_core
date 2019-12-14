@@ -8,7 +8,7 @@
   <div class="impacts">
     <h2 class="impacts-heading">We’re making change accessible</h2>
     <p class="impacts-text">Caring for the environment isn’t any single person or group’s responsibility. It’s everyone’s. <br>Rootup’s here to make living eco-consciously super easy for you to commit to.</p>
-    <div class="flow row">
+    <div class="flow">
       <div class="box">
         <h2>Choose a challenge</h2>
         <h5>With >60 challenges across 10 themes, there’s something to learn + do right now</h5>
@@ -76,7 +76,7 @@
                       <div class="select"></div>
                       <span class="label">weeks starting today</span><br>
                     </div>
-                    <button type="button" disabled class="btn add-challenge-button" name="button">start challenge</button>
+                    <button type="button" class="btn add-challenge-button" name="button" onclick="location.href='/challenges/<%= themes[index] %>'">start challenge</button>
                   </div>
                   <div class="learn-more">
                     <h7 class="heading">🤓Wanna learn more?</h7>
@@ -98,10 +98,14 @@
           </div>
         </div>
       <% end %>
+      <button type="button" name="button" class="next-arrow" onclick="nextChallengePreview();">
+        <i class="fas fa-chevron-right"></i>
+      </button>
     </div>
     <script type="text/javascript">
       $('.challenge-box.waste').show()
       $('.icon.waste').addClass('active')
+      current_preview = 0
     </script>
   </div>
   <div class="seed">
