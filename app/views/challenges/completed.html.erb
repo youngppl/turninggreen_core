@@ -2,7 +2,7 @@
   <%= render 'layouts/dashboard_navbar' %>
 <% end %>
 
-<div class="completed-challenges container">
+<div class="completed-challenges content-container">
   <h2 class="title">Completed Challenges</h2>
   <div class="subheader row">
     <h2 class="num-completed"><%= Challenge.where(user: current_user, completed:true).length %> of 70 challenges completed</h2>
@@ -33,7 +33,7 @@
               <% challenge_data = challenges[@completed_challenge.theme.to_sym][:challenges].find {|x| x[:name] == @completed_challenge.challenge_name} %>
               <%# TODO: clean up code   %>
               <div class="challenge-box <%= 'not-completed' if !@completed_challenge %>" <%= "onclick=$('#reflection-review-#{@completed_challenge.id}').modal('show');" if @completed_challenge && @completed_challenge.reflection %> <%= "onclick=$('#reflection-redirect').modal();" if @completed_challenge && !@completed_challenge.reflection %>>
-                <div class="picture">
+                <div class="picture <%= 'not-provided' if @completed_challenge && @completed_challenge.reflection && !@completed_challenge.reflection.photo.attached? %>">
                   <% if @completed_challenge %>
                     <% if @completed_challenge.reflection && @completed_challenge.reflection.photo.attached? %>
                       <%= image_tag rails_blob_path(@completed_challenge.reflection.photo, only_path: true), size: '190' %>
@@ -42,6 +42,8 @@
                   <% if !@completed_challenge.reflection %>
                     <%# if challenge completed but no reflection submitted %>
                     <span class="reflection-reminder">submit reflection to show photo</span>
+                  <% elsif @completed_challenge.reflection && !@completed_challenge.reflection.photo.attached? %>
+                    no photo to display
                   <% end %>
                   <% if @completed_challenge && (@completed_challenge.reflection && (@share_with_rootup || @completed_challenge.reflection.permission)) %>
                     <div class="shared">shared</div>
@@ -108,7 +110,7 @@
               <% challenge_data = challenges[challenge.theme.to_sym][:challenges].find {|x| x[:name] == challenge.challenge_name} %>
               <%# TODO: clean up code   %>
               <div class="challenge-box <%= 'not-completed' if !@completed_challenge %>" <%= "onclick=$('#reflection-review-#{@completed_challenge.id}').modal('show');" if @completed_challenge && @completed_challenge.reflection %> <%= "onclick=$('#reflection-redirect').modal();" if @completed_challenge && !@completed_challenge.reflection %>>
-                <div class="picture">
+                <div class="picture <%= 'not-provided' if @completed_challenge && @completed_challenge.reflection && !@completed_challenge.reflection.photo.attached? %>">
                   <% if @completed_challenge %>
                     <% if @completed_challenge.reflection && @completed_challenge.reflection.photo.attached? %>
                       <%= image_tag rails_blob_path(@completed_challenge.reflection.photo, only_path: true), size: '190' %>
@@ -117,6 +119,8 @@
                   <% if !@completed_challenge.reflection %>
                     <%# if challenge completed but no reflection submitted %>
                     <span class="reflection-reminder">submit reflection to show photo</span>
+                  <% elsif @completed_challenge.reflection && !@completed_challenge.reflection.photo.attached? %>
+                    no photo to display
                   <% end %>
                   <% if @completed_challenge && (@completed_challenge.reflection && (@share_with_rootup || @completed_challenge.reflection.permission)) %>
                     <div class="shared">shared</div>
@@ -206,13 +210,13 @@
                   <% @completed_challenge = @completed_challenges.find(@completed_challenges.where(challenge_name: challenge[:name], theme: theme).pluck(:id)[0]) %>
                 <% end %>
                 <div class="challenge-box <%= 'not-completed' if !@completed_challenge %>" <%= "onclick=$('#reflection-review-#{@completed_challenge.id}').modal('show');" if @completed_challenge && @completed_challenge.reflection %> <%= "onclick=$('#reflection-redirect').modal();" if @completed_challenge && !@completed_challenge.reflection %>>
-                  <div class="picture">
+                  <div class="picture <%= 'not-provided' if @completed_challenge && @completed_challenge.reflection && !@completed_challenge.reflection.photo.attached? %>">
                     <% if @completed_challenge %>
                       <% if @completed_challenge.reflection && @completed_challenge.reflection.photo.attached? %>
                         <%= image_tag rails_blob_path(@completed_challenge.reflection.photo, only_path: true), size: '190' %>
                       <% end %>
                     <% end %>
-                    <% if !@completed_challenges.exists?(challenge_name: challenge[:name], theme: theme) %>
+                    <% if !@completed_challenges.exists?(challenge_name: challenge[:name], theme: theme) || (@completed_challenge.reflection && !@completed_challenge.reflection.photo.attached?) %>
                       <%# if challenge not completed yet %>
                       no photo to display
                     <% elsif !@completed_challenge.reflection %>

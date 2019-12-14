@@ -1,0 +1,10 @@
+<div class="dropdown" id="profile-dropdown">
+  <button class="profile nav-button" data-toggle="dropdown">
+    <%= current_user.name[0].upcase %>
+  </button>
+  <div class="dropdown-menu dropdown-menu-right profile-dropdown">
+    <%= link_to 'settings', edit_user_registration_path %>
+    <a href="#">tutorial</a>
+    <%= link_to 'log out', destroy_user_session_path, method: :delete %>
+  </div>
+</div>

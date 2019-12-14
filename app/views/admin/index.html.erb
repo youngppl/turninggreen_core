@@ -53,28 +53,10 @@
           </div>
         </div>
         <div class="col">
-          <h5>Challenge Completed by Challenge</h5>
-          <div id="accordion">
-            <% @challenges_completed_per_challenge.each do |challenge, completed_challenges| %>
-            <div class="card">
-              <div class="card-header" id="headingOne">
-                <h5 class="mb-0">
-                  <button class="btn btn-link" data-toggle="collapse" data-target="#<%= challenge.parameterize.underscore %>" aria-expanded="true" aria-controls="collapseOne">
-                    <%= challenge %>
-                  </button>
-                </h5>
-              </div>
-
-              <div id="<%= challenge.parameterize.underscore %>" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
-                <div class="card-body">
-                  <% completed_challenges.each do |label, number| %>
-                  <p> <%= label %>:  <%= number %> </p>
-                  <% end %>
-                </div>
-              </div>
-            </div>
+          <h5>Challenge Completed by Challenge (<%= Date::MONTHNAMES[Date.today.month] %>)</h5>
+            <% @challenges_completed_per_challenge.each do |challenge, total| %>
+                <h5><%= challenge %>: <%= total %></h5>
             <% end %>
-          </div>
         </div>
       </div>
     </div>
@@ -108,6 +90,27 @@
             <li class="page-item"><a class="page-link" data-toggle="collapse" href="#_<%= index %>"><%= index %></a></li>
           <% end %>
         </ul>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="card">
+      <div class="card-body">
+        <h5>User Email Notification Settings</h5>
+        <p>Daily: <%= User.all.where(notifications: "Daily").length %></p>
+        <p>Every other day: <%= User.all.where(notifications: "Every other day").length %></p>
+        <p>Weekly: <%= User.all.where(notifications: "Weekly").length %></p>
+        <p>Never: <%= User.all.where(notifications: "Never").length %></p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-body">
+        <% weekly_emails = Ahoy::Message.where(sent_at: 7.days.ago..DateTime.now) %>
+        <% total_weekly_emails = Ahoy::Message.where(sent_at: 7.days.ago..DateTime.now).length %>
+        <h5>Email Engagement(for emails sent in the past week)</h5>
+        <p>Email Opens: <%= weekly_emails.where.not(opened_at: nil).length %>/<%= total_weekly_emails %> (<%= number_to_percentage(weekly_emails.where.not(opened_at: nil).length/total_weekly_emails.to_f) %>) </p>
+        <p>Email Clicks: <%= weekly_emails.where.not(clicked_at: nil).length %>/<%= total_weekly_emails %> (<%= number_to_percentage(weekly_emails.where.not(clicked_at: nil).length/total_weekly_emails.to_f)%>) </p>
+        <p>Email Click and Opens: <%= weekly_emails.where.not(opened_at: nil, clicked_at: nil).length %>/<%= total_weekly_emails %> (<%= number_to_percentage(weekly_emails.where.not(opened_at: nil, clicked_at: nil).length/total_weekly_emails.to_f)%>) </p>
       </div>
     </div>
   </div>
