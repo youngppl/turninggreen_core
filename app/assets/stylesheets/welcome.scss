@@ -265,7 +265,7 @@ a {
       .weeks {
         display: flex;
         align-items: center;
-        width: 88%;
+        width: 180px;
         margin: auto;
 
         .select {
@@ -496,7 +496,7 @@ a {
   .impacts-text {
     font-size: 1em;
     text-align: left;
-    width: 75%;
+    max-width: 660px;
     margin: auto auto 32px;
   }
 }
