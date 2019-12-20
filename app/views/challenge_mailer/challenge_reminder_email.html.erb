@@ -1,9 +1,19 @@
-<p>Hi <%= @user.name %>!</p>
+<style>
+  .small {
+    font-size: 11px;
+  }
+</style>
 
-<p>Did you know? <%= @fact %></p>
+<p>Hey <%= @user.name %>!</p>
+
+<p>We’re back, delivering your email dose of “If ya don’t know, now ya know”: </p>
+<ul>
+  <li><%= @fact %></li>
+</ul>
+
 
 <% if @updates %>
-  <p>We also have some updates for you:</p>
+  <p>Here's the rootup scoop:</p>
   <ul>
     <% @updates.each do |update| %>
       <li><%= update.html_safe %> </li>
@@ -11,14 +21,14 @@
   </ul>
 <% end %>
 
-<p>This is a friendly reminder that you can:</p>
+<p>Keep kicking it with us by</p>
 <ul>
-  <li>Learn more about what actions you can take <a target="_blank" href=" <%= themes_url %> ">here</a></li>
-  <li>Log your challenge progress <a target="_blank" href=" <%= dashboard_url %> ">here</a></li>
-  <li>Share your reflections <a target="_blank" href=" <%= challenges_reflections_url %> ">here</a> for completed challenges</li>
+  <li>Learning + doing something <a target="_blank" href=" <%= themes_url %> ">right now</a> <span class="small">(it only takes a minute!)</span></li>
+  <li><a target="_blank" href=" <%= dashboard_url %> ">Show off</a> your impact <span class="small">(cause your actions are worth bragging about!)</span></li>
+  <li><a target="_blank" href=" <%= challenges_reflections_url %> ">Share</a> your experiences <span class="small">(cause we want to know!)</span></li>
 </ul>
 
-<p>Here’s a summary of your challenges:</p>
+<p>Never forget that every action matters(!) Keep challenging yourself to do and do more:</p>
 <ol>
   <% @user_completed_challenges.each do |challenge| %>
     <li>  <%= challenge.challenge_name %> (complete)</li>
@@ -28,11 +38,11 @@
   <% end %>
 </ol>
 
-<p>Don’t ever hesitate to reach out to us about anything. Just reply to this email because we’re here for you!</p>
+<p>We want to serve you and the environment better. Hit reply if you’ve got any feedback to share. We accept all positives and deltas (room for improvement) :)</p>
 
 <p>
-  Cheering you on,<br>
-  The Rootup team
+  Rootin’ for ya!<br>
+  the Rootup team
 </p>
 
-<p>P.S. You can manage your email reminder settings <a target="_blank" href="<%= edit_user_registration_url %> ">here</a>.</p>
+<p>P.S. Email reminder settings are updatable <a target="_blank" href="<%= edit_user_registration_url %> ">here</a></p>
