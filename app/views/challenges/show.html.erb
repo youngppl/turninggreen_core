@@ -28,7 +28,7 @@
   <%# PRE-CHALLENGE %>
   <% challenge = @challenge_data[:challenges][0] %>
   <h2 class="heading">Pre-challenge</h2>
-  <div class="challenge-box">
+  <div class="pre challenge-box">
     <div class="row">
       <div class="icon">
         <% challenge_icon_path = "challenges/#{@challenge_name.downcase}/#{@challenge_data[:challenges][0][:name].downcase.tr(' ','-').tr('#','')}.png" %>
@@ -38,7 +38,14 @@
       </div>
       <div class="challenge-container col">
         <div class="info">
-          <h5 class="name"><%= challenge[:name] %></h5>
+          <h5 class="name">
+            <%= challenge[:name] %>
+            <% if @in_progress_challenges.exists?(challenge_name: challenge[:name]) %>
+              <%= image_tag 'challenges/in-progress.svg' %>
+            <% else %>
+              <%= image_tag 'challenges/not-started.svg' %>
+            <% end %>
+          </h5>
           <h5 class="heading"><%= challenge[:question] %></h5>
           <p class="description"><%= challenge[:description].html_safe %></p>
         </div>
@@ -125,7 +132,14 @@
             </div>
             <div class="challenge-container col">
               <div class="info">
-                <h5 class="name"><%= challenge[:name] %></h5>
+                <h5 class="name">
+                  <%= challenge[:name] %>
+                  <% if @in_progress_challenges.exists?(challenge_name: challenge[:name]) %>
+                    <%= image_tag 'challenges/in-progress.svg' %>
+                  <% else %>
+                    <%= image_tag 'challenges/not-started.svg' %>
+                  <% end %>
+                </h5>
                 <h5 class="heading"><%= challenge[:question] %></h5>
                 <p class="description"><%= challenge[:description].html_safe %></p>
               </div>
@@ -215,7 +229,10 @@
           </div>
           <div class="challenge-container col">
             <div class="info">
-              <h5 class="name"><%= challenge_record.challenge_name %></h5>
+              <h5 class="name">
+                <%= challenge_record.challenge_name %>
+                <%= image_tag 'challenges/completed.svg' %>
+              </h5>
               <h5 class="heading"><%= challenge[:question] %></h5>
               <p class="description"><%= challenge[:description].html_safe %></p>
             </div>

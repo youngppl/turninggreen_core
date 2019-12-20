@@ -116,13 +116,13 @@
           <%= f.label 'send the following to my email:' %>
           <div class="ContentList">
             <%= f.check_box :notifications_content, {multiple: true, onclick:"$('#notifications-save-button').prop('disabled', false);"}, 'reminders', nil %>
-            <span class="options">Reminders to log my progress</span><br>
+            <span class="options">reminders to log progress + submit reflections</span><br>
 
             <%= f.check_box :notifications_content, {multiple: true, onclick:"$('#notifications-save-button').prop('disabled', false);"}, 'check-in', nil %>
-            <span class="options">Reminders to submit my reflections<span><br>
+            <span class="options">random facts about sustainability (e.g. tips, news, products)</span><br>
 
             <%= f.check_box :notifications_content, {multiple: true, onclick:"$('#notifications-save-button').prop('disabled', false);"}, 'newsletter', nil %>
-            <span class="options">The rootup newsletter</span>
+            <span class="options">rootup newsletter</span>
           </div>
           <%= f.submit "save changes", class: "btn save-changes-button", id: "notifications-save-button", disabled: "true", onclick: "$(this).siblings('.changes-saved-notification').css('display', 'flex');" %>
           <div class="changes-saved-notification">
