@@ -1,33 +1,182 @@
 <div class="landing-page">
   <div class="header">
-    <h2 class="hook">Sustainability made easy for you</h2>
+    <h2 class="hook">Climate action made easy</h2>
     <h4 class="answer">Building habits one action at a time</h4>
     <a href="<%= new_user_session_path %>" class="button">Login</a>
     <a href="<%= new_user_registration_path %>" class="button">Register</a>
   </div>
   <div class="impacts">
-    <h2 class="impacts-heading">Making Change Accessible</h2>
-    <p class="impacts-text">Sustainability isn’t just about protecting the environment; it’s about caring for your health and wellbeing.</p>
-    <p class="impacts-text">We built rootup to equip you with knowledge and lead you to action. We want you to feel empowered and believe that you have the power to initiate change in your community. It doesn’t matter your age, wealth, or background. We’re in this together and here to support you!</p>
+    <h2 class="impacts-heading">We’re making change accessible</h2>
+    <p class="impacts-text">Caring for the environment isn’t any single person or group’s responsibility. It’s everyone’s. <br>rootup’s here to make living eco-consciously super easy for you to commit to.</p>
+    <div class="flow">
+      <div class="box">
+        <h2>Choose a challenge</h2>
+        <h5>With >60 challenges across 10 themes, there’s something to learn + do right now.</h5>
+      </div>
+      <%= image_tag "landing-arrow.svg" %>
+      <div class="box">
+        <h2>Log & track your progress</h2>
+        <h5>Show off the impact you’ve made each and every day!</h5>
+      </div>
+      <%= image_tag "landing-arrow.svg" %>
+      <div class="box">
+        <h2>Submit reflections</h2>
+        <h5>After completing challenges, share your experiences!</h5>
+      </div>
+    </div>
   </div>
-  <div class="about-us row">
-    <div class="about-text col">
-      <p>
-        We guide. <strong>You take action.</strong> <br>
-        We’ve compiled >60 challenges across 10 themes for you. So, you can choose which areas of your lifestyle you want
-        to focus on. <br><br>
-
-        We educate. <strong>You learn.</strong> <br>
-        We share why the challenges matter and how they impact you + the environment, so you can own your actions and tell
-        people, “I’m doing this because x, y, and z.”<br><br>
-
-        We support. <strong>You impact communities.</strong><br>
-        Everyone’s actions --no matter how seemingly small-- matter. We show you how with the progress you’ve
-        made.<br><br>
-    </p>
+  <div class="challenge">
+    <h2 class="heading">What does a challenge look like?</h2>
+    <h5 class="subheading">See for yourself! Click on a theme below for examples</h5>
+    <div class="theme-icons">
+      <div class="line"></div>
+      <% themes.each do |theme| %>
+        <div class="icon <%= theme.downcase %>" onclick="toggleChallengePreview('<%= theme.downcase %>')">
+          <%= image_tag "themes/icons/" + theme.downcase + ".svg", size: "25" %>
+          <h5 class="name"> <%= theme.downcase %> </h5>
+        </div>
+      <% end %>
     </div>
-    <div class="about-pic col-lg col-sm-12">
-      <%= image_tag('mockvisual.svg') %>
+    <div class="challenge-page">
+      <% @highlighted_challenges.each_with_index do |challenge, index| %>
+        <div class="challenge-box <%= themes[index].downcase %>">
+          <div class="row">
+            <div class="challenge-container col">
+              <div class="info">
+                <h5 class="name"><%= challenge[:name] %></h5>
+                <h5 class="heading"><%= challenge[:question] %></h5>
+                <p class="description"><%= challenge[:description].html_safe %></p>
+              </div>
+              <div class="row">
+                <div class="instructions col">
+                  <h4 class="heading">🤔How do I do this?🤔</h4>
+                  <ul>
+                    <li>
+                      <div class="text-blur"></div>
+                      <div class="text-blur"></div>
+                    </li>
+                    <li>
+                      <div class="text-blur"></div>
+                      <div class="text-blur"></div>
+                    </li>
+                    <li>
+                      <div class="text-blur"></div>
+                      <div class="text-blur" style="width:75%;"></div>
+                    </li>
+                    <li>
+                      <div class="text-blur"></div>
+                      <div class="text-blur" style="width:40%;"></div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="col col-lg-5">
+                  <div class="start-challenge">
+                    <h6 class="heading">🏁Start this challenge…</h6>
+                    <div class="weeks">
+                      <div class="select"></div>
+                      <span class="label">weeks starting today</span><br>
+                    </div>
+                    <button type="button" class="btn add-challenge-button" name="button" onclick="location.href='/challenges/<%= themes[index] %>'">start challenge</button>
+                  </div>
+                  <div class="learn-more">
+                    <h7 class="heading">🤓Wanna learn more?</h7>
+                    <ol>
+                      <li>
+                        <div class="text-blur"></div>
+                      </li>
+                      <li>
+                        <div class="text-blur" style="width:65%"></div>
+                      </li>
+                      <li>
+                        <div class="text-blur" style="width:85%" ></div>
+                      </li>
+                    </ol>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+      <button type="button" name="button" class="next-arrow" onclick="nextChallengePreview();">
+        <i class="fas fa-chevron-right"></i>
+      </button>
     </div>
+    <script type="text/javascript">
+      $('.challenge-box.waste').show()
+      $('.icon.waste').addClass('active')
+      current_preview = 0
+    </script>
+  </div>
+  <div class="seed">
+    <div class="left">
+      <h2 class="heading">Watch your seed grow</h2>
+      <h5 class="subheading">Earn points by taking challenges! As you level up, you’ll see your seed grow into a… -- well, you gotta take challenges to find out! </h5>
+    </div>
+    <div class="right">
+      <%= image_tag "seed-arrow.svg" %>
+      <%= image_tag 'seeds/0.svg', class: "seed-icon" %>
+      <div class="question">
+        ?
+      </div>
+    </div>
+  </div>
+  <div class="reviews">
+    <h2 class="heading">We’re in this together</h2>
+    <div id="reviews-carousel" class="carousel slide" data-interval="5000">
+          <ol class="carousel-indicators">
+            <li data-target="#reviews-carousel" data-slide-to="0" class="active"></li>
+            <li data-target="#reviews-carousel" data-slide-to="1"></li>
+            <li data-target="#reviews-carousel" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="review">
+                <div class="image">
+                  <%= image_tag 'challenges/waste/compost-&-recycle.png', size: '240' %>
+                </div>
+                <div class="quote">
+                  <h2 class="quotation left">“</h2>
+                  <h2 class="quotation right">”</h2>
+                  <h5 class="text">I already compost, but I bought a compost bin and a canning starter kit for my brother so he can start too :)</h5>
+                  <h5 class="name">Jordyn, OH <br> From the “Compost & Recycle” waste challenge</h5>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="review">
+                <div class="image">
+                  <%= image_tag "challenges/food/go-to-farmers'-markets.png" %>
+                </div>
+                <div class="quote">
+                  <h2 class="quotation left">“</h2>
+                  <h2 class="quotation right">”</h2>
+                  <h5 class="text">Brought 3 friends with me! One of the farmers was so happy to see young people. She told me to bring more of my friends with a big smile on her face. That made my day.</h5>
+                  <h5 class="name">Jenny, MO <br> From the "Go to farmers' market" food challenge</h5>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="review">
+                <div class="image">
+                  <%= image_tag 'reviews/michelle.jpg' %>
+                </div>
+                <div class="quote">
+                  <h2 class="quotation left">“</h2>
+                  <h2 class="quotation right">”</h2>
+                  <h5 class="text">I was surprised to see that things like yogurt had ingredients that I wasn't familiar with/felt extraneous, like "colored with carmine."</h5>
+                  <h5 class="name">Michelle, CA <br> From the “Know your food” food challenge</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a class="carousel-control-next" href="#reviews-carousel" role="button" data-slide="next">
+            <i class="fas fa-chevron-right"></i>
+          </a>
+        </div>
+        <script type="text/javascript">
+          $('.carousel').carousel()
+        </script>
+      </div>
   </div>
 </div>

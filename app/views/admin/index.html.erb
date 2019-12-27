@@ -65,10 +65,26 @@
     <div class="card w-100">
       <div class="user-reflection-deck card-body">
         <h5>User Reflections</h5>
-        <% Reflection.last(20).each_with_index do |reflection, index| %>
+        <% Reflection.all.each_with_index do |reflection, index| %>
           <div class="row collapse" id="_<%= index + 1%>">
             <div class="col">
               <h4> <%= reflection.challenge.user.name %> (<%= reflection.challenge.user.state %>, <%= reflection.challenge.user.country %>)</h4>
+              <h7>
+                Permission to share?
+                <% if reflection.permission %>
+                  <span class="text-success">✓</span>
+                <% else %>
+                  <span class="text-danger">✗</span>
+                <% end %>
+              </h7>
+              <h7>
+                Location?
+                <% if reflection.challenge.user.permissions.include?("location") %>
+                  <span class="text-success">✓</span>
+                <% else %>
+                  <span class="text-danger">✗</span>
+                <% end %>
+              </h7>
               <h4>Reflection for: <%= reflection.challenge.challenge_name %> </h4>
               <h4>Reflection:</h4>
               <p> <%= reflection.reflection %> </p>
@@ -86,7 +102,7 @@
           </div>
         <% end %>
         <ul class="pagination">
-          <% (1..Reflection.last(20).length).each do |index| %>
+          <% (1..Reflection.all.length).each do |index| %>
             <li class="page-item"><a class="page-link" data-toggle="collapse" href="#_<%= index %>"><%= index %></a></li>
           <% end %>
         </ul>
