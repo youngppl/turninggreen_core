@@ -89,10 +89,10 @@
           <label class="section-label first">location</label>
           <%= f.check_box :permissions, {multiple: true, onclick:"$('#privacy-save-button').prop('disabled', false);"}, 'location', nil %>
           <span>I give permission for Turning Green to use my location <a target="_blank" href=" <%= privacy_path %>">Learn more</a></span>
-          <label class="section-label">challenges</label>
-          <h5 class="more-info">To manage sharing settings for challenges individually please check the <strong>completed challenges</strong> page. </h5>
+          <label class="section-label">reflections</label>
           <%= f.check_box :permissions, {multiple: true, onclick:"$('#privacy-save-button').prop('disabled', false);"}, 'challenges', nil %>
-          <span>I give Turning Green permission to share <strong>ALL</strong> of my completed challenges <a target="_blank" href=" <%= privacy_path %>">Learn more</a></span><br>
+          <span>I want to remain anonymous if my reflections are shared on rootup's social media platforms. <a target="_blank" href=" <%= privacy_path %>">Learn more</a></span><br>
+          <h5 class="more-info">If you don't want any of your reflections to be shared, please <a href="mailto:rootupteam@gmail.com?">email us</a></h5>
         <%= f.submit "save changes", class: "btn save-changes-button", id: "privacy-save-button", disabled: "true", onclick: "$(this).siblings('.changes-saved-notification').css('display', 'flex');" %>
         <div class="changes-saved-notification">
           <span class="icon">&#x2713;</span>
