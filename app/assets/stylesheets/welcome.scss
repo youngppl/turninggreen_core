@@ -227,6 +227,7 @@ a {
           box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.13);
           border: solid 1px #e9e9e9;
           background-color: #ffffff;
+          transition: background-color 0.4s ease;
 
           .name {
             color: #5f5f5f;
@@ -304,16 +305,22 @@ a {
       }
     }
 
-    .next-arrow {
+    .arrow {
       outline: none;
       background: none;
       border: none;
       position: absolute;
-      right: 0;
-      top: 45%;
-      bottom: 250px;
       font-size: 25px;
       color: #959595;
+      top: 45%;
+
+      &.next {
+        right: 0;
+      }
+
+      &.prev {
+        left: 20px;
+      }
     }
   }
 
@@ -407,8 +414,9 @@ a {
         }
 
         &.right {
-          top: 114px;
-          right: 20px;
+          right: -6%;
+          bottom: 0;
+          height: 50px;
         }
       }
 
@@ -423,6 +431,7 @@ a {
         .text {
           font-size: 24px;
           width: 95%;
+          position: relative;
         }
 
         .name {
@@ -433,7 +442,8 @@ a {
 
     #reviews-carousel {
       height: 380px;
-      max-width: 1060px;
+      max-width: 1110px;
+      padding-left: 70px;
     }
 
     .carousel-inner {
@@ -468,6 +478,16 @@ a {
       border-radius: 50%;
       top: 35%;
       right: -5%;
+    }
+
+    .carousel-control-prev {
+      color: #8e8c8c;
+      font-size: 35px;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      top: 35%;
+      left: -2%;
     }
   }
 }

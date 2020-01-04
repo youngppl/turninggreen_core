@@ -32,12 +32,15 @@
       <div class="line"></div>
       <% themes.each do |theme| %>
         <div class="icon <%= theme.downcase %>" onclick="toggleChallengePreview('<%= theme.downcase %>')">
-          <%= image_tag "themes/icons/" + theme.downcase + ".svg", size: "25" %>
+          <%= image_tag "themes/icons/landing/" + theme.downcase + ".svg" %>
           <h5 class="name"> <%= theme.downcase %> </h5>
         </div>
       <% end %>
     </div>
     <div class="challenge-page">
+      <button type="button" name="button" class="prev arrow" onclick="prevChallengePreview();">
+        <i class="fas fa-chevron-left"></i>
+      </button>
       <% @highlighted_challenges.each_with_index do |challenge, index| %>
         <div class="challenge-box <%= themes[index].downcase %>">
           <div class="row">
@@ -98,7 +101,7 @@
           </div>
         </div>
       <% end %>
-      <button type="button" name="button" class="next-arrow" onclick="nextChallengePreview();">
+      <button type="button" name="button" class="next arrow" onclick="nextChallengePreview();">
         <i class="fas fa-chevron-right"></i>
       </button>
     </div>
@@ -137,8 +140,10 @@
                 </div>
                 <div class="quote">
                   <h2 class="quotation left">“</h2>
-                  <h2 class="quotation right">”</h2>
-                  <h5 class="text">I already compost, but I bought a compost bin and a canning starter kit for my brother so he can start too :)</h5>
+                  <div class="text">
+                    I already compost, but I bought a compost bin and a canning starter kit for my brother so he can start too :)
+                    <h2 class="quotation right">”</h2>
+                  </div>
                   <h5 class="name">Jordyn, OH <br> From the “Compost & Recycle” waste challenge</h5>
                 </div>
               </div>
@@ -150,8 +155,10 @@
                 </div>
                 <div class="quote">
                   <h2 class="quotation left">“</h2>
-                  <h2 class="quotation right">”</h2>
-                  <h5 class="text">Brought 3 friends with me! One of the farmers was so happy to see young people. She told me to bring more of my friends with a big smile on her face. That made my day.</h5>
+                  <div class="text">
+                    Brought 3 friends with me! One of the farmers was so happy to see young people. She told me to bring more of my friends with a big smile on her face. That made my day.
+                    <h2 class="quotation right">”</h2>
+                  </div>
                   <h5 class="name">Jenny, MO <br> From the "Go to farmers' market" food challenge</h5>
                 </div>
               </div>
@@ -163,13 +170,18 @@
                 </div>
                 <div class="quote">
                   <h2 class="quotation left">“</h2>
-                  <h2 class="quotation right">”</h2>
-                  <h5 class="text">I was surprised to see that things like yogurt had ingredients that I wasn't familiar with/felt extraneous, like "colored with carmine."</h5>
+                  <div class="text">
+                    I was surprised to see that things like yogurt had ingredients that I wasn't familiar with/felt extraneous, like "colored with carmine."
+                    <h2 class="quotation right">”</h2>
+                  </div>
                   <h5 class="name">Michelle, CA <br> From the “Know your food” food challenge</h5>
                 </div>
               </div>
             </div>
           </div>
+          <a class="carousel-control-prev" href="#reviews-carousel" role="button" data-slide="prev">
+            <i class="fas fa-chevron-left"></i>
+          </a>
           <a class="carousel-control-next" href="#reviews-carousel" role="button" data-slide="next">
             <i class="fas fa-chevron-right"></i>
           </a>
