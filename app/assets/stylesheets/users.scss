@@ -142,7 +142,7 @@
       margin: 0;
       display: grid;
       grid-column-gap: 31px;
-      grid-template-columns: auto auto auto auto;
+      grid-template-columns: 212px 212px 212px 212px;
       grid-row-gap: 31px;
     }
 
@@ -207,6 +207,7 @@
   .current-challenges {
     overflow: auto;
     overflow-y: hidden;
+    width: 1140px;
 
     .heading {
       font-size: 24px;
@@ -834,7 +835,9 @@
   color: #5f5f5f;
   min-width: 780px;
 
-  span, h5, p {
+  h5,
+  p,
+  span {
     max-width: 354px;
   }
 
@@ -869,7 +872,7 @@
     background-color: white;
     border-radius: 15px;
     padding: 24px;
-    margin: -24px -24px -20px -24px;
+    margin: -24px -24px -20px;
     width: 646px;
     flex-basis: unset;
     flex-grow: unset;

@@ -60,7 +60,7 @@
             </div>
           </div>
           <div class="actions">
-            <%= f.check_box :permission %>
+            <%= f.check_box :permission, {checked: true} %>
             <label>I give TG permission to share this check-in <a href=" <%= privacy_path %> " target="_blank">Learn more</a></label><br>
             <button type="button" class="submit" onclick="submitReflection(this, <%= challenge.id %> )">submit</button>
           </div>
