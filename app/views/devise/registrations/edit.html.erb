@@ -88,7 +88,7 @@
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, id: "edit-privacy", class: 'col section-content' }) do |f| %>
           <label class="section-label first">location</label>
           <%= f.check_box :permissions, {multiple: true, onclick:"$('#privacy-save-button').prop('disabled', false);"}, 'location', nil %>
-          <span>I give permission for Turning Green to use my location <a target="_blank" href=" <%= privacy_path %>">Learn more</a></span>
+          <span>I give permission to include my state + country with my reflections, if shared on rootup's social media platforms. <a target="_blank" href=" <%= privacy_path %>">Learn more</a></span>
           <label class="section-label">reflections</label>
           <%= f.check_box :permissions, {multiple: true, onclick:"$('#privacy-save-button').prop('disabled', false);"}, 'challenges', nil %>
           <span>I want to remain anonymous if my reflections are shared on rootup's social media platforms. <a target="_blank" href=" <%= privacy_path %>">Learn more</a></span><br>
