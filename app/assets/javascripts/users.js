@@ -104,9 +104,9 @@ function updateLogPrompt(e) {
   $(e).replaceWith('<h5 class="log-complete">today’s log complete!</h5>')
 }
 
-function tutoialSecondSlide() {
+function tutorialSecondSlide() {
   $('.slide.one').hide()
   $('.slide.two').show()
   $('.modal-content').width(535)
-  $('.modal-content').height(355)
+  $('.modal-content').height(430)
 }

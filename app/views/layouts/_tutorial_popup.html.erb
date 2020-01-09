@@ -6,7 +6,7 @@
         <h5 class="subheading">The environment is calling you to take action.<br>Let's get started!</h5>
         <div class="actions row justify-content-between">
           <button type="button" name="button" class="skip" onclick="$('#tutorial-popup').modal('hide')">skip</button>
-          <button type="button" name="button" class="continue" onclick="tutoialSecondSlide()">continue</button>
+          <button type="button" name="button" class="continue" onclick="tutorialSecondSlide()">continue</button>
         </div>
       </div>
       <div class="slide two">
@@ -24,9 +24,7 @@
                   a) "Challenges" tab on the nav bar, or<br>
                   b) "+" on "My Current Challenges" in your dashboard
               </p>
-              <div class="placeholder">
-                <%= video_tag 'tutorials/take-challenges.mov', size:"316x195", autoplay: true, loop: true, controls: true %>
-              </div>
+              <%= image_tag 'tutorials/1.gif' %>
             </div>
             <div class="carousel-item">
               <h2 class="heading">learn, learn, learn, and then do</h2>
@@ -34,23 +32,21 @@
                 <br>(just choose 1-3 to try first)
                 <br>Then go out and do your challenge(s)!
               </p>
-              <div class="placeholder"></div>
+              <%= image_tag 'tutorials/2.gif' %>
             </div>
             <div class="carousel-item">
               <h2 class="heading">come back though</h2>
               <p class="info">Show off your impact by logging it in cause it's worth bragging about.
                 <br>We also want to share your accomplishments and brag about you!
               </p>
-              <div class="placeholder">
-                <%= video_tag 'tutorials/log.mov', size:"316x195", autoplay: true, loop: true, controls: true %>
-              </div>
+              <%= image_tag 'tutorials/3.gif' %>
             </div>
             <div class="carousel-item">
               <h2 class="heading">at the end of your challenges</h2>
               <p class="info">Reflect upon your experience and share with us!
                 <br>Best part of rootup: hearing about what you've learned & how it's impacted you.
                 <br>We'll organize the big show and tell</p>
-              <div class="placeholder"></div>
+                <%= image_tag "tutorials/4.png", class: "_4", size: "460x310" %>
             </div>
           </div>
           <a class="carousel-control-next" href="#tutorial-carousel" role="button" data-slide="next">
@@ -63,7 +59,9 @@
         <p class="info">Let your seed remind you that every action matters(!) as it grows.
           <br>Be proud of what you do and continually challenge yourself to do more
         </p>
-        <div class="placeholder"></div>
+        <div class="seed">
+          <%= image_tag "seeds/0.svg", size: "60" %>
+        </div>
         <button type="button" name="button" class="start" onclick="$('#tutorial-popup').modal('hide')">start rootup</button>
       </div>
     </div>
@@ -77,6 +75,7 @@
         $('.slide.two').hide()
         $('.slide.three').show()
         $('.modal-content').width(461)
+        $('.modal-content').height(320)
       })
     }
   })
