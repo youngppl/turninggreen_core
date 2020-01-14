@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :set_variant
 
   protected
 
@@ -14,5 +15,18 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(resource)
     dashboard_path
+  end
+
+  private
+
+  def set_variant
+    case request.user_agent
+      when /iPhone/i
+        request.variant = :phone
+      when /Android/i && /mobile/i
+        request.variant = :phone
+      when /Windows Phone/i
+        request.variant = :phone
+    end
   end
 end
