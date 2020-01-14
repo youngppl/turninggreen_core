@@ -568,7 +568,7 @@
         }
       }
 
-      .carousel-control-next {
+      .carousel-control-next, .carousel-control-prev {
         color: #8e8c8c;
         font-size: 25px;
         width: 40px;
@@ -576,7 +576,14 @@
         border: solid 1px #8e8c8c;
         border-radius: 50%;
         top: 45%;
-        right: -10%;
+
+        &.left {
+          left: -10%;
+        }
+
+        &.right {
+          right: -10%;
+        }
       }
     }
 
