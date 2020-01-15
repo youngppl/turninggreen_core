@@ -3,13 +3,14 @@ require 'rails_helper'
 RSpec.describe "layouts/_dashboard_navbar.html.erb", type: :view, js: true do
   before(:each) do
 
-    @user = User.create(name: "bob", email: "bob@gmal.com", state: 'California', country: 'United States', birthday:'2000-04-09', password: '123qwerty', password_confirmation: '123qwerty', referral: 'Friend')
+    @user = User.create(name: "bob", email: "bob@gmal.com", state: 'California', country: 'United States', birthday:'2000-04-09', password: '123qwerty', password_confirmation: '123qwerty', referral: 'Friend', tutorial_viewed: true)
     @user.confirm
     signInUser(@user.email, @user.password)
     sign_in @user
     content_for :navbar do
       render 'layouts/dashboard_navbar'
     end
+    page.execute_script("$('#tutorial-popup').modal('hide');")
   end
 
   after(:each) do
