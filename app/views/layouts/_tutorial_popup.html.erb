@@ -1,0 +1,136 @@
+<div class="modal" id="tutorial-popup" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="slide one">
+        <h2 class="heading">welcome</h2>
+        <h5 class="subheading">The environment is calling you to take action.<br>Let's get started!</h5>
+        <div class="actions row justify-content-between">
+          <button type="button" name="button" class="skip" onclick="$('#tutorial-popup').modal('hide')">skip</button>
+          <button type="button" name="button" class="continue" onclick="tutorialSecondSlide()">continue</button>
+        </div>
+      </div>
+      <div class="slide two">
+        <div id="tutorial-carousel" class="carousel slide" data-interval="false">
+          <ol class="carousel-indicators">
+            <li data-target="#tutorial-carousel" data-slide-to="0" class="active"></li>
+            <li data-target="#tutorial-carousel" data-slide-to="1"></li>
+            <li data-target="#tutorial-carousel" data-slide-to="2"></li>
+            <li data-target="#tutorial-carousel" data-slide-to="3"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <h2 class="heading">start a challenge</h2>
+              <p class="info">Click:<br>
+                  a) "Challenges" tab on the nav bar, or<br>
+                  b) "+" on "My Current Challenges" in your dashboard
+              </p>
+              <%= image_tag 'tutorials/1.gif' %>
+            </div>
+            <div class="carousel-item">
+              <h2 class="heading">learn, learn, learn, and then do</h2>
+              <p class="info">Tap into a theme, and start a challenge that catches your attention.
+                <br>(just choose 1-3 to try first)
+                <br>Then go out and do your challenge(s)!
+              </p>
+              <%= image_tag 'tutorials/2.gif' %>
+            </div>
+            <div class="carousel-item">
+              <h2 class="heading">come back though</h2>
+              <p class="info">Show off your impact by logging it in cause it's worth bragging about.
+                <br>We also want to share your accomplishments and brag about you!
+              </p>
+              <%= image_tag 'tutorials/3.gif' %>
+            </div>
+            <div class="carousel-item">
+              <h2 class="heading">at the end of your challenges</h2>
+              <p class="info">Reflect upon your experience and share with us!
+                <br>Best part of rootup: hearing about what you've learned & how it's impacted you.
+                <br>We'll organize the big show and tell</p>
+                <%= image_tag "tutorials/4.png", class: "_4", size: "460x310" %>
+            </div>
+          </div>
+          <a class="carousel-control-prev left" href="#tutorial-carousel" role="button" onclick="event.preventDefault()">
+            <i class="fas fa-chevron-left"></i>
+          </a>
+          <a class="carousel-control-next right" href="#tutorial-carousel" role="button" onclick="event.preventDefault()">
+            <i class="fas fa-chevron-right"></i>
+          </a>
+        </div>
+      </div>
+      <div class="slide three">
+        <h2 class="heading">here's your seed</h2>
+        <p class="info">Let your seed remind you that every action matters(!) as it grows.
+          <br>Be proud of what you do and continually challenge yourself to do more
+        </p>
+        <div class="seed">
+          <%= image_tag "seeds/0.svg", size: "60" %>
+        </div>
+        <button type="button" name="button" class="start" onclick="$('#tutorial-popup').modal('hide');resetFlow();">start rootup</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+  <% if current_user && !current_user.tutorial_viewed %>
+    $('#tutorial-popup').modal({'backdrop': 'static'})
+    <% current_user.update_attributes(tutorial_viewed: true) %>
+  <% end %>
+  // initial carousel button actions setup
+  $('.carousel-control-prev').click(function () {
+    $('.slide.two').hide()
+    $('.slide.one').show()
+    $('.modal-content').width(330)
+    $('.modal-content').height(140)
+  })
+  $('.carousel-control-next').click(function () {
+      $('#tutorial-carousel').carousel('next')
+  })
+  // button actions depending on current carousel slide
+  $('#tutorial-carousel').on('slid.bs.carousel', function () {
+    if ($('.carousel-item.active').index() == 0) {
+      $('.carousel-control-prev').off('click')
+      $('.carousel-control-prev').click(function (e) {
+        $('.slide.two').hide()
+        $('.slide.one').show()
+        $('.modal-content').width(330)
+        $('.modal-content').height(140)
+      })
+    } else if ($('.carousel-item.active').index() == 3) {
+      $('.carousel-control-next').off('click')
+      $('.carousel-control-next').click(function () {
+        $('.slide.two').hide()
+        $('.slide.three').show()
+        $('.modal-content').width(461)
+        $('.modal-content').height(320)
+      })
+    } else {
+      $('.carousel-control-next').off('click')
+      $('.carousel-control-prev').off('click')
+      $('.carousel-control-next').click(function () {
+          $('#tutorial-carousel').carousel('next')
+      })
+      $('.carousel-control-prev').click(function () {
+          $('#tutorial-carousel').carousel('prev')
+      })
+    }
+  })
+
+  function tutorialSecondSlide() {
+    $('.slide.one').hide()
+    $('.slide.two').show()
+    $('.modal-content').width(535)
+    $('.modal-content').height(430)
+  }
+
+  function resetFlow() {
+    $('.slide.three').hide()
+    $('.slide.one').show()
+    $('#tutorial-carousel').carousel(0)
+    $('.carousel-control-next').off('click')
+    $('.carousel-control-next').click(function () {
+        $('#tutorial-carousel').carousel('next')
+    })
+    $('.modal-content').width(330)
+    $('.modal-content').height(140)
+  }
+</script>

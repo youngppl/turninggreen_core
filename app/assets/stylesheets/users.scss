@@ -471,6 +471,151 @@
   }
 }
 
+#tutorial-popup {
+  .modal-content {
+    width: 461px;
+    border-radius: 17px;
+    background-color: #ffffff;
+    margin: auto;
+    padding: 24px 67px;
+    color: #5f5f5f;
+    text-align: center;
+  }
+
+  .heading {
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  .subheading {
+    font-size: 14px;
+  }
+
+  .info {
+    font-size: 14px;
+    font-weight: 600;
+    text-align: left;
+
+  }
+
+  ._4 {
+    height: 310px;
+  }
+
+  button {
+    width: 156px;
+    height: 44px;
+    border-radius: 7px;
+    border: solid 2px #5d8440;
+    color: #5d8440;
+    background: none;
+    outline: none;
+
+    &:hover {
+      color: #ffffff;
+      background-color: #5d8440;
+    }
+
+    &.skip {
+      border: solid 1px #cacaca;
+      color: #cacaca;
+
+      &:hover {
+        color: #5f5f5f;
+        border: solid 1px #5f5f5f;
+        background-color: white;
+      }
+    }
+  }
+
+  .slide {
+    &.one {
+      .subheading {
+        margin-top: 21px;
+      }
+
+      .actions {
+        margin-top: 24px;
+      }
+    }
+
+    &.three,
+    &.two {
+      display: none;
+    }
+
+    &.two {
+      #tutorial-carousel {
+        height: 460px;
+      }
+
+      .carousel-item li {
+        text-align: left;
+        font-size: 14px;
+        font-weight: 600;
+      }
+
+      .carousel-indicators {
+        li {
+          width: 7px;
+          height: 7px;
+          background-color: #e9e9e9;
+          border-radius: 50%;
+
+          &.active {
+            background-color: #5d8440;
+          }
+        }
+      }
+
+      .carousel-control-next, .carousel-control-prev {
+        color: #8e8c8c;
+        font-size: 25px;
+        width: 40px;
+        height: 40px;
+        border: solid 1px #8e8c8c;
+        border-radius: 50%;
+        top: 45%;
+
+        &.left {
+          left: -10%;
+        }
+
+        &.right {
+          right: -10%;
+        }
+      }
+    }
+
+    &.three {
+      .start {
+        margin-top: 28px;
+      }
+
+      .seed {
+        width: 146px;
+        height: 146px;
+        object-fit: contain;
+        box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.06), 0 2px 10px 0 rgba(0, 0, 0, 0.13);
+        background-color: #ffffff;
+        border-radius: 50%;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+      }
+    }
+
+    .placeholder {
+      width: 316px;
+      height: 195px;
+      border: solid 1px #979797;
+      background-color: #d8d8d8;
+      margin: auto;
+    }
+  }
+}
+
 .metric-logged-popup {
   .modal-content {
     width: 400px;

@@ -22,7 +22,9 @@ $(window).on('turbolinks:load', function() {
 });
 
 function complete_challenge(id) {
-  $.post('/challenges/complete-challenge', {id:id})
+  $.post('/challenges/complete-challenge', {
+    id: id
+  })
 }
 
 $(document).on("click", ".popover .close", function() {
