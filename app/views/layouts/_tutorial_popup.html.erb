@@ -71,7 +71,7 @@
   </div>
 </div>
 <script type="text/javascript">
-  <% if !current_user.tutorial_viewed %>
+  <% if current_user && !current_user.tutorial_viewed %>
     $('#tutorial-popup').modal({'backdrop': 'static'})
     <% current_user.update_attributes(tutorial_viewed: true) %>
   <% end %>
