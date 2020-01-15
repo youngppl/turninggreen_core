@@ -16,3 +16,12 @@ function nextChallengePreview() {
   }
   toggleChallengePreview(themes[current_preview])
 }
+
+function prevChallengePreview() {
+  if (current_preview == 0) {
+    current_preview = 9
+  } else {
+    current_preview -= 1
+  }
+  toggleChallengePreview(themes[current_preview])
+}
