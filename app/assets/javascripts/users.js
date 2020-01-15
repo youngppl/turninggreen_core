@@ -103,10 +103,3 @@ function updateLogPrompt(e) {
   $(e).siblings('.log-input').prop('disabled', true);
   $(e).replaceWith('<h5 class="log-complete">today’s log complete!</h5>')
 }
-
-function tutorialSecondSlide() {
-  $('.slide.one').hide()
-  $('.slide.two').show()
-  $('.modal-content').width(535)
-  $('.modal-content').height(430)
-}

@@ -49,10 +49,10 @@
                 <%= image_tag "tutorials/4.png", class: "_4", size: "460x310" %>
             </div>
           </div>
-          <a class="carousel-control-prev left" href="#tutorial-carousel" role="button" data-slide="prev">
+          <a class="carousel-control-prev left" href="#tutorial-carousel" role="button" onclick="event.preventDefault()">
             <i class="fas fa-chevron-left"></i>
           </a>
-          <a class="carousel-control-next right" href="#tutorial-carousel" role="button" data-slide="next">
+          <a class="carousel-control-next right" href="#tutorial-carousel" role="button" onclick="event.preventDefault()">
             <i class="fas fa-chevron-right"></i>
           </a>
         </div>
@@ -72,16 +72,52 @@
 </div>
 <script type="text/javascript">
   $('#tutorial-popup').modal({'backdrop': 'static'})
+  // initial carousel button actions setup
+  $('.carousel-control-prev').click(function () {
+    $('.slide.two').hide()
+    $('.slide.one').show()
+    $('.modal-content').width(330)
+    $('.modal-content').height(140)
+  })
+  $('.carousel-control-next').click(function () {
+      $('#tutorial-carousel').carousel('next')
+  })
+  // button actions depending on current carousel slide
   $('#tutorial-carousel').on('slid.bs.carousel', function () {
-    if ($('.carousel-item.active').index() == 3) {
+    if ($('.carousel-item.active').index() == 0) {
+      $('.carousel-control-prev').off('click')
+      $('.carousel-control-prev').click(function (e) {
+        $('.slide.two').hide()
+        $('.slide.one').show()
+        $('.modal-content').width(330)
+        $('.modal-content').height(140)
+      })
+    } else if ($('.carousel-item.active').index() == 3) {
+      $('.carousel-control-next').off('click')
       $('.carousel-control-next').click(function () {
         $('.slide.two').hide()
         $('.slide.three').show()
         $('.modal-content').width(461)
         $('.modal-content').height(320)
       })
+    } else {
+      $('.carousel-control-next').off('click')
+      $('.carousel-control-prev').off('click')
+      $('.carousel-control-next').click(function () {
+          $('#tutorial-carousel').carousel('next')
+      })
+      $('.carousel-control-prev').click(function () {
+          $('#tutorial-carousel').carousel('prev')
+      })
     }
   })
+
+  function tutorialSecondSlide() {
+    $('.slide.one').hide()
+    $('.slide.two').show()
+    $('.modal-content').width(535)
+    $('.modal-content').height(430)
+  }
 
   function resetFlow() {
     $('.slide.three').hide()
