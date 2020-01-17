@@ -8,7 +8,7 @@ module ChallengesHelper
         we don't think about it after closing the trash lid. How much trash do
         you toss everyday? Have you ever thought about where it all goes? Do you
         consider how you could avoid the waste to begin with?",
-        :instruction => "Now that you've seen <a target=\"_blank\" href=\"https://www.youtube.com/watch?v=BxKfpt70rLI\">\"Going green shouldn't be this hard\"</a>, click on a challenge (listed in recommended order) below to get started and learn more!",
+        :instruction => "Okay, here's the plan. You've watched <a target=\"_blank\" href=\"https://www.youtube.com/watch?v=BxKfpt70rLI\">\"Going green shouldn't be this hard\"</a>. Now it's time to DO: choose 1-2 challenges below, learn, and act!",
         :challenges => [
           {
             :name => "Audit your waste",
@@ -161,7 +161,7 @@ module ChallengesHelper
         it got to you? Food should nourish us, but not all food is created equal. How food
         is grown influences nutritional quality, and you have the power to choose the
         quality of nutrients your body gets.",
-        :instruction => "Now that you've seen <a target=\"_blank\" href=\"https://www.youtube.com/watch?v=hWkYtZxpQUo\">'The Future of Food' video</a>, click on a challenge (listed in recommended order) below to get started and learn more!",
+        :instruction => "Okay, here's the plan. You've watched <a target=\"_blank\" href=\"https://www.youtube.com/watch?v=hWkYtZxpQUo\">'The Future of Food' video</a>. Now it's time to DO: choose 1-2 challenges below, learn, and act!",
 	:challenges => [
           {
             :name => "Know your food",
@@ -303,7 +303,7 @@ and values of the farms and companies whose products you buy."],
         When buying products, we look for ones that make us feel our best. But, how often have
         you flipped the package to read the ingredient list? Even then, do you know what the
         ingredients are?",
-        :instruction => "Now that you've seen <a target=\"_blank\" href=\"https://www.youtube.com/watch?v=6wAToqkcAow\">\"Are the ingredients in fragrance safe?\"</a>, click on a challenge (listed in recommended order) below to get started and learn more!",
+        :instruction => "Okay, here's the plan. You've watched <a target=\"_blank\" href=\"https://www.youtube.com/watch?v=6wAToqkcAow\">\"Are the ingredients in fragrance safe?\"</a>. Now it's time to DO: choose 1-2 challenges below, learn, and act!",
 	:challenges => [
           {
             :name => "Know your products",
@@ -437,7 +437,7 @@ and values of the farms and companies whose products you buy."],
         our planet is available to us. To ensure equitable access, we need to change
         our lifestyle habits, like the food we eat and how we commute. Do you know how
         much water it takes to fuel your lifestyle?",
-        :instruction => "Now that you've seen <a target=\"_blank\" href=\"https://www.youtube.com/watch?v=b1f-G6v3voA\">\"Where is water?\"</a>, click on a challenge (listed in recommended order) below to get started and learn more!",
+        :instruction => "Okay, here's the plan. You've watched <a target=\"_blank\" href=\"https://www.youtube.com/watch?v=b1f-G6v3voA\">\"Where is water?\"</a>. Now it's time to DO: choose 1-2 challenges below, learn, and act!",
 	:challenges => [
           {
             :name => "Track your usage",
@@ -569,7 +569,7 @@ and values of the farms and companies whose products you buy."],
         of healthy soil than there are people on Ear	th? This diversity in our soil is
         responsible for 95%(!) of our food. We don't think much about these little
         fellas much, but they're critical to our food security.",
-        :instruction => "Now that you've seen <a target=\"_blank\" href=\"https://www.youtube.com/watch?v=GK_vRtHJZu4\">\"Why is biodiversity so important?\"</a>, click on a challenge (listed in recommended order) below to get started and learn more!",
+        :instruction => "Okay, here's the plan. You've watched <a target=\"_blank\" href=\"https://www.youtube.com/watch?v=GK_vRtHJZu4\">\"Why is biodiversity so important?\"</a>. Now it's time to DO: choose 1-2 challenges below, learn, and act!",
 	:challenges => [
           {
             :name => "Biodiversity 101",
@@ -702,7 +702,7 @@ disapproval; explain to them why; and propose alternatives."],
         :briefDescription => "We live in a world of fast fashion where low prices often mean worker exploitation
         and cheap quality. Have you ever thought about how the price of your clothes translate to how your
         clothes were made?",
-        :instruction => "Now that you've seen <a target=\"_blank\" href=\"https://www.youtube.com/watch?v=fR7bXsoNwwE\">\"What is fast fashion?\"</a>, click on a challenge (listed in recommended order) below to get started and learn more!",
+        :instruction => "Okay, here's the plan. You've watched <a target=\"_blank\" href=\"https://www.youtube.com/watch?v=fR7bXsoNwwE\">\"What is fast fashion?\"</a>. Now it's time to DO: choose 1-2 challenges below, learn, and act!",
 	:challenges => [
           {
             :name => "Know your clothes",
@@ -839,7 +839,7 @@ clothes? Here are example scripts to get you started.", "Teach at least 3 other 
         :briefDescription => "There are many products on the market that leave behind harmful chemicals in place of
         the dirt and grime we want to remove. Cleaning shouldn't be harmful or complicated. We'll show you how to
         keep it simple and fun!",
-        :instruction => "Click on a challenge (listed in recommended order) below to get started and learn more!",
+        :instruction => "Now it's time to DO: choose 1-2 challenges below, learn, and act!",
 	:challenges => [
           {
             :name => "Audit your products",
@@ -968,7 +968,7 @@ reusable non-plastic tools made of plant-based materials (e.g. bamboo, wood, nat
         :briefDescription => "Did you know that indoor air is more polluted than the air outside? Carpets,
         paint, and furniture, for example, can release pollutants that build up in our homes. This raises the
         question: do you know the material composition of the things in your home?",
-        :instruction => "Click on a challenge (listed in recommended order) below to get started and learn more!",
+        :instruction => "Now it's time to DO: choose 1-2 challenges below, learn, and act!",
 	:challenges => [
           {
             :name => "Declutter your space",
@@ -1098,7 +1098,7 @@ changes you've made in your home and teach them the things you have learned.", "
         :briefDescription => "Your health is most important because good health enables you to do the things you want
         and dream of. It sucks to be sick, so take care of your mental, physical, and spiritual health. Here, we'll just
         remind you of how to do that.",
-        :instruction => "Click on a challenge (listed in recommended order) below to get started and learn more!",
+        :instruction => "Now it's time to DO: choose 1-2 challenges below, learn, and act!",
 	:challenges => [
           {
             :name => "Evaluate your health",
@@ -1225,7 +1225,7 @@ Don't make assumptions. If someone else made the food, ask if sugar was added to
         :briefDescription => "Being mindful of the impact of our daily actions doesn't stop when we leave home. It
         is still important if we're in the front yard, down the street, another city, and another country. Take what
         you've learned on your next trip, and show us what you can do!",
-        :instruction => "Click on a challenge (listed in recommended order) below to get started and learn more!",
+        :instruction => "Now it's time to DO: choose 1-2 challenges below, learn, and act!",
 	:challenges => [
           {
             :name => "Know your values",
