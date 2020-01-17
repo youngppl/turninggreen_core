@@ -35,8 +35,8 @@ function checkPasswords() {
 
 function allowNextButton(el) {
   empty = true
-  $(el).siblings('input').addBack().each(function () {
-    if ($(this).val() || this.validity.valid){
+  $(el).siblings('input').addBack().each(function() {
+    if ($(this).val() || this.validity.valid) {
       empty = false
     } else {
       empty = true
@@ -49,26 +49,27 @@ function allowNextButton(el) {
   }
 }
 
-function activateNextButton(){
+function activateNextButton() {
   $('.next-button .disabled').hide()
   $('.next-button .active').show()
 }
 
-function disableNextButton(){
+function disableNextButton() {
   $('.next-button .disabled').show()
   $('.next-button .active').hide()
 }
 
 currentSection = 1
+
 function nextSection(el) {
-  if ($(el).children('.next-button .active').is(':visible')){
+  if ($(el).children('.next-button .active').is(':visible')) {
     $('.section._' + currentSection).hide()
     currentSection++
     $('.section._' + currentSection).show()
     disableNextButton()
   }
 
-  if (currentSection == 4){
+  if (currentSection == 4) {
     $('.next-button .active').hide()
     $('.next-button .disabled').hide()
   }

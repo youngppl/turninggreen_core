@@ -1,6 +1,5 @@
 .mobile {
   $rootup-green: #105b2f;
-
   width: 85%;
   font-family: Raleway, sans-serif;
   color: #5f5f5f;
@@ -10,7 +9,8 @@
     font-size: 24px;
   }
 
-  input, select {
+  input,
+  select {
     height: 41px;
     border-radius: 3px;
     background-color: #f9f9f9;
@@ -21,7 +21,8 @@
     border: none;
   }
 
-  button, input[type="submit"] {
+  button,
+  input[type="submit"] {
     height: 47px;
     border-radius: 6px;
     background-color: $rootup-green;

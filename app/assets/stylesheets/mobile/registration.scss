@@ -19,14 +19,16 @@
     text-align: right;
   }
 
-  input, select {
+  input,
+  select {
     margin-bottom: 16px;
 
     &:focus {
       border: solid 1px #105b2f;
     }
 
-    &:invalid, &.invalid {
+    &.invalid,
+    &:invalid {
       border: solid 1px #ff3b30;
     }
   }
