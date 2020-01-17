@@ -1,0 +1,37 @@
+.registration.mobile {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  height: 100vh;
+  justify-content: space-between;
+  padding: 36px 0;
+
+  .section {
+    display: none;
+
+    .heading {
+      font-size: 20px;
+      text-align: left;
+    }
+  }
+
+  .next-button {
+    text-align: right;
+  }
+
+  input, select {
+    margin-bottom: 16px;
+
+    &:focus {
+      border: solid 1px #105b2f;
+    }
+
+    &:invalid, &.invalid {
+      border: solid 1px #ff3b30;
+    }
+  }
+
+  .account-button:disabled {
+    background-color: #d2d5db;
+  }
+}

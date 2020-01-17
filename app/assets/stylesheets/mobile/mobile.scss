@@ -10,7 +10,7 @@
     font-size: 24px;
   }
 
-  input {
+  input, select {
     height: 41px;
     border-radius: 3px;
     background-color: #f9f9f9;
@@ -30,5 +30,17 @@
     font-size: 16px;
     font-weight: 600;
     border: none;
+  }
+
+  .error {
+    display: none;
+    margin-top: -20px;
+
+    .message {
+      display: inline-block;
+      position: relative;
+      font-size: 12px;
+      color: #ff3b30;
+    }
   }
 }
