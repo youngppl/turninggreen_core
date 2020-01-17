@@ -13,14 +13,13 @@ module ChallengesHelper
           {
             :name => "Audit your waste",
             :type => "pre",
-            :question => "Why does waste matter?",
-            :description => "The chemicals used in the production of goods impact workers' health. The materials and energy required to make and transport goods contribute to climate change. The generation and accumulation of waste disproportionately affects the world's poorest communities. Waste matters. And it comes from <a target=\"_blank\" href=\"https://www.breakfreefromplastic.org/globalbrandauditreport2019/?mc_cid=8671ee16ab&mc_eid=f265c1970f\">every part of the production, usage, and disposal of goods.</a> <a target=\"_blank\" href=\"https://www.plasticpollutioncoalition.org/take-action-1\">Minimize your waste</a> (in this order): refuse, reduce, reuse, rot, recycle.",
+            :question => "Why is waste a problem?",
+            :description => "There is more to a product than what you see. It takes materials, labor, energy to: source materials, run machinery, package products, and fuel vehicles for shipping. When you throw something away, especially after using it for a very short time, all those inputs are wasted. And the environment is stuck with <a target=\"_blank\" href=\"https://www.breakfreefromplastic.org/globalbrandauditreport2019/?mc_cid=8671ee16ab&mc_eid=f265c1970f\">more trash</a>.",
             :links => {
-              'How to conduct a waste audit (guide)' => 'https://www.goingzerowaste.com/31-day-challenge/how-to-conduct-a-waste-audit-day-31-of-the-zero-waste-challenge',
-              'What you can do (guide)' => 'https://www.plasticfreejuly.org/get-involved/what-you-can-do/category/getting-started/',
+              'What YOU can do (guide)' => 'https://www.plasticfreejuly.org/get-involved/what-you-can-do/category/getting-started/',
               'How much plastic do you use? (quiz)' => 'https://survey.thinkfieldpanel.com.au/wcfs/29402'
             },
-            :instructions => ["Take a bag with you today + collect every piece of waste you'd throw in the trash, recycling, and compost.", 'At end of day, separate your collection into compostable, recyclable, and trash. Evaluate size of each pile.', 'Reflect upon your findings. How could you have avoided the trash you collected? Could you use alternative products to minimize your category sizes?'],
+            :instructions => ["Take a bag with you today", "Collect every piece of waste you generate (trash, recyclables, compostables)", "At end of day, separate your collection into compostable, recyclable, and trash", "Evaluate the size of each pile and reflect. Could you have refused something and/or used an alternative? Where could you have reduced? What could you have reused?"],
             :alt_instructions => ["Alternative: Track your waste production with a list + mark them as compostable, recyclable, and trash."],
             :metric_question => "",
 :metric_verb => "N/A",
@@ -31,13 +30,14 @@ module ChallengesHelper
           {
             :name => "Practice refusing",
             :type => "self",
-            :question => "Why should I refuse taking freebies?",
-            :description => "\"Freebies\" are passed out all the time. The problem is this \"free\" stuff often ends up in landfills, which is a waste of resources. When we take \"free\" stuff, we indirectly send the signal to make + buy more of these products. To reduce our trash output, we need to firmly say 'no thank you' and explain why. ",
+            :question => "Why should I say \"No thanks\" to free stuff?",
+            :description => "Taking free stuff you don't use much is a waste of resources. They'll probably end up in the trash or some donation pile. When you take \"free\" stuff, you send the signal that more of these products should be made + bought, which is the wrong message when we actually don't use or need this stuff.",
             :links => {
-              "Ask questions before taking something (blog)" => "https://www.goingzerowaste.com/blog/2015/9/17/the-power-of-saying-no",
-              'How to ask for no gifts this holiday (guide)' => 'https://www.thegoodtrade.com/features/how-to-ask-for-no-gifts'
+              "Ask these questions before taking something (blog)" => "https://www.goingzerowaste.com/blog/2015/9/17/the-power-of-saying-no",
+              'Asking for no gifts (guide)' => 'https://www.thegoodtrade.com/features/how-to-ask-for-no-gifts'
             },
-            :instructions => ["Before you take any \"freebie\" (e.g. free stuff at events, <a target=\"_blank\" href=\"https://trashisfortossers.com/why-requesting-no-straw-is-awesome/\">straw in drink</a>, napkin for takeout), pause and ask yourself: will I use this more than 5 times? If no, say 'No thank you. I won't use this.'", "Also consider: do I already own something that can serve the same purpose? If yes, then say 'No thank you, I don't need this.'", "If you do need it, feel free to take it. This challenge is about knowing when to say 'no' and when to say 'yes'."],
+            :instructions => ["Before you take any \"free\" stuff (e.g. <a target=\"_blank\" href=\"https://trashisfortossers.com/why-requesting-no-straw-is-awesome/\">straw in drink</a>, napkin for takeout), pause and ask yourself: will I use this more than 5 times? If no, say 'No thank you. I won't use this.'", "Also consider: do I already own something that can serve the same purpose? If yes, then say 'No thank you, I don't need this.'", "If you do need it, feel free to take it"],
+	:alt_instructions => ["This challenge is about knowing when to say 'no' + when to say 'yes', instead of saying 'yes' all the time."],
             :metric_question => "How many times did you refuse something you didn't need?",
 :metric_verb => "You refused something you didn't need ",
 :metric_unit => " times!",
@@ -48,16 +48,15 @@ module ChallengesHelper
             :name => "Shop with reusables",
             :type => "friends",
             :question => "What's the deal with food packaging?",
-            :description => "Packaging, even if it's <a target=\"_blank\" href=\"https://www.youtube.com/watch?v=urFZ5o0az_4\">recyclable</a> or compostable, still end up in landfills. To best combat this, refuse waste at the root source so you don't have to figure out proper disposal later. For example, food packaging extends shelf life + makes shopping convenient, but ask yourself: Is it necessary? Think about farmers' markets + grocery stores; it's possible to buy loose produce.",
+            :description => "Packaging, even if it's <a target=\"_blank\" href=\"https://www.youtube.com/watch?v=urFZ5o0az_4\">recyclable</a> or compostable, still end up in landfills. What we can do: refuse waste at the root so you don't have to figure out proper disposal later. Ask before acting: Is it necessary? Think farmers' markets + grocery stores + bulk bins; it's possible to buy loose produce & grains.",
             :links => {
-              "Shopping with your own bags + jars (guide)" => "https://www.goingzerowaste.com/blog/2016/3/14/ultimate-guide-to-zero-waste-grocery-shopping",
-              "Zero waste shopping at the farmers' market (video)" => "https://trashisfortossers.com/how-to-shop-at-farmers-market-withou/",
+              "Tips to shop w/ your own bags + jars (guide)" => "https://www.goingzerowaste.com/blog/2016/3/14/ultimate-guide-to-zero-waste-grocery-shopping",
+              "Zero waste @ the farmers' market (video)" => "https://trashisfortossers.com/how-to-shop-at-farmers-market-withou/",
               "Where can I find bulk? (finder)" => "https://app.zerowastehome.com/",
-              "Is bulk not available? (blog)" => "https://www.goingzerowaste.com/blog/2015/12/31/life-without-bulk",
-	      "The Indonesian Plastic Bag Diet (video)" => "https://www.youtube.com/watch?v=PBhakv9DQFQ"
+              "Is bulk not available? (blog)" => "https://www.goingzerowaste.com/blog/2015/12/31/life-without-bulk"
             },
-            :instructions => ["Bring your own reusable bags and jars", "Opt for loose goods (e.g. fruits, veggies, meat, cheese, bread) instead of packaged ones. Try to avoid any packaging that will be disposed of.", "Shop at bulk bins.", "Get 3 friends and family to join you!"],
-	          :extra => "*If goods are charged by weight (e.g. pounds or kilos), don't forget to tare your reusables before filling them up!",
+            :instructions => ["Bring reusable bags + jars with you", "Opt for loose goods (e.g. fruits, veggies, meat, cheese, bread) instead of packaged", "We know it's not always possible, but try. Do your best to avoid any disposable packaging.", "Shop at bulk bins", "Get 3 friends/fam to join you!"],
+	          :alt_instructions => ["If goods are charged by weight (e.g. pounds or kilos), don't forget to tare your reusables before filling them up!"],
             :metric_question => "How many times did you use reusable containers (e.g. bags, jars) instead of single-use disposables?",
 :metric_verb => "You used reusable containers instead of single-use disposables ",
 :metric_unit => " times!",
