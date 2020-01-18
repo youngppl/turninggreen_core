@@ -55,8 +55,8 @@ module ChallengesHelper
               "Where can I find bulk? (finder)" => "https://app.zerowastehome.com/",
               "Is bulk not available? (blog)" => "https://www.goingzerowaste.com/blog/2015/12/31/life-without-bulk"
             },
-            :instructions => ["Bring reusable bags + jars with you", "Opt for loose goods (e.g. fruits, veggies, meat, cheese, bread) instead of packaged", "We know it's not always possible, but try. Do your best to avoid any disposable packaging.", "Shop at bulk bins", "Get 3 friends/fam to join you!"],
-	          :alt_instructions => ["If goods are charged by weight (e.g. pounds or kilos), don't forget to tare your reusables before filling them up!"],
+            :instructions => ["Bring reusable bags + jars with you", "Opt for loose goods (e.g. fruits, veggies, meat, cheese, bread) instead of packaged", "Shop at bulk bins", "Get 3 friends/fam to join you!"],
+	          :alt_instructions => ["We know it's not always possible, but try to avoid any disposable packaging. Just do your best!", "If goods are charged by weight (e.g. pounds or kilos), don't forget to <a target=\"_blank\" href=\"http://trashisfortossers.com/how-to-tare-jar-and-shop-waste-free/\">tare your reusables before filling them up</a>!"],
             :metric_question => "How many times did you use reusable containers (e.g. bags, jars) instead of single-use disposables?",
 :metric_verb => "You used reusable containers instead of single-use disposables ",
 :metric_unit => " times!",
@@ -66,17 +66,16 @@ module ChallengesHelper
           {
             :name => "Eat without disposables",
             :type => "self",
-            :question => "Why is disposable foodware a problem?",
-            :description => "Paper plates, plastic cutlery, and foam cups are disposable. You use it once and throw it away. The problem is they end up sitting in landfills for a <a target=\"_blank\" href=\"https://greendiningalliance.org/2016/12/the-real-cost-of-styrofoam/\">very long time</a>. Additionally, disposable plastic foodware, particularly those with
+            :question => "What's the problem with foodware?",
+            :description => "Make room for the good in the world. Not all these plates, utensils, and cups that you use once & throw away, because they sit in landfills + oceans for a <a target=\"_blank\" href=\"https://greendiningalliance.org/2016/12/the-real-cost-of-styrofoam/\">very long time</a>. What’s worse is plastic foodware, especially those with 
             <img src=\"data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/Pgo8IURPQ1RZUEUgc3ZnIFBVQkxJ%0D%0AQyAiLS8vVzNDLy9EVEQgU1ZHIDIwMDEwOTA0Ly9FTiIKICJodHRwOi8vd3d3LnczLm9yZy9UUi8y%0D%0AMDAxL1JFQy1TVkctMjAwMTA5MDQvRFREL3N2ZzEwLmR0ZCI+CjxzdmcgdmVyc2lvbj0iMS4wIiB4%0D%0AbWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiB3aWR0aD0iODUuMDAwMDAwcHQiIGhl%0D%0AaWdodD0iODMuMDAwMDAwcHQiIHZpZXdCb3g9IjAgMCA4NS4wMDAwMDAgODMuMDAwMDAwIgogcHJl%0D%0Ac2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQgbWVldCI+Cgo8ZyB0cmFuc2Zvcm09InRyYW5zbGF0%0D%0AZSgwLjAwMDAwMCw4My4wMDAwMDApIHNjYWxlKDAuMTAwMDAwLC0wLjEwMDAwMCkiCmZpbGw9IiMw%0D%0AMDAwMDAiIHN0cm9rZT0ibm9uZSI+CjxwYXRoIGQ9Ik0zNDEgNzQ0IGMtMTcgLTE0IC01MCAtNTcg%0D%0ALTcyIC05NiAtMjUgLTQzIC00NiAtNjggLTU0IC02NSAtMTMgNgotMjUgLTUyIC0yNSAtMTI1IGww%0D%0AIC0zOSA3MCA0OCBjNjAgNDIgNjggNTAgNTUgNjIgLTEzIDEzIC0xMiAxOSA3IDUwIDg1IDE0NAo5%0D%0ANCAxNDUgMTcyIDEzIGwzOCAtNjMgMzEgMjEgYzE4IDExIDMxIDI0IDMwIDI4IC02IDI3IC04MCAx%0D%0AMzYgLTExMCAxNjIgLTQ1CjQwIC05OCA0MSAtMTQyIDR6Ii8+CjxwYXRoIGQ9Ik01NzQgNDg0IGMz%0D%0AIC0yNiA2IC02NCA2IC04NiAwIC0zNSAyIC0zOCAyMCAtMjggMTkgMTAgMzAgLTUgMTA3Ci0xNDMg%0D%0AMyAtNSAtMyAtMTcgLTEzIC0yOCAtMTQgLTE2IC0zMSAtMTkgLTEwNiAtMTkgbC04OCAwIDAgLTQw%0D%0AIDAgLTQwIDgzIDAKYzEzNiAwIDE5MSAyOCAyMDMgMTAyIDYgMzUgLTE3IDkyIC03MiAxNzkgLTE3%0D%0AIDI3IC0yMCAzOSAtMTEgNDggNiA2IDkgMTIgNgoxNCAtMjkgMjMgLTEyNyA4NyAtMTMzIDg3IC01%0D%0AIDAgLTYgLTIxIC0yIC00NnoiLz4KPHBhdGggZD0iTTM2MiA0NDggYy03IC03IC0xMiAtMTggLTEy%0D%0AIC0yNSAwIC0xNSAyNiAtMTggMzUgLTMgMyA2IDE1IDEwIDI2IDEwCjI1IDAgMjUgLTMwIC0xIC0z%0D%0ANyAtMjcgLTcgLTI1IC0zMSAzIC0zNSAzMiAtNCAzMSAtNTIgLTEgLTU2IC0xMyAtMiAtMjUgMwot%0D%0AMjggMTIgLTMgOSAtMTIgMTYgLTIwIDE2IC0xNyAwIC0xOCAtMzIgLTIgLTQ4IDE2IC0xNiA4MCAt%0D%0AMTYgOTYgMCAxNCAxNCAxNgo3NCAyIDgzIC01IDMgLTcgMTkgLTMgMzUgMyAxOCAwIDM2IC03IDQ1%0D%0AIC0xNSAxOCAtNzEgMjAgLTg4IDN6Ii8+CjxwYXRoIGQ9Ik0xMjcgMzczIGMtNjcgLTEwNSAtODEg%0D%0ALTE2MiAtNTUgLTIxOCAxOSAtNDIgNTYgLTU1IDE1NyAtNTUgNzIgMCA5MgotMyA5OSAtMTYgOCAt%0D%0AMTQgMTggLTExIDgwIDIwIDQwIDIwIDcyIDM5IDcyIDQyIDAgNiAtMTI1IDY0IC0xNDAgNjQgLTUg%0D%0AMCAtMTAKLTkgLTEwIC0yMCAwIC0xOCAtNyAtMjAgLTgzIC0yMCAtMTIyIDAgLTEzMCAxNSAtNjcg%0D%0AMTMwIDIyIDQwIDQwIDc0IDQwIDc2IDAKNCAtNTcgMzQgLTY0IDM0IC0zIDAgLTE2IC0xNyAtMjkg%0D%0ALTM3eiIvPgo8L2c+Cjwvc3ZnPgo=\" width=\"40px\">
              and <img src= \"data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/Pgo8IURPQ1RZUEUgc3ZnIFBVQkxJ%0D%0AQyAiLS8vVzNDLy9EVEQgU1ZHIDIwMDEwOTA0Ly9FTiIKICJodHRwOi8vd3d3LnczLm9yZy9UUi8y%0D%0AMDAxL1JFQy1TVkctMjAwMTA5MDQvRFREL3N2ZzEwLmR0ZCI+CjxzdmcgdmVyc2lvbj0iMS4wIiB4%0D%0AbWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiB3aWR0aD0iODYuMDAwMDAwcHQiIGhl%0D%0AaWdodD0iODMuMDAwMDAwcHQiIHZpZXdCb3g9IjAgMCA4Ni4wMDAwMDAgODMuMDAwMDAwIgogcHJl%0D%0Ac2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQgbWVldCI+Cgo8ZyB0cmFuc2Zvcm09InRyYW5zbGF0%0D%0AZSgwLjAwMDAwMCw4My4wMDAwMDApIHNjYWxlKDAuMTAwMDAwLC0wLjEwMDAwMCkiCmZpbGw9IiMw%0D%0AMDAwMDAiIHN0cm9rZT0ibm9uZSI+CjxwYXRoIGQ9Ik0zODMgNzQwIGMtMjUgLTEwIC03NSAtNzUg%0D%0ALTEwNiAtMTM4IC0xNSAtMzAgLTI3IC00MiAtMzggLTM5IC0xNCA0Ci0xNyAtOCAtMjIgLTc3IC0z%0D%0AIC00NCAtNCAtODMgLTEgLTg1IDMgLTQgMjYgMTEgMTI4IDgyIDggNSA2IDEyIC02IDIxIC0xNiAx%0D%0AMgotMTQgMTggMjUgODEgNjggMTExIDc5IDExMCAxNDkgLTYgbDQwIC02OCAzMSAxNiBjMTggOCAz%0D%0ANCAxNyAzNiAxOSA0IDQgLTY5CjEyOCAtOTEgMTU0IC0zNyA0NiAtOTMgNjEgLTE0NSA0MHoiLz4K%0D%0APHBhdGggZD0iTTYwMyA0MzAgYzYgLTg3IDEwIC0xMDEgMjkgLTgyIDkgOSAyMiAtNyA1NSAtNjgg%0D%0AMzYgLTY2IDQyIC04MyAzMwotMTAwIC0xMCAtMTggLTIxIC0yMCAtMTA1IC0yMCBsLTk1IDAgMCAt%0D%0ANDAgMCAtNDAgOTQgMCBjMTEyIDAgMTQ5IDExIDE3NiA1NQozMSA1MSAyNiA4OSAtMjYgMTc3IC0z%0D%0ANSA2MCAtNDQgODIgLTM1IDkyIDkgMTAgLTQgMjMgLTYwIDYxIGwtNzIgNDcgNiAtODJ6Ii8+Cjxw%0D%0AYXRoIGQ9Ik0zOTAgNDIwIGMtMjUgLTI1IC0yOSAtMTMwIC01IC0xNTQgNDEgLTQxIDEwNyAtMTgg%0D%0AMTEzIDQwIDQgNDMgLTE5CjY4IC02MiA2OCAtMzcgMCAtNDIgMTIgLTEzIDMwIDEyIDggMjEgNSAz%0D%0ANyAtOSAyNyAtMjUgNDYgLTggMjQgMjMgLTE5IDI4IC02NwoyOSAtOTQgMnogbTgwIC0xMDUgYzAg%0D%0ALTI2IC0yOSAtNDYgLTUxIC0zNSAtMjQgMTMgLTI1IDQ2IC0yIDU5IDIxIDExIDUzIC0zCjUzIC0y%0D%0ANHoiLz4KPHBhdGggZD0iTTEzMyAzMTggYy01MSAtOTAgLTU4IC0xMTcgLTQzIC0xNjIgMTkgLTU4%0D%0AIDUxIC03NiAxMzUgLTc2IDkxIDAgMTM1Ci05IDEzNSAtMjYgMCAtMTAgMjMgLTIgNzUgMjMgNDEg%0D%0AMjEgNzUgNDAgNzUgNDQgMCA3IC0xMzcgNjkgLTE1MiA2OSAtNSAwIC02Ci05IC0zIC0yMCA2IC0x%0D%0AOSAyIC0yMCAtODQgLTIwIC04MSAwIC05MSAyIC0xMDEgMjAgLTkgMTcgLTQgMzUgMzIgMTAxIGw0%0D%0AMyA4MAotMjUgMTkgYy0xNCAxMSAtMzAgMjAgLTM2IDIwIC01IDAgLTI5IC0zMyAtNTEgLTcyeiIv%0D%0APgo8L2c+Cjwvc3ZnPgo=\" width=\"40px\">
-             , are made with carcinogens that put wildlife and human health at risk.",
+             , are made with carcinogens that put wildlife & human life at risk.",
             :links => {
-              "How to avoid plastic cutlery + containers (guide)" => "https://www.plasticfreejuly.org/get-involved/what-you-can-do/takeaway-cutlery-and-containers/",
-              "What are toxic chemicals in plastics? (blog)" => "https://www.madesafe.org/avoid-toxic-chemicals-plastics/",
-              'Global fast food plastic survey (list)' => 'https://www.plasticpollutioncoalition.org/global-fast-food-plastic-survey'
+	      "What's plastic made of? (blog)" => 'https://www.madesafe.org/avoid-toxic-chemicals-plastics/',
+              'Fast food plastic survey (list)' => 'https://www.plasticpollutioncoalition.org/global-fast-food-plastic-survey'
             },
-            :instructions => ["Refuse any single-use disposables (e.g. food containers, utensils, straws, napkins, bags).", "Bring your own reusable alternatives to events (serving food).", "People will notice. Some will say something, and some won't. Simply explain to them: \"I bring my own reusable ___ to avoid the unnecessary waste.\" Feel free to engage in conversation or elaborate more."],
+            :instructions => ["Refuse any single-use disposables (e.g. food containers, utensils, straws, napkins, bags).", "<a target=\"_blank\" href=\"https://www.plasticfreejuly.org/get-involved/what-you-can-do/takeaway-cutlery-and-containers/\">Bring your own reusable alternatives</a> to events (serving food).", "People will notice. Some may say something. If they do, you can respond: \"I bring my own reusable ___ because I don't want to contribute more waste to our oceans and landfills.\" Feel free to engage in conversation and share what you've learned.", "Then, tell us about it in your reflections cause we want to know!"],
             :metric_question => "How many times did you opt for a reusable cup, bottle, plate, utensil, bowl, straw, napkin, bag, etc. over single-use outside of your home?",
 :metric_verb => "You opted for reusable items ",
 :metric_unit => " times over single-use!",
@@ -86,15 +85,14 @@ module ChallengesHelper
           {
             :name => "Compost & recycle",
             :type => "self",
-            :question => "Why prioritize composting over recycling? ",
-            :description => "When we <a target=\"_blank\" href=\"https://www.goingzerowaste.com/blog/composting-for-apartments\">compost</a>, the remaining nutrients in food scraps + plant-based goods are reused in our environment. Recycling is also good (way better than sending goods to the landfill). However, <a target=\"_blank\" href=\"https://www.goingzerowaste.com/blog/how-to-recycle-paper-the-right-way?rq=RECYCLE\">recyclables</a> like plastic and paper can't be recycled infinitely. Furthermore, recycling goods requires more resources (e.g. fuel costs, labor, energy, water) to process than composting.",
+            :question => "Why prioritize composting over recycling?",
+            :description => "Composting <a target=\"_blank\" href=\"https://kisstheground.com/soil-science/\">stores carbon, which offsets CO2 in the atmosphere, helping prevent climate change</a>. Composting repurposes leftover nutrients to the environment. <a target=\"_blank\" href=\"http://apps.npr.org/plastics-recycling/?utm_medium=social&utm_source=facebook.com&utm_term=nprnews&utm_campaign=npr\">Recycling</a> requires more carbon-emitting processes, and recyclables (plastic + paper) can't be recycled infinitely. But, recycling is way better than landfilling things.",
             :links => {
-              "How to compost at home (video)" => "https://kisstheground.com/how-to-compost-at-home-simple/",
+              "Composting at home (video)" => "https://kisstheground.com/how-to-compost-at-home-simple/",
               "How to compost at home (infographic)" => "https://kisstheground.com/how-to-compost-at-home/",
               "What do all the plastic numbers mean? (guide)" => "https://www.babygreenthumb.com/p-122-safe-plastic-numbers-guide.aspx"
             },
-            :background => "Composting can take on any form like starting your own compost pile, putting it in your green bin (if you have municipal composting), giving your compost to local farms, or tossing it into a compost bin in your community.",
-            :instructions => ["Compost any waste that is compostable and biodegradable. If it's not compostable, then <a target=\"_blank\" href=\"http://apps.npr.org/plastics-recycling/?utm_medium=social&utm_source=facebook.com&utm_term=nprnews&utm_campaign=npr\">recycle it</a>.", "As a last resort, send your trash into the landfill if it isn't reusable, compostable, or recyclable."],
+            :instructions => ["<a target=\"_blank\" href=\"https://www.goingzerowaste.com/blog/composting-for-apartments\">Compost</a> any waste that is compostable and biodegradable. If it's not, then <a target=\"_blank\" href=\"http://apps.npr.org/plastics-recycling/?utm_medium=social&utm_source=facebook.com&utm_term=nprnews&utm_campaign=npr\">recycle it</a>.", "As a last resort, send your trashto the landfill if it isn't reusable, compostable, or recyclable."],
             :metric_question => "Estimate how much (in kilos) waste you composted and/or recycled. Note: 1 lb = 0.45 kg",
 :metric_verb => "You composted or recycled ",
 :metric_unit => " about kg! (Note: 1lb = 0.45kg)",
@@ -104,15 +102,15 @@ module ChallengesHelper
           {
             :name => "Party zero waste style",
             :type => "friends",
-            :question => "How does this have an impact?",
-            :description => "How many people do you know actually think about their trash? Hosting a zero waste party is a fun way to show people what reducing your waste looks like and how simple it is. Your party opens up the conversation for you to share what you've learned about waste with your guests and inspire them to reduce their waste as well!",
+            :question => "Down to party, but what's it got to do with waste reduction?",
+            :description => "How many people do you know think about their trash? Hosting a zero waste party changes the way people see + think about waste, because YOU can show them how simple it is. As the fabulous host, have fun & open up conversations to share what you've learned. You just might inspire your guests to reduce their waste too.",
             :links => {
-              "How to throw a zero waste party (guide)" => "https://www.goingzerowaste.com/blog/five-tips-for-throwing-a-zero-waste-party ",
-              "Hosting a zero waste dinner party (blog)" => "http://trashisfortossers.com/hosting-zero-waste-dinner-party/",
-              "How to have a trash-free Halloweekend (blog)" => "http://trashisfortossers.com/how-to-have-a-trash-free-halloweekend/",
-              "Hosting a zero waste bachelorette party (blog)" => "http://trashisfortossers.com/zero-waste-bachelorette-party/"
+              "Throwing a zero waste party (guide)" => "https://www.goingzerowaste.com/blog/five-tips-for-throwing-a-zero-waste-party ",
+              "Trash-free Halloweekend (blog)" => "http://trashisfortossers.com/how-to-have-a-trash-free-halloweekend/",
+              "Zero waste bachelorette party (blog)" => "http://trashisfortossers.com/zero-waste-bachelorette-party/"
             },
-            :instructions => ["Curate a waste-free menu. That is, purchase ingredients with little to no packaging waste, and serve on reusable dishware.", "Provide reusable dishware, utensils, and napkins.", "Decorate as you wish with nature and non-single-use disposable items.", "Make a compost bin accessible.", "Invite at least 3 people and tell them it's a zero waste party!", "If you'd like, invite your guests to help clean up after the party: put things in the dishwasher or handwash; toss dirtied cloths into the laundry; and empty the compost bin. Don't worry, this is bonding time and not as bad as it sounds.", "Have fun!"],
+            :instructions => ["Curate a waste-free menu. Purchase ingredients with little to no packaging waste, and serve on reusable dishware", "Provide reusable dishware, utensils, + napkins", "Decorate as you wish with nature + reusable items", "Make a compost bin accessible", "Invite at least 3 people to your zero waste party!", "Clean up together! Put things in the dishwasher or handwash; toss dirtied cloths into the laundry; and empty the compost bin. Don't worry, this is bonding time and isn't as bad as it sounds."],
+	    :alt_instructions => ["Have LOTS of fun! It's a party, after all."],
             :metric_question => "How many people came to your party?",
 :metric_verb => "",
 :metric_unit => " people came to your zero waste party!",
@@ -122,15 +120,14 @@ module ChallengesHelper
           {
             :name => "Reduce community waste",
             :type => "community",
-            :question => "Why should I even try to be zero waste?",
-            :description => "Anne-Marie says it well: <a target=\"_blank\" href=\"https://zerowastechef.com/2019/02/14/how-to-cope-with-environmental-guilt-syndrome-egs/\">\"We don’t need a handful of people doing zero waste perfectly. We need millions of people doing it imperfectly.\"</a> The few individuals who commit to zero waste won't reverse the environmental damage already done; we need a whole lot more people involved. So what you do counts(! -- no matter how seemingly insignificant), because your actions show people around you an alternative way to live. This is how we slowly inspire change together. :)",
+            :question => "What's the point? There's always going to be waste anyways.",
+            :description => "Anne-Marie says it well: <a target=\"_blank\" href=\"https://zerowastechef.com/2019/02/14/how-to-cope-with-environmental-guilt-syndrome-egs/\">\"We don’t need a handful of people doing zero waste perfectly. We need millions of people doing it imperfectly.\"</a> A few zero waste people won't solve the climate crisis. We need a whole lot more people on board. So, everything you do counts! Your actions give others permission to do the same.",
             :links => {
-              "Guide to banning polystyrene (guide)" => "https://www.5gyres.org/polystyrene",
+              "Banning polystyrene (guide)" => "https://www.5gyres.org/polystyrene",
               'Changing purchasing practices (guide)' => "https://www.plasticfreejuly.org/get-involved/what-you-can-do/workplace-procurement/",
-              'How governments go zero waste (info)' => 'https://www.greenamerica.org/blog/plastic-out-sustainability-in',
-	      'How Plastic Production Pollutes Small Towns (video)' => 'https://www.youtube.com/watch?v=OFMau-t3QaI'
+              'Businesses + governments go zero waste (info)' => 'https://www.greenamerica.org/blog/plastic-out-sustainability-in'
             },
-            :instructions => ["Choose your target audience. (e.g. local business, local government)", "Draft up a proposal of what you want them to change and why it matters to them. Be specific. (e.g. Ask a local restaurant to provide plastic straw only upon request.)", "Reach out and give them your pitch.", "Offer to work with them to create this change for the community."],
+            :instructions => ["Choose your target audience (e.g. local business, government)", "Draft a proposal of what you want them to change & why it matters to them. Be specific (e.g. Ask a local restaurant to provide plastic straws only upon request)", "Reach out & give them your pitch", "Offer to work with them to create this change for the community"],
             :metric_question => "How many businesses and government officials did you speak to about waste?",
 :metric_verb => "You spoke with ",
 :metric_unit => " businesses and government officials about waste!",
