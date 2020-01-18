@@ -320,7 +320,7 @@ and values of the farms and companies whose products you buy."],
             :photo_prompt => ""
           },
           {
-            :name => "DIY body products",
+            :name => "DIY bodycare",
             :type => "friends",
             :question => "Why should I make my own?",
             :description => "You'll know exactly what's in it. Products with excessively long lists of ingredients on the back often include unnecessary additives that make the product thicker, smell better, or last longer. Many times, these ingredients aren't safe for your health.",
@@ -370,7 +370,7 @@ and values of the farms and companies whose products you buy."],
             :photo_prompt => "Share a photo of the message you sent to brands. Please remove any personal information from the photo. Tell us how you felt as you sent off your message."
           },
           {
-            :name => "Care for periods",
+            :name => "Safe periods",
             :type => "friends",
             :question => "What's up with menstruation products?",
             :description => "Conventional menstrual products contain up to 90% petroleum-based plastics, are made of pesticide-laden cotton + <a target=\"_blank\" href=\"https://www.natracare.com/why-natracare/chlorine-free/\">bleached with chlorine</a> (all are carcinogenic). Women use more than <a target=\"_blank\" href=\"https://www.wen.org.uk/environmenstrual-in-numbers\">11,000(!)</a> disposable menstrual products in their lifetime. That's A LOT of exposure to harmful chemicals & <a target=\"_blank\" href=\"https://divacup.com/eco-divas/\">waste</a> in landfills + oceans.",
