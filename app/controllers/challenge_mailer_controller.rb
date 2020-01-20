@@ -42,19 +42,6 @@ class ChallengeMailerController < ApplicationController
 
   def unsubscribe_reasons
     puts params
-    # RestClient.post('https://sheets.googleapis.com/v4/spreadsheets/1QdddPvJRMPYVF0lvE03xUZlRFjTW4Rb1np9fmM_UaxM/values/UnsubReasons:append',
-    #                 {"majorDimension": 'DIMENSION_UNSPECIFIED',
-    #                 "range": '',
-    #                 "values": [
-    #                   [
-    #                     'asdf'
-    #                   ]
-    #                 ]},
-    #                 {
-    #                   'valueInputOption': "RAW",
-    #                   'access_token': 'AIzaSyAAa9nyvcdXpcGyXbRS8EBsq3JNQ2SQJPM'
-    #                 }
-    #               ).body
   end
 
 end
