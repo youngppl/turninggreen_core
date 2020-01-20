@@ -9,18 +9,18 @@ class ChallengeMailerController < ApplicationController
     facts = fun_facts
     updates = site_updates
     User.all.each do |user|
-      next unless (user.notifications == 'Daily' ||
-        (user.notifications == 'Weekly' && Date.today.sunday?) ||
-        (user.notifications == 'Every other day' && Date.today.day.even?)) &&
-                  !user.challenges.empty?
-
-      if user.emails_sent.count('updates') >= 2
-        updates = false
-      else
-        user.emails_sent << 'updates'
-        user.save!
+      if (user.notifications == "Daily" ||
+        (user.notifications == "Weekly" && Date.today.sunday?) ||
+        (user.notifications == "Every other day" && Date.today.day % 2 == 0)) &&
+        user.challenges.length > 0
+          if user.emails_sent.count('updates') >= 2
+            updates = false
+          else
+            user.emails_sent << 'updates'
+            user.save!
+          end
+          ChallengeMailer.challenge_reminder_email(user, updates, facts.sample).deliver_later
       end
-      ChallengeMailer.challenge_reminder_email(user, updates, facts.sample).deliver_later
     end
     head :no_content
   end
@@ -35,7 +35,7 @@ class ChallengeMailerController < ApplicationController
   def unsubscribe
     User.where(email: params[:email]).update(notifications: 'Never')
   end
-  
+
   def undo_unsubscribe
     User.where(email: params[:email]).update(notifications: 'Every other day')
   end
