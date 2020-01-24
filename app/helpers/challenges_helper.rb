@@ -324,7 +324,7 @@ and values of the farms and companies whose products you buy."],
             :photo_prompt => ""
           },
           {
-            :name => "DIY body products",
+            :name => "DIY bodycare",
             :type => "friends",
             :question => "Why should I make my own?",
             :description => "Making your own means you know exactly what's in it.  You control the ingredients used and can ensure its safety to your body. The excessively long list of ingredients on the back of products often include unnecessary additives that make the product thicker, smell better, or last longer. In many cases, these ingredients aren't safe for your health.",
@@ -707,15 +707,14 @@ disapproval; explain to them why; and propose alternatives."],
           {
             :name => "Know your clothes",
             :type => "pre",
-            :question => "What does it take to bring new styles to many clothing stores? ",
-            :description => "Especially for <a target=\"_blank\" href=\"https://goodonyou.eco/what-is-fast-fashion/ \">fast fashion</a>, driving up profits means exploiting <a target=\"_blank\" href=\"https://cleanclothes.org/livingwage/\">low cost labor</a> abroad. In addition, making clothing is resource intensive. The typical <a target=\"_blank\" href=\"http://mistrafuturefashion.com/sustainable-fashion/\">non-circular lifespan</a> of clothes worsens the fashion industry's impact; most clothes aren't reused and properly <a target=\"_blank\" href=\"https://borgenproject.org/the-international-impact-of-donated-clothing/ \">donated</a>, ending up in landfills and oceans.",
+            :question => "What does it take to make new clothes?",
+            :description => "<a target=\"_blank\" href=\"https://www.thereformation.com/pages/impact-of-fashion\">LOTS of resources</a> (water, dyes, materials, fuel + more). Particularly for <a target=\"_blank\" href=\"https://goodonyou.eco/what-is-fast-fashion/ \">fast fashion</a>, low cost labor is <a target=\"_blank\" href=\"https://truecostmovie.com/learn-more/human-rights/\">exploited</a> abroad to drive profits. The typical <a target=\"_blank\" href=\"http://mistrafuturefashion.com/sustainable-fashion/\">non-circular lifespan</a> of clothes worsens fashion's impact; most clothes aren't reused and properly <a target=\"_blank\" href=\"https://borgenproject.org/the-international-impact-of-donated-clothing/ \">donated</a>, ending up in landfills + oceans.",
             :links => {
-              "What's an ideal fashion industry look like? (info)" => 'https://www.fashionrevolution.org/manifesto/',
-              '6 fake facts about the clothing industry (list + info)' => 'https://goodonyou.eco/6-fake-facts-about-the-fashion-industry/',
-              'What can I do about this? (list)' => 'https://www.greenamerica.org/what-can-i-do-make-my-clothes-more-sustainable',
-              "What's the environmental impact of the fashion? (info)" => 'https://www.thereformation.com/pages/impact-of-fashion'
-            },
-            :instructions => ["Teach a friend what you've learned.", "Read about what's happening in the clothing industry. You can start with the resource links."],
+              "Fashion Revolution Manifesto" => 'https://www.fashionrevolution.org/manifesto/',
+              '6 fake facts about the clothing industry' => 'https://goodonyou.eco/6-fake-facts-about-the-fashion-industry/',
+              'What you can do right now (list)' => 'https://www.greenamerica.org/what-can-i-do-make-my-clothes-more-sustainable'},
+	    :background => "There's more to the clothing industry than you may see and think.",
+            :instructions => ["Read about what's up with the clothing industry in the 'Wanna learn more?' section", "Share what you learned with (at least) 3 people"],
             :metric_question => "",
 :metric_verb => "N/A",
 :metric_unit => "",
@@ -728,12 +727,11 @@ disapproval; explain to them why; and propose alternatives."],
             :question => "Why is donating not necessarily \"good\"?",
             :description => "In the US, less than 10% of donations is resold or reused. The rest is often shipped to another country, which <a target=\"_blank\" href=\"https://borgenproject.org/the-international-impact-of-donated-clothing/\">undercuts the country's local textile industry</a>. People think they're doing good because they're ""donating"", but they may actually be contributing to putting people in other countries out of work.",
             :links => {
-              "Why wear your clothes til they're worn out? (info)" => 'https://goodonyou.eco/why-we-should-wear-clothes-until-theyre-worn-out/',
-              'How to recycle old clothing (blog)' => 'https://trashisfortossers.com/how-to-recycle-old-clothing/',
-              'Shoe donation drop-off locations (finder)' => 'https://soles4souls.org/get-involved/give-shoes/dropoff-locator/',
-              "What's the impact of new clothes? (info)" => 'https://www.greenamerica.org/program/toxic-textiles'
+              'How to recycle old clothing' => 'https://trashisfortossers.com/how-to-recycle-old-clothing/',
+              'Shoe donation drop-off locations' => 'https://soles4souls.org/get-involved/give-shoes/dropoff-locator/',
+              "The impact of making new clothes" => 'https://www.greenamerica.org/program/toxic-textiles'
             },
-            :instructions => ["Clean out your closet of clothes you won't wear anymore.", "Repurpose them. (e.g. bag, cleaning rag)", "Swap them with friends.", "Pass them onto someone who will wear them. (Maybe a sibling or cousin?)", "Do the research to find a charity that will actually reuse your donations.", "Or, sell them to a local thrift store or secondhand shop. (ex: <a target=\"_blank\" href=\"https://www.thredup.com/cleanout/donate-clothes\">thredUP</a>)"],
+            :instructions => ["Clean out your closet of clothes you won't wear anymore", "Repurpose them (e.g. bag, cleaning rag)", "Swap with friends", "Pass them onto someone who will wear them (Maybe a sibling or cousin?)", "Do the research to find a charity that will actually reuse your donations", "Or, sell to a local thrift store or secondhand shop (ex: <a target=\"_blank\" href=\"https://www.thredup.com/cleanout/donate-clothes\">thredUP</a>)"],
             :metric_question => "Estimate how much (in kilos) clothing you repurposed and/or donated. Note: 1 lb = 0.45 kg",
 :metric_verb => "You repurposed and/or donated about ",
 :metric_unit => " kg of clothing! (1 lb = 0.45 kg)",
@@ -744,18 +742,17 @@ disapproval; explain to them why; and propose alternatives."],
             :name => "Find better clothing",
             :type => "friends",
             :question => "How can I avoid fast fashion?",
-            :description => "Choose <a target=\"_blank\" href=\"https://truecostmovie.com/learn-more/buying-better/\">quality over quantity</a>. Wearing something more reduces cost per wear. (Ex: a $60 pair of pants worn 2x a week per year costs about $0.57 per wear!) Thinking long-term and buying better diminishes the impact of clothing's lifecycle. What's even better: <a target=\"_blank\" href=\"https://trashisfortossers.com/zero-waste-wardrobe-secondhand-shopping/\">buying secondhand</a>, because you're extending the lifespan of something that already exists.",
+            :description => "Choose <a target=\"_blank\" href=\"https://truecostmovie.com/learn-more/buying-better/\">quality over quantity</a>. Wear something more to decrease cost per wear. (Ex: $60 pants worn 2x a week per year = ~$0.57 per wear!) Thinking long-term and buying better diminishes the impact of clothes. What's even better: <a target=\"_blank\" href=\"https://trashisfortossers.com/zero-waste-wardrobe-secondhand-shopping/\">buy secondhand</a>, because you're extending the lifespan of something that already exists.",
             :links => {
               'Clothing materials 101 (guide)' => 'https://goodonyou.eco/category/made-from/',
               'Brand directory (ratings)' => 'https://directory.goodonyou.eco/',
-              'How to pinpoint greenwashing (guide)' => 'https://goodonyou.eco/how-can-you-tell-when-a-fashion-brand-is-greenwashing/'
+              'How to catch greenwashing (guide)' => 'https://goodonyou.eco/how-can-you-tell-when-a-fashion-brand-is-greenwashing/',
+	      "What's 'organic' clothing?" => 'https://goodonyou.eco/global-organic-textile-standard-gots/'
             },
-            :background => "This challenge is intended for when your'e in need of new clothes. ",
-            :instructions => ["Buy less.", "Buy secondhand or clothes made of the most sustainable
-fabrics (e.g. hemp, linen, recycled organic cotton), not synthetic
-material (e.g. polyester, rayon, acrylics, blend of these).", "Shift
-your mindset towards investing in a quality; reduce the cost per wear.",
-"Bring friends along and share what you learned."],
+            :background => "Take this challenge when you need new clothes.",
+            :instructions => ["Buy less", "Buy secondhand", "Alternatively, buy clothes made of the <a target=\"_blank\" href=\"https://goodonyou.eco/most-sustainable-fabrics/\">most sustainable fabrics</a> (e.g. hemp, linen, recycled <a target=\"_blank\" href=\"https://goodonyou.eco/know-your-product-a-quick-guide-to-organic cotton\">organic cotton</a>), NOT synthetic material (e.g. <a target=\"_blank\" href=\"https://goodonyou.eco/material-guide-polyester-2/\">polyester</a>, rayon, acrylics, blend of these)", "Shift
+your mindset towards investing in a quality; reduce the cost per wear",
+"Bring friends along shopping & share what you learned"],
             :metric_question => "How many people did you share what you learned with?",
 :metric_verb => "You shared with ",
 :metric_unit => " people what you learned about buying less.",
@@ -765,16 +762,15 @@ your mindset towards investing in a quality; reduce the cost per wear.",
           {
             :name => "Contact fashion brands",
             :type => "community",
-            :question => "Why should we bother reaching out to brands?",
-            :description => "<a target=\"_blank\" href=\"https://www.lowestwagechallenge.com/post/state-of-the-industry\"> It's estimated that only 2% of fashion’s manufacturing workers earn a living wage. That means 98% of workers don't make enough for basic needs, and 75% of them are women(!!).</a> Something needs to change. <a target=\"_blank\" href=\"https://www.fashionrevolution.org/emergency-measures-resources/\">Boycotts aren't the solution though.</a> People, like garment workers, can lose their jobs. Fashion brands will continue exploiting workers unless customers pressure them otherwise.",
+            :question => "Why the power move?",
+            :description => "<a target=\"_blank\" href=\"https://www.lowestwagechallenge.com/post/state-of-the-industry\">98% of garment workers aren't paid a living wage, and 75% of them are women(!!).</a> This is NOT okay. <a target=\"_blank\" href=\"https://www.fashionrevolution.org/emergency-measures-resources/\">Boycotts aren't the solution though</a> cause workers can lose their jobs. Fashion brands will continue exploiting workers unless customers pressure them otherwise.",
             :links => {
-              "What's transparency in fashion? (info)" => 'https://www.fashionrevolution.org/about/transparency/',
-              'The garment industry around the world (info)' => 'https://cleanclothes.org/resources/publications/factsheets',
-              'What to ask, in search for ethical fashion (list)' => 'https://goodonyou.eco/who-made-my-clothes-and-other-important-questions/'
+              "What's transparency in fashion?" => 'https://www.fashionrevolution.org/about/transparency/',
+              'The garment industry around the world' => 'https://cleanclothes.org/resources/publications/factsheets',
+              "Q's to ask about your clothes" => 'https://goodonyou.eco/who-made-my-clothes-and-other-important-questions/'
             },
-            :background => "Select a fast fashion brand.",
-            :instructions => ["Ask the brand's representative for transparency via email or social media (in person would be best, if possible): who made the brand's
-clothes? Here are example scripts to get you started.", "Teach at least 3 other people what you have learned about fast fashion.", "Get at least 3 other people to reach out to the same brand to do the first task."],
+            :background => "Choose a fashion brand with a <a target=\"_blank\" href=\"https://directory.goodonyou.eco/\">low rating</a>",
+            :instructions => ["Ask the brand's rep for transparency via email or social media (in person is best, if possible): who made the brand's clothes? How much are they paid?  <a target=\"_blank\" href=\"https://www.fashionrevolution.org/about/get-involved/\">Get started with these scripts</a>", "Share what you learned with (at least) 3 people", "Start a movement! Get (at least) 3 people to send an email to the brand rep asking for transparency"],
             :metric_question => "How many people (including yourself) did you get to reach out to a brand rep?",
 :metric_verb => "You got ",
 :metric_unit => " people to contact a brand rep about increasing transparency!",
@@ -787,11 +783,11 @@ clothes? Here are example scripts to get you started.", "Teach at least 3 other 
             :question => "Why does the laundry detergent I use matter?",
             :description => "Whatever is in your laundry detergent ends up in wastewater, which eventually <a target=\"_blank\" href=\"http://theconversation.com/curious-kids-where-does-my-poo-go-when-i-flush-the-toilet-does-it-go-into-the-ocean-78254\">enters the ocean</a>. If the ingredients in the detergent <a target=\"_blank\" href=\"https://www.smallfootprintfamily.com/homemade-laundry-detergent-recipe\">isn't safe for you</a>, it's not safe for the environment. Ingredients in laundry detergent can also irritate the skin, which makes wearing newly-washed clothes uncomfortable.",
             :links => {
-              'How can I get started? (info)' => 'https://wellnessmama.com/462/homemade-laundry-detergent/',
-              'What should I know about dry cleaning? (info)' => 'https://greenamerica.org/green-living/green-dry-cleaning'
+              'DIY laundry soap' => 'https://wellnessmama.com/462/homemade-laundry-detergent/',
+              "What's up with dry cleaning?" => 'https://greenamerica.org/green-living/green-dry-cleaning'
             },
-            :instructions => ["Use non-toxic laundry detergent to clean your clothes.", "Wash with <a target=\"_blank\" href=\"https://coldwatersaves.org/\">cold water</a>, might as well save energy.", "Line dry when possible to save energy; this also helps your clothes last longer too.", "Share with at least 3 different people what you learned."],
-            :alt_instructions => ["If you dry clean, avoid <a target=\"_blank\" href=\"https://www.ewg.org/enviroblog/2011/09/dry-cleaning-chemicals-hang-around-your-clothes\">perc</a>."],
+            :instructions => ["Use non-toxic laundry detergent", "Wash with <a target=\"_blank\" href=\"https://coldwatersaves.org/\">cold water</a>, might as well save energy", "Line dry when possible to save energy too (Pro-tip: this helps your clothes last longer)", "Keep teaching! Share what you learned with (at least) 3 people"],
+            :alt_instructions => ["Avoid <a target=\"_blank\" href=\"https://www.ewg.org/enviroblog/2011/09/dry-cleaning-chemicals-hang-around-your-clothes\">perc</a> when dry cleaning"],
             :metric_question => "How many loads of laundry did you clean with a safer laundry detergent?",
 :metric_verb => "You cleaned ",
 :metric_unit => " loads of laundry with a safer laundry detergent!",
@@ -801,13 +797,13 @@ clothes? Here are example scripts to get you started.", "Teach at least 3 other 
           {
             :name => "Take a shopping break",
             :type => "friends",
-            :question => "What can you be doing instead of shopping?",
-            :description => "The time spent keeping up with the latest trends and deals adds up. The money used to buy another t-shirt on sale or chase after a buy-one-get-one-free deal accumulates. If you have clothes to wear for a week, you don’t need any more clothes. Unless, your clothes are falling apart, or you need to freshen up your style. ",
+            :question => "What can you do instead of shopping?",
+            :description => "The time + money spent keeping up with the latest trends and deals adds up. (Is that t-shirt on sale necessary?) If you have clothes to wear for a week, you probably don’t need any more clothes. Unless, your clothes are falling apart, or you need to freshen up your style.",
             :links => {
-              "What's the value of not buying anything new? (info)" => 'https://www.bustle.com/articles/47208-9-truly-valuable-things-you-learn-when-you-stop-buying-clothes-after-the-shaking-sweating-and',
-              'How to build a minimalist wardrobe (list)' => 'https://www.thegoodtrade.com/features/how-to-build-a-minimalist-wardrobe'
+              "What's the value in not shopping?" => 'https://www.bustle.com/articles/47208-9-truly-valuable-things-you-learn-when-you-stop-buying-clothes-after-the-shaking-sweating-and',
+              'Building a minimalist wardrobe' => 'https://www.thegoodtrade.com/features/how-to-build-a-minimalist-wardrobe'
             },
-            :instructions => ["Literally, put a pause on clothes shopping, window shopping, online scrolling, and subscriptions to clothing brands.", "Spend that time focusing on your top priorities in life.", "Invite at least 2 people to join you in this challenge."],
+            :instructions => ["Seriously, chill out on the clothes + window shopping, online scrolling, and subscriptions to clothing brands", "Spend that shopping time focusing on your top priorities in life instead", "Hold yourself accountable. Get (at least) 2 people to do this challenge with you!"],
             :metric_question => "How many people (including yourself) took a break from shopping?",
 :metric_verb => "You got ",
 :metric_unit => " people to take a break from shopping for 1+ weeks!",
@@ -818,14 +814,14 @@ clothes? Here are example scripts to get you started.", "Teach at least 3 other 
             :name => "No more synthetics",
             :type => "community",
             :question => "What's the problem?",
-            :description => "About 1.4 million trillion pieces of microfiber are in the ocean. The problem: this plastic absorbs surrounding toxins, causing gut impaction, hormone disruption, and liver damage in the animals that ingest it. Sometimes, these animals rise up in the food chain onto our plates. Let's avoid this by tackling a major source of the problem: production.",
+            :description => "About 1.4 million TRILLION pieces of microfiber are in the ocean. The problem: this plastic absorbs surrounding toxins, causing gut impaction, hormone disruption, and liver damage in the animals that ingest it. These same animals rise up in the food chain onto our plates.",
             :links => {
-              'Microfiber 101 (info)' => 'https://storyofstuff.org/uncategorized/the-story-of-microfibers-faqs/',
-              'How problematic is microfibers? (blog)' => 'https://storyofstuff.org/blog/microfibers-are-microplastics-1/',
-              'How do our clothes pollute the ocean? (info) ' => 'https://www.vox.com/the-goods/2018/9/19/17800654/clothes-plastic-pollution-polyester-washing-machine'
+              'Microfiber 101' => 'https://storyofstuff.org/uncategorized/the-story-of-microfibers-faqs/',
+              'How problematic are microfibers?' => 'https://storyofstuff.org/blog/microfibers-are-microplastics-1/',
+              'Our clothes are polluting the ocean' => 'https://www.vox.com/the-goods/2018/9/19/17800654/clothes-plastic-pollution-polyester-washing-machine'
             },
-            :background => "Select a brand that makes clothes with synthetic materials.",
-            :instructions => ["Write to the brand representative what you've learned about synthetic material's impact on the environment. Ask them about the brand's plan for bettering their supply source in the future.", "Teach at least 3 other people what you've learned.", "Get them to write to the brand representative to do task 1 (they can copy paste your letter)."],
+            :background => "Find a brand that makes clothes with synthetic materials.",
+            :instructions => ["Write to the brand rep what you've learned about synthetic material's impact on the environment. Ask about the brand's plan for bettering their supply source for the future.", "Share with (at least) 3 people what you've learned", "Start a movement! Get (at least) 3 people to send an email to the brand rep asking for no more synthetics"],
             :metric_question => "How many people (including yourself) did you get to reach out to a brand rep?",
 :metric_verb => "You got ",
 :metric_unit => " people to write to a brand rep asking them to better their supply sourcing!",
