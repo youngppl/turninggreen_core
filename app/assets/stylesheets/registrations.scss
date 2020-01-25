@@ -106,5 +106,48 @@
     color: #0e5b2c;
     text-align: center;
   }
+}
 
+.unsubscribe {
+  text-align: center;
+  max-width: 38%;
+
+  .reason {
+    text-align: left;
+    margin: 20px;
+  }
+
+  h3 {
+    text-align: left;
+    font-size: 20px;
+  }
+
+  input[type="checkbox"] {
+    margin-right: 5px;
+  }
+
+  .submit {
+    background: none;
+    border: none;
+    background-color: #105b2f;
+    color: white;
+    height: 35px;
+    border-radius: 10px;
+    margin-top: 10px;
+  }
+
+  .confirm {
+    font-size: 15px;
+    margin-top: 4px;
+    display: none;
+  }
+
+  .we-hear {
+    margin-top: 20px;
+  }
+
+  .arrow {
+    transform: rotate(90deg);
+    margin: 20px;
+  }
 }
