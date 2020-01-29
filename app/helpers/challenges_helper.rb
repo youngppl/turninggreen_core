@@ -426,7 +426,7 @@ module ChallengesHelper
           }
         ]
       },
-      Water: {
+Water: {
         :videoCaption => "Think about water in the big picture.",
         :videoID => "b1f-G6v3voA",
         :briefDescription => "An incredibly small amount (0.35%) of the water in
@@ -439,13 +439,12 @@ module ChallengesHelper
             :name => "Track your usage",
             :type => "pre",
             :question => "What's your water footprint?",
-            :description => "Water consumption isn't just how much time we shower, water lawn, or wash dishes -- our direct <a target=\"_blank\" href=\"https://waterfootprint.org/en/water-footprint/what-is-water-footprint/\">water footprint</a>. No, our largest footprint is indirect; they stem from our <a target=\"_blank\" href=\"https://foodprint.org/issues/the-water-footprint-of-food/\">diet</a>, purchases, and <a target=\"_blank\" href=\"https://www.watercalculator.org/water-use/the-water-footprint-of-energy/\">transportation</a>. <a target=\"_blank\" href=\"https://www.ewg.org/tapwater/sourcesofwaterpollution.php\">Large amounts of water</a> is needed to grow the food we + animals eat, power manufacturing processes, and source fuel for transportation.",
+            :description => "It's not just about how long we shower -- our direct <a target=\"_blank\" href=\"https://waterfootprint.org/en/water-footprint/what-is-water-footprint/\">water footprint</a>. No, our largest footprint is indirect, coming from our <a target=\"_blank\" href=\"https://foodprint.org/issues/the-water-footprint-of-food/\">diet</a>, purchases, and <a target=\"_blank\" href=\"https://www.watercalculator.org/water-use/the-water-footprint-of-energy/\">transportation</a>. <a target=\"_blank\" href=\"https://www.ewg.org/tapwater/sourcesofwaterpollution.php\">LARGE amounts of water</a> is needed to grow the food we + animals eat, power manufacturing processes, and obtain fuel.",
             :links => {
               'Calculate your water footprint (quiz)' => 'https://www.watercalculator.org',
-              'What is the water footprint of __? (infographic)' => 'https://cdn.shopify.com/s/files/1/0764/0435/files/savewater.jpg?v=1493114807',
-              'FAQs about water footprints (info)' => 'https://waterfootprint.org/en/water-footprint/frequently-asked-questions/',
-              'How to reduce my water footprint? (guide)' => 'https://www.watercalculator.org/save-water/',
-              'How do microplastics relate to water? (info)' => 'https://www.earthday.org/2018/03/23/the-invisible-plastic-particles-in-our-drinking-water/'
+              'What is the water footprint of __?' => 'https://cdn.shopify.com/s/files/1/0764/0435/files/savewater.jpg?v=1493114807',
+              'FAQs about water footprints' => 'https://waterfootprint.org/en/water-footprint/frequently-asked-questions/',
+              'Reducing your water footprint (guide)' => 'https://www.watercalculator.org/save-water/'
             },
             :instructions => ["<a target=\"_blank\" href=\"https://www.watercalculator.org/wfc2\">Calculate</a> your water footprint."],
             :metric_question => "",
@@ -458,12 +457,12 @@ module ChallengesHelper
             :name => "Skip the slip",
             :type => "friends",
             :question => "What's the problem with paper receipts?",
-            :description => "Most receipts end up in the garbage, so what's the point of printing them? In the US alone, 9 billion gallons (34 billion liters) of water is used to create these receipts. Furthermore, 93% of these receipts are coated with BPA and BPS, chemicals known to cause developmental health problems.",
+            :description => "What's the point of printing them if you're going to trash it? <a target=\"_blank\" href=\"https://www.greenamerica.org/report-STS\">9 BILLION gallons (34 billion liters) of water</a> is used to produce receipts, in the US alone. And, 93% of receipts are coated with BPA and BPS, nasty stuff that cause developmental health problems.",
             :links => {
-              "What's the impact of paper receipts? (info)" => 'https://www.greenamerica.org/report-STS',
-              "How's the government involved? (info)" => 'https://www.greenamerica.org/blog/green-america-supports-ca-skip-slip-bill'
+              "Impact of paper receipts" => 'https://www.greenamerica.org/report-STS',
+              "What's the government doing?" => 'https://www.greenamerica.org/blog/green-america-supports-ca-skip-slip-bill'
             },
-            :instructions => ["Tell the cashier that you don't need a receipt, and refuse taking any.", "If you want to see the receipt, take a photo of the computer screen or have it emailed instead (when possible).", "Share with at least 3 different people what you learned about paper receipts."],
+            :instructions => ["Refuse taking any receipts. Tell the cashier you don't need it.", "If you need the receipt, opt to take a photo of the computer screen or have it emailed instead (when possible)", "Share your knowledge about paper receipts with at least 3 people!"],
             :metric_question => "How many paper receipts did you refuse to print and take?",
 :metric_verb => "You refused to take ",
 :metric_unit => " receipts!",
@@ -473,16 +472,15 @@ module ChallengesHelper
           {
             :name => "Get a bucket buddy",
             :type => "self",
-            :question => "Why does collecting my shower water matter?",
-            :description => "There isn't an infinite supply of clean water. We are fortunate to have water readily accessible to us, while <a target=\"_blank\" href=\"https://charitywater.org\">663 million</a> people in the world don't. However, many times, the water that come out of faucets and showerheads is more than what we actually need. ",
+            :question => "Why should I collect my shower water?",
+            :description => "We don't have an infinite supply of clean water. <a target=\"_blank\" href=\"https://charitywater.org/global-water-crisis\">663 MILLION people</a> in the world don't have clean water readily accessible, while you fortunately do. Oftentimes, the water that come out of faucets and showerheads is more than what we actually need though.",
             :links => {
-              'Showering with a bucket (story)' => 'https://www.businessinsider.com/california-los-angeles-drought-shower-bucket-water-conservation-2015-12',
               'One creative way to shower (video)' => 'https://www.youtube.com/watch?v=ttCx_MjWcls',
-              'How to be more water conscious (guide)' => 'https://www.ewg.org/healthyhomeguide/water-efficiency/'
+              'How to be water efficient (guide)' => 'https://www.ewg.org/healthyhomeguide/water-efficiency/'
             },
-            :background => "We're not trying to get you to shower with a bucket everyday of your life; we know it's inconvenient. We simply want you to be more mindful about your water usage.",
-            :instructions => ["Place a bucket/large cup/bowl next to you in your shower to collect excess water", "Turn off the water when lathering shampoo, conditioner, and body wash", "Turn on the water when you need the water", "Water any plants around the home with your bucket-ful of water"],
-            :extra => "*Avoid getting any non-biodegradable body care products (e.g. soap, shampoo, conditioner) into your bucket, especially if you're going to water edible plants with your collection.",
+            :background => "We're not trying to get you to shower with a bucket everyday of your life; that's unreasonable + inconvenient. We simply want you to be more mindful about your water usage.",
+            :instructions => ["Place a bucket/large cup/bowl next to you when you shower to collect excess water", "Take your shower normally", "Water any plants around the home with the water you collect"],
+            :extra => "Avoid getting any non-biodegradable products (e.g. soap, shampoo, conditioner) into your bucket, especially if you're reusing the water for edible plants.",
             :metric_question => "Estimate how much (in kilos) of water you collected. Note: 1 gal = appx 4 kg",
 :metric_verb => "You collected ",
 :metric_unit => " kg of water while showering! (Note: 1 gal = appx 4 kg)",
@@ -493,12 +491,12 @@ module ChallengesHelper
             :name => "No more single-use bottles",
             :type => "friends",
             :question => "What's the problem with single-use water bottles?",
-            :description => "Did you know it takes 2x more water to make the plastic bottle than to fill it? Plus, bottled water costs <a target=\"_blank\" href=\"https://www.foodandwaterwatch.org/about/live-healthy/tap-water-vs-bottled-water\">2000x more</a> than tap water! <a target=\"_blank\" href=\"https://www.foodandwaterwatch.org/problems/corporate-control-water\">Multinational bottled water companies</a> rake in billions of $ by strategically marketing their water to be 'safer' than tap water (not always true) while contributing to <a target=\"_blank\" href=\"https://www.5gyres.org/plastic-bottles\">ocean plastic pollution</a>. And we're the ones paying for this.",
+            :description => "It takes 2x more water to make the plastic bottle than to fill it & costs <a target=\"_blank\" href=\"https://www.foodandwaterwatch.org/about/live-healthy/tap-water-vs-bottled-water\">2000x more</a> than tap water! That's not cool. <a target=\"_blank\" href=\"https://www.foodandwaterwatch.org/problems/corporate-control-water\">Bottled water companies</a> make BILLIONS of $ by marketing their water to be 'safer' than tap water (not always true) while contributing to <a target=\"_blank\" href=\"https://www.5gyres.org/plastic-bottles\">plastic pollution</a>.",
             :links => {
-              'The big business hustle of bottled water (info)' => 'https://www.foodandwaterwatch.org/insight/take-back-tap-big-business-hustle-bottled-water',
+              'The bottled water hustle' => 'https://www.foodandwaterwatch.org/insight/take-back-tap-big-business-hustle-bottled-water',
               "What's a good water filter? (guide)" => 'https://www.ewg.org/tapwater/water-filter-guide.php'
             },
-            :instructions => ["Bring your own reusable water bottle everywhere you go.", "Use it instead of buying water bottles or using plastic cups.", "Teach at least 3 different people about what you learned about single-use water bottles."],
+            :instructions => ["Bring your own reusable water bottle everywhere you go", "Use it instead of plastic cups or buying bottled water", "Bust the bottled water company hustle: tell at least 3 people what you learned!"],
             :metric_question => "How many single-use water bottles did you refuse?",
 :metric_verb => "You refused ",
 :metric_unit => " single-use water bottles!",
@@ -508,15 +506,15 @@ module ChallengesHelper
           {
             :name => "Eat plant-based",
             :type => "self",
-            :question => "Why eat plant-based?",
-            :description => "On average, a <a target=\"_blank\" href=\"https://www.drawdown.org/solutions/food/plant-rich-diet\">plant-based diet's</a> water footprint is 1/2 that of a meat-based diet because <a target=\"_blank\" href=\"https://foodtank.com/news/2013/12/why-meat-eats-resources/ \">meat has large water footprints</a>. The process of raising livestock, particularly cattle, requires thousands of pounds/kilograms of crops, which takes an immense amount of water to grow.",
+            :question => "Why plant-based?",
+            :description => "A <a target=\"_blank\" href=\"https://www.drawdown.org/solutions/food/plant-rich-diet\">plant-based diet's</a> water footprint is ~1/2 that of a meat-based diet because <a target=\"_blank\" href=\"https://foodtank.com/news/2013/12/why-meat-eats-resources/ \">meat has HUGE water footprints</a>. The process of raising livestock, particularly cattle, requires THOUSANDS of pounds/kilos of crops, which takes an immense amount of water to grow.",
             :links => {
-              "If I don't eat meat, how do I get protein? (info)" => 'https://foodrevolution.org/blog/plant-based-protein/',
-              'Simple steps to eating plant-based (guide)' => 'https://www.drfuhrman.com/get-started/quick-start',
-              'What to eat to feel good? (info)' => 'https://drhyman.com/blog/2014/11/07/pegan-paleo-vegan/',
-              'Water footprint of food choices (list)' => 'https://www.watercalculator.org/water-use/water-friendly-food-choices/ '
+              "If I don't eat meat, how do I get protein?" => 'https://foodrevolution.org/blog/plant-based-protein/',
+              'Simple steps to eat plant-based (guide)' => 'https://www.drfuhrman.com/get-started/quick-start',
+              'Eating to feel good' => 'https://drhyman.com/blog/2014/11/07/pegan-paleo-vegan/',
+              'Water-friendly diet' => 'https://www.watercalculator.org/water-use/water-friendly-food-choices/ '
             },
-            :instructions => ["Eat more plant-based meals and snacks (sourced locally is ideal). (i.e. whole fruits, vegetables, grains, nuts, and seeds)", "Reduce your meat (e.g. beef, pork, chicken) consumption.", "Reduce your dairy product consumption (e.g. milk, yogurt).", "Reduce your packaged and processed food consumption."],
+            :instructions => ["Eat more plant-based meals & snacks (local + organic when possible) (i.e. whole vegetables, nuts, seeds, fruits)", "Reduce your meat (e.g. beef, pork, chicken) consumption", "Reduce your dairy consumption (e.g. cheese, milk, yogurt)", "Reduce your packaged + processed food consumption"],
             :metric_question => "How many meals did you eat more plant-based?",
 :metric_verb => "You ate ",
 :metric_unit => " plant-based meals!",
@@ -527,12 +525,12 @@ module ChallengesHelper
             :name => "Cruise lightly",
             :type => "self",
             :question => "What is transportation's impact?",
-            :description => "It takes about 3/4 gallon of water to extract, refine, and transport the gas used to drive one mile. The water footprint of fuel consumption adds up as you travel farther and take more trips. There are many ways to reduce this consumption though. You can reduce this simply by inviting others to join your ride. Skip a gas vehicle and you zero your fuel footprint.",
+            :description => "It takes ~3/4 gallon of water to extract, refine, and transport the gas used to drive 1 mile. The water footprint of fuel adds up as you travel farther + take more trips.",
             :links => {
-              "What's the water footprint of gas? (info)" => 'https://www.watercalculator.org/save-water/gasoline/',
-              'How can I change the impact of transportation? (guide)' => 'https://drawdown.ecochallenge.org/challenges/transport'
+              "Water footprint of gas" => 'https://www.watercalculator.org/save-water/gasoline/',
+              'How to change transportation' => 'https://drawdown.ecochallenge.org/challenges/transport'
             },
-            :instructions => ["<a target=\"_blank\" href=\"https://www.drawdown.org/solutions/transport/ridesharing\">Carpool</a>; take <a target=\"_blank\" href=\"https://www.drawdown.org/solutions/transport/mass-transit\">mass transit</a>; bike/skateboard/scooter; or walk to your destination. Just don't ride in a car alone."],
+            :instructions => ["<a target=\"_blank\" href=\"https://www.drawdown.org/solutions/transport/ridesharing\">Carpool</a>; take <a target=\"_blank\" href=\"https://www.drawdown.org/solutions/transport/mass-transit\">mass transit</a>; bike/skateboard/scooter; or walk to your destination", "Just don't ride in a car alone."],
             :metric_question => "How many times did you choose alternative transportation over riding alone in a car?",
 :metric_verb => "You reduced your water footprint by choosing not to ride alone in a car ",
 :metric_unit => " times!",
@@ -542,14 +540,14 @@ module ChallengesHelper
           {
             :name => "Raise awareness",
             :type => "community",
-            :question => "What's the impact of making new clothes?",
-            :description => "About 8,000 synthetic chemicals are used to transform materials into textiles, contributing to 20% of industrial water pollution. <a target=\"_blank\" href=\"https://www.soilassociation.org/thirsty-for-fashion/\">Growing cotton accounts for 16% of global insecticide usage, many of which gets washed into water supplies and soil.</a> So, making new clothes is resource intensive and polluting. Shopping secondhand avoids these issues by extending the life of already existing clothes. Simply wearing a piece of clothing 9 months longer reduces its water footprint by 5-10%.",
+            :question => "What's the impact clothing?",
+            :description => "~8,000 synthetic chemicals are used to transform materials into textiles, contributing to 20%(!!) of industrial water pollution. <a target=\"_blank\" href=\"https://www.soilassociation.org/thirsty-for-fashion/\">Growing cotton accounts for 16% of global insecticide usage, which gets washed into water supplies + soil.</a> Blech! Basically, making new clothes is resource intensive + polluting.",
             :links => {
-              'How do I make clothes last? (info + guide)' => 'https://goodonyou.eco/fashion-and-water-the-thirsty-industry/',
-              'How do I support sustainable fashion? (info + guide)' => 'https://articles.mercola.com/sites/articles/archive/2019/01/12/fashion-industry-pollution.aspx '
+              'How to make clothes last' => 'https://goodonyou.eco/fashion-and-water-the-thirsty-industry/',
+              'How do I support sustainable fashion?' => 'https://articles.mercola.com/sites/articles/archive/2019/01/12/fashion-industry-pollution.aspx '
             },
-            :background => "Many people don't associate fashion with water consumption.",
-            :instructions => ["Teach at least 3 people about what you've learned about the impact of the textile industry.", "Make posters and/or send emails informing the community about the relationship of water and fashion, why it matters, and how it affects people + environment.", "Get friends to commit to buying less and buying better, more sustainable fashion with you."],
+            :background => "Many people don't associate fashion with water consumption, but simply wearing a piece of clothing 9 months longer reduces its water footprint by 5-10%.",
+            :instructions => ["Share share share! Inform at least 3 people about what's up with the fashion industry", "Make posters + send emails informing the community about the relationship of water & fashion, why it matters, and how it affects people + environment", "Bring your friends on board! Get them to commit to buying less + buying better, more sustainable fashion with you."],
             :metric_question => "How many people did you teach about the impact of the textile industry?",
 :metric_verb => "You taught ",
 :metric_unit => " people about the impact of the textile industry!",
