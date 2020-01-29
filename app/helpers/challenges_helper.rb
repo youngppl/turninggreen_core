@@ -374,7 +374,7 @@ and values of the farms and companies whose products you buy."],
             :photo_prompt => "Share a photo of the message you sent to brands. Please remove any personal information from the photo. Tell us how you felt as you sent off your message."
           },
           {
-            :name => "Care for periods",
+            :name => "Safe periods",
             :type => "friends",
             :question => "What's the deal with menstruation products?",
             :description => "Conventional menstrual products contain up to 90% petroleum-based plastics. They're also made of pesticide-laden cotton and <a target=\"_blank\" href=\"https://www.natracare.com/why-natracare/chlorine-free/\">bleached with chlorine</a>, both of which involve carcinogens that harm people's health. Women use more than <a target=\"_blank\" href=\"https://www.wen.org.uk/environmenstrual-in-numbers\">11,000</a> disposable menstrual products in their lifetime. That's a lot of exposure to harmful chemicals & a lot of <a target=\"_blank\" href=\"https://divacup.com/eco-divas/\">waste</a> ending up in landfills + oceans.",
@@ -1367,3 +1367,4 @@ useful for them."],
     all_challenges
   end
 end
+
