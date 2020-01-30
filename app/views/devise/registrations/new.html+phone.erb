@@ -6,8 +6,8 @@
   <%= form_for(resource, as: resource_name, url: user_registration_path(resource_name), html: {onsubmit: "convertDate();"}) do |f| %>
     <div class="section _1" style="display: block;">
       <h2 class="heading">Let's get started!</h2>
-      <%= f.text_field :name, autofocus: true, placeholder: "full name", autocomplete: "name", :class => "input", :required => true, oninput: "allowNextButton();" %>
-      <%= f.email_field :email, autofocus: true, placeholder: "email", autocomplete: "email", :class => "input email", :required => true, oninput: "checkEmail();allowNextButton(this);" %>
+      <%= f.text_field :name, autofocus: true, placeholder: "full name", autocomplete: "name", :class => "input", :required => true, onfocus:"$(this).click()", oninput: "allowNextButton();" %>
+      <%= f.email_field :email, placeholder: "email", autocomplete: "email", :class => "input email", :required => true, oninput: "checkEmail();allowNextButton(this);" %>
       <div class="email error">
         <h5 class="message">please enter a valid email</h5>
       </div>
