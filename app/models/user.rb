@@ -78,6 +78,12 @@ class User < ApplicationRecord
     !deleted_at ? super : :deleted_account
   end
 
+  protected
+  
+  def confirmation_required?
+    false
+  end
+
   private
 
   def validate_state
