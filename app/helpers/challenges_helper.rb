@@ -186,7 +186,7 @@ module ChallengesHelper
             :name => "Go to farmers' markets",
             :type => "friends",
             :question => "Why do farmers' markets matter?",
-            :description => "Farmers' markets are a galore of freshly harvested fruits, vegetables, nuts, and other goodies at <a target=\"_blank\" href=\"https://foodrevolution.org/blog/why-buy-local-food/\">peak nutrition levels</a>. Shopping there means directly supporting farmers & keeping your money in the <a target=\"_blank\" href=\"https://farmersmarketcoalition.org/education/stimulate-local-economies/ \">local economy</a>, which stimulates job creation and local businesses.",
+            :description => "Farmers' markets are a galore of freshly harvested fruits, vegetables, nuts, and other goodies at <a target=\"_blank\" href=\"https://foodrevolution.org/blog/why-buy-local-food/\">peak nutrition levels</a>. Shopping there means directly <a target=\"_blank\" href=\"https://growcleanwater.org/\">supporting farmers</a> & keeping your money in the <a target=\"_blank\" href=\"https://farmersmarketcoalition.org/education/stimulate-local-economies/ \">local economy</a>, which stimulates job creation and local businesses.",
             :links => {
               "Find farmers' markets + CSAs near you" => 'https://www.localharvest.org/search.jsp?lat=37.7697&lon=-122.393295&scale=9&ty=1',
               "Q's to ask farmers [pg 9]" => 'https://kisstheground.com/purchasingguide/',
