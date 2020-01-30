@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get '/about' => 'about#index'
   get '/terms' => 'about#terms'
   get '/resources' => 'about#resources'
+  get '/faq' => 'about#faq'
   get '/dashboard' => 'users#show'
   get '/themes' => 'themes#index'
   get '/challenges/completed' => 'challenges#completed'
