@@ -13,13 +13,14 @@ module ChallengesHelper
           {
             :name => "Audit your waste",
             :type => "pre",
-            :question => "Why is waste a problem?",
-            :description => "There is more to a product than what you see. It takes materials, labor, energy to: source materials, run machinery, package products, and fuel vehicles for shipping. When you throw something away, especially after using it for a very short time, all those inputs are wasted. And the environment is stuck with <a target=\"_blank\" href=\"https://www.breakfreefromplastic.org/globalbrandauditreport2019/?mc_cid=8671ee16ab&mc_eid=f265c1970f\">more trash</a>.",
+            :question => "Why does waste matter?",
+            :description => "The chemicals used in the production of goods impact workers' health. The materials and energy required to make and transport goods contribute to climate change. The generation and accumulation of waste disproportionately affects the world's poorest communities. Waste matters. And it comes from <a target=\"_blank\" href=\"https://www.breakfreefromplastic.org/globalbrandauditreport2019/?mc_cid=8671ee16ab&mc_eid=f265c1970f\">every part of the production, usage, and disposal of goods.</a> <a target=\"_blank\" href=\"https://www.plasticpollutioncoalition.org/take-action-1\">Minimize your waste</a> (in this order): refuse, reduce, reuse, rot, recycle.",
             :links => {
-              'What YOU can do (guide)' => 'https://www.plasticfreejuly.org/get-involved/what-you-can-do/category/getting-started/',
+              'How to conduct a waste audit (guide)' => 'https://www.goingzerowaste.com/31-day-challenge/how-to-conduct-a-waste-audit-day-31-of-the-zero-waste-challenge',
+              'What you can do (guide)' => 'https://www.plasticfreejuly.org/get-involved/what-you-can-do/category/getting-started/',
               'How much plastic do you use? (quiz)' => 'https://survey.thinkfieldpanel.com.au/wcfs/29402'
             },
-            :instructions => ["Take a bag with you today", "Collect every piece of waste you generate (trash, recyclables, compostables)", "At end of day, separate your collection into compostable, recyclable, and trash", "Evaluate the size of each pile and reflect. Could you have refused something and/or used an alternative? Where could you have reduced? What could you have reused?"],
+            :instructions => ["Take a bag with you today + collect every piece of waste you'd throw in the trash, recycling, and compost.", 'At end of day, separate your collection into compostable, recyclable, and trash. Evaluate size of each pile.', 'Reflect upon your findings. How could you have avoided the trash you collected? Could you use alternative products to minimize your category sizes?'],
             :alt_instructions => ["Alternative: Track your waste production with a list + mark them as compostable, recyclable, and trash."],
             :metric_question => "",
 :metric_verb => "N/A",
@@ -30,14 +31,13 @@ module ChallengesHelper
           {
             :name => "Practice refusing",
             :type => "self",
-            :question => "Why should I say \"No thanks\" to free stuff?",
-            :description => "Taking free stuff you don't use much is a waste of resources. They'll probably end up in the trash or some donation pile. When you take \"free\" stuff, you send the signal that more of these products should be made + bought, which is the wrong message when we actually don't use or need this stuff.",
+            :question => "Why should I refuse taking freebies?",
+            :description => "\"Freebies\" are passed out all the time. The problem is this \"free\" stuff often ends up in landfills, which is a waste of resources. When we take \"free\" stuff, we indirectly send the signal to make + buy more of these products. To reduce our trash output, we need to firmly say 'no thank you' and explain why. ",
             :links => {
-              "Ask these questions before taking something (blog)" => "https://www.goingzerowaste.com/blog/2015/9/17/the-power-of-saying-no",
-              'Asking for no gifts (guide)' => 'https://www.thegoodtrade.com/features/how-to-ask-for-no-gifts'
+              "Ask questions before taking something (blog)" => "https://www.goingzerowaste.com/blog/2015/9/17/the-power-of-saying-no",
+              'How to ask for no gifts this holiday (guide)' => 'https://www.thegoodtrade.com/features/how-to-ask-for-no-gifts'
             },
-            :instructions => ["Before you take any \"free\" stuff (e.g. <a target=\"_blank\" href=\"https://trashisfortossers.com/why-requesting-no-straw-is-awesome/\">straw in drink</a>, napkin for takeout), pause and ask yourself: will I use this more than 5 times? If no, say 'No thank you. I won't use this.'", "Also consider: do I already own something that can serve the same purpose? If yes, then say 'No thank you, I don't need this.'", "If you do need it, feel free to take it"],
-	:alt_instructions => ["This challenge is about knowing when to say 'no' + when to say 'yes', instead of saying 'yes' all the time."],
+            :instructions => ["Before you take any \"freebie\" (e.g. free stuff at events, <a target=\"_blank\" href=\"https://trashisfortossers.com/why-requesting-no-straw-is-awesome/\">straw in drink</a>, napkin for takeout), pause and ask yourself: will I use this more than 5 times? If no, say 'No thank you. I won't use this.'", "Also consider: do I already own something that can serve the same purpose? If yes, then say 'No thank you, I don't need this.'", "If you do need it, feel free to take it. This challenge is about knowing when to say 'no' and when to say 'yes'."],
             :metric_question => "How many times did you refuse something you didn't need?",
 :metric_verb => "You refused something you didn't need ",
 :metric_unit => " times!",
@@ -48,15 +48,16 @@ module ChallengesHelper
             :name => "Shop with reusables",
             :type => "friends",
             :question => "What's the deal with food packaging?",
-            :description => "Packaging, even if it's <a target=\"_blank\" href=\"https://www.youtube.com/watch?v=urFZ5o0az_4\">recyclable</a> or compostable, still end up in landfills. What we can do: refuse waste at the root so you don't have to figure out proper disposal later. Ask before acting: Is it necessary? Think farmers' markets + grocery stores + bulk bins; it's possible to buy loose produce & grains.",
+            :description => "Packaging, even if it's <a target=\"_blank\" href=\"https://www.youtube.com/watch?v=urFZ5o0az_4\">recyclable</a> or compostable, still end up in landfills. To best combat this, refuse waste at the root source so you don't have to figure out proper disposal later. For example, food packaging extends shelf life + makes shopping convenient, but ask yourself: Is it necessary? Think about farmers' markets + grocery stores; it's possible to buy loose produce.",
             :links => {
-              "Tips to shop w/ your own bags + jars (guide)" => "https://www.goingzerowaste.com/blog/2016/3/14/ultimate-guide-to-zero-waste-grocery-shopping",
-              "Zero waste @ the farmers' market (video)" => "https://trashisfortossers.com/how-to-shop-at-farmers-market-withou/",
+              "Shopping with your own bags + jars (guide)" => "https://www.goingzerowaste.com/blog/2016/3/14/ultimate-guide-to-zero-waste-grocery-shopping",
+              "Zero waste shopping at the farmers' market (video)" => "https://trashisfortossers.com/how-to-shop-at-farmers-market-withou/",
               "Where can I find bulk? (finder)" => "https://app.zerowastehome.com/",
-              "Is bulk not available? (blog)" => "https://www.goingzerowaste.com/blog/2015/12/31/life-without-bulk"
+              "Is bulk not available? (blog)" => "https://www.goingzerowaste.com/blog/2015/12/31/life-without-bulk",
+	      "The Indonesian Plastic Bag Diet (video)" => "https://www.youtube.com/watch?v=PBhakv9DQFQ"
             },
-            :instructions => ["Bring reusable bags + jars with you", "Opt for loose goods (e.g. fruits, veggies, meat, cheese, bread) instead of packaged", "Shop at bulk bins", "Get 3 friends/fam to join you!"],
-	          :alt_instructions => ["We know it's not always possible, but try to avoid any disposable packaging. Just do your best!", "If goods are charged by weight (e.g. pounds or kilos), don't forget to <a target=\"_blank\" href=\"http://trashisfortossers.com/how-to-tare-jar-and-shop-waste-free/\">tare your reusables before filling them up</a>!"],
+            :instructions => ["Bring your own reusable bags and jars", "Opt for loose goods (e.g. fruits, veggies, meat, cheese, bread) instead of packaged ones. Try to avoid any packaging that will be disposed of.", "Shop at bulk bins.", "Get 3 friends and family to join you!"],
+	          :extra => "*If goods are charged by weight (e.g. pounds or kilos), don't forget to tare your reusables before filling them up!",
             :metric_question => "How many times did you use reusable containers (e.g. bags, jars) instead of single-use disposables?",
 :metric_verb => "You used reusable containers instead of single-use disposables ",
 :metric_unit => " times!",
@@ -66,16 +67,17 @@ module ChallengesHelper
           {
             :name => "Eat without disposables",
             :type => "self",
-            :question => "What's the problem with foodware?",
-            :description => "Make room for the good in the world. Not all these plates, utensils, and cups that you use once & throw away, because they sit in landfills + oceans for a <a target=\"_blank\" href=\"https://greendiningalliance.org/2016/12/the-real-cost-of-styrofoam/\">very long time</a>. What’s worse is plastic foodware, especially those with 
+            :question => "Why is disposable foodware a problem?",
+            :description => "Paper plates, plastic cutlery, and foam cups are disposable. You use it once and throw it away. The problem is they end up sitting in landfills for a <a target=\"_blank\" href=\"https://greendiningalliance.org/2016/12/the-real-cost-of-styrofoam/\">very long time</a>. Additionally, disposable plastic foodware, particularly those with
             <img src=\"data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/Pgo8IURPQ1RZUEUgc3ZnIFBVQkxJ%0D%0AQyAiLS8vVzNDLy9EVEQgU1ZHIDIwMDEwOTA0Ly9FTiIKICJodHRwOi8vd3d3LnczLm9yZy9UUi8y%0D%0AMDAxL1JFQy1TVkctMjAwMTA5MDQvRFREL3N2ZzEwLmR0ZCI+CjxzdmcgdmVyc2lvbj0iMS4wIiB4%0D%0AbWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiB3aWR0aD0iODUuMDAwMDAwcHQiIGhl%0D%0AaWdodD0iODMuMDAwMDAwcHQiIHZpZXdCb3g9IjAgMCA4NS4wMDAwMDAgODMuMDAwMDAwIgogcHJl%0D%0Ac2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQgbWVldCI+Cgo8ZyB0cmFuc2Zvcm09InRyYW5zbGF0%0D%0AZSgwLjAwMDAwMCw4My4wMDAwMDApIHNjYWxlKDAuMTAwMDAwLC0wLjEwMDAwMCkiCmZpbGw9IiMw%0D%0AMDAwMDAiIHN0cm9rZT0ibm9uZSI+CjxwYXRoIGQ9Ik0zNDEgNzQ0IGMtMTcgLTE0IC01MCAtNTcg%0D%0ALTcyIC05NiAtMjUgLTQzIC00NiAtNjggLTU0IC02NSAtMTMgNgotMjUgLTUyIC0yNSAtMTI1IGww%0D%0AIC0zOSA3MCA0OCBjNjAgNDIgNjggNTAgNTUgNjIgLTEzIDEzIC0xMiAxOSA3IDUwIDg1IDE0NAo5%0D%0ANCAxNDUgMTcyIDEzIGwzOCAtNjMgMzEgMjEgYzE4IDExIDMxIDI0IDMwIDI4IC02IDI3IC04MCAx%0D%0AMzYgLTExMCAxNjIgLTQ1CjQwIC05OCA0MSAtMTQyIDR6Ii8+CjxwYXRoIGQ9Ik01NzQgNDg0IGMz%0D%0AIC0yNiA2IC02NCA2IC04NiAwIC0zNSAyIC0zOCAyMCAtMjggMTkgMTAgMzAgLTUgMTA3Ci0xNDMg%0D%0AMyAtNSAtMyAtMTcgLTEzIC0yOCAtMTQgLTE2IC0zMSAtMTkgLTEwNiAtMTkgbC04OCAwIDAgLTQw%0D%0AIDAgLTQwIDgzIDAKYzEzNiAwIDE5MSAyOCAyMDMgMTAyIDYgMzUgLTE3IDkyIC03MiAxNzkgLTE3%0D%0AIDI3IC0yMCAzOSAtMTEgNDggNiA2IDkgMTIgNgoxNCAtMjkgMjMgLTEyNyA4NyAtMTMzIDg3IC01%0D%0AIDAgLTYgLTIxIC0yIC00NnoiLz4KPHBhdGggZD0iTTM2MiA0NDggYy03IC03IC0xMiAtMTggLTEy%0D%0AIC0yNSAwIC0xNSAyNiAtMTggMzUgLTMgMyA2IDE1IDEwIDI2IDEwCjI1IDAgMjUgLTMwIC0xIC0z%0D%0ANyAtMjcgLTcgLTI1IC0zMSAzIC0zNSAzMiAtNCAzMSAtNTIgLTEgLTU2IC0xMyAtMiAtMjUgMwot%0D%0AMjggMTIgLTMgOSAtMTIgMTYgLTIwIDE2IC0xNyAwIC0xOCAtMzIgLTIgLTQ4IDE2IC0xNiA4MCAt%0D%0AMTYgOTYgMCAxNCAxNCAxNgo3NCAyIDgzIC01IDMgLTcgMTkgLTMgMzUgMyAxOCAwIDM2IC03IDQ1%0D%0AIC0xNSAxOCAtNzEgMjAgLTg4IDN6Ii8+CjxwYXRoIGQ9Ik0xMjcgMzczIGMtNjcgLTEwNSAtODEg%0D%0ALTE2MiAtNTUgLTIxOCAxOSAtNDIgNTYgLTU1IDE1NyAtNTUgNzIgMCA5MgotMyA5OSAtMTYgOCAt%0D%0AMTQgMTggLTExIDgwIDIwIDQwIDIwIDcyIDM5IDcyIDQyIDAgNiAtMTI1IDY0IC0xNDAgNjQgLTUg%0D%0AMCAtMTAKLTkgLTEwIC0yMCAwIC0xOCAtNyAtMjAgLTgzIC0yMCAtMTIyIDAgLTEzMCAxNSAtNjcg%0D%0AMTMwIDIyIDQwIDQwIDc0IDQwIDc2IDAKNCAtNTcgMzQgLTY0IDM0IC0zIDAgLTE2IC0xNyAtMjkg%0D%0ALTM3eiIvPgo8L2c+Cjwvc3ZnPgo=\" width=\"40px\">
              and <img src= \"data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/Pgo8IURPQ1RZUEUgc3ZnIFBVQkxJ%0D%0AQyAiLS8vVzNDLy9EVEQgU1ZHIDIwMDEwOTA0Ly9FTiIKICJodHRwOi8vd3d3LnczLm9yZy9UUi8y%0D%0AMDAxL1JFQy1TVkctMjAwMTA5MDQvRFREL3N2ZzEwLmR0ZCI+CjxzdmcgdmVyc2lvbj0iMS4wIiB4%0D%0AbWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiB3aWR0aD0iODYuMDAwMDAwcHQiIGhl%0D%0AaWdodD0iODMuMDAwMDAwcHQiIHZpZXdCb3g9IjAgMCA4Ni4wMDAwMDAgODMuMDAwMDAwIgogcHJl%0D%0Ac2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQgbWVldCI+Cgo8ZyB0cmFuc2Zvcm09InRyYW5zbGF0%0D%0AZSgwLjAwMDAwMCw4My4wMDAwMDApIHNjYWxlKDAuMTAwMDAwLC0wLjEwMDAwMCkiCmZpbGw9IiMw%0D%0AMDAwMDAiIHN0cm9rZT0ibm9uZSI+CjxwYXRoIGQ9Ik0zODMgNzQwIGMtMjUgLTEwIC03NSAtNzUg%0D%0ALTEwNiAtMTM4IC0xNSAtMzAgLTI3IC00MiAtMzggLTM5IC0xNCA0Ci0xNyAtOCAtMjIgLTc3IC0z%0D%0AIC00NCAtNCAtODMgLTEgLTg1IDMgLTQgMjYgMTEgMTI4IDgyIDggNSA2IDEyIC02IDIxIC0xNiAx%0D%0AMgotMTQgMTggMjUgODEgNjggMTExIDc5IDExMCAxNDkgLTYgbDQwIC02OCAzMSAxNiBjMTggOCAz%0D%0ANCAxNyAzNiAxOSA0IDQgLTY5CjEyOCAtOTEgMTU0IC0zNyA0NiAtOTMgNjEgLTE0NSA0MHoiLz4K%0D%0APHBhdGggZD0iTTYwMyA0MzAgYzYgLTg3IDEwIC0xMDEgMjkgLTgyIDkgOSAyMiAtNyA1NSAtNjgg%0D%0AMzYgLTY2IDQyIC04MyAzMwotMTAwIC0xMCAtMTggLTIxIC0yMCAtMTA1IC0yMCBsLTk1IDAgMCAt%0D%0ANDAgMCAtNDAgOTQgMCBjMTEyIDAgMTQ5IDExIDE3NiA1NQozMSA1MSAyNiA4OSAtMjYgMTc3IC0z%0D%0ANSA2MCAtNDQgODIgLTM1IDkyIDkgMTAgLTQgMjMgLTYwIDYxIGwtNzIgNDcgNiAtODJ6Ii8+Cjxw%0D%0AYXRoIGQ9Ik0zOTAgNDIwIGMtMjUgLTI1IC0yOSAtMTMwIC01IC0xNTQgNDEgLTQxIDEwNyAtMTgg%0D%0AMTEzIDQwIDQgNDMgLTE5CjY4IC02MiA2OCAtMzcgMCAtNDIgMTIgLTEzIDMwIDEyIDggMjEgNSAz%0D%0ANyAtOSAyNyAtMjUgNDYgLTggMjQgMjMgLTE5IDI4IC02NwoyOSAtOTQgMnogbTgwIC0xMDUgYzAg%0D%0ALTI2IC0yOSAtNDYgLTUxIC0zNSAtMjQgMTMgLTI1IDQ2IC0yIDU5IDIxIDExIDUzIC0zCjUzIC0y%0D%0ANHoiLz4KPHBhdGggZD0iTTEzMyAzMTggYy01MSAtOTAgLTU4IC0xMTcgLTQzIC0xNjIgMTkgLTU4%0D%0AIDUxIC03NiAxMzUgLTc2IDkxIDAgMTM1Ci05IDEzNSAtMjYgMCAtMTAgMjMgLTIgNzUgMjMgNDEg%0D%0AMjEgNzUgNDAgNzUgNDQgMCA3IC0xMzcgNjkgLTE1MiA2OSAtNSAwIC02Ci05IC0zIC0yMCA2IC0x%0D%0AOSAyIC0yMCAtODQgLTIwIC04MSAwIC05MSAyIC0xMDEgMjAgLTkgMTcgLTQgMzUgMzIgMTAxIGw0%0D%0AMyA4MAotMjUgMTkgYy0xNCAxMSAtMzAgMjAgLTM2IDIwIC01IDAgLTI5IC0zMyAtNTEgLTcyeiIv%0D%0APgo8L2c+Cjwvc3ZnPgo=\" width=\"40px\">
-             , are made with carcinogens that put wildlife & human life at risk.",
+             , are made with carcinogens that put wildlife and human health at risk.",
             :links => {
-	      "What's plastic made of? (blog)" => 'https://www.madesafe.org/avoid-toxic-chemicals-plastics/',
-              'Fast food plastic survey (list)' => 'https://www.plasticpollutioncoalition.org/global-fast-food-plastic-survey'
+              "How to avoid plastic cutlery + containers (guide)" => "https://www.plasticfreejuly.org/get-involved/what-you-can-do/takeaway-cutlery-and-containers/",
+              "What are toxic chemicals in plastics? (blog)" => "https://www.madesafe.org/avoid-toxic-chemicals-plastics/",
+              'Global fast food plastic survey (list)' => 'https://www.plasticpollutioncoalition.org/global-fast-food-plastic-survey'
             },
-            :instructions => ["Refuse any single-use disposables (e.g. food containers, utensils, straws, napkins, bags).", "<a target=\"_blank\" href=\"https://www.plasticfreejuly.org/get-involved/what-you-can-do/takeaway-cutlery-and-containers/\">Bring your own reusable alternatives</a> to events (serving food).", "People will notice. Some may say something. If they do, you can respond: \"I bring my own reusable ___ because I don't want to contribute more waste to our oceans and landfills.\" Feel free to engage in conversation and share what you've learned.", "Then, tell us about it in your reflections cause we want to know!"],
+            :instructions => ["Refuse any single-use disposables (e.g. food containers, utensils, straws, napkins, bags).", "Bring your own reusable alternatives to events (serving food).", "People will notice. Some will say something, and some won't. Simply explain to them: \"I bring my own reusable ___ to avoid the unnecessary waste.\" Feel free to engage in conversation or elaborate more."],
             :metric_question => "How many times did you opt for a reusable cup, bottle, plate, utensil, bowl, straw, napkin, bag, etc. over single-use outside of your home?",
 :metric_verb => "You opted for reusable items ",
 :metric_unit => " times over single-use!",
@@ -85,14 +87,15 @@ module ChallengesHelper
           {
             :name => "Compost & recycle",
             :type => "self",
-            :question => "Why prioritize composting over recycling?",
-            :description => "Composting <a target=\"_blank\" href=\"https://kisstheground.com/soil-science/\">stores carbon, which offsets CO2 in the atmosphere, helping prevent climate change</a>. Composting repurposes leftover nutrients to the environment. <a target=\"_blank\" href=\"http://apps.npr.org/plastics-recycling/?utm_medium=social&utm_source=facebook.com&utm_term=nprnews&utm_campaign=npr\">Recycling</a> requires more carbon-emitting processes, and recyclables (plastic + paper) can't be recycled infinitely. But, recycling is way better than landfilling things.",
+            :question => "Why prioritize composting over recycling? ",
+            :description => "When we <a target=\"_blank\" href=\"https://www.goingzerowaste.com/blog/composting-for-apartments\">compost</a>, the remaining nutrients in food scraps + plant-based goods are reused in our environment. Recycling is also good (way better than sending goods to the landfill). However, <a target=\"_blank\" href=\"https://www.goingzerowaste.com/blog/how-to-recycle-paper-the-right-way?rq=RECYCLE\">recyclables</a> like plastic and paper can't be recycled infinitely. Furthermore, recycling goods requires more resources (e.g. fuel costs, labor, energy, water) to process than composting.",
             :links => {
-              "Composting at home (video)" => "https://kisstheground.com/how-to-compost-at-home-simple/",
+              "How to compost at home (video)" => "https://kisstheground.com/how-to-compost-at-home-simple/",
               "How to compost at home (infographic)" => "https://kisstheground.com/how-to-compost-at-home/",
               "What do all the plastic numbers mean? (guide)" => "https://www.babygreenthumb.com/p-122-safe-plastic-numbers-guide.aspx"
             },
-            :instructions => ["<a target=\"_blank\" href=\"https://www.goingzerowaste.com/blog/composting-for-apartments\">Compost</a> any waste that is compostable and biodegradable. If it's not, then <a target=\"_blank\" href=\"http://apps.npr.org/plastics-recycling/?utm_medium=social&utm_source=facebook.com&utm_term=nprnews&utm_campaign=npr\">recycle it</a>.", "As a last resort, send your trashto the landfill if it isn't reusable, compostable, or recyclable."],
+            :background => "Composting can take on any form like starting your own compost pile, putting it in your green bin (if you have municipal composting), giving your compost to local farms, or tossing it into a compost bin in your community.",
+            :instructions => ["Compost any waste that is compostable and biodegradable. If it's not compostable, then <a target=\"_blank\" href=\"http://apps.npr.org/plastics-recycling/?utm_medium=social&utm_source=facebook.com&utm_term=nprnews&utm_campaign=npr\">recycle it</a>.", "As a last resort, send your trash into the landfill if it isn't reusable, compostable, or recyclable."],
             :metric_question => "Estimate how much (in kilos) waste you composted and/or recycled. Note: 1 lb = 0.45 kg",
 :metric_verb => "You composted or recycled ",
 :metric_unit => " about kg! (Note: 1lb = 0.45kg)",
@@ -102,15 +105,15 @@ module ChallengesHelper
           {
             :name => "Party zero waste style",
             :type => "friends",
-            :question => "Down to party, but what's it got to do with waste reduction?",
-            :description => "How many people do you know think about their trash? Hosting a zero waste party changes the way people see + think about waste, because YOU can show them how simple it is. As the fabulous host, have fun & open up conversations to share what you've learned. You just might inspire your guests to reduce their waste too.",
+            :question => "How does this have an impact?",
+            :description => "How many people do you know actually think about their trash? Hosting a zero waste party is a fun way to show people what reducing your waste looks like and how simple it is. Your party opens up the conversation for you to share what you've learned about waste with your guests and inspire them to reduce their waste as well!",
             :links => {
-              "Throwing a zero waste party (guide)" => "https://www.goingzerowaste.com/blog/five-tips-for-throwing-a-zero-waste-party ",
-              "Trash-free Halloweekend (blog)" => "http://trashisfortossers.com/how-to-have-a-trash-free-halloweekend/",
-              "Zero waste bachelorette party (blog)" => "http://trashisfortossers.com/zero-waste-bachelorette-party/"
+              "How to throw a zero waste party (guide)" => "https://www.goingzerowaste.com/blog/five-tips-for-throwing-a-zero-waste-party ",
+              "Hosting a zero waste dinner party (blog)" => "http://trashisfortossers.com/hosting-zero-waste-dinner-party/",
+              "How to have a trash-free Halloweekend (blog)" => "http://trashisfortossers.com/how-to-have-a-trash-free-halloweekend/",
+              "Hosting a zero waste bachelorette party (blog)" => "http://trashisfortossers.com/zero-waste-bachelorette-party/"
             },
-            :instructions => ["Curate a waste-free menu. Purchase ingredients with little to no packaging waste, and serve on reusable dishware", "Provide reusable dishware, utensils, + napkins", "Decorate as you wish with nature + reusable items", "Make a compost bin accessible", "Invite at least 3 people to your zero waste party!", "Clean up together! Put things in the dishwasher or handwash; toss dirtied cloths into the laundry; and empty the compost bin. Don't worry, this is bonding time and isn't as bad as it sounds."],
-	    :alt_instructions => ["Have LOTS of fun! It's a party, after all."],
+            :instructions => ["Curate a waste-free menu. That is, purchase ingredients with little to no packaging waste, and serve on reusable dishware.", "Provide reusable dishware, utensils, and napkins.", "Decorate as you wish with nature and non-single-use disposable items.", "Make a compost bin accessible.", "Invite at least 3 people and tell them it's a zero waste party!", "If you'd like, invite your guests to help clean up after the party: put things in the dishwasher or handwash; toss dirtied cloths into the laundry; and empty the compost bin. Don't worry, this is bonding time and not as bad as it sounds.", "Have fun!"],
             :metric_question => "How many people came to your party?",
 :metric_verb => "",
 :metric_unit => " people came to your zero waste party!",
@@ -120,14 +123,15 @@ module ChallengesHelper
           {
             :name => "Reduce community waste",
             :type => "community",
-            :question => "What's the point? There's always going to be waste anyways.",
-            :description => "Anne-Marie says it well: <a target=\"_blank\" href=\"https://zerowastechef.com/2019/02/14/how-to-cope-with-environmental-guilt-syndrome-egs/\">\"We don’t need a handful of people doing zero waste perfectly. We need millions of people doing it imperfectly.\"</a> A few zero waste people won't solve the climate crisis. We need a whole lot more people on board. So, everything you do counts! Your actions give others permission to do the same.",
+            :question => "Why should I even try to be zero waste?",
+            :description => "Anne-Marie says it well: <a target=\"_blank\" href=\"https://zerowastechef.com/2019/02/14/how-to-cope-with-environmental-guilt-syndrome-egs/\">\"We don’t need a handful of people doing zero waste perfectly. We need millions of people doing it imperfectly.\"</a> The few individuals who commit to zero waste won't reverse the environmental damage already done; we need a whole lot more people involved. So what you do counts(! -- no matter how seemingly insignificant), because your actions show people around you an alternative way to live. This is how we slowly inspire change together. :)",
             :links => {
-              "Banning polystyrene (guide)" => "https://www.5gyres.org/polystyrene",
+              "Guide to banning polystyrene (guide)" => "https://www.5gyres.org/polystyrene",
               'Changing purchasing practices (guide)' => "https://www.plasticfreejuly.org/get-involved/what-you-can-do/workplace-procurement/",
-              'Businesses + governments go zero waste (info)' => 'https://www.greenamerica.org/blog/plastic-out-sustainability-in'
+              'How governments go zero waste (info)' => 'https://www.greenamerica.org/blog/plastic-out-sustainability-in',
+	      'How Plastic Production Pollutes Small Towns (video)' => 'https://www.youtube.com/watch?v=OFMau-t3QaI'
             },
-            :instructions => ["Choose your target audience (e.g. local business, government)", "Draft a proposal of what you want them to change & why it matters to them. Be specific (e.g. Ask a local restaurant to provide plastic straws only upon request)", "Reach out & give them your pitch", "Offer to work with them to create this change for the community"],
+            :instructions => ["Choose your target audience. (e.g. local business, local government)", "Draft up a proposal of what you want them to change and why it matters to them. Be specific. (e.g. Ask a local restaurant to provide plastic straw only upon request.)", "Reach out and give them your pitch.", "Offer to work with them to create this change for the community."],
             :metric_question => "How many businesses and government officials did you speak to about waste?",
 :metric_verb => "You spoke with ",
 :metric_unit => " businesses and government officials about waste!",
@@ -304,15 +308,15 @@ and values of the farms and companies whose products you buy."],
           {
             :name => "Know your products",
             :type => "pre",
-            :question => "What's in your bodycare?",
-            :description => "~60% of what's put on your skin is absorbed into your bloodstream. There's lots of products on the market with ingredients that inhibit your natural skin health. It sucks, but information is power. Read the ingredient lists & research what those ingredients do to your body.",
+            :question => "Why do the  bodycare products you use matter?",
+            :description => "Your skin absorbs about 60% of what it touches, entering your bloodstream. Know what could make up this 60%. There are harmful ingredients that inhibit the beauty and clarity of your natural skin health, but you won't know if you don't read the ingredient lists and look into what those ingredients can do to your body.",
             :links => {
               'EWG Skin Deep database (finder)' => 'https://www.ewg.org/skindeep/',
-              "Ingredients' impact on health (info)" => 'https://www.madesafe.org/education/chemical-profiles/',
-              'Hazardous ingredients (info)' => 'https://www.madesafe.org/science/hazard-list/'
+              'How do chemicals impact our health? (list + info)' => 'https://www.madesafe.org/education/chemical-profiles/',
+              'Hazardous chemicals in bodycare (list + info)' => 'https://www.madesafe.org/science/hazard-list/'
             },
-            :background => "Take 5 minutes (or more) to educate yourself.",
-            :instructions => ["Read the ingredient list on your skincare products", "<a target=\"_blank\" href=\"https://www.ewg.org/skindeep/\">Look them up</a> if you don't know its purpose. Is the ingredient necessary for this product to be effective + do its job?"],
+            :background => "We're not asking for hours of research (unless you want to), but take 5 minutes to educate yourself a little bit more.",
+            :instructions => ["Read the ingredients list on skincare products that you use.", "Think about the ingredeints: what's the purpose of each ingredient? Look it up. Is the ingredient necessary for this product to be effective and do its job?"],
             :metric_question => "",
 :metric_verb => "N/A",
 :metric_unit => "",
@@ -323,12 +327,12 @@ and values of the farms and companies whose products you buy."],
             :name => "DIY bodycare",
             :type => "friends",
             :question => "Why should I make my own?",
-            :description => "You'll know exactly what's in it. Products with excessively long lists of ingredients on the back often include unnecessary additives that make the product thicker, smell better, or last longer. Many times, these ingredients aren't safe for your health.",
+            :description => "Making your own means you know exactly what's in it.  You control the ingredients used and can ensure its safety to your body. The excessively long list of ingredients on the back of products often include unnecessary additives that make the product thicker, smell better, or last longer. In many cases, these ingredients aren't safe for your health.",
             :links => {
               '100 DIY recipes to get you started (list)' =>'https://dontmesswithmama.com/100-diy-beauty-recipes/',
               '8 ingredients to avoid (list)' => 'https://goodonyou.eco/8-toxic-ingredients-to-avoid-in-beauty-products/'
             },
-            :instructions => ["Choose a product you use regularly (e.g. chapstick, lotion)", "<a target=\"_blank\" href=\"https://dontmesswithmama.com/100-diy-beauty-recipes/\">Find a recipe</a> to make your own!", "Share the fun! Invite at least 3 people to join"], 
+            :instructions => ["DIY a bodycare product that you use regularly (e.g. chapstick, lotion).", "Invite at least 3 other people over to join you in this endeavor."],
             :metric_question => "How many bodycare products did you make?",
 	:metric_verb => "You made ",
 :metric_unit => " bodycare products!",
@@ -338,16 +342,16 @@ and values of the farms and companies whose products you buy."],
           {
             :name => "Choose safer bodycare",
             :type => "friends",
-            :question => "What's considered safer?",
-            :description => "Avoiding <a target=\"_blank\" href=\"https://www.ewg.org/skindeep/contents/top-tips\">known harmful ingredients</a> in products is a good start. Ultimately, reading ingredient labels is key, because companies aren't required to disclose all ingredients in their formulations. Know what you're putting on your body. If in doubt, <a target=\"_blank\" href=\"https://www.ewg.org/skindeep/\">research</a> or find <a target=\"_blank\" href=\"https://www.madesafe.org/find-products/personal-care/\">better alternatives</a>.",
+            :question => "What's the impact of finding alternatives?",
+            :description => "Doing a little more research about what's available in the market can help you better care for your skin. Plus, you'll likely be supporting companies that are creating products for people, not just profit. Be careful of greenwashing though!",
             :links => {
               'What should I look for? (list)' => 'https://www.greenamerica.org/green-living/choose-green-not-body-care',
-              "10 labelling traps (list)" => 'http://www.lisabronner.com/10-labeling-traps-to-recognize-in-body-care-products/',
-              'Some good alternatives (list)' => 'https://www.madesafe.org/find-products/personal-care/'
+              "Don't fall for these 10 labelling traps (list)" => 'http://www.lisabronner.com/10-labeling-traps-to-recognize-in-body-care-products/',
+              'Some good bodycare alternatives (list)' => 'https://www.madesafe.org/find-products/personal-care/'
             },
-            :instructions => ["Find affordable, safe, + responsibly sourced bodycare alternatives to products you use regularly (e.g. <a target=\"_blank\" href=\"https://www.madesafe.org/education/whats-in-that/shampoo-conditioner/\">shampoo, conditioner</a>, <a target=\"_blank\" href=\"https://www.madesafe.org/education/whats-in-that/deodorant/\">deodorant</a>, <a target=\"_blank\" href=\"https://www.madesafe.org/education/bug-repellent-alternatives-tips/\">bug repellent<a/>, <a target=\"_blank\" href=\"https://www.ewg.org/sunscreen/\">sunscreen</a>)", "Share with at least 3 different people what you learned!"],
-            :extra => "To avoid <a target=\"_blank\" href=\"http://www.lisabronner.com/10-labeling-traps-to-recognize-in-body-care-products/\">greenwashing</a>:",
-            :second_list => ["Find the company's website + understand their mission and values", "Read, read, read those ingredient lists!", "Do a little research for the ingredients' function or check the <a target=\"_blank\" href=\"https://www.ewg.org/skindeep/\">EWG database</a> (aim to use products with a 1-2 rating)"],
+            :instructions => ["Find affordable, safe, and sustainably sourced bodycare alternatives to products you use regularly (e.g. <a target=\"_blank\" href=\"https://www.madesafe.org/education/whats-in-that/shampoo-conditioner/\">shampoo, conditioner</a>, <a target=\"_blank\" href=\"https://www.madesafe.org/education/whats-in-that/deodorant/\">deodorant</a>, <a target=\"_blank\" href=\"https://www.madesafe.org/education/bug-repellent-alternatives-tips/\">bug repellent<a/>, <a target=\"_blank\" href=\"https://www.ewg.org/sunscreen/\">sunscreen</a>).", "Share with at least 3 different people what you learned."],
+            :extra => "To avoid greenwashing: ",
+            :second_list => ["Find the company's website and understand their mission and values.", "Read through those ingredient lists.", "Do a little research and know the ingredients' funciton or check the <a target=\"_blank\" href=\"https://www.ewg.org/skindeep/\">EWG database</a>."],
             :metric_question => "How many people did you share what you learned with?",
 :metric_verb => "You shared what you learned about safe bodycare products with ",
 :metric_unit => " people!",
@@ -357,10 +361,10 @@ and values of the farms and companies whose products you buy."],
           {
             :name => "Contact bodycare companies",
             :type => "community",
-            :question => "What's the point? Do they even listen?",
-            :description => "Remember: people drive profits, something companies need. Tell companies what they’re doing well + not. They don't know without your feedback. They don't listen? Say 'bye!', let others know, + move on to another product. We're all better off supporting more caring companies.",
+            :question => "Why does reaching out to companies matter?",
+            :description => "Companies need to know what they’re doing well and not, and that knowledge only comes from potential and existing customers (aka you). Providing feedback is opening dialogue about how they can better their practices for people's health and the environment. Whether they act on your feedback is another story, but you will have done your job in making them aware.",
             :links => {
-              'Ask businesses to commit to safety (list)' => 'http://www.safecosmetics.org/take-action/businesses-and-retailers/'
+              'What to ask of bodycare businesses and retailers? (list)' => 'http://www.safecosmetics.org/take-action/businesses-and-retailers/'
             },
             :instructions => ["Reach out to conventional brands that you’ve purchased from or know others who purchase from. (e.g. email, call)", "Tell them a) why you don’t support their products anymore, b) what you would like them to change, and c) anything else you’d like them to know. Be polite but firm."],
             :metric_question => "How many companies did you reach out to?",
@@ -372,17 +376,18 @@ and values of the farms and companies whose products you buy."],
           {
             :name => "Safe periods",
             :type => "friends",
-            :question => "What's up with menstruation products?",
-            :description => "Conventional menstrual products contain up to 90% petroleum-based plastics, are made of pesticide-laden cotton + <a target=\"_blank\" href=\"https://www.natracare.com/why-natracare/chlorine-free/\">bleached with chlorine</a> (all are carcinogenic). Women use more than <a target=\"_blank\" href=\"https://www.wen.org.uk/environmenstrual-in-numbers\">11,000(!)</a> disposable menstrual products in their lifetime. That's A LOT of exposure to harmful chemicals & <a target=\"_blank\" href=\"https://divacup.com/eco-divas/\">waste</a> in landfills + oceans.",
+            :question => "What's the deal with menstruation products?",
+            :description => "Conventional menstrual products contain up to 90% petroleum-based plastics. They're also made of pesticide-laden cotton and <a target=\"_blank\" href=\"https://www.natracare.com/why-natracare/chlorine-free/\">bleached with chlorine</a>, both of which involve carcinogens that harm people's health. Women use more than <a target=\"_blank\" href=\"https://www.wen.org.uk/environmenstrual-in-numbers\">11,000</a> disposable menstrual products in their lifetime. That's a lot of exposure to harmful chemicals & a lot of <a target=\"_blank\" href=\"https://divacup.com/eco-divas/\">waste</a> ending up in landfills + oceans.",
             :links => {
               'Menstrual pads 101 (info)' => 'https://www.natracare.com/why-natracare/natural-materials/',
-              'Talking about menstruation (guide)' => 'https://helloclue.com/articles/culture/how-to-talk-about-menstruation',
-              'Menstrual cup 101 (info)' => 'https://helloclue.com/articles/culture/menstrual-cups-questions-myths-and-misconceptions'
+              'How to talk about menstruation (guide)' => 'https://helloclue.com/articles/culture/how-to-talk-about-menstruation',
+              'Menstrual cup 101 (info)' => 'https://helloclue.com/articles/culture/menstrual-cups-questions-myths-and-misconceptions',
+              'Made Safe Certified menstrual products (list)' => 'https://www.madesafe.org/find-products/feminine-care/'
             },
-            :background => "This challenge isn't just for females! <br> For females: ",
-            :instructions => ["Use a <a target=\"_blank\" href=\"https://www.madesafe.org/find-products/feminine-care/\">menstrual cup or organic cotton pads, tampons, or pantyliners</a> during your period", "Share your knowledge with (at least) 3 people"],
+            :background => "This challenge isn't just for females. <br> For females: ",
+            :instructions => ["Use a menstrual cup or organic cotton pads, tampons, or pantyliners during your period.", "Share what you learned with at least 3 other people."],
             :extra => "For the males: ",
-            :second_list => ["Share this information with your close female friends + family. Be careful how you word your message. Don't tell them what to do; simply say something like, \"Saw this and thought it's important to share. What do you think about it?"],
+            :second_list => ["Share this information with your close female friends and family. Be careful how you word your message when you share this. Don't tell them what to do; simply say something like, \"Saw this and feel like it's important for more females to know. What do you think about it?"],
             :metric_question => "How many people did you share what you learned with?",
 :metric_verb => "You shared what you learned about menstrual products with ",
 :metric_unit => " people!",
@@ -393,15 +398,15 @@ and values of the farms and companies whose products you buy."],
             :name => "Replenish zero waste",
             :type => "self",
             :question => "How does waste relate to bodycare products?",
-            :description => "Paper + plastic cannot be recycled indefinitely, but glass + aluminum can, due to how the materials degrade each time it's sent through recycling. Glass + aluminum are also <a target=\"_blank\" href=\"https://livegreen.recyclebank.com/column/because-you-asked/should-i-choose-plastic-aluminum-or-glass-bottles\">more widely recycled</a> around the world than plastic.",
+            :description => "Paper + plastic cannot be recycled indefinitely, but glass + aluminum can. This is due to how the material degrades each time it's sent through recycling. Glass + aluminum are also <a target=\"_blank\" href=\"https://livegreen.recyclebank.com/column/because-you-asked/should-i-choose-plastic-aluminum-or-glass-bottles\">more widely recycled</a> around the world than plastic. This challenge levels up your game to think about the intersection of body + waste.",
             :links => {
-              'Brands w/ sustainable packaging (list)' => 'https://organicallybecca.com/zero-waste-sustainable-packaging/',
+              'Brands with sustainable/no packaging (list)' => 'https://organicallybecca.com/zero-waste-sustainable-packaging/',
               'Plastic vs. Glass vs. Aluminum (info)' => 'https://earth911.com/living-well-being/recycled-beverage-containers/',
               'How many times can this be recycled? (list)' => 'https://earth911.com/business-policy/how-many-times-recycled/'
             },
-            :background => "This challenge: for when you need to replenish your bodycare product supply.",
-            :instructions => ["Minimize your bodycare product waste by making your own products in a reusable container", "Alternatively, purchase <a target=\"_blank\" href=\"https://www.madesafe.org/sustainable-packaging/\">goods with no plastic</a>. Glass or aluminum packaging is okay, although no packaging is ideal"],
-            :extra => "The goal: aim for #plasticfree (1st priority) and #paperfree (2nd priority). ",
+            :background => "This challenge is for when you're in need to replenish your bodycare product supply.",
+            :instructions => ["Minimize your bodycare product waste by making your own products in a reusable container.", "Alternatively, purchase goods packaged in glass or aluminum bottles (no packaging is ideal, when possible)."],
+            :extra => "The goal is to aim for #plasticfree (1st priority) and #paperfree (2nd priority). ",
             :metric_question => "How many products did you make or buy that have zero waste or more sustainable packaging?",
 :metric_verb => "You made/bought ",
 :metric_unit => " products that have zero waste or sustainable packaging!",
@@ -412,12 +417,11 @@ and values of the farms and companies whose products you buy."],
             :name => "Be the influencer",
             :type => "friends",
             :question => "Why me?",
-            :description => "You're the real MVP. Think about how much you know now: enough to be dangerous. There's a lotta nasty stuff ruining the safety + quality in bodycare products. We can't let it slide. Many people don't know what you know, so we're calling you to spread the word. Be the champion in your community.",
+            :description => "You now know more than the average person about the safety and quality of bodycare products. To better our community, it is our responsibility to share this with other people and help them make positive changes in their lives. This will be sometimes easy and sometimes difficult. However, rememeber this: it's more important to say something than stay silent.",
             :links => {
-              'Products w/ sustainable packaging (list)' => 'https://www.madesafe.org/sustainable-packaging/',
-	      'MadeSafe certified products (list)' => 'https://www.madesafe.org/find-products/personal-care/'
+              'Brands with sustainable/no packaging (list)' => 'https://organicallybecca.com/zero-waste-sustainable-packaging/'
             },
-            :instructions => ["Teach (at least) 3 people what you've learned about bodycare", "Help them make (at least) 1 switch to a <a target=\"_blank\" href=\"https://www.madesafe.org/find-products/personal-care/\">better alternative bodycare product</a>"],
+            :instructions => ["Teach at least 3 different people about what you've learned about bodycare products in this theme.", "Help them make at least 1 switch to a better alternative bodycare product."],
             :metric_question => "How many people did you help make a switch to a safer bodycare product?",
 :metric_verb => "You helped ",
 :metric_unit => " people switch to safer bodycare products!",
@@ -703,15 +707,14 @@ disapproval; explain to them why; and propose alternatives."],
           {
             :name => "Know your clothes",
             :type => "pre",
-            :question => "What does it take to bring new styles to many clothing stores? ",
-            :description => "Especially for <a target=\"_blank\" href=\"https://goodonyou.eco/what-is-fast-fashion/ \">fast fashion</a>, driving up profits means exploiting <a target=\"_blank\" href=\"https://cleanclothes.org/livingwage/\">low cost labor</a> abroad. In addition, making clothing is resource intensive. The typical <a target=\"_blank\" href=\"http://mistrafuturefashion.com/sustainable-fashion/\">non-circular lifespan</a> of clothes worsens the fashion industry's impact; most clothes aren't reused and properly <a target=\"_blank\" href=\"https://borgenproject.org/the-international-impact-of-donated-clothing/ \">donated</a>, ending up in landfills and oceans.",
+            :question => "What does it take to make new clothes?",
+            :description => "<a target=\"_blank\" href=\"https://www.thereformation.com/pages/impact-of-fashion\">LOTS of resources</a> (water, dyes, materials, fuel + more). Particularly for <a target=\"_blank\" href=\"https://goodonyou.eco/what-is-fast-fashion/ \">fast fashion</a>, low cost labor is <a target=\"_blank\" href=\"https://truecostmovie.com/learn-more/human-rights/\">exploited</a> abroad to drive profits. The typical <a target=\"_blank\" href=\"http://mistrafuturefashion.com/sustainable-fashion/\">non-circular lifespan</a> of clothes worsens fashion's impact; most clothes aren't reused and properly <a target=\"_blank\" href=\"https://borgenproject.org/the-international-impact-of-donated-clothing/ \">donated</a>, ending up in landfills + oceans.",
             :links => {
-              "What's an ideal fashion industry look like? (info)" => 'https://www.fashionrevolution.org/manifesto/',
-              '6 fake facts about the clothing industry (list + info)' => 'https://goodonyou.eco/6-fake-facts-about-the-fashion-industry/',
-              'What can I do about this? (list)' => 'https://www.greenamerica.org/what-can-i-do-make-my-clothes-more-sustainable',
-              "What's the environmental impact of the fashion? (info)" => 'https://www.thereformation.com/pages/impact-of-fashion'
-            },
-            :instructions => ["Teach a friend what you've learned.", "Read about what's happening in the clothing industry. You can start with the resource links."],
+              "Fashion Revolution Manifesto" => 'https://www.fashionrevolution.org/manifesto/',
+              '6 fake facts about the clothing industry' => 'https://goodonyou.eco/6-fake-facts-about-the-fashion-industry/',
+              'What you can do right now (list)' => 'https://www.greenamerica.org/what-can-i-do-make-my-clothes-more-sustainable'},
+	    :background => "There's more to the clothing industry than you may see and think.",
+            :instructions => ["Read about what's up with the clothing industry in the 'Wanna learn more?' section", "Share what you learned with (at least) 3 people"],
             :metric_question => "",
 :metric_verb => "N/A",
 :metric_unit => "",
@@ -724,12 +727,11 @@ disapproval; explain to them why; and propose alternatives."],
             :question => "Why is donating not necessarily \"good\"?",
             :description => "In the US, less than 10% of donations is resold or reused. The rest is often shipped to another country, which <a target=\"_blank\" href=\"https://borgenproject.org/the-international-impact-of-donated-clothing/\">undercuts the country's local textile industry</a>. People think they're doing good because they're ""donating"", but they may actually be contributing to putting people in other countries out of work.",
             :links => {
-              "Why wear your clothes til they're worn out? (info)" => 'https://goodonyou.eco/why-we-should-wear-clothes-until-theyre-worn-out/',
-              'How to recycle old clothing (blog)' => 'https://trashisfortossers.com/how-to-recycle-old-clothing/',
-              'Shoe donation drop-off locations (finder)' => 'https://soles4souls.org/get-involved/give-shoes/dropoff-locator/',
-              "What's the impact of new clothes? (info)" => 'https://www.greenamerica.org/program/toxic-textiles'
+              'How to recycle old clothing' => 'https://trashisfortossers.com/how-to-recycle-old-clothing/',
+              'Shoe donation drop-off locations' => 'https://soles4souls.org/get-involved/give-shoes/dropoff-locator/',
+              "The impact of making new clothes" => 'https://www.greenamerica.org/program/toxic-textiles'
             },
-            :instructions => ["Clean out your closet of clothes you won't wear anymore.", "Repurpose them. (e.g. bag, cleaning rag)", "Swap them with friends.", "Pass them onto someone who will wear them. (Maybe a sibling or cousin?)", "Do the research to find a charity that will actually reuse your donations.", "Or, sell them to a local thrift store or secondhand shop. (ex: <a target=\"_blank\" href=\"https://www.thredup.com/cleanout/donate-clothes\">thredUP</a>)"],
+            :instructions => ["Clean out your closet of clothes you won't wear anymore", "Repurpose them (e.g. bag, cleaning rag)", "Swap with friends", "Pass them onto someone who will wear them (Maybe a sibling or cousin?)", "Do the research to find a charity that will actually reuse your donations", "Or, sell to a local thrift store or secondhand shop (ex: <a target=\"_blank\" href=\"https://www.thredup.com/cleanout/donate-clothes\">thredUP</a>)"],
             :metric_question => "Estimate how much (in kilos) clothing you repurposed and/or donated. Note: 1 lb = 0.45 kg",
 :metric_verb => "You repurposed and/or donated about ",
 :metric_unit => " kg of clothing! (1 lb = 0.45 kg)",
@@ -740,18 +742,17 @@ disapproval; explain to them why; and propose alternatives."],
             :name => "Find better clothing",
             :type => "friends",
             :question => "How can I avoid fast fashion?",
-            :description => "Choose <a target=\"_blank\" href=\"https://truecostmovie.com/learn-more/buying-better/\">quality over quantity</a>. Wearing something more reduces cost per wear. (Ex: a $60 pair of pants worn 2x a week per year costs about $0.57 per wear!) Thinking long-term and buying better diminishes the impact of clothing's lifecycle. What's even better: <a target=\"_blank\" href=\"https://trashisfortossers.com/zero-waste-wardrobe-secondhand-shopping/\">buying secondhand</a>, because you're extending the lifespan of something that already exists.",
+            :description => "Choose <a target=\"_blank\" href=\"https://truecostmovie.com/learn-more/buying-better/\">quality over quantity</a>. Wear something more to decrease cost per wear. (Ex: $60 pants worn 2x a week per year = ~$0.57 per wear!) Thinking long-term and buying better diminishes the impact of clothes. What's even better: <a target=\"_blank\" href=\"https://trashisfortossers.com/zero-waste-wardrobe-secondhand-shopping/\">buy secondhand</a>, because you're extending the lifespan of something that already exists.",
             :links => {
               'Clothing materials 101 (guide)' => 'https://goodonyou.eco/category/made-from/',
               'Brand directory (ratings)' => 'https://directory.goodonyou.eco/',
-              'How to pinpoint greenwashing (guide)' => 'https://goodonyou.eco/how-can-you-tell-when-a-fashion-brand-is-greenwashing/'
+              'How to catch greenwashing (guide)' => 'https://goodonyou.eco/how-can-you-tell-when-a-fashion-brand-is-greenwashing/',
+	      "What's 'organic' clothing?" => 'https://goodonyou.eco/global-organic-textile-standard-gots/'
             },
-            :background => "This challenge is intended for when your'e in need of new clothes. ",
-            :instructions => ["Buy less.", "Buy secondhand or clothes made of the most sustainable
-fabrics (e.g. hemp, linen, recycled organic cotton), not synthetic
-material (e.g. polyester, rayon, acrylics, blend of these).", "Shift
-your mindset towards investing in a quality; reduce the cost per wear.",
-"Bring friends along and share what you learned."],
+            :background => "Take this challenge when you need new clothes.",
+            :instructions => ["Buy less", "Buy secondhand", "Alternatively, buy clothes made of the <a target=\"_blank\" href=\"https://goodonyou.eco/most-sustainable-fabrics/\">most sustainable fabrics</a> (e.g. hemp, linen, recycled <a target=\"_blank\" href=\"https://goodonyou.eco/know-your-product-a-quick-guide-to-organic cotton\">organic cotton</a>), NOT synthetic material (e.g. <a target=\"_blank\" href=\"https://goodonyou.eco/material-guide-polyester-2/\">polyester</a>, rayon, acrylics, blend of these)", "Shift
+your mindset towards investing in a quality; reduce the cost per wear",
+"Bring friends along shopping & share what you learned"],
             :metric_question => "How many people did you share what you learned with?",
 :metric_verb => "You shared with ",
 :metric_unit => " people what you learned about buying less.",
@@ -761,16 +762,15 @@ your mindset towards investing in a quality; reduce the cost per wear.",
           {
             :name => "Contact fashion brands",
             :type => "community",
-            :question => "Why should we bother reaching out to brands?",
-            :description => "<a target=\"_blank\" href=\"https://www.lowestwagechallenge.com/post/state-of-the-industry\"> It's estimated that only 2% of fashion’s manufacturing workers earn a living wage. That means 98% of workers don't make enough for basic needs, and 75% of them are women(!!).</a> Something needs to change. <a target=\"_blank\" href=\"https://www.fashionrevolution.org/emergency-measures-resources/\">Boycotts aren't the solution though.</a> People, like garment workers, can lose their jobs. Fashion brands will continue exploiting workers unless customers pressure them otherwise.",
+            :question => "Why the power move?",
+            :description => "<a target=\"_blank\" href=\"https://www.lowestwagechallenge.com/post/state-of-the-industry\">98% of garment workers aren't paid a living wage, and 75% of them are women(!!).</a> This is NOT okay. <a target=\"_blank\" href=\"https://www.fashionrevolution.org/emergency-measures-resources/\">Boycotts aren't the solution though</a> cause workers can lose their jobs. Fashion brands will continue exploiting workers unless customers pressure them otherwise.",
             :links => {
-              "What's transparency in fashion? (info)" => 'https://www.fashionrevolution.org/about/transparency/',
-              'The garment industry around the world (info)' => 'https://cleanclothes.org/resources/publications/factsheets',
-              'What to ask, in search for ethical fashion (list)' => 'https://goodonyou.eco/who-made-my-clothes-and-other-important-questions/'
+              "What's transparency in fashion?" => 'https://www.fashionrevolution.org/about/transparency/',
+              'The garment industry around the world' => 'https://cleanclothes.org/resources/publications/factsheets',
+              "Q's to ask about your clothes" => 'https://goodonyou.eco/who-made-my-clothes-and-other-important-questions/'
             },
-            :background => "Select a fast fashion brand.",
-            :instructions => ["Ask the brand's representative for transparency via email or social media (in person would be best, if possible): who made the brand's
-clothes? Here are example scripts to get you started.", "Teach at least 3 other people what you have learned about fast fashion.", "Get at least 3 other people to reach out to the same brand to do the first task."],
+            :background => "Choose a fashion brand with a <a target=\"_blank\" href=\"https://directory.goodonyou.eco/\">low rating</a>",
+            :instructions => ["Ask the brand's rep for transparency via email or social media (in person is best, if possible): who made the brand's clothes? How much are they paid?  <a target=\"_blank\" href=\"https://www.fashionrevolution.org/about/get-involved/\">Get started with these scripts</a>", "Share what you learned with (at least) 3 people", "Start a movement! Get (at least) 3 people to send an email to the brand rep asking for transparency"],
             :metric_question => "How many people (including yourself) did you get to reach out to a brand rep?",
 :metric_verb => "You got ",
 :metric_unit => " people to contact a brand rep about increasing transparency!",
@@ -783,11 +783,11 @@ clothes? Here are example scripts to get you started.", "Teach at least 3 other 
             :question => "Why does the laundry detergent I use matter?",
             :description => "Whatever is in your laundry detergent ends up in wastewater, which eventually <a target=\"_blank\" href=\"http://theconversation.com/curious-kids-where-does-my-poo-go-when-i-flush-the-toilet-does-it-go-into-the-ocean-78254\">enters the ocean</a>. If the ingredients in the detergent <a target=\"_blank\" href=\"https://www.smallfootprintfamily.com/homemade-laundry-detergent-recipe\">isn't safe for you</a>, it's not safe for the environment. Ingredients in laundry detergent can also irritate the skin, which makes wearing newly-washed clothes uncomfortable.",
             :links => {
-              'How can I get started? (info)' => 'https://wellnessmama.com/462/homemade-laundry-detergent/',
-              'What should I know about dry cleaning? (info)' => 'https://greenamerica.org/green-living/green-dry-cleaning'
+              'DIY laundry soap' => 'https://wellnessmama.com/462/homemade-laundry-detergent/',
+              "What's up with dry cleaning?" => 'https://greenamerica.org/green-living/green-dry-cleaning'
             },
-            :instructions => ["Use non-toxic laundry detergent to clean your clothes.", "Wash with <a target=\"_blank\" href=\"https://coldwatersaves.org/\">cold water</a>, might as well save energy.", "Line dry when possible to save energy; this also helps your clothes last longer too.", "Share with at least 3 different people what you learned."],
-            :alt_instructions => ["If you dry clean, avoid <a target=\"_blank\" href=\"https://www.ewg.org/enviroblog/2011/09/dry-cleaning-chemicals-hang-around-your-clothes\">perc</a>."],
+            :instructions => ["Use non-toxic laundry detergent", "Wash with <a target=\"_blank\" href=\"https://coldwatersaves.org/\">cold water</a>, might as well save energy", "Line dry when possible to save energy too (Pro-tip: this helps your clothes last longer)", "Keep teaching! Share what you learned with (at least) 3 people"],
+            :alt_instructions => ["Avoid <a target=\"_blank\" href=\"https://www.ewg.org/enviroblog/2011/09/dry-cleaning-chemicals-hang-around-your-clothes\">perc</a> when dry cleaning"],
             :metric_question => "How many loads of laundry did you clean with a safer laundry detergent?",
 :metric_verb => "You cleaned ",
 :metric_unit => " loads of laundry with a safer laundry detergent!",
@@ -797,13 +797,13 @@ clothes? Here are example scripts to get you started.", "Teach at least 3 other 
           {
             :name => "Take a shopping break",
             :type => "friends",
-            :question => "What can you be doing instead of shopping?",
-            :description => "The time spent keeping up with the latest trends and deals adds up. The money used to buy another t-shirt on sale or chase after a buy-one-get-one-free deal accumulates. If you have clothes to wear for a week, you don’t need any more clothes. Unless, your clothes are falling apart, or you need to freshen up your style. ",
+            :question => "What can you do instead of shopping?",
+            :description => "The time + money spent keeping up with the latest trends and deals adds up. (Is that t-shirt on sale necessary?) If you have clothes to wear for a week, you probably don’t need any more clothes. Unless, your clothes are falling apart, or you need to freshen up your style.",
             :links => {
-              "What's the value of not buying anything new? (info)" => 'https://www.bustle.com/articles/47208-9-truly-valuable-things-you-learn-when-you-stop-buying-clothes-after-the-shaking-sweating-and',
-              'How to build a minimalist wardrobe (list)' => 'https://www.thegoodtrade.com/features/how-to-build-a-minimalist-wardrobe'
+              "What's the value in not shopping?" => 'https://www.bustle.com/articles/47208-9-truly-valuable-things-you-learn-when-you-stop-buying-clothes-after-the-shaking-sweating-and',
+              'Building a minimalist wardrobe' => 'https://www.thegoodtrade.com/features/how-to-build-a-minimalist-wardrobe'
             },
-            :instructions => ["Literally, put a pause on clothes shopping, window shopping, online scrolling, and subscriptions to clothing brands.", "Spend that time focusing on your top priorities in life.", "Invite at least 2 people to join you in this challenge."],
+            :instructions => ["Seriously, chill out on the clothes + window shopping, online scrolling, and subscriptions to clothing brands", "Spend that shopping time focusing on your top priorities in life instead", "Hold yourself accountable. Get (at least) 2 people to do this challenge with you!"],
             :metric_question => "How many people (including yourself) took a break from shopping?",
 :metric_verb => "You got ",
 :metric_unit => " people to take a break from shopping for 1+ weeks!",
@@ -814,14 +814,14 @@ clothes? Here are example scripts to get you started.", "Teach at least 3 other 
             :name => "No more synthetics",
             :type => "community",
             :question => "What's the problem?",
-            :description => "About 1.4 million trillion pieces of microfiber are in the ocean. The problem: this plastic absorbs surrounding toxins, causing gut impaction, hormone disruption, and liver damage in the animals that ingest it. Sometimes, these animals rise up in the food chain onto our plates. Let's avoid this by tackling a major source of the problem: production.",
+            :description => "About 1.4 million TRILLION pieces of microfiber are in the ocean. The problem: this plastic absorbs surrounding toxins, causing gut impaction, hormone disruption, and liver damage in the animals that ingest it. These same animals rise up in the food chain onto our plates.",
             :links => {
-              'Microfiber 101 (info)' => 'https://storyofstuff.org/uncategorized/the-story-of-microfibers-faqs/',
-              'How problematic is microfibers? (blog)' => 'https://storyofstuff.org/blog/microfibers-are-microplastics-1/',
-              'How do our clothes pollute the ocean? (info) ' => 'https://www.vox.com/the-goods/2018/9/19/17800654/clothes-plastic-pollution-polyester-washing-machine'
+              'Microfiber 101' => 'https://storyofstuff.org/uncategorized/the-story-of-microfibers-faqs/',
+              'How problematic are microfibers?' => 'https://storyofstuff.org/blog/microfibers-are-microplastics-1/',
+              'Our clothes are polluting the ocean' => 'https://www.vox.com/the-goods/2018/9/19/17800654/clothes-plastic-pollution-polyester-washing-machine'
             },
-            :background => "Select a brand that makes clothes with synthetic materials.",
-            :instructions => ["Write to the brand representative what you've learned about synthetic material's impact on the environment. Ask them about the brand's plan for bettering their supply source in the future.", "Teach at least 3 other people what you've learned.", "Get them to write to the brand representative to do task 1 (they can copy paste your letter)."],
+            :background => "Find a brand that makes clothes with synthetic materials.",
+            :instructions => ["Write to the brand rep what you've learned about synthetic material's impact on the environment. Ask about the brand's plan for bettering their supply source for the future.", "Share with (at least) 3 people what you've learned", "Start a movement! Get (at least) 3 people to send an email to the brand rep asking for no more synthetics"],
             :metric_question => "How many people (including yourself) did you get to reach out to a brand rep?",
 :metric_verb => "You got ",
 :metric_unit => " people to write to a brand rep asking them to better their supply sourcing!",
@@ -1367,3 +1367,4 @@ useful for them."],
     all_challenges
   end
 end
+
