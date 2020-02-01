@@ -569,34 +569,33 @@ Water: {
             :name => "Biodiversity 101",
             :type => "pre",
             :question => "What is biodiversity?",
-            :description => "Nature is a complex system, where every species plays an important role. Biodiversity is the checks and balances system in nature. A significant loss in biodiversity (in water, soil, and land) can imbalance our world such that food security + human health become at risk. Knowing this helps us understand why <a target=\"_blank\" href=\"https://www.mnn.com/earth-matters/wilderness-resources/blogs/why-biodiversity-big-deal\">it's so important</a> to care for soil health and promote biodiversity.",
+            :description => "Nature is a complex system, and <a target=\"_blank\" href=\"https://rodaleinstitute.org/why-organic/issues-and-priorities/biodiversity/\">biodiversity<a> is the checks and balances in nature. A big loss in biodiversity (in water, soil, and land) imbalances our world, putting food security + human health at risk. This is <a target=\"_blank\" href=\"https://www.mnn.com/earth-matters/wilderness-resources/blogs/why-biodiversity-big-deal\">why it's so important</a> to care for soil health + promote biodiversity.",
             :links => {
-              'What is biodiversity? (info)' => 'https://rodaleinstitute.org/why-organic/issues-and-priorities/biodiversity/',
-              'What is healthy soil? (info)' => 'https://rodaleinstitute.org/why-organic/organic-farming-practices/soil-health/',
-              "What's the difference between organic + conventional? (info)" => 'https://rodaleinstitute.org/why-organic/organic-basics/organic-vs-conventional/',
-              'Why biodiversity loss hurts (info)' => 'https://www.ecowatch.com/biodiversity-loss-human-health-2636410357.html?rebelltitem=1#rebelltitem1'
+              'What is healthy soil?' => 'https://rodaleinstitute.org/why-organic/organic-farming-practices/soil-health/',
+              "The difference between organic + conventional" => 'https://rodaleinstitute.org/why-organic/organic-basics/organic-vs-conventional/',
+              'Why biodiversity loss hurts' => 'https://www.ecowatch.com/biodiversity-loss-human-health-2636410357.html?rebelltitem=1#rebelltitem1'
             },
-            :instructions => ["Watch <a target=\"_blank\" href=\"https://www.youtube.com/watch?v=iR2AyybowPc\">this video</a> to learn what biodiversity is and why it's important.", "Teach what you learned to 3 different people!"],
+            :instructions => ["<a target=\"_blank\" href=\"https://www.youtube.com/watch?v=iR2AyybowPc\">Watch this</a> to learn what biodiversity is & why it's important.", "Share what you learned with at least 3 people!"],
             :metric_question => "",
-:metric_verb => "N/A",
-:metric_unit => "",
+	    :metric_verb => "N/A",
+	    :metric_unit => "",
             :reflection_question => "Where in your community has biodiversity? If you can't think of a place, where in your community could there be more biodiversity?",
             :photo_prompt => ""
-          },
+            },
           {
             :name => "Volunteer in garden",
             :type => "friends",
             :question => "Why are gardens important?",
-            :description => "Gardening (with <a target=\"_blank\" href=\"https://rodaleinstitute.org/why-organic/organic-basics/regenerative-organic-agriculture/\">regenerative practices</a>) boosts biodiversity. Growing a variety of plants cultivates <a target=\"_blank\" href=\"https://drive.google.com/file/d/0B0ezvt7UmjxZVTYzTkRfNjdPNFU/view\">healthy soil</a> that fosters organismal communities, which protect + strengthen ecosystems. If disease or pests take out a population of organisms, biodiversity ensures there are other organisms ready to keep the ecosystem thriving.",
+            :description => "Gardening (with <a target=\"_blank\" href=\"https://rodaleinstitute.org/why-organic/organic-basics/regenerative-organic-agriculture/\">regenerative practices</a>) boosts biodiversity! Growing a variety of plants cultivates <a target=\"_blank\" href=\"https://drive.google.com/file/d/0B0ezvt7UmjxZVTYzTkRfNjdPNFU/view\">healthy soil</a> that protects + strengthens ecosystems. If disease or pests take out a population of organisms, biodiversity keeps the ecosystem thriving.",
             :links => {
-              "Where's the climate victory gardens? (finder)" => 'https://www.greenamerica.org/climate-victory-gardens-map',
-              'Get to know a garden (guide)' => 'https://greenamerica.org/blog/climate-victory-gardens-get-know-your-garden',
-              'Regenerative organic farming + biodiversity (info)' => ' https://rodaleinstitute.org/why-organic/issues-and-priorities/biodiversity/'
+              "Find a climate victory garden" => 'https://www.greenamerica.org/climate-victory-gardens-map',
+              'Getting to know a garden (guide)' => 'https://greenamerica.org/blog/climate-victory-gardens-get-know-your-garden',
+              'Relationship between regenerative organic farming + biodiversity' => ' https://rodaleinstitute.org/why-organic/issues-and-priorities/biodiversity/'
             },
-            :instructions => ["Volunteer at a local garden (e.g. farm's, community's, neighbor's, friend's) to help out with.", "Bring a friend along with you!"],
+            :instructions => ["Volunteer at a local garden (e.g. farm's, community's, neighbor's, friend's) to help out with.", "Bring a friend along with you!", "Refer to the resources for tips on getting started"],
             :metric_question => "How many hours did you volunteer at a local garden?",
-:metric_verb => "You volunteered at a local garden for ",
-:metric_unit => " hours!",
+	    :metric_verb => "You volunteered at a local garden for ",
+	    :metric_unit => " hours!",
             :reflection_question => "What did you learn from your gardening experience?",
             :photo_prompt => "Share a photo of you + friend gardening. Tell us how you helped."
           },
@@ -604,13 +603,14 @@ Water: {
             :name => "Start a compost pile",
             :type => "self",
             :question => "What's the big deal about composting?",
-            :description => "Did you know our <a target=\"_blank\" href=\"http://www.fao.org/resources/infographics/infographics-details/en/c/285727/\">soil houses a quarter of the world's biodiversity</a>? Soil isn't just dirt; it's composed of minerals, water, air, organic matter, and organisms. A loss in any of these can be detrimental to our ecosystems, food security, and weather pattern stability.",
+ 	    :description => "Did you know <a target=\"_blank\" href=\"http://www.fao.org/resources/infographics/infographics-details/en/c/285727/\">soil houses 1/4 of the world's biodiversity</a>? Soil isn't just dirt. It's made of minerals, water, air, organic matter, and organisms. A loss in any of these can be a threat to our ecosystems, food security, and weather pattern stability.",
             :links => {
-              'Our food comes from soil (infographic)' => 'http://www.fao.org/resources/infographics/infographics-details/en/c/285853/',
-              'Composting 101 (info)' => 'https://rodaleinstitute.org/why-organic/organic-farming-practices/composting/',
-              'How to compost (video)' => 'https://kisstheground.com/how-to-compost-at-home-simple/'
+            'Our food comes from soil (infographic)' => 'http://www.fao.org/resources/infographics/infographics-details/en/c/285853/',
+            'Composting 101' => 'https://rodaleinstitute.org/why-organic/organic-farming-practices/composting/',
+            'How to compost (video)' => 'https://kisstheground.com/how-to-compost-at-home-simple/'
             },
-            :instructions => ["1) Start your own compost pile in your home or in your patio/backyard/frontyard!", "Refer to the resources for tips on how to get started."],
+            :background => "Be the standout soil advocate our environment needs!",
+	    :instructions => ["Start your own compost pile in your home or in your patio/backyard/frontyard!", "Refer to the resources for tips on how to get started."],
             :metric_question => "Estimate how much your compost weighs (in kilos). Note: 1 lb = 0.45 kg",
 :metric_verb => "You composted about",
 :metric_unit => " kg of waste! (1 lb = 0.45 kg)",
@@ -621,13 +621,14 @@ Water: {
             :name => "Attract pollinators",
             :type => "self",
             :question => "Have you ever seen pollination in action? ",
-            :description => "<a target=\"_blank\" href=\"https://www.youtube.com/watch?v=MQiszdkOwuU\">Pollinators</a>, particularly bees, are responsible for 1/3 of the world's food supply. The problem is <a target=\"_blank\" href=\"https://friendsoftheearth.uk/bees/what-are-causes-bee-decline\">lots of bees are dying</a> due to global warming, pesticide use, pests, and habitat loss. Growing pollinator-friendly plants will provide more natural habitats for pollinators to thrive.",
+	    :description => "<a target=\"_blank\" href=\"https://www.youtube.com/watch?v=MQiszdkOwuU\">Watch this.</a> Pollinators, particularly bees, are responsible for 1/3 of the world's food supply. The problem? <a target=\"_blank\" href=\"https://friendsoftheearth.uk/bees/what-are-causes-bee-decline\">Lots of bees are dying</a> due to global warming, pesticide use, and habitat loss. Growing pollinator-friendly plants provides more natural habitats for pollinators to thrive.",
             :links => {
-              'Bee-friendly plants for each season (info + list)' => 'https://friendsoftheearth.uk/bees/beefriendly-plants-every-season',
-              '20 facts you should know about bees (info/list)' => 'https://friendsoftheearth.uk/bees/20-facts-you-need-know-about-bees',
+	      'Bee-friendly plants for each season (list)' => 'https://friendsoftheearth.uk/bees/beefriendly-plants-every-season',
+              '20 facts you should know about bees' => 'https://friendsoftheearth.uk/bees/20-facts-you-need-know-about-bees', 
               'Native plants that butterflies + moths love (finder)' => 'https://nwf.org/NativePlantFinder/'
             },
-            :instructions => ["Assess the space you have in and around your home for planting.", "Select a pollinator friendly plant that thrives in your home climate at this time of year.", "Get the necessary materials and grow your pollinator-friendly plant!"],
+	    :background => "Advocate for the pollinators!",
+	    :instructions => ["Assess the space you have in + around your home for planting", "Select a pollinator friendly plant that thrives in your home climate at this time of year", "Get the necessary materials & grow your pollinator-friendly plant!"],
             :metric_question => "How many pollinator-friendly plants did you plant?",
 :metric_verb => "You planted ",
 :metric_unit => " pollinator-friendly plants!",
@@ -638,14 +639,15 @@ Water: {
             :name => "Plant perennials",
             :type => "friends",
             :question => "Why should I plant perennials?",
-            :description => "<a target=\"_blank\" href=\"https://www.thespruce.com/what-is-a-perennial-flower-or-plant-1402789\">Perennials</a> establish a deeper root system that improves soil structure. This creates a stronger ecosystem that spreads nutrients + moisture throughout the soil to other plants. Because perennials require less maintenance than <a target=\"_blank\" href=\"https://www.thespruce.com/what-is-an-annual-plant-1401924\">annuals</a>, we suggest starting with perennials. Annuals are important too, so feel free to plant them as well!",
+	    :description => "<a target=\"_blank\" href=\"https://www.thespruce.com/what-is-a-perennial-flower-or-plant-1402789\">Perennials</a> grow a deeper root system that improves soil structure. This creates a stronger ecosystem that spreads nutrients + moisture throughout the soil to other plants, so they can all thrive together.",
             :links => {
-              'Know your annuals + perennials [pg 33-34] (guide)' => 'https://kisstheground.com/purchasingguide/',
-              'Should you only grow perennials? (info)' => 'https://kisstheground.com/perennials/',
+	      'Know your annuals + perennials [pg 33-34] (guide)' => 'https://kisstheground.com/purchasingguide/',
+              'Should you only grow perennials?' => 'https://kisstheground.com/perennials/',
               '10 carbon-capturing practices (guide)' => 'https://www.greenamerica.org/sites/default/files/2019-03/10%20Carbon-Capturing%20Practices.pdf',
-              '7 perennial herbs to plant (list)' => 'https://www.ecowatch.com/perennial-herbs-2539981937.html'
+              '7 perennial herbs to plant' => 'https://www.ecowatch.com/perennial-herbs-2539981937.html'
             },
-            :instructions => ["Choose a perennial you'd like to plant.", "Bring a friend to join you.", "Get the necessary materials and plant your perennial together!"],
+	    :background => "Perennials require less maintenance than annuals, so we suggest starting with perennials. <a target=\"_blank\" href=\"https://www.thespruce.com/what-is-an-annual-plant-1401924\">Annuals</a> are important too, so feel free to plant them too!",
+	    :instructions => ["Choose a perennial you'd like to plant", "Invite others (at least 1) to join you!", "Get the necessary materials & plant your perennial together!"],
             :metric_question => "How many perennials (+ annuals) did you plant?",
 :metric_verb => "You planted ",
 :metric_unit => " perennials/annuals!",
@@ -656,11 +658,13 @@ Water: {
             :name => "Shop local & organic",
             :type => "self",
             :question => "How does shopping relate to biodiversity?",
-            :description => "Biodiversity isn't just about growing plants. It's also about supporting gardeners + farmers who practice regenerative agriculture that boost biodiversity. Vote with your dollar; support these people by purchasing their goods because you're enabling them to continue their work.",
+            :description => "Biodiversity isn't just about growing plants. It's also about supporting gardeners + farmers who practice regenerative agriculture. Vote with your dollar. Support these people because you're enabling them to continue their work & foster biodiversity.",
             :links => {
-              "Industrial meat's impact on pollinators (info)" => 'https://endindustrialmeat.org/ten-reasons-to-opt-out/for-pollinators/'
+              "Industrial meat's impact on pollinators" => 'https://endindustrialmeat.org/ten-reasons-to-opt-out/for-pollinators/'
             },
-            :instructions => ["Buy 100% local and organic foods at your preferred grocery location. Do your best, trying is all that matters. If you're not in charge of grocery shopping, join the person who is on their next grocery trip.Teach them what you learned and help find local and organic options.", "If there's a very limited selection of local + organic, <a target=\"_blank\" href=\"https://www.thekitchn.com/7-tips-for-influencing-what-goes-on-grocery-store-shelves-224619\">talk to, call, or email</a> the manager requesting organic <insert what you want>. You have the power to tell vendors what you want, and the vendors who care about their customers will listen.", "Don't forget to thank the farmers and store managers. Recognize them for the important work they do in your community."],
+            :instructions => ["Buy 100% local + organic foods at your preferred location. Do your best, trying is what matters!", "If there's a very limited selection of local + organic, <a target=\"_blank\" href=\"https://www.thekitchn.com/7-tips-for-influencing-what-goes-on-grocery-store-shelves-224619\">talk to, call, or email</a> the manager requesting organic <insert what you want>.", "Thank the farmers + store managers to recognize them for the important work they do in the community!"],
+	    :alt_instructions => ["Alternative: If you're not in charge of grocery shopping, join the person who is on their next grocery trip. Share what you learned & help them find local + organic options."],
+	    :extra => "You have the power to tell vendors what you want. The real MVP vendors will listen. Support them.",
             :metric_question => "How many local and organic items did you purchase?",
 :metric_verb => "You purchased ",
 :metric_unit => " local and organic items when grocery shopping!",
@@ -671,16 +675,15 @@ Water: {
             :name => "Ensure public space safety",
             :type => "community",
             :question => "Do you spend time outdoors?",
-            :description => "If your community regularly sprays toxic chemicals to manage pests in the area, this is a <a target=\"_blank\" href=\"https://rodaleinstitute.org/blog/toxic-playground-are-your-kids-safe/\">problem</a>. Pesticides, herbicides, and insecticides <a target=\"_blank\" href=\"https://www.slu.se/en/Collaborative-Centres-and-Projects/centre-for-chemical-pesticides-ckb1/information-about-pesticides-in-the-environment-/pesticide-spread-in-the-environment/\">spread</a> through air and touch, making their way into our bodies, marine ecosystems, and wildlife. This puts people's health at risk.",
+            :description => "If your community regularly sprays toxic chemicals to manage pests <a target=\"_blank\" href=\"https://rodaleinstitute.org/blog/toxic-playground-are-your-kids-safe/\">in the area, this is a problem</a>. Pesticides, herbicides, and insecticides <a target=\"_blank\" href=\"https://www.slu.se/en/Collaborative-Centres-and-Projects/centre-for-chemical-pesticides-ckb1/information-about-pesticides-in-the-environment-/pesticide-spread-in-the-environment/\">spread through air + touch</a>, making their way into our bodies, marine ecosystems, and wildlife. This puts people, animal, and the environment's health at risk.",
             :links => {
               "A farmer's principles for healthy soil (blog)" => "https://www.nrdc.org/experts/arohi-sharma/gabe-browns-book-dirt-soil-speaks-power",
-              "Pesticides 101 (info)" => 'https://foodprint.org/issues/pesticides/',
-              'Debunking pesticide myths (info)' => 'http://www.panna.org/pesticides-big-picture/myths-facts',
-              "Youth's power to change communities (story)" => 'https://herbicidefreecampus.org/our-story'
+              "Pesticides 101" => 'https://foodprint.org/issues/pesticides/',
+              'Debunking pesticide myths' => 'http://www.panna.org/pesticides-big-picture/myths-facts',
+              "Youth's power to change communities (story)" => 'https://www.herbicidefreecampus.org/about'
             },
-            :instructions => ["Ask your workplace, school campus, or wherever you spend time in your
-day about what they use to manage their land. Specifically, how do they
-manage pests? What products do they use to maintain the land?", "If they use potentially unsafe methods for your community, voice your
+            :instructions => ["Speak up: ask your workplace, campus, or wherever you spend time in your
+day about what they use to manage their land. Specifically, how do they manage pests? What products do they use to maintain the land?", "If they use potentially unsafe methods for your community, voice your
 disapproval; explain to them why; and propose alternatives."],
             :metric_question => "How many people did you reach out to ask about their land management practices?",
 :metric_verb => "You asked ",
