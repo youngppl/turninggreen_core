@@ -592,7 +592,7 @@ Water: {
               'Getting to know a garden (guide)' => 'https://greenamerica.org/blog/climate-victory-gardens-get-know-your-garden',
               'Relationship between regenerative organic farming + biodiversity' => ' https://rodaleinstitute.org/why-organic/issues-and-priorities/biodiversity/'
             },
-            :instructions => ["Volunteer at a local garden (e.g. farm's, community's, neighbor's, friend's) to help out with.", "Bring a friend along with you!", "Refer to the resources for tips on getting started"],
+            :instructions => ["Volunteer at a local garden (e.g. farm's, community's, neighbor's, friend's) to help out with.", "Bring a friend along with you!", "Refer to the 'Wanna learn more?' section for tips on getting started"],
             :metric_question => "How many hours did you volunteer at a local garden?",
 	    :metric_verb => "You volunteered at a local garden for ",
 	    :metric_unit => " hours!",
@@ -610,7 +610,7 @@ Water: {
             'How to compost (video)' => 'https://kisstheground.com/how-to-compost-at-home-simple/'
             },
             :background => "Be the standout soil advocate our environment needs!",
-	    :instructions => ["Start your own compost pile in your home or in your patio/backyard/frontyard!", "Refer to the resources for tips on how to get started."],
+	    :instructions => ["Start your own compost pile in your home or in your patio/backyard/frontyard!", "Refer to the 'Wanna learn more?' section for tips on how to get started"],
             :metric_question => "Estimate how much your compost weighs (in kilos). Note: 1 lb = 0.45 kg",
 :metric_verb => "You composted about",
 :metric_unit => " kg of waste! (1 lb = 0.45 kg)",
@@ -696,8 +696,7 @@ disapproval; explain to them why; and propose alternatives."],
       Fashion: {
         :videoCaption => "What is fast fashion (in under 5 minutes)?",
         :videoID => "fR7bXsoNwwE",
-        :briefDescription => "We live in a world of fast fashion where low prices often mean worker exploitation
-        and cheap quality. Have you ever thought about how the price of your clothes translate to how your
+        :briefDescription => "We live in a world of fast fashion where low prices often mean worker exploitation and cheap quality. Have you ever thought about how the price of your clothes translate to how your
         clothes were made?",
         :instruction => "Okay, here's the plan. You've watched <a target=\"_blank\" href=\"https://www.youtube.com/watch?v=fR7bXsoNwwE\">\"What is fast fashion?\"</a>. Now it's time to DO: choose 1-2 challenges below, learn, and act!",
 	:challenges => [
@@ -705,13 +704,13 @@ disapproval; explain to them why; and propose alternatives."],
             :name => "Know your clothes",
             :type => "pre",
             :question => "What does it take to make new clothes?",
-            :description => "<a target=\"_blank\" href=\"https://www.thereformation.com/pages/impact-of-fashion\">LOTS of resources</a> (water, dyes, materials, fuel + more). Particularly for <a target=\"_blank\" href=\"https://goodonyou.eco/what-is-fast-fashion/ \">fast fashion</a>, low cost labor is <a target=\"_blank\" href=\"https://truecostmovie.com/learn-more/human-rights/\">exploited</a> abroad to drive profits. The typical <a target=\"_blank\" href=\"http://mistrafuturefashion.com/sustainable-fashion/\">non-circular lifespan</a> of clothes worsens fashion's impact; most clothes aren't reused and properly <a target=\"_blank\" href=\"https://borgenproject.org/the-international-impact-of-donated-clothing/ \">donated</a>, ending up in landfills + oceans.",
+            :description => "<a target=\"_blank\" href=\"https://www.thereformation.com/pages/impact-of-fashion\">LOTS of resources</a> (water, dyes, materials, fuel + more). Particularly for <a target=\"_blank\" href=\"https://goodonyou.eco/what-is-fast-fashion/ \">fast fashion</a>, low cost labor is <a target=\"_blank\" href=\"https://truecostmovie.com/learn-more/human-rights/\">exploited</a> abroad to drive profits. The typical <a target=\"_blank\" href=\"http://mistrafuturefashion.com/sustainable-fashion/\">non-circular lifespan</a> of clothes worsens <a target=\"_blank\" href=\"https://www.youtube.com/watch?v=3iKHr-JnWYA\">fashion's impact</a>; most clothes aren't reused and properly <a target=\"_blank\" href=\"https://borgenproject.org/the-international-impact-of-donated-clothing/ \">donated</a>, ending up in landfills + oceans.",
             :links => {
               "Fashion Revolution Manifesto" => 'https://www.fashionrevolution.org/manifesto/',
               '6 fake facts about the clothing industry' => 'https://goodonyou.eco/6-fake-facts-about-the-fashion-industry/',
               'What you can do right now (list)' => 'https://www.greenamerica.org/what-can-i-do-make-my-clothes-more-sustainable'},
 	    :background => "There's more to the clothing industry than you may see and think.",
-            :instructions => ["Read about what's up with the clothing industry in the 'Wanna learn more?' section", "Share what you learned with (at least) 3 people"],
+            :instructions => ["Take this <a target=\"_blank\" href=\"https://www.thredup.com/fashionfootprint\">fashion footprint quiz</a>", "Read about <a target=\"_blank\" href=\"https://www.thredup.com/bg/p/fashion-footprint-sources\">the sources for the quiz</a> you just took", "See what's up with the clothing industry in the 'Wanna learn more?' section", "Share what you learned with (at least) 3 people"],
             :metric_question => "",
 :metric_verb => "N/A",
 :metric_unit => "",
@@ -860,7 +859,7 @@ your mindset towards investing in a quality; reduce the cost per wear",
               'How do cleaners harm your health? (info)' => 'https://dontmesswithmama.com/7-toxic-household-cleaners-avoid-problem-natural-store-bought-cleaners/',
               '5 safer cleaning products (recipes)' => 'https://www.thegoodtrade.com/features/diy-non-toxic-cleaning-products'
             },
-            :instructions => ["Make a cleaning solution that you will use often (e.g. all-purpose cleaner, degreaser). Refer to resources to get started.", "Once you've made it, go clean something with it!"],
+            :instructions => ["Make a cleaning solution that you will use often (e.g. all-purpose cleaner, degreaser). Refer to the 'Wanna learn more?' section to get started", "Once you've made it, go clean something with it!"],
             :metric_question => "How many cleaning solutions did you make?",
 :metric_verb => "You made ",
 :metric_unit => " homemade safe cleaning solutions!",
