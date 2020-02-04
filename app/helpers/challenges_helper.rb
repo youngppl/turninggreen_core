@@ -658,7 +658,7 @@ Water: {
             :name => "Shop local & organic",
             :type => "self",
             :question => "How does shopping relate to biodiversity?",
-            :description => "Biodiversity isn't just about growing plants. It's also about supporting gardeners + farmers who practice regenerative agriculture. Vote with your dollar. Support these people because you're enabling them to continue their work & foster biodiversity.",
+            :description => "Biodiversity isn't just about growing plants. It's also about supporting gardeners + farmers who practice regenerative agriculture. Vote with your hard-earned dollar. Support these people because you're enabling them to continue their work & foster biodiversity.",
             :links => {
               "Industrial meat's impact on pollinators" => 'https://endindustrialmeat.org/ten-reasons-to-opt-out/for-pollinators/'
             },
@@ -675,7 +675,7 @@ Water: {
             :name => "Ensure public space safety",
             :type => "community",
             :question => "Do you spend time outdoors?",
-            :description => "If your community regularly sprays toxic chemicals to manage pests <a target=\"_blank\" href=\"https://rodaleinstitute.org/blog/toxic-playground-are-your-kids-safe/\">in the area, this is a problem</a>. Pesticides, herbicides, and insecticides <a target=\"_blank\" href=\"https://www.slu.se/en/Collaborative-Centres-and-Projects/centre-for-chemical-pesticides-ckb1/information-about-pesticides-in-the-environment-/pesticide-spread-in-the-environment/\">spread through air + touch</a>, making their way into our bodies, marine ecosystems, and wildlife. This puts people, animal, and the environment's health at risk.",
+            :description => "If your community regularly sprays toxic chemicals to manage pests <a target=\"_blank\" href=\"https://rodaleinstitute.org/blog/toxic-playground-are-your-kids-safe/\">in the area, this is a problem</a>. They (e.g. pesticides) <a target=\"_blank\" href=\"https://www.slu.se/en/Collaborative-Centres-and-Projects/centre-for-chemical-pesticides-ckb1/information-about-pesticides-in-the-environment-/pesticide-spread-in-the-environment/\">spread through air + touch</a>, making their way into our bodies, marine ecosystems, and wildlife. This puts people, animal, and the environment's health at risk.",
             :links => {
               "A farmer's principles for healthy soil (blog)" => "https://www.nrdc.org/experts/arohi-sharma/gabe-browns-book-dirt-soil-speaks-power",
               "Pesticides 101" => 'https://foodprint.org/issues/pesticides/',
@@ -836,13 +836,13 @@ your mindset towards investing in a quality; reduce the cost per wear",
           {
             :name => "Audit your products",
             :type => "pre",
-            :question => "Why do the cleaning products used around you matter?",
-            :description => "Cleaning products emit chemicals that is breathed into the body, and the skin absorbs about 60% of what it touches. So, know exactly what you're introducing into your environment. Do your research for safe cleaning products (watch out for greenwashing though!), so you can create a safer environment in your home and workplace.",
+            :question => "Why do cleaning products matter?",
+            :description => "You can't create a safe space if you don't know what's used to clean your environment. All those sprays, wipes, cleaning solutions, powders -- we breathe them in. Respect yourself + others, and make room for safe healthy products in your environment.",
             :links => {
-              'How to avoid greenwashing (guide) [for food, but applies to cleaning too]' => 'https://foodrevolution.org/blog/how-to-avoid-greenwashing/',
-              'What do all these cleaning labels mean? (info)' => 'https://www.ewg.org/guides/cleaners/content/decoding_labels'
+              'Avoid greenwashing (guide) [for food, but applies to cleaning too]' => 'https://foodrevolution.org/blog/how-to-avoid-greenwashing/',
+              'What do all these cleaning labels mean?' => 'https://www.ewg.org/guides/cleaners/content/decoding_labels'
             },
-            :instructions => ["Read the ingredient list of all the cleaning products you use in your home.", "If you don't know what an ingredient is or its health rating, look it up in the <a target=\"_blank\" href=\"https://www.ewg.org/guides/cleaners\">Environmental Working Group's database</a>."],
+            :instructions => ["Read the ingredient list of all the cleaning products you use in your home", "If you don't know what an ingredient is or its health rating, look it up in <a target=\"_blank\" href=\"https://www.ewg.org/guides/cleaners\">this database</a>."],
             :metric_question => "",
 :metric_verb => "N/A",
 :metric_unit => "",
@@ -853,13 +853,13 @@ your mindset towards investing in a quality; reduce the cost per wear",
             :name => "DIY cleaning products",
             :type => "self",
             :question => "Why should I make my own?",
-            :description => "Many conventional cleaning brands use toxic ingredients. \"Natural\" store-bought cleaners aren't necessarily safer though (check <a target=\"_blank\" href=\"https://www.ewg.org/guides/cleaners\">here</a>). Sometimes, safer products cost 2x conventional ones, making them inaccessible. By making your own, you choose the ingredients and know exactly what you're introducing to your home.",
+            :description => "You'll know exactly what you're introducing to your home, cause you're choosing the ingredients. Skip the aisles of conventional cleaning brands filled with toxins; the 'natural' cleaners that <a target=\"_blank\" href=\"https://www.ewg.org/guides/cleaners\">aren't necessarily safer</a>; and the safer ones that cost too much.",
             :links => {
-              'How to clean green? (list)' => 'https://www.greenamerica.org/waystocleangreen',
-              'How do cleaners harm your health? (info)' => 'https://dontmesswithmama.com/7-toxic-household-cleaners-avoid-problem-natural-store-bought-cleaners/',
-              '5 safer cleaning products (recipes)' => 'https://www.thegoodtrade.com/features/diy-non-toxic-cleaning-products'
+	      'Tips on cleaning green' => 'https://www.greenamerica.org/waystocleangreen',
+              '7 cleaners to avoid' => 'https://dontmesswithmama.com/7-toxic-household-cleaners-avoid-problem-natural-store-bought-cleaners/',
+              'Recipes for making your own' => 'https://www.thegoodtrade.com/features/diy-non-toxic-cleaning-products'
             },
-            :instructions => ["Make a cleaning solution that you will use often (e.g. all-purpose cleaner, degreaser). Refer to the 'Wanna learn more?' section to get started", "Once you've made it, go clean something with it!"],
+            :instructions => ["Choose a cleaning product you use often (e.g. all-purpose cleaner, degreaser)", "And go make your own! Stop by the 'Wanna learn more?' section if you need help getting started", "Once you've made it, get cleaning!"],
             :metric_question => "How many cleaning solutions did you make?",
 :metric_verb => "You made ",
 :metric_unit => " homemade safe cleaning solutions!",
@@ -869,16 +869,15 @@ your mindset towards investing in a quality; reduce the cost per wear",
           {
             :name => "Opt for safe cleaning",
             :type => "self",
-            :question => "Why does shopping for alternatives matter?",
-            :description => "There are many cleaning products that don't prioritize people's health. By shopping intentionally, you will help shift the demand for safer cleaning products and send the signal to the cleaning product industry that we want safe, non-toxic products on the market. ",
+            :question => "What's the big deal?",
+            :description => "There are <a target=\"_blank\" href=\"https://dontmesswithmama.com/7-toxic-household-cleaners-avoid-problem-natural-store-bought-cleaners/\">many cleaning products that don't prioritize people's health</a>. By <a target=\"_blank\" href=\"https://www.madesafe.org/safer-cleaning-products/\">shopping intentionally</a>, you're demanding for safe cleaning products in the market. We have a right to health, so stand up for it through your actions.",
             :links => {
-              'How to find safer cleaning products (guide)' => 'https://www.madesafe.org/safer-cleaning-products/',
-              'How do cleaners harm you health? (info)' => 'https://dontmesswithmama.com/7-toxic-household-cleaners-avoid-problem-natural-store-bought-cleaners/',
-              "We're not perfect, but it's okay (inspiration)" => 'https://www.lisabronner.com/falling-off-the-green-machine/',
-              'Disinfectants 101 (info)' => 'https://www.womensvoices.org/safe-cleaning-products/disinfectant-overkill/disinfectants-fact-sheet/'
+	      "We're not perfect, but it's okay (inspiration)" => 'https://www.lisabronner.com/falling-off-the-green-machine/',
+	      'Disinfectants 101' => 'https://www.womensvoices.org/safe-cleaning-products/disinfectant-overkill/disinfectants-fact-sheet/',
+              'Soap nuts 101' => 'https://econutssoap.com/what-are-soap-nuts/'
             },
-            :background => "When you're done using your cleaning products:",
-            :instructions => ["Find safer alternatives within your budget (be careful of <a target=\"_blank\" href=\"https://www.google.com/url?q=https://7billionfor7seas.com/greenwashed-cleaning/\">greenwashing</a>!)", "Purchase them", "And use them!"],
+            :background => "When you're ready to shop for your cleaning products:",
+            :instructions => ["Find safer cleaning alternatives that are within your budget. Be careful of <a target=\"_blank\" href=\"https://7billionfor7seas.com/greenwashed-cleaning/\">greenwashing</a>!", "Buy them", "And use them!"],
             :metric_question => "How many safer alternative cleaning solutions did you purchase?",
 :metric_verb => "You bought ",
 :metric_unit => " safer alternative cleaning solutions!",
@@ -889,11 +888,11 @@ your mindset towards investing in a quality; reduce the cost per wear",
             :name => "Give feedback",
             :type => "community",
             :question => "Why does feedback matter?",
-            :description => "It is hard to change when we don't know what and how we can improve. Same goes for companies. They can't better serve us, their customers, when they don't know what we desire. Don't let companies decide what you need; tell them what you want.",
+            :description => "It is hard to change when we don't know what + how we can improve. Same goes for companies. They can't better serve us, their customers, when they don't know what we desire. Don't let companies decide what you need. Tell them what you want.",
             :links => {
-              'A group of individuals can influence (info)' => 'https://www.results-project.org/safe-cleaning-products-initiative/'
+              'The power of speaking up' => 'https://www.results-project.org/safe-cleaning-products-initiative/'
             },
-            :instructions => ["Reach out to conventional brands that you’ve purchased from. (e.g. email, call)", "Tell them a) why you don’t support their products anymore, b) what you would like them to change, and c) anything else you’d like them to know. Be polite but firm.", "Get at least 2 peers to take this challenge too."],
+            :instructions => ["Reach out to brands that you’ve purchased from (e.g. email, call)", "Tell them <strong>a)</strong> why you like their products or don't like their products anymore, <strong>b)</strong> how they can improve for you, and <strong>c)</strong> anything else you’d like them to know", "Don't do it alone: get at least 2 peers to take this challenge too!"],
             :metric_question => "How many people did you engage to send a note to a brand rep?",
 :metric_verb => "You engaged ",
 :metric_unit => " people to send a note to a brand rep to better their company practices!",
@@ -903,16 +902,15 @@ your mindset towards investing in a quality; reduce the cost per wear",
           {
             :name => "Go plastic-free reusable",
             :type => "self",
-            :question => "What's the problem with single-use and plastic?",
-            :description => "Single-use items and <a target=\"_blank\" href=\"http://apps.npr.org/plastics-recycling/?utm_medium=social&utm_source=facebook.com&utm_term=nprnews&utm_campaign=npr\">plastic</a> contribute to ocean <a target=\"_blank\" href=\"https://www.plasticpollutioncoalition.org/the-facts\">plastic pollution</a>, waste accumulation, and climate change exacerbation. So, do the opposite. With reusables and plastic-free cleaning products and equipment, there's less trash, so we minimize our contribution to climate change. ",
+            :question => "What's the problem with single-use + plastic?",
+            :description => "<a target=\"_blank\" href=\"http://apps.npr.org/plastics-recycling/?utm_medium=social&utm_source=facebook.com&utm_term=nprnews&utm_campaign=npr\">Single-use items + plastic</a> contribute to ocean <a target=\"_blank\" href=\"https://www.plasticpollutioncoalition.org/the-facts\">plastic pollution + waste accumulation</a>, which worsens climate change. So, do the opposite. Reusables + plastic-free produces less trash and reduce carbon emissions. Claim space for the environment to do its thing!",
             :links => {
-              "What are zero waste cleaning supplies? [scroll down] (list)" => 'https://www.goingzerowaste.com/31-day-challenge/zero-waste-cleaning-day-9-of-the-zero-waste-challenge',
-              'Zero Waste Toilet Cleaning' => 'https://trashisfortossers.com/cleaning-toilet-naturally/',
-              'More zero waste cleaning products (list)' => 'https://packagefreeshop.com/collections/cleaning-under-20'
+              "Zero waste cleaning supplies [you'll have to scroll down] (list)" => 'https://www.goingzerowaste.com/31-day-challenge/zero-waste-cleaning-day-9-of-the-zero-waste-challenge',
+              'Zero waste toilet cleaning' => 'https://trashisfortossers.com/cleaning-toilet-naturally/',
+              'Zero waste cleaning products (list)' => 'https://packagefreeshop.com/collections/cleaning-under-20'
             },
-            :background => "This challenge is for when your current cleaning tools have reached the end of their life.",
-            :instructions => ["Repurpose old t-shirts into cleaning rags.", "For cleaning tasks that can't be accomplished with a rag (e.g. scrubbing, protection), get
-reusable non-plastic tools made of plant-based materials (e.g. bamboo, wood, natural rubber)."],
+            :background => "When your current cleaning tools have reached the end of their life:",
+            :instructions => ["Repurpose old t-shirts into cleaning rags", "For cleaning tasks that can't be accomplished with a rag (e.g. scrubbing, protection), get reusable non-plastic tools made of plant-based materials (e.g. bamboo, wood, natural rubber)"],
             :metric_question => "How many reusable and plastic-free cleaning tools did you get/make?",
 :metric_verb => "You got/made ",
 :metric_unit => " reusable and plastic-free cleaning tools!",
@@ -923,12 +921,12 @@ reusable non-plastic tools made of plant-based materials (e.g. bamboo, wood, nat
             :name => "Host a cleaning party",
             :type => "friends",
             :question => "Why?",
-            :description => "It's more effective to change people's habits when they experience the benefits themselves. Cleaning generally has a bad reputation, so let's change it. Bring the safe cleaning solution(s) + equipment and what you've learned to others' homes. You learn by doing, so prove to your community that cleaning can be simple, fun, and safe.",
+            :description => "Tap into people's emotions. When they experience the benefits themselves, they become invested, which is what we're aiming for. Show your community that cleaning can be simple, fun, and safe.",
             :links => {
-              'Health score ratings for cleaning products' => 'https://www.ewg.org/guides/cleaners',
-              'Safe cleaning tips' => 'http://static.ewg.org/files/2009/10/school-cleaners/home-tip-sheet.pdf'
+              'Health ratings for cleaning products' => 'https://www.ewg.org/guides/cleaners',
+              'Tips to clean safely (list)' => 'http://static.ewg.org/files/2009/10/school-cleaners/home-tip-sheet.pdf'
             },
-            :instructions => ["Get together with your friends and family and clean their homes together (with safe cleaning products, of course)!", "Teach them what you learned about conventional cleaning products and safer alternatives."],
+            :instructions => ["Bring the safe cleaning solution(s) + equipment", "Get together with your friends + fam & clean their homes together", "Share what you learned about conventional cleaning products + safer alternatives"],
             :metric_question => "How many people did you teach about safe cleaning products?",
 :metric_verb => "You taught ",
 :metric_unit => " people about safe cleaning products!",
@@ -939,14 +937,15 @@ reusable non-plastic tools made of plant-based materials (e.g. bamboo, wood, nat
             :name => "Push for safer cleaning",
             :type => "community",
             :question => "How can I change my community's cleaning practices? ",
-            :description => "The safety of cleaning products isn't something people talk about. But you know more now, so share that knowledge, especially with people who have decision-making power. They impact larger groups of people, so let's work with them to create safer home and workplace environments.",
+            :description => "The safety of cleaning products isn't something people usually talk about. But you know more now, so share that knowledge, especially with people who have decision-making power. They impact larger groups of people, so work with them to create safer spaces.",
             :links => {
-              'Why does green cleaning matter? (info)' => 'https://healthyschoolscampaign.org/programs/green-clean-schools/',
-              'Actionable steps to demand gov change (list)' => 'https://www.womensvoices.org/take-action/',
-              'How to make the switch in schools (guide)' => 'https://greencleanschools.org/resources/steps/'
+              'Why green cleaning matters' => 'https://healthyschoolscampaign.org/programs/green-clean-schools/',
+              'Actions to demand gov change (list)' => 'https://www.womensvoices.org/take-action/',
+              'Making the switch in schools (guide)' => 'https://greencleanschools.org/resources/steps/'
             },
-            :background => "Raise awareness about this topic in your community. Here are some ideas:",
-            :instructions => ["Persuade the person in charge of purchasing the cleaning products at your home or workplace (e.g. office manager, school cleaning director) to switch to safe cleaning products.", "Make posters and/or send emails to inform the community about buying and using safer cleaning products, why it matters, and how it affects them.", "Host a (mini) workshop teaching other people what you've learned."],
+            :background => "Be loud, and raise awareness about this topic in your community! Here are ways to get started:",
+            :instructions => ["Persuade the person in charge of purchasing the cleaning products at your home or workplace (e.g. office manager, school cleaning director) to switch to safe cleaning products", "Make posters and/or send emails to inform the community about buying and using safer cleaning products, why it matters, and how it affects them", "Host a (mini) workshop teaching other people what you've learned"],
+	    :alt_instructions => ["The goal is to engage your community!"],
             :metric_question => "How many people did you talk to about this topic?",
 :metric_verb => "You talked to ",
 :metric_unit => " people about purchasing safer cleaning products!",
