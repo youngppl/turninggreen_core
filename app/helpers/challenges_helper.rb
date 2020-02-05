@@ -186,7 +186,7 @@ module ChallengesHelper
             :name => "Go to farmers' markets",
             :type => "friends",
             :question => "Why do farmers' markets matter?",
-            :description => "Farmers' markets are a galore of freshly harvested fruits, vegetables, nuts, and other goodies at <a target=\"_blank\" href=\"https://foodrevolution.org/blog/why-buy-local-food/\">peak nutrition levels</a>. Shopping there means directly <a target=\"_blank\" href=\"https://growcleanwater.org/\">supporting farmers</a> & keeping your money in the <a target=\"_blank\" href=\"https://farmersmarketcoalition.org/education/stimulate-local-economies/ \">local economy</a>, which stimulates job creation and local businesses.",
+            :description => "Farmers' markets are a galore of freshly harvested fruits, vegetables, nuts, and other goodies at <a target=\"_blank\" href=\"https://foodrevolution.org/blog/why-buy-local-food/\">peak nutrition levels</a>. Shopping there means <a target=\"_blank\" href=\"https://growcleanwater.org/\">uplifting farmers</a> & keeping your hard-earned money in the <a target=\"_blank\" href=\"https://farmersmarketcoalition.org/education/stimulate-local-economies/ \">local economy</a>, which stimulates job creation and local businesses.",
             :links => {
               "Find farmers' markets + CSAs near you" => 'https://www.localharvest.org/search.jsp?lat=37.7697&lon=-122.393295&scale=9&ty=1',
               "Q's to ask farmers [pg 9]" => 'https://kisstheground.com/purchasingguide/',
@@ -1094,14 +1094,14 @@ changes you've made in your home and teach them the things you have learned.", "
           {
             :name => "Evaluate your health",
             :type => "pre",
-            :question => "Why does self-care matter?",
-            :description => "You're the best you in the entire universe. However, you can only <a target=\"_blank\" href=\"https://80000hours.org/career-guide/how-to-be-successful/\">be your best</a> if you're mentally, physically, and spiritually healthy. What good can you do or fun can you have if you're not feeling your tip top?",
+            :question => "How is self-care related to climate action?",
+            :description => "What good can you do or fun can you have if you're not feeling your tip top? You can <a target=\"_blank\" href=\"https://80000hours.org/career-guide/how-to-be-successful/\">only be your best</a> if you're mentally, physically, and spiritually healthy.",
             :links => {
-              'Ask yourself these 12 questions (list)' => 'https://medium.com/thrive-global/12-questions-that-will-change-your-life-9d281c1e4704',
-              "This could be why you're depressed + anxious (video)" => 'https://www.ted.com/talks/johann_hari_this_could_be_why_you_re_depressed_or_anxious#t-263872',
-	      '3 questions to ask to get the life you want (list)' => 'https://thoughtcatalog.com/ryan-holiday/2015/04/three-decisions-every-person-needs-to-make-and-make-correctly/'
+              "12 Q's to ask yourself" => 'https://medium.com/thrive-global/12-questions-that-will-change-your-life-9d281c1e4704',
+	      "3 Q's to get the life you want" => 'https://thoughtcatalog.com/ryan-holiday/2015/04/three-decisions-every-person-needs-to-make-and-make-correctly/',
+              "Why you might be depressed + anxious (video)" => 'https://www.ted.com/talks/johann_hari_this_could_be_why_you_re_depressed_or_anxious#t-263872'
 	    },
-            :instructions => ["Evaluate your current mental, physical, and spiritual health. What's good?", "Look at the questions in the resources; honestly answer at least 3 of them and write your answers down on a piece of paper.", "Having answered at least 3 questions, reflect upon how you can make life better for you."],
+            :instructions => ["Evaluate your current mental, physical, and spiritual health. What's good?", "Look at the questions in the 'Wanna learn more?' section. Honestly answer (at least) 3 of Q's & write your answers down on a piece of paper", "Having answered these questions, reflect upon how you can make life better for yourself"],
             :metric_question => "",
 :metric_verb => "N/A",
 :metric_unit => "",
@@ -1111,14 +1111,14 @@ changes you've made in your home and teach them the things you have learned.", "
           {
             :name => "Get enough sleep",
             :type => "self",
-            :question => "Do you get enough sleep?",
+            :question => "Are you getting enough sleep?",
             :description => "You know sleep is important. We never feel great with <a target=\"_blank\" href=\"https://www.hopkinsmedicine.org/health/wellness-and-prevention/the-effects-of-sleep-deprivation\">little sleep</a>. Getting those zzz's improves your mood, strengthens your immune system, boosts your motivation, maintains your memory retention, and makes the day better. ",
             :links => {
-              'Sleep 101 (info)' => 'https://web.stanford.edu/~dement/sleepless.html',
-              '12 steps to improve your sleep (list)' => 'http://healthysleep.med.harvard.edu/healthy/getting/overcoming/tips',
-              'How much sleep do you need? (info)' => 'http://healthysleep.med.harvard.edu/need-sleep/what-can-you-do/assess-needs'
+              'Sleep 101' => 'https://web.stanford.edu/~dement/sleepless.html',
+              '12 ways to improve your sleep' => 'http://healthysleep.med.harvard.edu/healthy/getting/overcoming/tips',
+              'How much sleep do you need?' => 'http://healthysleep.med.harvard.edu/need-sleep/what-can-you-do/assess-needs'
             },
-            :instructions => ["Get at least 7.5 hours of sleep. <a target=\"_blank\" href=\" https://thoughtcatalog.com/ryan-holiday/2015/07/heres-your-productivity-hack-go-the-fck-to-sleep/\">Period.</a>"],
+            :instructions => ["Get at least 7.5 hours of sleep. Period."],
             :metric_question => "How many hours of sleep did you get?",
 :metric_verb => "You slept ",
 :metric_unit => " hours!",
@@ -1128,13 +1128,13 @@ changes you've made in your home and teach them the things you have learned.", "
           {
             :name => "Build your relationships",
             :type => "friends",
-            :question => "What makes relationships so special?",
-            :description => "Life is no fun without friends or family. It’s important we have our community of people who we can talk to anytime, joke around with, support and get support, and just be our authentic selves. These relationships don’t just come to you on a platter though. You gotta put in effort and time to build, maintain, and strengthen those relationships.",
+            :question => "What makes relationships important?",
+            :description => "Who ever said life is fun without friends and family? Nobody. We all thrive when we have people we can just be our authentic selves with. These relationships don’t just come to you on a platter though. You gotta make an effort + put in time to build, maintain, and strengthen those relationships.",
             :links => {
-              'A clue to leading a healthy and happy life (info)' => 'https://news.harvard.edu/gazette/story/2017/04/over-nearly-80-years-harvard-study-has-been-showing-how-to-live-a-healthy-and-happy-life/',
+              'Leading a healthy + happy life' => 'https://news.harvard.edu/gazette/story/2017/04/over-nearly-80-years-harvard-study-has-been-showing-how-to-live-a-healthy-and-happy-life/',
               "Being too busy for friends won't help you (blog)" => 'https://hbr.org/2017/07/being-too-busy-for-friends-wont-help-your-career'
             },
-            :instructions => ["Reach out to your friends, family, and people you're interested in getting to know.", "Do something together at least 1.5 hours. (e.g. cook a meal + eat it! walk around the neighborhood or hike. play a game or sport.)", "Ask buddy at least 3 questions about themselves; get to genuinely know them!"],
+            :instructions => ["Connect with your friends, family, and people you're interested in getting to know", "Do something together for at least 1.5 hours. (e.g. cook a meal + eat! stroll in the neighborhood or hike. play a game or sport.) Basically, spend time together", "In that time, ask (at least) 3 questions about the other person. Get to genuinely know them!"], 
             :metric_question => "How many people did you spend time with for this challenge?",
 :metric_verb => "You spent time with ",
 :metric_unit => " people for this challenge!",
@@ -1145,13 +1145,11 @@ changes you've made in your home and teach them the things you have learned.", "
             :name => "Exercise",
             :type => "self",
             :question => "Instead of sitting, how about getting up and moving around?",
-            :description => "We have <a target=\"_blank\" href=\"https://www.bbc.com/news/health-50466061?ns_source=facebook&ns_campaign=bbcnews&ns_mchannel=social&ocid=socialflow_facebook\">become sedentary</a> with our conveniences (e.g. chairs, elevators, cars) Here's a reminder of the benefits to exercising: feel more positive, sleep better, ramp up energy levels, maintains memory function, enhances confidence, increases productivity, strengthens immune system, minimizes inflammation, and many more.",
+            :description => "We've <a target=\"_blank\" href=\"https://www.bbc.com/news/health-50466061?ns_source=facebook&ns_campaign=bbcnews&ns_mchannel=social&ocid=socialflow_facebook\">become sedentary</a> with all our conveniences (e.g. chairs, elevators, cars) Remember the benefits of exercise! Feeling more positive, better sleep, ramped up energy levels, enhanced confidence, stronger immune system, <a target=\"_blank\" href=\"https://draxe.com/benefits-of-exercise/\">and SO MUCH more</a>.",
             :links => {
               'Benefits of exercise (list)' => 'https://draxe.com/benefits-of-exercise/'
             },
-            :instructions => ["Get active for at least 30 minutes each day. We don’t care how intense
-this activity is; just don’t sit for 30 minutes straight. Stand, walk
-around, run, swim, bike, stretch, dance, move every part of your body."],
+            :instructions => ["Get active for at least 30 minutes each day", "We don’t care how intense this activity is. Just don’t sit for 30 minutes straight", "Stand, walk around, run, swim, bike, stretch, dance, move every part of your body"],
             :metric_question => "How many hours did you exercise?",
 :metric_verb => "You exercised ",
 :metric_unit => " hours!",
@@ -1162,15 +1160,13 @@ around, run, swim, bike, stretch, dance, move every part of your body."],
             :name => "Take a sugar detox",
             :type => "self",
             :question => "How does sugar relate to wellness?",
-            :description => "The sugar in the foods + drinks we take in add up. Problem is: <a target=\"_blank\" href=\"https://foodbabe.com/the-10-reasons-you-need-a-sugar-detox-right-now/\">consuming too much</a> sugar reduces your energy levels, promotes tooth decay, induces premature aging, causes chronic inflammation, and contributes to other sub-optimal bodily reactions. The solution? Omit the source of the problem: sugar.",
+            :description => "Sugars in the foods + drinks we intake add up. The problem? <a target=\"_blank\" href=\"https://foodbabe.com/the-10-reasons-you-need-a-sugar-detox-right-now/\">Consuming too much sugar</a> reduces energy levels, promotes tooth decay, <a target=\"_blank\" href=\"https://www.drfuhrman.com/elearning/eat-to-live-blog/160/a-mature-view-on-sugar\">induces premature aging</a>, and contributes to MANY other sub-optimal bodily reactions. The solution? Omit the problem: sugar.",
             :links => {
-              'Satisfy your sweet tooth without added sugars (info)' => 'https://www.drfuhrman.com/get-started/eat-to-live-blog/160/a-mature-view-on-sugar',
-              'How to slay sugary cravings (blog)' => 'https://www.doctorklaper.com/sugar',
-              'Sugar alternatives comparisons (info)' => 'https://foodrevolution.org/blog/sugar-substitutes/?utm_campaign=frn19&utm_medium=email&utm_source=email-automated&utm_content=5445&utm_term=existing-email-list&email=&firstname=Friend&lastname='
+              'Sugar 101' => 'https://foodrevolution.org/blog/sugar-substitutes/?utm_campaign=frn19&utm_medium=email&utm_source=email-automated&utm_content=5445&utm_term=existing-email-list&email=&firstname=Friend&lastname=',
+	      'How to slay sugary cravings (blog)' => 'https://www.doctorklaper.com/sugar'
             },
-            :background => "Let's be clear: we aren't telling you, \"Don't eat anything with sugar.\" We simply encourage you to eat less foods with added sugars; substitute them fruits.",
-            :instructions => ["Choose to eat foods with added sugars. (Whole, unprocessed fruit is okay!)", "Check for added sugars by reading the ingredients list on packages.
-Don't make assumptions. If someone else made the food, ask if sugar was added to the dish. If you're unsure, don't eat it for this challenge."],
+            :background => "Let's be clear: we're not saying, \"Don't eat anything with sugar.\" We simply encourage you to eat less foods with added sugars, because we want you to feel better every day.",
+            :instructions => ["Eat foods without added sugars. Whole, unprocessed fruit is okay!", "Check for <a target=\"_blank\" href=\"http://www.eatingwell.com/article/284643/other-names-for-sugar/\">added sugars</a> by reading the ingredients list on packages", "Don't make assumptions. If someone homemade the food, ask if any sugar was added", "If you're ever unsure, just don't eat it for this challenge"],
             :metric_question => "How many times did you refuse something with added sugar?",
 :metric_verb => "You refused something with added sugar ",
 :metric_unit => " times!",
@@ -1181,11 +1177,11 @@ Don't make assumptions. If someone else made the food, ask if sugar was added to
             :name => "Free yourself",
             :type => "self",
             :question => "Why so busy?",
-            :description => "Sometimes we get caught trying to stay busy and please other people; this can be overwhelming. We give you permission to take a break. Take time off from all those responsibilities that really are not that important. Do whatever you want right now (that's within reason); focus on that.",
+            :description => "Sometimes we get caught up staying busy + pleasing others. Days go by without us realizing. No more: we give you permission to take a break. Claim time off from the responsibilities so you can do you.", 
             :links => {
-              'Before you freak out, ask these questions (list)' => 'https://dailystoic.com/before-you-freak-out-ask-these-questions/'
+              "Before you freak out, ask these Q's" => 'https://dailystoic.com/before-you-freak-out-ask-these-questions/'
             },
-            :instructions => ["Do what you want.", "Say 'no' to things you really don't want to do, and either 1) don't do it (if reasonable), or 2) do it later."],
+            :instructions => ["Do what you want", "Say 'no' to things you really don't want to do. Either <strong>1)</strong> don't do it (if reasonable), or <strong>2)</strong> do it later", "Respect your me-time"],
             :metric_question => "How many times did you choose to do something for yourself?",
 :metric_verb => "You chose to do something for yourself ",
 :metric_unit => " times!",
@@ -1196,13 +1192,13 @@ Don't make assumptions. If someone else made the food, ask if sugar was added to
             :name => "Find peace",
             :type => "self",
             :question => "What does it mean to feel peace?",
-            :description => "Hit pause on all the noise and busy-ness in your life. Breathe, spend time with yourself, and evaluate where you are. Let time \"slow\" down for you to process your thoughts so you can appreciate life as it is in the present.",
+            :description => "Hit pause on all the noise + busy-ness in your life. Breathe, spend time with yourself, and evaluate where you are. Let time 'slow' down for you to process your thoughts so you can appreciate life as it is in the present.",
             :links => {
-              'Meditation 101 (info)' => 'https://www.headspace.com/meditation-101/what-is-meditation',
+              'Meditation 101' => 'https://www.headspace.com/meditation-101/what-is-meditation',
               'Waking Up by Sam Harris (app)' => 'https://wakingup.com/',
-              'An intro to yoga (video)' => 'https://www.youtube.com/playlist?list=PLui6Eyny-UzwiUzvhM2BjxThodiRWZ2JR'
+              'Intro to yoga (video)' => 'https://www.youtube.com/playlist?list=PLui6Eyny-UzwiUzvhM2BjxThodiRWZ2JR'
             },
-            :instructions => ["Meditate for at least 10 minutes each day; pay attention to your thoughts and observe them.", "Try out yoga each day for 5-10 minutes.", "Write each day for at least 10 minutes; reflect upon your day, feelings, and thoughts. Just let them flow into words on paper."],
+            :instructions => ["Meditate for at least 10 minutes each day. Pay attention to your thoughts and observe them", "Try out yoga each day for 5-10 minutes", "Write each day for at least 10 minutes. Reflect upon your day, feelings, and thoughts. Just let them flow into words on paper"],
             :metric_question => "How many minutes did you meditate, do yoga, and write?",
 :metric_verb => "You meditated, did yoga, and/or wrote for ",
 :metric_unit => " minutes!",
