@@ -1217,11 +1217,11 @@ your mindset towards investing in a quality; reduce the cost per wear",
             :name => "Know your values",
             :type => "pre",
             :question => "Why should you know your values?",
-            :description => "When you leave your comfort zone, you will be challenged. Don't let your external environment stop you from doing what you believe in though. You will discover ways in which the world enables or inhibits you from living your values. However, these moments are simply hidden opportunities for you to be strong and remain true to yourself. You're not alone; we're in it with you!",
+            :description => "You're going to be challenged when you leave your comfort zone, and you're gonna discover ways in which the world enables + inhibits you from living your values. However, these moments are simply hidden opportunities for you to be strong and remain true to yourself.",
             :links => {
-              'Find your community (guide)' => 'https://www.plasticfreejuly.org/get-involved/what-you-can-do/find-your-tribe/'
+              'Find your community' => 'https://www.plasticfreejuly.org/get-involved/what-you-can-do/find-your-tribe/'
             },
-            :instructions => ["Identify your values that you will not compromise.", "Think about how you will constructively respond to an event or person that challenges your values. What will you say and do?"],
+            :instructions => ["Identify your values that you will not compromise", "Think about how you will constructively respond to a person or event that challenges your values. What will you say and do?"],
             :metric_question => "",
 :metric_verb => "N/A",
 :metric_unit => "",
@@ -1232,11 +1232,11 @@ your mindset towards investing in a quality; reduce the cost per wear",
             :name => "Go outdoors",
             :type => "self",
             :question => "Why get outside?",
-            :description => "People in the U.S. spend <a target=\"_blank\" href=\"https://www.epa.gov/report-environment/indoor-air-quality\">about 90%</a> of their time indoors. Go out for a breathe of fresh air; it can relieve stress in your body. Have you ever felt a bit more relaxed when you're outdoors? That's nature's effect; it can boost your mood and immune system all while getting vitamin D from the sun. ",
+            :description => "People in the U.S. <a target=\"_blank\" href=\"https://www.epa.gov/report-environment/indoor-air-quality\">spend about 90% of their time indoors</a>. Go out for a breathe of fresh air! Have you ever felt a bit more relaxed when you're outdoors? That's nature's effect. It boosts your mood + immune system all while getting vitamin D from the sun.",
             :links => {
-              "While you're outside, pick up litter (blog)" => 'https://www.goingzerowaste.com/31-day-challenge/pick-up-litter-day-12-of-the-zero-waste-challenge'
+              "When outside, pick up litter" => 'https://www.goingzerowaste.com/31-day-challenge/pick-up-litter-day-12-of-the-zero-waste-challenge'
             },
-            :instructions => ["Spend at least 30 minutes each day outside in nature.", "If you see any litter, pick it up and dispose of it properly. You'll help keep the environment clean from trash."],
+            :instructions => ["Spend at least 30 minutes each day outdoors in nature (not surrounded by buildings)", "If you see litter, pick it up + dispose of it properly. You'll help keep the environment clean from trash"],
             :metric_question => "How many minutes did you spend outside?",
 :metric_verb => "You spent ",
 :metric_unit => " minutes outside!",
@@ -1247,15 +1247,14 @@ your mindset towards investing in a quality; reduce the cost per wear",
             :name => "Eat out mindfully",
             :type => "self",
             :question => "Why does this matter?",
-            :description => "Your diet impacts health, waste, wellness, carbon + water footprints, and community (to name a few). Choosing to eat at a place that stands by your values sends a message to the people you eat with and your community what you care about and want more of.",
+            :description => "Your diet impacts so many things: health, waste, wellness, carbon + water footprints, and community. Show up at places whose values align with yours. Being physically there is a HUGE vote of support + a form of advocating for what you care about.",
             :links => {
-              'How to dine out sustainably (guide)' => 'https://foodprint.org/dining-out-sustainably/',
+              'Dining out sustainably (guide)' => 'https://foodprint.org/dining-out-sustainably/',
               'Carbon neutral restaurants (list)' => 'http://www.zerofoodprint.org/',
-              'How to avoid stuffing yourself during the holidays (blog)' => 'https://www.drfuhrman.com/get-started/eat-to-live-blog/30/dont-succumb-to-holiday-heart'
+              'Avoid stuffing yourself (blog)' => 'https://www.drfuhrman.com/get-started/eat-to-live-blog/30/dont-succumb-to-holiday-heart'
             },
-            :instructions => ["Find and eat at a place that serves as close to 100% FLOSN food.", "Zero your waste in this adventure: refuse any single-use disposable
-items; bring your own reusable food containers for any leftovers or takeout.", "Consider the impact (water + carbon footprint) of your eating choices and travel method.", "Ask the employees questions about the ingredients used in their dishes."],
-            :extra => "*FLOSN = fresh, local, organic, seasonal, non-GMO",
+            :instructions => ["Find + eat at a place that serves 100% FLOSN food, or as close to 100% as possible", "Zero your waste in this adventure: refuse any single-use disposable items. Bring your own reusable food containers for any leftovers or takeout", "Consider the water + carbon footprint of your eating choices + travel method", "Ask the employees Q's about the ingredients used in their dishes."], 
+            :extra => "FLOSN = fresh, local, organic, seasonal, non-GMO",
             :metric_question => "How many times did you eat at a place that serves FLOSN food?",
 :metric_verb => "You ate ",
 :metric_unit => " times at a place serving FLOSN food!",
@@ -1266,13 +1265,12 @@ items; bring your own reusable food containers for any leftovers or takeout.", "
             :name => "Refuse single-use",
             :type => "self",
             :question => "Why focus on refusing single-use?",
-            :description => "If something is used once and thrown away, it's single-use, regardless if the item is compostable. It's a waste of resources when single-use items are used for several minutes (or less) and tossed without another thought. <a target=\"_blank\" href=\"https://www.5gyres.org/animals/ \">Refusing single-use items</a> tackle the root cause of waste. ",
+            :description => "Ya'll, here's the truth: if something is used once + thrown away, it's single-use, regardless if the item is compostable. This is a HUGE waste of resources, especially when they're used for less than several minutes & tossed without another thought <a target=\"_blank\" href=\"https://www.plasticpollutioncoalition.org/the-facts\">and just problematic</a>.",
             :links => {
-              'Single-use items to break up with? (list)' => 'https://goodonyou.eco/awesome-alternatives-to-single-use-items/',
-              "Plastic's relationship with climate change (blog)" => 'https://makingoceansplasticfree.com/reducing-single-use-plastic-distraction-or-solution-to-climate-change/',
-              "What's the problem with plastic?" => 'https://www.plasticpollutioncoalition.org/the-facts'
+              'Break up with these single-use items' => 'https://goodonyou.eco/awesome-alternatives-to-single-use-items/',
+              "Plastic's relation to climate change (blog)" => 'https://makingoceansplasticfree.com/reducing-single-use-plastic-distraction-or-solution-to-climate-change/',
             },
-            :instructions => ["Take the reusable items necessary for your next outing with you. (e.g. reusable food containers for eating out; reusable bag for grocery shopping)", "Refuse any single-use items (e.g. utensils, dishes, bag, napkin, <a target=\"_blank\" href=\"https://squareup.com/townsquare/some-scary-stats-about-the-environmental-impact-of-paper-receipts \">paper receipt</a>).", "When you refuse an item, include why so other people know. \"No thank you, I don't need that ___ because I don't want to ___.\"" ],
+            :instructions => ["Take reusable items necessary for your next outing with you (e.g. reusable food containers for eating out; reusable bag for grocery shopping)", "Break up with single-use. <a target=\"_blank\" href=\"https://www.5gyres.org/animals/\">Refuse any single-use items</a> (e.g. utensils, dishes, bag, napkin, <a target=\"_blank\" href=\"https://squareup.com/townsquare/some-scary-stats-about-the-environmental-impact-of-paper-receipts\">paper receipt</a>)", "When you refuse an item, include why so other people know. 'No thank you, I don't need that ___ because I don't want to ___.'" ], 
             :metric_question => "How many times did you refuse single-use?",
 :metric_verb => "You refused taking and using single-use items ",
 :metric_unit => " times!",
@@ -1283,17 +1281,12 @@ items; bring your own reusable food containers for any leftovers or takeout.", "
             :name => "Affirm your interests",
             :type => "self",
             :question => "Why should I talk about my interests?",
-            :description => "There is something powerful about telling someone you care about something. It lends a sense of confidence and certainty in our lives. Try it. Lead by example and show people that it's okay to care about something, to be proud of it, and let them know how you're doing it. ",
+            :description => "There's something powerful about telling someone you care about something. It creates a sense of confidence + certainty. Try it. Lead by example & show people that it's okay to care about something & to be proud of it.",
             :links => {
-              'Who to share with? (guide)' => 'https://www.plasticfreejuly.org/get-involved/what-you-can-do/students-parents/',
-              'How to talk about sustainability with other people (guide)' => 'https://www.thegoodtrade.com/features/being-an-effective-sustainability-advocate'
+              'Expanding your impact' => 'https://www.plasticfreejuly.org/get-involved/what-you-can-do/students-parents/',
+              'Talking about sustainability with others' => 'https://www.thegoodtrade.com/features/being-an-effective-sustainability-advocate'
             },
-            :instructions => ["Tell someone you care about ___. Insert a word that you feel to be true,
- something that RootUp inspired. It can be the environment, food
-justice, reducing your waste, or learning. You can casually mention it.
-Have a whole conversation about it. WIth family. With friends. With
-teachers or professors. With strangers. Doesn't matter, just tell
-people."],
+            :instructions => ["Tell someone you care about __. Insert a word that you feel is true, something that RootUp inspired. It can be the environment, food justice, reducing your waste, or learning", "Casually mention it or have a whole conversation", "Do this with family. With friends. With teachers or professors. With strangers. Doesn't matter, just tell people."],
             :metric_question => "How many people did you affirm your interests with?",
 :metric_verb => "You affirmed your interests with ",
 :metric_unit => " people!",
@@ -1304,14 +1297,13 @@ people."],
             :name => "Shop fair trade",
             :type => "self",
             :question => "Why support fair trade?",
-            :description => "Many people around the world are exploited to drive business costs down and profits up and satisfy consumers' desires. <a target=\"_blank\" href=\"https://www.fairtrade.org.uk/What-is-Fairtrade\">Fair trade</a> is about empowering farmers and workers abroad with fair wages, decent working conditions, and local sustainability. ",
+            :description => "<a target=\"_blank\" href=\"https://www.fairtrade.org.uk/What-is-Fairtrade\">Fair trade</a> means workers are paid living wages + treated respectfully. This seems like common sense, no? We think so, but currently, many workers around the world are exploited to drive revenue up.",
             :links => {
-              'Fair trade principles (info)' => 'https://wfto.com/fair-trade/10-principles-fair-trade',
-              'Database of air trade products (finder)' => 'https://www.fairtradecertified.org/products',
-              'What make something fair trade certified? (info)' => 'https://fairworldproject.org/get-informed/movements/fair-trade/certifiers-membership-orgs/',
-              'How fair trade helps end human trafficking (blog)' => 'http://fairtradeamerica.org/en-us/media-center/blog/2016/august/how-fairtrade-helps-end-human-trafficking'
+              'Fair trade products' => 'https://wfto.com/fair-trade/10-principles-fair-trade',
+              'Fair trade labels' => 'https://fairworldproject.org/get-informed/movements/fair-trade/certifiers-membership-orgs/',
+              'Fair trade helps end human trafficking (blog)' => 'http://fairtradeamerica.org/en-us/media-center/blog/2016/august/how-fairtrade-helps-end-human-trafficking'
             },
-            :instructions => ["When you go shopping, look for products made with Fair Trade practices.", "If you're not sure if something was made with fair trade practices, ask questions."],
+            :instructions => ["Look for products made with Fair Trade practices next time you shop", "If you're not sure if something was made with fair trade practices, ask questions (e.g. send emails, ask store employees)"],
             :metric_question => "How many fair trade items did you buy?",
 :metric_verb => "You bought ",
 :metric_unit => " fair trade items!",
@@ -1321,21 +1313,16 @@ people."],
           {
             :name => "Gift responsibly",
             :type => "self",
-            :question => "What is the power of gift giving?",
-            :description => "Sometimes we want others to change their actions to be more mindful, but we can't force them to. Instead, we can encourage and support them. Giving a useful gift to another person is an easy way to introduce them to new products and also make it accessible for them to change their practices.",
+            :question => "What impact does this have?",
+            :description => "We can't force people to change, no matter how deeply we want them to. Instead, <a target=\"_blank\" href=\"https://treadingmyownpath.com/2016/11/24/a-zero-waste-guide-to-gifts/\">we can encourage + support</a>. Gifting something *useful* is an easy way to introduce others to new products + makes it accessible for them to change their habits.",
             :links => {
-              'Gift ideas (list)' => 'http://trashisfortossers.com/laurens-top-zero-waste-gifts-for-every-budget/',
-              'How to gift forward (guide)' => 'http://trashisfortossers.com/everything-to-know-about-gifting-forward/',
-              'Gift wrap zero waste style (guide)' => 'http://trashisfortossers.com/a-guide-to-zero-waste-gift-wrapping/',
-              'How to receive gifts (guide)' => 'https://www.goingzerowaste.com/blog/a-zero-waste-guide-to-receiving-gifts'
+              'Zero waste gift ideas' => 'http://trashisfortossers.com/laurens-top-zero-waste-gifts-for-every-budget/',
+              'Gifting forward' => 'http://trashisfortossers.com/everything-to-know-about-gifting-forward/',
+              'Gift wrapping zero waste style' => 'http://trashisfortossers.com/a-guide-to-zero-waste-gift-wrapping/',
+              'Receiving gifts' => 'https://www.goingzerowaste.com/blog/a-zero-waste-guide-to-receiving-gifts'
             },
-            :background => 'This challenge is for when you want to gift something.',
-            :instructions => ["Get a gift that is sustainably made, in support of a socially
-responsible company, non-toxic to health, or a fun experience. For this
-challenge, please do not get a gift that your giftee will probably not
-use often (unless it's an experience type of gift).", "Wrap it with upcycled materials that are reusable, recyclable, or
-compostable.", "Add a little note of why you think this gift may be
-useful for them."],
+            :background => 'When you need to gift something:',
+            :instructions => ["Get a gift that is sustainably made by a socially responsible company and non-toxic to health. Or, get an experience for your giftee", "Wrap it (if possible) with upcycled materials that are reusable, recyclable, or compostable", "Top it off with a thoughtful little note telling them how amazing they are", "Please do not gift your giftee something they probably won't use"],
             :metric_question => "How many sustainable gifts did you give?",
 :metric_verb => "You gave ",
 :metric_unit => " sustainable gifts!",
