@@ -1,0 +1,8 @@
+{
+  "name": "rootup",
+  "short_name": "rootup",
+  "lang": "en-US",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone"
+}

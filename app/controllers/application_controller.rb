@@ -1,6 +1,13 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :set_variant
+  helper_method :mobile?
+
+  def mobile?
+    request.user_agent.match(/iPhone/i).present? ||
+    request.user_agent.match(/Android/i && /mobile/i).present? ||
+    request.user_agent.match(/Windows Phone/i).present?
+  end
 
   protected
 

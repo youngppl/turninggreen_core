@@ -19,10 +19,16 @@
       heap.load("709304347");
   </script>
   <!-- mobile meta -->
+  <link rel="manifest" href="<%= asset_path 'manifest.json' %>">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-barstyle" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="rootup">
   <meta name="mobile-web-app-capable" content="yes">
+  <!-- favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
+  <meta name="theme-color" content="#105b2f">
   <!-- splashscreens -->
   <link href="/assets/splashscreens/iphone5_splash.png" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
   <link href="/assets/splashscreens/iphone6_splash.png" media="(device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
@@ -30,4 +36,30 @@
   <link href="/assets/splashscreens/iphonex_splash.png" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image" />
   <link href="/assets/splashscreens/iphonexr_splash.png" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2)" rel="apple-touch-startup-image" />
   <link href="/assets/splashscreens/iphonexsmax_splash.png" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3)" rel="apple-touch-startup-image" />
+  <% if mobile? %>
+    <script>
+      if(("standalone" in window.navigator) && window.navigator.standalone){
+
+        // If you want to prevent remote links in standalone web apps opening Mobile Safari, change 'remotes' to true
+        var noddy, remotes = false;
+
+        document.addEventListener('click', function(event) {
+
+          noddy = event.target;
+
+          // Bubble up until we hit link or top HTML element. Warning: BODY element is not compulsory so better to stop on HTML
+          while(noddy.nodeName !== "A" && noddy.nodeName !== "HTML") {
+            noddy = noddy.parentNode;
+          }
+
+          if('href' in noddy && noddy.href.indexOf('http') !== -1 && (noddy.href.indexOf(document.location.host) !== -1 || remotes))
+          {
+            event.preventDefault();
+            document.location.href = noddy.href;
+          }
+
+        },false);
+      }
+    </script>
+  <% end %>
 </head>

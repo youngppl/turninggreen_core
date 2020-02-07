@@ -1,5 +1,23 @@
 <div class="dashboard mobile">
+  <div class="logo">
+    <%= image_tag 'rootup-logo.png' %>
+  </div>
 
+  <%= link_to 'log out', destroy_user_session_path, method: :delete %>
+
+
+  <div class="menu">
+    <button type="button" name="button" class="reflection" onclick="updateActiveButton(this)">
+      <%= image_tag 'mobile/menu-buttons/reflections.svg' %>
+      <%= image_tag 'mobile/menu-buttons/reflections-active.svg', class: 'active' %>
+    </button>
+    <button type="button" name="button" class="dash active" onclick="updateActiveButton(this)">
+      <%= image_tag 'mobile/menu-buttons/dash.svg' %>
+      <%= image_tag 'mobile/menu-buttons/dash-active.svg', class: 'active' %>
+    </button>
+    <button type="button" name="button" class="challenges" onclick="updateActiveButton(this)">
+      <%= image_tag 'mobile/menu-buttons/challenges.svg' %>
+      <%= image_tag 'mobile/menu-buttons/challenges-active.svg', class: 'active' %>
+    </button>
+  </div>
 </div>
-<h1>dashbaord here lol</h1>
-<%= link_to 'log out', destroy_user_session_path, method: :delete %>
