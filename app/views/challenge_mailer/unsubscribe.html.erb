@@ -1,0 +1,24 @@
+<div class="unsubscribe container">
+  <h2>You're now unsubscribed</h2>
+  <%= link_to 'undo unsubscribe', undo_unsubscribe_path(email: params[:email]) %>
+  <div class="reason">
+    <h3>Let us know why:</h3>
+    <%= form_tag do %>
+      <%= check_box :reasons, "not-useful" %>
+      <label>I don't find them useful</label> <br>
+      <%= check_box :reasons, "too-many"%>
+      <label>I get too many (You can change the frequency <a href="<%= edit_user_registration_path %>">here</a>)</label> <br>
+      <%= check_box :reasons, "other"%>
+      <label>Other:</label>
+      <%= text_field :reasons, "other" %> <br>
+      <%= submit_tag 'Submit', class: "submit", onclick: "$('.confirm').show()" %>
+      <h5 class="confirm text-success">Submitted, thanks! ✓</h5>
+    <% end %>
+  </div>
+  <h5 class="we-hear">We hear you: you don't want these emails.</h5>
+  <h5>However, if you want to keep up with rootup</h5>
+  <%= image_tag 'landing-arrow.svg', class: "arrow" %>
+  <h5>Connect with us!</h5>
+  <%= link_to image_tag('instagram.svg', size: '40'), 'https://www.instagram.com/rootup_stories/', target: "_blank", class: "icon" %>
+  <%= link_to image_tag('twitter.svg', size: '40'), 'https://twitter.com/rootup_stories', target: "_blank", class: "icon" %>
+</div>

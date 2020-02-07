@@ -27,6 +27,10 @@ Rails.application.routes.draw do
   # email reminders routes
   get '/send-out-challenge-reminders' => 'challenge_mailer#send_out_challenge_reminders'
   get '/reset-email-tracking' => 'challenge_mailer#reset_email_tracking'
+  get '/unsubscribe' => 'challenge_mailer#unsubscribe'
+  post '/unsubscribe' => 'challenge_mailer#unsubscribe_reasons'
+  get '/undo-unsubscribe' => 'challenge_mailer#undo_unsubscribe'
+
   post '/challenges/unlock' => 'challenges#unlock'
   post '/challenges/add' => 'challenges#create'
   post '/challenges/update-notification' => 'challenges#update_notification_viewed'

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rest-client'
 class ChallengeMailerController < ApplicationController
   skip_before_action :verify_authenticity_token
@@ -29,4 +31,17 @@ class ChallengeMailerController < ApplicationController
     end
     head :no_content
   end
+
+  def unsubscribe
+    User.where(email: params[:email]).update(notifications: 'Never')
+  end
+
+  def undo_unsubscribe
+    User.where(email: params[:email]).update(notifications: 'Every other day')
+  end
+
+  def unsubscribe_reasons
+    puts params
+  end
+
 end
