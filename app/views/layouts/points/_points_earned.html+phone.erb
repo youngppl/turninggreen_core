@@ -1,0 +1,60 @@
+<div class="mobile points-earned">
+  <canvas id="confetti-canvas" onclick="$('.points-earned').hide()"></canvas>
+  <div class="">
+    <% if current_user.points + points >= level_ranges[current_user.level + 1] %>
+      <h1 class="heading">LEVEL UP!</h1>
+    <% else %>
+      <h1 class="heading">POINTS EARNED!</h1>
+    <% end %>
+    <h2 class="points">+<%= points %>
+      pts
+    </h2>
+  </div>
+  <div class="seed">
+    <div class="points-ring">
+      <svg viewbox="13 -13 80 80" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="53" cy="54" r="35" stroke="#e4e3e3" stroke-dasharray=""/>
+        <circle class="user-points" cx="53" cy="54" r="35" stroke="#93989c" stroke-dasharray=""/>
+      </svg>
+      <%= image_tag 'seeds/0.svg', class: "seed-image", size: "60" %>
+    </div>
+  </div>
+  <div class="sub-heading">
+    <h2>Ayyy, your seed's growing!</h2>
+    <h2>Keep it up, we're rooting you on!</h2>
+    <button type="button" name="button" class="continue">continue</button>
+  </div>
+
+</div>
+<script type="text/javascript">
+  var confettiSettings = {
+    target: 'confetti-canvas',
+    max: 50,
+    respawn: 'true',
+    rotate: 'true',
+    clock: 30,
+    "props": [
+      {
+        "type": "svg",
+        "src": "<%= image_url 'mobile/points-earned/leaf1.svg' %>"
+      }, {
+        "type": "svg",
+        "src": "<%= image_url 'mobile/points-earned/leaf2.svg' %>"
+      }, {
+        "type": "svg",
+        "src": "<%= image_url 'mobile/points-earned/leaf3.svg' %>"
+      }, {
+        "type": "svg",
+        "src": "<%= image_url 'mobile/points-earned/leaf4.svg' %>"
+      }, {
+        "type": "svg",
+        "src": "<%= image_url 'mobile/points-earned/leaf5.svg' %>"
+      }
+    ]
+  };
+  var confetti = new ConfettiGenerator(confettiSettings);
+  confetti.render();
+  $('.user-points').animate({
+    'stroke-dashoffset': <%= 240 - 220*(current_user.level_progress(points)/100) %>
+  }, 3000, 'swing')
+</script>

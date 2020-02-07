@@ -2,22 +2,31 @@
   <div class="logo">
     <%= image_tag 'rootup-logo.png' %>
   </div>
-
-  <%= link_to 'log out', destroy_user_session_path, method: :delete %>
-
+  <div class="content">
+    <div class="reflection tab">
+      <iframe src="<%= challenges_reflections_path %> " width="" height=""></iframe>
+    </div>
+    <div class="dash tab active">
+      <%= link_to 'log out', destroy_user_session_path, method: :delete %>
+    </div>
+    <div class="challenges tab">
+      <iframe src="<%= themes_path %> " width="" height=""></iframe>
+    </div>
+  </div>
 
   <div class="menu">
-    <button type="button" name="button" class="reflection" onclick="updateActiveButton(this)">
+    <button type="button" name="button" data-target="reflection" class="reflection" onclick="updateActiveButton(this)">
       <%= image_tag 'mobile/menu-buttons/reflections.svg' %>
       <%= image_tag 'mobile/menu-buttons/reflections-active.svg', class: 'active' %>
     </button>
-    <button type="button" name="button" class="dash active" onclick="updateActiveButton(this)">
+    <button type="button" name="button" data-target="dash" class="dash active" onclick="updateActiveButton(this)">
       <%= image_tag 'mobile/menu-buttons/dash.svg' %>
       <%= image_tag 'mobile/menu-buttons/dash-active.svg', class: 'active' %>
     </button>
-    <button type="button" name="button" class="challenges" onclick="updateActiveButton(this)">
+    <button type="button" name="button" data-target="challenges" class="challenges" onclick="updateActiveButton(this)">
       <%= image_tag 'mobile/menu-buttons/challenges.svg' %>
       <%= image_tag 'mobile/menu-buttons/challenges-active.svg', class: 'active' %>
     </button>
   </div>
+  <%= render "/layouts/points/points_earned", {points: 3} %>
 </div>
