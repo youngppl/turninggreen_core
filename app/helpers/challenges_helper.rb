@@ -192,7 +192,7 @@ module ChallengesHelper
               "Q's to ask farmers [pg 9]" => 'https://kisstheground.com/purchasingguide/',
               'What are sustainable farming practices?' => 'https://rodaleinstitute.org/why-organic/organic-farming-practices/',
             },
-            :instructions => ["Shop at a farmers' market. If this isn't possible, look for a <a target=\"_blank\" href=\"https://www.localharvest.org/csa/\">CSA (community supported agriculture) box</a> to purchase", "Bring your friends and family along!", "Start a conversation and get to know the farmers who grew your food.", "Ask them about their soil, pest management, and crop rotation practices"],
+            :instructions => ["Shop at a farmers' market. Buy organic whenever possible", "If this isn't possible, look for a <a target=\"_blank\" href=\"https://www.localharvest.org/csa/\">CSA (community supported agriculture) box</a> to purchase", "Bring your friends and family along!", "Start a conversation and get to know the farmers who grew your food", "Ask them about their soil, pest management, and crop rotation practices"],
 	    :alt_instructions => ["Buy organic of the <a target=\"_blank\" href=\"https://www.ewg.org/foodnews/dirty-dozen.php\">produce most commonly sprayed with pesticides, herbicides, etc.</a>", "It's okay to not buy organic of these <a target=\"_blank\" href=\"https://www.ewg.org/foodnews/clean-fifteen.php\">produce, which are least likely to be sprayed with pesticides, etc.</a>"],
             :metric_question => "How many people did you bring with you to the farmers' market?",
 :metric_verb => "You brought ",
@@ -304,15 +304,14 @@ module ChallengesHelper
           {
             :name => "Know your products",
             :type => "pre",
-            :question => "Why do the  bodycare products you use matter?",
-            :description => "Your skin absorbs about 60% of what it touches, entering your bloodstream. Know what could make up this 60%. There are harmful ingredients that inhibit the beauty and clarity of your natural skin health, but you won't know if you don't read the ingredient lists and look into what those ingredients can do to your body.",
+            :question => "What's in your bodycare?",
+            :description => "~60% of what's put on your skin is absorbed into your bloodstream. There's lots of products on the market with ingredients that inhibit your natural skin health. It sucks, but information is power. Read the ingredient lists & research what those ingredients do to your body.",
             :links => {
-              'EWG Skin Deep database (finder)' => 'https://www.ewg.org/skindeep/',
-              'How do chemicals impact our health? (list + info)' => 'https://www.madesafe.org/education/chemical-profiles/',
-              'Hazardous chemicals in bodycare (list + info)' => 'https://www.madesafe.org/science/hazard-list/'
+              'EWG Skin Deep database' => 'https://www.ewg.org/skindeep/',
+              "Ingredients' impact on health" => 'https://www.madesafe.org/education/chemical-profiles/',
+              'Hazardous chemicals in bodycare' => 'https://www.madesafe.org/science/hazard-list/'
             },
-            :background => "We're not asking for hours of research (unless you want to), but take 5 minutes to educate yourself a little bit more.",
-            :instructions => ["Read the ingredients list on skincare products that you use.", "Think about the ingredeints: what's the purpose of each ingredient? Look it up. Is the ingredient necessary for this product to be effective and do its job?"],
+            :instructions => ["Take 5 minutes (or more) to educate yourself.", "Read the ingredient list on your skincare products", "Look them up if you don't know its purpose. Is the ingredient necessary for this product to be effective + do its job?"],
             :metric_question => "",
 :metric_verb => "N/A",
 :metric_unit => "",
@@ -323,12 +322,12 @@ module ChallengesHelper
             :name => "DIY bodycare",
             :type => "friends",
             :question => "Why should I make my own?",
-            :description => "Making your own means you know exactly what's in it.  You control the ingredients used and can ensure its safety to your body. The excessively long list of ingredients on the back of products often include unnecessary additives that make the product thicker, smell better, or last longer. In many cases, these ingredients aren't safe for your health.",
+            :description => "You'll know exactly what's in it. Products with excessively long lists of ingredients on the back often include unnecessary additives that make the product thicker, smell better, or last longer. Many times, these ingredients aren't safe for your health.",
             :links => {
-              '100 DIY recipes to get you started (list)' =>'https://dontmesswithmama.com/100-diy-beauty-recipes/',
-              '8 ingredients to avoid (list)' => 'https://goodonyou.eco/8-toxic-ingredients-to-avoid-in-beauty-products/'
+              '100 DIY recipes' =>'https://dontmesswithmama.com/100-diy-beauty-recipes/',
+              '8 ingredients to avoid' => 'https://goodonyou.eco/8-toxic-ingredients-to-avoid-in-beauty-products/'
             },
-            :instructions => ["DIY a bodycare product that you use regularly (e.g. chapstick, lotion).", "Invite at least 3 other people over to join you in this endeavor."],
+            :instructions => ["Choose a product you use regularly (e.g. chapstick, lotion)", "<a target=\"_blank\" href=\"https://dontmesswithmama.com/100-diy-beauty-recipes/\">Find a recipe</a> to make your own!", "Share the fun! Invite at least 3 people to join"],
             :metric_question => "How many bodycare products did you make?",
 	:metric_verb => "You made ",
 :metric_unit => " bodycare products!",
@@ -338,16 +337,17 @@ module ChallengesHelper
           {
             :name => "Choose safer bodycare",
             :type => "friends",
-            :question => "What's the impact of finding alternatives?",
-            :description => "Doing a little more research about what's available in the market can help you better care for your skin. Plus, you'll likely be supporting companies that are creating products for people, not just profit. Be careful of greenwashing though!",
+            :question => "What's considered safer?",
+            :description => "Avoiding <a target=\"_blank\" href=\"https://www.ewg.org/skindeep/contents/top-tips\">known harmful ingredients</a> in products is a good start. Ultimately, reading ingredient labels is key, because companies aren't required to disclose all ingredients in their formulations. Know what you're putting on your body. If in doubt, <a target=\"_blank\" href=\"https://www.ewg.org/skindeep/\">research</a> or <a target=\"_blank\" href=\"https://www.madesafe.org/find-products/personal-care/\">find better alternatives</a>.",
             :links => {
-              'What should I look for? (list)' => 'https://www.greenamerica.org/green-living/choose-green-not-body-care',
-              "Don't fall for these 10 labelling traps (list)" => 'http://www.lisabronner.com/10-labeling-traps-to-recognize-in-body-care-products/',
-              'Some good bodycare alternatives (list)' => 'https://www.madesafe.org/find-products/personal-care/'
+              'What to look for in bodycare' => 'https://www.greenamerica.org/green-living/choose-green-not-body-care',
+              "10 labelling traps" => 'http://www.lisabronner.com/10-labeling-traps-to-recognize-in-body-care-products/',
+              'List of good alternatives' => 'https://www.madesafe.org/find-products/personal-care/'
             },
-            :instructions => ["Find affordable, safe, and sustainably sourced bodycare alternatives to products you use regularly (e.g. <a target=\"_blank\" href=\"https://www.madesafe.org/education/whats-in-that/shampoo-conditioner/\">shampoo, conditioner</a>, <a target=\"_blank\" href=\"https://www.madesafe.org/education/whats-in-that/deodorant/\">deodorant</a>, <a target=\"_blank\" href=\"https://www.madesafe.org/education/bug-repellent-alternatives-tips/\">bug repellent<a/>, <a target=\"_blank\" href=\"https://www.ewg.org/sunscreen/\">sunscreen</a>).", "Share with at least 3 different people what you learned."],
+            :instructions => ["Find affordable, safe, and sustainably sourced bodycare alternatives to products you use regularly (e.g. <a target=\"_blank\" href=\"https://www.madesafe.org/education/whats-in-that/shampoo-conditioner/\">shampoo, conditioner</a>, <a target=\"_blank\" href=\"https://www.madesafe.org/education/whats-in-that/deodorant/\">deodorant</a>, <a target=\"_blank\" href=\"https://www.madesafe.org/education/bug-repellent-alternatives-tips/\">bug repellent<a/>, <a target=\"_blank\" href=\"https://www.ewg.org/sunscreen/\">sunscreen</a>)", "Share your knowledge with (at least) 3 different people"],
             :extra => "To avoid greenwashing: ",
-            :second_list => ["Find the company's website and understand their mission and values.", "Read through those ingredient lists.", "Do a little research and know the ingredients' funciton or check the <a target=\"_blank\" href=\"https://www.ewg.org/skindeep/\">EWG database</a>."],
+            :second_list => ["Find the company's website + 
+understand their mission and values.", "Read through those ingredient lists.", "Do a little research and know the ingredients' funciton or check the <a target=\"_blank\" href=\"https://www.ewg.org/skindeep/\">EWG database</a> (aim to use products with 1-2 ratings)"],
             :metric_question => "How many people did you share what you learned with?",
 :metric_verb => "You shared what you learned about safe bodycare products with ",
 :metric_unit => " people!",
@@ -357,12 +357,12 @@ module ChallengesHelper
           {
             :name => "Contact bodycare companies",
             :type => "community",
-            :question => "Why does reaching out to companies matter?",
-            :description => "Companies need to know what they’re doing well and not, and that knowledge only comes from potential and existing customers (aka you). Providing feedback is opening dialogue about how they can better their practices for people's health and the environment. Whether they act on your feedback is another story, but you will have done your job in making them aware.",
+            :question => "What's the point? Do they even listen?",
+            :description => "Remember: people drive profits, something companies need. Tell companies what they’re doing well + not. They don't know without your feedback. They don't listen? Say 'bye!', let others know, + move on to another product. We're all better off supporting more caring companies.",
             :links => {
-              'What to ask of bodycare businesses and retailers? (list)' => 'http://www.safecosmetics.org/take-action/businesses-and-retailers/'
+              'Ask businesses to commit to safety' => 'http://www.safecosmetics.org/take-action/businesses-and-retailers/'
             },
-            :instructions => ["Reach out to conventional brands that you’ve purchased from or know others who purchase from. (e.g. email, call)", "Tell them a) why you don’t support their products anymore, b) what you would like them to change, and c) anything else you’d like them to know. Be polite but firm."],
+            :instructions => ["Reach out to conventional brands that you’ve purchased from or know others who purchase from. (e.g. email, call)", "Tell them <strong>a)</strong> why you don’t support their products anymore, <strong>b)</strong> what you would like them to change, and <strong>c) </strong> anything else you’d like them to know. Be polite but firm."],
             :metric_question => "How many companies did you reach out to?",
 :metric_verb => "You gave feedback to ",
 :metric_unit => " companies about their products!",
@@ -372,18 +372,17 @@ module ChallengesHelper
           {
             :name => "Safe periods",
             :type => "friends",
-            :question => "What's the deal with menstruation products?",
-            :description => "Conventional menstrual products contain up to 90% petroleum-based plastics. They're also made of pesticide-laden cotton and <a target=\"_blank\" href=\"https://www.natracare.com/why-natracare/chlorine-free/\">bleached with chlorine</a>, both of which involve carcinogens that harm people's health. Women use more than <a target=\"_blank\" href=\"https://www.wen.org.uk/environmenstrual-in-numbers\">11,000</a> disposable menstrual products in their lifetime. That's a lot of exposure to harmful chemicals & a lot of <a target=\"_blank\" href=\"https://divacup.com/eco-divas/\">waste</a> ending up in landfills + oceans.",
+            :question => "What's up with menstruation products?",
+            :description => "Conventional menstrual products contain up to 90% petroleum-based plastics, are made of pesticide-laden cotton + <a target=\"_blank\" href=\"https://www.natracare.com/why-natracare/chlorine-free/\">bleached with chlorine</a>. Women use more than <a target=\"_blank\" href=\"https://www.wen.org.uk/environmenstrual-in-numbers\">11,000</a>(!) disposable menstrual products in their lifetime. That's A LOT of exposure to harmful chemicals & <a target=\"_blank\" href=\"https://divacup.com/eco-divas/\">waste</a> in landfills + oceans.",
             :links => {
-              'Menstrual pads 101 (info)' => 'https://www.natracare.com/why-natracare/natural-materials/',
-              'How to talk about menstruation (guide)' => 'https://helloclue.com/articles/culture/how-to-talk-about-menstruation',
-              'Menstrual cup 101 (info)' => 'https://helloclue.com/articles/culture/menstrual-cups-questions-myths-and-misconceptions',
-              'Made Safe Certified menstrual products (list)' => 'https://www.madesafe.org/find-products/feminine-care/'
+              'Menstrual pads 101' => 'https://www.natracare.com/why-natracare/natural-materials/',
+              'Talking about menstruation (guide)' => 'https://helloclue.com/articles/culture/how-to-talk-about-menstruation',
+              'Menstrual cup 101' => 'https://helloclue.com/articles/culture/menstrual-cups-questions-myths-and-misconceptions'
             },
             :background => "This challenge isn't just for females. <br> For females: ",
-            :instructions => ["Use a menstrual cup or organic cotton pads, tampons, or pantyliners during your period.", "Share what you learned with at least 3 other people."],
+            :instructions => ["<a target=\"_blank\" href=\"https://www.madesafe.org/find-products/feminine-care/\">Use a menstrual cup or organic cotton pads, tampons, or pantyliners during your period</a>", "Share your knowledge with (at least) 3 people!"],
             :extra => "For the males: ",
-            :second_list => ["Share this information with your close female friends and family. Be careful how you word your message when you share this. Don't tell them what to do; simply say something like, \"Saw this and feel like it's important for more females to know. What do you think about it?"],
+            :second_list => ["Share this information with your close female friends + family", "Be careful how you word your message when sharing. Don't tell them what to do. Simply say something like, \"Saw this and feel like it's important for more females to know. What do you think about it?"],
             :metric_question => "How many people did you share what you learned with?",
 :metric_verb => "You shared what you learned about menstrual products with ",
 :metric_unit => " people!",
@@ -394,15 +393,14 @@ module ChallengesHelper
             :name => "Replenish zero waste",
             :type => "self",
             :question => "How does waste relate to bodycare products?",
-            :description => "Paper + plastic cannot be recycled indefinitely, but glass + aluminum can. This is due to how the material degrades each time it's sent through recycling. Glass + aluminum are also <a target=\"_blank\" href=\"https://livegreen.recyclebank.com/column/because-you-asked/should-i-choose-plastic-aluminum-or-glass-bottles\">more widely recycled</a> around the world than plastic. This challenge levels up your game to think about the intersection of body + waste.",
+            :description => "Paper + plastic cannot be recycled indefinitely, but glass + aluminum can, due to how the material degrades each time it's sent through recycling. Glass + aluminum are also <a target=\"_blank\" href=\"https://livegreen.recyclebank.com/column/because-you-asked/should-i-choose-plastic-aluminum-or-glass-bottles\">more widely recycled</a> around the world than plastic.",
             :links => {
-              'Brands with sustainable/no packaging (list)' => 'https://organicallybecca.com/zero-waste-sustainable-packaging/',
-              'Plastic vs. Glass vs. Aluminum (info)' => 'https://earth911.com/living-well-being/recycled-beverage-containers/',
-              'How many times can this be recycled? (list)' => 'https://earth911.com/business-policy/how-many-times-recycled/'
+              'Brands with sustainable/no packaging' => 'https://organicallybecca.com/zero-waste-sustainable-packaging/',
+              'Plastic vs. Glass vs. Aluminum ' => 'https://earth911.com/living-well-being/recycled-beverage-containers/',
+              'How many times can this be recycled?' => 'https://earth911.com/business-policy/how-many-times-recycled/'
             },
-            :background => "This challenge is for when you're in need to replenish your bodycare product supply.",
-            :instructions => ["Minimize your bodycare product waste by making your own products in a reusable container.", "Alternatively, purchase goods packaged in glass or aluminum bottles (no packaging is ideal, when possible)."],
-            :extra => "The goal is to aim for #plasticfree (1st priority) and #paperfree (2nd priority). ",
+            :instructions => ["Minimize your bodycare product waste by making your own products in a reusable container.", "Alternatively, purchase goods with no plastic. Glass or aluminum packaging is okay, although no packaging is ideal"], 
+            :extra => "The goal is to aim for #plasticfree (1st priority) & #paperfree (2nd priority)",
             :metric_question => "How many products did you make or buy that have zero waste or more sustainable packaging?",
 :metric_verb => "You made/bought ",
 :metric_unit => " products that have zero waste or sustainable packaging!",
@@ -413,11 +411,12 @@ module ChallengesHelper
             :name => "Be the influencer",
             :type => "friends",
             :question => "Why me?",
-            :description => "You now know more than the average person about the safety and quality of bodycare products. To better our community, it is our responsibility to share this with other people and help them make positive changes in their lives. This will be sometimes easy and sometimes difficult. However, rememeber this: it's more important to say something than stay silent.",
+            :description => "You're the real MVP. Think about how much you know now: enough to be dangerous. There's a lotta nasty stuff ruining the safety + quality in bodycare products. We can't let it slide. Many people don't know what you know, so we're calling you to spread the word. Be the champion in your community.",
             :links => {
-              'Brands with sustainable/no packaging (list)' => 'https://organicallybecca.com/zero-waste-sustainable-packaging/'
+              'Products w/ sustainable packaging' => 'https://organicallybecca.com/zero-waste-sustainable-packaging/',
+	      'MadeSafe certified products' => 'https://www.madesafe.org/find-products/personal-care/'
             },
-            :instructions => ["Teach at least 3 different people about what you've learned about bodycare products in this theme.", "Help them make at least 1 switch to a better alternative bodycare product."],
+            :instructions => ["Teach (at least) 3 people what you've learned about bodycare", "Help them make (at least) 1 switch to a better alternative bodycare product"], 
             :metric_question => "How many people did you help make a switch to a safer bodycare product?",
 :metric_verb => "You helped ",
 :metric_unit => " people switch to safer bodycare products!",
@@ -473,7 +472,7 @@ Water: {
             :name => "Get a bucket buddy",
             :type => "self",
             :question => "Why should I collect my shower water?",
-            :description => "We don't have an infinite supply of clean water. <a target=\"_blank\" href=\"https://charitywater.org/global-water-crisis\">663 MILLION people</a> in the world don't have clean water readily accessible, while you fortunately do. Oftentimes, the water that come out of faucets and showerheads is more than what we actually need though.",
+            :description => "We don't have an infinite supply of clean water. <a target=\"_blank\" href=\"https://charitywater.org/global-water-crisis\">663 MILLION people</a> in the world don't have clean water readily accessible, while you fortunately do. Oftentimes, the water that come out of faucets and showerheads <a target=\"_blank\" href=\"https://www.drawdown.org/solutions/materials/water-saving-home\">is more than what we actually need</a> though.",
             :links => {
               'One creative way to shower (video)' => 'https://www.youtube.com/watch?v=ttCx_MjWcls',
               'How to be water efficient (guide)' => 'https://www.ewg.org/healthyhomeguide/water-efficiency/'
@@ -639,14 +638,14 @@ Water: {
             :name => "Plant perennials",
             :type => "friends",
             :question => "Why should I plant perennials?",
-	    :description => "<a target=\"_blank\" href=\"https://www.thespruce.com/what-is-a-perennial-flower-or-plant-1402789\">Perennials</a> grow a deeper root system that improves soil structure. This creates a stronger ecosystem that spreads nutrients + moisture throughout the soil to other plants, so they can all thrive together.",
+	    :description => "<a target=\"_blank\" href=\"https://www.thespruce.com/what-is-a-perennial-flower-or-plant-1402789\">Perennials</a> grow a deeper root system that improves soil structure. This <a target=\"_blank\" href=\"https://www.drawdown.org/solutions/food/tropical-staple-trees\">creates a stronger ecosystem</a> that spreads nutrients + moisture throughout the soil to other plants, so they can all thrive together.",
             :links => {
 	      'Know your annuals + perennials [pg 33-34] (guide)' => 'https://kisstheground.com/purchasingguide/',
               'Should you only grow perennials?' => 'https://kisstheground.com/perennials/',
               '10 carbon-capturing practices (guide)' => 'https://www.greenamerica.org/sites/default/files/2019-03/10%20Carbon-Capturing%20Practices.pdf',
               '7 perennial herbs to plant' => 'https://www.ecowatch.com/perennial-herbs-2539981937.html'
             },
-	    :background => "Perennials require less maintenance than annuals, so we suggest starting with perennials. <a target=\"_blank\" href=\"https://www.thespruce.com/what-is-an-annual-plant-1401924\">Annuals</a> are important too, so feel free to plant them too!",
+	    :background => "Perennials require less maintenance than annuals and have greater impact, so we're focusing on perennials (<a target=\"_blank\" href=\"https://www.thespruce.com/what-is-an-annual-plant-1401924\">Annuals</a> are important too though!)",
 	    :instructions => ["Choose a perennial you'd like to plant", "Invite others (at least 1) to join you!", "Get the necessary materials & plant your perennial together!"],
             :metric_question => "How many perennials (+ annuals) did you plant?",
 :metric_verb => "You planted ",
@@ -658,7 +657,7 @@ Water: {
             :name => "Shop local & organic",
             :type => "self",
             :question => "How does shopping relate to biodiversity?",
-            :description => "Biodiversity isn't just about growing plants. It's also about supporting gardeners + farmers who practice regenerative agriculture. Vote with your hard-earned dollar. Support these people because you're enabling them to continue their work & foster biodiversity.",
+            :description => "Biodiversity isn't just about growing plants. It's also about supporting gardeners + farmers who practice <a target=\"_blank\" href=\"https://rodaleinstitute.org/why-organic/organic-basics/regenerative-organic-agriculture/\">regenerative agriculture</a>. Vote with your hard-earned dollar. Support these people because you're enabling them to <a target=\"_blank\" href=\"https://www.drawdown.org/solutions/food/regenerative-agriculture\">continue their work & foster biodiversity</a>.",
             :links => {
               "Industrial meat's impact on pollinators" => 'https://endindustrialmeat.org/ten-reasons-to-opt-out/for-pollinators/'
             },
@@ -1000,11 +999,13 @@ your mindset towards investing in a quality; reduce the cost per wear",
             :name => "Conserve energy",
             :type => "self",
             :question => "Why bother?",
-            :description => "Simple habit changes reduce carbon footprints + save money from utility bills. More importantly, you become more mindful. The simple thought of turning things off, unplugging, and reducing builds your awareness of the environmental impact of your daily actions.",
+            :description => "Simple habit changes <a target=\"_blank\" href=\"https://www.ewg.org/healthyhomeguide/energy-efficiency/\">reduce carbon footprints + save money from utility bills</a>. More importantly, you become more mindful. The simple thought of turning things off, unplugging, and renovating better builds your awareness of the environmental impact of your daily actions.",
             :links => {
-              'Conserving energy' => 'https://www.ewg.org/healthyhomeguide/energy-efficiency/'
+              'Conserving energy' => 'https://www.ewg.org/healthyhomeguide/energy-efficiency/',
+	      'The right kind of home insulation (guide)' => 'https://www.ewg.org/healthyhomeguide/insulation/',
+	      'Save energy costs w/ smart thermostats' => "https://www.drawdown.org/solutions/buildings-and-cities/smart-thermostats"
             },
-            :instructions => ["Turn off the lights if you're not in the room for >15 minutes", "Unplug unused devices + appliances", "Set your thermostat to a reasonable temperature (e.g. 68F/20C in winter, 78F/26C in summer)", "Use cold water to do laundry", "Do laundry when you have a full load"], 
+            :instructions => ["<a target=\"_blank\" href=\"https://www.ewg.org/healthyhomeguide/lights/\">Swap out old lightbulbs with LEDs</a>", "Unplug unused devices + appliances", "Set your thermostat to a reasonable temperature (e.g. 68F/20C in winter, 78F/26C in summer)", "Use cold water to do laundry", "<a target=\"_blank\" href=\"https://www.drawdown.org/solutions/buildings-and-cities/insulation\">Invest in quality insulation</a> for your home"], 
             :metric_question => "Estimate the number of times you took action to save energy.",
 :metric_verb => "You took about",
 :metric_unit => " actions to save energy!",
