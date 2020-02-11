@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   get '/challenges/reflections' => 'challenges#reflections'
   get '/challenges/:challenge_name' => 'challenges#show', :as => 'challenges'
   get '/privacy' => 'welcome#privacy'
+  get '/privacy/learn-more' => 'welcome#privacy_learn_more'
   get '/admin' => 'admin#index'
   get '/team' => 'team#index'
   # email reminders routes
