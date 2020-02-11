@@ -1,4 +1,4 @@
-.about-page{
+.about-page {
   padding: 0 5em;
   font-weight: 500;
   font-style: normal;
@@ -6,46 +6,93 @@
   letter-spacing: normal;
   color: #5f5f5f;
 
-  .description{
+  .description {
     display: flex;
     padding-bottom: 2em;
 
-    .description-pic{
-      width:60%;
-      margin:auto;
-      padding-right:1em;
+    .description-pic {
+      width: 60%;
+      margin: auto;
+      padding-right: 1em;
     }
 
-    .description-text{
-      height:80%;
-      width:90%;
+    .description-text {
+      height: 80%;
+      width: 90%;
+
       p {
-        font-size:0.875em;
+        font-size: 0.875em;
       }
     }
   }
+
   .heading {
     width: 13.75em;
     font-size: 2.5em;
     font-weight: 700;
   }
+
   .subheading {
     font-size: 1.875em;
     font-weight: 800;
     padding-bottom: 2em;
   }
+
   .ending {
     font-size: 1.25em;
     font-weight: 600;
   }
+
   .call-to-action {
-    padding: 2em 0em;
+    padding: 2em 0;
   }
+
   .principles {
-    padding: 3em 0em;
+    padding: 3em 0;
     font-weight: 550;
+
     li {
       font-size: 0.9em;
+    }
+  }
+}
+
+.faq-page {
+  font-size: 18px;
+  padding-bottom: 60px;
+
+  .dropdown,
+  p,
+  span {
+    font-size: 18px;
+  }
+
+  .dropdown {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    outline: none;
+    background: none;
+    border: none;
+    padding: 0.375rem;
+
+    .fa-chevron-down {
+      display: block;
+    }
+
+    .fa-chevron-right {
+      display: none;
+    }
+
+    &:not(.collapsed) {
+      .fa-chevron-right {
+        display: block;
+      }
+
+      .fa-chevron-down {
+        display: none;
+      }
     }
   }
 }

@@ -1,10 +1,10 @@
 class WelcomeController < ApplicationController
   include ChallengesHelper
-  
+
   def index
     @highlighted_challenges = [
       challenges[:Waste][:challenges].select {|x| x[:name] == "Audit your waste" }[0],
-      challenges[:Body][:challenges].select {|x| x[:name] == "DIY body products" }[0],
+      challenges[:Body][:challenges].select {|x| x[:name] == "DIY bodycare" }[0],
       challenges[:Fashion][:challenges].select {|x| x[:name] == "Keep clothes useful" }[0],
       challenges[:Water][:challenges].select {|x| x[:name] == "Eat plant-based" }[0],
       challenges[:Food][:challenges].select {|x| x[:name] == "Know your food" }[0],
@@ -17,5 +17,8 @@ class WelcomeController < ApplicationController
   end
 
   def privacy
+  end
+
+  def privacy_learn_more
   end
 end
