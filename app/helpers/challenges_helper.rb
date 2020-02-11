@@ -186,13 +186,13 @@ module ChallengesHelper
             :name => "Go to farmers' markets",
             :type => "friends",
             :question => "Why do farmers' markets matter?",
-            :description => "Farmers' markets are a galore of freshly harvested fruits, vegetables, nuts, and other goodies at <a target=\"_blank\" href=\"https://foodrevolution.org/blog/why-buy-local-food/\">peak nutrition levels</a>. Shopping there means directly <a target=\"_blank\" href=\"https://growcleanwater.org/\">supporting farmers</a> & keeping your money in the <a target=\"_blank\" href=\"https://farmersmarketcoalition.org/education/stimulate-local-economies/ \">local economy</a>, which stimulates job creation and local businesses.",
+            :description => "Farmers' markets are a galore of freshly harvested fruits, vegetables, nuts, and other goodies at <a target=\"_blank\" href=\"https://foodrevolution.org/blog/why-buy-local-food/\">peak nutrition levels</a>. Shopping there means <a target=\"_blank\" href=\"https://growcleanwater.org/\">uplifting farmers</a> & keeping your hard-earned money in the <a target=\"_blank\" href=\"https://farmersmarketcoalition.org/education/stimulate-local-economies/ \">local economy</a>, which stimulates job creation and local businesses.",
             :links => {
               "Find farmers' markets + CSAs near you" => 'https://www.localharvest.org/search.jsp?lat=37.7697&lon=-122.393295&scale=9&ty=1',
               "Q's to ask farmers [pg 9]" => 'https://kisstheground.com/purchasingguide/',
               'What are sustainable farming practices?' => 'https://rodaleinstitute.org/why-organic/organic-farming-practices/',
             },
-            :instructions => ["Shop at a farmers' market. If this isn't possible, look for a <a target=\"_blank\" href=\"https://www.localharvest.org/csa/\">CSA (community supported agriculture) box</a> to purchase", "Bring your friends and family along!", "Start a conversation and get to know the farmers who grew your food.", "Ask them about their soil, pest management, and crop rotation practices"],
+            :instructions => ["Shop at a farmers' market. Buy organic whenever possible", "If this isn't possible, look for a <a target=\"_blank\" href=\"https://www.localharvest.org/csa/\">CSA (community supported agriculture) box</a> to purchase", "Bring your friends and family along!", "Start a conversation and get to know the farmers who grew your food", "Ask them about their soil, pest management, and crop rotation practices"],
 	    :alt_instructions => ["Buy organic of the <a target=\"_blank\" href=\"https://www.ewg.org/foodnews/dirty-dozen.php\">produce most commonly sprayed with pesticides, herbicides, etc.</a>", "It's okay to not buy organic of these <a target=\"_blank\" href=\"https://www.ewg.org/foodnews/clean-fifteen.php\">produce, which are least likely to be sprayed with pesticides, etc.</a>"],
             :metric_question => "How many people did you bring with you to the farmers' market?",
 :metric_verb => "You brought ",
@@ -304,15 +304,14 @@ module ChallengesHelper
           {
             :name => "Know your products",
             :type => "pre",
-            :question => "Why do the  bodycare products you use matter?",
-            :description => "Your skin absorbs about 60% of what it touches, entering your bloodstream. Know what could make up this 60%. There are harmful ingredients that inhibit the beauty and clarity of your natural skin health, but you won't know if you don't read the ingredient lists and look into what those ingredients can do to your body.",
+            :question => "What's in your bodycare?",
+            :description => "~60% of what's put on your skin is absorbed into your bloodstream. There's lots of products on the market with ingredients that inhibit your natural skin health. It sucks, but information is power. Read the ingredient lists & research what those ingredients do to your body.",
             :links => {
-              'EWG Skin Deep database (finder)' => 'https://www.ewg.org/skindeep/',
-              'How do chemicals impact our health? (list + info)' => 'https://www.madesafe.org/education/chemical-profiles/',
-              'Hazardous chemicals in bodycare (list + info)' => 'https://www.madesafe.org/science/hazard-list/'
+              'EWG Skin Deep database' => 'https://www.ewg.org/skindeep/',
+              "Ingredients' impact on health" => 'https://www.madesafe.org/education/chemical-profiles/',
+              'Hazardous chemicals in bodycare' => 'https://www.madesafe.org/science/hazard-list/'
             },
-            :background => "We're not asking for hours of research (unless you want to), but take 5 minutes to educate yourself a little bit more.",
-            :instructions => ["Read the ingredients list on skincare products that you use.", "Think about the ingredeints: what's the purpose of each ingredient? Look it up. Is the ingredient necessary for this product to be effective and do its job?"],
+            :instructions => ["Take 5 minutes (or more) to educate yourself.", "Read the ingredient list on your skincare products", "Look them up if you don't know its purpose. Is the ingredient necessary for this product to be effective + do its job?"],
             :metric_question => "",
 :metric_verb => "N/A",
 :metric_unit => "",
@@ -323,12 +322,12 @@ module ChallengesHelper
             :name => "DIY bodycare",
             :type => "friends",
             :question => "Why should I make my own?",
-            :description => "Making your own means you know exactly what's in it.  You control the ingredients used and can ensure its safety to your body. The excessively long list of ingredients on the back of products often include unnecessary additives that make the product thicker, smell better, or last longer. In many cases, these ingredients aren't safe for your health.",
+            :description => "You'll know exactly what's in it. Products with excessively long lists of ingredients on the back often include unnecessary additives that make the product thicker, smell better, or last longer. Many times, these ingredients aren't safe for your health.",
             :links => {
-              '100 DIY recipes to get you started (list)' =>'https://dontmesswithmama.com/100-diy-beauty-recipes/',
-              '8 ingredients to avoid (list)' => 'https://goodonyou.eco/8-toxic-ingredients-to-avoid-in-beauty-products/'
+              '100 DIY recipes' =>'https://dontmesswithmama.com/100-diy-beauty-recipes/',
+              '8 ingredients to avoid' => 'https://goodonyou.eco/8-toxic-ingredients-to-avoid-in-beauty-products/'
             },
-            :instructions => ["DIY a bodycare product that you use regularly (e.g. chapstick, lotion).", "Invite at least 3 other people over to join you in this endeavor."],
+            :instructions => ["Choose a product you use regularly (e.g. chapstick, lotion)", "<a target=\"_blank\" href=\"https://dontmesswithmama.com/100-diy-beauty-recipes/\">Find a recipe</a> to make your own!", "Share the fun! Invite at least 3 people to join"],
             :metric_question => "How many bodycare products did you make?",
 	:metric_verb => "You made ",
 :metric_unit => " bodycare products!",
@@ -338,16 +337,17 @@ module ChallengesHelper
           {
             :name => "Choose safer bodycare",
             :type => "friends",
-            :question => "What's the impact of finding alternatives?",
-            :description => "Doing a little more research about what's available in the market can help you better care for your skin. Plus, you'll likely be supporting companies that are creating products for people, not just profit. Be careful of greenwashing though!",
+            :question => "What's considered safer?",
+            :description => "Avoiding <a target=\"_blank\" href=\"https://www.ewg.org/skindeep/contents/top-tips\">known harmful ingredients</a> in products is a good start. Ultimately, reading ingredient labels is key, because companies aren't required to disclose all ingredients in their formulations. Know what you're putting on your body. If in doubt, <a target=\"_blank\" href=\"https://www.ewg.org/skindeep/\">research</a> or <a target=\"_blank\" href=\"https://www.madesafe.org/find-products/personal-care/\">find better alternatives</a>.",
             :links => {
-              'What should I look for? (list)' => 'https://www.greenamerica.org/green-living/choose-green-not-body-care',
-              "Don't fall for these 10 labelling traps (list)" => 'http://www.lisabronner.com/10-labeling-traps-to-recognize-in-body-care-products/',
-              'Some good bodycare alternatives (list)' => 'https://www.madesafe.org/find-products/personal-care/'
+              'What to look for in bodycare' => 'https://www.greenamerica.org/green-living/choose-green-not-body-care',
+              "10 labelling traps" => 'http://www.lisabronner.com/10-labeling-traps-to-recognize-in-body-care-products/',
+              'List of good alternatives' => 'https://www.madesafe.org/find-products/personal-care/'
             },
-            :instructions => ["Find affordable, safe, and sustainably sourced bodycare alternatives to products you use regularly (e.g. <a target=\"_blank\" href=\"https://www.madesafe.org/education/whats-in-that/shampoo-conditioner/\">shampoo, conditioner</a>, <a target=\"_blank\" href=\"https://www.madesafe.org/education/whats-in-that/deodorant/\">deodorant</a>, <a target=\"_blank\" href=\"https://www.madesafe.org/education/bug-repellent-alternatives-tips/\">bug repellent<a/>, <a target=\"_blank\" href=\"https://www.ewg.org/sunscreen/\">sunscreen</a>).", "Share with at least 3 different people what you learned."],
+            :instructions => ["Find affordable, safe, and sustainably sourced bodycare alternatives to products you use regularly (e.g. <a target=\"_blank\" href=\"https://www.madesafe.org/education/whats-in-that/shampoo-conditioner/\">shampoo, conditioner</a>, <a target=\"_blank\" href=\"https://www.madesafe.org/education/whats-in-that/deodorant/\">deodorant</a>, <a target=\"_blank\" href=\"https://www.madesafe.org/education/bug-repellent-alternatives-tips/\">bug repellent<a/>, <a target=\"_blank\" href=\"https://www.ewg.org/sunscreen/\">sunscreen</a>)", "Share your knowledge with (at least) 3 different people"],
             :extra => "To avoid greenwashing: ",
-            :second_list => ["Find the company's website and understand their mission and values.", "Read through those ingredient lists.", "Do a little research and know the ingredients' funciton or check the <a target=\"_blank\" href=\"https://www.ewg.org/skindeep/\">EWG database</a>."],
+            :second_list => ["Find the company's website + 
+understand their mission and values.", "Read through those ingredient lists.", "Do a little research and know the ingredients' funciton or check the <a target=\"_blank\" href=\"https://www.ewg.org/skindeep/\">EWG database</a> (aim to use products with 1-2 ratings)"],
             :metric_question => "How many people did you share what you learned with?",
 :metric_verb => "You shared what you learned about safe bodycare products with ",
 :metric_unit => " people!",
@@ -357,12 +357,12 @@ module ChallengesHelper
           {
             :name => "Contact bodycare companies",
             :type => "community",
-            :question => "Why does reaching out to companies matter?",
-            :description => "Companies need to know what they’re doing well and not, and that knowledge only comes from potential and existing customers (aka you). Providing feedback is opening dialogue about how they can better their practices for people's health and the environment. Whether they act on your feedback is another story, but you will have done your job in making them aware.",
+            :question => "What's the point? Do they even listen?",
+            :description => "Remember: people drive profits, something companies need. Tell companies what they’re doing well + not. They don't know without your feedback. They don't listen? Say 'bye!', let others know, + move on to another product. We're all better off supporting more caring companies.",
             :links => {
-              'What to ask of bodycare businesses and retailers? (list)' => 'http://www.safecosmetics.org/take-action/businesses-and-retailers/'
+              'Ask businesses to commit to safety' => 'http://www.safecosmetics.org/take-action/businesses-and-retailers/'
             },
-            :instructions => ["Reach out to conventional brands that you’ve purchased from or know others who purchase from. (e.g. email, call)", "Tell them a) why you don’t support their products anymore, b) what you would like them to change, and c) anything else you’d like them to know. Be polite but firm."],
+            :instructions => ["Reach out to conventional brands that you’ve purchased from or know others who purchase from. (e.g. email, call)", "Tell them <strong>a)</strong> why you don’t support their products anymore, <strong>b)</strong> what you would like them to change, and <strong>c) </strong> anything else you’d like them to know. Be polite but firm."],
             :metric_question => "How many companies did you reach out to?",
 :metric_verb => "You gave feedback to ",
 :metric_unit => " companies about their products!",
@@ -372,18 +372,17 @@ module ChallengesHelper
           {
             :name => "Safe periods",
             :type => "friends",
-            :question => "What's the deal with menstruation products?",
-            :description => "Conventional menstrual products contain up to 90% petroleum-based plastics. They're also made of pesticide-laden cotton and <a target=\"_blank\" href=\"https://www.natracare.com/why-natracare/chlorine-free/\">bleached with chlorine</a>, both of which involve carcinogens that harm people's health. Women use more than <a target=\"_blank\" href=\"https://www.wen.org.uk/environmenstrual-in-numbers\">11,000</a> disposable menstrual products in their lifetime. That's a lot of exposure to harmful chemicals & a lot of <a target=\"_blank\" href=\"https://divacup.com/eco-divas/\">waste</a> ending up in landfills + oceans.",
+            :question => "What's up with menstruation products?",
+            :description => "Conventional menstrual products contain up to 90% petroleum-based plastics, are made of pesticide-laden cotton + <a target=\"_blank\" href=\"https://www.natracare.com/why-natracare/chlorine-free/\">bleached with chlorine</a>. Women use more than <a target=\"_blank\" href=\"https://www.wen.org.uk/environmenstrual-in-numbers\">11,000</a>(!) disposable menstrual products in their lifetime. That's A LOT of exposure to harmful chemicals & <a target=\"_blank\" href=\"https://divacup.com/eco-divas/\">waste</a> in landfills + oceans.",
             :links => {
-              'Menstrual pads 101 (info)' => 'https://www.natracare.com/why-natracare/natural-materials/',
-              'How to talk about menstruation (guide)' => 'https://helloclue.com/articles/culture/how-to-talk-about-menstruation',
-              'Menstrual cup 101 (info)' => 'https://helloclue.com/articles/culture/menstrual-cups-questions-myths-and-misconceptions',
-              'Made Safe Certified menstrual products (list)' => 'https://www.madesafe.org/find-products/feminine-care/'
+              'Menstrual pads 101' => 'https://www.natracare.com/why-natracare/natural-materials/',
+              'Talking about menstruation (guide)' => 'https://helloclue.com/articles/culture/how-to-talk-about-menstruation',
+              'Menstrual cup 101' => 'https://helloclue.com/articles/culture/menstrual-cups-questions-myths-and-misconceptions'
             },
             :background => "This challenge isn't just for females. <br> For females: ",
-            :instructions => ["Use a menstrual cup or organic cotton pads, tampons, or pantyliners during your period.", "Share what you learned with at least 3 other people."],
+            :instructions => ["<a target=\"_blank\" href=\"https://www.madesafe.org/find-products/feminine-care/\">Use a menstrual cup or organic cotton pads, tampons, or pantyliners during your period</a>", "Share your knowledge with (at least) 3 people!"],
             :extra => "For the males: ",
-            :second_list => ["Share this information with your close female friends and family. Be careful how you word your message when you share this. Don't tell them what to do; simply say something like, \"Saw this and feel like it's important for more females to know. What do you think about it?"],
+            :second_list => ["Share this information with your close female friends + family", "Be careful how you word your message when sharing. Don't tell them what to do. Simply say something like, \"Saw this and feel like it's important for more females to know. What do you think about it?"],
             :metric_question => "How many people did you share what you learned with?",
 :metric_verb => "You shared what you learned about menstrual products with ",
 :metric_unit => " people!",
@@ -394,15 +393,14 @@ module ChallengesHelper
             :name => "Replenish zero waste",
             :type => "self",
             :question => "How does waste relate to bodycare products?",
-            :description => "Paper + plastic cannot be recycled indefinitely, but glass + aluminum can. This is due to how the material degrades each time it's sent through recycling. Glass + aluminum are also <a target=\"_blank\" href=\"https://livegreen.recyclebank.com/column/because-you-asked/should-i-choose-plastic-aluminum-or-glass-bottles\">more widely recycled</a> around the world than plastic. This challenge levels up your game to think about the intersection of body + waste.",
+            :description => "Paper + plastic cannot be recycled indefinitely, but glass + aluminum can, due to how the material degrades each time it's sent through recycling. Glass + aluminum are also <a target=\"_blank\" href=\"https://livegreen.recyclebank.com/column/because-you-asked/should-i-choose-plastic-aluminum-or-glass-bottles\">more widely recycled</a> around the world than plastic.",
             :links => {
-              'Brands with sustainable/no packaging (list)' => 'https://organicallybecca.com/zero-waste-sustainable-packaging/',
-              'Plastic vs. Glass vs. Aluminum (info)' => 'https://earth911.com/living-well-being/recycled-beverage-containers/',
-              'How many times can this be recycled? (list)' => 'https://earth911.com/business-policy/how-many-times-recycled/'
+              'Brands with sustainable/no packaging' => 'https://organicallybecca.com/zero-waste-sustainable-packaging/',
+              'Plastic vs. Glass vs. Aluminum ' => 'https://earth911.com/living-well-being/recycled-beverage-containers/',
+              'How many times can this be recycled?' => 'https://earth911.com/business-policy/how-many-times-recycled/'
             },
-            :background => "This challenge is for when you're in need to replenish your bodycare product supply.",
-            :instructions => ["Minimize your bodycare product waste by making your own products in a reusable container.", "Alternatively, purchase goods packaged in glass or aluminum bottles (no packaging is ideal, when possible)."],
-            :extra => "The goal is to aim for #plasticfree (1st priority) and #paperfree (2nd priority). ",
+            :instructions => ["Minimize your bodycare product waste by making your own products in a reusable container.", "Alternatively, purchase goods with no plastic. Glass or aluminum packaging is okay, although no packaging is ideal"], 
+            :extra => "The goal is to aim for #plasticfree (1st priority) & #paperfree (2nd priority)",
             :metric_question => "How many products did you make or buy that have zero waste or more sustainable packaging?",
 :metric_verb => "You made/bought ",
 :metric_unit => " products that have zero waste or sustainable packaging!",
@@ -413,11 +411,12 @@ module ChallengesHelper
             :name => "Be the influencer",
             :type => "friends",
             :question => "Why me?",
-            :description => "You now know more than the average person about the safety and quality of bodycare products. To better our community, it is our responsibility to share this with other people and help them make positive changes in their lives. This will be sometimes easy and sometimes difficult. However, rememeber this: it's more important to say something than stay silent.",
+            :description => "You're the real MVP. Think about how much you know now: enough to be dangerous. There's a lotta nasty stuff ruining the safety + quality in bodycare products. We can't let it slide. Many people don't know what you know, so we're calling you to spread the word. Be the champion in your community.",
             :links => {
-              'Brands with sustainable/no packaging (list)' => 'https://organicallybecca.com/zero-waste-sustainable-packaging/'
+              'Products w/ sustainable packaging' => 'https://organicallybecca.com/zero-waste-sustainable-packaging/',
+	      'MadeSafe certified products' => 'https://www.madesafe.org/find-products/personal-care/'
             },
-            :instructions => ["Teach at least 3 different people about what you've learned about bodycare products in this theme.", "Help them make at least 1 switch to a better alternative bodycare product."],
+            :instructions => ["Teach (at least) 3 people what you've learned about bodycare", "Help them make (at least) 1 switch to a better alternative bodycare product"], 
             :metric_question => "How many people did you help make a switch to a safer bodycare product?",
 :metric_verb => "You helped ",
 :metric_unit => " people switch to safer bodycare products!",
@@ -473,7 +472,7 @@ Water: {
             :name => "Get a bucket buddy",
             :type => "self",
             :question => "Why should I collect my shower water?",
-            :description => "We don't have an infinite supply of clean water. <a target=\"_blank\" href=\"https://charitywater.org/global-water-crisis\">663 MILLION people</a> in the world don't have clean water readily accessible, while you fortunately do. Oftentimes, the water that come out of faucets and showerheads is more than what we actually need though.",
+            :description => "We don't have an infinite supply of clean water. <a target=\"_blank\" href=\"https://charitywater.org/global-water-crisis\">663 MILLION people</a> in the world don't have clean water readily accessible, while you fortunately do. Oftentimes, the water that come out of faucets and showerheads <a target=\"_blank\" href=\"https://www.drawdown.org/solutions/materials/water-saving-home\">is more than what we actually need</a> though.",
             :links => {
               'One creative way to shower (video)' => 'https://www.youtube.com/watch?v=ttCx_MjWcls',
               'How to be water efficient (guide)' => 'https://www.ewg.org/healthyhomeguide/water-efficiency/'
@@ -569,34 +568,33 @@ Water: {
             :name => "Biodiversity 101",
             :type => "pre",
             :question => "What is biodiversity?",
-            :description => "Nature is a complex system, where every species plays an important role. Biodiversity is the checks and balances system in nature. A significant loss in biodiversity (in water, soil, and land) can imbalance our world such that food security + human health become at risk. Knowing this helps us understand why <a target=\"_blank\" href=\"https://www.mnn.com/earth-matters/wilderness-resources/blogs/why-biodiversity-big-deal\">it's so important</a> to care for soil health and promote biodiversity.",
+            :description => "Nature is a complex system, and <a target=\"_blank\" href=\"https://rodaleinstitute.org/why-organic/issues-and-priorities/biodiversity/\">biodiversity<a> is the checks and balances in nature. A big loss in biodiversity (in water, soil, and land) imbalances our world, putting food security + human health at risk. This is <a target=\"_blank\" href=\"https://www.mnn.com/earth-matters/wilderness-resources/blogs/why-biodiversity-big-deal\">why it's so important</a> to care for soil health + promote biodiversity.",
             :links => {
-              'What is biodiversity? (info)' => 'https://rodaleinstitute.org/why-organic/issues-and-priorities/biodiversity/',
-              'What is healthy soil? (info)' => 'https://rodaleinstitute.org/why-organic/organic-farming-practices/soil-health/',
-              "What's the difference between organic + conventional? (info)" => 'https://rodaleinstitute.org/why-organic/organic-basics/organic-vs-conventional/',
-              'Why biodiversity loss hurts (info)' => 'https://www.ecowatch.com/biodiversity-loss-human-health-2636410357.html?rebelltitem=1#rebelltitem1'
+              'What is healthy soil?' => 'https://rodaleinstitute.org/why-organic/organic-farming-practices/soil-health/',
+              "The difference between organic + conventional" => 'https://rodaleinstitute.org/why-organic/organic-basics/organic-vs-conventional/',
+              'Why biodiversity loss hurts' => 'https://www.ecowatch.com/biodiversity-loss-human-health-2636410357.html?rebelltitem=1#rebelltitem1'
             },
-            :instructions => ["Watch <a target=\"_blank\" href=\"https://www.youtube.com/watch?v=iR2AyybowPc\">this video</a> to learn what biodiversity is and why it's important.", "Teach what you learned to 3 different people!"],
+            :instructions => ["<a target=\"_blank\" href=\"https://www.youtube.com/watch?v=iR2AyybowPc\">Watch this</a> to learn what biodiversity is & why it's important.", "Share what you learned with at least 3 people!"],
             :metric_question => "",
-:metric_verb => "N/A",
-:metric_unit => "",
+	    :metric_verb => "N/A",
+	    :metric_unit => "",
             :reflection_question => "Where in your community has biodiversity? If you can't think of a place, where in your community could there be more biodiversity?",
             :photo_prompt => ""
-          },
+            },
           {
             :name => "Volunteer in garden",
             :type => "friends",
             :question => "Why are gardens important?",
-            :description => "Gardening (with <a target=\"_blank\" href=\"https://rodaleinstitute.org/why-organic/organic-basics/regenerative-organic-agriculture/\">regenerative practices</a>) boosts biodiversity. Growing a variety of plants cultivates <a target=\"_blank\" href=\"https://drive.google.com/file/d/0B0ezvt7UmjxZVTYzTkRfNjdPNFU/view\">healthy soil</a> that fosters organismal communities, which protect + strengthen ecosystems. If disease or pests take out a population of organisms, biodiversity ensures there are other organisms ready to keep the ecosystem thriving.",
+            :description => "Gardening (with <a target=\"_blank\" href=\"https://rodaleinstitute.org/why-organic/organic-basics/regenerative-organic-agriculture/\">regenerative practices</a>) boosts biodiversity! Growing a variety of plants cultivates <a target=\"_blank\" href=\"https://drive.google.com/file/d/0B0ezvt7UmjxZVTYzTkRfNjdPNFU/view\">healthy soil</a> that protects + strengthens ecosystems. If disease or pests take out a population of organisms, biodiversity keeps the ecosystem thriving.",
             :links => {
-              "Where's the climate victory gardens? (finder)" => 'https://www.greenamerica.org/climate-victory-gardens-map',
-              'Get to know a garden (guide)' => 'https://greenamerica.org/blog/climate-victory-gardens-get-know-your-garden',
-              'Regenerative organic farming + biodiversity (info)' => ' https://rodaleinstitute.org/why-organic/issues-and-priorities/biodiversity/'
+              "Find a climate victory garden" => 'https://www.greenamerica.org/climate-victory-gardens-map',
+              'Getting to know a garden (guide)' => 'https://greenamerica.org/blog/climate-victory-gardens-get-know-your-garden',
+              'Relationship between regenerative organic farming + biodiversity' => ' https://rodaleinstitute.org/why-organic/issues-and-priorities/biodiversity/'
             },
-            :instructions => ["Volunteer at a local garden (e.g. farm's, community's, neighbor's, friend's) to help out with.", "Bring a friend along with you!"],
+            :instructions => ["Volunteer at a local garden (e.g. farm's, community's, neighbor's, friend's) to help out with.", "Bring a friend along with you!", "Refer to the 'Wanna learn more?' section for tips on getting started"],
             :metric_question => "How many hours did you volunteer at a local garden?",
-:metric_verb => "You volunteered at a local garden for ",
-:metric_unit => " hours!",
+	    :metric_verb => "You volunteered at a local garden for ",
+	    :metric_unit => " hours!",
             :reflection_question => "What did you learn from your gardening experience?",
             :photo_prompt => "Share a photo of you + friend gardening. Tell us how you helped."
           },
@@ -604,13 +602,14 @@ Water: {
             :name => "Start a compost pile",
             :type => "self",
             :question => "What's the big deal about composting?",
-            :description => "Did you know our <a target=\"_blank\" href=\"http://www.fao.org/resources/infographics/infographics-details/en/c/285727/\">soil houses a quarter of the world's biodiversity</a>? Soil isn't just dirt; it's composed of minerals, water, air, organic matter, and organisms. A loss in any of these can be detrimental to our ecosystems, food security, and weather pattern stability.",
+ 	    :description => "Did you know <a target=\"_blank\" href=\"http://www.fao.org/resources/infographics/infographics-details/en/c/285727/\">soil houses 1/4 of the world's biodiversity</a>? Soil isn't just dirt. It's made of minerals, water, air, organic matter, and organisms. A loss in any of these can be a threat to our ecosystems, food security, and weather pattern stability.",
             :links => {
-              'Our food comes from soil (infographic)' => 'http://www.fao.org/resources/infographics/infographics-details/en/c/285853/',
-              'Composting 101 (info)' => 'https://rodaleinstitute.org/why-organic/organic-farming-practices/composting/',
-              'How to compost (video)' => 'https://kisstheground.com/how-to-compost-at-home-simple/'
+            'Our food comes from soil (infographic)' => 'http://www.fao.org/resources/infographics/infographics-details/en/c/285853/',
+            'Composting 101' => 'https://rodaleinstitute.org/why-organic/organic-farming-practices/composting/',
+            'How to compost (video)' => 'https://kisstheground.com/how-to-compost-at-home-simple/'
             },
-            :instructions => ["1) Start your own compost pile in your home or in your patio/backyard/frontyard!", "Refer to the resources for tips on how to get started."],
+            :background => "Be the standout soil advocate our environment needs!",
+	    :instructions => ["Start your own compost pile in your home or in your patio/backyard/frontyard!", "Refer to the 'Wanna learn more?' section for tips on how to get started"],
             :metric_question => "Estimate how much your compost weighs (in kilos). Note: 1 lb = 0.45 kg",
 :metric_verb => "You composted about",
 :metric_unit => " kg of waste! (1 lb = 0.45 kg)",
@@ -621,13 +620,14 @@ Water: {
             :name => "Attract pollinators",
             :type => "self",
             :question => "Have you ever seen pollination in action? ",
-            :description => "<a target=\"_blank\" href=\"https://www.youtube.com/watch?v=MQiszdkOwuU\">Pollinators</a>, particularly bees, are responsible for 1/3 of the world's food supply. The problem is <a target=\"_blank\" href=\"https://friendsoftheearth.uk/bees/what-are-causes-bee-decline\">lots of bees are dying</a> due to global warming, pesticide use, pests, and habitat loss. Growing pollinator-friendly plants will provide more natural habitats for pollinators to thrive.",
+	    :description => "<a target=\"_blank\" href=\"https://www.youtube.com/watch?v=MQiszdkOwuU\">Watch this.</a> Pollinators, particularly bees, are responsible for 1/3 of the world's food supply. The problem? <a target=\"_blank\" href=\"https://friendsoftheearth.uk/bees/what-are-causes-bee-decline\">Lots of bees are dying</a> due to global warming, pesticide use, and habitat loss. Growing pollinator-friendly plants provides more natural habitats for pollinators to thrive.",
             :links => {
-              'Bee-friendly plants for each season (info + list)' => 'https://friendsoftheearth.uk/bees/beefriendly-plants-every-season',
-              '20 facts you should know about bees (info/list)' => 'https://friendsoftheearth.uk/bees/20-facts-you-need-know-about-bees',
+	      'Bee-friendly plants for each season (list)' => 'https://friendsoftheearth.uk/bees/beefriendly-plants-every-season',
+              '20 facts you should know about bees' => 'https://friendsoftheearth.uk/bees/20-facts-you-need-know-about-bees', 
               'Native plants that butterflies + moths love (finder)' => 'https://nwf.org/NativePlantFinder/'
             },
-            :instructions => ["Assess the space you have in and around your home for planting.", "Select a pollinator friendly plant that thrives in your home climate at this time of year.", "Get the necessary materials and grow your pollinator-friendly plant!"],
+	    :background => "Advocate for the pollinators!",
+	    :instructions => ["Assess the space you have in + around your home for planting", "Select a pollinator friendly plant that thrives in your home climate at this time of year", "Get the necessary materials & grow your pollinator-friendly plant!"],
             :metric_question => "How many pollinator-friendly plants did you plant?",
 :metric_verb => "You planted ",
 :metric_unit => " pollinator-friendly plants!",
@@ -638,14 +638,15 @@ Water: {
             :name => "Plant perennials",
             :type => "friends",
             :question => "Why should I plant perennials?",
-            :description => "<a target=\"_blank\" href=\"https://www.thespruce.com/what-is-a-perennial-flower-or-plant-1402789\">Perennials</a> establish a deeper root system that improves soil structure. This creates a stronger ecosystem that spreads nutrients + moisture throughout the soil to other plants. Because perennials require less maintenance than <a target=\"_blank\" href=\"https://www.thespruce.com/what-is-an-annual-plant-1401924\">annuals</a>, we suggest starting with perennials. Annuals are important too, so feel free to plant them as well!",
+	    :description => "<a target=\"_blank\" href=\"https://www.thespruce.com/what-is-a-perennial-flower-or-plant-1402789\">Perennials</a> grow a deeper root system that improves soil structure. This <a target=\"_blank\" href=\"https://www.drawdown.org/solutions/food/tropical-staple-trees\">creates a stronger ecosystem</a> that spreads nutrients + moisture throughout the soil to other plants, so they can all thrive together.",
             :links => {
-              'Know your annuals + perennials [pg 33-34] (guide)' => 'https://kisstheground.com/purchasingguide/',
-              'Should you only grow perennials? (info)' => 'https://kisstheground.com/perennials/',
+	      'Know your annuals + perennials [pg 33-34] (guide)' => 'https://kisstheground.com/purchasingguide/',
+              'Should you only grow perennials?' => 'https://kisstheground.com/perennials/',
               '10 carbon-capturing practices (guide)' => 'https://www.greenamerica.org/sites/default/files/2019-03/10%20Carbon-Capturing%20Practices.pdf',
-              '7 perennial herbs to plant (list)' => 'https://www.ecowatch.com/perennial-herbs-2539981937.html'
+              '7 perennial herbs to plant' => 'https://www.ecowatch.com/perennial-herbs-2539981937.html'
             },
-            :instructions => ["Choose a perennial you'd like to plant.", "Bring a friend to join you.", "Get the necessary materials and plant your perennial together!"],
+	    :background => "Perennials require less maintenance than annuals and have greater impact, so we're focusing on perennials (<a target=\"_blank\" href=\"https://www.thespruce.com/what-is-an-annual-plant-1401924\">Annuals</a> are important too though!)",
+	    :instructions => ["Choose a perennial you'd like to plant", "Invite others (at least 1) to join you!", "Get the necessary materials & plant your perennial together!"],
             :metric_question => "How many perennials (+ annuals) did you plant?",
 :metric_verb => "You planted ",
 :metric_unit => " perennials/annuals!",
@@ -656,11 +657,13 @@ Water: {
             :name => "Shop local & organic",
             :type => "self",
             :question => "How does shopping relate to biodiversity?",
-            :description => "Biodiversity isn't just about growing plants. It's also about supporting gardeners + farmers who practice regenerative agriculture that boost biodiversity. Vote with your dollar; support these people by purchasing their goods because you're enabling them to continue their work.",
+            :description => "Biodiversity isn't just about growing plants. It's also about supporting gardeners + farmers who practice <a target=\"_blank\" href=\"https://rodaleinstitute.org/why-organic/organic-basics/regenerative-organic-agriculture/\">regenerative agriculture</a>. Vote with your hard-earned dollar. Support these people because you're enabling them to <a target=\"_blank\" href=\"https://www.drawdown.org/solutions/food/regenerative-agriculture\">continue their work & foster biodiversity</a>.",
             :links => {
-              "Industrial meat's impact on pollinators (info)" => 'https://endindustrialmeat.org/ten-reasons-to-opt-out/for-pollinators/'
+              "Industrial meat's impact on pollinators" => 'https://endindustrialmeat.org/ten-reasons-to-opt-out/for-pollinators/'
             },
-            :instructions => ["Buy 100% local and organic foods at your preferred grocery location. Do your best, trying is all that matters. If you're not in charge of grocery shopping, join the person who is on their next grocery trip.Teach them what you learned and help find local and organic options.", "If there's a very limited selection of local + organic, <a target=\"_blank\" href=\"https://www.thekitchn.com/7-tips-for-influencing-what-goes-on-grocery-store-shelves-224619\">talk to, call, or email</a> the manager requesting organic <insert what you want>. You have the power to tell vendors what you want, and the vendors who care about their customers will listen.", "Don't forget to thank the farmers and store managers. Recognize them for the important work they do in your community."],
+            :instructions => ["Buy 100% local + organic foods at your preferred location. Do your best, trying is what matters!", "If there's a very limited selection of local + organic, <a target=\"_blank\" href=\"https://www.thekitchn.com/7-tips-for-influencing-what-goes-on-grocery-store-shelves-224619\">talk to, call, or email</a> the manager requesting organic <insert what you want>.", "Thank the farmers + store managers to recognize them for the important work they do in the community!"],
+	    :alt_instructions => ["Alternative: If you're not in charge of grocery shopping, join the person who is on their next grocery trip. Share what you learned & help them find local + organic options."],
+	    :extra => "You have the power to tell vendors what you want. The real MVP vendors will listen. Support them.",
             :metric_question => "How many local and organic items did you purchase?",
 :metric_verb => "You purchased ",
 :metric_unit => " local and organic items when grocery shopping!",
@@ -671,16 +674,15 @@ Water: {
             :name => "Ensure public space safety",
             :type => "community",
             :question => "Do you spend time outdoors?",
-            :description => "If your community regularly sprays toxic chemicals to manage pests in the area, this is a <a target=\"_blank\" href=\"https://rodaleinstitute.org/blog/toxic-playground-are-your-kids-safe/\">problem</a>. Pesticides, herbicides, and insecticides <a target=\"_blank\" href=\"https://www.slu.se/en/Collaborative-Centres-and-Projects/centre-for-chemical-pesticides-ckb1/information-about-pesticides-in-the-environment-/pesticide-spread-in-the-environment/\">spread</a> through air and touch, making their way into our bodies, marine ecosystems, and wildlife. This puts people's health at risk.",
+            :description => "If your community regularly sprays toxic chemicals to manage pests <a target=\"_blank\" href=\"https://rodaleinstitute.org/blog/toxic-playground-are-your-kids-safe/\">in the area, this is a problem</a>. They (e.g. pesticides) <a target=\"_blank\" href=\"https://www.slu.se/en/Collaborative-Centres-and-Projects/centre-for-chemical-pesticides-ckb1/information-about-pesticides-in-the-environment-/pesticide-spread-in-the-environment/\">spread through air + touch</a>, making their way into our bodies, marine ecosystems, and wildlife. This puts people, animal, and the environment's health at risk.",
             :links => {
               "A farmer's principles for healthy soil (blog)" => "https://www.nrdc.org/experts/arohi-sharma/gabe-browns-book-dirt-soil-speaks-power",
-              "Pesticides 101 (info)" => 'https://foodprint.org/issues/pesticides/',
-              'Debunking pesticide myths (info)' => 'http://www.panna.org/pesticides-big-picture/myths-facts',
-              "Youth's power to change communities (story)" => 'https://herbicidefreecampus.org/our-story'
+              "Pesticides 101" => 'https://foodprint.org/issues/pesticides/',
+              'Debunking pesticide myths' => 'http://www.panna.org/pesticides-big-picture/myths-facts',
+              "Youth's power to change communities (story)" => 'https://www.herbicidefreecampus.org/about'
             },
-            :instructions => ["Ask your workplace, school campus, or wherever you spend time in your
-day about what they use to manage their land. Specifically, how do they
-manage pests? What products do they use to maintain the land?", "If they use potentially unsafe methods for your community, voice your
+            :instructions => ["Speak up: ask your workplace, campus, or wherever you spend time in your
+day about what they use to manage their land. Specifically, how do they manage pests? What products do they use to maintain the land?", "If they use potentially unsafe methods for your community, voice your
 disapproval; explain to them why; and propose alternatives."],
             :metric_question => "How many people did you reach out to ask about their land management practices?",
 :metric_verb => "You asked ",
@@ -693,8 +695,7 @@ disapproval; explain to them why; and propose alternatives."],
       Fashion: {
         :videoCaption => "What is fast fashion (in under 5 minutes)?",
         :videoID => "fR7bXsoNwwE",
-        :briefDescription => "We live in a world of fast fashion where low prices often mean worker exploitation
-        and cheap quality. Have you ever thought about how the price of your clothes translate to how your
+        :briefDescription => "We live in a world of fast fashion where low prices often mean worker exploitation and cheap quality. Have you ever thought about how the price of your clothes translate to how your
         clothes were made?",
         :instruction => "Okay, here's the plan. You've watched <a target=\"_blank\" href=\"https://www.youtube.com/watch?v=fR7bXsoNwwE\">\"What is fast fashion?\"</a>. Now it's time to DO: choose 1-2 challenges below, learn, and act!",
 	:challenges => [
@@ -702,13 +703,13 @@ disapproval; explain to them why; and propose alternatives."],
             :name => "Know your clothes",
             :type => "pre",
             :question => "What does it take to make new clothes?",
-            :description => "<a target=\"_blank\" href=\"https://www.thereformation.com/pages/impact-of-fashion\">LOTS of resources</a> (water, dyes, materials, fuel + more). Particularly for <a target=\"_blank\" href=\"https://goodonyou.eco/what-is-fast-fashion/ \">fast fashion</a>, low cost labor is <a target=\"_blank\" href=\"https://truecostmovie.com/learn-more/human-rights/\">exploited</a> abroad to drive profits. The typical <a target=\"_blank\" href=\"http://mistrafuturefashion.com/sustainable-fashion/\">non-circular lifespan</a> of clothes worsens fashion's impact; most clothes aren't reused and properly <a target=\"_blank\" href=\"https://borgenproject.org/the-international-impact-of-donated-clothing/ \">donated</a>, ending up in landfills + oceans.",
+            :description => "<a target=\"_blank\" href=\"https://www.thereformation.com/pages/impact-of-fashion\">LOTS of resources</a> (water, dyes, materials, fuel + more). Particularly for <a target=\"_blank\" href=\"https://goodonyou.eco/what-is-fast-fashion/ \">fast fashion</a>, low cost labor is <a target=\"_blank\" href=\"https://truecostmovie.com/learn-more/human-rights/\">exploited</a> abroad to drive profits. The typical <a target=\"_blank\" href=\"http://mistrafuturefashion.com/sustainable-fashion/\">non-circular lifespan</a> of clothes worsens <a target=\"_blank\" href=\"https://www.youtube.com/watch?v=3iKHr-JnWYA\">fashion's impact</a>; most clothes aren't reused and properly <a target=\"_blank\" href=\"https://borgenproject.org/the-international-impact-of-donated-clothing/ \">donated</a>, ending up in landfills + oceans.",
             :links => {
               "Fashion Revolution Manifesto" => 'https://www.fashionrevolution.org/manifesto/',
               '6 fake facts about the clothing industry' => 'https://goodonyou.eco/6-fake-facts-about-the-fashion-industry/',
               'What you can do right now (list)' => 'https://www.greenamerica.org/what-can-i-do-make-my-clothes-more-sustainable'},
 	    :background => "There's more to the clothing industry than you may see and think.",
-            :instructions => ["Read about what's up with the clothing industry in the 'Wanna learn more?' section", "Share what you learned with (at least) 3 people"],
+            :instructions => ["Take this <a target=\"_blank\" href=\"https://www.thredup.com/fashionfootprint\">fashion footprint quiz</a>", "Read about <a target=\"_blank\" href=\"https://www.thredup.com/bg/p/fashion-footprint-sources\">the sources for the quiz</a> you just took", "See what's up with the clothing industry in the 'Wanna learn more?' section", "Share what you learned with (at least) 3 people"],
             :metric_question => "",
 :metric_verb => "N/A",
 :metric_unit => "",
@@ -834,13 +835,13 @@ your mindset towards investing in a quality; reduce the cost per wear",
           {
             :name => "Audit your products",
             :type => "pre",
-            :question => "Why do the cleaning products used around you matter?",
-            :description => "Cleaning products emit chemicals that is breathed into the body, and the skin absorbs about 60% of what it touches. So, know exactly what you're introducing into your environment. Do your research for safe cleaning products (watch out for greenwashing though!), so you can create a safer environment in your home and workplace.",
+            :question => "Why do cleaning products matter?",
+            :description => "You can't create a safe space if you don't know what's used to clean your environment. All those sprays, wipes, cleaning solutions, powders -- we breathe them in. Respect yourself + others, and make room for safe healthy products in your environment.",
             :links => {
-              'How to avoid greenwashing (guide) [for food, but applies to cleaning too]' => 'https://foodrevolution.org/blog/how-to-avoid-greenwashing/',
-              'What do all these cleaning labels mean? (info)' => 'https://www.ewg.org/guides/cleaners/content/decoding_labels'
+              'Avoid greenwashing (guide) [for food, but applies to cleaning too]' => 'https://foodrevolution.org/blog/how-to-avoid-greenwashing/',
+              'What do all these cleaning labels mean?' => 'https://www.ewg.org/guides/cleaners/content/decoding_labels'
             },
-            :instructions => ["Read the ingredient list of all the cleaning products you use in your home.", "If you don't know what an ingredient is or its health rating, look it up in the <a target=\"_blank\" href=\"https://www.ewg.org/guides/cleaners\">Environmental Working Group's database</a>."],
+            :instructions => ["Read the ingredient list of all the cleaning products you use in your home", "If you don't know what an ingredient is or its health rating, look it up in <a target=\"_blank\" href=\"https://www.ewg.org/guides/cleaners\">this database</a>."],
             :metric_question => "",
 :metric_verb => "N/A",
 :metric_unit => "",
@@ -851,13 +852,13 @@ your mindset towards investing in a quality; reduce the cost per wear",
             :name => "DIY cleaning products",
             :type => "self",
             :question => "Why should I make my own?",
-            :description => "Many conventional cleaning brands use toxic ingredients. \"Natural\" store-bought cleaners aren't necessarily safer though (check <a target=\"_blank\" href=\"https://www.ewg.org/guides/cleaners\">here</a>). Sometimes, safer products cost 2x conventional ones, making them inaccessible. By making your own, you choose the ingredients and know exactly what you're introducing to your home.",
+            :description => "You'll know exactly what you're introducing to your home, cause you're choosing the ingredients. Skip the aisles of conventional cleaning brands filled with toxins; the 'natural' cleaners that <a target=\"_blank\" href=\"https://www.ewg.org/guides/cleaners\">aren't necessarily safer</a>; and the safer ones that cost too much.",
             :links => {
-              'How to clean green? (list)' => 'https://www.greenamerica.org/waystocleangreen',
-              'How do cleaners harm your health? (info)' => 'https://dontmesswithmama.com/7-toxic-household-cleaners-avoid-problem-natural-store-bought-cleaners/',
-              '5 safer cleaning products (recipes)' => 'https://www.thegoodtrade.com/features/diy-non-toxic-cleaning-products'
+	      'Tips on cleaning green' => 'https://www.greenamerica.org/waystocleangreen',
+              '7 cleaners to avoid' => 'https://dontmesswithmama.com/7-toxic-household-cleaners-avoid-problem-natural-store-bought-cleaners/',
+              'Recipes for making your own' => 'https://www.thegoodtrade.com/features/diy-non-toxic-cleaning-products'
             },
-            :instructions => ["Make a cleaning solution that you will use often (e.g. all-purpose cleaner, degreaser). Refer to resources to get started.", "Once you've made it, go clean something with it!"],
+            :instructions => ["Choose a cleaning product you use often (e.g. all-purpose cleaner, degreaser)", "And go make your own! Stop by the 'Wanna learn more?' section if you need help getting started", "Once you've made it, get cleaning!"],
             :metric_question => "How many cleaning solutions did you make?",
 :metric_verb => "You made ",
 :metric_unit => " homemade safe cleaning solutions!",
@@ -867,16 +868,15 @@ your mindset towards investing in a quality; reduce the cost per wear",
           {
             :name => "Opt for safe cleaning",
             :type => "self",
-            :question => "Why does shopping for alternatives matter?",
-            :description => "There are many cleaning products that don't prioritize people's health. By shopping intentionally, you will help shift the demand for safer cleaning products and send the signal to the cleaning product industry that we want safe, non-toxic products on the market. ",
+            :question => "What's the big deal?",
+            :description => "There are <a target=\"_blank\" href=\"https://dontmesswithmama.com/7-toxic-household-cleaners-avoid-problem-natural-store-bought-cleaners/\">many cleaning products that don't prioritize people's health</a>. By <a target=\"_blank\" href=\"https://www.madesafe.org/safer-cleaning-products/\">shopping intentionally</a>, you're demanding for safe cleaning products in the market. We have a right to health, so stand up for it through your actions.",
             :links => {
-              'How to find safer cleaning products (guide)' => 'https://www.madesafe.org/safer-cleaning-products/',
-              'How do cleaners harm you health? (info)' => 'https://dontmesswithmama.com/7-toxic-household-cleaners-avoid-problem-natural-store-bought-cleaners/',
-              "We're not perfect, but it's okay (inspiration)" => 'https://www.lisabronner.com/falling-off-the-green-machine/',
-              'Disinfectants 101 (info)' => 'https://www.womensvoices.org/safe-cleaning-products/disinfectant-overkill/disinfectants-fact-sheet/'
+	      "We're not perfect, but it's okay (inspiration)" => 'https://www.lisabronner.com/falling-off-the-green-machine/',
+	      'Disinfectants 101' => 'https://www.womensvoices.org/safe-cleaning-products/disinfectant-overkill/disinfectants-fact-sheet/',
+              'Soap nuts 101' => 'https://econutssoap.com/what-are-soap-nuts/'
             },
-            :background => "When you're done using your cleaning products:",
-            :instructions => ["Find safer alternatives within your budget (be careful of <a target=\"_blank\" href=\"https://www.google.com/url?q=https://7billionfor7seas.com/greenwashed-cleaning/\">greenwashing</a>!)", "Purchase them", "And use them!"],
+            :background => "When you're ready to shop for your cleaning products:",
+            :instructions => ["Find safer cleaning alternatives that are within your budget. Be careful of <a target=\"_blank\" href=\"https://7billionfor7seas.com/greenwashed-cleaning/\">greenwashing</a>!", "Buy them", "And use them!"],
             :metric_question => "How many safer alternative cleaning solutions did you purchase?",
 :metric_verb => "You bought ",
 :metric_unit => " safer alternative cleaning solutions!",
@@ -887,11 +887,11 @@ your mindset towards investing in a quality; reduce the cost per wear",
             :name => "Give feedback",
             :type => "community",
             :question => "Why does feedback matter?",
-            :description => "It is hard to change when we don't know what and how we can improve. Same goes for companies. They can't better serve us, their customers, when they don't know what we desire. Don't let companies decide what you need; tell them what you want.",
+            :description => "It is hard to change when we don't know what + how we can improve. Same goes for companies. They can't better serve us, their customers, when they don't know what we desire. Don't let companies decide what you need. Tell them what you want.",
             :links => {
-              'A group of individuals can influence (info)' => 'https://www.results-project.org/safe-cleaning-products-initiative/'
+              'The power of speaking up' => 'https://www.results-project.org/safe-cleaning-products-initiative/'
             },
-            :instructions => ["Reach out to conventional brands that you’ve purchased from. (e.g. email, call)", "Tell them a) why you don’t support their products anymore, b) what you would like them to change, and c) anything else you’d like them to know. Be polite but firm.", "Get at least 2 peers to take this challenge too."],
+            :instructions => ["Reach out to brands that you’ve purchased from (e.g. email, call)", "Tell them <strong>a)</strong> why you like their products or don't like their products anymore, <strong>b)</strong> how they can improve for you, and <strong>c)</strong> anything else you’d like them to know", "Don't do it alone: get at least 2 peers to take this challenge too!"],
             :metric_question => "How many people did you engage to send a note to a brand rep?",
 :metric_verb => "You engaged ",
 :metric_unit => " people to send a note to a brand rep to better their company practices!",
@@ -901,16 +901,15 @@ your mindset towards investing in a quality; reduce the cost per wear",
           {
             :name => "Go plastic-free reusable",
             :type => "self",
-            :question => "What's the problem with single-use and plastic?",
-            :description => "Single-use items and <a target=\"_blank\" href=\"http://apps.npr.org/plastics-recycling/?utm_medium=social&utm_source=facebook.com&utm_term=nprnews&utm_campaign=npr\">plastic</a> contribute to ocean <a target=\"_blank\" href=\"https://www.plasticpollutioncoalition.org/the-facts\">plastic pollution</a>, waste accumulation, and climate change exacerbation. So, do the opposite. With reusables and plastic-free cleaning products and equipment, there's less trash, so we minimize our contribution to climate change. ",
+            :question => "What's the problem with single-use + plastic?",
+            :description => "<a target=\"_blank\" href=\"http://apps.npr.org/plastics-recycling/?utm_medium=social&utm_source=facebook.com&utm_term=nprnews&utm_campaign=npr\">Single-use items + plastic</a> contribute to ocean <a target=\"_blank\" href=\"https://www.plasticpollutioncoalition.org/the-facts\">plastic pollution + waste accumulation</a>, which worsens climate change. So, do the opposite. Reusables + plastic-free produces less trash and reduce carbon emissions. Claim space for the environment to do its thing!",
             :links => {
-              "What are zero waste cleaning supplies? [scroll down] (list)" => 'https://www.goingzerowaste.com/31-day-challenge/zero-waste-cleaning-day-9-of-the-zero-waste-challenge',
-              'Zero Waste Toilet Cleaning' => 'https://trashisfortossers.com/cleaning-toilet-naturally/',
-              'More zero waste cleaning products (list)' => 'https://packagefreeshop.com/collections/cleaning-under-20'
+              "Zero waste cleaning supplies [you'll have to scroll down] (list)" => 'https://www.goingzerowaste.com/31-day-challenge/zero-waste-cleaning-day-9-of-the-zero-waste-challenge',
+              'Zero waste toilet cleaning' => 'https://trashisfortossers.com/cleaning-toilet-naturally/',
+              'Zero waste cleaning products (list)' => 'https://packagefreeshop.com/collections/cleaning-under-20'
             },
-            :background => "This challenge is for when your current cleaning tools have reached the end of their life.",
-            :instructions => ["Repurpose old t-shirts into cleaning rags.", "For cleaning tasks that can't be accomplished with a rag (e.g. scrubbing, protection), get
-reusable non-plastic tools made of plant-based materials (e.g. bamboo, wood, natural rubber)."],
+            :background => "When your current cleaning tools have reached the end of their life:",
+            :instructions => ["Repurpose old t-shirts into cleaning rags", "For cleaning tasks that can't be accomplished with a rag (e.g. scrubbing, protection), get reusable non-plastic tools made of plant-based materials (e.g. bamboo, wood, natural rubber)"],
             :metric_question => "How many reusable and plastic-free cleaning tools did you get/make?",
 :metric_verb => "You got/made ",
 :metric_unit => " reusable and plastic-free cleaning tools!",
@@ -921,12 +920,12 @@ reusable non-plastic tools made of plant-based materials (e.g. bamboo, wood, nat
             :name => "Host a cleaning party",
             :type => "friends",
             :question => "Why?",
-            :description => "It's more effective to change people's habits when they experience the benefits themselves. Cleaning generally has a bad reputation, so let's change it. Bring the safe cleaning solution(s) + equipment and what you've learned to others' homes. You learn by doing, so prove to your community that cleaning can be simple, fun, and safe.",
+            :description => "Tap into people's emotions. When they experience the benefits themselves, they become invested, which is what we're aiming for. Show your community that cleaning can be simple, fun, and safe.",
             :links => {
-              'Health score ratings for cleaning products' => 'https://www.ewg.org/guides/cleaners',
-              'Safe cleaning tips' => 'http://static.ewg.org/files/2009/10/school-cleaners/home-tip-sheet.pdf'
+              'Health ratings for cleaning products' => 'https://www.ewg.org/guides/cleaners',
+              'Tips to clean safely (list)' => 'http://static.ewg.org/files/2009/10/school-cleaners/home-tip-sheet.pdf'
             },
-            :instructions => ["Get together with your friends and family and clean their homes together (with safe cleaning products, of course)!", "Teach them what you learned about conventional cleaning products and safer alternatives."],
+            :instructions => ["Bring the safe cleaning solution(s) + equipment", "Get together with your friends + fam & clean their homes together", "Share what you learned about conventional cleaning products + safer alternatives"],
             :metric_question => "How many people did you teach about safe cleaning products?",
 :metric_verb => "You taught ",
 :metric_unit => " people about safe cleaning products!",
@@ -937,14 +936,15 @@ reusable non-plastic tools made of plant-based materials (e.g. bamboo, wood, nat
             :name => "Push for safer cleaning",
             :type => "community",
             :question => "How can I change my community's cleaning practices? ",
-            :description => "The safety of cleaning products isn't something people talk about. But you know more now, so share that knowledge, especially with people who have decision-making power. They impact larger groups of people, so let's work with them to create safer home and workplace environments.",
+            :description => "The safety of cleaning products isn't something people usually talk about. But you know more now, so share that knowledge, especially with people who have decision-making power. They impact larger groups of people, so work with them to create safer spaces.",
             :links => {
-              'Why does green cleaning matter? (info)' => 'https://healthyschoolscampaign.org/programs/green-clean-schools/',
-              'Actionable steps to demand gov change (list)' => 'https://www.womensvoices.org/take-action/',
-              'How to make the switch in schools (guide)' => 'https://greencleanschools.org/resources/steps/'
+              'Why green cleaning matters' => 'https://healthyschoolscampaign.org/programs/green-clean-schools/',
+              'Actions to demand gov change (list)' => 'https://www.womensvoices.org/take-action/',
+              'Making the switch in schools (guide)' => 'https://greencleanschools.org/resources/steps/'
             },
-            :background => "Raise awareness about this topic in your community. Here are some ideas:",
-            :instructions => ["Persuade the person in charge of purchasing the cleaning products at your home or workplace (e.g. office manager, school cleaning director) to switch to safe cleaning products.", "Make posters and/or send emails to inform the community about buying and using safer cleaning products, why it matters, and how it affects them.", "Host a (mini) workshop teaching other people what you've learned."],
+            :background => "Be loud, and raise awareness about this topic in your community! Here are ways to get started:",
+            :instructions => ["Persuade the person in charge of purchasing the cleaning products at your home or workplace (e.g. office manager, school cleaning director) to switch to safe cleaning products", "Make posters and/or send emails to inform the community about buying and using safer cleaning products, why it matters, and how it affects them", "Host a (mini) workshop teaching other people what you've learned"],
+	    :alt_instructions => ["The goal is to engage your community!"],
             :metric_question => "How many people did you talk to about this topic?",
 :metric_verb => "You talked to ",
 :metric_unit => " people about purchasing safer cleaning products!",
@@ -964,14 +964,14 @@ reusable non-plastic tools made of plant-based materials (e.g. bamboo, wood, nat
             :name => "Declutter your space",
             :type => "pre",
             :question => "What's in your home?",
-            :description => "When we have large empty spaces, it is easy to fill it up with things that don't add much value to our lives. In fact, a <a target=\"_blank\" href=\"https://onlinelibrary.wiley.com/doi/abs/10.1111/jiec.12371\">study</a> published in the Journal of Industrial Ecology found that our household consumption accounts for 60% of global greenhouse gases.",
+            :description => "It is easy to fill up large empty spaces with things that don't add much value to our lives. In fact, <a target=\"_blank\" href=\"https://onlinelibrary.wiley.com/doi/abs/10.1111/jiec.12371\">a published study</a> found that household consumption accounts for 60%(!) of global greenhouse gases.",
             :links => {
-              "What's in that? (info)" => 'https://www.madesafe.org/education/whats-in-that/',
-              'Decluttering cheat sheet (list)' => 'https://docs.wixstatic.com/ugd/26357d_637653be3c234bca8b7f1dab3e244a28.pdf',
-              'What toxins are there in a home? (list)' => 'https://www.ewg.org/healthyhomeguide/',
-              'How to detox your home? (list)' => 'https://www.madesafe.org/education/whats-in-that/home-detox/'
+              "What's in your stuff?" => 'https://www.madesafe.org/education/whats-in-that/',
+              '30 days to minimalism (guide)' => 'https://docs.wixstatic.com/ugd/26357d_637653be3c234bca8b7f1dab3e244a28.pdf',
+              'What toxins are your home?' => 'https://www.ewg.org/healthyhomeguide/',
+              'Where to detox your home' => 'https://www.madesafe.org/education/whats-in-that/home-detox/'
             },
-            :instructions => ["Watch <a target=\"_blank\" href=\"https://www.youtube.com/watch?v=SL0Mv0apjT8\">this video</a> until minute 3.", "Clean out your space. Keep what you need and use, and group the stuff that you don't."],
+            :instructions => ["<a target=\"_blank\" href=\"https://www.youtube.com/watch?v=SL0Mv0apjT8\">Watch this </a> until minute 3", "Clean out your space. Keep what you need and use. Group the stuff that you don't", "Refer to the 'Wanna learn more' section for tips to get started"],
             :metric_question => "",
 :metric_verb => "N/A",
 :metric_unit => "",
@@ -982,13 +982,13 @@ reusable non-plastic tools made of plant-based materials (e.g. bamboo, wood, nat
             :name => "Freshen the air",
             :type => "self",
             :question => "What's there to freshen?",
-            :description => "Your health is largely impacted by what you eat, what you drink, and what you breathe. Indoor air + dust can contain <a target=\"_blank\" href=\"https://www.ewg.org/enviroblog/2008/05/cheatsheet-volatile-organic-compounds\">volatile organic compounds</a>, <a target=\"_blank\" href=\"https://www.madesafe.org/flame-retardants/\">flame retardants</a>, <a target=\"_blank\" href=\"http://www.panna.org/pesticides-big-picture/pesticides-101\">pesticides</a>, toxic metals, among other pollutants that enter your bloodstream with each breath. Plants can take in pollutants from the air and incorporate them into their tissues, which purifies the air you breathe.",
+            :description => "With every breath, you could be intaking <a target=\"_blank\" href=\"https://www.ewg.org/enviroblog/2008/05/cheatsheet-volatile-organic-compounds\">volatile organic compounds</a>, <a target=\"_blank\" href=\"https://www.madesafe.org/flame-retardants/\">flame retardants</a>, <a target=\"_blank\" href=\"http://www.panna.org/pesticides-big-picture/pesticides-101\">pesticides</a>, among other pollutants from indoor air + dust. Plants are the real MVPs cause they can intake those pollutants, purifying the air you breathe.",
             :links => {
-              "Best indoor plants for air filtering (list)" => 'https://thebestorganiclifestyle.com/houseplants-best-indoor-air-filters',
-              'How to naturally improve indoor air quality (info)' => 'https://draxe.com/indoor-air-quality-natural-solutions/',
-              'What more can I do to remove odor? (guide)' => 'https://www.womensvoices.org/fragrance-ingredients/alternatives/'
+              "Best indoor air filtering plants" => 'https://thebestorganiclifestyle.com/houseplants-best-indoor-air-filters',
+              'Solutions to improve indoor air' => 'https://draxe.com/indoor-air-quality-natural-solutions/',
+              'Guide for smells in the house' => 'https://www.womensvoices.org/fragrance-ingredients/alternatives/'
             },
-            :instructions => ["Bring in at least 2 different indoor plants into your home.", "If you don't live in a too polluted area, open your windows to let some fresh air in once in a while too."],
+            :instructions => ["Bring (at least) 2 indoor plants into your home", "If you don't live in a too polluted area, open your windows to let fresh air in once in a while"], 
             :metric_question => "How many plants did you bring into your home?",
 :metric_verb => "You brought in ",
 :metric_unit => " plants into your home to improve air quality!",
@@ -999,11 +999,13 @@ reusable non-plastic tools made of plant-based materials (e.g. bamboo, wood, nat
             :name => "Conserve energy",
             :type => "self",
             :question => "Why bother?",
-            :description => "Simple changes in habits reduce your carbon footprint + save you money from utility bills. More importantly, they make you more mindful. Just the thought of turning off the lights, unplugging unused appliances, and setting the thermostat to a reasonable temperature signifies your awareness of the environmental impact of your daily actions.",
+            :description => "Simple habit changes <a target=\"_blank\" href=\"https://www.ewg.org/healthyhomeguide/energy-efficiency/\">reduce carbon footprints + save money from utility bills</a>. More importantly, you become more mindful. The simple thought of turning things off, unplugging, and renovating better builds your awareness of the environmental impact of your daily actions.",
             :links => {
-              'How can I conserve energy? (guide)' => 'https://www.ewg.org/healthyhomeguide/energy-efficiency/'
+              'Conserving energy' => 'https://www.ewg.org/healthyhomeguide/energy-efficiency/',
+	      'The right kind of home insulation (guide)' => 'https://www.ewg.org/healthyhomeguide/insulation/',
+	      'Save energy costs w/ smart thermostats' => "https://www.drawdown.org/solutions/buildings-and-cities/smart-thermostats"
             },
-            :instructions => ["Turn off the lights if you're not in the room for >15 minutes.", "Unplug unused devices and appliances.", "Set your thermostat to a reasonable temperature (e.g. 68F/20C in winter, 78F/26C in summer).", "Use cold water to do laundry.", "Wash clothes when you have a full load."],
+            :instructions => ["<a target=\"_blank\" href=\"https://www.ewg.org/healthyhomeguide/lights/\">Swap out old lightbulbs with LEDs</a>", "Unplug unused devices + appliances", "Set your thermostat to a reasonable temperature (e.g. 68F/20C in winter, 78F/26C in summer)", "Use cold water to do laundry", "<a target=\"_blank\" href=\"https://www.drawdown.org/solutions/buildings-and-cities/insulation\">Invest in quality insulation</a> for your home"], 
             :metric_question => "Estimate the number of times you took action to save energy.",
 :metric_verb => "You took about",
 :metric_unit => " actions to save energy!",
@@ -1014,15 +1016,15 @@ reusable non-plastic tools made of plant-based materials (e.g. bamboo, wood, nat
             :name => "Swap out plastic",
             :type => "self",
             :question => "Why is plastic a problem?",
-            :description => "When <a target=\"_blank\" href=\"https://www.madesafe.org/education/whats-in-that/plastics/\">plastic</a> touches the food we eat (think: to-go containers + utensils),  the petroleum-based chemicals of plastic can leach into our bodies. When these <a target=\"_blank\" href=\"http://apps.npr.org/plastics-recycling/?utm_medium=social&utm_source=facebook.com&utm_term=nprnews&utm_campaign=npr\">plastics are trashed</a>, many end up in the ocean. Plastic doesn't biodegrade on land or in water, so they're just there for 100s to 1000s of years. In the ocean, fish mistake these plastics for food, which is how plastic makes its way up the food chain into the food we eat.",
+            :description => "The carcinogenic petroleum-based chemicals in plastic can leach into our bodies. When <a target=\"_blank\" href=\"http://apps.npr.org/plastics-recycling/?utm_medium=social&utm_source=facebook.com&utm_term=nprnews&utm_campaign=npr\">trashed</a>, many end up in oceans. <a target=\"_blank\" href=\"https://www.plasticpollutioncoalition.org/the-facts\">Plastic also doesn't biodegrade</a>, so they're just there for 1000s of years. In the ocean, fish mistake them for food, allowing for plastic make its way up into the food we eat.",
             :links => {
               'Zero waste swaps (list)' => 'https://www.goingzerowaste.com/blog/the-ultimate-list-of-zero-waste-swaps',
-              'Why tackle plastic straws? (info)' => 'https://www.strawlessocean.org/faq/',
-              'How to freeze food without plastic (guide)' => 'https://zerowastechef.com/2016/01/06/how-to-freeze-food-without-using-plastic/',
-              'Plastic Service Announcement (info)' => 'https://www.hydratelike.org/',
-              'Why is plastic a problem?' => 'https://www.plasticpollutioncoalition.org/the-facts'
+              'Why tackle plastic straws' => 'https://www.strawlessocean.org/faq/',
+              'Freezing food without plastic (guide)' => 'https://zerowastechef.com/2016/01/06/how-to-freeze-food-without-using-plastic/',
+              'Plastic Service Announcement' => 'https://www.hydratelike.org/',
+	      "What's in dental floss?" => 'https://www.madesafe.org/education/whats-in-that/dental-floss/'
             },
-            :instructions => ["Find environmentally sustainable alternatives to the plastic products you use. Reusable is ideal, but if reusable isn't a viable option, aim for compostable and biodegradable.", "When the life of your plastic product comes to an end, purchase the alternative you found instead."],
+            :instructions => ["Find environmentally responsible alternatives to the plastic products you use", "Reusable is ideal, but if reusable isn't a viable option, aim for compostable and biodegradable", "When the life of your plastic product comes to an end, purchase the alternative you found instead"],
             :metric_question => "How many zero waste swaps did you make?",
 :metric_verb => "You made ",
 :metric_unit => " zero waste swaps!",
@@ -1033,12 +1035,13 @@ reusable non-plastic tools made of plant-based materials (e.g. bamboo, wood, nat
             :name => "Detox your bed",
             :type => "friends",
             :question => "How does my bed relate to health?",
-            :description => "You spend a 1/3 of your life sleeping. This is time for your body to heal + repair itself. However, your sleeping environment can inhibit this healing process if it's made of materials that are harmful to your health. For example, foam, polyester, and adhesives are <a target=\"_blank\" href=\"http://endocrinedisruption.org/interactive-tools/endocrine-basics\">endocrine disruptors</a> and carcinogens commonly found in bedding.",
+            :description => "You spend a 1/3(!) of your life sleeping. This is time for your body to heal + repair itself, but that's hard to do if your sleep environment is made of toxic materials, like foam, polyester, and adhesives, known <a target=\"_blank\" href=\"http://endocrinedisruption.org/interactive-tools/endocrine-basics\">endocrine disruptors</a> + carcinogens commonly found in bedding.",
             :links => {
-              "What's in your bedding? (info)" => 'https://www.madesafe.org/education/detox-your-sleep/',
-              "What's a healthy mattress? (guide)" => 'https://www.ewg.org/healthyhomeguide/mattresses/'
+              "What's in your bedding?" => 'https://www.madesafe.org/education/detox-your-sleep/',
+              "Healthy mattress guide" => 'https://www.ewg.org/healthyhomeguide/mattresses/'
             },
-            :instructions => ["Find bedding that is made of sustainably sourced materials: pillow, pillow cover, mattress, blanket, mattress cover, bedspread.", "If you are in need of new bedding and are able to invest, purchase sustainably made and safe bedding.", "Share what you learned with at least 3 other people."],
+            :instructions => ["Find bedding that is made of sustainably sourced materials: pillow, pillow cover, mattress, blanket, mattress cover, bedspread", "Share what you learned with at least 3 other people"],
+	    :alt_instructions => ["If you're in need of new bedding & can afford, purchase sustainably made + safe bedding"],
             :metric_question => "How many people did you share what you learned with?",
 :metric_verb => "You shared with ",
 :metric_unit => " people what you learned about healthy bedding!",
@@ -1049,13 +1052,12 @@ reusable non-plastic tools made of plant-based materials (e.g. bamboo, wood, nat
             :name => "Show off your home",
             :type => "friends",
             :question => "Why should I share my home?",
-            :description => "Making changes in our lives is more rewarding when we can share the progress we have made. This is why we ask you to show off your living space, and talk about what you have learned and done with other people. Who knows, your actions might end up inspiring others to make similar changes in their lives. It happens!",
+            :description => "Changing our lives is more rewarding when we share, because others see what we have accomplished. Who knows, your actions might inspire others to make similar changes in their lives. It happens!",
             :links => {
-              'Recipes to entertain your guests (list)' => 'https://www.drfuhrman.com/recipes/collections/70/festive-entertaining',
-              'Recipes for "fun" finger foods (list)' => 'https://www.drfuhrman.com/recipes/collections/101/fun-finger-foods'
+              'Recipes for entertaining your guests' => 'https://www.drfuhrman.com/recipes/collections/70/festive-entertaining',
+              'Finger foods recipes' => 'https://www.drfuhrman.com/recipes/collections/101/fun-finger-foods'
             },
-            :instructions => ["Host a house party at whatever scale you are comfortable with. Invite at least 3 people (who don't already live with you).", "Show them the
-changes you've made in your home and teach them the things you have learned.", "It wouldn't be as fun a party without food. Prep some FLOSN foods and enjoy your time together!"],
+            :instructions => ["Host a house party at whatever scale you are comfortable with", "Invite (at least) 3 people (who don't already live with you)", "Show off the changes you've made in your home & share the things you have learned!", "It wouldn't be as fun a party without food. Prep some FLOSN foods and enjoy your time together!"],
             :extra => "*FLOSN = fresh, local, organic, seasonal, non-GMO",
             :metric_question => "How many people came to your house party?",
 :metric_verb => "",
@@ -1067,14 +1069,13 @@ changes you've made in your home and teach them the things you have learned.", "
             :name => "Curate a healthy home",
             :type => "friends",
             :question => "What pollutants could be in your home?",
-            :description => "Every person intakes millions of air particles into their bodies per breath. So, that raises the question: what are you breathing in? Did you know indoor air can be <a target=\"_blank\" href=\" https://www.ewg.org/healthyhomeguide/\">2-5x</a> more polluted than air outside?  Pollutants come from the things in your living space, like building products, <a target=\"_blank\" href=\"https://thebestorganiclifestyle.com/non-toxic-area-rugs-for-your-home\">carpet</a>, and paint. It's important to ask if pollutants like lead, flame retardants, or PVC are in the space you live in.",
+            :description => "People intake MILLIONS of air particles with every breath. Did you know indoor air can be <a target=\"_blank\" href=\" https://www.ewg.org/healthyhomeguide/\">2-5x more polluted than air outside</a>?  Pollutants (like lead, flame retardants, and PVC) come from the things in your living space, like building products, <a target=\"_blank\" href=\"https://thebestorganiclifestyle.com/non-toxic-area-rugs-for-your-home\">carpet</a>, and paint.",
             :links => {
-              'Swap out the toxics (list)' => 'https://www.greenamerica.org/your-home-detoxed/swap-out-toxics-green-your-home',
-              'How do air filters impact your health? (guide)' => 'https://www.ewg.org/healthyhomeguide/air-filters/',
-              'What is safe cookware? (guide)' => 'https://gimmethegoodstuff.org/safe-product-guides/cookware/'
+              'Healthy home swaps' => 'https://www.greenamerica.org/your-home-detoxed/swap-out-toxics-green-your-home',
+              'Air filter guide' => 'https://www.ewg.org/healthyhomeguide/air-filters/',
+              'Safe cookware guide' => 'https://gimmethegoodstuff.org/safe-product-guides/cookware/'
             },
-            :background => "his challenge is for when you're in need of purchasing a new houseware or furniture. It would be wasteful to toss away things that are still functional.",
-            :instructions => ["Purchase houseware and furniture made of safe materials.", "Share with at least 3 people what you learned."],
+            :instructions => ["Research to find houseware + furniture made of safe materials", "Keep teaching: share with (at least) 3 people what you learned", "If you find an incredible brand & are happy with a purchase, be sure to send a compliment their way for valuing quality + people's safety. It's important we uplift those doing good work!"],
             :metric_question => "How many houseware + furniture made of low-impact materials did you purchase?",
 :metric_verb => "You bought ",
 :metric_unit => " houseware + furniture made of low-impact materials!",
@@ -1093,14 +1094,14 @@ changes you've made in your home and teach them the things you have learned.", "
           {
             :name => "Evaluate your health",
             :type => "pre",
-            :question => "Why does self-care matter?",
-            :description => "You're the best you in the entire universe. However, you can only <a target=\"_blank\" href=\"https://80000hours.org/career-guide/how-to-be-successful/\">be your best</a> if you're mentally, physically, and spiritually healthy. What good can you do or fun can you have if you're not feeling your tip top?",
+            :question => "How is self-care related to climate action?",
+            :description => "What good can you do or fun can you have if you're not feeling your tip top? You can <a target=\"_blank\" href=\"https://80000hours.org/career-guide/how-to-be-successful/\">only be your best</a> if you're mentally, physically, and spiritually healthy.",
             :links => {
-              'Ask yourself these 12 questions (list)' => 'https://medium.com/thrive-global/12-questions-that-will-change-your-life-9d281c1e4704',
-              "This could be why you're depressed + anxious (video)" => 'https://www.ted.com/talks/johann_hari_this_could_be_why_you_re_depressed_or_anxious#t-263872',
-	      '3 questions to ask to get the life you want (list)' => 'https://thoughtcatalog.com/ryan-holiday/2015/04/three-decisions-every-person-needs-to-make-and-make-correctly/'
+              "12 Q's to ask yourself" => 'https://medium.com/thrive-global/12-questions-that-will-change-your-life-9d281c1e4704',
+	      "3 Q's to get the life you want" => 'https://thoughtcatalog.com/ryan-holiday/2015/04/three-decisions-every-person-needs-to-make-and-make-correctly/',
+              "Why you might be depressed + anxious (video)" => 'https://www.ted.com/talks/johann_hari_this_could_be_why_you_re_depressed_or_anxious#t-263872'
 	    },
-            :instructions => ["Evaluate your current mental, physical, and spiritual health. What's good?", "Look at the questions in the resources; honestly answer at least 3 of them and write your answers down on a piece of paper.", "Having answered at least 3 questions, reflect upon how you can make life better for you."],
+            :instructions => ["Evaluate your current mental, physical, and spiritual health. What's good?", "Look at the questions in the 'Wanna learn more?' section. Honestly answer (at least) 3 of Q's & write your answers down on a piece of paper", "Having answered these questions, reflect upon how you can make life better for yourself"],
             :metric_question => "",
 :metric_verb => "N/A",
 :metric_unit => "",
@@ -1110,14 +1111,14 @@ changes you've made in your home and teach them the things you have learned.", "
           {
             :name => "Get enough sleep",
             :type => "self",
-            :question => "Do you get enough sleep?",
+            :question => "Are you getting enough sleep?",
             :description => "You know sleep is important. We never feel great with <a target=\"_blank\" href=\"https://www.hopkinsmedicine.org/health/wellness-and-prevention/the-effects-of-sleep-deprivation\">little sleep</a>. Getting those zzz's improves your mood, strengthens your immune system, boosts your motivation, maintains your memory retention, and makes the day better. ",
             :links => {
-              'Sleep 101 (info)' => 'https://web.stanford.edu/~dement/sleepless.html',
-              '12 steps to improve your sleep (list)' => 'http://healthysleep.med.harvard.edu/healthy/getting/overcoming/tips',
-              'How much sleep do you need? (info)' => 'http://healthysleep.med.harvard.edu/need-sleep/what-can-you-do/assess-needs'
+              'Sleep 101' => 'https://web.stanford.edu/~dement/sleepless.html',
+              '12 ways to improve your sleep' => 'http://healthysleep.med.harvard.edu/healthy/getting/overcoming/tips',
+              'How much sleep do you need?' => 'http://healthysleep.med.harvard.edu/need-sleep/what-can-you-do/assess-needs'
             },
-            :instructions => ["Get at least 7.5 hours of sleep. <a target=\"_blank\" href=\" https://thoughtcatalog.com/ryan-holiday/2015/07/heres-your-productivity-hack-go-the-fck-to-sleep/\">Period.</a>"],
+            :instructions => ["Get at least 7.5 hours of sleep. Period."],
             :metric_question => "How many hours of sleep did you get?",
 :metric_verb => "You slept ",
 :metric_unit => " hours!",
@@ -1127,13 +1128,13 @@ changes you've made in your home and teach them the things you have learned.", "
           {
             :name => "Build your relationships",
             :type => "friends",
-            :question => "What makes relationships so special?",
-            :description => "Life is no fun without friends or family. It’s important we have our community of people who we can talk to anytime, joke around with, support and get support, and just be our authentic selves. These relationships don’t just come to you on a platter though. You gotta put in effort and time to build, maintain, and strengthen those relationships.",
+            :question => "What makes relationships important?",
+            :description => "Who ever said life is fun without friends and family? Nobody. We all thrive when we have people we can just be our authentic selves with. These relationships don’t just come to you on a platter though. You gotta make an effort + put in time to build, maintain, and strengthen those relationships.",
             :links => {
-              'A clue to leading a healthy and happy life (info)' => 'https://news.harvard.edu/gazette/story/2017/04/over-nearly-80-years-harvard-study-has-been-showing-how-to-live-a-healthy-and-happy-life/',
+              'Leading a healthy + happy life' => 'https://news.harvard.edu/gazette/story/2017/04/over-nearly-80-years-harvard-study-has-been-showing-how-to-live-a-healthy-and-happy-life/',
               "Being too busy for friends won't help you (blog)" => 'https://hbr.org/2017/07/being-too-busy-for-friends-wont-help-your-career'
             },
-            :instructions => ["Reach out to your friends, family, and people you're interested in getting to know.", "Do something together at least 1.5 hours. (e.g. cook a meal + eat it! walk around the neighborhood or hike. play a game or sport.)", "Ask buddy at least 3 questions about themselves; get to genuinely know them!"],
+            :instructions => ["Connect with your friends, family, and people you're interested in getting to know", "Do something together for at least 1.5 hours. (e.g. cook a meal + eat! stroll in the neighborhood or hike. play a game or sport.) Basically, spend time together", "In that time, ask (at least) 3 questions about the other person. Get to genuinely know them!"], 
             :metric_question => "How many people did you spend time with for this challenge?",
 :metric_verb => "You spent time with ",
 :metric_unit => " people for this challenge!",
@@ -1144,13 +1145,11 @@ changes you've made in your home and teach them the things you have learned.", "
             :name => "Exercise",
             :type => "self",
             :question => "Instead of sitting, how about getting up and moving around?",
-            :description => "We have <a target=\"_blank\" href=\"https://www.bbc.com/news/health-50466061?ns_source=facebook&ns_campaign=bbcnews&ns_mchannel=social&ocid=socialflow_facebook\">become sedentary</a> with our conveniences (e.g. chairs, elevators, cars) Here's a reminder of the benefits to exercising: feel more positive, sleep better, ramp up energy levels, maintains memory function, enhances confidence, increases productivity, strengthens immune system, minimizes inflammation, and many more.",
+            :description => "We've <a target=\"_blank\" href=\"https://www.bbc.com/news/health-50466061?ns_source=facebook&ns_campaign=bbcnews&ns_mchannel=social&ocid=socialflow_facebook\">become sedentary</a> with all our conveniences (e.g. chairs, elevators, cars) Remember the benefits of exercise! Feeling more positive, better sleep, ramped up energy levels, enhanced confidence, stronger immune system, <a target=\"_blank\" href=\"https://draxe.com/benefits-of-exercise/\">and SO MUCH more</a>.",
             :links => {
               'Benefits of exercise (list)' => 'https://draxe.com/benefits-of-exercise/'
             },
-            :instructions => ["Get active for at least 30 minutes each day. We don’t care how intense
-this activity is; just don’t sit for 30 minutes straight. Stand, walk
-around, run, swim, bike, stretch, dance, move every part of your body."],
+            :instructions => ["Get active for at least 30 minutes each day", "We don’t care how intense this activity is. Just don’t sit for 30 minutes straight", "Stand, walk around, run, swim, bike, stretch, dance, move every part of your body"],
             :metric_question => "How many hours did you exercise?",
 :metric_verb => "You exercised ",
 :metric_unit => " hours!",
@@ -1161,15 +1160,13 @@ around, run, swim, bike, stretch, dance, move every part of your body."],
             :name => "Take a sugar detox",
             :type => "self",
             :question => "How does sugar relate to wellness?",
-            :description => "The sugar in the foods + drinks we take in add up. Problem is: <a target=\"_blank\" href=\"https://foodbabe.com/the-10-reasons-you-need-a-sugar-detox-right-now/\">consuming too much</a> sugar reduces your energy levels, promotes tooth decay, induces premature aging, causes chronic inflammation, and contributes to other sub-optimal bodily reactions. The solution? Omit the source of the problem: sugar.",
+            :description => "Sugars in the foods + drinks we intake add up. The problem? <a target=\"_blank\" href=\"https://foodbabe.com/the-10-reasons-you-need-a-sugar-detox-right-now/\">Consuming too much sugar</a> reduces energy levels, promotes tooth decay, <a target=\"_blank\" href=\"https://www.drfuhrman.com/elearning/eat-to-live-blog/160/a-mature-view-on-sugar\">induces premature aging</a>, and contributes to MANY other sub-optimal bodily reactions. The solution? Omit the problem: sugar.",
             :links => {
-              'Satisfy your sweet tooth without added sugars (info)' => 'https://www.drfuhrman.com/get-started/eat-to-live-blog/160/a-mature-view-on-sugar',
-              'How to slay sugary cravings (blog)' => 'https://www.doctorklaper.com/sugar',
-              'Sugar alternatives comparisons (info)' => 'https://foodrevolution.org/blog/sugar-substitutes/?utm_campaign=frn19&utm_medium=email&utm_source=email-automated&utm_content=5445&utm_term=existing-email-list&email=&firstname=Friend&lastname='
+              'Sugar 101' => 'https://foodrevolution.org/blog/sugar-substitutes/?utm_campaign=frn19&utm_medium=email&utm_source=email-automated&utm_content=5445&utm_term=existing-email-list&email=&firstname=Friend&lastname=',
+	      'How to slay sugary cravings (blog)' => 'https://www.doctorklaper.com/sugar'
             },
-            :background => "Let's be clear: we aren't telling you, \"Don't eat anything with sugar.\" We simply encourage you to eat less foods with added sugars; substitute them fruits.",
-            :instructions => ["Choose to eat foods with added sugars. (Whole, unprocessed fruit is okay!)", "Check for added sugars by reading the ingredients list on packages.
-Don't make assumptions. If someone else made the food, ask if sugar was added to the dish. If you're unsure, don't eat it for this challenge."],
+            :background => "Let's be clear: we're not saying, \"Don't eat anything with sugar.\" We simply encourage you to eat less foods with added sugars, because we want you to feel better every day.",
+            :instructions => ["Eat foods without added sugars. Whole, unprocessed fruit is okay!", "Check for <a target=\"_blank\" href=\"http://www.eatingwell.com/article/284643/other-names-for-sugar/\">added sugars</a> by reading the ingredients list on packages", "Don't make assumptions. If someone homemade the food, ask if any sugar was added", "If you're ever unsure, just don't eat it for this challenge"],
             :metric_question => "How many times did you refuse something with added sugar?",
 :metric_verb => "You refused something with added sugar ",
 :metric_unit => " times!",
@@ -1180,11 +1177,11 @@ Don't make assumptions. If someone else made the food, ask if sugar was added to
             :name => "Free yourself",
             :type => "self",
             :question => "Why so busy?",
-            :description => "Sometimes we get caught trying to stay busy and please other people; this can be overwhelming. We give you permission to take a break. Take time off from all those responsibilities that really are not that important. Do whatever you want right now (that's within reason); focus on that.",
+            :description => "Sometimes we get caught up staying busy + pleasing others. Days go by without us realizing. No more: we give you permission to take a break. Claim time off from the responsibilities so you can do you.", 
             :links => {
-              'Before you freak out, ask these questions (list)' => 'https://dailystoic.com/before-you-freak-out-ask-these-questions/'
+              "Before you freak out, ask these Q's" => 'https://dailystoic.com/before-you-freak-out-ask-these-questions/'
             },
-            :instructions => ["Do what you want.", "Say 'no' to things you really don't want to do, and either 1) don't do it (if reasonable), or 2) do it later."],
+            :instructions => ["Do what you want", "Say 'no' to things you really don't want to do. Either <strong>1)</strong> don't do it (if reasonable), or <strong>2)</strong> do it later", "Respect your me-time"],
             :metric_question => "How many times did you choose to do something for yourself?",
 :metric_verb => "You chose to do something for yourself ",
 :metric_unit => " times!",
@@ -1195,13 +1192,13 @@ Don't make assumptions. If someone else made the food, ask if sugar was added to
             :name => "Find peace",
             :type => "self",
             :question => "What does it mean to feel peace?",
-            :description => "Hit pause on all the noise and busy-ness in your life. Breathe, spend time with yourself, and evaluate where you are. Let time \"slow\" down for you to process your thoughts so you can appreciate life as it is in the present.",
+            :description => "Hit pause on all the noise + busy-ness in your life. Breathe, spend time with yourself, and evaluate where you are. Let time 'slow' down for you to process your thoughts so you can appreciate life as it is in the present.",
             :links => {
-              'Meditation 101 (info)' => 'https://www.headspace.com/meditation-101/what-is-meditation',
+              'Meditation 101' => 'https://www.headspace.com/meditation-101/what-is-meditation',
               'Waking Up by Sam Harris (app)' => 'https://wakingup.com/',
-              'An intro to yoga (video)' => 'https://www.youtube.com/playlist?list=PLui6Eyny-UzwiUzvhM2BjxThodiRWZ2JR'
+              'Intro to yoga (video)' => 'https://www.youtube.com/playlist?list=PLui6Eyny-UzwiUzvhM2BjxThodiRWZ2JR'
             },
-            :instructions => ["Meditate for at least 10 minutes each day; pay attention to your thoughts and observe them.", "Try out yoga each day for 5-10 minutes.", "Write each day for at least 10 minutes; reflect upon your day, feelings, and thoughts. Just let them flow into words on paper."],
+            :instructions => ["Meditate for at least 10 minutes each day. Pay attention to your thoughts and observe them", "Try out yoga each day for 5-10 minutes", "Write each day for at least 10 minutes. Reflect upon your day, feelings, and thoughts. Just let them flow into words on paper"],
             :metric_question => "How many minutes did you meditate, do yoga, and write?",
 :metric_verb => "You meditated, did yoga, and/or wrote for ",
 :metric_unit => " minutes!",
@@ -1221,11 +1218,11 @@ Don't make assumptions. If someone else made the food, ask if sugar was added to
             :name => "Know your values",
             :type => "pre",
             :question => "Why should you know your values?",
-            :description => "When you leave your comfort zone, you will be challenged. Don't let your external environment stop you from doing what you believe in though. You will discover ways in which the world enables or inhibits you from living your values. However, these moments are simply hidden opportunities for you to be strong and remain true to yourself. You're not alone; we're in it with you!",
+            :description => "You're going to be challenged when you leave your comfort zone, and you're gonna discover ways in which the world enables + inhibits you from living your values. However, these moments are simply hidden opportunities for you to be strong and remain true to yourself.",
             :links => {
-              'Find your community (guide)' => 'https://www.plasticfreejuly.org/get-involved/what-you-can-do/find-your-tribe/'
+              'Find your community' => 'https://www.plasticfreejuly.org/get-involved/what-you-can-do/find-your-tribe/'
             },
-            :instructions => ["Identify your values that you will not compromise.", "Think about how you will constructively respond to an event or person that challenges your values. What will you say and do?"],
+            :instructions => ["Identify your values that you will not compromise", "Think about how you will constructively respond to a person or event that challenges your values. What will you say and do?"],
             :metric_question => "",
 :metric_verb => "N/A",
 :metric_unit => "",
@@ -1236,11 +1233,11 @@ Don't make assumptions. If someone else made the food, ask if sugar was added to
             :name => "Go outdoors",
             :type => "self",
             :question => "Why get outside?",
-            :description => "People in the U.S. spend <a target=\"_blank\" href=\"https://www.epa.gov/report-environment/indoor-air-quality\">about 90%</a> of their time indoors. Go out for a breathe of fresh air; it can relieve stress in your body. Have you ever felt a bit more relaxed when you're outdoors? That's nature's effect; it can boost your mood and immune system all while getting vitamin D from the sun. ",
+            :description => "People in the U.S. <a target=\"_blank\" href=\"https://www.epa.gov/report-environment/indoor-air-quality\">spend about 90% of their time indoors</a>. Go out for a breathe of fresh air! Have you ever felt a bit more relaxed when you're outdoors? That's nature's effect. It boosts your mood + immune system all while getting vitamin D from the sun.",
             :links => {
-              "While you're outside, pick up litter (blog)" => 'https://www.goingzerowaste.com/31-day-challenge/pick-up-litter-day-12-of-the-zero-waste-challenge'
+              "When outside, pick up litter" => 'https://www.goingzerowaste.com/31-day-challenge/pick-up-litter-day-12-of-the-zero-waste-challenge'
             },
-            :instructions => ["Spend at least 30 minutes each day outside in nature.", "If you see any litter, pick it up and dispose of it properly. You'll help keep the environment clean from trash."],
+            :instructions => ["Spend at least 30 minutes each day outdoors in nature (not surrounded by buildings)", "If you see litter, pick it up + dispose of it properly. You'll help keep the environment clean from trash"],
             :metric_question => "How many minutes did you spend outside?",
 :metric_verb => "You spent ",
 :metric_unit => " minutes outside!",
@@ -1251,15 +1248,14 @@ Don't make assumptions. If someone else made the food, ask if sugar was added to
             :name => "Eat out mindfully",
             :type => "self",
             :question => "Why does this matter?",
-            :description => "Your diet impacts health, waste, wellness, carbon + water footprints, and community (to name a few). Choosing to eat at a place that stands by your values sends a message to the people you eat with and your community what you care about and want more of.",
+            :description => "Your diet impacts so many things: health, waste, wellness, carbon + water footprints, and community. Show up at places whose values align with yours. Being physically there is a HUGE vote of support + a form of advocating for what you care about.",
             :links => {
-              'How to dine out sustainably (guide)' => 'https://foodprint.org/dining-out-sustainably/',
+              'Dining out sustainably (guide)' => 'https://foodprint.org/dining-out-sustainably/',
               'Carbon neutral restaurants (list)' => 'http://www.zerofoodprint.org/',
-              'How to avoid stuffing yourself during the holidays (blog)' => 'https://www.drfuhrman.com/get-started/eat-to-live-blog/30/dont-succumb-to-holiday-heart'
+              'Avoid stuffing yourself (blog)' => 'https://www.drfuhrman.com/get-started/eat-to-live-blog/30/dont-succumb-to-holiday-heart'
             },
-            :instructions => ["Find and eat at a place that serves as close to 100% FLOSN food.", "Zero your waste in this adventure: refuse any single-use disposable
-items; bring your own reusable food containers for any leftovers or takeout.", "Consider the impact (water + carbon footprint) of your eating choices and travel method.", "Ask the employees questions about the ingredients used in their dishes."],
-            :extra => "*FLOSN = fresh, local, organic, seasonal, non-GMO",
+            :instructions => ["Find + eat at a place that serves 100% FLOSN food, or as close to 100% as possible", "Zero your waste in this adventure: refuse any single-use disposable items. Bring your own reusable food containers for any leftovers or takeout", "Consider the water + carbon footprint of your eating choices + travel method", "Ask the employees Q's about the ingredients used in their dishes."], 
+            :extra => "FLOSN = fresh, local, organic, seasonal, non-GMO",
             :metric_question => "How many times did you eat at a place that serves FLOSN food?",
 :metric_verb => "You ate ",
 :metric_unit => " times at a place serving FLOSN food!",
@@ -1270,13 +1266,12 @@ items; bring your own reusable food containers for any leftovers or takeout.", "
             :name => "Refuse single-use",
             :type => "self",
             :question => "Why focus on refusing single-use?",
-            :description => "If something is used once and thrown away, it's single-use, regardless if the item is compostable. It's a waste of resources when single-use items are used for several minutes (or less) and tossed without another thought. <a target=\"_blank\" href=\"https://www.5gyres.org/animals/ \">Refusing single-use items</a> tackle the root cause of waste. ",
+            :description => "Ya'll, here's the truth: if something is used once + thrown away, it's single-use, regardless if the item is compostable. This is a HUGE waste of resources, especially when they're used for less than several minutes & tossed without another thought <a target=\"_blank\" href=\"https://www.plasticpollutioncoalition.org/the-facts\">and just problematic</a>.",
             :links => {
-              'Single-use items to break up with? (list)' => 'https://goodonyou.eco/awesome-alternatives-to-single-use-items/',
-              "Plastic's relationship with climate change (blog)" => 'https://makingoceansplasticfree.com/reducing-single-use-plastic-distraction-or-solution-to-climate-change/',
-              "What's the problem with plastic?" => 'https://www.plasticpollutioncoalition.org/the-facts'
+              'Break up with these single-use items' => 'https://goodonyou.eco/awesome-alternatives-to-single-use-items/',
+              "Plastic's relation to climate change (blog)" => 'https://makingoceansplasticfree.com/reducing-single-use-plastic-distraction-or-solution-to-climate-change/',
             },
-            :instructions => ["Take the reusable items necessary for your next outing with you. (e.g. reusable food containers for eating out; reusable bag for grocery shopping)", "Refuse any single-use items (e.g. utensils, dishes, bag, napkin, <a target=\"_blank\" href=\"https://squareup.com/townsquare/some-scary-stats-about-the-environmental-impact-of-paper-receipts \">paper receipt</a>).", "When you refuse an item, include why so other people know. \"No thank you, I don't need that ___ because I don't want to ___.\"" ],
+            :instructions => ["Take reusable items necessary for your next outing with you (e.g. reusable food containers for eating out; reusable bag for grocery shopping)", "Break up with single-use. <a target=\"_blank\" href=\"https://www.5gyres.org/animals/\">Refuse any single-use items</a> (e.g. utensils, dishes, bag, napkin, <a target=\"_blank\" href=\"https://squareup.com/townsquare/some-scary-stats-about-the-environmental-impact-of-paper-receipts\">paper receipt</a>)", "When you refuse an item, include why so other people know. 'No thank you, I don't need that ___ because I don't want to ___.'" ], 
             :metric_question => "How many times did you refuse single-use?",
 :metric_verb => "You refused taking and using single-use items ",
 :metric_unit => " times!",
@@ -1287,17 +1282,12 @@ items; bring your own reusable food containers for any leftovers or takeout.", "
             :name => "Affirm your interests",
             :type => "self",
             :question => "Why should I talk about my interests?",
-            :description => "There is something powerful about telling someone you care about something. It lends a sense of confidence and certainty in our lives. Try it. Lead by example and show people that it's okay to care about something, to be proud of it, and let them know how you're doing it. ",
+            :description => "There's something powerful about telling someone you care about something. It creates a sense of confidence + certainty. Try it. Lead by example & show people that it's okay to care about something & to be proud of it.",
             :links => {
-              'Who to share with? (guide)' => 'https://www.plasticfreejuly.org/get-involved/what-you-can-do/students-parents/',
-              'How to talk about sustainability with other people (guide)' => 'https://www.thegoodtrade.com/features/being-an-effective-sustainability-advocate'
+              'Expanding your impact' => 'https://www.plasticfreejuly.org/get-involved/what-you-can-do/students-parents/',
+              'Talking about sustainability with others' => 'https://www.thegoodtrade.com/features/being-an-effective-sustainability-advocate'
             },
-            :instructions => ["Tell someone you care about ___. Insert a word that you feel to be true,
- something that RootUp inspired. It can be the environment, food
-justice, reducing your waste, or learning. You can casually mention it.
-Have a whole conversation about it. WIth family. With friends. With
-teachers or professors. With strangers. Doesn't matter, just tell
-people."],
+            :instructions => ["Tell someone you care about __. Insert a word that you feel is true, something that RootUp inspired. It can be the environment, food justice, reducing your waste, or learning", "Casually mention it or have a whole conversation", "Do this with family. With friends. With teachers or professors. With strangers. Doesn't matter, just tell people."],
             :metric_question => "How many people did you affirm your interests with?",
 :metric_verb => "You affirmed your interests with ",
 :metric_unit => " people!",
@@ -1308,14 +1298,13 @@ people."],
             :name => "Shop fair trade",
             :type => "self",
             :question => "Why support fair trade?",
-            :description => "Many people around the world are exploited to drive business costs down and profits up and satisfy consumers' desires. <a target=\"_blank\" href=\"https://www.fairtrade.org.uk/What-is-Fairtrade\">Fair trade</a> is about empowering farmers and workers abroad with fair wages, decent working conditions, and local sustainability. ",
+            :description => "<a target=\"_blank\" href=\"https://www.fairtrade.org.uk/What-is-Fairtrade\">Fair trade</a> means workers are paid living wages + treated respectfully. This seems like common sense, no? We think so, but currently, many workers around the world are exploited to drive revenue up.",
             :links => {
-              'Fair trade principles (info)' => 'https://wfto.com/fair-trade/10-principles-fair-trade',
-              'Database of air trade products (finder)' => 'https://www.fairtradecertified.org/products',
-              'What make something fair trade certified? (info)' => 'https://fairworldproject.org/get-informed/movements/fair-trade/certifiers-membership-orgs/',
-              'How fair trade helps end human trafficking (blog)' => 'http://fairtradeamerica.org/en-us/media-center/blog/2016/august/how-fairtrade-helps-end-human-trafficking'
+              'Fair trade products' => 'https://wfto.com/fair-trade/10-principles-fair-trade',
+              'Fair trade labels' => 'https://fairworldproject.org/get-informed/movements/fair-trade/certifiers-membership-orgs/',
+              'Fair trade helps end human trafficking (blog)' => 'http://fairtradeamerica.org/en-us/media-center/blog/2016/august/how-fairtrade-helps-end-human-trafficking'
             },
-            :instructions => ["When you go shopping, look for products made with Fair Trade practices.", "If you're not sure if something was made with fair trade practices, ask questions."],
+            :instructions => ["Look for products made with Fair Trade practices next time you shop", "If you're not sure if something was made with fair trade practices, ask questions (e.g. send emails, ask store employees)"],
             :metric_question => "How many fair trade items did you buy?",
 :metric_verb => "You bought ",
 :metric_unit => " fair trade items!",
@@ -1325,21 +1314,16 @@ people."],
           {
             :name => "Gift responsibly",
             :type => "self",
-            :question => "What is the power of gift giving?",
-            :description => "Sometimes we want others to change their actions to be more mindful, but we can't force them to. Instead, we can encourage and support them. Giving a useful gift to another person is an easy way to introduce them to new products and also make it accessible for them to change their practices.",
+            :question => "What impact does this have?",
+            :description => "We can't force people to change, no matter how deeply we want them to. Instead, <a target=\"_blank\" href=\"https://treadingmyownpath.com/2016/11/24/a-zero-waste-guide-to-gifts/\">we can encourage + support</a>. Gifting something *useful* is an easy way to introduce others to new products + makes it accessible for them to change their habits.",
             :links => {
-              'Gift ideas (list)' => 'http://trashisfortossers.com/laurens-top-zero-waste-gifts-for-every-budget/',
-              'How to gift forward (guide)' => 'http://trashisfortossers.com/everything-to-know-about-gifting-forward/',
-              'Gift wrap zero waste style (guide)' => 'http://trashisfortossers.com/a-guide-to-zero-waste-gift-wrapping/',
-              'How to receive gifts (guide)' => 'https://www.goingzerowaste.com/blog/a-zero-waste-guide-to-receiving-gifts'
+              'Zero waste gift ideas' => 'http://trashisfortossers.com/laurens-top-zero-waste-gifts-for-every-budget/',
+              'Gifting forward' => 'http://trashisfortossers.com/everything-to-know-about-gifting-forward/',
+              'Gift wrapping zero waste style' => 'http://trashisfortossers.com/a-guide-to-zero-waste-gift-wrapping/',
+              'Receiving gifts' => 'https://www.goingzerowaste.com/blog/a-zero-waste-guide-to-receiving-gifts'
             },
-            :background => 'This challenge is for when you want to gift something.',
-            :instructions => ["Get a gift that is sustainably made, in support of a socially
-responsible company, non-toxic to health, or a fun experience. For this
-challenge, please do not get a gift that your giftee will probably not
-use often (unless it's an experience type of gift).", "Wrap it with upcycled materials that are reusable, recyclable, or
-compostable.", "Add a little note of why you think this gift may be
-useful for them."],
+            :background => 'When you need to gift something:',
+            :instructions => ["Get a gift that is sustainably made by a socially responsible company and non-toxic to health. Or, get an experience for your giftee", "Wrap it (if possible) with upcycled materials that are reusable, recyclable, or compostable", "Top it off with a thoughtful little note telling them how amazing they are", "Please do not gift your giftee something they probably won't use"],
             :metric_question => "How many sustainable gifts did you give?",
 :metric_verb => "You gave ",
 :metric_unit => " sustainable gifts!",
