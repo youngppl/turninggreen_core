@@ -4,6 +4,9 @@
   .logo {
     text-align: center;
     margin: 1vh;
+    position: absolute;
+    width: 100%;
+    top: 0;
   }
 
   .content {
@@ -60,5 +63,36 @@
     border: none;
     background: none;
     outline: none;
+  }
+}
+
+.log-progress {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+
+  .prompt {
+    width: 207px;
+    font-size: 18px;
+  }
+
+  .input {
+    width: 126px;
+    height: 77px;
+    border-radius: 27px;
+    background-color: #dedede;
+    font-size: 40px;
+    font-weight: 600;
+    text-align: center;
+    color: #477058;
+    margin: 10px;
+  }
+
+  .next-button {
+    position: absolute;
+    bottom: 60px;
+    right: 20px;
   }
 }

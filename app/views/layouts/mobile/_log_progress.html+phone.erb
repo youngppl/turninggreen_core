@@ -1,0 +1,8 @@
+<div class="log-progress">
+  <h2 class="prompt">How many times did you refuse something you didn't need?</h2>
+  <input type="number" pattern="\d*" class="input" oninput="enableLogButton(this)">
+  <div class="next-button" onclick="logProgress(this)">
+    <%= image_tag "next-button-disabled", class: "disabled" %>
+    <%= image_tag "next-button-active", style: 'display:none;', class: "active" %>
+  </div>
+</div>

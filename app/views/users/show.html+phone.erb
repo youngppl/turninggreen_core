@@ -7,6 +7,7 @@
       <iframe src="<%= challenges_reflections_path %> " width="" height=""></iframe>
     </div>
     <div class="dash tab active">
+      <%= render '/layouts/mobile/log_progress' %>
       <%= link_to 'log out', destroy_user_session_path, method: :delete %>
     </div>
     <div class="challenges tab">
@@ -28,5 +29,5 @@
       <%= image_tag 'mobile/menu-buttons/challenges-active.svg', class: 'active' %>
     </button>
   </div>
-  <%= render "/layouts/points/points_earned", {points: 3, type: 'points', visible: true} %>
+  <%# render "/layouts/points/points_earned", {points: 3, type: 'points', visible: true} %>
 </div>
