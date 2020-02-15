@@ -11,12 +11,16 @@
 <div class="challenge-page mobile" style="display:none;">
 </div>
 <div class="theme-unlock">
+  <button type="button" name="button" class="back-button bare">
+    <i class="fas fa-chevron-left" onclick="history.back()"></i>
+  </button>
   <h2 class="heading">Before you can get started on the challenges, watch this video to get a deeper understanding of this theme!</h2>
   <div id="video">
 
   </div>
   <h2 class="caption"> <%= @challenge_data[:videoCaption] %> </h2>
 </div>
+<%= render 'layouts/points/points_earned', {points: 3, type: 'theme_unlock', theme_name: @challenge_name, visible: false} %>
 <script>
   var challengeName = "<%= @challenge_name %>";
   var already_unlocked = <%= @already_unlocked %>;

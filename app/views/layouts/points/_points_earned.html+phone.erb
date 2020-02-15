@@ -1,10 +1,26 @@
+<%#
+
+points: num points earned
+type: points, theme_unlock
+visible: true, false
+*theme_name
+
+
+ %>
+
+
 <div class="mobile points-earned">
   <canvas id="confetti-canvas" onclick="$('.points-earned').hide()"></canvas>
   <div class="">
-    <% if current_user.points + points >= level_ranges[current_user.level + 1] %>
-      <h1 class="heading">LEVEL UP!</h1>
-    <% else %>
-      <h1 class="heading">POINTS EARNED!</h1>
+    <% if type == 'theme_unlock' %>
+      <h1 class="heading">THEME UNLOCKED!</h1>
+    <% end %>
+    <% if type == 'points' %>
+      <% if current_user.points + points >= level_ranges[current_user.level + 1] %>
+        <h1 class="heading">LEVEL UP!</h1>
+      <% else %>
+        <h1 class="heading">POINTS EARNED!</h1>
+      <% end %>
     <% end %>
     <h2 class="points">+<%= points %>
       pts
@@ -20,13 +36,21 @@
     </div>
   </div>
   <div class="sub-heading">
-    <h2>Ayyy, your seed's growing!</h2>
-    <h2>Keep it up, we're rooting you on!</h2>
+    <% if type == 'points'%>
+      <h2>Ayyy, your seed's growing!</h2>
+      <h2>Keep it up, we're rooting you on!</h2>
+    <% end %>
+    <% if type == 'theme_unlock' %>
+      <h2>Hooray, now you can get started on the <%= theme_name %> challenges!</h2>
+    <% end %>
     <button type="button" name="button" class="continue">continue</button>
   </div>
 
 </div>
 <script type="text/javascript">
+  <% if !visible %>
+    $('.points-earned').hide()
+  <% end %>
   var confettiSettings = {
     target: 'confetti-canvas',
     max: 50,
