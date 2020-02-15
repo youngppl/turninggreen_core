@@ -1,0 +1,26 @@
+.challenge-page.mobile {
+  
+}
+
+.theme-unlock {
+  background-color: rgba(0, 0, 0, 0.58);
+  height: 100%;
+  position: absolute;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  h2 {
+    margin: 20px;
+  }
+
+  .heading {
+    font-size: 17px;
+  }
+
+  .caption {
+    font-size: 24px;
+    font-weight: 800;
+  }
+}

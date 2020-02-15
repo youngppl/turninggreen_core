@@ -1,0 +1,29 @@
+<script>
+  var mobile = true;
+  <% if @challenge_data.key?(:videoID) %>
+    var challengeVideoID = "<%= @challenge_data[:videoID] %>";
+    var showVideo = true;
+  <% else %>
+    var showVideo = false;
+  <% end %>
+</script>
+
+<div class="challenge-page mobile" style="display:none;">
+</div>
+<div class="theme-unlock">
+  <h2 class="heading">Before you can get started on the challenges, watch this video to get a deeper understanding of this theme!</h2>
+  <div id="video">
+
+  </div>
+  <h2 class="caption"> <%= @challenge_data[:videoCaption] %> </h2>
+</div>
+<script>
+  var challengeName = "<%= @challenge_name %>";
+  var already_unlocked = <%= @already_unlocked %>;
+  <% if !@already_unlocked %>
+    startVideo();
+  <% else %>
+    $('.themes-unlock').hide();
+    $('.challenge-page').show();
+  <% end %>
+</script>

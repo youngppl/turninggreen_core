@@ -84,15 +84,27 @@ function toLastSlide(event) {
 
 function onYouTubeIframeAPIReady() {
   if (showVideo) {
-    player = new YT.Player('video', {
-      height: '406',
-      width: '720',
-      videoId: challengeVideoID,
-      events: {
-        'onReady': onPlayerReady,
-        'onStateChange': toLastSlide
-      }
-    });
+    if (mobile) {
+      player = new YT.Player('video', {
+        width: '100%',
+        height: '212',
+        videoId: challengeVideoID,
+        events: {
+          'onReady': onPlayerReady
+          // 'onStateChange': toLastSlide
+        }
+      });
+    } else {
+      player = new YT.Player('video', {
+        height: '406',
+        width: '720',
+        videoId: challengeVideoID,
+        events: {
+          'onReady': onPlayerReady,
+          'onStateChange': toLastSlide
+        }
+      });
+    }
   }
 }
 
