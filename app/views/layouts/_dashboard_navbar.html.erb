@@ -20,7 +20,7 @@
           'stroke-dashoffset': <%= 240 - 142*(current_user.level_progress/100) %>
         }, 3000, 'swing')
       </script>
-      <h5 class="level">lvl<%= current_user.level %></h5>
+      <h5 class="level">lvl <%= current_user.level %></h5>
       <h5 class="level name"><%= levels[current_user.level][0] %></h5>
       <h5 class="username"><%= current_user.name %></h5>
     </div>
