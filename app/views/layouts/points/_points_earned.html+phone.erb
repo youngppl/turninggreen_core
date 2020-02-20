@@ -10,7 +10,7 @@ visible: true, false
 
 
 <div class="mobile points-earned">
-  <canvas id="confetti-canvas" onclick="$('.points-earned').hide()"></canvas>
+  <canvas id="confetti-canvas" onclick="$('.points-earned').hide();confetti.clear();"></canvas>
   <div class="">
     <% if type == 'theme_unlock' %>
       <h1 class="heading">THEME UNLOCKED!</h1>
@@ -22,11 +22,11 @@ visible: true, false
         <h1 class="heading">POINTS EARNED!</h1>
       <% end %>
     <% end %>
+  </div>
+  <div class="seed">
     <h2 class="points">+<%= points %>
       pts
     </h2>
-  </div>
-  <div class="seed">
     <div class="points-ring">
       <svg viewbox="13 -13 80 80" xmlns="http://www.w3.org/2000/svg">
         <circle cx="53" cy="54" r="35" stroke="#e4e3e3" stroke-dasharray=""/>
