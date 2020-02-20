@@ -48,6 +48,7 @@
         &.user-points {
           stroke-dasharray: 240;
           stroke-dashoffset: 240;
+          stroke-linecap: round;
         }
       }
 
