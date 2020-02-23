@@ -1,7 +1,10 @@
-<div class="log-progress">
-  <h2 class="prompt">How many times did you refuse something you didn't need?</h2>
+<div class="log-progress" id="<%= challenge.id %>">
+  <button type="button" name="button" class="back-button bare">
+    <i class="fas fa-chevron-left" onclick="$('.log-progress#<%= challenge.id %>').hide()"></i>
+  </button>
+  <h2 class="prompt"> <%= challenge.content_data[:metric_question] %></h2>
   <input type="number" pattern="\d*" class="input" oninput="enableLogButton(this)">
-  <div class="next-button" onclick="logProgress(this)">
+  <div class="next-button" onclick="logProgress(this, <%= challenge.id %>)">
     <%= image_tag "next-button-disabled", class: "disabled" %>
     <%= image_tag "next-button-active", style: 'display:none;', class: "active" %>
   </div>

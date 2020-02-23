@@ -18,8 +18,14 @@ function enableLogButton(el) {
   }
 }
 
-function logProgress(el) {
+function logProgress(el, challenge_id) {
   if ($(el).children('.next-button .active').is(':visible')) {
-    // if not disabled
+    // if button not disabled -> log progess
+    $.post('/logs/new', {
+      challenge_id: challenge_id,
+      metric: $(el).siblings('.input').val()
+    });
+    // hide prompt
+    $(el).parent().hide()
   }
 }
