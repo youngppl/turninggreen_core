@@ -104,8 +104,15 @@
 
         <div class="menu">
           <button type="button" name="button" data-target="reflection" class="reflection" onclick="updateActiveButton(this)">
-            <%= image_tag 'mobile/menu-buttons/reflections.svg' %>
-            <%= image_tag 'mobile/menu-buttons/reflections-active.svg', class: 'active' %>
+            <div class="reflection-icon-container">
+              <%= image_tag 'mobile/menu-buttons/reflections.svg' %>
+              <%= image_tag 'mobile/menu-buttons/reflections-active.svg', class: 'active' %>
+              <% if current_user.challenges.where(completed:true, reflection_completed:false).length > 0 %>
+                <div class="reflections-bubble">
+                  <%= current_user.challenges.where(completed:true, reflection_completed:false).length %>
+                </div>
+              <% end %>
+            </div>
           </button>
           <button type="button" name="button" data-target="dash" class="dash active" onclick="updateActiveButton(this)">
             <%= image_tag 'mobile/menu-buttons/dash.svg' %>

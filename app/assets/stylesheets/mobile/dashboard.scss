@@ -223,6 +223,29 @@
         display: none;
       }
     }
+
+    .reflection-icon-container {
+      position: relative;
+      width: 28px;
+      margin: auto;
+    }
+
+    .reflections-bubble {
+      font-size: 12px;
+      font-weight: 800;
+      text-align: center;
+      color: #ffffff;
+      width: 17px;
+      height: 17px;
+      background-color: #c8842e;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: -8px;
+      right: -9px;
+    }
   }
 
   button {
@@ -230,6 +253,7 @@
     background: none;
     outline: none;
   }
+
 }
 
 .log-progress {
