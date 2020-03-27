@@ -10,9 +10,7 @@
           <circle class="user-points" cx="54" cy="53" r="24" stroke="#93989c" stroke-dasharray=""/>
         </svg>
         <div class="image">
-          <% if FileTest.exists? "#{::Rails.root}/app/assets/images/" + 'seeds/'+current_user.level.to_s+'.svg' %>
           <%= image_tag 'seeds/'+current_user.level.to_s+'.svg', class: 'seed-image' %>
-          <% end %>
         </div>
       </div>
       <script type="text/javascript">
