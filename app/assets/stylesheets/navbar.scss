@@ -37,6 +37,8 @@
     svg {
       width: 200px;
       height: 200px;
+      z-index: 4;
+      position: relative;
     }
 
     circle {
