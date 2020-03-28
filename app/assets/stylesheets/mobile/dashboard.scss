@@ -49,6 +49,8 @@
           height: 200px;
           margin-top: -62px;
           margin-left: -41px;
+          z-index: 4;
+          position: relative;
         }
 
         circle {
@@ -115,6 +117,7 @@
         margin: 0 20px;
         display: flex;
         align-items: center;
+        z-index: 2;
 
         li {
           width: 12px;

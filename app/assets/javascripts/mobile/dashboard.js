@@ -27,5 +27,6 @@ function logProgress(el, challenge_id) {
     });
     // hide prompt
     $(el).parent().hide()
+    $('.points-earned').show()
   }
 }

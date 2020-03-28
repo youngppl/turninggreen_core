@@ -1,7 +1,7 @@
 <%#
 
 points: num points earned
-type: points, theme_unlock
+type: points, theme_unlock, [custom message]
 visible: true, false
 *theme_name
 
@@ -32,16 +32,21 @@ visible: true, false
         <circle cx="53" cy="54" r="35" stroke="#e4e3e3" stroke-dasharray=""/>
         <circle class="user-points" cx="53" cy="54" r="35" stroke="#93989c" stroke-dasharray=""/>
       </svg>
-      <%= image_tag 'seeds/0.svg', class: "seed-image", size: "60" %>
+      <% if current_user.level == 0 %>
+        <%= image_tag 'seeds/0.svg', class: "seed-image", size: "60" %>
+      <% else %>
+        <%= image_tag 'seeds/'+current_user.level.to_s+'.svg', class: 'seed-image', size: '180' %>
+      <% end %>
     </div>
   </div>
   <div class="sub-heading">
     <% if type == 'points'%>
       <h2>Ayyy, your seed's growing!</h2>
       <h2>Keep it up, we're rooting you on!</h2>
-    <% end %>
-    <% if type == 'theme_unlock' %>
+    <% elsif type == 'theme_unlock' %>
       <h2>Hooray, now you can get started on the <%= theme_name %> challenges!</h2>
+    <% else %>
+      <h2> <%= type.html_safe %> </h2>
     <% end %>
     <button type="button" name="button" class="continue">continue</button>
   </div>

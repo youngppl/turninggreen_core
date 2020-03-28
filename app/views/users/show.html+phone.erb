@@ -10,16 +10,14 @@
       <div class="heading">
         <div class="points-ring">
           <svg viewbox="13 -13 80 80" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="53" cy="54" r="20" stroke="#e4e3e3" stroke-dasharray=""/>
-            <circle class="user-points" cx="53" cy="54" r="20" stroke="#93989c" stroke-dasharray=""/>
+            <circle cx="53" cy="54" r="21" stroke="#e4e3e3" stroke-dasharray=""/>
+            <circle class="user-points" cx="53" cy="54" r="21" stroke="#93989c" stroke-dasharray=""/>
           </svg>
-          <% if FileTest.exists? "#{::Rails.root}/app/assets/images/" + 'seeds/'+current_user.level.to_s+'.svg'%>
-            <%= image_tag 'seeds/'+current_user.level.to_s+'.svg', class: 'seed-image', size: '92' %>
-          <% end %>
+          <%= image_tag 'seeds/'+current_user.level.to_s+'.svg', class: 'seed-image' %>
           <%# TODO: change this and points popup after merge of new-seeds %>
             <script type="text/javascript">
               $('.user-points').animate({
-                'stroke-dashoffset': <%= 240 - 124*(current_user.level_progress/100) %>
+                'stroke-dashoffset': <%= 240 - 128*(current_user.level_progress/100) %>
               }, 3000, 'swing')
             </script>
           </div>
@@ -94,7 +92,6 @@
             <script type="text/javascript">
               $('.carousel').carousel()
             </script>
-
             <%= link_to 'log out', destroy_user_session_path, method: :delete %>
           </div>
           <div class="challenges tab">
@@ -123,5 +120,5 @@
             <%= image_tag 'mobile/menu-buttons/challenges-active.svg', class: 'active' %>
           </button>
         </div>
-        <%# render "/layouts/points/points_earned", {points: 3, type: 'points', visible: true} %>
+        <%= render 'layouts/points/points_earned', {points: 3, type: "YESSS, you're on fire!<br>We're celebrating your progress right now.<br>Keep it up!", visible: false} %>
         </div>

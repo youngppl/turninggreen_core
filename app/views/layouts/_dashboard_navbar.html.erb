@@ -15,7 +15,7 @@
       </div>
       <script type="text/javascript">
         $('.user-points').animate({
-          'stroke-dashoffset': <%= 240 - 142*(current_user.level_progress/100) %>
+          'stroke-dashoffset': <%= 240 - 128*(current_user.level_progress/100) %>
         }, 3000, 'swing')
       </script>
       <h5 class="level">lvl <%= current_user.level %></h5>
