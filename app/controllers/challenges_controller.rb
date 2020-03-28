@@ -87,7 +87,7 @@ class ChallengesController < ApplicationController
   end
 
   def reflections
-
+    @current_reflections = current_user.challenges.where(reflection_completed:false, completed: true)
   end
 
   private

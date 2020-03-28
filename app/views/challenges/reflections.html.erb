@@ -7,7 +7,7 @@
   </h2>
   <h2 class="info">Share and document your challenge experience! Click on your completed challenge(s) below to get started.</h2>
   <div class="reflection-cards container">
-    <% current_user.challenges.where(reflection_completed:false, completed: true).each do |challenge| %>
+    <% @current_reflections.each do |challenge| %>
       <% challenge_data = challenges[challenge.theme.to_sym][:challenges].find {|x| x[:name] == challenge.challenge_name} %>
       <div class="panel panel-default">
         <div class="expand-clickable-area"></div>
@@ -70,7 +70,7 @@
       <%= render "layouts/points/points_earned_popup", {id: "points-earned-#{challenge.id}", heading:'👏claps for you!👏', message: 'Great job on submitting your reflection! You can check out this and your previous reflections on the Completed Challenges page!', points: challenge.point_worth}%>
     <% end %>
   </div>
-  <% if current_user.challenges.where(reflection_completed:false, completed: true).length == 0 %>
+  <% if @current_reflections.length == 0 %>
     <div class="no-reflections">
       No reflections, yet. Finish a challenge, and come check back then!
     </div>

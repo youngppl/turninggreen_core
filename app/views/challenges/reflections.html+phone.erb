@@ -1,0 +1,33 @@
+<div class="reflections-mobile mobile">
+  <h1 class="title">R E F L E C T I O N S</h1>
+  <h3 class="subtitle">Share and document your experience!</h3>
+  <div class="reflection-cards">
+    <% @current_reflections.each do |challenge| %>
+      <% challenge_data = challenges[challenge.theme.to_sym][:challenges].find {|x| x[:name] == challenge.challenge_name} %>
+      <div class="reflection-card" onclick="$('.reflection-popup#<%= challenge.id %>').show()">
+        <%= image_tag "themes/icons/"+challenge.theme.downcase+".svg", size: "30"  %>
+        <h2 class="challenge-name"><%= challenge.challenge_name %></h2>
+        <div class="reflection-popup" id="<%= challenge.id %>">
+          <div class="heading">
+            <h1 class="title">R E F L E C T</h1>
+            <h2 class="challenge-name"><%= challenge.challenge_name %></h2>
+            <h2 class="date-complete">Completed: <%= challenge.date_complete.strftime("%A, %b. %-d, %Y") %> </h2>
+          </div>
+          <div class="question">
+            <h2> <%= challenge_data[:reflection_question] %> </h2>
+          </div>
+          <textarea class="reflection-input" rows="8" cols="80" oninput="checkReflectionHasText(this)"></textarea>
+          <div class="next-button" onclick="">
+            <%= image_tag "next-button-disabled", class: "disabled" %>
+            <%= image_tag "next-button-active", style: 'display:none;', class: "active" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <% if @current_reflections.length == 0 %>
+    <div class="no-reflections">
+      Come back later when you've completed challenges! We're looking forward to hearing about your experience :)
+    </div>
+  <% end %>
+</div>
