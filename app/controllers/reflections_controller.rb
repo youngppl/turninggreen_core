@@ -4,7 +4,11 @@ class ReflectionsController < ApplicationController
 
   def new
     challenge = Challenge.find(params[:reflection][:challenge_id])
-    challenge.progress_logs.create(metric: params[:reflection][:log])
+    if params[:reflection][:log].nil?
+      challenge.progress_logs.create(metric: 0)
+    else
+      challenge.progress_logs.create(metric: params[:reflection][:log])
+    end
     Reflection.create(reflection_params)
     challenge.update(reflection_completed: true)
     current_user.add_points(challenge.point_worth)

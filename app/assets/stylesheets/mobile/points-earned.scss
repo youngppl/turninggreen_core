@@ -4,12 +4,13 @@
   height: 100%;
   position: absolute;
   top: 0;
+  left: 0;
   color: #ffffff;
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  z-index: 13;
+  z-index: 1100;
 
   #confetti-canvas {
     position: absolute;

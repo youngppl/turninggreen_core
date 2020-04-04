@@ -27,6 +27,9 @@ function logProgress(el, challenge_id) {
     });
     // hide prompt
     $(el).parent().hide()
+    // update and show metric popup
+    eval("updateChart_"+challenge_id+"()")
+    // show points
     $('.points-earned').show()
   }
 }

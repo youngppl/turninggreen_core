@@ -20,18 +20,22 @@ class Challenge < ApplicationRecord
     challenge_points[type.to_sym]
   end
 
+  def theme_icon
+    "themes/icons/#{theme.downcase}.svg"
+  end
+
   def get_time_left
     @weeks = (date_complete.getutc.to_date - DateTime.now.getutc.to_date) / 7
     if @weeks < 1
-      @days = (date_complete.getutc.to_date - DateTime.now.getutc.to_date)
-      # if @days < 1
-      #   pluralize ((date_complete.to_date - DateTime.now.getutc.to_date) / 60 / 60).round, 'hour'
-      # else
+      @days = get_days_left
       pluralize @days.round, 'day'
-      # end
     else
       pluralize @weeks.round, 'week'
     end
+  end
+
+  def get_days_left
+    (date_complete.getutc.to_date - DateTime.now.getutc.to_date).to_i
   end
 
   def get_last_logged
@@ -165,6 +169,43 @@ class Challenge < ApplicationRecord
             return ['this date: ' + data['datasets'][0].data[tooltipItem.index]['y'], 'cumulatively: ' + tooltipItem.yLabel];
           }"
         }
+      }
+    }
+  end
+
+  def options_mobile
+    options = {
+      responsive: true,
+      maintainAspectRatio: false,
+      legend: {
+        display: false
+      },
+      scales: {
+        yAxes: [{
+          ticks: {
+            min: 0,
+            fontFamily: "'Raleway', 'sans-serif'",
+            fontStyle: "bold",
+            fontSize: 20,
+            padding: 7,
+            callback: "function(value) {if (value % 1 === 0) {return value;}}"
+          },
+          gridLines: {
+            drawBorder: false
+          }
+        }],
+        xAxes: [{
+          ticks: {
+            display: false
+          },
+          type: 'time',
+          time: {
+            unit: 'day'
+          },
+          gridLines: {
+            display: false
+          }
+        }]
       }
     }
   end

@@ -1,5 +1,6 @@
 <%#
 
+id: id of popup
 points: num points earned
 type: points, theme_unlock, [custom message]
 visible: true, false
@@ -9,7 +10,7 @@ visible: true, false
  %>
 
 
-<div class="mobile points-earned">
+<div class="mobile points-earned" id="<%= id if id %>" >
   <canvas id="confetti-canvas" onclick="$('.points-earned').hide();confetti.clear();"></canvas>
   <div class="">
     <% if type == 'theme_unlock' %>

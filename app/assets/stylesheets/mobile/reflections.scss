@@ -86,7 +86,7 @@
         }
       }
 
-      .question {
+      .green {
         background-color: #aec1b0;
         height: 62px;
         padding: 15px 20px;
@@ -110,6 +110,84 @@
         padding: 15px;
         outline: none;
         margin-top: 17px;
+      }
+
+      .user-input-wrapper {
+        display: flex;
+        padding: 20px 10px;
+        justify-content: space-evenly;
+      }
+
+      .photo {
+        width: 95px;
+        height: 93px;
+        border-radius: 15px;
+        background-color: rgba(231, 231, 231, 0.74);
+        color: #979797;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 110px;
+        font-weight: 100;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      .caption {
+        width: 235px;
+        height: 93px;
+        border-radius: 15px;
+        background-color: rgba(240, 240, 240, 0.74);
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 1;
+        letter-spacing: -0.24px;
+        color: #000000;
+        padding: 16px;
+        outline: none;
+      }
+
+      .permission-checkbox {
+        width: 30px;
+        margin: 20px 10px;
+        height: 30px;
+      }
+
+      .permission-info {
+        font-size: 15px;
+        font-weight: 500;
+        line-height: 1.09;
+        letter-spacing: -0.22px;
+        color: #000000;
+        width: 75vw;
+        text-align: left;
+      }
+
+      .submit {
+        font-family: Raleway;
+        font-size: 13px;
+        font-weight: bold;
+        color: #ffffff;
+        width: 124px;
+        height: 40px;
+        border-radius: 11px;
+        background-color: #d8b208;
+
+        &:disabled {
+          background-color: #a1a1a1;
+        }
+      }
+
+      .skip {
+        background: none;
+        height: 40px;
+        width: 200px;
+        font-size: 13px;
+        font-weight: bold;
+        color: #a1a1a1;
+        text-decoration: underline;
+        outline: none;
       }
 
       .next-button {

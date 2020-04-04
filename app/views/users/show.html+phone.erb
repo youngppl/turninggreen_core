@@ -14,7 +14,6 @@
             <circle class="user-points" cx="53" cy="54" r="21" stroke="#93989c" stroke-dasharray=""/>
           </svg>
           <%= image_tag 'seeds/'+current_user.level.to_s+'.svg', class: 'seed-image' %>
-          <%# TODO: change this and points popup after merge of new-seeds %>
             <script type="text/javascript">
               $('.user-points').animate({
                 'stroke-dashoffset': <%= 240 - 128*(current_user.level_progress/100) %>
@@ -46,7 +45,7 @@
               <div class="carousel-item <%= 'active' if index == 0 %> ">
                 <div class="challenge-card">
                   <div class="">
-                    <%= image_tag "themes/icons/#{challenge.theme.downcase}.svg", class: 'icon' %>
+                    <%= image_tag challenge.theme_icon, class: 'icon' %>
                     <h5 class="name"><%= challenge.challenge_name %></h5>
                   </div>
                   <div class="">
@@ -55,6 +54,7 @@
                   </div>
                   <button type="button" name="button" class="dash-button" onclick="$('.log-progress#<%= challenge.id %>').css('display', 'flex');">log progress</button>
                   <%= render 'layouts/mobile/log_progress', {challenge: challenge} %>
+                  <%= render 'layouts/mobile/metric_popup', {challenge: challenge} %>
                 </div>
               </div>
             <% end %>
