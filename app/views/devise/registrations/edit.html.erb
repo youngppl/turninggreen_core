@@ -49,22 +49,15 @@
 
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: 'col section-content' }) do |f| %>
         <div class="field">
-          <label>current password</label>
-          <%= f.password_field :current_password, autofocus: true, class: "inputField", oninput: "enablePasswordFields();" %>
-          <div class="error">
-            <span class="message">the password you entered is incorrect</span>
-          </div>
-        </div>
-        <div class="field">
           <label>new password</label>
-          <%= f.password_field :password, autofocus: true, disabled: true, class: "inputField", oninput: "enablePasswordFields();" %>
+          <%= f.password_field :password, autofocus: true, class: "inputField", oninput: "enablePasswordSave();" %>
           <div class="password error">
             <span class="message">password must include at least 8 characters</span>
           </div>
         </div>
         <div class="field">
           <label>confirm password</label>
-          <%= f.password_field :password_confirmation, autofocus: true, disabled: true, class: "inputField", oninput: "enablePasswordFields();" %>
+          <%= f.password_field :password_confirmation, autofocus: true, class: "inputField", oninput: "enablePasswordSave();" %>
           <div class="confirm error">
             <span class="message">the password doesn’t match</span>
           </div>
