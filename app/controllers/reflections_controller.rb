@@ -12,6 +12,7 @@ class ReflectionsController < ApplicationController
     Reflection.create(reflection_params)
     challenge.update(reflection_completed: true)
     current_user.add_points(challenge.point_worth)
+    head :no_content
   end
 
   def edit

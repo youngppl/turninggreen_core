@@ -2,6 +2,9 @@ class WelcomeController < ApplicationController
   include ChallengesHelper
 
   def index
+    if mobile? && !current_user.nil?
+      redirect_to dashboard_path
+    end
     @highlighted_challenges = [
       challenges[:Waste][:challenges].select {|x| x[:name] == "Audit your waste" }[0],
       challenges[:Body][:challenges].select {|x| x[:name] == "DIY bodycare" }[0],

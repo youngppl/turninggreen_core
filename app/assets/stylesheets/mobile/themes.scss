@@ -1,0 +1,197 @@
+.themes.mobile {
+  width: 100%;
+  padding: 0 15px;
+  height: 800px;
+
+  .title {
+    font-size: 17px;
+    font-weight: 800;
+    text-align: left;
+    color: #535151;
+  }
+
+  .subtitle {
+    font-size: 12px;
+    letter-spacing: 1.42px;
+    color: #535151;
+  }
+
+  .content {
+    position: relative;
+  }
+
+  .themes-icons {
+    position: relative;
+    left: 57%;
+    top: 137px;
+    margin-left: -70px;
+
+    ._1 {
+      top: -250px;
+    }
+
+    ._2 {
+      top: -191px;
+      left: 100px;
+    }
+
+    ._3 {
+      top: -78px;
+      left: 129px;
+    }
+
+    ._4 {
+      top: 47px;
+      left: 126px;
+    }
+
+    ._5 {
+      top: 168px;
+      left: 110px;
+    }
+
+    ._6 {
+      top: 237px;
+    }
+
+    ._7 {
+      top: 168px;
+      left: -108px;
+    }
+
+    ._8 {
+      top: 51px;
+      left: -137px;
+    }
+
+    ._9 {
+      top: -78px;
+      left: -136px;
+    }
+
+    ._10 {
+      top: -192px;
+      left: -110px;
+    }
+  }
+
+  .theme-icon {
+    position: absolute;
+
+    &.active {
+      box-shadow: 0 2px 6px 3px rgba(0, 0, 0, 0.34);
+      background-color: #eaebeb;
+      border-radius: 50%;
+      -webkit-animation: pulsate 0.4s ease-in-out both;
+      animation: pulsate 0.4s ease-in-out both;
+    }
+
+    .icon-box {
+      text-align: center;
+      width: 100px;
+      height: 100px;
+
+      .icon {
+        position: relative;
+        top: -76px;
+
+        &.body {
+          top: -70px;
+        }
+      }
+
+      .completed-ring {
+        position: absolute;
+        top: 0 !important;
+
+        &._1,
+        &._2,
+        &._3 {
+          left: 46px !important;
+        }
+
+        &._4 {
+          left: 6px !important;
+        }
+
+        &._5,
+        &._6 {
+          left: 0 !important;
+        }
+      }
+    }
+  }
+  @-webkit-keyframes pulsate {
+    0% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+
+    50% {
+      -webkit-transform: scale(0.9);
+      transform: scale(0.9);
+    }
+
+    100% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+  }
+  @keyframes pulsate {
+    0% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+
+    50% {
+      -webkit-transform: scale(0.9);
+      transform: scale(0.9);
+    }
+
+    100% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+  }
+
+  .theme-card {
+    width: 150px;
+    height: 360px;
+    background-color: #fafafa;
+    border-radius: 75px / 180px;
+    margin: 140px auto;
+
+    .theme-info {
+      padding: 20px;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-items: center;
+      display: none;
+      height: 100%;
+
+      &.active {
+        display: flex;
+      }
+    }
+
+    .description,
+    .name {
+      font-size: 15px;
+      line-height: 0.94;
+      text-align: center;
+    }
+
+    .description {
+      font-weight: bold;
+    }
+
+    button {
+      width: 83px;
+      height: 28px;
+      font-size: 13px;
+      font-weight: 600;
+      text-align: center;
+      color: #ffffff;
+    }
+  }
+}

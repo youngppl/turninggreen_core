@@ -9,6 +9,7 @@
       <%= f.password_field :password, autocomplete: "current-password", placeholder: "password", :class => "" %>
     </div>
 
+    <%= f.hidden_field :remember_me, value: 1 %>
 
     <div>
       <%= f.submit "sign in", :class => ""%>

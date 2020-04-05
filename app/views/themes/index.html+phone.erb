@@ -1,0 +1,32 @@
+<div class="themes mobile">
+  <h2 class="title">T H E M E S</h2>
+  <h4 class="subtitle">Click on the each theme below to complete challenges and make a difference!</h4>
+  <div class="content">
+    <div class="themes-icons">
+      <% themes.each_with_index do |theme, index| %>
+      <div class="theme-icon _<%= index + 1 %> <%= 'active' if index == 0 %>" data-theme="<%= theme.downcase %>" onclick="toggleThemeCard(this)">
+        <div class="icon-box">
+          <%= image_tag("themes/rings/theme-ring.svg", class: 'ring') %>
+          <%= image_tag("themes/icons/"+theme.downcase+".svg", class: "icon " + theme.downcase) %>
+          <% num_completed = Challenge.where(user_id: current_user, theme: theme.capitalize, completed: true).length %>
+          <% if num_completed > 6 %>
+          <% num_completed = 6 %>
+          <% end %>
+          <% if num_completed > 0 %>
+          <%= image_tag("themes/rings/"+theme.downcase+"-"+num_completed.to_s+".svg", class: 'completed-ring _'+num_completed.to_s) %>
+          <% end %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+    <div class="theme-card">
+      <% themes.each_with_index do |theme, index| %>
+        <div class="theme-info <%= theme.downcase %> <%= 'active' if index == 0 %> ">
+          <h2 class="name"> <%= theme.downcase %></h2>
+          <h2 class="description"><%= themes_description[theme.to_sym] %></h2>
+          <button type="button" name="button" onclick="location.href='<%= challenges_path(theme) %>'">let's go!</button>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

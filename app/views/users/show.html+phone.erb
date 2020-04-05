@@ -4,7 +4,7 @@
   </div>
   <div class="content">
     <div class="reflection tab">
-      <iframe src="<%= challenges_reflections_path %> " width="" height=""></iframe>
+      <iframe src="<%= challenges_reflections_path %>" id="reflection-iframe"></iframe>
     </div>
     <div class="dash tab active">
       <div class="heading">
@@ -95,12 +95,12 @@
             <%= link_to 'log out', destroy_user_session_path, method: :delete %>
           </div>
           <div class="challenges tab">
-            <iframe src="<%= themes_path %> " width="" height=""></iframe>
+            <iframe src="<%= themes_path %>" id="challenges-iframe"></iframe>
           </div>
         </div>
 
         <div class="menu">
-          <button type="button" name="button" data-target="reflection" class="reflection" onclick="updateActiveButton(this)">
+          <button type="button" name="button" data-target="reflection" class="reflection" ondblclick="document.getElementById('reflection-iframe').contentWindow.location.reload();" onclick="updateActiveButton(this)">
             <div class="reflection-icon-container">
               <%= image_tag 'mobile/menu-buttons/reflections.svg' %>
               <%= image_tag 'mobile/menu-buttons/reflections-active.svg', class: 'active' %>
@@ -111,11 +111,11 @@
               <% end %>
             </div>
           </button>
-          <button type="button" name="button" data-target="dash" class="dash active" onclick="updateActiveButton(this)">
+          <button type="button" name="button" data-target="dash" class="dash active" ondblclick="location.reload();" onclick="updateActiveButton(this)">
             <%= image_tag 'mobile/menu-buttons/dash.svg' %>
             <%= image_tag 'mobile/menu-buttons/dash-active.svg', class: 'active' %>
           </button>
-          <button type="button" name="button" data-target="challenges" class="challenges" onclick="updateActiveButton(this)">
+          <button type="button" name="button" data-target="challenges" class="challenges" ondblclick="document.getElementById('challenges-iframe').contentWindow.location.reload();" onclick="updateActiveButton(this)">
             <%= image_tag 'mobile/menu-buttons/challenges.svg' %>
             <%= image_tag 'mobile/menu-buttons/challenges-active.svg', class: 'active' %>
           </button>

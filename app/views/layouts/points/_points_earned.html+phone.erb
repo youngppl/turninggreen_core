@@ -10,7 +10,7 @@ visible: true, false
  %>
 
 
-<div class="mobile points-earned" id="<%= id if id %>" >
+<div class="mobile points-earned" id="<%= id if defined? id %>" >
   <canvas id="confetti-canvas" onclick="$('.points-earned').hide();confetti.clear();"></canvas>
   <div class="">
     <% if type == 'theme_unlock' %>
