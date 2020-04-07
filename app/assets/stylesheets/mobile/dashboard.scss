@@ -4,13 +4,9 @@
   .logo {
     text-align: center;
     margin: 1vh;
-    position: absolute;
-    width: 100%;
-    top: 0;
   }
 
   .content {
-    top: 50px;
     position: relative;
 
     iframe {
@@ -94,7 +90,7 @@
       .settings-button {
         position: absolute;
         right: 10px;
-        top: 10px;
+        top: 40px;
       }
     }
 

@@ -1,12 +1,12 @@
 <div class="dashboard mobile">
-  <div class="logo">
-    <%= image_tag 'rootup-logo.png', size: '78x23' %>
-  </div>
   <div class="content">
     <div class="reflection tab">
       <iframe src="<%= challenges_reflections_path %>" id="reflection-iframe"></iframe>
     </div>
     <div class="dash tab active">
+      <div class="logo">
+        <%= image_tag 'rootup-logo.png', size: '78x23' %>
+      </div>
       <div class="heading">
         <div class="points-ring">
           <svg viewbox="13 -13 80 80" xmlns="http://www.w3.org/2000/svg">
