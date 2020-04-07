@@ -19,6 +19,8 @@ function uploadPicMobile(input) {
   tmp_url = URL.createObjectURL(input.files[0])
   $(input).siblings('.photo').html('')
   $(input).siblings('.photo').css('background-image', 'url(' + tmp_url + ')');
+  $(input).siblings('.photo').css('background-color', 'transparent');
+  $(input).siblings('.photo').css('border-radius', 0);
 
   var url = input.dataset.directUploadUrl;
   var upload = new ActiveStorage.DirectUpload(input.files[0], url);
