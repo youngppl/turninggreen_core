@@ -15,13 +15,14 @@ visible: true, false
   <div class="">
     <% if type == 'theme_unlock' %>
       <h1 class="heading">THEME UNLOCKED!</h1>
-    <% end %>
-    <% if type == 'points' %>
+    <% elsif type == 'points' %>
       <% if current_user.points + points >= level_ranges[current_user.level + 1] %>
         <h1 class="heading">LEVEL UP!</h1>
       <% else %>
         <h1 class="heading">POINTS EARNED!</h1>
       <% end %>
+    <% else %>
+      <h1 class="heading">POINTS EARNED!</h1>
     <% end %>
   </div>
   <div class="seed">
