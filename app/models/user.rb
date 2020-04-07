@@ -46,11 +46,11 @@ class User < ApplicationRecord
   # saving/editing
 
   def update_with_password(params={})
-    if !params[:current_password].nil? && !self.valid_password?(params[:current_password])
-      self.errors[:current_password] << "The current password is invalid"
-      return
-    end
-    current_password = params.delete(:current_password)
+    # if !params[:current_password].nil? && !self.valid_password?(params[:current_password])
+    #   self.errors[:current_password] << "The current password is invalid"
+    #   return
+    # end
+    # current_password = params.delete(:current_password)
 
     if params[:password].blank?
       params.delete(:password)

@@ -83,15 +83,30 @@ function allowNotifSave() {
   }
 }
 
-function enablePasswordFields() {
-  if (!!$('#user_current_password').val()) {
-    $('#user_password').prop('disabled', false);
-    $('#user_password_confirmation').prop('disabled', false);
+// function enablePasswordFields() {
+//   if (!!$('#user_current_password').val()) {
+//     $('#user_password').prop('disabled', false);
+//     $('#user_password_confirmation').prop('disabled', false);
+//   } else {
+//     $('#update-password-button').prop('disabled', true);
+//     $('#user_password').prop('disabled', true);
+//     $('#user_password_confirmation').prop('disabled', true);
+//   }
+//   if ($('#user_password').val().length >= 8 && $('#user_password').val() == $('#user_password_confirmation').val()) {
+//     $('#update-password-button').prop('disabled', false);
+//   } else {
+//     $('#update-password-button').prop('disabled', true);
+//   }
+// }
+
+function enablePasswordSave() {
+  // check if password confirmation matches
+  if ($('#user_password_confirmation').val() && $('#user_password').val() !=  $('#user_password_confirmation').val()) {
+    $('.confirm.error').show()
   } else {
-    $('#update-password-button').prop('disabled', true);
-    $('#user_password').prop('disabled', true);
-    $('#user_password_confirmation').prop('disabled', true);
+    $('.confirm.error').hide()
   }
+  // enable save button
   if ($('#user_password').val().length >= 8 && $('#user_password').val() == $('#user_password_confirmation').val()) {
     $('#update-password-button').prop('disabled', false);
   } else {
