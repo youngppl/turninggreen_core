@@ -159,7 +159,7 @@
     height: 360px;
     background-color: #fafafa;
     border-radius: 75px / 180px;
-    margin: 140px auto;
+    margin: 130px auto;
 
     .theme-info {
       padding: 20px;
@@ -183,6 +183,11 @@
 
     .description {
       font-weight: bold;
+    }
+
+    .unlock-instructions {
+      font-size: 15px;
+      text-align: center;
     }
 
     button {

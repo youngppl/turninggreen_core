@@ -8,6 +8,13 @@ function updateActiveButton(el) {
   $('.content').find('.' + target).addClass('active')
 }
 
+function resetThemesiFrame() {
+  path = document.getElementById('challenges-iframe').contentWindow.location.pathname
+  if (path != '/themes') {
+    document.getElementById('challenges-iframe').contentWindow.location.href = '/themes'
+  }
+}
+
 function enableLogButton(el) {
   if ($(el).val()) {
     $('.next-button .disabled').hide()

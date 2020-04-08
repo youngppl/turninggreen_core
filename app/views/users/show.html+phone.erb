@@ -115,7 +115,7 @@
             <%= image_tag 'mobile/menu-buttons/dash.svg' %>
             <%= image_tag 'mobile/menu-buttons/dash-active.svg', class: 'active' %>
           </button>
-          <button type="button" name="button" data-target="challenges" class="challenges" ondblclick="document.getElementById('challenges-iframe').contentWindow.location.reload();" onclick="updateActiveButton(this)">
+          <button type="button" name="button" data-target="challenges" class="challenges" ondblclick="document.getElementById('challenges-iframe').contentWindow.location.reload();" onclick="updateActiveButton(this);resetThemesiFrame();">
             <%= image_tag 'mobile/menu-buttons/challenges.svg' %>
             <%= image_tag 'mobile/menu-buttons/challenges-active.svg', class: 'active' %>
           </button>

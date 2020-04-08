@@ -90,9 +90,9 @@ function toPointsEarned(event) {
     player = null;
     $('.theme-unlock').hide();
     $('.points-earned').show();
-    // $.post("/challenges/unlock", {
-    //   challenge: challengeName
-    // });
+    $.post("/challenges/unlock", {
+      challenge: challengeName
+    });
   }
 }
 

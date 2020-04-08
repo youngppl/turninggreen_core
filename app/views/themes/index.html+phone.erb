@@ -1,6 +1,6 @@
 <div class="themes mobile">
   <h2 class="title">T H E M E S</h2>
-  <h4 class="subtitle">Click on the each theme below to complete challenges and make a difference!</h4>
+  <h4 class="subtitle">Click on a theme below to start a challenge!</h4>
   <div class="content">
     <div class="themes-icons">
       <% themes.each_with_index do |theme, index| %>
@@ -24,7 +24,11 @@
         <div class="theme-info <%= theme.downcase %> <%= 'active' if index == 0 %> ">
           <h2 class="name"> <%= theme.downcase %></h2>
           <h2 class="description"><%= themes_description[theme.to_sym] %></h2>
-          <button type="button" name="button" onclick="location.href='<%= challenges_path(theme) %>'">let's go!</button>
+          <% if themes_unlock.key?(theme.to_sym) && !current_user.unlockedChallenges.include?(theme) %>
+            <span class="unlock-instructions text-danger"><%= themes_unlock[theme.to_sym] %></span>
+          <% else %>
+            <button type="button" name="button" onclick="location.href='<%= challenges_path(theme) %>'">let's go!</button>
+          <% end %>
         </div>
       <% end %>
     </div>
