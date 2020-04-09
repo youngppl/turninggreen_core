@@ -53,10 +53,10 @@
                     <h5 class="question"><%= challenge.content_data[:metric_question] %></h5>
                   </div>
                   <button type="button" name="button" class="dash-button" onclick="$('.log-progress#<%= challenge.id %>').css('display', 'flex');">log progress</button>
-                  <%= render 'layouts/mobile/log_progress', {challenge: challenge} %>
-                  <%= render 'layouts/mobile/metric_popup', {challenge: challenge} %>
                 </div>
               </div>
+              <%= render 'layouts/mobile/log_progress', {challenge: challenge} %>
+              <%= render 'layouts/mobile/metric_popup', {challenge: challenge} %>
             <% end %>
             <% if @current_challenges.length.between?(1, 5) %>
               <div class="carousel-item">

@@ -1,3 +1,15 @@
+function reflectionLogProgress(el, challenge_id) {
+  if ($(el).children('.next-button .active').is(':visible')) {
+    // if button not disabled -> log progess
+    $.post('/logs/new', {
+      challenge_id: challenge_id,
+      metric: $(el).siblings('.input').val()
+    });
+    $(el).parents(".slide").hide()
+    $(el).parents(".slide").next(".slide").show()
+  }
+}
+
 function checkReflectionHasText(el) {
   if ($(el).val()) {
     $(el).siblings('.next-button').children('.disabled').hide()
@@ -11,7 +23,7 @@ function checkReflectionHasText(el) {
 function reflectionToNextSlide(el) {
   if ($(el).children('.next-button .active').is(':visible')) {
     $(el).parents(".slide").hide()
-    $(el).parents(".slide").siblings(".slide").show()
+    $(el).parents(".slide").next(".slide").show()
   }
 }
 

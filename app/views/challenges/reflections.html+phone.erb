@@ -18,6 +18,43 @@
         <%= f.hidden_field :challenge_id, value: challenge.id %>
         <div class="slide one">
           <div class="green">
+            <h2 class="text-center">That's some real progress,<br>keep stoking that fire!</h2>
+          </div>
+          <div class="graph-container">
+            <div class="graph" height="200px">
+              <canvas id="chart_<%= challenge.id %>"></canvas>
+              <script>
+                var chart_<%= challenge.id %> = new Chart($('#chart_<%= challenge.id %>'), {
+                  type: 'line',
+                  data: <%= raw to_javascript_string challenge.data%>,
+                  options: <%=  raw to_javascript_string challenge.options_mobile %>
+                })
+              </script>
+              <div class="today marker _<%= challenge.id %>" style="left:<%= challenge.today_marker_position %>%">
+                <% if challenge.created_at.to_date != DateTime.now.utc.to_date && challenge.date_complete.to_date != DateTime.now.utc.to_date %>
+                  <svg height="30" width="10" class="line"><line x1="0" y1="0" x2="0" y2="26"/></svg>
+                  <span class="label">today</span>
+                <% end %>
+              </div>
+              <div class="start box">
+                <span>start</span>
+                <h2><%=challenge.created_at.month%>/<%=challenge.created_at.day%></h2>
+              </div>
+              <div class="end box">
+                <span>end</span>
+                <h2><%=challenge.date_complete.month%>/<%=challenge.date_complete.day%></h2>
+              </div>
+            </div>
+          </div>
+          <h2 class="prompt"> One last time, <%= challenge.content_data[:metric_question].downcase %></h2>
+          <input type="number" pattern="\d*" class="input" oninput="enableLogButton(this)">
+          <div class="next-button" onclick="reflectionLogProgress(this, <%= challenge.id %>);">
+            <%= image_tag "next-button-disabled", class: "disabled" %>
+            <%= image_tag "next-button-active", style: 'display:none;', class: "active" %>
+          </div>
+        </div>
+        <div class="slide two" style="display:none;">
+          <div class="green">
             <h2> <%= challenge_data[:reflection_question] %> </h2>
           </div>
           <%= f.text_area :reflection, class: "reflection-input", placeholder: "Type away! ....", oninput: "checkReflectionHasText(this)" %>
@@ -26,7 +63,7 @@
             <%= image_tag "next-button-active", style: 'display:none;', class: "active" %>
           </div>
         </div>
-        <div class="slide two" style="display:none;">
+        <div class="slide three" style="display:none;">
           <div class="green">
             <h2 class="text-center">Upload a photo and give it a caption!</h2>
           </div>

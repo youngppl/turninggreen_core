@@ -38,5 +38,7 @@ function logProgress(el, challenge_id) {
     eval("updateChart_"+challenge_id+"()")
     // show points
     $('.points-earned').show()
+    // cycle challenges carousel
+    $('.carousel').carousel('next')
   }
 }

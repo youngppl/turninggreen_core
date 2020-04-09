@@ -4,7 +4,7 @@
       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button>
-      <div class="heading">
+      <div class="challenge-info">
         <%= image_tag challenge.theme_icon %>
         <h2 class="challenge-name">
           <%= challenge.challenge_name %>
@@ -37,7 +37,7 @@
       <div class="stats">
         <div class="cumulative">
           <span class="num"><%= challenge.cumulative_metrics %></span>
-          <h2> <%= challenge.content_data[:metric_unit] %></h2>
+          <h2>METRICS CUMULATIVELY</h2>
         </div>
         <hr class="separator">
         <div class="days-left">
