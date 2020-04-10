@@ -52,7 +52,7 @@ function uploadPicMobile(input) {
 
 function allowReflectionSubmitMobile(el) {
   input_box = $(el).parent()
-  if (input_box.children('#upload-photo').val() != '' && input_box.children('.caption').val() != '' ) {
+  if (input_box.children('.caption').val() != '') {
     $(el).parent().siblings('.submit').prop('disabled', false)
   } else {
     $(el).parent().siblings('.submit').prop('disabled', true)
