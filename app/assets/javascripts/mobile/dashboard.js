@@ -27,18 +27,25 @@ function enableLogButton(el) {
 
 function logProgress(el, challenge_id) {
   if ($(el).children('.next-button .active').is(':visible')) {
-    // if button not disabled -> log progess
+    // if button not disabled -> log progress
     $.post('/logs/new', {
       challenge_id: challenge_id,
       metric: $(el).siblings('.input').val()
     });
     // hide prompt
     $(el).parent().hide()
+    // mark challenge card as logged
+    $(el).parent().prev('.carousel-item').addClass('logged')
     // update and show metric popup
     eval("updateChart_"+challenge_id+"()")
     // show points
     $('.points-earned').show()
-    // cycle challenges carousel
-    $('.carousel').carousel('next')
+    // cycle challenges carousel to next unlogged challenge
+    $('#challenges-carousel').find('.carousel-item').each(function(index) {
+      if (!$(this).hasClass('logged') && !$(this).hasClass('last')) {        
+        $('#challenges-carousel').carousel(index)
+        return false;
+      }
+    })
   }
 }

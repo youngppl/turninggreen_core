@@ -1,6 +1,6 @@
 function reflectionLogProgress(el, challenge_id) {
   if ($(el).children('.next-button .active').is(':visible')) {
-    // if button not disabled -> log progess
+    // if button not disabled -> log progress
     $.post('/logs/new', {
       challenge_id: challenge_id,
       metric: $(el).siblings('.input').val()

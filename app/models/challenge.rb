@@ -42,6 +42,10 @@ class Challenge < ApplicationRecord
     last_logged.nil? ? '--' : "#{last_logged.to_date.month}/#{last_logged.to_date.day}"
   end
 
+  def last_logged_today?
+    progress_logs.last && last_logged.to_date == DateTime.now.utc.to_date
+  end
+
   def progress_bar_length
     ((last_logged - created_at) / (date_complete - created_at)) * 100
   end

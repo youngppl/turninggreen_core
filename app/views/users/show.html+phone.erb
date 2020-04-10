@@ -42,7 +42,7 @@
               </div>
             <% end %>
             <% @current_challenges.each_with_index do |challenge, index| %>
-              <div class="carousel-item <%= 'active' if index == 0 %> ">
+              <div class="carousel-item <%= 'active' if index == 0 %> <%= 'logged' if challenge.last_logged_today? %>">
                 <div class="challenge-card">
                   <div class="">
                     <%= image_tag challenge.theme_icon, class: 'icon' %>
@@ -59,7 +59,7 @@
               <%= render 'layouts/mobile/metric_popup', {challenge: challenge} %>
             <% end %>
             <% if @current_challenges.length.between?(1, 5) %>
-              <div class="carousel-item">
+              <div class="carousel-item last">
                 <div class="add-more challenge-card">
                   <h5 class="heading">Craving more? Take on more challenges!</h5>
                   <button type="button" name="button" class="dash-button" onclick="$('button.challenges').click()">add challenges</button>
