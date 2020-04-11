@@ -3,6 +3,7 @@
     <div class="reflection tab">
       <iframe src="<%= challenges_reflections_path %>" id="reflection-iframe"></iframe>
     </div>
+
     <div class="dash tab active">
       <div class="logo">
         <%= image_tag 'rootup-logo.png', size: '78x23' %>
@@ -28,7 +29,8 @@
               <span style="font-weight:500;">Hello,</span>
               <%= current_user.name %></h5>
           </div>
-          <%= image_tag 'settings-cog.svg', class: 'settings-button', onclick: "location.href='#{edit_user_registration_path}'" %>
+          <%= image_tag 'settings-cog.svg', class: 'settings-button', onclick: "showSettingsPopup()" %>
+          <%= render 'layouts/mobile/settings' %>
         </div>
 
         <div id="challenges-carousel" class="carousel slide" data-interval="false">
@@ -94,6 +96,7 @@
             </script>
             <%= link_to 'log out', destroy_user_session_path, method: :delete %>
           </div>
+
           <div class="challenges tab">
             <iframe src="<%= themes_path %>" id="challenges-iframe"></iframe>
           </div>

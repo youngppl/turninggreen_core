@@ -12,6 +12,16 @@ class User < ApplicationRecord
   has_many :challenges
   has_many :messages, class_name: "Ahoy::Message", as: :user
 
+  # permissions
+  
+  def gave_location_permission?
+    permissions.include? 'location'
+  end
+  
+  def wants_to_remain_anonymous?
+    permissions.include? 'challenges'
+  end
+
   # challenges
 
   def all_pre_challenges_completed

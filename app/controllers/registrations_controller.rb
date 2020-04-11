@@ -23,6 +23,10 @@ class RegistrationsController < Devise::RegistrationsController
     current_user.update(deactivation_reasons: reasons)
   end
 
+  def update_user 
+    current_user.update(params.require(:user).permit(:email, :state, :country, :password, :password_confirmation, :timezone, :notifications, :notifications_content => [], :permissions => []))
+    head :ok
+  end
 
   protected
 

@@ -41,6 +41,7 @@ Rails.application.routes.draw do
   post 'reflections/edit' => 'reflections#edit', :as => 'edit_reflection'
   post '/feedback' => 'users#feedback'
   devise_scope :user do
+    post '/update-user' => 'registrations#update_user' # updating user from outsite registrations controller
     post '/deactivate' => 'registrations#deactivate'
   end
   resources :tips_daily, only: [:index, :show]

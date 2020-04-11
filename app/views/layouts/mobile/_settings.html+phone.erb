@@ -1,0 +1,107 @@
+<div class="settings-popup">
+  <button type="button" name="button" class="back-button bare">
+    <i class="fas fa-chevron-left"></i>
+  </button>
+  <h2 class="title">Settings</h2>
+
+  <div class="content">
+    <section>
+      <h3 class="section-title">profile</h3>
+      <div class="field" onclick="showPopout('profile')">
+        <span>email</span>
+        <span><%= current_user.email %></span>
+        <i class="fas fa-chevron-right"></i>
+      </div>
+      <div class="field" onclick="showPopout('profile')">
+        <span>location</span>
+        <span><%= current_user.state %>,
+          <%= current_user.country %></span>
+        <i class="fas fa-chevron-right"></i>
+      </div>
+    </section>
+
+    <section>
+      <h3 class="section-title">password</h3>
+      <div class="field" onclick="showPopout('password')">
+        <span>change password</span>
+        <i class="fas fa-chevron-right"></i>
+      </div>
+    </section>
+
+    <section>
+      <h3 class="section-title">privacy</h3>
+      <div class="field">
+        <h4>I give permission to include my state + country with my reflections, if shared on rootup's social media platforms. <a target="_blank" href="<%= privacy_learn_more_path %>">Learn more</a></h4>
+        <label class="switch" for="location-checkbox">
+          <input type="checkbox" id="location-checkbox" onchange="updatePermissions();" <%= 'checked' if current_user.gave_location_permission? %> />
+          <div class="slider round"></div>
+        </label>
+      </div>
+      <div class="field">
+        <h4>I want to remain anonymous if my reflections are shared on rootup's social media platforms. <a target="_blank" href="<%= privacy_learn_more_path %>">Learn more</a></h4>
+        <label class="switch" for="permission-checkbox">
+          <input type="checkbox" id="permission-checkbox" onchange="updatePermissions();" <%= 'checked' if current_user.wants_to_remain_anonymous? %> />
+          <div class="slider round"></div>
+        </label>
+      </div>
+      <h5 class="note">If you don't want any of your reflections to be shared, please <a href="mailto:rootupteam@gmail.com?">email us</a></h5>
+    </section>
+
+    <section>
+      <h3 class="section-title">notifications</h3>
+      <div class="field">
+        <span>recieve emails:</span>
+        <span><%= current_user.notifications.downcase %></span>
+        <i class="fas fa-chevron-right"></i>
+      </div>
+      <div class="field">
+        <span>what to send to my email</span>
+        <i class="fas fa-chevron-right"></i>
+      </div>
+    </section>
+
+    <section>
+      <h3 class="section-title">activity</h3>
+      <h2 class="message">If you deactivate your account, you will lose access to all the data you’ve shared on rootup.</h2>
+      <div class="field">
+        <span>deactivate account</span>
+        <i class="fas fa-chevron-right"></i>
+      </div>
+    </section>
+
+    <%= link_to 'log out', destroy_user_session_path, method: :delete, class: 'logout' %>
+  </div>
+  
+  <div class="profile popout">
+    <h2 class="popup-title">Profile</h2>
+    <div class="field">
+      <span>email</span>
+      <input type="text" id="email-input" oninput="enableSaveButton(this);" data-orig="<%= current_user.email %>">
+    </div>
+    <div class="field">
+      <span>location</span>
+      <input type="text" oninput="enableSaveButton(this);">
+    </div>
+    <button class="save" disabled onclick="updateProfile()">save changes</button>
+  </div>
+
+  <div class="password popout">
+    <h2 class="popup-title">Change Password</h2>
+    <div class="field">
+      <span>new password</span>
+      <input type="password" id="password-input" autocomplete="off" oninput="checkPasswords(this);">
+    </div>
+    <h5 class="password error">password must include at least 8 characters</h5>
+    <div class="field">
+      <span>confirm password</span>
+      <input type="password" id="confirm-password-input" oninput="checkPasswords(this);">
+    </div>
+    <h5 class="confirm error">the password doesn’t match</h5>
+    <button class="save" disabled onclick="updatePassword()">save changes</button>
+  </div>
+</div>
+<script>
+  $('input').each(function () {
+    $(this).val($(this).data('orig'))
+  })
+</script>

@@ -80,10 +80,10 @@
 
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, id: "edit-privacy", class: 'col section-content' }) do |f| %>
           <label class="section-label first">location</label>
-          <%= f.check_box :permissions, {multiple: true, onclick:"$('#privacy-save-button').prop('disabled', false);"}, 'location', nil %>
+          <%= f.check_box :permissions, {multiple: true, onclick:"$('#privacy-save-button').prop('disabled', false);"}, 'location', '' %>
           <span>I give permission to include my state + country with my reflections, if shared on rootup's social media platforms. <a target="_blank" href="<%= privacy_learn_more_path %>">Learn more</a></span>
           <label class="section-label">reflections</label>
-          <%= f.check_box :permissions, {multiple: true, onclick:"$('#privacy-save-button').prop('disabled', false);"}, 'challenges', nil %>
+          <%= f.check_box :permissions, {multiple: true, onclick:"$('#privacy-save-button').prop('disabled', false);"}, 'challenges', '' %>
           <span>I want to remain anonymous if my reflections are shared on rootup's social media platforms. <a target="_blank" href="<%= privacy_learn_more_path %>">Learn more</a></span><br>
           <h5 class="more-info">If you don't want any of your reflections to be shared, please <a href="mailto:rootupteam@gmail.com?">email us</a></h5>
         <%= f.submit "save changes", class: "btn save-changes-button", id: "privacy-save-button", disabled: "true", onclick: "$(this).siblings('.changes-saved-notification').css('display', 'flex');" %>

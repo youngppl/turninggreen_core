@@ -11,7 +11,7 @@ visible: true, false
 
 
 <div class="mobile points-earned" id="<%= id if defined? id %>" style="<%= 'display:none;' if !visible %>">
-  <canvas id="confetti-canvas" onclick="$('.points-earned').hide();confetti.clear();"></canvas>
+  <canvas id="confetti-canvas" onclick="$('.points-earned').hide();"></canvas>
   <div class="content">
     <% if type == 'theme_unlock' %>
       <h1 class="heading">THEME UNLOCKED!</h1>
@@ -49,7 +49,7 @@ visible: true, false
     <% else %>
       <h2> <%= type.html_safe %> </h2>
     <% end %>
-    <button type="button" name="button" class="continue" onclick="$('.points-earned').hide();confetti.clear();">continue</button>
+    <button type="button" name="button" class="continue" onclick="$('.points-earned').hide();">continue</button>
   </div>
   </div>
 </div>
