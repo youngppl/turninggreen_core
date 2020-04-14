@@ -45,16 +45,23 @@
             <% end %>
             <% @current_challenges.each_with_index do |challenge, index| %>
               <div class="carousel-item <%= 'active' if index == 0 %> <%= 'logged' if challenge.last_logged_today? %>">
-                <div class="challenge-card">
-                  <div class="">
+                <div class="challenge-card" id="<%= challenge.id%>">
+                  <div>
                     <%= image_tag challenge.theme_icon, class: 'icon' %>
                     <h5 class="name"><%= challenge.challenge_name %></h5>
                   </div>
-                  <div class="">
-                    <h6 class="since">Since your last log:</h6>
+                  <div class="logged <%= 'd-none' if !challenge.last_logged_today? %>">
                     <h5 class="question"><%= challenge.content_data[:metric_question] %></h5>
+                    <input type="number" class="todays-log" disabled value="<%= challenge.progress_logs.last.metric if challenge.last_logged_today? %>" >
+                    <button type="button" name="button" class="dash-button" onclick="$('#<%= challenge.id %>.metric-popup').modal()">see my progress</button>
                   </div>
-                  <button type="button" name="button" class="dash-button" onclick="$('.log-progress#<%= challenge.id %>').css('display', 'flex');">log progress</button>
+                  <div class="not-logged <%= 'd-none' if challenge.last_logged_today? %>">
+                    <div>
+                      <h6 class="since">Since your last log:</h6>
+                      <h5 class="question"><%= challenge.content_data[:metric_question] %></h5>
+                    </div>
+                    <button type="button" name="button" class="dash-button" onclick="$('#<%= challenge.id %>.log-progress').css('display', 'flex');">log progress</button>
+                  </div>
                 </div>
               </div>
               <%= render 'layouts/mobile/log_progress', {challenge: challenge} %>
