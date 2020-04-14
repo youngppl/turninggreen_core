@@ -24,6 +24,10 @@ class Challenge < ApplicationRecord
     "themes/icons/#{theme.downcase}.svg"
   end
 
+  def icon_path
+    "challenges/#{theme.downcase}/#{challenge_name.downcase.tr(' ','-').tr('#','')}.png"
+  end
+
   def get_time_left
     @weeks = (date_complete.getutc.to_date - DateTime.now.getutc.to_date) / 7
     if @weeks < 1

@@ -1,0 +1,25 @@
+<%# 
+    challenge : challenge to render
+ %>
+<% challenge_is_obj = challenge.class == Challenge %>
+<% name = (challenge_is_obj)? challenge.challenge_name : challenge[:name] %>
+<% type = (challenge_is_obj)? challenge.type : challenge[:type] %>
+
+<div class="challenge-card <%= 'pre' if type == 'pre' %>">
+  <div class="image">
+    <%= image_tag (challenge_is_obj)? challenge.icon_path : "challenges/#{@challenge_name.downcase}/#{challenge[:name].downcase.tr(' ','-').tr('#','')}.png", size: '100' %>
+  </div>
+  <div class="info">
+    <h2 class="name"><%= name  %></h2>
+    <h3 class="question"> <%= (challenge_is_obj)? challenge.content_data[:question] : challenge[:question] %> </h3>
+  </div>
+  <% if type != 'pre' %>
+    <% if @completed_challenges.exists?(challenge_name: name)%>
+      <%= image_tag 'challenges/completed.svg', class: 'progress-indicator', size: '22' %>
+    <% elsif @in_progress_challenges.exists?(challenge_name: name) %>
+      <%= image_tag 'challenges/in-progress.svg', class: 'progress-indicator', size: '22' %>
+    <% else %>
+      <%= image_tag 'challenges/not-started.svg', class: 'progress-indicator', size: '22' %>
+    <% end %>
+  <% end %>
+</div>

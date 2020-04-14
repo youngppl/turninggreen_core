@@ -89,6 +89,7 @@ function toPointsEarned(event) {
     player.destroy();
     player = null;
     $('.theme-unlock').hide();
+    $('.challenge-page').show();
     $('.points-earned').show();
     $.post("/challenges/unlock", {
       challenge: challengeName
