@@ -23,8 +23,9 @@ function hidePopout() {
 
 function updateProfile() {
     sendUpdateRequest({
-        "email": $('#email-input').val()
-        // TODO: implement state and country change
+        "email": $('#email-input').val(),
+        "state": $('#user_state').val(),
+        "country": $('#user_country').val(),
     })
     hidePopout()
 }
@@ -45,7 +46,6 @@ function updatePermissions() {
     sendUpdateRequest({
         "permissions": permissions_array
     })
-    hidePopout()
 }
 
 function sendUpdateRequest(params) {
@@ -55,12 +55,12 @@ function sendUpdateRequest(params) {
 }
 
 function enableSaveButton(el) {
-    $(el).parents('.popout').find('input').each(function () {
-        if ($(this).val() == $(this).data('orig')) {
-            $(el).parents('.popout').find('.save').prop('disabled', true)
+    $(el).parents('.popout').find('input, select').each(function () {
+        if ($(this).val() != $(this).data('orig')) {
+            $(el).parents('.popout').find('.save').prop('disabled', false)
             return false;
         }
-        $(el).parents('.popout').find('.save').prop('disabled', false)
+        $(el).parents('.popout').find('.save').prop('disabled', true)
     })
 }
 
