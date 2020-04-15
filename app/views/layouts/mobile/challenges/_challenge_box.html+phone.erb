@@ -2,16 +2,17 @@
     challenge : challenge to render
  %>
 <% challenge_is_obj = challenge.class == Challenge %>
-<% name = (challenge_is_obj)? challenge.challenge_name : challenge[:name] %>
-<% type = (challenge_is_obj)? challenge.type : challenge[:type] %>
+<% challenge_data = (challenge_is_obj)? challenge.content_data : challenge %>
+<% name = challenge_data[:name] %>
+<% type = challenge_data[:type] %>
 
-<div class="challenge-card <%= 'pre' if type == 'pre' %>">
+<div class="challenge-card <%= 'pre' if type == 'pre' %>" onclick="$(this).next('.challenge-popup').modal()">
   <div class="image">
     <%= image_tag (challenge_is_obj)? challenge.icon_path : "challenges/#{@challenge_name.downcase}/#{challenge[:name].downcase.tr(' ','-').tr('#','')}.png", size: '100' %>
   </div>
   <div class="info">
-    <h2 class="name"><%= name  %></h2>
-    <h3 class="question"> <%= (challenge_is_obj)? challenge.content_data[:question] : challenge[:question] %> </h3>
+    <h2 class="name"><%= name %></h2>
+    <h3 class="question"> <%= challenge_data[:question] %> </h3>
   </div>
   <% if type != 'pre' %>
     <% if @completed_challenges.exists?(challenge_name: name)%>
@@ -22,4 +23,84 @@
       <%= image_tag 'challenges/not-started.svg', class: 'progress-indicator', size: '22' %>
     <% end %>
   <% end %>
+</div>
+
+<div class="challenge-popup modal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <div class="heading">
+          <h2><%= name %></h2>
+        </div>
+      <div class="modal-body">
+        <div class="challenge-info carousel slide" id="<%= name %>" data-interval="false">
+          <div class="carousel-item active">
+            <p class="description"><%= challenge_data[:description].html_safe %></p>
+          </div>
+          <div class="carousel-item">
+            <div class="steps">
+              <h2 class="subtitle">How do I do this?</h2>
+              <ul>
+                <% challenge_data[:instructions].each do |item| %>
+                <li> <%= item.html_safe %> </li>
+                <% end %>
+              </ul>
+              <% if challenge_data[:alt_instructions] %>
+              <ul class="alt">
+                <% challenge_data[:alt_instructions].each do |item| %>
+                <li> <%= item.html_safe %> </li>
+                <% end %>
+              </ul>
+              <% end %>
+              <% if challenge_data[:second_list] %>
+              <ul>
+                <% challenge_data[:second_list].each do |item| %>
+                <li> <%= item.html_safe %> </li>
+                <% end %>
+              </ul>
+              <% end %>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <h2 class="subtitle">Click on the links below to...</h2>
+            <% challenge_data[:links].each do |text, link| %>
+            <div class="learn-more-link">
+              <%= image_tag 'leaf.svg' %>
+              <%= link_to text, link, class: "link", target: "_blank"%>
+            </div>
+            <% end %>
+          </div>
+          <ol class="carousel-indicators">
+            <li data-target="<%= name %>" data-slide-to="0" class="active"></li>
+            <li data-target="<%= name %>" data-slide-to="1"></li>
+          </ol>
+          <div class="controls">
+            <div class="slide" onclick="toggleChallengeInfo(this)">
+              <div class="handle">
+                <%= image_tag 'light-icon.png' %>
+              </div>
+              <span>Tap to learn more</span>
+            </div>
+            <button class="continue" type="button" 
+              onclick="$(this).parents('.challenge-popup').hide();$(this).parents('.challenge-popup').next('start-challenge-popup').css('display', 'flex')">
+              Let's do it!!</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="start-challenge-popup"> 
+  <button type="button" name="button" class="back-button bare" onclick="$(this).parents('.start-challenge-popup').hide()">
+    <i class="fas fa-chevron-left"></i>
+  </button>
+  <h2 class="prompt">🏁Start this challenge</h2>
+  <input type="number" pattern="\d*" class="input" oninput="allowNextButton(this)">
+  <div class="next-button" onclick="startChallenge()">
+    <%= image_tag "next-button-disabled", class: "disabled" %>
+    <%= image_tag "next-button-active", style: 'display:none;', class: "active" %>
+  </div>
 </div>
