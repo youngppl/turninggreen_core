@@ -21,3 +21,19 @@ function toggleChallengeInfo(el) {
         $(el).parents('.carousel').carousel(1)
     }
 }
+
+function startChallenge(el) {
+    var d = new Date();
+    length_select = $(el).siblings('select')
+    length = (length_select.val()) ? Number(length_select.val()) : 0
+    end_date = (length == 0) ? new Date(Date.now() + (6.04e+8 * 4)) : new Date(Date.now() + (6.04e+8 * length))
+    challenge_name = $(el).parents('.start-challenge-popup').data('challenge_name')
+    $.post('/challenges/add', {
+        challenge_name: challenge_name,
+        theme: challengeName,
+        length_of_challenge: length,
+        date_complete: end_date,
+        completed: false
+    })
+    $('#challenge-points').show()
+}

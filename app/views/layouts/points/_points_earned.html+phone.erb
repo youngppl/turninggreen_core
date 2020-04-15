@@ -4,6 +4,7 @@ id: id of popup
 points: num points earned
 type: points, theme_unlock, [custom message]
 visible: true, false
+onclose: js to run after close 
 *theme_name
 
 
@@ -11,7 +12,7 @@ visible: true, false
 
 
 <div class="mobile points-earned" id="<%= id if defined? id %>" style="<%= 'display:none;' if !visible %>">
-  <canvas id="confetti-canvas" onclick="$('.points-earned').hide();"></canvas>
+  <canvas id="confetti-canvas" onclick="$('.points-earned').hide();<%= onclose if defined? onclose %>"></canvas>
   <div class="content">
     <% if type == 'theme_unlock' %>
       <h1 class="heading">THEME UNLOCKED!</h1>

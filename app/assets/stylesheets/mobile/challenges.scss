@@ -275,6 +275,56 @@
       }
     }
   }
+
+  .start-challenge-popup {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fafafa;
+    z-index: 5;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+
+    .back-button {
+      width: initial;
+      position: absolute;
+      left: 20px;
+      top: 10px;
+      font-size: 20px;
+    }
+
+    .prompt {
+      font-size: 23px;
+      font-weight: 600;
+      line-height: 1.39;
+      text-align: center;
+      color: #616161;
+    }
+
+    .input {
+      width: 126px;
+      height: 77px;
+      border-radius: 27px;
+      background-color: #dedede;
+      margin: 10px auto;
+      font-size: 40px;
+      font-weight: 600;
+      text-align: center;
+      color: #477058;
+      -webkit-appearance: none;
+      outline: none;
+      text-align-last: center;
+    }
+
+    .next-button {
+      position: absolute;
+      bottom: 100px;
+      right: 20px;
+    }
+  }
 }
 
 .theme-unlock {

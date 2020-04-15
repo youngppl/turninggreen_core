@@ -74,3 +74,4 @@
 </script>
 
 <%= render 'layouts/points/points_earned', {points: 3, type: 'theme_unlock', theme_name: @challenge_name, visible: false} %>
+<%= render 'layouts/points/points_earned', {id: 'challenge-points', points: 3, type: "One action at a time, that's all it takes to make something happen. <br> We're rootin' for ya!", visible: false, onclose: 'parent.location.href=parent.location.href'} %>

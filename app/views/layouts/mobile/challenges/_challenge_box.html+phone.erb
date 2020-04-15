@@ -5,8 +5,10 @@
 <% challenge_data = (challenge_is_obj)? challenge.content_data : challenge %>
 <% name = challenge_data[:name] %>
 <% type = challenge_data[:type] %>
+<% completed = @completed_challenges.exists?(challenge_name: name) %>
+<% in_progress = @in_progress_challenges.exists?(challenge_name: name) %>
 
-<div class="challenge-card <%= 'pre' if type == 'pre' %>" onclick="$(this).next('.challenge-popup').modal()">
+<div class="challenge-card <%= 'pre' if type == 'pre' %>" <%= "onclick=$(this).next('.challenge-popup').modal()" if !completed && !in_progress %>>
   <div class="image">
     <%= image_tag (challenge_is_obj)? challenge.icon_path : "challenges/#{@challenge_name.downcase}/#{challenge[:name].downcase.tr(' ','-').tr('#','')}.png", size: '100' %>
   </div>
@@ -15,9 +17,9 @@
     <h3 class="question"> <%= challenge_data[:question] %> </h3>
   </div>
   <% if type != 'pre' %>
-    <% if @completed_challenges.exists?(challenge_name: name)%>
+    <% if completed %>
       <%= image_tag 'challenges/completed.svg', class: 'progress-indicator', size: '22' %>
-    <% elsif @in_progress_challenges.exists?(challenge_name: name) %>
+    <% elsif in_progress %>
       <%= image_tag 'challenges/in-progress.svg', class: 'progress-indicator', size: '22' %>
     <% else %>
       <%= image_tag 'challenges/not-started.svg', class: 'progress-indicator', size: '22' %>
@@ -25,6 +27,7 @@
   <% end %>
 </div>
 
+<% if !completed && !in_progress %>
 <div class="challenge-popup modal" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -84,7 +87,7 @@
               <span>Tap to learn more</span>
             </div>
             <button class="continue" type="button" 
-              onclick="$(this).parents('.challenge-popup').hide();$(this).parents('.challenge-popup').next('start-challenge-popup').css('display', 'flex')">
+              onclick="$(this).parents('.challenge-popup').modal('hide');$(this).parents('.challenge-popup').next('.start-challenge-popup').css('display', 'flex')">
               Let's do it!!</button>
           </div>
         </div>
@@ -93,14 +96,15 @@
   </div>
 </div>
 
-<div class="start-challenge-popup"> 
+<div class="start-challenge-popup" data-challenge_name="<%= name %>"> 
   <button type="button" name="button" class="back-button bare" onclick="$(this).parents('.start-challenge-popup').hide()">
     <i class="fas fa-chevron-left"></i>
   </button>
   <h2 class="prompt">🏁Start this challenge</h2>
-  <input type="number" pattern="\d*" class="input" oninput="allowNextButton(this)">
-  <div class="next-button" onclick="startChallenge()">
-    <%= image_tag "next-button-disabled", class: "disabled" %>
-    <%= image_tag "next-button-active", style: 'display:none;', class: "active" %>
+  <%= select_tag "weeks", options_for_select((1..4).to_a), class: 'input' %>
+  <h2 class="prompt">weeks starting today</h2>
+  <div class="next-button" onclick="startChallenge(this)">
+    <%= image_tag "next-button-active", class: "active" %>
   </div>
 </div>
+<% end %>
