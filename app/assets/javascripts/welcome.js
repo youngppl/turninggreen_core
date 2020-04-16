@@ -1,4 +1,4 @@
-themes = ["waste", "body", "fashion", "water", "food", "biodiversity", "clean", "wellness", "home", "travel"]
+themes = ["food", "biodiversity", "water", "fashion", "waste", "body", "wellness", "clean", "home", "travel"]
 
 function toggleChallengePreview(theme) {
   $('.icon').removeClass('active')
