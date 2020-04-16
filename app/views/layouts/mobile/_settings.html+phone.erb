@@ -9,12 +9,12 @@
       <h3 class="section-title">profile</h3>
       <div class="field" onclick="showPopout('profile')">
         <span>email</span>
-        <span><%= current_user.email %></span>
+        <span id="email-text"><%= current_user.email %></span>
         <i class="fas fa-chevron-right"></i>
       </div>
       <div class="field" onclick="showPopout('profile')">
         <span>location</span>
-        <span><%= current_user.state %>,
+        <span id="location-text"><%= current_user.state %>,
           <%= current_user.country %></span>
         <i class="fas fa-chevron-right"></i>
       </div>
@@ -51,7 +51,7 @@
       <h3 class="section-title">notifications</h3>
       <div class="field" onclick="showPopout('notifications')">
         <span>recieve emails:</span>
-        <span><%= current_user.notifications.downcase %></span>
+        <span id="notifications-text"><%= current_user.notifications.downcase %></span>
         <i class="fas fa-chevron-right"></i>
       </div>
       <div class="field" onclick="showPopout('notifications')">
@@ -93,12 +93,12 @@
     <h2 class="popup-title">Change Password</h2>
     <div class="field">
       <span>new password</span>
-      <input type="password" id="password-input" autocomplete="off" oninput="checkPasswords(this);">
+      <input type="password" id="password-input" autocomplete="off" oninput="checkPasswords(this);" data-orig="">
     </div>
     <h5 class="password error">password must include at least 8 characters</h5>
     <div class="field">
       <span>confirm password</span>
-      <input type="password" id="confirm-password-input" oninput="checkPasswords(this);">
+      <input type="password" id="confirm-password-input" oninput="checkPasswords(this);" data-orig="">
     </div>
     <h5 class="confirm error">the password doesn’t match</h5>
     <button class="save" disabled onclick="updatePassword()">save changes</button>

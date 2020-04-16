@@ -12,7 +12,10 @@ function hideSettingsPopup() {
 function showPopout(popout) {
     $('.settings-popup .content').hide()
     $('.' + popout + '.popout').addClass('show')
-    $('.settings-popup .back-button').off('click').on('click', hidePopout)
+    $('.settings-popup .back-button').off('click')
+    if (!$('.' + popout + '.popout').hasClass('saved')) 
+        $('.settings-popup .back-button').on('click', resetPopout)
+    $('.settings-popup .back-button').on('click', hidePopout)
 }
 
 function hidePopout() {
@@ -21,12 +24,24 @@ function hidePopout() {
     $('.settings-popup .back-button').off('click').on('click', hideSettingsPopup)
 }
 
-function updateProfile() {
-    sendUpdateRequest({
-        "email": $('#email-input').val(),
-        "state": $('#user_state').val(),
-        "country": $('#user_country').val(),
+function resetPopout() {
+    $('.popout:visible input, select').each(function () {
+        $(this).val($(this).data('orig'))
     })
+    $('.popout:visible .save').prop('disabled', true)
+}
+
+function updateProfile() {
+    new_email = $('#email-input').val()
+    new_state = $('#user_state').val()
+    new_country = $('#user_country').val()
+    sendUpdateRequest({
+        "email": new_email,
+        "state": new_state,
+        "country": new_country,
+    })
+    $('#email-text').html(new_email)
+    $('#location-text').html(new_state + ', ' + new_country)
     hidePopout()
 }
 
@@ -52,6 +67,8 @@ function sendUpdateRequest(params) {
     $.post('update-user', {
         "user": params
     })
+    $('.popout:visible').addClass('saved')
+    $('.popout:visible .save').prop('disabled', true)
 }
 
 function enableSaveButton(el) {
