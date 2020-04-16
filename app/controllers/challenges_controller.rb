@@ -51,7 +51,9 @@ class ChallengesController < ApplicationController
 
   def complete_challenge
     Challenge.where(id:params[:id]).update(completed: true, date_complete: Time.now.getutc)
-    redirect_to challenges_reflections_path
+    if !mobile?
+      redirect_to challenges_reflections_path
+    end
   end
 
   def completed

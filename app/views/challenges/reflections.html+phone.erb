@@ -3,7 +3,6 @@
   <h3 class="subtitle">Share and document your experience!</h3>
   <div class="reflection-cards">
     <% @current_reflections.each do |challenge| %>
-      <% challenge_data = challenges[challenge.theme.to_sym][:challenges].find {|x| x[:name] == challenge.challenge_name} %>
       <div class="reflection-card" id="<%= challenge.id %>" onclick="$('#<%= challenge.id %>.reflection-popup').show()">
         <%= image_tag "themes/icons/"+challenge.theme.downcase+".svg", size: "30"  %>
         <h2 class="challenge-name"><%= challenge.challenge_name %></h2>
@@ -16,6 +15,7 @@
         </div>
         <%= form_for :reflection, url: new_reflection_path, html: {class: 'form-wrapper'}, multipart: true do |f| %>
         <%= f.hidden_field :challenge_id, value: challenge.id %>
+        <% if challenge.type != 'pre'%>
         <div class="slide one">
           <div class="green">
             <h2 class="text-center">That's some real progress,<br>keep stoking that fire!</h2>
@@ -53,9 +53,10 @@
             <%= image_tag "next-button-active", style: 'display:none;', class: "active" %>
           </div>
         </div>
-        <div class="slide two" style="display:none;">
+        <% end %>
+        <div class="slide two" <% "style=display:none;" if challenge.type != 'pre' %>>
           <div class="green">
-            <h2> <%= challenge_data[:reflection_question] %> </h2>
+            <h2> <%= challenge.content_data[:reflection_question] %> </h2>
           </div>
           <%= f.text_area :reflection, class: "reflection-input", placeholder: "Type away! ....", oninput: "checkReflectionHasText(this)" %>
           <div class="next-button" onclick="reflectionToNextSlide(this);">

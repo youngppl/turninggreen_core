@@ -56,3 +56,11 @@ function logProgress(el, challenge_id) {
     })
   }
 }
+
+function completePreChallenge(id) {
+  $.post('/challenges/complete-challenge', {
+    id: id
+  })
+  parent.document.getElementById('reflection-iframe').contentWindow.location.reload()
+  parent.$('button.reflection').click()
+}

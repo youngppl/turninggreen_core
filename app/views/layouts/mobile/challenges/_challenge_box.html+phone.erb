@@ -8,7 +8,7 @@
 <% completed = @completed_challenges.exists?(challenge_name: name) %>
 <% in_progress = @in_progress_challenges.exists?(challenge_name: name) %>
 
-<div class="challenge-card <%= 'pre' if type == 'pre' %>" <%= "onclick=$(this).next('.challenge-popup').modal()" if !completed && !in_progress %>>
+<div class="challenge-card <%= 'pre' if type == 'pre' %>" <%= "onclick=$(this).next('.challenge-popup').modal()" %>>
   <div class="image">
     <%= image_tag (challenge_is_obj)? challenge.icon_path : "challenges/#{@challenge_name.downcase}/#{challenge[:name].downcase.tr(' ','-').tr('#','')}.png", size: '100' %>
   </div>
@@ -27,8 +27,7 @@
   <% end %>
 </div>
 
-<% if !completed && !in_progress %>
-<div class="challenge-popup modal" tabindex="-1" role="dialog">
+<div class="challenge-popup modal" tabindex="-1" role="dialog" data-challenge_name="<%= name %>">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -86,9 +85,28 @@
               </div>
               <span>Tap to learn more</span>
             </div>
-            <button class="continue" type="button" 
-              onclick="$(this).parents('.challenge-popup').modal('hide');$(this).parents('.challenge-popup').next('.start-challenge-popup').css('display', 'flex')">
-              Let's do it!!</button>
+            <% if type == 'pre' %>
+              <% if in_progress %>
+              <button class="continue" type="button" 
+                onclick="completePreChallenge(<%= challengeObjFromName(challenge_data[:name]).id %>);">
+                finished the challenge?</button>
+              <% else %>
+              <button class="continue" type="button" 
+                onclick="startPreChallenge(this)">
+                start challenge</button>
+              <% end %>
+            <% else %>
+              <% if in_progress %>
+              <button class="continue" type="button" 
+                onclick="$('#<%= challengeObjFromName(challenge_data[:name]).id %>.log-progress').css('display', 'flex');">
+                log progress</button>
+              <%= render 'layouts/mobile/log_progress', {challenge: challengeObjFromName(challenge_data[:name])} %>
+              <% else %>
+              <button class="continue" type="button" 
+                onclick="$(this).parents('.challenge-popup').modal('hide');$(this).parents('.challenge-popup').next('.start-challenge-popup').css('display', 'flex')">
+                Let's do it!!</button>
+              <% end %>
+            <% end %>
           </div>
         </div>
       </div>
@@ -96,6 +114,7 @@
   </div>
 </div>
 
+<% if type != 'pre' %>
 <div class="start-challenge-popup" data-challenge_name="<%= name %>"> 
   <button type="button" name="button" class="back-button bare" onclick="$(this).parents('.start-challenge-popup').hide()">
     <i class="fas fa-chevron-left"></i>

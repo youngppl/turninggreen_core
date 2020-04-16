@@ -36,4 +36,8 @@ module UsersHelper
       'community': 40
     }
   end
+
+  def challengeObjFromName(name)
+    return current_user.challenges.find(current_user.challenges.where(challenge_name: name).pluck(:id)[0])
+  end
 end
