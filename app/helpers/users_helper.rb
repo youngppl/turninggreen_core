@@ -5,6 +5,22 @@ module UsersHelper
     return challengeNames
   end
 
+  def getMemberParticipation(challenge)
+    (Challenge.where(challenge_name: challenge).length / User.all.length.to_f * 100).to_i
+  end
+
+  def retrieveGlobalImpacts
+    global_impacts = []
+    request = RestClient.get(
+      "https://sheets.googleapis.com/v4/spreadsheets/1QdddPvJRMPYVF0lvE03xUZlRFjTW4Rb1np9fmM_UaxM/values/'Global%20Impact'!A:D?key=#{Rails.application.credentials[:google_api_key]}")
+    json = JSON.load(request.body)
+    impacts_json = json['values'][1..json.length]
+    impacts_json.each do |challenge, theme, description, reflection|
+      global_impacts << [challenge, theme, description, Reflection.find(reflection)]
+    end
+    return global_impacts
+  end
+
   def levels
     {
       0 => ['Seed', 'We present to you your own seed! Watch it grow as you journey through this app.'],
@@ -35,5 +51,11 @@ module UsersHelper
       'friends': 20,
       'community': 40
     }
+  end
+
+  
+
+  def challengeDataFromName(name) 
+    all_challenges.detect {|challenge| challenge[:name] == name}
   end
 end
