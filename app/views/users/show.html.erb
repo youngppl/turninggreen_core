@@ -170,7 +170,10 @@
                   <p class="quote"><%= reflection.reflection%></p>
                   <h4 class="user-name">-<%= reflection.challenge.user.name %></h4>
                 </div>
-                <div></div>
+                <div id="map_<%= index %>" class="map"></div>
+                <script>
+                  <%= generateMemberMap(challenge_name, "map_#{index}") %>
+                </script>
               </div>
             </div>
             <% end %>
@@ -184,6 +187,13 @@
         </div>
         <script type="text/javascript">
           $('.carousel').carousel()
+          $('#global-impacts-carousel').on('slide.bs.carousel', function() {
+            console.log('ran');
+            
+            maps.forEach(function (map) {
+              map._onResize()
+            })
+          })
         </script>
   </div>
 </div>
