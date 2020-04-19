@@ -87,7 +87,7 @@
   })
   // button actions depending on current carousel slide
   $('#tutorial-carousel').on('slid.bs.carousel', function () {
-    if ($('.carousel-item.active').index() == 0) {
+    if ($('#tutorial-carousel .carousel-item.active').index() == 0) {
       $('.carousel-control-prev').off('click')
       $('.carousel-control-prev').click(function (e) {
         $('.slide.two').hide()
@@ -95,7 +95,7 @@
         $('.modal-content').width(330)
         $('.modal-content').height(140)
       })
-    } else if ($('.carousel-item.active').index() == 3) {
+    } else if ($('#tutorial-carousel .carousel-item.active').index() == 3) {
       $('.carousel-control-next').off('click')
       $('.carousel-control-next').click(function () {
         $('.slide.two').hide()

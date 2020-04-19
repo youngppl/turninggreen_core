@@ -68,7 +68,7 @@
         <% Reflection.all.each_with_index do |reflection, index| %>
           <div class="row collapse" id="_<%= index + 1%>">
             <div class="col">
-              <h4> <%= reflection.challenge.user.name %> (<%= reflection.challenge.user.state %>, <%= reflection.challenge.user.country %>)</h4>
+              <h4> <%= reflection.challenge.user.name %> (<%= reflection.challenge.user.state %>, <%= reflection.challenge.user.country %>) [<%= reflection.id %>]</h4>
               <h7>
                 Not Anonymous?
                 <% if reflection.permission %>

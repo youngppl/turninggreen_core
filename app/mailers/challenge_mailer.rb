@@ -7,6 +7,6 @@ class ChallengeMailer < ApplicationMailer
     @user_challenges = @user.challenges.all
     @user_completed_challenges = @user_challenges.where(completed: true, reflection_completed: false)
     @user_incomplete_challenges = @user_challenges.where(completed: false)
-    mail(to: @user.email, subject: 'How\'s your rootup challenges going? :)')
+    mail(to: @user.email, subject: get_subject_line)
   end
 end
