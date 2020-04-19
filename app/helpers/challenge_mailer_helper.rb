@@ -1,23 +1,22 @@
 module ChallengeMailerHelper
   def fun_facts
-    fun_facts = []
-    facts_json = JSON.load(RestClient.get('https://spreadsheets.google.com/feeds/cells/1QdddPvJRMPYVF0lvE03xUZlRFjTW4Rb1np9fmM_UaxM/2/public/full?alt=json').body)
-    facts_json["feed"]["entry"].each do |cell|
-      fun_facts << cell["content"]["$t"]
-    end
-    fun_facts
+    request = RestClient.get(
+      "https://sheets.googleapis.com/v4/spreadsheets/1QdddPvJRMPYVF0lvE03xUZlRFjTW4Rb1np9fmM_UaxM/values/Facts!A:A?key=#{Rails.application.credentials[:google_api_key]}")
+    facts_json = JSON.load(request.body)
+    facts_json['values'].flatten
   end
 
   def site_updates
-    site_updates = []
-    updates_json = JSON.load(RestClient.get('https://spreadsheets.google.com/feeds/cells/1QdddPvJRMPYVF0lvE03xUZlRFjTW4Rb1np9fmM_UaxM/1/public/full?alt=json').body)
-    begin
-      updates_json["feed"]["entry"].each do |cell|
-        site_updates << cell["content"]["$t"]
-      end
-    rescue
-      site_updates = false
-    end
-    site_updates
+    request = RestClient.get(
+      "https://sheets.googleapis.com/v4/spreadsheets/1QdddPvJRMPYVF0lvE03xUZlRFjTW4Rb1np9fmM_UaxM/values/Updates!A:A?key=#{Rails.application.credentials[:google_api_key]}")
+    updates_json = JSON.load(request.body)
+    (updates_json['values'].nil?)? false : updates_json['values'].flatten
+  end
+  
+  def get_subject_line
+    request = RestClient.get(
+      "https://sheets.googleapis.com/v4/spreadsheets/1QdddPvJRMPYVF0lvE03xUZlRFjTW4Rb1np9fmM_UaxM/values/Email!A2?key=#{Rails.application.credentials[:google_api_key]}")
+    json = JSON.load(request.body)
+    json['values'].flatten[0]
   end
 end
