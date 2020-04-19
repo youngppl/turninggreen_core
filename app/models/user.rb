@@ -12,6 +12,14 @@ class User < ApplicationRecord
   has_many :challenges
   has_many :messages, class_name: "Ahoy::Message", as: :user
 
+  def location_string
+    if state != 'NO'
+      return state + ', USA'
+    else
+      return country
+    end
+  end
+
   # challenges
 
   def all_pre_challenges_completed
