@@ -15,107 +15,104 @@ module ChallengesHelper
           {
             name: 'Audit your waste',
             type: 'pre',
-            question: 'Why does waste matter?',
-            description: "The chemicals used in the production of goods impact workers' health. The materials and energy required to make and transport goods contribute to climate change. The generation and accumulation of waste disproportionately affects the world's poorest communities. Waste matters. And it comes from <a target=\"_blank\" href=\"https://www.breakfreefromplastic.org/globalbrandauditreport2019/?mc_cid=8671ee16ab&mc_eid=f265c1970f\">every part of the production, usage, and disposal of goods.</a> <a target=\"_blank\" href=\"https://www.plasticpollutioncoalition.org/take-action-1\">Minimize your waste</a> (in this order): refuse, reduce, reuse, rot, recycle.",
+            question: 'Why is waste a problem?',
+            description: "There is <a target=\"_blank\" href=\"https://www.breakfreefromplastic.org/globalbrandauditreport2019/?mc_cid=8671ee16ab&mc_eid=f265c1970f\">more to a product than what you see</a>. It takes materials, labor, energy to: source materials, run machinery, package products, and fuel vehicles for shipping. When you throw something away, especially after using it for a very short time, all those inputs are wasted. And the environment is stuck with <a target=\"_blank\" href=\"https://www.plasticpollutioncoalition.org/take-action-1\">more trash</a>.",
             links: {
-              'How to conduct a waste audit (guide)' => 'https://www.goingzerowaste.com/31-day-challenge/how-to-conduct-a-waste-audit-day-31-of-the-zero-waste-challenge',
               'What you can do (guide)' => 'https://www.plasticfreejuly.org/get-involved/what-you-can-do/category/getting-started/',
               'How much plastic do you use? (quiz)' => 'https://survey.thinkfieldpanel.com.au/wcfs/29402'
             },
-            instructions: ["Take a bag with you today + collect every piece of waste you'd throw in the trash, recycling, and compost.", 'At end of day, separate your collection into compostable, recyclable, and trash. Evaluate size of each pile.', 'Reflect upon your findings. How could you have avoided the trash you collected? Could you use alternative products to minimize your category sizes?'],
-            alt_instructions: ['Alternative: Track your waste production with a list + mark them as compostable, recyclable, and trash.'],
+            instructions: ["Take a bag with you today", "Collect every piece of waste you generate (trash, recyclables, and compostables)", 'At end of day, separate your collection into compostable, recyclable, and trash', 'Evaluate the size of each pile and reflect. Could you have refused something to reduce or used an alternative to reuse?'],
+            alt_instructions: ['Alternative: Track your waste by making a list + mark them as compostable, recyclable, and trash'],
             metric_question: '',
             metric_verb: 'N/A',
             metric_unit: '',
-            reflection_question: 'What are ways in which you can reduce your waste?',
+            reflection_question: "What did you learn from this challenge? With this new knowledge, what can you do today to reduce your waste?
+",
             photo_prompt: ''
           },
           {
             name: 'Practice refusing',
             type: 'self',
-            question: 'Why should I refuse taking freebies?',
-            description: "\"Freebies\" are passed out all the time. The problem is this \"free\" stuff often ends up in landfills, which is a waste of resources. When we take \"free\" stuff, we indirectly send the signal to make + buy more of these products. To reduce our trash output, we need to firmly say 'no thank you' and explain why. ",
+            question: "Why should I say 'No thanks' to free stuff?",
+            description: "Taking free stuff you don't use much is a waste of resources. They'll probably end up in the trash or some donation pile. When you take 'free' stuff, you send the signal that more of these products should be made + bought, which is the wrong message when we actually don't use or need this stuff.",
             links: {
               'Ask questions before taking something (blog)' => 'https://www.goingzerowaste.com/blog/2015/9/17/the-power-of-saying-no',
-              'How to ask for no gifts this holiday (guide)' => 'https://www.thegoodtrade.com/features/how-to-ask-for-no-gifts'
+              'Asking for no gifts (guide)' => 'https://www.thegoodtrade.com/features/how-to-ask-for-no-gifts'
             },
-            instructions: ["Before you take any \"freebie\" (e.g. free stuff at events, <a target=\"_blank\" href=\"https://trashisfortossers.com/why-requesting-no-straw-is-awesome/\">straw in drink</a>, napkin for takeout), pause and ask yourself: will I use this more than 5 times? If no, say 'No thank you. I won't use this.'", "Also consider: do I already own something that can serve the same purpose? If yes, then say 'No thank you, I don't need this.'", "If you do need it, feel free to take it. This challenge is about knowing when to say 'no' and when to say 'yes'."],
+            instructions: ["Before you take any \"free\" stuff (e.g. <a target=\"_blank\" href=\"https://trashisfortossers.com/why-requesting-no-straw-is-awesome/\">straw in drink</a>, napkin for takeout), pause and ask yourself: will I use this more than 5 times? If no, say 'No thank you. I won't use this enough.'", "Consider: do I already own something that can serve the same purpose? If yes, then say 'No thank you, I don't need this.'", "If you do need it, feel free to take it. This challenge is about knowing when to say 'no' and when to say 'yes'."],
             metric_question: "How many times did you refuse something you didn't need?",
             metric_verb: "You refused something you didn't need ",
             metric_unit: ' times!',
-            reflection_question: 'How was the experience of refusing things?',
+            reflection_question: 'How did you feel about refusing things?',
             photo_prompt: 'Share a photo capturing this experience. Tell us what you refused.'
           },
           {
             name: 'Shop with reusables',
             type: 'friends',
             question: "What's the deal with food packaging?",
-            description: "Packaging, even if it's <a target=\"_blank\" href=\"https://www.youtube.com/watch?v=urFZ5o0az_4\">recyclable</a> or compostable, still end up in landfills. To best combat this, refuse waste at the root source so you don't have to figure out proper disposal later. For example, food packaging extends shelf life + makes shopping convenient, but ask yourself: Is it necessary? Think about farmers' markets + grocery stores; it's possible to buy loose produce.",
+            description: "Packaging, even if it's <a target=\"_blank\" href=\"https://www.youtube.com/watch?v=urFZ5o0az_4\">recyclable</a> or compostable, still end up in landfills. What we can do: refuse waste at the root so you don't have to figure out proper disposal later. Ask before acting: Is it necessary? Think farmers' markets + grocery stores + bulk bins; it's possible to buy loose produce & grains.",
             links: {
-              'Shopping with your own bags + jars (guide)' => 'https://www.goingzerowaste.com/blog/2016/3/14/ultimate-guide-to-zero-waste-grocery-shopping',
-              "Zero waste shopping at the farmers' market (video)" => 'https://trashisfortossers.com/how-to-shop-at-farmers-market-withou/',
+              'Tips to shop with your own bags + jars (guide)' => 'https://www.goingzerowaste.com/blog/2016/3/14/ultimate-guide-to-zero-waste-grocery-shopping',
+              "Zero waste @ the farmers' market (video)" => 'https://trashisfortossers.com/how-to-shop-at-farmers-market-withou/',
               'Where can I find bulk? (finder)' => 'https://app.zerowastehome.com/',
               'Is bulk not available? (blog)' => 'https://www.goingzerowaste.com/blog/2015/12/31/life-without-bulk',
-              'The Indonesian Plastic Bag Diet (video)' => 'https://www.youtube.com/watch?v=PBhakv9DQFQ'
             },
-            instructions: ['Bring your own reusable bags and jars', 'Opt for loose goods (e.g. fruits, veggies, meat, cheese, bread) instead of packaged ones. Try to avoid any packaging that will be disposed of.', 'Shop at bulk bins.', 'Get 3 friends and family to join you!'],
-            extra: "*If goods are charged by weight (e.g. pounds or kilos), don't forget to tare your reusables before filling them up!",
+            instructions: ['Bring your own reusable bags and jars', 'Opt for loose goods (e.g. fruits, veggies, meat, cheese, bread) instead of packaged', 'Shop at bulk bins', 'Get 3 friends/fam to join you!'],
+	   alt_instructions: ["We know it's not always possible to go 100% zero waste, but try. Do your best to avoid any disposable packaging"],
+            extra: "*If goods charged by weight (e.g. lb or kg), don't forget to <a target=\"_blank\" href=\"https://www.goingzerowaste.com/blog/2016/3/14/ultimate-guide-to-zero-waste-grocery-shopping\">tare your reusables</a> before filling them up!",
             metric_question: 'How many times did you use reusable containers (e.g. bags, jars) instead of single-use disposables?',
             metric_verb: 'You used reusable containers instead of single-use disposables ',
             metric_unit: ' times!',
             reflection_question: 'How challenging was it to avoid food packaging waste?',
-            photo_prompt: 'Share a photo of your shopping experience. Tell us what you learned from this experience.'
+            photo_prompt: 'Share a photo of your shopping experience. Describe a memorable moment from this challenge.'
           },
           {
             name: 'Eat without disposables',
             type: 'self',
-            question: 'Why is disposable foodware a problem?',
-            description: "Paper plates, plastic cutlery, and foam cups are disposable. You use it once and throw it away. The problem is they end up sitting in landfills for a <a target=\"_blank\" href=\"https://greendiningalliance.org/2016/12/the-real-cost-of-styrofoam/\">very long time</a>. Additionally, disposable plastic foodware, particularly those with
-            <img src=\"data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/Pgo8IURPQ1RZUEUgc3ZnIFBVQkxJ%0D%0AQyAiLS8vVzNDLy9EVEQgU1ZHIDIwMDEwOTA0Ly9FTiIKICJodHRwOi8vd3d3LnczLm9yZy9UUi8y%0D%0AMDAxL1JFQy1TVkctMjAwMTA5MDQvRFREL3N2ZzEwLmR0ZCI+CjxzdmcgdmVyc2lvbj0iMS4wIiB4%0D%0AbWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiB3aWR0aD0iODUuMDAwMDAwcHQiIGhl%0D%0AaWdodD0iODMuMDAwMDAwcHQiIHZpZXdCb3g9IjAgMCA4NS4wMDAwMDAgODMuMDAwMDAwIgogcHJl%0D%0Ac2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQgbWVldCI+Cgo8ZyB0cmFuc2Zvcm09InRyYW5zbGF0%0D%0AZSgwLjAwMDAwMCw4My4wMDAwMDApIHNjYWxlKDAuMTAwMDAwLC0wLjEwMDAwMCkiCmZpbGw9IiMw%0D%0AMDAwMDAiIHN0cm9rZT0ibm9uZSI+CjxwYXRoIGQ9Ik0zNDEgNzQ0IGMtMTcgLTE0IC01MCAtNTcg%0D%0ALTcyIC05NiAtMjUgLTQzIC00NiAtNjggLTU0IC02NSAtMTMgNgotMjUgLTUyIC0yNSAtMTI1IGww%0D%0AIC0zOSA3MCA0OCBjNjAgNDIgNjggNTAgNTUgNjIgLTEzIDEzIC0xMiAxOSA3IDUwIDg1IDE0NAo5%0D%0ANCAxNDUgMTcyIDEzIGwzOCAtNjMgMzEgMjEgYzE4IDExIDMxIDI0IDMwIDI4IC02IDI3IC04MCAx%0D%0AMzYgLTExMCAxNjIgLTQ1CjQwIC05OCA0MSAtMTQyIDR6Ii8+CjxwYXRoIGQ9Ik01NzQgNDg0IGMz%0D%0AIC0yNiA2IC02NCA2IC04NiAwIC0zNSAyIC0zOCAyMCAtMjggMTkgMTAgMzAgLTUgMTA3Ci0xNDMg%0D%0AMyAtNSAtMyAtMTcgLTEzIC0yOCAtMTQgLTE2IC0zMSAtMTkgLTEwNiAtMTkgbC04OCAwIDAgLTQw%0D%0AIDAgLTQwIDgzIDAKYzEzNiAwIDE5MSAyOCAyMDMgMTAyIDYgMzUgLTE3IDkyIC03MiAxNzkgLTE3%0D%0AIDI3IC0yMCAzOSAtMTEgNDggNiA2IDkgMTIgNgoxNCAtMjkgMjMgLTEyNyA4NyAtMTMzIDg3IC01%0D%0AIDAgLTYgLTIxIC0yIC00NnoiLz4KPHBhdGggZD0iTTM2MiA0NDggYy03IC03IC0xMiAtMTggLTEy%0D%0AIC0yNSAwIC0xNSAyNiAtMTggMzUgLTMgMyA2IDE1IDEwIDI2IDEwCjI1IDAgMjUgLTMwIC0xIC0z%0D%0ANyAtMjcgLTcgLTI1IC0zMSAzIC0zNSAzMiAtNCAzMSAtNTIgLTEgLTU2IC0xMyAtMiAtMjUgMwot%0D%0AMjggMTIgLTMgOSAtMTIgMTYgLTIwIDE2IC0xNyAwIC0xOCAtMzIgLTIgLTQ4IDE2IC0xNiA4MCAt%0D%0AMTYgOTYgMCAxNCAxNCAxNgo3NCAyIDgzIC01IDMgLTcgMTkgLTMgMzUgMyAxOCAwIDM2IC03IDQ1%0D%0AIC0xNSAxOCAtNzEgMjAgLTg4IDN6Ii8+CjxwYXRoIGQ9Ik0xMjcgMzczIGMtNjcgLTEwNSAtODEg%0D%0ALTE2MiAtNTUgLTIxOCAxOSAtNDIgNTYgLTU1IDE1NyAtNTUgNzIgMCA5MgotMyA5OSAtMTYgOCAt%0D%0AMTQgMTggLTExIDgwIDIwIDQwIDIwIDcyIDM5IDcyIDQyIDAgNiAtMTI1IDY0IC0xNDAgNjQgLTUg%0D%0AMCAtMTAKLTkgLTEwIC0yMCAwIC0xOCAtNyAtMjAgLTgzIC0yMCAtMTIyIDAgLTEzMCAxNSAtNjcg%0D%0AMTMwIDIyIDQwIDQwIDc0IDQwIDc2IDAKNCAtNTcgMzQgLTY0IDM0IC0zIDAgLTE2IC0xNyAtMjkg%0D%0ALTM3eiIvPgo8L2c+Cjwvc3ZnPgo=\" width=\"40px\">
+            question: "What's the problem with foodware?",
+            description: "Make room for the good in the world. Not all these plates, utensils, and cups that you use once & throw away, because they take up space and sit in landfills + oceans for a <a target=\"_blank\" href=\"https://greendiningalliance.org/2016/12/the-real-cost-of-styrofoam/\">very long time</a>. What’s worse is plastic foodware, especially those with <img src=\"data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/Pgo8IURPQ1RZUEUgc3ZnIFBVQkxJ%0D%0AQyAiLS8vVzNDLy9EVEQgU1ZHIDIwMDEwOTA0Ly9FTiIKICJodHRwOi8vd3d3LnczLm9yZy9UUi8y%0D%0AMDAxL1JFQy1TVkctMjAwMTA5MDQvRFREL3N2ZzEwLmR0ZCI+CjxzdmcgdmVyc2lvbj0iMS4wIiB4%0D%0AbWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiB3aWR0aD0iODUuMDAwMDAwcHQiIGhl%0D%0AaWdodD0iODMuMDAwMDAwcHQiIHZpZXdCb3g9IjAgMCA4NS4wMDAwMDAgODMuMDAwMDAwIgogcHJl%0D%0Ac2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQgbWVldCI+Cgo8ZyB0cmFuc2Zvcm09InRyYW5zbGF0%0D%0AZSgwLjAwMDAwMCw4My4wMDAwMDApIHNjYWxlKDAuMTAwMDAwLC0wLjEwMDAwMCkiCmZpbGw9IiMw%0D%0AMDAwMDAiIHN0cm9rZT0ibm9uZSI+CjxwYXRoIGQ9Ik0zNDEgNzQ0IGMtMTcgLTE0IC01MCAtNTcg%0D%0ALTcyIC05NiAtMjUgLTQzIC00NiAtNjggLTU0IC02NSAtMTMgNgotMjUgLTUyIC0yNSAtMTI1IGww%0D%0AIC0zOSA3MCA0OCBjNjAgNDIgNjggNTAgNTUgNjIgLTEzIDEzIC0xMiAxOSA3IDUwIDg1IDE0NAo5%0D%0ANCAxNDUgMTcyIDEzIGwzOCAtNjMgMzEgMjEgYzE4IDExIDMxIDI0IDMwIDI4IC02IDI3IC04MCAx%0D%0AMzYgLTExMCAxNjIgLTQ1CjQwIC05OCA0MSAtMTQyIDR6Ii8+CjxwYXRoIGQ9Ik01NzQgNDg0IGMz%0D%0AIC0yNiA2IC02NCA2IC04NiAwIC0zNSAyIC0zOCAyMCAtMjggMTkgMTAgMzAgLTUgMTA3Ci0xNDMg%0D%0AMyAtNSAtMyAtMTcgLTEzIC0yOCAtMTQgLTE2IC0zMSAtMTkgLTEwNiAtMTkgbC04OCAwIDAgLTQw%0D%0AIDAgLTQwIDgzIDAKYzEzNiAwIDE5MSAyOCAyMDMgMTAyIDYgMzUgLTE3IDkyIC03MiAxNzkgLTE3%0D%0AIDI3IC0yMCAzOSAtMTEgNDggNiA2IDkgMTIgNgoxNCAtMjkgMjMgLTEyNyA4NyAtMTMzIDg3IC01%0D%0AIDAgLTYgLTIxIC0yIC00NnoiLz4KPHBhdGggZD0iTTM2MiA0NDggYy03IC03IC0xMiAtMTggLTEy%0D%0AIC0yNSAwIC0xNSAyNiAtMTggMzUgLTMgMyA2IDE1IDEwIDI2IDEwCjI1IDAgMjUgLTMwIC0xIC0z%0D%0ANyAtMjcgLTcgLTI1IC0zMSAzIC0zNSAzMiAtNCAzMSAtNTIgLTEgLTU2IC0xMyAtMiAtMjUgMwot%0D%0AMjggMTIgLTMgOSAtMTIgMTYgLTIwIDE2IC0xNyAwIC0xOCAtMzIgLTIgLTQ4IDE2IC0xNiA4MCAt%0D%0AMTYgOTYgMCAxNCAxNCAxNgo3NCAyIDgzIC01IDMgLTcgMTkgLTMgMzUgMyAxOCAwIDM2IC03IDQ1%0D%0AIC0xNSAxOCAtNzEgMjAgLTg4IDN6Ii8+CjxwYXRoIGQ9Ik0xMjcgMzczIGMtNjcgLTEwNSAtODEg%0D%0ALTE2MiAtNTUgLTIxOCAxOSAtNDIgNTYgLTU1IDE1NyAtNTUgNzIgMCA5MgotMyA5OSAtMTYgOCAt%0D%0AMTQgMTggLTExIDgwIDIwIDQwIDIwIDcyIDM5IDcyIDQyIDAgNiAtMTI1IDY0IC0xNDAgNjQgLTUg%0D%0AMCAtMTAKLTkgLTEwIC0yMCAwIC0xOCAtNyAtMjAgLTgzIC0yMCAtMTIyIDAgLTEzMCAxNSAtNjcg%0D%0AMTMwIDIyIDQwIDQwIDc0IDQwIDc2IDAKNCAtNTcgMzQgLTY0IDM0IC0zIDAgLTE2IC0xNyAtMjkg%0D%0ALTM3eiIvPgo8L2c+Cjwvc3ZnPgo=\" width=\"40px\">
              and <img src= \"data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBzdGFuZGFsb25lPSJubyI/Pgo8IURPQ1RZUEUgc3ZnIFBVQkxJ%0D%0AQyAiLS8vVzNDLy9EVEQgU1ZHIDIwMDEwOTA0Ly9FTiIKICJodHRwOi8vd3d3LnczLm9yZy9UUi8y%0D%0AMDAxL1JFQy1TVkctMjAwMTA5MDQvRFREL3N2ZzEwLmR0ZCI+CjxzdmcgdmVyc2lvbj0iMS4wIiB4%0D%0AbWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiB3aWR0aD0iODYuMDAwMDAwcHQiIGhl%0D%0AaWdodD0iODMuMDAwMDAwcHQiIHZpZXdCb3g9IjAgMCA4Ni4wMDAwMDAgODMuMDAwMDAwIgogcHJl%0D%0Ac2VydmVBc3BlY3RSYXRpbz0ieE1pZFlNaWQgbWVldCI+Cgo8ZyB0cmFuc2Zvcm09InRyYW5zbGF0%0D%0AZSgwLjAwMDAwMCw4My4wMDAwMDApIHNjYWxlKDAuMTAwMDAwLC0wLjEwMDAwMCkiCmZpbGw9IiMw%0D%0AMDAwMDAiIHN0cm9rZT0ibm9uZSI+CjxwYXRoIGQ9Ik0zODMgNzQwIGMtMjUgLTEwIC03NSAtNzUg%0D%0ALTEwNiAtMTM4IC0xNSAtMzAgLTI3IC00MiAtMzggLTM5IC0xNCA0Ci0xNyAtOCAtMjIgLTc3IC0z%0D%0AIC00NCAtNCAtODMgLTEgLTg1IDMgLTQgMjYgMTEgMTI4IDgyIDggNSA2IDEyIC02IDIxIC0xNiAx%0D%0AMgotMTQgMTggMjUgODEgNjggMTExIDc5IDExMCAxNDkgLTYgbDQwIC02OCAzMSAxNiBjMTggOCAz%0D%0ANCAxNyAzNiAxOSA0IDQgLTY5CjEyOCAtOTEgMTU0IC0zNyA0NiAtOTMgNjEgLTE0NSA0MHoiLz4K%0D%0APHBhdGggZD0iTTYwMyA0MzAgYzYgLTg3IDEwIC0xMDEgMjkgLTgyIDkgOSAyMiAtNyA1NSAtNjgg%0D%0AMzYgLTY2IDQyIC04MyAzMwotMTAwIC0xMCAtMTggLTIxIC0yMCAtMTA1IC0yMCBsLTk1IDAgMCAt%0D%0ANDAgMCAtNDAgOTQgMCBjMTEyIDAgMTQ5IDExIDE3NiA1NQozMSA1MSAyNiA4OSAtMjYgMTc3IC0z%0D%0ANSA2MCAtNDQgODIgLTM1IDkyIDkgMTAgLTQgMjMgLTYwIDYxIGwtNzIgNDcgNiAtODJ6Ii8+Cjxw%0D%0AYXRoIGQ9Ik0zOTAgNDIwIGMtMjUgLTI1IC0yOSAtMTMwIC01IC0xNTQgNDEgLTQxIDEwNyAtMTgg%0D%0AMTEzIDQwIDQgNDMgLTE5CjY4IC02MiA2OCAtMzcgMCAtNDIgMTIgLTEzIDMwIDEyIDggMjEgNSAz%0D%0ANyAtOSAyNyAtMjUgNDYgLTggMjQgMjMgLTE5IDI4IC02NwoyOSAtOTQgMnogbTgwIC0xMDUgYzAg%0D%0ALTI2IC0yOSAtNDYgLTUxIC0zNSAtMjQgMTMgLTI1IDQ2IC0yIDU5IDIxIDExIDUzIC0zCjUzIC0y%0D%0ANHoiLz4KPHBhdGggZD0iTTEzMyAzMTggYy01MSAtOTAgLTU4IC0xMTcgLTQzIC0xNjIgMTkgLTU4%0D%0AIDUxIC03NiAxMzUgLTc2IDkxIDAgMTM1Ci05IDEzNSAtMjYgMCAtMTAgMjMgLTIgNzUgMjMgNDEg%0D%0AMjEgNzUgNDAgNzUgNDQgMCA3IC0xMzcgNjkgLTE1MiA2OSAtNSAwIC02Ci05IC0zIC0yMCA2IC0x%0D%0AOSAyIC0yMCAtODQgLTIwIC04MSAwIC05MSAyIC0xMDEgMjAgLTkgMTcgLTQgMzUgMzIgMTAxIGw0%0D%0AMyA4MAotMjUgMTkgYy0xNCAxMSAtMzAgMjAgLTM2IDIwIC01IDAgLTI5IC0zMyAtNTEgLTcyeiIv%0D%0APgo8L2c+Cjwvc3ZnPgo=\" width=\"40px\">
-             , are made with carcinogens that put wildlife and human health at risk.",
+             , are made with carcinogens that put wildlife & human life at risk.",
             links: {
-              'How to avoid plastic cutlery + containers (guide)' => 'https://www.plasticfreejuly.org/get-involved/what-you-can-do/takeaway-cutlery-and-containers/',
-              'What are toxic chemicals in plastics? (blog)' => 'https://www.madesafe.org/avoid-toxic-chemicals-plastics/',
-              'Global fast food plastic survey (list)' => 'https://www.plasticpollutioncoalition.org/global-fast-food-plastic-survey'
+              "What's plastic made of? (blog)" => 'https://www.madesafe.org/avoid-toxic-chemicals-plastics/',
+              'fast food plastic survey (info)' => 'https://www.plasticpollutioncoalition.org/global-fast-food-plastic-survey'
             },
-            instructions: ['Refuse any single-use disposables (e.g. food containers, utensils, straws, napkins, bags).', 'Bring your own reusable alternatives to events (serving food).', "People will notice. Some will say something, and some won't. Simply explain to them: \"I bring my own reusable ___ to avoid the unnecessary waste.\" Feel free to engage in conversation or elaborate more."],
+            instructions: ['Refuse any single-use disposables (e.g. food containers, utensils, straws, napkins, bags)', 'Bring your own reusable alternatives to events', "People will notice. Some will say something. If they do, you can respond: \"I bring my own reusable __ because I don't want to contribute more waste to our oceans and landfills.\" Feel free to engage in conversation and share what you've learned"],
             metric_question: 'How many times did you opt for a reusable cup, bottle, plate, utensil, bowl, straw, napkin, bag, etc. over single-use outside of your home?',
             metric_verb: 'You opted for reusable items ',
             metric_unit: ' times over single-use!',
             reflection_question: 'How has your perspective about single-use disposables changed?',
-            photo_prompt: 'Share a photo of bringing your own reusables. Tell us something you learned from this experience.'
+            photo_prompt: 'Share a photo of bringing your own reusables. Describe something you learned from this experience.'
           },
           {
             name: 'Compost & recycle',
             type: 'self',
             question: 'Why prioritize composting over recycling? ',
-            description: "When we <a target=\"_blank\" href=\"https://www.goingzerowaste.com/blog/composting-for-apartments\">compost</a>, the remaining nutrients in food scraps + plant-based goods are reused in our environment. Recycling is also good (way better than sending goods to the landfill). However, <a target=\"_blank\" href=\"https://www.goingzerowaste.com/blog/how-to-recycle-paper-the-right-way?rq=RECYCLE\">recyclables</a> like plastic and paper can't be recycled infinitely. Furthermore, recycling goods requires more resources (e.g. fuel costs, labor, energy, water) to process than composting.",
+            description: "Composting <a target=\"_blank\" href=\"https://www.goingzerowaste.com/blog/composting-for-apartments\">stores carbon, which offsets CO2 in the atmosphere, helping prevent climate change</a>. Composting repurposes any nutrients leftover to the environment. <a target=\"_blank\" href=\"http://apps.npr.org/plastics-recycling/?utm_medium=social&utm_source=facebook.com&utm_term=nprnews&utm_campaign=npr\">Recycling</a> requires more carbon-emitting processes, and recyclables (plastic + paper) can't be recycled infinitely. But, recycling is way better than landfilling things.",
             links: {
-              'How to compost at home (video)' => 'https://kisstheground.com/how-to-compost-at-home-simple/',
+              'Composting at home (video)' => 'https://kisstheground.com/how-to-compost-at-home-simple/',
               'How to compost at home (infographic)' => 'https://kisstheground.com/how-to-compost-at-home/',
               'What do all the plastic numbers mean? (guide)' => 'https://www.babygreenthumb.com/p-122-safe-plastic-numbers-guide.aspx'
             },
-            background: 'Composting can take on any form like starting your own compost pile, putting it in your green bin (if you have municipal composting), giving your compost to local farms, or tossing it into a compost bin in your community.',
-            instructions: ["Compost any waste that is compostable and biodegradable. If it's not compostable, then <a target=\"_blank\" href=\"http://apps.npr.org/plastics-recycling/?utm_medium=social&utm_source=facebook.com&utm_term=nprnews&utm_campaign=npr\">recycle it</a>.", "As a last resort, send your trash into the landfill if it isn't reusable, compostable, or recyclable."],
-            metric_question: 'Estimate how much (in kilos) waste you composted and/or recycled. Note: 1 lb = 0.45 kg',
+            background: 'Composting can takes many forms. You can: start your own compost pile, put biodegradable materials in your green bin, give your food scraps to local farms, or toss it into a community compost bin',
+            instructions: ["<a target=\"_blank\" href=\"https://www.goingzerowaste.com/blog/composting-for-apartments\">Compost</a> any compostable and biodegradable waste", "If it's not compostable but recyclable, recycle it", "As a last resort, send your trash into the landfill if it isn't reusable, compostable, or recyclable"],
+            metric_question: 'Estimate how much (in KG) waste you composted and/or recycled. Note: 1 lb = 0.45 kg',
             metric_verb: 'You composted or recycled ',
             metric_unit: ' about kg! (Note: 1lb = 0.45kg)',
             reflection_question: 'How challenging was it to avoid sending waste to the landfill?',
-            photo_prompt: 'Take a photo of your compost. Tell us something you learned from this experience.'
+            photo_prompt: 'Take a photo of your compost. Describe something you learned from this challenge.'
           },
           {
             name: 'Party zero waste style',
             type: 'friends',
-            question: 'How does this have an impact?',
-            description: "How many people do you know actually think about their trash? Hosting a zero waste party is a fun way to show people what reducing your waste looks like and how simple it is. Your party opens up the conversation for you to share what you've learned about waste with your guests and inspire them to reduce their waste as well!",
+            question: "Down to party, but what's it got to do with waste reduction?",
+            description: "How many people do you know think about their trash? Hosting a zero waste party changes the way people see + think about waste, because YOU can show them how simple it is. As the fabulous host, have fun & open up conversations to share what you've learned. You just might inspire your guests to reduce their waste too.",
             links: {
-              'How to throw a zero waste party (guide)' => 'https://www.goingzerowaste.com/blog/five-tips-for-throwing-a-zero-waste-party ',
-              'Hosting a zero waste dinner party (blog)' => 'http://trashisfortossers.com/hosting-zero-waste-dinner-party/',
-              'How to have a trash-free Halloweekend (blog)' => 'http://trashisfortossers.com/how-to-have-a-trash-free-halloweekend/',
-              'Hosting a zero waste bachelorette party (blog)' => 'http://trashisfortossers.com/zero-waste-bachelorette-party/'
+              'Throwing a zero waste party (guide)' => 'https://www.goingzerowaste.com/blog/five-tips-for-throwing-a-zero-waste-party ',
+              'Trash-free Halloweekend (blog)' => 'http://trashisfortossers.com/how-to-have-a-trash-free-halloweekend/',
+              'Zero waste bachelorette party (blog)' => 'http://trashisfortossers.com/zero-waste-bachelorette-party/'
             },
-            instructions: ['Curate a waste-free menu. That is, purchase ingredients with little to no packaging waste, and serve on reusable dishware.', 'Provide reusable dishware, utensils, and napkins.', 'Decorate as you wish with nature and non-single-use disposable items.', 'Make a compost bin accessible.', "Invite at least 3 people and tell them it's a zero waste party!", "If you'd like, invite your guests to help clean up after the party: put things in the dishwasher or handwash; toss dirtied cloths into the laundry; and empty the compost bin. Don't worry, this is bonding time and not as bad as it sounds.", 'Have fun!'],
+            instructions: ['Curate a waste-free menu. Purchase ingredients with no packaging waste, and serve on reusable dishware', 'Provide reusable dishware, utensils, and napkins', 'Decorate as you wish with nature + reusable items', 'Make a compost bin accessible', "Invite at least 3 people to your zero waste party!", "Clean up together! Put things in the dishwasher or handwash; toss dirtied cloths into laundry; and empty the compost bin. Don't worry, this is bonding time and not as bad as it sounds", 'Have lots of fun!'],
             metric_question: 'How many people came to your party?',
             metric_verb: '',
             metric_unit: ' people came to your zero waste party!',
@@ -125,15 +122,14 @@ module ChallengesHelper
           {
             name: 'Reduce community waste',
             type: 'community',
-            question: 'Why should I even try to be zero waste?',
-            description: "Anne-Marie says it well: <a target=\"_blank\" href=\"https://zerowastechef.com/2019/02/14/how-to-cope-with-environmental-guilt-syndrome-egs/\">\"We don’t need a handful of people doing zero waste perfectly. We need millions of people doing it imperfectly.\"</a> The few individuals who commit to zero waste won't reverse the environmental damage already done; we need a whole lot more people involved. So what you do counts(! -- no matter how seemingly insignificant), because your actions show people around you an alternative way to live. This is how we slowly inspire change together. :)",
+            question: "What's the point? There's always going to be waste anyways",
+            description: "<a target=\"_blank\" href=\"https://zerowastechef.com/2019/02/14/how-to-cope-with-environmental-guilt-syndrome-egs/\">\"We don’t need a handful of people doing zero waste perfectly. We need millions of people doing it imperfectly.\"</a> A few zero waste people won't solve the climate crisis. We need a whole lot more people on board. So, everything you do counts! Your actions give others permission to do the same.",
             links: {
-              'Guide to banning polystyrene (guide)' => 'https://www.5gyres.org/polystyrene',
+              'Banning polystyrene (guide)' => 'https://www.5gyres.org/polystyrene',
               'Changing purchasing practices (guide)' => 'https://www.plasticfreejuly.org/get-involved/what-you-can-do/workplace-procurement/',
-              'How governments go zero waste (info)' => 'https://www.greenamerica.org/blog/plastic-out-sustainability-in',
-              'How Plastic Production Pollutes Small Towns (video)' => 'https://www.youtube.com/watch?v=OFMau-t3QaI'
+              'Businesses + government go zero waste' => 'https://www.greenamerica.org/blog/plastic-out-sustainability-in'
             },
-            instructions: ['Choose your target audience. (e.g. local business, local government)', 'Draft up a proposal of what you want them to change and why it matters to them. Be specific. (e.g. Ask a local restaurant to provide plastic straw only upon request.)', 'Reach out and give them your pitch.', 'Offer to work with them to create this change for the community.'],
+            instructions: ['Choose your target audience. (e.g. local business, government)', 'Draft a proposal of what you want them to change & why it matters to them. Be specific. (e.g. Ask a local restaurant to provide plastic straw only upon request.)', 'Reach out and give them your pitch', 'Offer to work with them to create this change for the community'],
             metric_question: 'How many businesses and government officials did you speak to about waste?',
             metric_verb: 'You spoke with ',
             metric_unit: ' businesses and government officials about waste!',
@@ -181,7 +177,7 @@ module ChallengesHelper
             metric_question: '',
             metric_verb: 'N/A',
             metric_unit: '',
-            reflection_question: 'What was challenging? What did you learn from reading ingredients lists and asking people where your food came from?',
+            reflection_question: 'What did you learn from reading ingredients lists and asking people where your food came from? Knowing this, what can you do today to eat more healthily?',
             photo_prompt: ''
           },
           {
@@ -201,7 +197,7 @@ module ChallengesHelper
             metric_verb: 'You took action to reduce food waste ',
             metric_unit: ' times!',
             reflection_question: 'What steps did you take to reduce your food waste? Anything surprise you from this challenge?',
-            photo_prompt: 'Share a photo that captures this experience. Tell us how you reduced your food waste.'
+            photo_prompt: 'Share a photo that captures this experience. What thoughts went through your head in this challenge?'
           },
           {
             name: 'Eat meat responsibly',
@@ -215,12 +211,12 @@ module ChallengesHelper
               "Meat's impact on health" => 'https://www.drfuhrman.com/get-started/eat-to-live-blog/163/the-protein-problem-how-the-source-affects-cardiovascular-risk'
             },
             background: "Let's be clear: we aren't telling you, \"Don't eat any meat.\" We simply encourage you to <a target=\"_blank\" href=\"https://foodprint.org/eating-sustainably/eating-meat-sustainably/\">eat less meat and better meat</a>.",
-            instructions: ['Eat meatless for some meals', 'Reduce overall meat consumption by making it a side instead of the entree', "For meat-eaters: Ask the rancher, farmer, butcher, or store manager about the animals' grazing plan, the care given to the animals, and their practices to restore soil and grasslands.", 'Purchase grass-fed, pasture-raised, humanely raised meat'],
-            metric_question: 'How many times did you go meatless? How many times did you buy responsibly raised meat?',
+            instructions: ['Eat meatless for some meals', 'Reduce overall meat consumption by making it a side instead of the entree', "For meat-eaters: Ask the rancher, farmer, butcher, or store manager about the animals' grazing plan, the care given to the animals, and their practices to restore soil and grasslands.", 'Purchase grass-finished and pasture-raised meat'],
+            metric_question: 'How many meals did you go meatless?',
             metric_verb: 'You ate meatless and/or bought responsibly raised meat ',
             metric_unit: ' times!',
-            reflection_question: 'How challenging was this for you?',
-            photo_prompt: 'Share a photo of your meal capturing this experience. Tell us how the experience was.'
+            reflection_question: 'How challenging was eating meatless meals or buying pasture-raised, grass-finished meat for you?',
+            photo_prompt: 'Share a photo that captures this experience. Tell us what you thought of this challenge.'
           },
           {
             name: "Go to farmers' markets",
@@ -232,13 +228,13 @@ module ChallengesHelper
               "Q's to ask farmers [pg 9]" => 'https://kisstheground.com/purchasingguide/',
               'What are sustainable farming practices?' => 'https://rodaleinstitute.org/why-organic/organic-farming-practices/'
             },
-            instructions: ["Shop at a farmers' market. Buy organic whenever possible", "If this isn't possible, look for a <a target=\"_blank\" href=\"https://www.localharvest.org/csa/\">CSA (community supported agriculture) box</a> to purchase", 'Bring your friends and family along!', 'Start a conversation and get to know the farmers who grew your food', 'Ask them about their soil, pest management, and crop rotation practices'],
-            alt_instructions: ['Buy organic of the <a target="_blank" href="https://www.ewg.org/foodnews/dirty-dozen.php">produce most commonly sprayed with pesticides, herbicides, etc.</a>', "It's okay to not buy organic of these <a target=\"_blank\" href=\"https://www.ewg.org/foodnews/clean-fifteen.php\">produce, which are least likely to be sprayed with pesticides, etc.</a>"],
-            metric_question: "How many people did you bring with you to the farmers' market?",
+            instructions: ["Shop at a farmers' market. Buy organic whenever possible", "Alternatively, get a <a target=\"_blank\" href=\"https://www.localharvest.org/csa/\">CSA (community supported agriculture) box</a>", 'Bring your friends and family along!', 'Start a conversation. Get to know the farmers who grew your food, and ask them about their farming (e.g. soil, pest management, and crop rotation) practices'],
+            alt_instructions: ['Buy organic of the <a target="_blank" href="https://www.ewg.org/foodnews/dirty-dozen.php">produce most commonly sprayed with pesticides, etc.</a>', "It's okay to not buy organic of these <a target=\"_blank\" href=\"https://www.ewg.org/foodnews/clean-fifteen.php\">produce, which are least likely to be sprayed with pesticides, etc.</a>"],
+            metric_question: "How many people did you bring to the farmers' market with you?",
             metric_verb: 'You brought ',
             metric_unit: " people to the farmers' market with you!",
-            reflection_question: "What did you like about your adventure to the farmers' market?",
-            photo_prompt: "Share a photo of your farmers' market trip. Tell us how your experience was."
+            reflection_question: "What did you think of your adventure to the farmers' market?",
+            photo_prompt: "Share a photo of your farmers' market trip. Tell us about a conversation you had at the market."
           },
           {
             name: 'Cook a FLOSN meal',
@@ -256,7 +252,7 @@ module ChallengesHelper
             metric_verb: 'You made ',
             metric_unit: ' meals that cost less than $9!',
             reflection_question: 'How can you incorporate more FLOSN foods in your diet?',
-            photo_prompt: 'Share a photo of the meal you prepared. Tell us how much it cost and how your experience was.'
+            photo_prompt: 'Share a photo of the meal you prepared. How much did it cost? What was your takeaway from this challenge?'
           },
           {
             name: 'Make your own snacks',
@@ -269,11 +265,11 @@ module ChallengesHelper
               'Healthy snacks to munch on (recipes)' => 'https://foodrevolution.org/blog/healthy-snacks/'
             },
             instructions: ['Find recipes for your favorite + go-to snacks', "Whole fruits, veggies, nuts, and seeds come in clutch if you don't want to make your own", 'Shop local + seasonal ingredients to make your snacks', 'Whip up your snack, take a pic, and share!'],
-            metric_question: 'How many different wholesome snacks did you eat?',
+            metric_question: 'How many different wholesome snacks did you make? (whole/cut fruit counts!)',
             metric_verb: 'You homemade ',
             metric_unit: ' different snacks!',
             reflection_question: 'How has this challenge influenced your perspective about snacks?',
-            photo_prompt: 'Share a photo of your snacks. Tell us what makes it good.'
+            photo_prompt: 'Share a photo of snacks you made. How did they taste and make you feel?'
           },
           {
             name: 'Support the ocean',
@@ -286,11 +282,11 @@ module ChallengesHelper
               'Find local seafood (finder)' => 'https://localcatch.org/'
             },
             instructions: ['<a target="_blank" href="https://foodprint.org/shopping-sustainably/">Ask fishmongers or store managers</a> whether they sell <a target="_blank" href="https://foodprint.org/issues/sustainable-seafood/">sustainable seafood</a> + find out where their seafood comes from', 'Do your best to find a local + accessible sustainable seafood source to purchase from'],
-            metric_question: 'How many times did you ask someone whether they sell sustainable seafood?',
+            metric_question: 'How many times did you ask questions about the seafood at a store?',
             metric_verb: 'You asked whether someone sells sustainable seafood ',
             metric_unit: ' times!',
             reflection_question: 'How challenging was this for you?',
-            photo_prompt: 'Share a photo capturing this experience. Tell us something you learned from this challenge.'
+            photo_prompt: 'Share a photo capturing this experience. What did you learn from this challenge?'
           }
         ]
       },
@@ -317,7 +313,7 @@ module ChallengesHelper
             metric_question: '',
             metric_verb: 'N/A',
             metric_unit: '',
-            reflection_question: "What did you learn from reading the ingredients list on your bodycare products? How can you apply what you've learned in your life?",
+            reflection_question: "What did you learn from reading the ingredients list on your bodycare products? Knowing this, what can you do today to better care for your skin?",
             photo_prompt: ''
           },
           {
@@ -334,7 +330,7 @@ module ChallengesHelper
             metric_verb: 'You made ',
             metric_unit: ' bodycare products!',
             reflection_question: 'What do you think about making our own bodycare products now?',
-            photo_prompt: 'Share a photo of your homemade product. Tell us what you learned.'
+            photo_prompt: 'Share a photo of your homemade product. Share what you learned.'
           },
           {
             name: 'Choose safer bodycare',
@@ -451,7 +447,7 @@ module ChallengesHelper
             metric_question: '',
             metric_verb: 'N/A',
             metric_unit: '',
-            reflection_question: "What's your water footprint? How can you reduce your water footprint?",
+            reflection_question: "What did you learn from calculating your water footprint? With this information, what can you do today to reduce your water footprint?",
             photo_prompt: ''
           },
           {
@@ -466,11 +462,11 @@ module ChallengesHelper
               'Water-friendly diet' => 'https://www.watercalculator.org/water-use/water-friendly-food-choices/ '
             },
             instructions: ['Eat more plant-based meals & snacks (local + organic when possible) (i.e. whole vegetables, nuts, seeds, fruits)', 'Reduce your meat (e.g. beef, pork, chicken) consumption', 'Reduce your dairy consumption (e.g. cheese, milk, yogurt)', 'Reduce your packaged + processed food consumption'],
-            metric_question: 'How many meals did you eat more plant-based?',
+            metric_question: 'How many plant-based meals did you eat?',
             metric_verb: 'You ate ',
             metric_unit: ' plant-based meals!',
             reflection_question: 'How has this challenge influenced your perspective about food?',
-            photo_prompt: 'Share a photo of your more plant-based meal. Tell us how it is more plant-based.'
+            photo_prompt: "Share a photo of your more plant-based meal. Describe what's in your dish."
           },
           {
             name: 'Cruise lightly',
@@ -482,10 +478,10 @@ module ChallengesHelper
               'How to change transportation' => 'https://drawdown.ecochallenge.org/challenges/transport'
             },
             instructions: ['<a target="_blank" href="https://www.drawdown.org/solutions/transport/ridesharing">Carpool</a>; take <a target="_blank" href="https://www.drawdown.org/solutions/transport/mass-transit">mass transit</a>; bike/skateboard/scooter; or walk to your destination', "Just don't ride in a car alone."],
-            metric_question: 'How many times did you choose alternative transportation over riding alone in a car?',
+            metric_question: 'How many times did you choose alternative transportation over traveling solo in a car?',
             metric_verb: 'You reduced your water footprint by choosing not to ride alone in a car ',
             metric_unit: ' times!',
-            reflection_question: 'How challenging was it for you to not ride alone to get somewhere?',
+            reflection_question: 'How challenging was it for you to not travel solo?',
             photo_prompt: "Share a photo of your journey. Tell us how you're reducing your transportation water footprint."
           },
           {
@@ -500,7 +496,7 @@ module ChallengesHelper
             background: "We're not trying to get you to shower with a bucket everyday of your life; that's unreasonable + inconvenient. We simply want you to be more mindful about your water usage.",
             instructions: ['Place a bucket/large cup/bowl next to you when you shower to collect excess water', 'Take your shower normally', 'Water any plants around the home with the water you collect'],
             extra: "Avoid getting any non-biodegradable products (e.g. soap, shampoo, conditioner) into your bucket, especially if you're reusing the water for edible plants.",
-            metric_question: 'Estimate how much (in kilos) of water you collected. Note: 1 gal = appx 4 kg',
+            metric_question: 'Estimate how much (in KG) of water you collected. Note: 1 gal = appx 4 kg',
             metric_verb: 'You collected ',
             metric_unit: ' kg of water while showering! (Note: 1 gal = appx 4 kg)',
             reflection_question: 'How has this challenge influenced your perspective on water usage?',
@@ -519,7 +515,7 @@ module ChallengesHelper
             metric_question: 'How many single-use water bottles did you refuse?',
             metric_verb: 'You refused ',
             metric_unit: ' single-use water bottles!',
-            reflection_question: 'How challenging was bringing your own reusable water bottle for you?',
+            reflection_question: 'How challenging was bringing your own reusable water bottle?',
             photo_prompt: 'Share a photo of your reusable water bottle. Tell us what you learned from this challenge.'
           },
           {
@@ -532,10 +528,10 @@ module ChallengesHelper
               "What's the government doing?" => 'https://www.greenamerica.org/blog/green-america-supports-ca-skip-slip-bill'
             },
             instructions: ["Refuse taking any receipts. Tell the cashier you don't need it.", 'If you need the receipt, opt to take a photo of the computer screen or have it emailed instead (when possible)', 'Share your knowledge about paper receipts with at least 3 people!'],
-            metric_question: 'How many paper receipts did you refuse to print and take?',
+            metric_question: 'How many paper receipts did you refuse to print or take?',
             metric_verb: 'You refused to take ',
             metric_unit: ' receipts!',
-            reflection_question: 'How many people did you share this information with and what were their reactions?',
+            reflection_question: 'Who did you share this information with? What were their reactions?',
             photo_prompt: 'Share a photo capturing this expereince. Tell us what you learned.'
           },
           {
@@ -552,7 +548,7 @@ module ChallengesHelper
             metric_question: 'How many people did you teach about the impact of the textile industry?',
             metric_verb: 'You taught ',
             metric_unit: ' people about the impact of the textile industry!',
-            reflection_question: 'What were the reactions of people you shared what you learned with?',
+            reflection_question: "What were people's reactions when you shared what you learned?",
             photo_prompt: 'Share a photo capturing this experience. Tell us what you learned from this challenge.'
           }
         ]
@@ -580,25 +576,25 @@ module ChallengesHelper
             metric_question: '',
             metric_verb: 'N/A',
             metric_unit: '',
-            reflection_question: "Where in your community has biodiversity? If you can't think of a place, where in your community could there be more biodiversity?",
+            reflection_question: "What did you learn from this challenge? What can you do today to increase the biodiversity in your home?",
             photo_prompt: ''
           },
           {
             name: 'Shop local & organic',
             type: 'self',
             question: 'How does shopping relate to biodiversity?',
-            description: "Biodiversity isn't just about growing plants. It's also about supporting gardeners + farmers who practice <a target=\"_blank\" href=\"https://rodaleinstitute.org/why-organic/organic-basics/regenerative-organic-agriculture/\">regenerative agriculture</a>. Vote with your hard-earned dollar. Support these people because you're enabling them to <a target=\"_blank\" href=\"https://www.drawdown.org/solutions/food/regenerative-agriculture\">continue their work & foster biodiversity</a>.",
+            description: "Biodiversity isn't just about growing plants. It's also about supporting gardeners + farmers who practice <a target=\"_blank\" href=\"https://rodaleinstitute.org/why-organic/organic-basics/regenerative-organic-agriculture/\">regenerative organic agriculture</a>. Vote with your hard-earned dollar. Support these people because you're enabling them to <a target=\"_blank\" href=\"https://www.drawdown.org/solutions/food/regenerative-agriculture\">continue their work & foster biodiversity</a>.",
             links: {
               "Industrial meat's impact on pollinators" => 'https://endindustrialmeat.org/ten-reasons-to-opt-out/for-pollinators/'
             },
             instructions: ['Buy 100% local + organic foods at your preferred location. Do your best, trying is what matters!', "If there's a very limited selection of local + organic, <a target=\"_blank\" href=\"https://www.thekitchn.com/7-tips-for-influencing-what-goes-on-grocery-store-shelves-224619\">talk to, call, or email</a> the manager requesting organic <insert what you want>.", 'Thank the farmers + store managers to recognize them for the important work they do in the community!'],
             alt_instructions: ["Alternative: If you're not in charge of grocery shopping, join the person who is on their next grocery trip. Share what you learned & help them find local + organic options."],
             extra: 'You have the power to tell vendors what you want. The real MVP vendors will listen. Support them.',
-            metric_question: 'How many local and organic items did you purchase?',
+            metric_question: 'How many times did you shop local + organic?',
             metric_verb: 'You purchased ',
             metric_unit: ' local and organic items when grocery shopping!',
-            reflection_question: 'How can you engage your friends and family to buy more local and organic?',
-            photo_prompt: 'Share a photo of your purchase(s). Tell us where you purchased them.'
+            reflection_question: 'How can you engage your friends & family to buy more local and organic?',
+            photo_prompt: 'Share a photo of your shopping trip. Tell us where you shopped.'
           },
           {
             name: 'Volunteer in garden',
@@ -633,7 +629,7 @@ module ChallengesHelper
             metric_question: 'How many perennials (+ annuals) did you plant?',
             metric_verb: 'You planted ',
             metric_unit: ' perennials/annuals!',
-            reflection_question: 'What did you learn from planting perennials?',
+            reflection_question: 'What did you learn from this challenge?',
             photo_prompt: "Share a photo of your plants (+ friend if that's okay with friend). Tell us what you planted."
           },
           {
@@ -669,7 +665,7 @@ module ChallengesHelper
             metric_question: 'Estimate how much your compost weighs (in kilos). Note: 1 lb = 0.45 kg',
             metric_verb: 'You composted about',
             metric_unit: ' kg of waste! (1 lb = 0.45 kg)',
-            reflection_question: 'What do you think about composting now?',
+            reflection_question: 'How do you feel about composting?',
             photo_prompt: 'Share a photo of your compost pile. Tell us what you put in it.'
           },
           {
@@ -690,7 +686,7 @@ module ChallengesHelper
             metric_verb: 'You asked ',
             metric_unit: ' people about their land management practices!',
             reflection_question: 'How has this challenge impacted your perspective about land management practices?',
-            photo_prompt: 'Share a photo capturing the moment. Tell us how you felt in that moment.'
+            photo_prompt: 'Share a photo capturing the experience. Tell us how you felt when reaching out to ask about land practices.'
           }
         ]
       },
@@ -716,7 +712,7 @@ module ChallengesHelper
             metric_question: '',
             metric_verb: 'N/A',
             metric_unit: '',
-            reflection_question: 'What is something new you learned about the clothing industry?',
+            reflection_question: 'What did you learn about the clothing industry? What can you do today to reduce your fashion footprint?',
             photo_prompt: ''
           },
           {
@@ -732,7 +728,7 @@ module ChallengesHelper
             metric_question: 'How many people (including yourself) took a break from shopping?',
             metric_verb: 'You got ',
             metric_unit: ' people to take a break from shopping for 1+ weeks!',
-            reflection_question: 'How challenging was it to take a break from shopping?',
+            reflection_question: 'How challenging was it to not buy any clothing?',
             photo_prompt: "Share a photo of something you've been up to (instead of shopping). Tell us what you're doing."
           },
           {
@@ -746,7 +742,7 @@ module ChallengesHelper
               'The impact of making new clothes' => 'https://www.greenamerica.org/program/toxic-textiles'
             },
             instructions: ["Clean out your closet of clothes you won't wear anymore", 'Repurpose them (e.g. bag, cleaning rag)', 'Swap with friends', 'Pass them onto someone who will wear them (Maybe a sibling or cousin?)', 'Do the research to find a charity that will actually reuse your donations', 'Or, sell to a local thrift store or secondhand shop (ex: <a target="_blank" href="https://www.thredup.com/cleanout/donate-clothes">thredUP</a>)'],
-            metric_question: 'Estimate how much (in kilos) clothing you repurposed and/or donated. Note: 1 lb = 0.45 kg',
+            metric_question: 'Estimate how much (in KG) clothing you repurposed and/or donated. Note: 1 lb = 0.45 kg',
             metric_verb: 'You repurposed and/or donated about ',
             metric_unit: ' kg of clothing! (1 lb = 0.45 kg)',
             reflection_question: "What can you do to reduce the amount of clothing you won't wear in your closet?",
@@ -770,8 +766,8 @@ module ChallengesHelper
             metric_question: 'How many people did you share what you learned with?',
             metric_verb: 'You shared with ',
             metric_unit: ' people what you learned about buying less.',
-            reflection_question: 'With what you know now, what do you look for in companies and clothing when shopping?',
-            photo_prompt: 'Share a photo of your shopping spree. Tell us what brands you purchased from and what your clothes are made of.'
+            reflection_question: 'With what you know now, what do you look for in companies and clothes when shopping?',
+            photo_prompt: 'Share a photo of your shopping spree. Describe the experience and your haul (if any).'
           },
           {
             name: 'Contact fashion brands',
@@ -848,7 +844,7 @@ module ChallengesHelper
             metric_question: '',
             metric_verb: 'N/A',
             metric_unit: '',
-            reflection_question: 'What is something that surprised you from reading the ingredients in your cleaning products and searching the EWG database?',
+            reflection_question: 'What did you learn from reading the ingredients list of your cleaning products? With this awareness, what can you do today to make room for safer cleaning products?',
             photo_prompt: ''
           },
           {
@@ -866,7 +862,7 @@ module ChallengesHelper
             metric_verb: 'You made ',
             metric_unit: ' homemade safe cleaning solutions!',
             reflection_question: 'How has this challenge impacted your perspective about cleaning products?',
-            photo_prompt: 'Share a photo of your homemade cleaning solution. Tell us what you made and the recipe!'
+            photo_prompt: 'Share a photo of your homemade cleaning solution. Tell us what you made!'
           },
           {
             name: 'Opt for safe cleaning',
@@ -916,7 +912,7 @@ module ChallengesHelper
             metric_question: 'How many reusable and plastic-free cleaning tools did you get/make?',
             metric_verb: 'You got/made ',
             metric_unit: ' reusable and plastic-free cleaning tools!',
-            reflection_question: 'How has this challenge impacted your perspective about plastic and single-use?',
+            reflection_question: 'How has this challenge impacted your perspective about plastic and single-use products?',
             photo_prompt: 'Share a photo of your reusable and plastic-free cleaning equipment. Tell us what makes them great!'
           },
           {
@@ -978,7 +974,7 @@ module ChallengesHelper
             metric_question: '',
             metric_verb: 'N/A',
             metric_unit: '',
-            reflection_question: "What did you learn from the video? How can you apply what you've learned from the video to your life?",
+            reflection_question: "What did you learn from the video, challenge, and 'Wanna learn more' resources? Knowing what you know now, what can you do today to create a better environment in your home?",
             photo_prompt: ''
           },
           {
@@ -1108,7 +1104,7 @@ module ChallengesHelper
             metric_question: '',
             metric_verb: 'N/A',
             metric_unit: '',
-            reflection_question: 'Which areas of your health can you improve? How can you take initiative towards improving those areas?',
+            reflection_question: 'What did you learn from this exploration? With your discoveries, what can you do today to care for your health?',
             photo_prompt: ''
           },
           {
@@ -1126,7 +1122,7 @@ module ChallengesHelper
             metric_verb: 'You slept ',
             metric_unit: ' hours!',
             reflection_question: 'How did you make sure you got enough sleep?',
-            photo_prompt: 'Share a photo of your bed. Tell us how you feel today and how much sleep you got.'
+            photo_prompt: 'Share a photo of your bed. Describe how you felt when you woke up.'
           },
           {
             name: 'Build your relationships',
@@ -1157,7 +1153,7 @@ module ChallengesHelper
             metric_verb: 'You exercised ',
             metric_unit: ' hours!',
             reflection_question: 'What kind of exercise do you like?',
-            photo_prompt: 'Share a photo of you exercising. Tell us how it felt.'
+            photo_prompt: 'Share a photo of you exercising. Tell us how you felt afterwards.'
           },
           {
             name: 'Take a sugar detox',
@@ -1174,7 +1170,7 @@ module ChallengesHelper
             metric_verb: 'You refused something with added sugar ',
             metric_unit: ' times!',
             reflection_question: 'What surprised you from this challenge?',
-            photo_prompt: 'Share a photo of what you ate or did instead. Tell us about what you accomplished.'
+            photo_prompt: 'Share a photo of what you ate or did instead of eating something sugary. Tell us about what you accomplished.'
           },
           {
             name: 'Free yourself',
@@ -1189,7 +1185,7 @@ module ChallengesHelper
             metric_verb: 'You chose to do something for yourself ',
             metric_unit: ' times!',
             reflection_question: 'How challenging was it to set aside time for yourself?',
-            photo_prompt: 'Share a photo of you doing something for you. Tell us what you did and how it felt.'
+            photo_prompt: 'Share a photo of you doing something for you. Tell us what you did and how you felt.'
           },
           {
             name: 'Find peace',
@@ -1206,7 +1202,7 @@ module ChallengesHelper
             metric_verb: 'You meditated, did yoga, and/or wrote for ',
             metric_unit: ' minutes!',
             reflection_question: 'What do you think about meditation, yoga, and writing now?',
-            photo_prompt: 'Share a photo capturing this experience. Tell us how it felt.'
+            photo_prompt: 'Share a photo capturing this experience. Tell us how you felt after doing these activities.'
           }
         ]
       },
@@ -1229,7 +1225,7 @@ module ChallengesHelper
             metric_question: '',
             metric_verb: 'N/A',
             metric_unit: '',
-            reflection_question: 'What are some of your values? Why do they matter to you?',
+            reflection_question: "What did you learn from thinking about your values? With this awareness, what can you do today to practice your values?",
             photo_prompt: ''
           },
           {
@@ -1315,7 +1311,7 @@ module ChallengesHelper
             metric_verb: 'You gave ',
             metric_unit: ' sustainable gifts!',
             reflection_question: 'What did you like about this challenge?',
-            photo_prompt: 'Share a photo of your gift. Tell us what makes it a sustainable gift.'
+            photo_prompt: 'Share a photo of your gift. Tell us what makes your gift sustainable.'
           },
           {
             name: 'Affirm your interests',
