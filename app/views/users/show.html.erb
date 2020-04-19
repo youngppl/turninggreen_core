@@ -142,6 +142,7 @@
       <%= render 'layouts/dashboard/metric_logged_popup', {points_earned: false,} %>
     </div>
   </div>
+  <% if !Rails.env.test? %>
   <div class="global-impact">
     <h2>Global Impact</h2>
     <div id="global-impacts-carousel" class="carousel slide" data-interval="false">
@@ -196,4 +197,5 @@
           })
         </script>
   </div>
+  <% end %>
 </div>
