@@ -12,7 +12,7 @@ module UsersHelper
   def retrieveGlobalImpacts
     global_impacts = []
     request = RestClient.get(
-      "https://sheets.googleapis.com/v4/spreadsheets/1QdddPvJRMPYVF0lvE03xUZlRFjTW4Rb1np9fmM_UaxM/values/'Global%20Impact'!A:D?key=#{Rails.application.credentials[:google_api_key]}")
+      "https://sheets.googleapis.com/v4/spreadsheets/1QdddPvJRMPYVF0lvE03xUZlRFjTW4Rb1np9fmM_UaxM/values/'Global%20Impact'!A:E?key=#{Rails.application.credentials[:google_api_key]}")
     json = JSON.load(request.body)
     impacts_json = json['values'][1..json.length]
     impacts_json.each do |challenge, theme, description, reflection|
