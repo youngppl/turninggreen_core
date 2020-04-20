@@ -142,14 +142,60 @@
       <%= render 'layouts/dashboard/metric_logged_popup', {points_earned: false,} %>
     </div>
   </div>
-  <div class="global-impact container">
+  <% if !Rails.env.test? %>
+  <div class="global-impact">
     <h2>Global Impact</h2>
-    <div class="global-impact-content">
-      <div class="branding"></div>
-      <div class="coming-soon">
-        <h5>Coming soon!</h5>
-        <p>This page will be a collection of the impacts you, your friends, and all our users around the world have made. Let’s work to see the impact we will all come together to make!</p>
-      </div>
-    </div>
+    <div id="global-impacts-carousel" class="carousel slide" data-interval="false">
+          <%# <ol class="carousel-indicators">
+            <li data-target="global-impacts-carousel" data-slide-to="0" class="active"></li>
+            <li data-target="global-impacts-carousel" data-slide-to="1"></li>
+          </ol> %>
+          <div class="carousel-inner">
+            <% retrieveGlobalImpacts.shuffle.each_with_index do |impact, index| %>
+            <% challenge_name, theme, description, reflection, quote_type = impact %>
+            <div class="carousel-item <%= 'active' if index == 0 %>">
+              <div class="global-impact-content">
+                <div class="info">
+                  <h2 class="challenge-name"><%= challenge_name %></h2>
+                  <p class="description"><%= description %></p>
+                  <button class="take-challenge" onclick="location.href='/challenges/<%= theme %>'">
+                    Take the challenge!
+                  </button>
+                </div>
+                <div>
+                  <%= image_tag 'members-icon.png'%>
+                  <h2 class="percent"><%= getMemberParticipation(challenge_name) %>%</h2>
+                  <h4 class="label">membership participation</h4>
+                </div>
+                <div class="quote-box">
+                  <p class="quote"><%= (quote_type == 'reflection')? reflection.reflection : reflection.caption %></p>
+                  <h4 class="user-name">-<%= reflection.challenge.user.name %>,<br><%= reflection.challenge.user.location_string %></h4>
+                </div>
+                <div id="map_<%= index %>" class="map"></div>
+                <script>
+                  <%= generateMemberMap(challenge_name, "map_#{index}") %>
+                </script>
+              </div>
+            </div>
+            <% end %>
+          </div>
+          <a class="carousel-control-prev" href="#global-impacts-carousel" role="button" data-slide="prev">
+            <i class="fas fa-chevron-left"></i>
+          </a>
+          <a class="carousel-control-next" href="#global-impacts-carousel" role="button" data-slide="next">
+            <i class="fas fa-chevron-right"></i>
+          </a>
+        </div>
+        <script type="text/javascript">
+          $('.carousel').carousel()
+          $('#global-impacts-carousel').on('slide.bs.carousel', function() {
+            console.log('ran');
+            
+            maps.forEach(function (map) {
+              map._onResize()
+            })
+          })
+        </script>
   </div>
+  <% end %>
 </div>
