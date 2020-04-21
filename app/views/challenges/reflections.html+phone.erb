@@ -54,7 +54,7 @@
           </div>
         </div>
         <% end %>
-        <div class="slide two" <% "style=display:none;" if challenge.type != 'pre' %>>
+        <div class="slide two" <%= "style=display:none;" if challenge.type != 'pre' %> >
           <div class="green">
             <h2> <%= challenge.content_data[:reflection_question] %> </h2>
           </div>
