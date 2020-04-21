@@ -29,6 +29,12 @@ function resetPopout() {
         $(this).val($(this).data('orig'))
     })
     $('.popout:visible .save').prop('disabled', true)
+    if ($('.notifications.popout:visible')) {
+        // for notifications popout
+        options = $('.notifications .frequency.options')
+        options.children('input:checked').prop('checked', false)
+        options.children('#' + options.data('orig')).prop('checked', true)
+    }
 }
 
 function updateProfile() {
@@ -106,4 +112,22 @@ function updatePassword() {
         'password': $('#password-input').val(),
         'password_confirmation': $('#confirm-password-input').val()
     })
+}
+
+function checkNotificationsChange() {
+    original = $('.notifications .frequency.options').data('orig')
+    if ($('.notifications .frequency.options').children('input:checked').attr('id') != original) {
+        $('.notifications.popout').find('.save').prop('disabled', false)
+    } else {
+        $('.notifications.popout').find('.save').prop('disabled', true)
+    }
+}
+
+function updateNotifications() {
+    selection = $('.notifications .frequency.options').children('input:checked')
+    sendUpdateRequest({
+        'notifications': selection.attr('id')
+    })
+    $('#notifications-text').html(selection.next('span').html())
+    hidePopout()
 }

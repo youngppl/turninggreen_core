@@ -109,39 +109,39 @@
     <div class="field">
       <span>I would like to receive emails:</span>
     </div>
-    <div class="options">
-      <input type="radio" id="never" value="Never" name="notifications"/>never<br>
-      <input type="radio" id="every-other-day" name="notifications" value="Every other day"></input>
+    <div class="frequency options" data-orig="<%= current_user.notifications %>">
+      <% options = ['Never', 'Every other day', 'Weekly', 'Daily'] %>
+      <% options.each do |option| %>
+      <input type="radio" id="<%= option %>" name="notifications" value="<%= option %>" onchange="checkNotificationsChange()" <%= 'checked' if option == current_user.notifications %> />
       <span>
-        every other day
+        <%= option.downcase %>
       </span><br>
-      <input type="radio" id="weekly" name="notifications" value="Weekly"></input>
-      <span>
-        weekly
-      </span><br>
-      <input type="radio" id="daily" name="notifications" value="Daily"></input>
-      <span>
-        daily
-      </span>
+      <% end %>
     </div>
     <div class="field">
       <span>what to send to my email:</span>
     </div>
-    <div class="options">
-      <input type="checkbox" checked/>
-      <span>
-        reminders to log progress + submit reflections
-      </span><br>
-      <input type="checkbox" checked/>
-      <span>
-        random facts about sustainability (e.g. tips, news, products)
-      </span><br>
-      <input type="checkbox" checked/>
-      <span>
-        rootup newsletter
-      </span>
+    <div class="email options">
+      <div>
+        <input type="checkbox" checked/>
+        <span>
+          reminders to log progress + submit reflections
+        </span>
+      </div>
+      <div>
+        <input type="checkbox" checked/>
+        <span>
+          random facts about sustainability (e.g. tips, news, products)
+        </span>
+      </div>
+      <div>
+        <input type="checkbox" checked/>
+        <span>
+          rootup newsletter
+        </span>
+      </div>
     </div>
-    <button class="save" disabled onclick="updatePassword()">save changes</button>
+    <button class="save" disabled onclick="updateNotifications()">save changes</button>
   </div>
 
   <div class="deactivate popout">

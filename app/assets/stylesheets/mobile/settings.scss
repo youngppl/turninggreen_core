@@ -141,6 +141,13 @@
         display: inline-block;
         width: 90%;
       }
+
+      &.email {
+        div {
+          display: flex;
+          align-items: baseline;
+        }
+      }
     }
 
     .save {
