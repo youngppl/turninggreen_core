@@ -21,6 +21,8 @@ $(window).on('turbolinks:load', function() {
   });
 });
 
+maps = []
+
 function complete_challenge(id) {
   $.post('/challenges/complete-challenge', {
     id: id

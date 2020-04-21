@@ -22,6 +22,14 @@ class User < ApplicationRecord
     permissions.include? 'challenges'
   end
 
+  def location_string
+    if state != 'NO'
+      return state + ', USA'
+    else
+      return country
+    end
+  end
+
   # challenges
 
   def all_pre_challenges_completed
