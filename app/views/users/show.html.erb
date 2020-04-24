@@ -3,33 +3,6 @@
 <% end %>
 
 <div class="dashboard content-container">
-  <!-- <div class="level container">
-    <h5 class="title">My Level</h5>
-    <div class="level-content">
-      <div class="image">
-        <% if FileTest.exists? "#{::Rails.root}/app/assets/images/" + 'seeds/'+@level.to_s+'.svg' %>
-          <%= image_tag 'seeds/'+@level.to_s+'.svg' %>
-        <% end %>
-      </div>
-      <div class="info">
-        <h5 class="heading">lvl <%= @level %></h5>
-        <h5 class="name"><%= levels[@level][0] %></h5>
-        <p class="learn-more"><%= levels[@level][1] %></p>
-      </div>
-      <div class="progress">
-        <div class="progress-bar" role="progressbar" style="width: <%= current_user.level_progress %>% !important" aria-valuemin="0" aria-valuemax="100"></div>
-        <div class="marker-container">
-          <% if current_user.level_progress != 0 && current_user.level_progress != 100 %>
-            <div class="marker" style="left: <%= current_user.level_progress - 5 %>%">
-              <%= current_user.points %>
-            </div>
-          <% end %>
-        </div>
-      </div>
-      <div class="start box"> <%= level_ranges[@level] %></div>
-      <div class="end box"> <%= level_ranges[@level + 1] %></div>
-    </div>
-  </div> -->
   <% unless current_user.all_pre_challenges_completed == 10 %>
   <div class="pre-challenges container">
     <h2 class="heading">My Pre-Challenges</h2>

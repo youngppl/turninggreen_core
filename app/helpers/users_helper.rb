@@ -53,6 +53,7 @@ module UsersHelper
       dragging: false,
       doubleClickZoom: false,
       zoomControl: false,
+      scrollWheelZoom: false,
       layers: [
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png')
       ]
