@@ -152,7 +152,7 @@
           </ol> %>
           <div class="carousel-inner">
             <% retrieveGlobalImpacts.shuffle.each_with_index do |impact, index| %>
-            <% challenge_name, theme, description, reflection, quote_type = impact %>
+            <% challenge_name, theme, description, reflection, quote = impact %>
             <div class="carousel-item <%= 'active' if index == 0 %>">
               <div class="global-impact-content">
                 <div class="info">
@@ -168,7 +168,7 @@
                   <h4 class="label">membership participation</h4>
                 </div>
                 <div class="quote-box">
-                  <p class="quote"><%= (quote_type == 'reflection')? reflection.reflection : reflection.caption %></p>
+                  <p class="quote"><%= quote %></p>
                   <h4 class="user-name">-<%= reflection.challenge.user.name %>,<br><%= reflection.challenge.user.location_string %></h4>
                 </div>
                 <div id="map_<%= index %>" class="map"></div>

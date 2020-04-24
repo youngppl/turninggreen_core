@@ -428,16 +428,18 @@
         border-radius: 15px;
         background-color: rgba(213, 214, 214, 0.3);
         padding: 20px;
+        font-size: 11px;
       }
 
       .quote,
       .user-name {
-        font-size: 15px;
+        font-size: inherit;
         font-weight: 600;
         line-height: normal;
         letter-spacing: 0.46px;
         text-align: right;
         color: #616161;
+        margin-bottom: 5px;
       }
 
       .map {
