@@ -189,8 +189,6 @@
         <script type="text/javascript">
           $('.carousel').carousel()
           $('#global-impacts-carousel').on('slide.bs.carousel', function() {
-            console.log('ran');
-            
             maps.forEach(function (map) {
               map._onResize()
             })
