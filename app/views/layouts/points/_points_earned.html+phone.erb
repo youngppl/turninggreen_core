@@ -13,6 +13,11 @@ onclose: js to run after close
 <% digest = rand(36**2).to_s(36) %>
 
 <div class="mobile points-earned" id="<%= id if defined? id %>" style="<%= 'display:none;' if !visible %>">
+  <% if request.path == challenges_reflections_path %>
+  <div class="reflections-note">
+    FYI: viewing your completed challenge reflections is currently only available on desktop app
+  </div>
+  <% end %>
   <canvas id="confetti-canvas-<%= digest %>" class="confetti-canvas" onclick="$('.points-earned').hide();<%= onclose if defined? onclose %>"></canvas>
   <div class="content">
     <% if type == 'theme_unlock' %>

@@ -12,6 +12,22 @@
   justify-content: center;
   z-index: 1100;
 
+  .reflections-note {
+    height: 50px;
+    background-color: #c0a972;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: 1.05px;
+    text-align: center;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+  }
+
   .confetti-canvas {
     position: absolute;
     top: 0;
