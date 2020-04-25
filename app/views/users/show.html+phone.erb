@@ -57,14 +57,14 @@
                   <div class="logged <%= 'd-none' if !challenge.last_logged_today? %>">
                     <h5 class="question"><%= challenge.content_data[:metric_question] %></h5>
                     <input type="number" class="todays-log" disabled value="<%= challenge.progress_logs.last.metric if challenge.last_logged_today? %>" >
-                    <button type="button" name="button" class="dash-button" onclick="$('#<%= challenge.id %>.metric-popup').modal()">see my progress</button>
+                    <button type="button" name="button" class="dash-button see-p" onclick="$('#<%= challenge.id %>.metric-popup').modal()">see my progress</button>
                   </div>
                   <div class="not-logged <%= 'd-none' if challenge.last_logged_today? %>">
                     <div>
                       <h6 class="since">Since your last log:</h6>
                       <h5 class="question"><%= challenge.content_data[:metric_question] %></h5>
                     </div>
-                    <button type="button" name="button" class="dash-button" onclick="$('#<%= challenge.id %>.log-progress').css('display', 'flex');">log progress</button>
+                    <button type="button" name="button" class="dash-button log-p" onclick="$('#<%= challenge.id %>.log-progress').css('display', 'flex');">log progress</button>
                   </div>
                   <% end %>
                 </div>
