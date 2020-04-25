@@ -86,7 +86,7 @@
           <% if !completed %>
             <% if type == 'pre'%>
             <button type="button" class="nav button done bare hidden" onclick="startPreChallenge(this);">DONE?</button>
-            <% else %>
+            <% elsif !in_progress %>
             <button type="button" class="nav button start bare hidden"
               onclick="$(this).parents('.challenge-popup').modal('hide');$(this).parents('.challenge-popup').next('.start-challenge-popup').css('display', 'flex')">START</button>
             <% end %>
