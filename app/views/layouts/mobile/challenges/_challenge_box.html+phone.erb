@@ -25,6 +25,9 @@
       <%= image_tag 'challenges/not-started.svg', class: 'progress-indicator', size: '22' %>
     <% end %>
   <% end %>
+  <% if completed %>
+  <span class="completed-date">completed <%=challenge.date_complete.month%>/<%=challenge.date_complete.day%>/<%=challenge.date_complete.year % 100 %></span>
+  <% end %>
 </div>
 
 <div class="challenge-popup modal" tabindex="-1" role="dialog" data-challenge_name="<%= name %>">
@@ -74,39 +77,33 @@
             </div>
             <% end %>
           </div>
+          <button type="button" class="nav button back bare hidden" onclick="$(this).parents('.carousel').carousel(0)">BACK</button>
           <ol class="carousel-indicators">
             <li data-target="<%= name %>" data-slide-to="0" class="active"></li>
             <li data-target="<%= name %>" data-slide-to="1"></li>
           </ol>
+          <button type="button" class="nav button next bare" onclick="$(this).parents('.carousel').carousel(1)">NEXT</button>
+          <% if !completed %>
+            <% if type == 'pre'%>
+            <button type="button" class="nav button done bare hidden" onclick="startPreChallenge(this);">DONE?</button>
+            <% else %>
+            <button type="button" class="nav button start bare hidden"
+              onclick="$(this).parents('.challenge-popup').modal('hide');$(this).parents('.challenge-popup').next('.start-challenge-popup').css('display', 'flex')">START</button>
+            <% end %>
+          <% end %>
           <div class="controls">
             <div class="slide" onclick="toggleChallengeInfo(this)">
-              <div class="handle">
+              <div class="handle toggled">
                 <%= image_tag 'light-icon.png' %>
               </div>
               <span>Tap to learn more</span>
             </div>
-            <% if type == 'pre' %>
-              <% if in_progress %>
+            <!--
               <button class="continue" type="button" 
-                onclick="completePreChallenge(<%= challengeObjFromName(challenge_data[:name]).id %>);">
-                finished the challenge?</button>
-              <% else %>
-              <button class="continue" type="button" 
-                onclick="startPreChallenge(this)">
-                start challenge</button>
-              <% end %>
-            <% else %>
-              <% if in_progress %>
-              <button class="continue" type="button" 
-                onclick="$('#<%= challengeObjFromName(challenge_data[:name]).id %>.log-progress').css('display', 'flex');">
-                log progress</button>
-              <%= render 'layouts/mobile/log_progress', {challenge: challengeObjFromName(challenge_data[:name])} %>
-              <% else %>
-              <button class="continue" type="button" 
-                onclick="$(this).parents('.challenge-popup').modal('hide');$(this).parents('.challenge-popup').next('.start-challenge-popup').css('display', 'flex')">
-                Let's do it!!</button>
-              <% end %>
-            <% end %>
+                onclick="$('#<%# challengeObjFromName(challenge_data[:name]).id %>.log-progress').css('display', 'flex');">
+                log progress</button> -->
+              <%# render 'layouts/mobile/log_progress', {challenge: challengeObjFromName(challenge_data[:name])} %>
+
           </div>
         </div>
       </div>

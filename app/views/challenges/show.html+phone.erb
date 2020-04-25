@@ -49,7 +49,7 @@
   </div>
   <script>
     $('.carousel').carousel()
-    $('.challenge-info.carousel').on('slide.bs.carousel', toggleSlide)
+    $('.challenge-info.carousel').on('slid.bs.carousel', toggleSlide)
   </script>
 </div>
 
@@ -75,3 +75,10 @@
 
 <%= render 'layouts/points/points_earned', {points: 3, type: 'theme_unlock', theme_name: @challenge_name, visible: false} %>
 <%= render 'layouts/points/points_earned', {id: 'challenge-points', points: 3, type: "One action at a time, that's all it takes to make something happen. <br><br> We're rootin' for ya!", visible: false, onclose: 'parent.location.href=parent.location.href'} %>
+<%= render 'layouts/points/points_earned', 
+  {id: 'pre-challenge-points', 
+   points: 5, 
+   type: "Share with us your thoughts about the pre-challenge, we want to hear from you!", 
+   visible: false, 
+   onclose: "parent.document.getElementById('reflection-iframe').contentWindow.location.reload();parent.$('button.reflection').click()"
+   } %>
