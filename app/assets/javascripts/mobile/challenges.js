@@ -55,8 +55,7 @@ function startPreChallenge(el) {
         challenge_name: challenge_name,
         theme: challengeName,
         length_of_challenge: 0,
-        date_complete: new Date(Date.now())
-,
+        date_complete: new Date(Date.now()),
         completed: true
     })
     $('#pre-challenge-points').show()
