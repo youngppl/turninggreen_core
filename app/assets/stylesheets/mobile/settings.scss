@@ -31,6 +31,26 @@
     margin-bottom: 20px;
   }
 
+  .changes-saved {
+    height: 40px;
+    background-color: #bac4b6;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    display: none;
+  }
+
   section {
     margin: 0 20px;
     margin-bottom: 30px;

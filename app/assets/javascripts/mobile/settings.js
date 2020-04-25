@@ -48,7 +48,6 @@ function updateProfile() {
     })
     $('#email-text').html(new_email)
     $('#location-text').html(new_state + ', ' + new_country)
-    hidePopout()
 }
 
 function updatePermissions() {
@@ -75,6 +74,7 @@ function sendUpdateRequest(params) {
     })
     $('.popout:visible').addClass('saved')
     $('.popout:visible .save').prop('disabled', true)
+    $('.popout:visible .changes-saved').show()
 }
 
 function enableSaveButton(el) {
@@ -129,5 +129,4 @@ function updateNotifications() {
         'notifications': selection.attr('id')
     })
     $('#notifications-text').html(selection.next('span').html())
-    hidePopout()
 }
