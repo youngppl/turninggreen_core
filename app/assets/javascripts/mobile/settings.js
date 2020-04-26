@@ -13,8 +13,7 @@ function showPopout(popout) {
     $('.settings-popup .content').hide()
     $('.' + popout + '.popout').addClass('show')
     $('.settings-popup .back-button').off('click')
-    if (!$('.' + popout + '.popout').hasClass('saved')) 
-        $('.settings-popup .back-button').on('click', resetPopout)
+    $('.settings-popup .back-button').on('click', resetPopout)
     $('.settings-popup .back-button').on('click', hidePopout)
 }
 
@@ -29,11 +28,12 @@ function resetPopout() {
         $(this).val($(this).data('orig'))
     })
     $('.popout:visible .save').prop('disabled', true)
+    $('.popout:visible .changes-saved').hide()
     if ($('.notifications.popout:visible')) {
         // for notifications popout
         options = $('.notifications .frequency.options')
         options.children('input:checked').prop('checked', false)
-        options.children('#' + options.data('orig')).prop('checked', true)
+        options.children("[id='" + options.data('orig') + "']").prop('checked', true)
     }
 }
 
@@ -72,7 +72,11 @@ function sendUpdateRequest(params) {
     $.post('update-user', {
         "user": params
     })
-    $('.popout:visible').addClass('saved')
+    $('.popout:visible input, select').each(function () {
+        $(this).data('orig', $(this).val())
+    })
+    if ($('.notifications.popout:visible'))
+        $('.notifications .frequency.options').data('orig', $('.notifications .frequency.options').children('input:checked').attr('id'))
     $('.popout:visible .save').prop('disabled', true)
     $('.popout:visible .changes-saved').show()
 }
