@@ -15,8 +15,8 @@ module UsersHelper
       "https://sheets.googleapis.com/v4/spreadsheets/1QdddPvJRMPYVF0lvE03xUZlRFjTW4Rb1np9fmM_UaxM/values/'Global%20Impact'!A:E?key=#{Rails.application.credentials[:google_api_key]}")
     json = JSON.load(request.body)
     impacts_json = json['values'][1..json.length]
-    impacts_json.each do |challenge, theme, description, reflection|
-      global_impacts << [challenge, theme, description, Reflection.find(reflection)]
+    impacts_json.each do |challenge, theme, description, reflection, quote|
+      global_impacts << [challenge, theme, description, Reflection.find(reflection), quote]
     end
     return global_impacts
   end
@@ -53,6 +53,7 @@ module UsersHelper
       dragging: false,
       doubleClickZoom: false,
       zoomControl: false,
+      scrollWheelZoom: false,
       layers: [
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png')
       ]

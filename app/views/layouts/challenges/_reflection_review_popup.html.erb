@@ -45,7 +45,7 @@
         </div>
         <div class="actions">
           <input type="checkbox" <%= 'checked' if challenge.reflection.permission %> onchange="$.post('/reflections/edit', {challenge_id: <%= challenge.id %>, permission: $(this).is(':checked')})">
-          <label>I give TG permission to share this check-in <a href=" <%= privacy_path %> " target="_blank">Learn more</a></label><br>
+          <label>I give rootup permission to share this check-in <a href=" <%= privacy_path %> " target="_blank">Learn more</a></label><br>
         </div>
       </div>
     </div>
