@@ -1,4 +1,6 @@
 class ChallengeMailer < ApplicationMailer
+  include ChallengeMailerHelper
+
   track open: true, click: true
   def challenge_reminder_email(user, updates=false, fact)
     @user = user
