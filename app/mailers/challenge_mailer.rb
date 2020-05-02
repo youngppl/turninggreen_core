@@ -6,6 +6,7 @@ class ChallengeMailer < ApplicationMailer
     @user = user
     @updates = updates
     @fact = fact.html_safe
+    @gifs = getGifs
     @user_challenges = @user.challenges.all
     @user_completed_challenges = @user_challenges.where(completed: true, reflection_completed: false)
     @user_incomplete_challenges = @user_challenges.where(completed: false)
