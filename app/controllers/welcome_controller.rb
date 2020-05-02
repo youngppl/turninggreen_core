@@ -1,5 +1,6 @@
 class WelcomeController < ApplicationController
   include ChallengesHelper
+  include WelcomeHelper
 
   def index
     @highlighted_challenges = [
