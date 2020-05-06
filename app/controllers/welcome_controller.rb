@@ -1,6 +1,7 @@
 class WelcomeController < ApplicationController
   include ChallengesHelper
   include WelcomeHelper
+  include ThemesHelper
 
   def index
     @highlighted_challenges = [
@@ -15,6 +16,9 @@ class WelcomeController < ApplicationController
       challenges[:Home][:challenges].select {|x| x[:name] == "Freshen the air" }[0],
       challenges[:Travel][:challenges].select {|x| x[:name] == "Refuse single-use" }[0]
     ]
+  end
+
+  def action
   end
 
   def privacy

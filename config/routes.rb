@@ -11,7 +11,8 @@ Rails.application.routes.draw do
                   confirmations: "confirmations"}
 
   root 'welcome#index'
-
+      
+  get '/action' => 'welcome#action'
   get '/about' => 'about#index'
   get '/terms' => 'about#terms'
   get '/resources' => 'about#resources'

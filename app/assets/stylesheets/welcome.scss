@@ -435,6 +435,91 @@ a {
   }
 }
 
+.action-page {
+  color: #474747;
+  
+  .title {
+    color: #000000;
+    font-size: 20px;
+    margin-left: 60px;
+    margin-bottom: 40px;
+    margin-top: 10px;
+  }
+
+  .challenges {
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    margin: 40px auto;
+    height: 700px;
+  }
+
+  .tabs {
+    width: 230px;
+    background-color: #fafafa;
+    height: 100%;
+
+    .nav-link {
+      font-size: 20px;
+      font-weight: 600;
+      height: 70px;
+      color: #474747;
+      border-radius: 18px 0 0 18px;
+      width: 100%;
+      border: solid 1px #e3e3e3;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 0 25px;
+
+      .icon {
+        width: 44px;
+        height: 44px;
+      }
+
+      span {
+        text-align: center;
+        width: 50%;
+      }
+
+      &.active {
+        background-color: #ffffff;
+      }
+    }
+  }
+
+  .tab-content {
+    padding: 30px;
+    vertical-align: top;
+    max-height: 100%;
+    width: 80%;
+    border: solid 1px #e3e3e3;
+    border-radius: 0 18px 18px 0;
+    overflow-y: scroll;
+
+    .theme-icon {
+      position: absolute;
+      top: 0;
+      left: 40px;
+    }
+
+    .theme-title {
+      font-size: 23px;
+      font-weight: 500;
+      margin-left: 85px;
+    }
+
+    .challenge-page {
+      margin-top: 25px;
+    }
+
+    .tab-pane {
+      position: relative;
+      padding-left: 60px;
+    }
+  }
+}
+
 .privacy-page {
   p {
     font-size: 18px;
