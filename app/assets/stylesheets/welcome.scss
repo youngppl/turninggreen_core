@@ -441,7 +441,7 @@ a {
   .title {
     color: #000000;
     font-size: 20px;
-    margin-left: 60px;
+    margin-left: 87px;
     margin-bottom: 40px;
     margin-top: 10px;
   }
@@ -507,6 +507,10 @@ a {
       font-size: 23px;
       font-weight: 500;
       margin-left: 85px;
+
+      &.subtitle {
+        font-size: 18px;
+      }
     }
 
     .challenge-page {
@@ -533,6 +537,10 @@ a {
 
   .device {
     width: 380px;
+
+    .title {
+      font-weight: bold;
+    }
   }
 
   .steps {

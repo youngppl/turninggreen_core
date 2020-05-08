@@ -1,5 +1,5 @@
 <div class="action-page">
-  <h2 class="title">Not sure about making an account? Check out our challenges!</h2>
+  <h2 class="title">Take action now. To track your impact, sign up <%= link_to 'here', new_user_registration_path %>!</h2>
   <div class="challenges">
     <div class="tabs nav flex-column" role="tablist" aria-orientation="vertical">
       <% themes.each_with_index do |theme, index| %>
@@ -14,7 +14,7 @@
       <div class="tab-pane <%= 'active' if index == 0 %>" id="<%= theme.downcase %>" role="tabpanel">
         <%= image_tag "themes/icons/#{theme.downcase}.svg", class: 'theme-icon' %>
         <h2 class="theme-title"><%= theme.downcase %></h2>
-        <h2 class="theme-title"><%= themes_description[theme.to_sym] %></h2>
+        <h2 class="theme-title subtitle"><%= themes_description[theme.to_sym] %></h2>
         <div class="challenge-page">
           <% challenges[theme.to_sym][:challenges].each do |challenge| %>
             <div class="challenge-box">
