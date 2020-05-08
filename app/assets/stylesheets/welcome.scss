@@ -520,6 +520,71 @@ a {
   }
 }
 
+.get-the-app-page {
+  width: 70%;
+  margin: auto;
+
+  .title {
+    font-weight: 300;
+    color: #000000;
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .device {
+    width: 380px;
+  }
+
+  .steps {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: 40px auto;
+    flex-wrap: wrap;
+  }
+
+  .step {
+    text-align: center;
+    display: none;
+
+    .step-text {
+      font-weight: 300;
+      color: #000000;
+      font-size: 18px;
+      margin: 20px 0;
+    }
+
+    &.active {
+      display: block;
+    }
+  }
+
+  .controls {
+    width: 18px;
+    margin: auto;
+    margin-top: -26px;
+    text-align: center;
+    display: flex;
+    position: relative;
+    bottom: 12px;
+
+    i {
+      cursor: pointer;
+      position: absolute;
+    }
+
+    .last {
+      left: -70px;
+      display: none;
+    }
+
+    .next {
+      right: -70px;
+    }
+  }
+}
+
 .privacy-page {
   p {
     font-size: 18px;

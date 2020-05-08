@@ -388,38 +388,26 @@
   line-height: normal;
   letter-spacing: normal;
 
+  .navbar-nav {
+    align-items: center;
+  }
+
   .about-team-item {
     padding-left: 1.5em;
     padding-right: 1.5em;
     color: #0f5b2c;
+
+    &.get-app {
+      width: 170px;
+      height: 45px;
+      border-radius: 11px;
+      background-color: #0e5b2c;
+      font-weight: bold;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+    }
   }
 }
-// .navbarList {
-//   font-size: 21px;
-//   line-height: 2em;
-//   margin: 0 auto;
-//   text-transform: uppercase;
-//   text-align: left;
-//   right: 0;
-//   left: 0;
-//   width: 100%;
-//   padding: 0;
-//   z-index: 100;
-// }
-//
-// .navbarList li {
-//   display: inline-block;
-//   list-style: outside none none;
-//   position: relative;
-//   margin: 0.5em 0.6em;
-//   padding: 12px 15px;
-// }
-//
-// .navbarList li a {
-//   color: #fff;
-//   text-decoration: none;
-// }
-//
-// .navbarList li a:hover {
-//   text-decoration: underline overline;
-// }

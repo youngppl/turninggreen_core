@@ -21,6 +21,9 @@ class WelcomeController < ApplicationController
   def action
   end
 
+  def install
+  end
+
   def privacy
   end
 

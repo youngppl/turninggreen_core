@@ -14,6 +14,8 @@ Rails.application.routes.draw do
       
   get '/action' => 'welcome#action'
   get '/about' => 'about#index'
+  get '/team' => 'team#index'
+  get 'get-the-app' => 'welcome#install', :as => 'install'
   get '/terms' => 'about#terms'
   get '/resources' => 'about#resources'
   get '/faq' => 'about#faq'
@@ -25,7 +27,6 @@ Rails.application.routes.draw do
   get '/privacy' => 'welcome#privacy'
   get '/privacy/learn-more' => 'welcome#privacy_learn_more'
   get '/admin' => 'admin#index'
-  get '/team' => 'team#index'
   # email reminders routes
   get '/send-out-challenge-reminders' => 'challenge_mailer#send_out_challenge_reminders'
   get '/reset-email-tracking' => 'challenge_mailer#reset_email_tracking'
