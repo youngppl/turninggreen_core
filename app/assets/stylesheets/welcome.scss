@@ -212,8 +212,29 @@ a {
     }
   }
 
+  .user-map {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fffdfb;
+    padding: 40px;
+
+    .map {
+      width: 280px;
+      height: 247px;
+    }
+
+    .title {
+      font-size: 36px;
+      font-weight: 300;
+      text-align: center;
+      color: #5c5c5c;
+      max-width: 270px;
+      margin-left: 40px;
+    }
+  }
+
   .challenge {
-    background-color: #fffdfa;
     padding: 75px 0;
 
     .challenge-page {
@@ -365,17 +386,15 @@ a {
 
   .seed {
     display: flex;
-    width: 60%;
     margin: auto;
     color: #5f5f5f;
     padding: 82px 0;
+    background-color: #fffdfb;
+    justify-content: center;
+    flex-wrap: wrap;
 
     .left {
-      width: 60%;
       text-align: right;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
 
       .heading {
         font-size: 30px;
@@ -383,6 +402,7 @@ a {
 
       .subheading {
         font-size: 16px;
+        max-width: 600px;
       }
     }
 
@@ -417,7 +437,6 @@ a {
   .reviews {
     padding: 72px 12%;
     margin: auto;
-    background-color: #fffdfa;
     text-align: center;
     
     .heading {
@@ -431,6 +450,7 @@ a {
       margin: auto;
       justify-content: space-between;
       width: 80%;
+      flex-wrap: wrap;
     }
   }
 }
