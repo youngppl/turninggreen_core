@@ -64,6 +64,7 @@ $.ajaxSetup({
 });
 
 function toLastSlide(event) {
+  // desktop version
   if (event.data == YT.PlayerState.ENDED) {
     player.destroy();
     player = null;
@@ -82,17 +83,43 @@ function toLastSlide(event) {
   }
 }
 
+function toPointsEarned(event) {
+  // mobile version
+  if (event.data == YT.PlayerState.ENDED) {
+    player.destroy();
+    player = null;
+    $('.theme-unlock').hide();
+    $('.challenge-page').show();
+    $('.points-earned').show();
+    $.post("/challenges/unlock", {
+      challenge: challengeName
+    });
+  }
+}
+
 function onYouTubeIframeAPIReady() {
   if (showVideo) {
-    player = new YT.Player('video', {
-      height: '406',
-      width: '720',
-      videoId: challengeVideoID,
-      events: {
-        'onReady': onPlayerReady,
-        'onStateChange': toLastSlide
-      }
-    });
+    if (mobile) {
+      player = new YT.Player('video', {
+        width: '100%',
+        height: '212',
+        videoId: challengeVideoID,
+        events: {
+          'onReady': onPlayerReady,
+          'onStateChange': toPointsEarned
+        }
+      });
+    } else {
+      player = new YT.Player('video', {
+        height: '406',
+        width: '720',
+        videoId: challengeVideoID,
+        events: {
+          'onReady': onPlayerReady,
+          'onStateChange': toLastSlide
+        }
+      });
+    }
   }
 }
 

@@ -25,6 +25,13 @@
       </div>
     </div>
   </div>
+  <div class="user-map">
+    <div id="user_map" class="map"></div>
+    <script>
+      <%= generateMemberMap() %>
+    </script>
+    <h2 class="title">Join the Rootup family!</h2>
+  </div>
   <div class="challenge">
     <h2 class="heading">What does a challenge look like?</h2>
     <h5 class="subheading">See for yourself! Click on a theme below for examples</h5>
@@ -126,8 +133,12 @@
   </div>
   <div class="reviews">
     <h2 class="heading">We’re in this together</h2>
-    <script src="https://cdn.lightwidget.com/widgets/lightwidget.js"></script>
-    <iframe src="//lightwidget.com/widgets/0f4c43723c075b49b1841f0d1d96933c.html" scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width:100%;border:0;overflow:hidden;"></iframe>
+    <div class="embeds">
+      <% retrievePicIds.each do |id| %>
+        <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/<%= id %>" style="max-height: 500px;"></blockquote>
+      <% end %>
+      <script async src="//www.instagram.com/embed.js"></script>
+    </div>
   </div>
   </div>
 </div>

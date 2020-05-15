@@ -51,7 +51,9 @@ class ChallengesController < ApplicationController
 
   def complete_challenge
     Challenge.where(id:params[:id]).update(completed: true, date_complete: Time.now.getutc)
-    redirect_to challenges_reflections_path
+    if !mobile?
+      redirect_to challenges_reflections_path
+    end
   end
 
   def completed
@@ -87,7 +89,7 @@ class ChallengesController < ApplicationController
   end
 
   def reflections
-
+    @current_reflections = current_user.challenges.where(reflection_completed:false, completed: true)
   end
 
   private

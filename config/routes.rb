@@ -11,8 +11,11 @@ Rails.application.routes.draw do
                   confirmations: "confirmations"}
 
   root 'welcome#index'
-
+      
+  get '/action' => 'welcome#action'
   get '/about' => 'about#index'
+  get '/team' => 'team#index'
+  get 'get-the-app' => 'welcome#install', :as => 'install'
   get '/terms' => 'about#terms'
   get '/resources' => 'about#resources'
   get '/faq' => 'about#faq'
@@ -24,7 +27,6 @@ Rails.application.routes.draw do
   get '/privacy' => 'welcome#privacy'
   get '/privacy/learn-more' => 'welcome#privacy_learn_more'
   get '/admin' => 'admin#index'
-  get '/team' => 'team#index'
   # email reminders routes
   get '/send-out-challenge-reminders' => 'challenge_mailer#send_out_challenge_reminders'
   get '/reset-email-tracking' => 'challenge_mailer#reset_email_tracking'
@@ -41,6 +43,7 @@ Rails.application.routes.draw do
   post 'reflections/edit' => 'reflections#edit', :as => 'edit_reflection'
   post '/feedback' => 'users#feedback'
   devise_scope :user do
+    post '/update-user' => 'registrations#update_user' # updating user from outsite registrations controller
     post '/deactivate' => 'registrations#deactivate'
   end
   resources :tips_daily, only: [:index, :show]

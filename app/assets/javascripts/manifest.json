@@ -1,0 +1,15 @@
+{
+  "name": "rootup",
+  "short_name": "rootup",
+  "background_color": "#105b2f",
+  "lang": "en-US",
+  "start_url": "/",
+  "scope": "/",
+  "display": "fullscreen",
+  "icons": [
+    {
+      "src": "/assets/icons/android-chrome-512x512.png",
+      "sizes": "512x512"
+    }
+  ]
+}

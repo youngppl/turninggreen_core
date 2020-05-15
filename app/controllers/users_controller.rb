@@ -15,7 +15,7 @@ class UsersController < ApplicationController
         challenge.update(completed: true, notification_viewed: true)
       end
     end
-    @current_challenges = current_user.challenges.where(completed: false)
+    @current_challenges = current_user.challenges.where(completed: false).order(updated_at: :desc)
     @level = current_user.level
   end
 

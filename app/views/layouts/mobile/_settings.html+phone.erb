@@ -1,0 +1,199 @@
+<div class="settings-popup">
+  <button type="button" name="button" class="back-button bare">
+    <i class="fas fa-chevron-left"></i>
+  </button>
+  <h2 class="title">Settings</h2>
+
+  <div class="content">
+    <section>
+      <h3 class="section-title">profile</h3>
+      <div class="field" onclick="showPopout('profile')">
+        <span>email</span>
+        <span id="email-text"><%= current_user.email %></span>
+        <i class="fas fa-chevron-right"></i>
+      </div>
+      <div class="field" onclick="showPopout('profile')">
+        <span>location</span>
+        <span id="location-text"><%= current_user.state %>,
+          <%= current_user.country %></span>
+        <i class="fas fa-chevron-right"></i>
+      </div>
+    </section>
+
+    <section>
+      <h3 class="section-title">password</h3>
+      <div class="field" onclick="showPopout('password')">
+        <span>change password</span>
+        <i class="fas fa-chevron-right"></i>
+      </div>
+    </section>
+
+    <section>
+      <h3 class="section-title">privacy</h3>
+      <div class="field">
+        <h4>I give permission to include my state + country with my reflections, if shared on rootup's social media platforms. <a target="_blank" href="<%= privacy_learn_more_path %>">Learn more</a></h4>
+        <label class="switch" for="location-checkbox">
+          <input type="checkbox" id="location-checkbox" onchange="updatePermissions();" <%= 'checked' if current_user.gave_location_permission? %> />
+          <div class="slider round"></div>
+        </label>
+      </div>
+      <div class="field">
+        <h4>I want to remain anonymous if my reflections are shared on rootup's social media platforms. <a target="_blank" href="<%= privacy_learn_more_path %>">Learn more</a></h4>
+        <label class="switch" for="permission-checkbox">
+          <input type="checkbox" id="permission-checkbox" onchange="updatePermissions();" <%= 'checked' if current_user.wants_to_remain_anonymous? %> />
+          <div class="slider round"></div>
+        </label>
+      </div>
+      <h5 class="note">If you don't want any of your reflections to be shared, please <a href="mailto:rootupteam@gmail.com?">email us</a></h5>
+    </section>
+
+    <section>
+      <h3 class="section-title">notifications</h3>
+      <div class="field" onclick="showPopout('notifications')">
+        <span>recieve emails:</span>
+        <span id="notifications-text"><%= current_user.notifications.downcase %></span>
+        <i class="fas fa-chevron-right"></i>
+      </div>
+      <div class="field" onclick="showPopout('notifications')">
+        <span>what to send to my email</span>
+        <i class="fas fa-chevron-right"></i>
+      </div>
+    </section>
+
+    <section>
+      <h3 class="section-title">activity</h3>
+      <h2 class="message">If you deactivate your account, you will lose access to all the data you’ve shared on rootup.</h2>
+      <div class="field" onclick="showPopout('deactivate')">
+        <span>deactivate account</span>
+        <i class="fas fa-chevron-right"></i>
+      </div>
+    </section>
+
+    <%= link_to 'log out', destroy_user_session_path, method: :delete, class: 'logout' %>
+  </div>
+  
+  <div class="profile popout">
+    <div class="changes-saved">
+      changes saved
+    </div>
+    <h2 class="popup-title">Profile</h2>
+    <div class="field">
+      <span>email</span>
+      <input type="text" id="email-input" oninput="enableSaveButton(this);" data-orig="<%= current_user.email %>">
+    </div>
+    <div class="field">
+      <span>state</span>
+      <%= select_tag 'user_state', options_for_select(us_states, current_user.state), {:include_blank => "State", :class => "state dropdown", :onchange => "updateCountryField();enableSaveButton(this);", :data => {orig: current_user.state}} %>
+    </div>
+    <div class="field">
+      <span>country</span>
+      <%= select_tag 'user_country', options_for_select(countries, current_user.country), {:include_blank => "Country", :class => "state dropdown", :onchange => "updateStateField();enableSaveButton(this);", :data => {orig: current_user.country}} %>
+    </div>
+    <button class="save" disabled onclick="updateProfile()">save changes</button>
+  </div>
+
+  <div class="password popout">
+    <div class="changes-saved">
+      changes saved
+    </div>
+    <h2 class="popup-title">Change Password</h2>
+    <div class="field">
+      <span>new password</span>
+      <input type="password" id="password-input" autocomplete="off" oninput="checkPasswords(this);" data-orig="">
+    </div>
+    <h5 class="password error">password must include at least 8 characters</h5>
+    <div class="field">
+      <span>confirm password</span>
+      <input type="password" id="confirm-password-input" oninput="checkPasswords(this);" data-orig="">
+    </div>
+    <h5 class="confirm error">the password doesn’t match</h5>
+    <button class="save" disabled onclick="updatePassword()">save changes</button>
+  </div>
+
+  <div class="notifications popout">
+    <div class="changes-saved">
+      changes saved
+    </div>
+    <h2 class="popup-title">Notifications</h2>
+    <div class="field">
+      <span>I would like to receive emails:</span>
+    </div>
+    <div class="frequency options" data-orig="<%= current_user.notifications %>">
+      <% options = ['Never', 'Every other day', 'Weekly', 'Daily'] %>
+      <% options.each do |option| %>
+      <input type="radio" id="<%= option %>" name="notifications" value="<%= option %>" onchange="checkNotificationsChange()" <%= 'checked' if option == current_user.notifications %> />
+      <span>
+        <%= option.downcase %>
+      </span><br>
+      <% end %>
+    </div>
+    <div class="field">
+      <span>what to send to my email:</span>
+    </div>
+    <div class="email options">
+      <div>
+        <input type="checkbox" checked/>
+        <span>
+          reminders to log progress + submit reflections
+        </span>
+      </div>
+      <div>
+        <input type="checkbox" checked/>
+        <span>
+          random facts about sustainability (e.g. tips, news, products)
+        </span>
+      </div>
+      <div>
+        <input type="checkbox" checked/>
+        <span>
+          rootup newsletter
+        </span>
+      </div>
+    </div>
+    <button class="save" disabled onclick="updateNotifications()">save changes</button>
+  </div>
+
+  <div class="deactivate popout">
+    <h2 class="popup-title">Deactivate Account</h2>
+    <div class="first slide">
+      <p class="warning">You are important to us. Please share with us why you want to deactivate your account.</p>
+      <div class="deactivate-reasons-form">
+        <form id="deactivate-form" action="/deactivate" method="post" onchange="checkDeactivateForm();">
+          <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+          <input type="checkbox" id="not-safe" name="not-safe" value="1"> <span class="option">I don’t feel
+            safe</span><br>
+          <input type="checkbox" id="not-useful" name="not-useful" value="1"> <span class="option">I think this app is
+            not useful for me</span><br>
+          <input type="checkbox" id="too-much-work" name="too-much-work" value="1"> <span class="option">There is too
+            much work involved in this app</span><br>
+          <input type="checkbox" id="other" value="1"> <span class="option">Other (please elaborate):</span><br>
+          <textarea id="other-textarea" name="other" oninput="checkDeactivateForm();" disabled></textarea><br>
+          <div class="deactivate error" style="display:none;">
+            <div class="error-icon"></div>
+            <span class="message">Please type in a reason before continuing</span>
+          </div>
+          <button type="submit" class="btn next-button" id="deactivate-next-button" value="Next" disabled onclick="$('.first.slide').hide();$('.second.slide').show();">
+            <%= image_tag "next-button-disabled", class: "disabled" %>
+            <%= image_tag "next-button-active", class: "active" %>
+          </button>
+        </form>
+      </div>
+    </div>
+    <div class="second slide" style="display:none;">
+      <p class="warning">You will not be able to recover any of your data once you deactivate. This is a permanent decision.</p>
+      <form action="/deactivate" method="post">
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+        <textarea id="additional-textarea" name="other"
+          placeholder="We are always trying to improve. Please share any additional comments and thoughts you have, thank you!"></textarea><br>
+        <button type="submit" class="btn deactivate-button :disabled" id="deactivate-button" onclick="$.ajax({url: '<%= user_registration_path %>', type: 'DELETE'});">
+          deactivate
+        </button> 
+      </form>
+    </div>
+  </div>
+</div>
+<script>
+  $('input').each(function () {
+    $(this).val($(this).data('orig'))
+  })
+</script>

@@ -1,0 +1,55 @@
+<div class="registration mobile">
+  <div class="back-button" onclick="history.back()">
+    <i class="fas fa-chevron-left"></i>
+  </div>
+
+  <%= form_for(resource, as: resource_name, url: user_registration_path(resource_name), html: {onsubmit: "convertDate();"}) do |f| %>
+    <div class="section _1" style="display: block;">
+      <h2 class="heading">Let's get started!</h2>
+      <%= f.text_field :name, autofocus: true, placeholder: "full name", autocomplete: "name", :class => "input", :required => true, onfocus:"$(this).click()", oninput: "allowNextButton();" %>
+      <%= f.email_field :email, placeholder: "email", autocomplete: "email", :class => "input email", :required => true, oninput: "checkEmail();allowNextButton(this);" %>
+      <div class="email error">
+        <h5 class="message">please enter a valid email</h5>
+      </div>
+    </div>
+
+    <div class="section _2">
+      <h2 class="heading">When's your birthday?</h2>
+      <%= f.date_field :birthday, {class: "input birthday", required: true, id: "datepicker", autocomplete: "off", placeholder: "mm/dd/yyyy", oninput: "checkBirthday(this)"} %>
+      <div class="birthday error">
+        <h5 class="message">you must be at least 13 years old to register</h5>
+      </div>
+      <script type="text/javascript">
+        $('#datepicker').prop('max', new Date().toISOString().split("T")[0])
+      </script>
+    </div>
+
+    <div class="section _3">
+      <h2 class="heading">Where are you based?</h2>
+      <span>
+        <%= f.select :state, options_for_select(us_states, params.include?(:user)? params[:user][:state] : ""), {prompt: "state"}, {:class => "input", :required => true, :onchange => "updateCountryField();allowNextButton();"}  %>
+      </span>
+      <span>
+        <%= f.select :country, options_for_select(countries, params.include?(:user)? params[:user][:country] : ""), {prompt: "country"}, {:class => "input", :required => true, :onchange => "updateStateField();allowNextButton();"} %>
+      </span>
+    </div>
+
+    <div class="section _4">
+      <h2 class="heading">Let's set a password</h2>
+      <%= f.password_field :password, autocomplete: "current-password", placeholder: "password", :class => "input password", :required => true, oninput: "checkPasswords()" %>
+      <div class="password error">
+        <h5 class="message">password must be at least 8 characters</h5>
+      </div>
+      <%= f.password_field :password_confirmation, :class => "input confirm", placeholder: "confirm password", :required => true, oninput: "checkPasswords()" %>
+      <div class="confirm error">
+        <h5 class="message">password does not match</h5>
+      </div>
+      <%= f.submit "sign up", :class => "account-button",  onclick: 'save_timezone();', disabled: true%>
+    </div>
+  <% end %>
+
+  <div class="next-button" onclick="nextSection(this)">
+    <%= image_tag "next-button-disabled", class: "disabled" %>
+    <%= image_tag "next-button-active", style: 'display:none;', class: "active" %>
+  </div>
+</div>

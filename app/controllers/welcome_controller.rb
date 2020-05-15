@@ -1,7 +1,12 @@
 class WelcomeController < ApplicationController
   include ChallengesHelper
+  include WelcomeHelper
+  include ThemesHelper
 
   def index
+    if mobile? && !current_user.nil?
+      redirect_to dashboard_path
+    end
     @highlighted_challenges = [
       challenges[:Food][:challenges].select {|x| x[:name] == "Know your food" }[0],
       challenges[:Biodiversity][:challenges].select {|x| x[:name] == "Attract pollinators" }[0],
@@ -14,6 +19,12 @@ class WelcomeController < ApplicationController
       challenges[:Home][:challenges].select {|x| x[:name] == "Freshen the air" }[0],
       challenges[:Travel][:challenges].select {|x| x[:name] == "Refuse single-use" }[0]
     ]
+  end
+
+  def action
+  end
+
+  def install
   end
 
   def privacy

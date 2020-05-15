@@ -1,0 +1,117 @@
+.points-earned.mobile {
+  background-color: #6c6c6c;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #ffffff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 1100;
+
+  .reflections-note {
+    height: 50px;
+    background-color: #c0a972;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: 1.05px;
+    text-align: center;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+  }
+
+  .confetti-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+
+  .content {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  .heading {
+    font-size: 30px;
+    font-weight: 900;
+    letter-spacing: 1.69px;
+    color: #ffd106;
+  }
+
+  .points {
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 0.44;
+    color: #ffd106;
+  }
+
+  .seed {
+    .points-ring {
+      position: relative;
+
+      svg {
+        width: 200px;
+        height: 200px;
+        z-index: 4;
+        position: relative;
+      }
+
+      circle {
+        fill: transparent;
+        stroke-width: 4px;
+        transform-origin: 50% 50%;
+        transform: rotate(-86deg);
+        transform-origin: 49% 51%;
+
+        &.user-points {
+          stroke-dasharray: 240;
+          stroke-dashoffset: 240;
+          stroke-linecap: round;
+        }
+      }
+
+      .seed-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        vertical-align: middle;
+        top: 0;
+        bottom: 0;
+      }
+    }
+  }
+
+  .sub-heading h2 {
+    font-weight: bold;
+    line-height: 1.29;
+    letter-spacing: 2.47px;
+    font-size: 18px;
+  }
+
+  .continue {
+    width: 124px;
+    height: 31px;
+    border-radius: 4px;
+    border: solid 1px #ffffff;
+    background-color: #d8b208;
+    font-size: 13px;
+    font-weight: bold;
+    margin-top: 35px;
+    z-index: 2;
+  }
+}

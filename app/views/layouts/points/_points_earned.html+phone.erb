@@ -1,0 +1,94 @@
+<%#
+
+id: id of popup
+points: num points earned
+type: points, theme_unlock, [custom message]
+visible: true, false
+onclose: js to run after close 
+*theme_name
+
+
+ %>
+
+<% digest = rand(36**2).to_s(36) %>
+
+<div class="mobile points-earned" id="<%= id if defined? id %>" style="<%= 'display:none;' if !visible %>">
+  <% if request.path == challenges_reflections_path %>
+  <div class="reflections-note">
+    FYI: viewing your completed challenge reflections is currently only available on desktop app
+  </div>
+  <% end %>
+  <canvas id="confetti-canvas-<%= digest %>" class="confetti-canvas" onclick="$('.points-earned').hide();<%= onclose if defined? onclose %>"></canvas>
+  <div class="content">
+    <% if type == 'theme_unlock' %>
+      <h1 class="heading">THEME UNLOCKED!</h1>
+    <% elsif type == 'points' %>
+      <% if current_user.points + points >= level_ranges[current_user.level + 1] %>
+        <h1 class="heading">LEVEL UP!</h1>
+      <% else %>
+        <h1 class="heading">POINTS EARNED!</h1>
+      <% end %>
+    <% else %>
+      <h1 class="heading">POINTS EARNED!</h1>
+    <% end %>
+  <div class="seed">
+    <h2 class="points">+<%= points %>
+      pts
+    </h2>
+    <div class="points-ring">
+      <svg viewbox="13 -13 80 80" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="53" cy="54" r="35" stroke="#e4e3e3" stroke-dasharray=""/>
+        <circle class="user-points" cx="53" cy="54" r="35" stroke="#93989c" stroke-dasharray=""/>
+      </svg>
+      <% if current_user.level == 0 %>
+        <%= image_tag 'seeds/0.svg', class: "seed-image", size: "60" %>
+      <% else %>
+        <%= image_tag 'seeds/'+current_user.level.to_s+'.svg', class: 'seed-image', size: '180' %>
+      <% end %>
+    </div>
+  </div>
+  <div class="sub-heading">
+    <% if type == 'points'%>
+      <h2>Ayyy, your seed's growing!</h2>
+      <h2>Keep it up, we're rooting you on!</h2>
+    <% elsif type == 'theme_unlock' %>
+      <h2>Hooray, now you can get started on the <%= theme_name %> challenges!</h2>
+    <% else %>
+      <h2> <%= type.html_safe %> </h2>
+    <% end %>
+    <button type="button" name="button" class="continue" onclick="$('.points-earned').hide();">continue</button>
+  </div>
+  </div>
+</div>
+<script type="text/javascript">
+    
+  var confetti_<%= digest %> = new ConfettiGenerator({
+    target: 'confetti-canvas-<%= digest %>',
+    max: 50,
+    respawn: 'true',
+    rotate: 'true',
+    clock: 30,
+    "props": [
+      {
+        "type": "svg",
+        "src": "<%= image_url 'mobile/points-earned/leaf1.svg' %>"
+      }, {
+        "type": "svg",
+        "src": "<%= image_url 'mobile/points-earned/leaf2.svg' %>"
+      }, {
+        "type": "svg",
+        "src": "<%= image_url 'mobile/points-earned/leaf3.svg' %>"
+      }, {
+        "type": "svg",
+        "src": "<%= image_url 'mobile/points-earned/leaf4.svg' %>"
+      }, {
+        "type": "svg",
+        "src": "<%= image_url 'mobile/points-earned/leaf5.svg' %>"
+      }
+    ]
+  });
+  confetti_<%= digest %>.render();
+  $('.user-points').animate({
+    'stroke-dashoffset': <%= 240 - 220*(current_user.level_progress(points)/100) %>
+  }, 3000, 'swing')
+</script>

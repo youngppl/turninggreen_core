@@ -1,0 +1,14 @@
+<div class="log-progress" id="<%= challenge.id %>">
+  <div class="logo">
+    <%= image_tag "rootup-logo.svg", size: '140x40' %>
+  </div>
+  <button type="button" name="button" class="back-button bare">
+    <i class="fas fa-chevron-left" onclick="$('#<%= challenge.id %>.log-progress').hide()"></i>
+  </button>
+  <h2 class="prompt"> <%= challenge.content_data[:metric_question] %></h2>
+  <input type="number" pattern="\d*" class="input" oninput="enableLogButton(this)">
+  <div class="next-button" onclick="logProgress(this, <%= challenge.id %>)">
+    <%= image_tag "next-button-disabled", class: "disabled" %>
+    <%= image_tag "next-button-active", style: 'display:none;', class: "active" %>
+  </div>
+</div>
