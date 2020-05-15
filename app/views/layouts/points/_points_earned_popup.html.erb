@@ -2,29 +2,66 @@
 HOW TO USE
 
 arguments: id, default: points-earned,
-           heading
            message,
            points,
 
 %>
 
+<% digest = rand(36**2).to_s(36) %>
+
 <div class="modal points-earned-popup" id="<%= (defined? id) ? id : 'points-earned' %>" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-body">
+        <canvas id="confetti-canvas-<%= digest %>" class="confetti-canvas"></canvas>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&#x2715;</span>
         </button>
-        <h2 class="heading"> <%= heading.html_safe %>  </h2>
+        <h2 class="heading">POINTS EARNED!</h2>
         <h2 class="message"> <%= message.html_safe %></h2>
-        <h5 class="keep-it-up">
-          Keep it up! You’ve got <%= points.to_s %> extra points!
-          <% if current_user.points + points >= level_ranges[current_user.level + 1] %>
-            <br>Congratulations! You just leveled up too!
-          <% end %>
+        <h5 class="points">
+          +<%= points %> pts
         </h5>
-        <div class="branding"></div>
-        <%= render "layouts/points/points_progress", {points_to_add: points} %>
+        <div class="points-ring">
+        <svg viewbox="13 -13 80 80" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="54" cy="53" r="21" stroke="#e4e3e3" stroke-dasharray=""/>
+          <circle class="user-points" cx="54" cy="53" r="21" stroke="#93989c" stroke-dasharray=""/>
+        </svg>
+        <div class="image">
+          <%= image_tag 'seeds/'+current_user.level.to_s+'.svg', class: 'seed-image' %>
+        </div>
+        </div>
+        <script type="text/javascript">
+          var confetti_<%= digest %> = new ConfettiGenerator({
+            target: 'confetti-canvas-<%= digest %>',
+            max: 100,
+            respawn: 'true',
+            rotate: 'true',
+            clock: 30,
+            "props": [
+              {
+                "type": "svg",
+                "src": "<%= image_url 'mobile/points-earned/leaf1.svg' %>"
+              }, {
+                "type": "svg",
+                "src": "<%= image_url 'mobile/points-earned/leaf2.svg' %>"
+              }, {
+                "type": "svg",
+                "src": "<%= image_url 'mobile/points-earned/leaf3.svg' %>"
+              }, {
+                "type": "svg",
+                "src": "<%= image_url 'mobile/points-earned/leaf4.svg' %>"
+              }, {
+                "type": "svg",
+                "src": "<%= image_url 'mobile/points-earned/leaf5.svg' %>"
+              }
+            ]
+          });
+          confetti_<%= digest %>.render();
+          $('.user-points').animate({
+            'stroke-dashoffset': <%= 240 - 128*(current_user.level_progress/100) %>
+          }, 3000, 'swing')
+        </script>
       </div>
     </div>
   </div>

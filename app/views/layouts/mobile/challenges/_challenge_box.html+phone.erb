@@ -1,0 +1,126 @@
+<%# 
+    challenge : challenge to render
+ %>
+<% challenge_is_obj = challenge.class == Challenge %>
+<% challenge_data = (challenge_is_obj)? challenge.content_data : challenge %>
+<% name = challenge_data[:name] %>
+<% type = challenge_data[:type] %>
+<% completed = @completed_challenges.exists?(challenge_name: name) %>
+<% in_progress = @in_progress_challenges.exists?(challenge_name: name) %>
+
+<div class="challenge-card <%= 'pre' if type == 'pre' %>" <%= "onclick=$(this).next('.challenge-popup').modal()" %>>
+  <div class="image">
+    <%= image_tag (challenge_is_obj)? challenge.icon_path : "challenges/#{@challenge_name.downcase}/#{challenge[:name].downcase.tr(' ','-').tr('#','')}.png", size: '100' %>
+  </div>
+  <div class="info">
+    <h2 class="name"><%= name %></h2>
+    <h3 class="question"> <%= challenge_data[:question] %> </h3>
+  </div>
+  <% if type != 'pre' %>
+    <% if completed %>
+      <%= image_tag 'challenges/completed.svg', class: 'progress-indicator', size: '22' %>
+    <% elsif in_progress %>
+      <%= image_tag 'challenges/in-progress.svg', class: 'progress-indicator', size: '22' %>
+    <% else %>
+      <%= image_tag 'challenges/not-started.svg', class: 'progress-indicator', size: '22' %>
+    <% end %>
+  <% end %>
+  <% if completed %>
+  <span class="completed-date">completed <%=challenge.date_complete.month%>/<%=challenge.date_complete.day%>/<%=challenge.date_complete.year % 100 %></span>
+  <% end %>
+</div>
+
+<div class="challenge-popup modal" tabindex="-1" role="dialog" data-challenge_name="<%= name %>">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <div class="heading">
+          <h2><%= name %></h2>
+        </div>
+      <div class="modal-body">
+        <div class="challenge-info carousel slide" id="<%= name %>" data-interval="false">
+          <div class="carousel-item active">
+            <p class="description"><%= challenge_data[:description].html_safe %></p>
+          </div>
+          <div class="carousel-item">
+            <div class="steps">
+              <h2 class="subtitle">How do I do this?</h2>
+              <ul>
+                <% challenge_data[:instructions].each do |item| %>
+                <li> <%= item.html_safe %> </li>
+                <% end %>
+              </ul>
+              <% if challenge_data[:alt_instructions] %>
+              <ul class="alt">
+                <% challenge_data[:alt_instructions].each do |item| %>
+                <li> <%= item.html_safe %> </li>
+                <% end %>
+              </ul>
+              <% end %>
+              <% if challenge_data[:second_list] %>
+              <ul>
+                <% challenge_data[:second_list].each do |item| %>
+                <li> <%= item.html_safe %> </li>
+                <% end %>
+              </ul>
+              <% end %>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <h2 class="subtitle">Click on the links below to...</h2>
+            <% challenge_data[:links].each do |text, link| %>
+            <div class="learn-more-link">
+              <%= image_tag 'leaf.svg' %>
+              <%= link_to text, link, class: "link", target: "_blank"%>
+            </div>
+            <% end %>
+          </div>
+          <button type="button" class="nav button back bare hidden" onclick="$(this).parents('.carousel').carousel(0)">BACK</button>
+          <ol class="carousel-indicators">
+            <li data-target="<%= name %>" data-slide-to="0" class="active"></li>
+            <li data-target="<%= name %>" data-slide-to="1"></li>
+          </ol>
+          <button type="button" class="nav button next bare" onclick="$(this).parents('.carousel').carousel(1)">NEXT</button>
+          <% if !completed %>
+            <% if type == 'pre'%>
+            <button type="button" class="nav button done bare hidden" onclick="startPreChallenge(this);">DONE?</button>
+            <% elsif !in_progress %>
+            <button type="button" class="nav button start bare hidden"
+              onclick="$(this).parents('.challenge-popup').modal('hide');$(this).parents('.challenge-popup').next('.start-challenge-popup').css('display', 'flex')">START</button>
+            <% end %>
+          <% end %>
+          <div class="controls">
+            <div class="slide" onclick="toggleChallengeInfo(this)">
+              <div class="handle toggled">
+                <%= image_tag 'light-icon.png' %>
+              </div>
+              <span>Tap to learn more</span>
+            </div>
+            <!--
+              <button class="continue" type="button" 
+                onclick="$('#<%# challengeObjFromName(challenge_data[:name]).id %>.log-progress').css('display', 'flex');">
+                log progress</button> -->
+              <%# render 'layouts/mobile/log_progress', {challenge: challengeObjFromName(challenge_data[:name])} %>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% if type != 'pre' %>
+<div class="start-challenge-popup" data-challenge_name="<%= name %>"> 
+  <button type="button" name="button" class="back-button bare" onclick="$(this).parents('.start-challenge-popup').hide()">
+    <i class="fas fa-chevron-left"></i>
+  </button>
+  <h2 class="prompt">🏁Start this challenge</h2>
+  <%= select_tag "weeks", options_for_select((1..4).to_a), class: 'input' %>
+  <h2 class="prompt">weeks starting today</h2>
+  <div class="next-button" onclick="startChallenge(this)">
+    <%= image_tag "next-button-active", class: "active" %>
+  </div>
+</div>
+<% end %>

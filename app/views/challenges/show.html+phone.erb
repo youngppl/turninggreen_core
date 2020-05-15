@@ -1,0 +1,84 @@
+<script>
+  var mobile = true;
+  <% if @challenge_data.key?(:videoID) %>
+    var challengeVideoID = "<%= @challenge_data[:videoID] %>";
+    var showVideo = true;
+  <% else %>
+    var showVideo = false;
+  <% end %>
+</script>
+
+<div class="challenge-page mobile" style="display:none;">
+  <div class="header">
+    <button type="button" name="button" class="back-button bare">
+      <i class="fas fa-chevron-left" onclick="history.back()"></i>
+    </button>
+    <%= image_tag 'themes/icons/' + @challenge_name.downcase, size: "20" %>
+    <h2><%= @challenge_name.upcase %></h2>
+  </div>
+  <div class="challenges-content">
+
+    <% if !@completed_challenges.exists?(challenge_name: @challenge_data[:challenges][0][:name]) %>
+    <section class="pre">
+      <h2 class="title">Pre-Challenge:</h2>
+      <%= render 'layouts/mobile/challenges/challenge_box', {challenge: @challenge_data[:challenges][0]} %>
+    </section>
+    <% end %>
+
+    <% if @completed_challenges.length < 7 %>
+    <section class="challenges">
+      <h2 class="title">Challenges:</h2>
+        <% (1..6).each do |index| %>
+        <% challenge = @challenge_data[:challenges][index]%>
+        <% if !@completed_challenges.exists?(challenge_name: challenge[:name])%>
+          <%= render 'layouts/mobile/challenges/challenge_box', {challenge: challenge} %>
+        <% end %>
+      <% end %>
+    </section>
+    <% end %>
+
+    <% if @completed_challenges.length > 0 %>
+    <section class="completed">
+      <h2 class="title">Completed Challenges:</h2>
+      <% @completed_challenges.each do |challenge| %>
+          <%= render 'layouts/mobile/challenges/challenge_box', {challenge: challenge} %>
+      <% end %>
+    </section>
+    <% end %>
+
+  </div>
+  <script>
+    $('.carousel').carousel()
+    $('.challenge-info.carousel').on('slid.bs.carousel', toggleSlide)
+  </script>
+</div>
+
+<div class="theme-unlock">
+  <button type="button" name="button" class="back-button bare">
+    <i class="fas fa-chevron-left" onclick="history.back()"></i>
+  </button>
+  <h2 class="heading">Before you can get started on the challenges, watch this video to get a deeper understanding of this theme!</h2>
+  <div id="video"></div>
+  <h2 class="caption"> <%= @challenge_data[:videoCaption] %> </h2>
+</div>
+
+<script>
+  var challengeName = "<%= @challenge_name %>";
+  var already_unlocked = <%= @already_unlocked %>;
+  <% if !@already_unlocked %>
+    startVideo();
+  <% else %>
+    $('.theme-unlock').hide();
+    $('.challenge-page').show();
+  <% end %>
+</script>
+
+<%= render 'layouts/points/points_earned', {points: 3, type: 'theme_unlock', theme_name: @challenge_name, visible: false} %>
+<%= render 'layouts/points/points_earned', {id: 'challenge-points', points: 3, type: "One action at a time, that's all it takes to make something happen. <br><br> We're rootin' for ya!", visible: false, onclose: 'parent.location.href=parent.location.href'} %>
+<%= render 'layouts/points/points_earned', 
+  {id: 'pre-challenge-points', 
+   points: 5, 
+   type: "Share with us your thoughts about the pre-challenge, we want to hear from you!", 
+   visible: false, 
+   onclose: "parent.document.getElementById('reflection-iframe').contentWindow.location.reload();parent.$('button.reflection').click()"
+   } %>

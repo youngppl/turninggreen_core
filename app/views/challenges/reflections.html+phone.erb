@@ -1,0 +1,91 @@
+<div class="reflections-mobile mobile">
+  <h1 class="title">R E F L E C T I O N S</h1>
+  <h3 class="subtitle">Share and document your experience!</h3>
+  <div class="reflection-cards">
+    <% @current_reflections.each do |challenge| %>
+      <div class="reflection-card" id="<%= challenge.id %>" onclick="$('#<%= challenge.id %>.reflection-popup').show()">
+        <%= image_tag "themes/icons/"+challenge.theme.downcase+".svg", size: "30"  %>
+        <h2 class="challenge-name"><%= challenge.challenge_name %></h2>
+      </div>
+      <div class="reflection-popup" id="<%= challenge.id %>">
+        <div class="heading">
+          <h1 class="title">R E F L E C T</h1>
+          <h2 class="challenge-name"><%= challenge.challenge_name %></h2>
+          <h2 class="date-complete">Completed: <%= challenge.date_complete.strftime("%A, %b. %-d, %Y") %> </h2>
+        </div>
+        <%= form_for :reflection, url: new_reflection_path, html: {class: 'form-wrapper'}, multipart: true do |f| %>
+        <%= f.hidden_field :challenge_id, value: challenge.id %>
+        <% if challenge.type != 'pre'%>
+        <div class="slide one">
+          <div class="green">
+            <h2 class="text-center">That's some real progress,<br>keep stoking that fire!</h2>
+          </div>
+          <div class="graph-container">
+            <div class="graph" height="200px">
+              <canvas id="chart_<%= challenge.id %>"></canvas>
+              <script>
+                var chart_<%= challenge.id %> = new Chart($('#chart_<%= challenge.id %>'), {
+                  type: 'line',
+                  data: <%= raw to_javascript_string challenge.data%>,
+                  options: <%=  raw to_javascript_string challenge.options_mobile %>
+                })
+              </script>
+              <div class="today marker _<%= challenge.id %>" style="left:<%= challenge.today_marker_position %>%">
+                <% if challenge.created_at.to_date != DateTime.now.utc.to_date && challenge.date_complete.to_date != DateTime.now.utc.to_date %>
+                  <svg height="30" width="10" class="line"><line x1="0" y1="0" x2="0" y2="26"/></svg>
+                  <span class="label">today</span>
+                <% end %>
+              </div>
+              <div class="start box">
+                <span>start</span>
+                <h2><%=challenge.created_at.month%>/<%=challenge.created_at.day%></h2>
+              </div>
+              <div class="end box">
+                <span>end</span>
+                <h2><%=challenge.date_complete.month%>/<%=challenge.date_complete.day%></h2>
+              </div>
+            </div>
+          </div>
+          <h2 class="prompt"> One last time, <%= challenge.content_data[:metric_question].downcase %></h2>
+          <input type="number" pattern="\d*" class="input" oninput="enableLogButton(this)">
+          <div class="next-button" onclick="reflectionLogProgress(this, <%= challenge.id %>);">
+            <%= image_tag "next-button-disabled", class: "disabled" %>
+            <%= image_tag "next-button-active", style: 'display:none;', class: "active" %>
+          </div>
+        </div>
+        <% end %>
+        <div class="slide two" <%= "style=display:none;" if challenge.type != 'pre' %> >
+          <div class="green">
+            <h2> <%= challenge.content_data[:reflection_question] %> </h2>
+          </div>
+          <%= f.text_area :reflection, class: "reflection-input", placeholder: "Type away! ....", oninput: "checkReflectionHasText(this)" %>
+          <div class="next-button" onclick="reflectionToNextSlide(this);">
+            <%= image_tag "next-button-disabled", class: "disabled" %>
+            <%= image_tag "next-button-active", style: 'display:none;', class: "active" %>
+          </div>
+        </div>
+        <div class="slide three" style="display:none;">
+          <div class="green">
+            <h2 class="text-center">Upload a photo and give it a caption!</h2>
+          </div>
+          <div class="user-input-wrapper">
+            <div class="photo" onclick="$(this).siblings('#upload-photo').click();">
+              +
+            </div>
+            <%= f.file_field :photo, id: "upload-photo" , onchange: "uploadPicMobile(this);allowReflectionSubmitMobile(this);", accept: "image/*" , hidden: true, direct_upload: true %>
+            <%= f.text_area :caption, class: "caption", placeholder: "Write a caption...", oninput: "allowReflectionSubmitMobile(this);" %>
+          </div>
+          <%= f.check_box :permission, {class: "permission-checkbox", checked: true} %>
+          <label class="permission-info">I give TG permission to share this check-in <a href=" <%= privacy_path %> " target="_blank">Learn more</a></label><br>
+          <button type="button" class="submit" onclick="reflectionSubmitMobile(this, <%= challenge.id %>);" disabled >submit</button><br>
+          <button type="button" class="skip" onclick="reflectionSubmitMobile(this, <%= challenge.id %>);">nothing to upload? skip</button>
+        </div>
+        <% end %>
+      </div>
+      <%= render "layouts/points/points_earned", {id: "points-earned-#{challenge.id}", points: challenge.point_worth, type: "Come through @rootup_stories on Insta & Twitter<br>We'll be showing off yall's fresh thoughts hot off the press!", visible: false} %>
+    <% end %>
+  </div>
+  <div class="no-reflections" style="<%= "display:none;" if @current_reflections.length != 0 %>" >
+    Come back later when you've completed challenges! We're looking forward to hearing about your experience :)
+  </div>
+</div>

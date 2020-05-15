@@ -15,7 +15,7 @@
               <input type="checkbox" id="not-useful" name="not-useful" value="1"> <span class="option">I think this app is not useful for me</span><br>
               <input type="checkbox" id="too-much-work" name="too-much-work" value="1"> <span class="option">There is too much work involved in this app</span><br>
               <input type="checkbox" id="other" value="1"> <span class="option">Other (please elaborate):</span><br>
-              <textarea id="other-textarea" name="other" onchange="checkDeactivateForm();" disabled></textarea><br>
+              <textarea id="other-textarea" name="other" oninput="checkDeactivateForm();" disabled></textarea><br>
               <div class="deactivate error" style="display:none;">
                 <div class="error-icon"></div>
                 <span class="message">Please type in a reason before continuing</span>

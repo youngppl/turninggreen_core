@@ -1,0 +1,17 @@
+.login.mobile {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  .heading {
+    margin-bottom: 24px;
+  }
+
+  .forgot-pwd {
+    font-size: 16px;
+    text-decoration: underline;
+    color: #868686;
+    display: flex;
+    justify-content: center;  }
+}

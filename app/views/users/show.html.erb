@@ -59,7 +59,7 @@
                 <div class="log-question">
                   <h5 class="heading">Since your last log:</h5>
                   <h5 class="question"> <%= challenges[challenge.theme.to_sym][:challenges].find {|x| x[:name] == challenge.challenge_name}[:metric_question] %>  </h5>
-                  <% if challenge.progress_logs.last && challenge.progress_logs.last.created_at.to_date == DateTime.now.utc.to_date %>
+                  <% if challenge.last_logged_today? %>
                     <input type="number" value="<%= challenge.progress_logs.last.metric %>" disabled min="0" class="log-input _<%= challenge.id %>">
                     <h5 class="log-complete">today’s log complete!</h5>
                   <% else %>

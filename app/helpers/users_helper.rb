@@ -105,7 +105,9 @@ module UsersHelper
     }
   end
 
-  
+  def challengeObjFromName(name)
+    return current_user.challenges.find(current_user.challenges.where(challenge_name: name).pluck(:id)[0])
+  end
 
   def challengeDataFromName(name) 
     all_challenges.detect {|challenge| challenge[:name] == name}

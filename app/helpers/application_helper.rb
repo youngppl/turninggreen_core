@@ -1,5 +1,14 @@
 module ApplicationHelper
 
+  def pick(one, two)
+    # return whichever one is defined
+    if defined? one
+      return one
+    else
+      return two
+    end
+  end
+
   def active?(path)
     # check current page and return active class
     "active" if current_page? path

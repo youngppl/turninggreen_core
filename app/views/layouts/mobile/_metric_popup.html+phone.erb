@@ -1,0 +1,62 @@
+<div class="modal metric-popup" id="<%= challenge.id %>" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      <div class="challenge-info">
+        <%= image_tag challenge.theme_icon %>
+        <h2 class="challenge-name">
+          <%= challenge.challenge_name %>
+        </h2>
+      </div>
+      <div class="graph" height="200px">
+        <canvas id="chart_<%= challenge.id %>"></canvas>
+        <script>
+          var chart_<%= challenge.id %> = new Chart($('#chart_<%= challenge.id %>'), {
+            type: 'line',
+            data: <%= raw to_javascript_string challenge.data%>,
+            options: <%=  raw to_javascript_string challenge.options_mobile %>
+          })
+        </script>
+        <div class="today marker _<%= challenge.id %>" style="left:<%= challenge.today_marker_position %>%">
+          <% if challenge.created_at.to_date != DateTime.now.utc.to_date && challenge.date_complete.to_date != DateTime.now.utc.to_date %>
+            <svg height="30" width="10" class="line"><line x1="0" y1="0" x2="0" y2="26"/></svg>
+            <span class="label">today</span>
+          <% end %>
+        </div>
+        <div class="start box">
+          <span>start</span>
+          <h2><%=challenge.created_at.month%>/<%=challenge.created_at.day%></h2>
+        </div>
+        <div class="end box">
+          <span>end</span>
+          <h2><%=challenge.date_complete.month%>/<%=challenge.date_complete.day%></h2>
+        </div>
+      </div>
+      <div class="stats">
+        <div class="cumulative">
+          <span class="num"><%= challenge.cumulative_metrics %></span>
+          <h2>METRICS CUMULATIVELY</h2>
+        </div>
+        <hr class="separator">
+        <div class="days-left">
+          <span class="num"><%= challenge.get_days_left %></span>
+          <h2>DAYS LEFT OF CHALLENGE</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/javascript">
+  function updateChart_<%= challenge.id %>() {
+    log_input = Number($('#<%= challenge.id %>.log-progress input').val())
+    chart_<%= challenge.id %>.data.datasets[1].data.push({
+      t: "<%=DateTime.now.getutc.strftime("%Y-%m-%d")%>",
+      y: (<%= challenge.cumulative_metrics.to_i %> + log_input)
+    })
+    chart_<%= challenge.id %>.update()
+    $('#<%= challenge.id %>.metric-popup .cumulative .num').html(<%= challenge.cumulative_metrics.to_i %> + log_input)
+    $('#<%= challenge.id %>.metric-popup').modal()
+  }
+</script>
