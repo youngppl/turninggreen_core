@@ -212,8 +212,29 @@ a {
     }
   }
 
+  .user-map {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fffdfb;
+    padding: 40px;
+
+    .map {
+      width: 280px;
+      height: 247px;
+    }
+
+    .title {
+      font-size: 36px;
+      font-weight: 300;
+      text-align: center;
+      color: #5c5c5c;
+      max-width: 270px;
+      margin-left: 40px;
+    }
+  }
+
   .challenge {
-    background-color: #fffdfa;
     padding: 75px 0;
 
     .challenge-page {
@@ -365,17 +386,15 @@ a {
 
   .seed {
     display: flex;
-    width: 60%;
     margin: auto;
     color: #5f5f5f;
     padding: 82px 0;
+    background-color: #fffdfb;
+    justify-content: center;
+    flex-wrap: wrap;
 
     .left {
-      width: 60%;
       text-align: right;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
 
       .heading {
         font-size: 30px;
@@ -383,6 +402,7 @@ a {
 
       .subheading {
         font-size: 16px;
+        max-width: 600px;
       }
     }
 
@@ -417,118 +437,182 @@ a {
   .reviews {
     padding: 72px 12%;
     margin: auto;
-    background-color: #fffdfa;
-
+    text-align: center;
+    
     .heading {
       font-size: 30px;
       margin-bottom: 32px;
       color: #5f5f5f;
-      text-align: left;
     }
 
-    .review {
-      max-width: 985px;
-      height: 290px;
-      border-radius: 11px;
-      box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.09),
-        0 2px 10px 0 rgba(0, 0, 0, 0.13);
-      background-color: #ffffff;
+    .embeds {
       display: flex;
-      padding: 23px 30px;
-      color: #5f5f5f;
-
-      .image {
-        width: 240px;
-        height: 240px;
-        background-color: #d8d8d8;
-        display: flex;
-        align-content: center;
-      }
-
-      .quotation {
-        font-size: 130px;
-        position: absolute;
-
-        &.left {
-          top: 14px;
-          left: -10px;
-        }
-
-        &.right {
-          right: -6%;
-          bottom: 0;
-          height: 50px;
-        }
-      }
-
-      .quote {
-        width: 70%;
-        margin-left: 50px;
-        padding-top: 60px;
-        padding-left: 30px;
-        text-align: left;
-        position: relative;
-
-        .text {
-          font-size: 24px;
-          width: 95%;
-          position: relative;
-        }
-
-        .name {
-          font-size: 16px;
-        }
-      }
+      margin: auto;
+      justify-content: space-between;
+      width: 80%;
+      flex-wrap: wrap;
     }
+  }
+}
 
-    #reviews-carousel {
-      height: 380px;
-      max-width: 1110px;
-      padding-left: 70px;
-    }
+.action-page {
+  color: #474747;
+  
+  .title {
+    color: #000000;
+    font-size: 20px;
+    margin-left: 87px;
+    margin-bottom: 40px;
+    margin-top: 10px;
+  }
 
-    .carousel-inner {
-      height: 400px;
-      padding: 10px;
-    }
+  .challenges {
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    margin: 40px auto;
+    height: 700px;
+  }
 
-    .carousel-item li {
-      text-align: left;
-      font-size: 14px;
+  .challenge-page {
+    width: 100%;
+  }
+
+  .tabs {
+    width: 230px;
+    background-color: #fafafa;
+    height: 100%;
+
+    .nav-link {
+      font-size: 20px;
       font-weight: 600;
+      height: 70px;
+      color: #474747;
+      border-radius: 18px 0 0 18px;
+      width: 100%;
+      border: solid 1px #e3e3e3;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 0 25px;
+
+      .icon {
+        width: 44px;
+        height: 44px;
+      }
+
+      span {
+        text-align: center;
+        width: 50%;
+      }
+
+      &.active {
+        background-color: #ffffff;
+      }
+    }
+  }
+
+  .tab-content {
+    padding: 30px;
+    vertical-align: top;
+    max-height: 100%;
+    width: 80%;
+    border: solid 1px #e3e3e3;
+    border-radius: 0 18px 18px 0;
+    overflow-y: scroll;
+
+    .theme-icon {
+      position: absolute;
+      top: 0;
+      left: 40px;
     }
 
-    .carousel-indicators {
-      li {
-        width: 11px;
-        height: 11px;
-        background-color: #e9e9e9;
-        border-radius: 50%;
+    .theme-title {
+      font-size: 23px;
+      font-weight: 500;
+      margin-left: 85px;
 
-        &.active {
-          background-color: #5d8440;
-        }
+      &.subtitle {
+        font-size: 18px;
       }
     }
 
-    .carousel-control-next {
-      color: #8e8c8c;
-      font-size: 35px;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      top: 35%;
-      right: -5%;
+    .challenge-page {
+      margin-top: 25px;
     }
 
-    .carousel-control-prev {
-      color: #8e8c8c;
-      font-size: 35px;
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      top: 35%;
-      left: -2%;
+    .tab-pane {
+      position: relative;
+      padding-left: 60px;
+    }
+  }
+}
+
+.get-the-app-page {
+  width: 70%;
+  margin: auto;
+
+  .title {
+    font-weight: 300;
+    color: #000000;
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .device {
+    width: 380px;
+
+    .title {
+      font-weight: bold;
+    }
+  }
+
+  .steps {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: 40px auto;
+    flex-wrap: wrap;
+  }
+
+  .step {
+    text-align: center;
+    display: none;
+
+    .step-text {
+      font-weight: 300;
+      color: #000000;
+      font-size: 18px;
+      margin: 20px 0;
+    }
+
+    &.active {
+      display: block;
+    }
+  }
+
+  .controls {
+    width: 18px;
+    margin: auto;
+    margin-top: -26px;
+    text-align: center;
+    display: flex;
+    position: relative;
+    bottom: 12px;
+
+    i {
+      cursor: pointer;
+      position: absolute;
+    }
+
+    .last {
+      left: -70px;
+      display: none;
+    }
+
+    .next {
+      right: -70px;
     }
   }
 }

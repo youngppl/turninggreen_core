@@ -9,10 +9,16 @@
   <div class="about-team collapse navbar-collapse" id="navbarToggle">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
+        <%= link_to "action", action_path, class: "about-team-item"%>
+      </li>
+      <li class="nav-item">
         <%= link_to "about", about_path, class: "about-team-item"%>
       </li>
       <li class="nav-item">
         <%= link_to "team", team_path, class: "about-team-item"%>
+      </li>
+      <li class="nav-item">
+        <%= link_to "Get the App", install_path, class: "about-team-item get-app"%>
       </li>
     </ul>
   </div>

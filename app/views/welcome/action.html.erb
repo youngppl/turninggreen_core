@@ -1,0 +1,94 @@
+<div class="action-page">
+  <h2 class="title">Take action now. To track your impact, sign up <%= link_to 'here', new_user_registration_path %>!</h2>
+  <div class="challenges">
+    <div class="tabs nav flex-column" role="tablist" aria-orientation="vertical">
+      <% themes.each_with_index do |theme, index| %>
+      <a class="nav-link <%= 'active' if index == 0 %>" id="v-pills-home-tab" data-toggle="pill" href="#<%= theme.downcase %>" role="tab">
+        <%= image_tag "themes/icons/#{theme.downcase}.svg", class: 'icon' %>
+        <span><%= theme.downcase %></span>
+      </a>
+      <% end %>
+    </div>
+    <div class="tab-content">
+      <% themes.each_with_index do |theme, index| %>
+      <div class="tab-pane <%= 'active' if index == 0 %>" id="<%= theme.downcase %>" role="tabpanel">
+        <%= image_tag "themes/icons/#{theme.downcase}.svg", class: 'theme-icon' %>
+        <h2 class="theme-title"><%= theme.downcase %></h2>
+        <h2 class="theme-title subtitle"><%= themes_description[theme.to_sym] %></h2>
+        <div class="challenge-page">
+          <% challenges[theme.to_sym][:challenges].each do |challenge| %>
+            <div class="challenge-box">
+              <div class="row">
+                <div class="icon">
+                  <%= image_tag "challenges/#{theme.downcase}/#{challenge[:name].downcase.tr(' ','-').tr('#','')}.png" %>
+                </div>
+                <div class="challenge-container col">
+                  <div class="info">
+                    <h5 class="name">
+                      <%= challenge[:name] %>
+                    </h5>
+                    <h5 class="heading"><%= challenge[:question] %></h5>
+                    <p class="description"><%= challenge[:description].html_safe %></p>
+                  </div>
+                  <div class="hidden row" style="display:none;">
+                    <div class="instructions col">
+                      <h4 class="heading">🤔How do I do this?🤔</h4>
+                      <% if challenge[:background] %>
+                      <%= challenge[:background].html_safe %>
+                      <% end %>
+                      <ul>
+                        <% challenge[:instructions].each do |item| %>
+                        <li> <%= item.html_safe %> </li>
+                        <% end %>
+                      </ul>
+                      <% if challenge[:alt_instructions] %>
+                      <ul class="alt">
+                        <% challenge[:alt_instructions].each do |item| %>
+                        <li> <%= item.html_safe %> </li>
+                        <% end %>
+                      </ul>
+                      <% end %>
+                      <% if challenge[:extra] %>
+                      <%= challenge[:extra].html_safe %>
+                      <% end %>
+                      <% if challenge[:second_list] %>
+                      <ul>
+                        <% challenge[:second_list].each do |item| %>
+                        <li> <%= item.html_safe %> </li>
+                        <% end %>
+                      </ul>
+                      <% end %>
+                    </div>
+                    <div class="col col-lg-5">
+                      <div class="learn-more">
+                        <h7 class="heading">🤓Wanna learn more?</h7>
+                        <ol>
+                          <% challenge[:links].each do |text, link| %>
+                          <li><%= link_to text, link, class: "link", target: "_blank"%></li>
+                          <% end %>
+                        </ol>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="dropdown-click row">
+                <div class="row align-items-center ">
+                  <div class="text">
+                    <h2 class="up heading">TAKE ON THIS CHALLENGE</h2>
+                    <h2 class="down heading" style="display:none;">SHOW LESS</h2>
+                  </div>
+                  <div>
+                    <i class="fas fa-chevron-down"></i>
+                    <i class="fas fa-chevron-up" style="display:none;"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>

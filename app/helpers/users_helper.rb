@@ -15,13 +15,13 @@ module UsersHelper
       "https://sheets.googleapis.com/v4/spreadsheets/1QdddPvJRMPYVF0lvE03xUZlRFjTW4Rb1np9fmM_UaxM/values/'Global%20Impact'!A:E?key=#{Rails.application.credentials[:google_api_key]}")
     json = JSON.load(request.body)
     impacts_json = json['values'][1..json.length]
-    impacts_json.each do |challenge, theme, description, reflection|
-      global_impacts << [challenge, theme, description, Reflection.find(reflection)]
+    impacts_json.each do |challenge, theme, description, reflection, quote|
+      global_impacts << [challenge, theme, description, Reflection.find(reflection), quote]
     end
     return global_impacts
   end
 
-  def generateMemberMap(challenge, mapid)
+  def generateMemberMap(challenge=nil, mapid="user_map")
     # get location coordinates
     countries_json = File.read(Rails.root + 'app/helpers/countries.json')
     states_json = File.read(Rails.root + 'app/helpers/states.json')
@@ -29,7 +29,11 @@ module UsersHelper
     states = JSON.parse(states_json)
 
     # get user location data
-    users = Challenge.where(challenge_name: challenge).pluck(:user_id)
+    if challenge.nil?
+      users = User.all.pluck(:id)
+    else
+      users = Challenge.where(challenge_name: challenge).pluck(:user_id)
+    end
     coordinates = []
     users.each do |id|
       user = User.find(id)
@@ -48,18 +52,19 @@ module UsersHelper
     maps_js = 
     "
     var #{mapid} = L.map('#{mapid}', {
-      center: [40, -5],
-      zoom: 0,
+      
       dragging: false,
       doubleClickZoom: false,
       zoomControl: false,
+      scrollWheelZoom: false,
       layers: [
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png')
       ]
     })
+    #{mapid}.fitWorld()
     maps.push(#{mapid})
-
     "
+    
     markers = ""
     coordinates.each do |coordinate|
       markers += "L.circleMarker(#{coordinate},{radius: 5, color: '#7b9c74', fillOpacity: 1}).addTo(#{mapid})\n"
