@@ -19,6 +19,7 @@ gem 'rest-client'
 gem 'ahoy_email'
 gem "railties", ">= 5.2.2.1"
 gem "actionview", ">= 5.2.2.1"
+gem 'premailer-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
