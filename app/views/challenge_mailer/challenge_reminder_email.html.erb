@@ -1,5 +1,5 @@
 <head>
-
+  <%= stylesheet_link_tag "challenge-reminder-email.css" %>
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap"
     rel="stylesheet">
 </head>
@@ -47,7 +47,7 @@
   <h2 class="title">Keep challenging yourself to do and do more:</h2>
     
   <div class="row">
-    <div class="col">
+    <div style="margin:20px;">
       <ol>
         <% @user_completed_challenges.each do |challenge| %>
         <li> <%= challenge.challenge_name %> (complete)</li>
@@ -74,100 +74,3 @@
   <p>P.S. <a target="_blank" href="<%= edit_user_registration_url %> ">Update</a> email reminder settings or <a
       target="_blank" href="<%= unsubscribe_url(email: @user.email) %>">unsubscribe</a></p>
 </body>
-<style>
-  body {
-    background-color: #f7f7f2;
-    max-width: 880px;
-    margin: auto;
-    font-family: Raleway, sans-serif;
-    font-size: 20px;
-    font-weight: 500;
-    text-align: center;
-    color: #474747;
-    padding: 30px;
-  }
-
-  .row {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    width: 100%;
-    margin: 20px 0;
-  }
-  
-  .row img {
-    object-fit: contain;
-  }
-
-  .col {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    flex: 1;
-    margin: 20px;
-  }
-
-  @media screen and (max-width: 768px) {
-    .row img{
-      max-width: 100%;
-    }
-  }
-  
-
-  .name {
-    font-size: 45px;
-    font-weight: bold;
-    letter-spacing: -0.69px;
-    margin: 50px 0;
-  }
-
-  .title {
-    font-size: 20px;
-    font-weight: 500;
-    margin: 0;
-  }
-
-  .subtitle {
-    font-size: 20px;
-    font-weight: 500;
-  }
-
-  .small {
-    font-size: 11px;
-  }
-
-  .bold {
-    font-weight: bold !important;
-  }
-
-  .uppercase {
-    text-transform: uppercase;
-  }
-
-  .closing {
-    margin: 30px 0;
-  }
-
-  hr {
-    width: 300px;
-    margin-top: 50px;
-    margin-bottom: 50px;
-  }
-
-  a {
-    text-decoration: underline;
-  }
-
-  ul, ol {
-    text-align: left;
-  }
-
-  ol {
-    width: fit-content;
-    margin: 30px auto;
-  }
-
-  p {
-    font-size: 20px;
-  }
-</style>
