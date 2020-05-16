@@ -13,7 +13,7 @@
     <button type="button" name="button" class="back-button bare">
       <i class="fas fa-chevron-left" onclick="history.back()"></i>
     </button>
-    <%= image_tag 'themes/icons/' + @challenge_name.downcase, size: "20" %>
+    <%= image_tag 'themes/icons/' + @challenge_name.downcase + '.svg', size: "20" %>
     <h2><%= @challenge_name.upcase %></h2>
   </div>
   <div class="challenges-content">

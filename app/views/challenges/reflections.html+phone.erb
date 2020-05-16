@@ -49,8 +49,8 @@
           <h2 class="prompt"> One last time, <%= challenge.content_data[:metric_question].downcase %></h2>
           <input type="number" pattern="\d*" class="input" oninput="enableLogButton(this)">
           <div class="next-button" onclick="reflectionLogProgress(this, <%= challenge.id %>);">
-            <%= image_tag "next-button-disabled", class: "disabled" %>
-            <%= image_tag "next-button-active", style: 'display:none;', class: "active" %>
+            <%= image_tag "next-button-disabled.svg", class: "disabled" %>
+            <%= image_tag "next-button-active.svg", style: 'display:none;', class: "active" %>
           </div>
         </div>
         <% end %>
@@ -60,8 +60,8 @@
           </div>
           <%= f.text_area :reflection, class: "reflection-input", placeholder: "Type away! ....", oninput: "checkReflectionHasText(this)" %>
           <div class="next-button" onclick="reflectionToNextSlide(this);">
-            <%= image_tag "next-button-disabled", class: "disabled" %>
-            <%= image_tag "next-button-active", style: 'display:none;', class: "active" %>
+            <%= image_tag "next-button-disabled.svg", class: "disabled" %>
+            <%= image_tag "next-button-active.svg", style: 'display:none;', class: "active" %>
           </div>
         </div>
         <div class="slide three" style="display:none;">
