@@ -19,6 +19,5 @@ production:
   encoding: unicode
   pool: 5
   timeout: 5000
-  username: "postgres"
-  password: "<%= ENV['ROOTUP_DATABASE_PASSWORD'] %>"
+  url: <%= ENV['DATABASE_URL'] %>
   database: "rootup_production"
