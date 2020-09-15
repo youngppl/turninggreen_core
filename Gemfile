@@ -18,9 +18,9 @@ gem 'chartjs-ror'
 gem 'rest-client'
 gem 'ahoy_email'
 gem "railties", ">= 5.2.2.1"
-gem "actionview", ">= 5.2.2.1"
+gem "actionview", ">= 5.2.4.4"
 gem 'premailer-rails'
-gem "google-cloud-storage"
+gem "google-cloud-storage", "~> 1.8", require: false
 gem 'listen', '~> 3.1.5'
 
 group :development, :test do

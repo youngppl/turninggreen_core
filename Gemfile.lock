@@ -342,7 +342,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  actionview (>= 5.2.2.1)
+  actionview (>= 5.2.4.4)
   ahoy_email
   bootsnap (>= 1.1.0)
   bootstrap (~> 4.3.1)
@@ -352,7 +352,7 @@ DEPENDENCIES
   chromedriver-helper (= 1.2.0)
   coffee-rails (~> 4.2)
   devise (>= 4.7.1)
-  google-cloud-storage
+  google-cloud-storage (~> 1.8)
   jbuilder (~> 2.5)
   jquery-rails
   launchy
