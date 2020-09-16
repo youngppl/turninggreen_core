@@ -29,7 +29,7 @@ function blobToFile(theBlob, fileName) {
 function readFile(input) {
   if (input.files && input.files[0]) {
     var reader = new FileReader();
-    reader.onload = function(e) {
+    reader.onload = function (e) {
       $uploadCrop.croppie("bind", {
         url: e.target.result
       });
@@ -72,7 +72,7 @@ function linkCroppie(input) {
 function updatePicture() {
   $uploadCrop.croppie("result", {
     type: 'blob'
-  }).then(function(blob) {
+  }).then(function (blob) {
     tmp_url = URL.createObjectURL(blob)
     $(photo_input).parent().css('background-image', 'url(' + tmp_url + ')');
     container.parents('.modal').modal('hide')
@@ -82,7 +82,7 @@ function updatePicture() {
     var url = input.dataset.directUploadUrl;
     var upload = new ActiveStorage.DirectUpload(blobToFile(blob, "pic-upload.png"), url);
 
-    upload.create(function(error, blob) {
+    upload.create(function (error, blob) {
       if (error) {
         alert(error);
       } else {

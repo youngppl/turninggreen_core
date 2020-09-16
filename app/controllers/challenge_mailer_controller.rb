@@ -22,14 +22,14 @@ class ChallengeMailerController < ApplicationController
           ChallengeMailer.challenge_reminder_email(user, updates, facts.sample).deliver_later
       end
     end
-    head :no_content
+    puts 'executed send emails!'
   end
 
   def reset_email_tracking
     User.all.each do |user|
       user.update(emails_sent: [])
     end
-    head :no_content
+    puts 'executed reset emails!'
   end
 
   def unsubscribe
