@@ -1,3 +1,59 @@
+#moved-modal {
+  .modal-content {
+    width: 461px;
+    @media only screen and (max-width: 500px) {
+      width: 98%;
+    }
+    border-radius: 17px;
+    background-color: #ffffff;
+    margin: auto;
+    padding: 24px 67px;
+    @media only screen and (max-width: 500px) {
+      padding: 10%;
+    }
+    color: #5f5f5f;
+    text-align: center;
+  }
+
+  .heading {
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  .subheading {
+    font-size: 14px;
+    margin: 25px 0;
+  }
+
+  button {
+    width: 156px;
+    height: 44px;
+    border-radius: 7px;
+    border: solid 2px#5d8440;
+    color: #5d8440;
+    background: none;
+    outline: none;
+    margin: auto;
+
+    &:hover {
+      color: #ffffff;
+      background-color: #0e5b2c;
+      border: solid 2px#0e5b2c;
+    }
+
+    &.skip {
+      border: solid 1px #cacaca;
+      color: #cacaca;
+
+      &:hover {
+        color: #5f5f5f;
+        border: solid 1px #5f5f5f;
+        background-color: white;
+      }
+    }
+  }
+}
+
 .about-page {
   padding: 0 5em;
   font-weight: 500;

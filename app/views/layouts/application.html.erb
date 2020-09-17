@@ -1,49 +1,54 @@
 <!DOCTYPE html>
 <html>
-  <%= render "layouts/header"%>
-  <body>
-    <% if content_for?(:navbar) %>
-      <!-- rest of app view -->
-      <div class="row">
-        <div id="navbar">
-          <%= yield(:navbar) %>
-        </div>
-        <div class="col content-col">
-          <% if current_page?(themes_path) || request.path.starts_with?('/challenges') %>
-          <div class="covid banner">
-            <%= image_tag 'info-icon.svg', size: '40' %>
-            <h3>First and foremost, stay safe and healthy. There's something important to learn from each challenge, so read them and educate yourself. However, note that some challenges should NOT be taken now due to the COVID-19 pandemic.</h3>
-          </div>
-          <% end %>
-          <% if current_page?(dashboard_path) %>
-            <div class="fun-fact banner">
-              <h3>FUN FACT: <%= fun_facts.shuffle[0].html_safe %> </h3>
-            </div>
-          <% end %>
-          <nav class="sidebar-toggle navbar-light position-absolute d-xl-none">
-            <button type="button" data-toggle="collapse" data-target="#navbarToggle" class="btn" onclick="toggleDashNav()">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-          </nav>
-          <div class="top-nav">
-            <%= render 'layouts/notifications_dropdown' %>
-            <%= render 'layouts/feedback_dropdown' %>
-            <%= render 'layouts/profile_dropdown' %>
-          </div>
-          <%= render "layouts/alerts"%>
-          <div class="main-content row justify-content-center">
-            <%= yield %>
-          </div>
-        </div>
+<%= render "layouts/header"%>
+
+<body>
+  <% if content_for?(:navbar) %>
+  <!-- rest of app view -->
+  <div class="row">
+    <div id="navbar">
+      <%= yield(:navbar) %>
+    </div>
+    <div class="col content-col">
+      <% if current_page?(themes_path) || request.path.starts_with?('/challenges') %>
+      <div class="covid banner">
+        <%= image_tag 'info-icon.svg', size: '40' %>
+        <h3>First and foremost, stay safe and healthy. There's something important to learn from each challenge, so read
+          them and educate yourself. However, note that some challenges should NOT be taken now due to the COVID-19
+          pandemic.</h3>
       </div>
-    <% else %>
-      <!-- landing page view -->
-      <%= render 'layouts/default_navbar' %>
+      <% end %>
+      <% if current_page?(dashboard_path) %>
+      <div class="fun-fact banner">
+        <h3>FUN FACT: <%= fun_facts.shuffle[0].html_safe %> </h3>
+      </div>
+      <% end %>
+      <nav class="sidebar-toggle navbar-light position-absolute d-xl-none">
+        <button type="button" data-toggle="collapse" data-target="#navbarToggle" class="btn" onclick="toggleDashNav()">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </nav>
+      <div class="top-nav">
+        <%= render 'layouts/notifications_dropdown' %>
+        <%= render 'layouts/feedback_dropdown' %>
+        <%= render 'layouts/profile_dropdown' %>
+      </div>
       <%= render "layouts/alerts"%>
-      <%= yield %>
-    <% end %>
-    <%= render "layouts/footer"%>
-    <%= debug(params) if Rails.env.development? %>
-    <%= render 'layouts/tutorial_popup' %>
-  </body>
+      <div class="main-content row justify-content-center">
+        <%= yield %>
+      </div>
+    </div>
+  </div>
+  <% else %>
+  <!-- landing page view -->
+  <%= render 'layouts/default_navbar' %>
+  <%= render "layouts/alerts"%>
+  <%= yield %>
+  <% end %>
+  <%= render "layouts/footer"%>
+  <%= debug(params) if Rails.env.development? %>
+  <%= render 'layouts/tutorial_popup' %>
+  <%= render "layouts/moved"%>
+</body>
+
 </html>

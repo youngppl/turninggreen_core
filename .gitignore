@@ -3,6 +3,7 @@ cron.yaml
 /config/secrets/*
 cors.json
 spec/examples.txt
+*.dump
 
 # Ignore all logfiles and tempfiles.
 /log/*
