@@ -19,7 +19,7 @@ class ChallengeMailerController < ApplicationController
             user.emails_sent << 'updates'
             user.save!
           end
-          ChallengeMailer.challenge_reminder_email(user, updates, facts.sample).deliver_later
+          ChallengeMailer.challenge_reminder_email(user, updates, facts.sample).deliver_now
       end
     end
     puts 'executed send emails!'
