@@ -14,7 +14,7 @@ module Turninggreen
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
 
     # mailer asset host
-    config.action_mailer.asset_host = 'https://rootup.appspot.com/'
+    config.action_mailer.asset_host = 'https://rootup.herokuapp.com/'
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
