@@ -4,6 +4,7 @@ cron.yaml
 cors.json
 spec/examples.txt
 *.dump
+.DS_Store
 
 # Ignore all logfiles and tempfiles.
 /log/*

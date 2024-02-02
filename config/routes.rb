@@ -28,7 +28,7 @@ Rails.application.routes.draw do
   get '/privacy/learn-more' => 'welcome#privacy_learn_more'
   get '/admin' => 'admin#index'
   # email reminders routes
-  get '/send-out-challenge-reminders' => 'challenge_mailer#send_out_challenge_reminders'
+  # get '/send-out-challenge-reminders' => 'challenge_mailer#send_out_challenge_reminders'
   get '/reset-email-tracking' => 'challenge_mailer#reset_email_tracking'
   get '/unsubscribe' => 'challenge_mailer#unsubscribe'
   post '/unsubscribe' => 'challenge_mailer#unsubscribe_reasons'

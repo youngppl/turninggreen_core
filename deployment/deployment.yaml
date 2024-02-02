@@ -1,0 +1,35 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: rootup
+  namespace: pz
+  labels:
+    app: rootup
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rootup
+  template:
+    metadata:
+      labels:
+        app: rootup
+    spec:
+      containers:
+        - name: rootup
+          image: sjc.ocir.io/axlfudrjenut/pz/rootup:latest
+          resources:
+            limits:
+              cpu: "200m"
+              memory: "2Gi"
+          ports:
+            - name: rails
+              containerPort: 3000
+          env:
+            - name: DATABASE_URL
+              valueFrom:
+                { secretKeyRef: { name: rootup-pguser-rootup, key: uri } }
+            - name: DATABASE_NAME
+              valueFrom:
+                { secretKeyRef: { name: rootup-pguser-rootup, key: dbname } }

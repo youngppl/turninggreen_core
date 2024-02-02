@@ -24,7 +24,11 @@ Rails.application.configure do
 
   # Compress JavaScripts and CSS.
   # config.assets.js_compressor = :uglifier
-  config.assets.js_compressor = Uglifier.new(harmony: true)
+  # config.assets.js_compressor = Uglifier.new(harmony: true)
+  config.assets.configure do |env|
+    env.js_compressor  = :uglifier # or :closure, :yui
+    env.css_compressor = :sass   # or :yui
+  end
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
@@ -69,7 +73,7 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "turninggreen_#{Rails.env}"
 
   #config mailer
-  config.action_mailer.default_url_options = { :host => 'rootup.herokuapp.com' }
+  config.action_mailer.default_url_options = { :host => 'rootup.isupinthe.cloud' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = false
