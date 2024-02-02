@@ -124,7 +124,7 @@
             <li data-target="global-impacts-carousel" data-slide-to="1"></li>
           </ol> %>
           <div class="carousel-inner">
-            <% retrieveGlobalImpacts.shuffle.each_with_index do |impact, index| %>
+            <% [].shuffle.each_with_index do |impact, index| %>
             <% challenge_name, theme, description, reflection, quote = impact %>
             <div class="carousel-item <%= 'active' if index == 0 %>">
               <div class="global-impact-content">
